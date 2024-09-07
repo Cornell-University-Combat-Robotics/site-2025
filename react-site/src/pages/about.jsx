@@ -6,7 +6,6 @@ function Landingpage() {
     <Typography variant="h1">
       h1. Heading
     </Typography>
-
   );
 }
 
