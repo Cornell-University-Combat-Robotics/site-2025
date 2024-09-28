@@ -1,11 +1,9 @@
 import { Typography } from "@mui/material";
 
-function About() {
+export default function Robots() {
   return (
     <Typography variant="h1">
-      Welcome to CRC!
+      Robots Page
     </Typography>
   );
 }
-
-export default About

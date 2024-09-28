@@ -1,11 +1,9 @@
 import { Typography } from "@mui/material";
 
-function About() {
+export default function Sponsors() {
   return (
     <Typography variant="h1">
-      Welcome to CRC!
+      Sponsors Page
     </Typography>
   );
 }
-
-export default About

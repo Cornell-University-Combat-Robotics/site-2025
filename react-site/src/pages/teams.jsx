@@ -1,11 +1,9 @@
 import { Typography } from "@mui/material";
 
-function About() {
+export default function Teams() {
   return (
     <Typography variant="h1">
-      Welcome to CRC!
+      Teams Page
     </Typography>
   );
 }
-
-export default About

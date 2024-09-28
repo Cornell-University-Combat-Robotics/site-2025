@@ -1,11 +1,9 @@
 import { Typography } from "@mui/material";
 
-function About() {
+export default function Apply() {
   return (
     <Typography variant="h1">
-      Welcome to CRC!
+      Apply Page
     </Typography>
   );
 }
-
-export default About
