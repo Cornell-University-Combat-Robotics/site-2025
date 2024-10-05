@@ -8,6 +8,6 @@ First, clone the repository locally. Do this by clicking the green `Code` button
 
 ## Local development
 
-Open the `site-2025` project and navigate into the /react-site dir. To run
-the Vite local development server, use `npm run dev`. The site will load 
-at the localhost address, updating with changes in real-time.
+Open the `site-2025` project and navigate into the /react-site dir in the terminal. Run `npm install` to install the necessary 
+node packages into the project. To run the Vite local development server, use `npm run dev`. The site will load 
+at the localhost address, updating with changes in real-time. Run `Ctrl+C` to stop the server.

@@ -106,18 +106,20 @@ const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "flex-end",
-          gap: "2px",
+          //gap: "2px",
           mr: "20px",
-          width: "100%",
+          //width: "100%",
+          //alignItems: "center",
         }}
       >
         <Typography alignSelf="right" color="white">
           This organization is a registered student organization of Cornell University.
         </Typography>
-        {/* TODO: Link to /Accessibility page */}
-        <Typography alignSelf="right" color="white">
-          Accessibility Assistance
-        </Typography>
+        <a href="/accessibility">
+          <Typography alignSelf="right" color="white" sx={{ textDecoration: 'underline' }}>
+            Accessibility Assistance
+          </Typography>
+        </a>
       </Stack>
     </Box>
   );
