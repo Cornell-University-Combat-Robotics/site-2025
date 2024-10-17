@@ -4,10 +4,10 @@ import { Button, SxProps, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export interface NavBarButtonProps {
-  variant: string;
+  variant: string; // "secondary" (regular) | "apply" (highlighted)
   bg: string;
-  text: string;
-  to?: string;
+  text: string; // About | Teams | Robots | Sponsors | Game | Apply
+  to?: string; // /
   sx?: SxProps<Theme>;
 }
 
@@ -31,7 +31,8 @@ export default function NavBarButton(props: NavBarButtonProps) {
       disableRipple
     >
       <Link
-        to={"/" + (props.to ?? (props.text.toLowerCase() == "about" ? "" : props.text.toLowerCase()))}
+        // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
+        to={"/" + (props.text.toLowerCase() == "about" ? "" : props.text.toLowerCase())}
         style={{ color: "inherit" }}
       >
         <Typography variant="body1" sx={{ margin: 0 }}>{props.text}</Typography>

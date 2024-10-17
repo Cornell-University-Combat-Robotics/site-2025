@@ -1,16 +1,13 @@
 import { Box, Stack, Typography } from "@mui/material";
-import logo from "../assets/crc-logo.png";
+import logo from "../assets/crc-logo-cropped.png";
+import team_photo from "../assets/team-photo.png";
 
 function About() {
   return (
     <Box>
-      <Box sx={{ flex: 1 }}>
-        <img
-          src={logo}
-        />
-      </Box>
+      <img src={logo} style={{ maxWidth: '60%', height: 'auto' }} />
       <Box ml="50px">
-        <Typography variant="h2" align="left" fontWeight="bold">
+        <Typography variant="h2" align="left" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
           Who are we?
         </Typography>
         <Typography align="left">
@@ -37,19 +34,29 @@ function About() {
           </Stack>
         </Stack>
       </Box>
-
       <Box height="40px" />
-
-
       <Box ml="50px">
-        <Typography variant="h2" align="left" fontWeight="bold">
+        <Typography variant="h2" align="left" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
           What do we value?
         </Typography>
         <Typography align="left">
-          We work towards establishing CRC as one of Cornell&apos;s premier environments, embodying technical excellence, start-up spirit, and strong camaraderie. 
+          We work towards establishing CRC as one of Cornell&apos;s premier environments, embodying technical excellence, start-up spirit, and strong camaraderie.
           At CRC, we prioritize building a passionate, diverse team eager to learn and collaborate, regardless of technical experience, and leverage our unique interdisciplinary skills to dominate the competition.
         </Typography>
         <Box height="40px" />
+      </Box>
+      <img src={team_photo} style={{ maxWidth: '70%', height: 'auto' }} />
+      <Box height="80px" />
+
+      <Typography variant="h2" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
+        OUR JOURNEY
+      </Typography>
+
+      <Box height="80px" />
+      <Box>
+        <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans' }}>
+          You can shape the future of our team!
+        </Typography>
       </Box>
     </Box>
   );
