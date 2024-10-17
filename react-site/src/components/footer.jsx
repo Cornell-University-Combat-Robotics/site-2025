@@ -6,6 +6,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+/*
+This icon was hella scuffed so we decided to get rid of it.
+
 const TikTokIcon = () => {
   return (
     <svg
@@ -19,7 +22,7 @@ const TikTokIcon = () => {
     </svg>
   );
 };
-
+*/
 
 const Footer = () => {
   return (
@@ -42,6 +45,7 @@ const Footer = () => {
           ml: "10px",
         }}
       >
+        {/* Not necessary, but creating a FooterIcon component so we don't have to copy paste everything here would be nice. */}
         <IconButton aria-label="Email">
           <a href="mailto:combatrobotics@cornell.edu">
             <EmailIcon sx={{ color: "white", fontSize: "25px" }} />
@@ -83,7 +87,7 @@ const Footer = () => {
             <GitHubIcon sx={{ color: "white", fontSize: "25px" }} />
           </a>
         </IconButton>
-        <IconButton aria-label="TikTok">
+        {/*<IconButton aria-label="TikTok">
           <a
             href="https://www.tiktok.com/@combatroboticsatcornell"
             target="_blank"
@@ -91,7 +95,7 @@ const Footer = () => {
           >
             <TikTokIcon />
           </a>
-        </IconButton>
+        </IconButton>*/}
         <IconButton aria-label="YouTube">
           <a
             href="https://www.youtube.com/channel/UCRoomTf0RRs6DNDzucEKDMg"
@@ -102,25 +106,18 @@ const Footer = () => {
           </a>
         </IconButton>
       </Stack>
-      <Stack
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          //gap: "2px",
-          mr: "20px",
-          //width: "100%",
-          //alignItems: "center",
-        }}
-      >
-        <Typography alignSelf="right" color="white">
-          This organization is a registered student organization of Cornell University.
-        </Typography>
-        <a href="/accessibility">
-          <Typography alignSelf="right" color="white" sx={{ textDecoration: 'underline' }}>
-            Accessibility Assistance
+      <Box display="flex" justifyContent="flex-end" width="100%" mr="50px">
+        <Stack>
+          <Typography variant="body2" color="white">
+            This organization is a registered student organization of Cornell University.
           </Typography>
-        </a>
-      </Stack>
+          <a href="/accessibility">
+            <Typography color="white" sx={{ textDecoration: 'underline' }}>
+              Accessibility Assistance
+            </Typography>
+          </a>
+        </Stack>
+      </Box>
     </Box>
   );
 };
