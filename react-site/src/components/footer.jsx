@@ -32,6 +32,7 @@ const Footer = () => {
         width: "100%",
         bottom: "0px",
         display: "flex",
+        height: "60px",
         //justifyContent: "center",
         backgroundColor: "#b11c1c",
       }}
@@ -106,7 +107,7 @@ const Footer = () => {
           </a>
         </IconButton>
       </Stack>
-      <Box display="flex" justifyContent="flex-end" width="100%" mr="50px">
+      <Box display="flex" justifyContent="flex-end" alignItems="center" width="100%" mr="50px">
         <Stack>
           <Typography variant="body2" color="white">
             This organization is a registered student organization of Cornell University.

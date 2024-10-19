@@ -1,11 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
 import team_photo from "../assets/team-photo.png";
+import RedBox from "../components/RedBox";
 
 function About() {
   return (
     <Box>
-      <img src={logo} style={{ maxWidth: '60%', height: 'auto' }} />
+      <Box height="150px" />
+      <img src={logo} style={{ maxWidth: '50%', height: 'auto' }} />
+      <Box height="275px" />
       <Box ml="50px">
         <Typography variant="h2" align="left" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
           Who are we?
@@ -45,7 +48,7 @@ function About() {
         </Typography>
         <Box height="40px" />
       </Box>
-      <img src={team_photo} style={{ maxWidth: '70%', height: 'auto' }} />
+      <img src={team_photo} style={{ maxWidth: '60%', height: 'auto' }} />
       <Box height="80px" />
 
       <Typography variant="h2" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
@@ -58,6 +61,14 @@ function About() {
           You can shape the future of our team!
         </Typography>
       </Box>
+
+      <Stack direction="row" sx={{ gap: 5, padding: 3 }} >
+        <RedBox title="SUPPORT US" text="We're always looking to form valuable partnerships with companies and sponsors, and rely heavily on individual donations to keep our team running." 
+          word="SPONSOR!" link="/sponsors" />
+        <RedBox title="JOIN US" text="Interested in joining our unique team? We'd love to meet you during our application season, regardless of major or prior experience!"
+          word="APPLY!" link="/apply" />
+      </Stack>
+
     </Box>
   );
 }
