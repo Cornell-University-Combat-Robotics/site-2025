@@ -11,7 +11,7 @@ export interface RedBoxProps {
 
 export default function RedBox(props: RedBoxProps) {
   return (
-    <Box bgcolor="#820002" sx={{ borderRadius: 4 }}>
+    <Box bgcolor="#820002" sx={{ borderRadius: 5 }}>
       <Typography variant="h4" sx={{ mt: 2, textAlign: "center", fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>{props.title}</Typography>
       <Typography sx={{ textAlign: "left", padding: 2 }}>{props.text}</Typography>
       {/* TODO: Restrict link area to only the button. */}

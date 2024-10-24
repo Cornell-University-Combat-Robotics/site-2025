@@ -1,14 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
-import team_photo from "../assets/team-photo.png";
+import team_photo from "../assets/team-photo-hearts.png";
 import RedBox from "../components/RedBox";
 
 function About() {
   return (
     <Box>
-      <Box height="150px" />
+      <Box height="180px" />
       <img src={logo} style={{ maxWidth: '50%', height: 'auto' }} />
-      <Box height="275px" />
+      <Box height="280px" />
       <Box ml="50px">
         <Typography variant="h2" align="left" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
           Who are we?
@@ -17,8 +17,8 @@ function About() {
           We&apos;re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those featured on the TV show Battlebots.
           Each year, we build two 12lb mechanical bots and one 3lb battlebot with AI based functionality.
         </Typography>
-        <Box height="20px" />
-        <Stack direction="row" spacing="220px">
+        <Box height="50px" />
+        <Stack direction="row" spacing="300px">
           <Stack>
             <Typography variant="h3">40+</Typography>
             <Typography>members</Typography>
@@ -37,7 +37,7 @@ function About() {
           </Stack>
         </Stack>
       </Box>
-      <Box height="40px" />
+      <Box height="50px" />
       <Box ml="50px">
         <Typography variant="h2" align="left" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans' }}>
           What do we value?
@@ -62,7 +62,7 @@ function About() {
         </Typography>
       </Box>
 
-      <Stack direction="row" sx={{ gap: 5, padding: 3 }} >
+      <Stack direction="row" sx={{ gap: 10, padding: 8 }} >
         <RedBox title="SUPPORT US" text="We're always looking to form valuable partnerships with companies and sponsors, and rely heavily on individual donations to keep our team running." 
           word="SPONSOR!" link="/sponsors" />
         <RedBox title="JOIN US" text="Interested in joining our unique team? We'd love to meet you during our application season, regardless of major or prior experience!"
