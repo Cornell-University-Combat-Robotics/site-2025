@@ -23,9 +23,14 @@ export default function Sponsors() {
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         OUR SPONSORS
       </Typography>
-      <Typography sx={{ fontFamily: 'Josefin Sans', mt: 2 }}>
-        As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet. You can also directly donate through Cornell above, please specify that the donation is for Combat Robotics at Cornell. We are a 501(c)(3) organization and all donations are tax deductible. Reach out to us directly if you're interested in making a specific arrangement not outlined in the sponsorship packet above.
-      </Typography>
+      <Box display='flex' justifyContent="center" sx={{flexDirection: 'column'}}>
+        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+          As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet.
+        </Typography>
+        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+          You can also directly donate through Cornell above, please specify that the donation is for Combat Robotics at Cornell. We are a 501(c)(3) organization and all donations are tax deductible. Reach out to us directly if you're interested in making a specific arrangement not outlined in the sponsorship packet above.
+        </Typography>
+      </Box>
     </Box>
   );
 }
