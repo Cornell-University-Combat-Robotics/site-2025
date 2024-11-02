@@ -32,22 +32,27 @@ const teamMembers: Record<string, MemberProps[]> = {
   Marketing: [
     {
       imgSrc: "/team-members/RachelPineda.png",
+      name: "Javohir Abdurazzakov",
+      position: ["Marketing Co-Lead"],
+    },
+    {
+      imgSrc: "/team-members/RachelPineda.png",
       name: "Rachel Pineda",
       position: ["Marketing Co-Lead"],
     },
     {
       imgSrc: "/team-members/RachelPineda.png",
-      name: "Javohir",
-      position: ["Marketing Co-Lead"],
-    },
-    {
-      imgSrc: "/team-members/RachelPineda.png",
-      name: "Evan Zhu",
+      name: "Angela Zhu",
       position: ["Marketing Member"],
     },
     {
       imgSrc: "/team-members/RachelPineda.png",
-      name: "Angela Zhu",
+      name: "Crystal Li",
+      position: ["Marketing Member"],
+    },
+    {
+      imgSrc: "/team-members/RachelPineda.png",
+      name: "Evan Zhu",
       position: ["Marketing Member"],
     },
     {
