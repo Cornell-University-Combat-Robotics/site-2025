@@ -1,10 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import team_photo from "../assets/team-photo-formal.png";
 import TeamMemberList from "../components/MemberList";
+import GradientNavBar from '../components/GradientNavBar';
 
 export default function Teams() {
   return (
+    <>
     <Box>
+    <GradientNavBar />
       <Box position="relative" display="inline-block">
         <img src={team_photo} style={{ width: '100%', height: 'auto' }} />
         <Typography
@@ -38,5 +41,6 @@ export default function Teams() {
       </Typography>
       <TeamMemberList teamName={"Sportsman"} />
     </Box>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
 import About from "./pages/about";
 import Teams from './pages/teams';
 import Robots from './pages/robots';
@@ -15,15 +15,14 @@ function App() {
     <>
       <main>
         <Router>
-          <NavBar />
           <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/robots" element={<Robots />} />
-            <Route path="/sponsors" element={<Sponsors />} />
-            <Route path="/game" element={<Game />} />
-            <Route path="/apply" element={<Apply />} />
-            <Route path="/accessibility" element={<Accessibility />} />
+            <Route path="/" element={<><NavBar /><About /></>} />
+            <Route path="/teams" element={<Teams/>} />
+            <Route path="/robots" element={<><NavBar /><Robots /></>} />
+            <Route path="/sponsors" element={<><NavBar /><Sponsors /></>} />
+            <Route path="/game" element={<><NavBar /><Game /></>} />
+            <Route path="/apply" element={<><NavBar /><Apply /></>} />
+            <Route path="/accessibility" element={<><NavBar /><Accessibility /></>} />
           </Routes>
           <Footer />
         </Router>
