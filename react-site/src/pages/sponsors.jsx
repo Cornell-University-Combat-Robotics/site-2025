@@ -1,10 +1,14 @@
 import { Box, Button, Typography, Grid2 } from "@mui/material";
 import team from "../assets/team-photo-hearts.png";
-import platLogo from "../assets/crc_plat.png"
+import platLogo from "../assets/crc_plat.png";
 import asmlLogo from "../assets/asml.png";
 import kfmLogo from "../assets/kfm.png";
 import nhlrLogo from "../assets/nhrl.png";
 import autodeskLogo from "../assets/autodesk.png";
+import cornellEngLogo from "../assets/cornell_engineering_logo.png"
+import goldLogo from "../assets/crc_gold.png"
+import keenLogo from "../assets/Keen_Insites_Logo_3.png"
+import angelLogo from "../assets/Angel_Shot_Logo.png"
 
 export default function Sponsors() {
   return (
@@ -44,8 +48,8 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
-      {/* Sponsor Logos Section */}
-      <Box display = "flex" justifyContent="center" alignContent="center">
+      {/* Sponsor Logos Section with Light Blue Rectangle */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
         <Box
           display="flex"
           justifyContent="space-between"
@@ -54,8 +58,8 @@ export default function Sponsors() {
           sx={{
             backgroundColor: '#212D38',
             padding: '20px',
-            mt: 5,
             color: 'white',
+            position: 'relative'
           }}
         >
           {/* Left side: large logo and title */}
@@ -106,17 +110,86 @@ export default function Sponsors() {
               />
             </Grid2>
           </Grid2>
+
           {/* Light Blue Rectangle */}
           <Box
             sx={{
               position: 'absolute',
-              right: '-20px', // Position it slightly outside the section
+              right: '0px',
               top: 0,
               bottom: 0,
               width: '20px',
-              backgroundColor: '2AF1F1', // Light blue color
+              backgroundColor: '#2AF1F1', // Light blue color
             }}
           />
+        </Box>
+      </Box>
+
+      {/* Gold Sponsor Logos Section with Gold Rectangle */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width="75%"
+          sx={{
+            backgroundColor: '#342819',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Gold Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#DEBF28', // Gold color
+            }}
+          />
+          {/* Left side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Box
+                component="img"
+                src={cornellEngLogo}
+                alt="Cornell Engineering Logo"
+                sx={{ width: '350px', height: 'auto' }}
+              />
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Box
+                component="img"
+                src={keenLogo}
+                alt="Keen Insites Logo"
+                sx={{ width: "450px", height: 'auto' }}
+              />
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Box
+                component="img"
+                src={angelLogo}
+                alt="Angel Shot Logo"
+                sx={{ width: '200px', height: 'auto' }}
+              />
+            </Grid2>
+          </Grid2>
+
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={goldLogo}
+              alt="Large Gold Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              GOLD
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
