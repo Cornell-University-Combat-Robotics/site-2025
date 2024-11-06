@@ -1,6 +1,7 @@
 import nardo_whole from '../assets/nardo-whole.png';
 import { Box, Stack, Typography } from '@mui/material';
 import RobotCard from '../components/RobotCard';
+import RobotCardList from '../components/RobotCardList';
 
 export default function Robots() {
   return (
@@ -89,20 +90,7 @@ export default function Robots() {
         </Typography>
       </Box>
 
-      <RobotCard 
-        name='Beater' 
-        image={nardo_whole} 
-        subteam='Kinetic' 
-        desc="Rosie, Kinetic' s second competition-ready robot, is a 12lb combat robot with a horizontally spinning weapon." 
-        color={0}
-      />
-      <RobotCard 
-        name='Nardo' 
-        image={nardo_whole} 
-        subteam='Sportsman' 
-        desc="Rosie, Kinetic' s second competition-ready robot, is a 12lb combat robot with a horizontally spinning weapon." 
-        color={1} 
-      />
+      <RobotCardList type='Retired' capacity={3} />
 
       <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
         3 LB ROBOTS
@@ -119,6 +107,8 @@ export default function Robots() {
           Integer elementum lobortis mi vitae varius.
         </Typography>
       </Box>
+
+      <RobotCardList type='Three_lb' capacity={4} />
 
     </Box>
   );
