@@ -14,14 +14,24 @@ export interface RobotCardProps {
 }
 
 export default function RobotCard(props: RobotCardProps) {
+  const background_color = props.color === 0 ? "#820002" : "#B85658";
+
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: props.color === 0 ? "#820002" : "#B85658", color: 'white' }}>
+    <Card sx={{ maxWidth: 345, bgcolor: background_color, color: 'white' }}
+      style={{
+        borderRadius: "7%",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          image={props.image}
-          alt="Robot image"
-        />
+        <Box width="70%" borderRadius="7%" bgcolor={background_color == "#820002" ? "#B23030" : "#ED9191"}>
+          <CardMedia
+            component="img"
+            image={props.image}
+            alt="Robot image"
+          />
+        </Box>
         <CardContent>
           <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
             {props.name}

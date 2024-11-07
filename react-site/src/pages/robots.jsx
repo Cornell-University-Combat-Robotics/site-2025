@@ -61,7 +61,7 @@ export default function Robots() {
       <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
         <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
         <Stack spacing={2} mt='10'>
-          <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>TBD | Autonomous</Typography>
+          <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Huey | Autonomous</Typography>
           <Typography variant='body' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur nisl quis diam iaculis ultricies.
             Proin at fringilla lacus, vulputate viverra nisl. Phasellus et nibh sed metus varius fringilla in eu nulla.
