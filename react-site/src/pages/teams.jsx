@@ -6,8 +6,8 @@ import GradientNavBar from '../components/GradientNavBar';
 export default function Teams() {
   return (
     <>
-    <Box>
-    <GradientNavBar />
+    <GradientNavBar/>
+    <Box position="relative" sx = {{ top:0}}>
       <Box position="relative" display="inline-block">
         <img src={team_photo} style={{ width: '100%', height: 'auto' }} />
         <Typography

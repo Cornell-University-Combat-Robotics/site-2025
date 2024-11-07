@@ -3,17 +3,22 @@ import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
+/* 
+GradientNavBar creates a navigation bar with a semi-transparent gradient for the top of the page. It must be called separately in each
+page that it is added to, and must be called at the beginning of the page. Refer to the teams.jsx page for reference.
+*/
 export default function GradientNavBar() {
   return (
     <Box
       id="navbar-wrapper"
       sx={{
         top: "0px",
-        right: "0px",
-        zIndex: 1000,
+        left:"0px",
+        right:"0px",
+        zIndex: 1000, //used to ensure the nav bar is in front of all other elements on the page
         background: 'linear-gradient(to top,  transparent, black)',
         alignItems: "center",
-        my: -7,
+        position: "absolute",
         py: 1.5,
         px: 4,
         display: "flex",
@@ -24,6 +29,7 @@ export default function GradientNavBar() {
       <Box
         id="navbar-links"
         sx={{
+          right: "0px",
           display: "flex",
           gap: 2,
         }}

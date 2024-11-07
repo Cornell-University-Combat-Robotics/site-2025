@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from './components/NavBar';
+import NavBar from './components/navBar';
 import About from "./pages/about";
 import Teams from './pages/teams';
 import Robots from './pages/robots';
@@ -9,6 +9,7 @@ import Game from './pages/game';
 import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
+import GradientNavBar from './components/GradientNavBar';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
       <main>
         <Router>
           <Routes>
-            <Route path="/" element={<><NavBar /><About /></>} />
-            <Route path="/teams" element={<Teams/>} />
+            <Route path="/" element={<><NavBar/><About /></>} />
+            <Route path="/teams" element={<><Teams/></>} />
             <Route path="/robots" element={<><NavBar /><Robots /></>} />
             <Route path="/sponsors" element={<><NavBar /><Sponsors /></>} />
             <Route path="/game" element={<><NavBar /><Game /></>} />
