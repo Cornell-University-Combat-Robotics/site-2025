@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Grid2 } from "@mui/material";
+import { Box, Button, Typography, Grid2, Link } from "@mui/material";
 import team from "../assets/team-photo-hearts.png";
 import platLogo from "../assets/crc_plat.png";
 import asmlLogo from "../assets/asml.png";
@@ -9,6 +9,14 @@ import cornellEngLogo from "../assets/cornell_engineering_logo.png"
 import goldLogo from "../assets/crc_gold.png"
 import keenLogo from "../assets/Keen_Insites_Logo_3.png"
 import angelLogo from "../assets/Angel_Shot_Logo.png"
+import silverLogo from "../assets/crc_silver.png"
+import boeingLogo from "../assets/boeing.png"
+import bronzeLogo from "../assets/crc_bronze.png"
+import polarisLogo from "../assets/polaris_3.png"
+import empireLogo from "../assets/empire-plastics.png"
+import paragonLogo from "../assets/paragon_2.png"
+import purpleLogo from "../assets/crc_purple.png"
+import redbullLogo from "../assets/redbull.png"
 
 export default function Sponsors() {
   return (
@@ -78,36 +86,44 @@ export default function Sponsors() {
           {/* Right side: Sponsor logos Grid2 */}
           <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={asmlLogo}
-                alt="ASML Logo"
-                sx={{ width: '250px', height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={asmlLogo}
+                  alt="ASML Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
             </Grid2>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={kfmLogo}
-                alt="KFM Logo"
-                sx={{ width: "250px", height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={kfmLogo}
+                  alt="KFM Logo"
+                  sx={{ width: "250px", height: 'auto' }}
+                />
+              </Link>
             </Grid2>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={nhlrLogo}
-                alt="NHRL Logo"
-                sx={{ width: '250px', height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={nhlrLogo}
+                  alt="NHRL Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
             </Grid2>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={autodeskLogo}
-                alt="Autodesk Logo"
-                sx={{ width: '250px', height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={autodeskLogo}
+                  alt="Autodesk Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
             </Grid2>
           </Grid2>
 
@@ -153,28 +169,34 @@ export default function Sponsors() {
           {/* Left side: Sponsor logos Grid2 */}
           <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={cornellEngLogo}
-                alt="Cornell Engineering Logo"
-                sx={{ width: '350px', height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={cornellEngLogo}
+                  alt="Cornell Engineering Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                />
+              </Link>
             </Grid2>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={keenLogo}
-                alt="Keen Insites Logo"
-                sx={{ width: "450px", height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={keenLogo}
+                  alt="Keen Insites Logo"
+                  sx={{ width: "450px", height: 'auto' }}
+                />
+              </Link>
             </Grid2>
             <Grid2 item xs={6} sm={3}>
-              <Box
-                component="img"
-                src={angelLogo}
-                alt="Angel Shot Logo"
-                sx={{ width: '200px', height: 'auto' }}
-              />
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={angelLogo}
+                  alt="Angel Shot Logo"
+                  sx={{ width: '200px', height: 'auto' }}
+                />
+              </Link>
             </Grid2>
           </Grid2>
 
@@ -190,6 +212,196 @@ export default function Sponsors() {
               GOLD
             </Typography>
           </Box>
+        </Box>
+      </Box>
+
+      {/* Silve Sponsor Logos Section with Grey Rectangle */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width="75%"
+          sx={{
+            backgroundColor: '#383838',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={silverLogo}
+              alt="Large Silver Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              SILVER
+            </Typography>
+          </Box>
+
+          {/* Right side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} mx="auto" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={boeingLogo}
+                  alt="Boeing Logo"
+                  sx={{ width: '450px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Light Grey Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              right: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#B8B8B8', // Light grey color
+            }}
+          />
+        </Box>
+      </Box>
+
+      {/* Bronze Sponsor Logos Section with Bronze Rectangle */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width="75%"
+          sx={{
+            backgroundColor: '#352216',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Bronze Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#CF5401', // Bronze color
+            }}
+          />
+          {/* Left side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={polarisLogo}
+                  alt="Polaris Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                  mb="-100px"
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={empireLogo}
+                  alt="Empite Plastics Logo"
+                  sx={{ width: "180px", height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={paragonLogo}
+                  alt="Paragon Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={bronzeLogo}
+              alt="Large Bronze Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              BRONZE
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Partner Logos Section with Purple Rectangle */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width="75%"
+          sx={{
+            backgroundColor: '#291936',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={purpleLogo}
+              alt="Large Purple Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              PARTNERS
+            </Typography>
+          </Box>
+
+          {/* Right side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={redbullLogo}
+                  alt="Red Bull Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Typography sx={{ fontFamily: 'Montserrat', fontSize: "2.5rem" }}> BOVAY LABORATORY COMPLEX </Typography>
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Light Purple Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              right: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#8307E4', // Light purple color
+            }}
+          />
         </Box>
       </Box>
     </Box>
