@@ -8,6 +8,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: "Kinetic",
       desc: "Beater desc",
       image: nardo,
+      link: "../pages/robots/beater",
       color: 0,
     },
     {
