@@ -12,7 +12,7 @@ export default function Beater() {
       featured_fight="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       design="Beater desc"
       trivia={["Trivia 1", "Trivia 2"]}
-      fights={["Fight 1", "Fight 2"]}
+      fights={[["Fight 1", "Fight 2"], ["", ""]]}
       gallery_imgs={["https://i.imgur.com/7Vz9JZ2.png", "https://i.imgur.com/7Vz9JZ2.png"]}
       gallery_vids={["https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
     />

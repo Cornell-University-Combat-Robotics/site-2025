@@ -1,5 +1,5 @@
 import { RobotCardProps } from "../components/RobotCard";
-import nardo from "../assets/nardo-whole.png";
+import nardoPhoto from "../assets/nardo-whole.png";
 
 const RobotsData: Record<string, RobotCardProps[]> = {
   Retired: [
@@ -7,22 +7,24 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       name: "Beater B. Barker",
       subteam: "Kinetic",
       desc: "Beater desc",
-      image: nardo,
-      link: "../pages/robots/beater",
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 0,
     },
     {
       name: "Kinetic 2",
       subteam: "Kinetic",
       desc: "The second kinetic bot",
-      image: nardo,
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 1,
     },
     {
       name: "Kinetic 2",
       subteam: "Kinetic",
       desc: "The second kinetic bot",
-      image: nardo,
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 0,
     },
     
@@ -32,28 +34,32 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       name: "Three Pound Bot",
       subteam: "FA '24",
       desc: "The first 3lb bot",
-      image: nardo,
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 0,
     },
     {
       name: "Three Pound Bot",
       subteam: "FA '24",
       desc: "The first 3lb bot",
-      image: nardo,
+      image: nardoPhoto, 
+      link: "/robots/beater",
       color: 1,
     },
     {
       name: "Three Pound Bot",
       subteam: "FA '24",
       desc: "The first 3lb bot",
-      image: nardo,
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 0,
     },
     {
       name: "Three Pound Bot",
       subteam: "FA '24",
       desc: "The first 3lb bot",
-      image: nardo,
+      image: nardoPhoto,
+      link: "/robots/beater",
       color: 1,
     },
   ]
