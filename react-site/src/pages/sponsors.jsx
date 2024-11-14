@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import team from "../assets/team-photo-hearts.png";
 
+/** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
   return (
     <Box>
