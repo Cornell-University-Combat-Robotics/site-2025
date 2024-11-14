@@ -18,6 +18,7 @@ import redbullLogo from "../assets/redbull.png"
 import daylightLogo from "../assets/daylight.png"
 import raymondLogo from "../assets/raymond.png"
 import sendcutsendLogo from "../assets/sendcutsend.png"
+import pdfFile from '../assets/2023-24_packet.pdf';
 
 export default function Sponsors() {
   return (
@@ -43,9 +44,9 @@ export default function Sponsors() {
       </Typography>
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
         <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
-          <Button sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px" }}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px" }}>DONATE THROUGH CORNELL</Button>
-          <Button sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px" }}>DONATE THROUGH GIVING DAY</Button>
+          <Button href = {pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',},}}>VIEW OUR SPONSORSHIP PACKET</Button>
+          <Button href = "https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',}}}>DONATE THROUGH CORNELL</Button>
+          <Button href = "https://givingday.cornell.edu/campaigns/combat-robotics" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',}}}>DONATE THROUGH GIVING DAY</Button>
         </Box>
       </Box>
       <Box display='flex' justifyContent="center" alignItems="center" sx={{ flexDirection: 'column' }}>
