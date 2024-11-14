@@ -1,13 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import team_photo from "../assets/team-photo-formal.png";
 import TeamMemberList from "../components/MemberList";
-import GradientNavBar from '../components/GradientNavBar';
 
+/** Teams creates the Teams page of the website. */
 export default function Teams() {
   return (
     <>
     <Box position="relative" >
-      <Box position="relative" display="inline-block">
+      <Box position="relative" display="inline-block"> {/* Set position to relative for GradientNavBar. */}
         <img src={team_photo} style={{ width: '100%', height: 'auto' }} />
         <Typography
           variant="h1"
