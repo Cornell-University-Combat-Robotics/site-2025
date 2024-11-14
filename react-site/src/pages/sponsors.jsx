@@ -15,7 +15,7 @@ export default function Sponsors() {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
+            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)' // Add drop shadow
           }}
         >
           SUPPORT THE TEAM
