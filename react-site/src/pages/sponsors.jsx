@@ -24,6 +24,8 @@ import pdfFile from '../assets/2023-24_packet.pdf';
 export default function Sponsors() {
   return (
     <Box>
+      {/*Landing Page with img component in background and Typography (text) on
+      top the center of the image*/}
       <Box position="relative" display="inline-block">
         <img src={team} style={{ width: '100%', height: 'auto' }} />
         <Typography
@@ -40,16 +42,28 @@ export default function Sponsors() {
           SUPPORT THE TEAM
         </Typography>
       </Box>
+
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         OUR SPONSORS
       </Typography>
+      {/*Three horizontal buttons for 3 actions users can do. Nested in a double 
+      box. The inside box sets the width to 75% of screen. The outside box sets 
+      the content inside (the inner box) to be center of screen horizontally. 
+      Use hred within Button mui component to link the button. sx is the styling 
+      details. &focus is for when the button is clicked (removing the blue border 
+      when clicked. &hover is for making the text color white (don't change when
+      button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
         <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
-          <Button href = {pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',},}}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button href = "https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',}}}>DONATE THROUGH CORNELL</Button>
-          <Button href = "https://givingday.cornell.edu/campaigns/combat-robotics" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': {outline: 'none',}, '&:hover': {color: 'white',}}}>DONATE THROUGH GIVING DAY</Button>
+          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
+          <Button href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          <Button href="https://givingday.cornell.edu/campaigns/combat-robotics" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
         </Box>
       </Box>
+
+      {/*The box component centers the content inside and sets them to stack vertically
+      hence "column". The Typography is the text component, we have with to 75% of
+      screen. */}
       <Box display='flex' justifyContent="center" alignItems="center" sx={{ flexDirection: 'column' }}>
         <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet.
@@ -59,7 +73,17 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
-      {/* Sponsor Logos Section with Light Blue Rectangle */}
+      {/* Sponsor Logos Section with Light Blue Rectangle:
+      The outer Box centers the content inside horizontally with flexbox. 
+      The nested Box (inside) sets the width to 75% of the screen and creates
+      a dark blue background for the section. Inside this, we have two main parts:
+      - Left side: Displays the large Platinum logo and a title ("PLATINUM").
+      - Right side: Uses a Grid2 component for a responsive layout of sponsor logos. 
+        Each sponsor logo is wrapped in a Link component for external navigation. 
+        The ml (margin-left) offsets the Grid2 from the left side for better spacing.
+      - Finally, a light blue vertical rectangle is created using an absolutely 
+        positioned Box component on the right edge. */}
+
       <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
         <Box
           display="flex"
@@ -144,7 +168,13 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* Gold Sponsor Logos Section with Gold Rectangle */}
+      {/* Gold Sponsor Logos Section with Gold Rectangle:
+      This section follows the same double Box structure as above for consistent 
+      layout. The outer Box centers the content, and the inner Box sets the width 
+      and adds the gold background color. The left side has a gold rectangle (Box)
+      positioned absolutely, creating a decorative gold stripe on the left edge.
+      - The sponsor logos are displayed using a Grid2 component for responsiveness.
+      - The last part displays the large Gold logo with a "GOLD" title below it. */}
       <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
         <Box
           display="flex"
@@ -238,7 +268,14 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* Silve Sponsor Logos Section with Grey Rectangle */}
+      {/* Silver Sponsor Logos Section with Grey Rectangle:
+      Similar to the previous sections, this follows the same Box layout pattern.
+      - The inner Box sets the width, background color (grey), and positions the 
+        light grey rectangle on the right using absolute positioning.
+      - The left side shows the large Silver logo and title ("SILVER").
+      - The right side includes a single sponsor logo (Boeing) displayed in a Grid2 item.
+      - The layout maintains consistency across sections, with the grey rectangle 
+        adding a visual separator. */}
       <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
         <Box
           display="flex"
@@ -293,7 +330,13 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* Bronze Sponsor Logos Section with Bronze Rectangle */}
+      {/* Bronze Sponsor Logos Section with Bronze Rectangle:
+      Follows the same structure as the previous sections with a double Box layout.
+      - The background color is set to a dark bronze shade.
+      - The left edge has a bronze vertical rectangle positioned absolutely for design.
+      - The sponsor logos are listed in a responsive Grid2 component.
+      - The section ends with the large Bronze logo and "BRONZE" title centered 
+        vertically and horizontally. */}
       <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
         <Box
           display="flex"
@@ -347,7 +390,14 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* Partner Logos Section with Purple Rectangle */}
+      {/* Partner Logos Section with Purple Rectangle:
+      This section continues the layout pattern for consistency.
+      - The background is set to a dark purple, matching the theme color for partners.
+      - The left side displays the large purple logo and the title "PARTNERS".
+      - The right side uses a Grid2 component for partner logos, including the Red Bull 
+        logo and a Typography component for Bovay Laboratory Complex (styled as a link).
+      - A light purple rectangle is positioned absolutely on the right edge for design.
+      - This section, like the others, maintains alignment and visual hierarchy. */}
       <Box display="flex" justifyContent="center" alignItems="center" mt={5} mb={5}>
         <Box
           display="flex"
@@ -406,6 +456,16 @@ export default function Sponsors() {
           />
         </Box>
       </Box>
+
+      {/* FAQ Section:
+      This section uses a Box component to create a full-width background with a dark red color.
+      - The padding and box-sizing ensure consistent spacing without causing overflow.
+      - The content includes a centered Typography title ("FAQ") followed by Accordion components 
+        for each FAQ item. The Accordion items use expand icons (ExpandMoreIcon) to toggle visibility.
+      - Each AccordionSummary contains a Typography element with italic styling, and the 
+        AccordionDetails contain the answer text.
+      - Dividers are used between Accordion items for separation.
+      - The footer contains a centered Typography with contact information for further questions. */}
       <Box
         justifyContent="center"
         alignItems="center"
