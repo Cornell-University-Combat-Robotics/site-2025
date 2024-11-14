@@ -5,12 +5,14 @@ export default function Beater() {
   return (
     <IndividualRobot
       name="Beater B. Barker"
-      makers={["John Doe", "Jane Doe"]}
-      desc="Beater desc"
+      makers={["Anna Boese", "Isaac Newcomb", "Stella Taglich", "Zander Knight", "James LaSalle", "Ethan Hernandez", "Kevin Sturm", "Mattew Anazco", "Mohammed Chowdhury"]}
+      desc="Beater B. Barker? I hardly know her! With his big 🅱 energy and his quick footwork on the arena floor, Beater absolutely dominates the competition. However, his one fatal flaw is the hubris of having a flywheel: he thinks he can turn on a dime, but he has to lean on the wall for 10 seconds if he's overzealous. This can (and has) cost him the match. He weeps when he remembers that day, but he knows there are more Beater Barkers out there in the S🅱iderverse, and one of them will win the championship when the time comes."
       image="/src/assets/nardo-whole.png"
       stats={["Wins: 3", "Losses: 1", "KOs: 2"]}
       featured_fight="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-      design="Beater desc"
+      design="A counter-rotating brass flywheel sits in the center of Beater's bright red beater bar. Powered separately, the flywheel and weapon counteract each other's angular momentum to reduce the gyro effect when Beater turns in place. This means he can pack the punch of a heavy hitter without getting bogged down by maneuverability problems.
+      Speaking of maneuverability, Beater maximizes grip and speed with its titanium-cleated 4-wheel indirect drivetrain. With a top speed of 11 mph and an acceleration to full speed in a fraction of a second, there's no outrunning this bot. UHMW wheel guards keep the belts and pulleys protected, and 1/2 inch aluminum standoffs allow for quick, easy service.
+      Also highly serviceable is the electronics compartment, housed in a UHMW billet frame and extending upward into a 3D - printed carbon - fiber nylon shell.The weapon uprights sandwich the electronics, held together by titanium rings that bolt in from the top and bottom."
       trivia={["Trivia 1", "Trivia 2"]}
       fights={[["Fight 1", "Fight 2"], ["", ""]]}
       gallery_imgs={["https://i.imgur.com/7Vz9JZ2.png", "https://i.imgur.com/7Vz9JZ2.png"]}

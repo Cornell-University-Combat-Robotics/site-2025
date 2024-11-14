@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export interface RobotCardProps {
   name: string; // Name of the robot
   subteam: string // Subteam the bot belongs to (Kinetic, Sportsman, etc). For 3lb bots, this will be the semester they were built.
-  desc?: string; // Short desscription of the bot
+  desc?: string; // Short description of the bot
   image: string; // Link to the file location of the robot
   link: string; // Link to the individual robot page
   color: number; // 0 for red, 1 for pink
@@ -17,6 +17,7 @@ export default function RobotCard(props: RobotCardProps) {
   const background_color = props.color === 0 ? "#820002" : "#B85658";
 
   return (
+    // Link is the outermost compponent to make the entire card link to the individual robot page.
     <Link to={props.link}>
       <Card sx={{ maxWidth: 345, bgcolor: background_color, color: 'white' }}
         style={{

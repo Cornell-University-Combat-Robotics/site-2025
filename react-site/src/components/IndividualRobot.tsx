@@ -1,6 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
+/* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
+  it when the user navigates to it.
+
+  This file serves as a general component for individual robot pages. The idea is that it will format and render an IndividualRobot page
+  completely, using the specific input passed in. This way, all the actual individual robot pages need to do is pass in the correct data to this reusable component.
+*/
 export interface IndividualRobotProps {
   name: string; // Name of the robot
   makers: string[]; // Members who worked on the robot
@@ -18,12 +24,31 @@ export interface IndividualRobotProps {
 
 export default function IndividualRobot(props: IndividualRobotProps) {
   return (
-    <Box ml={15} mt={7}>
+    <Box ml={15} mt={7} style={{ textAlign: 'left' }}>
       <Typography variant="h2" align="left">{props.name}</Typography>
-      <Typography variant="h4" align="left" style={{ fontStyle: 'italic' }}>
+      {/* **Include the nickname */}
+      <Typography variant="h4" align="left" width='80%' style={{ fontStyle: 'italic' }}>
         {props.makers.join(', ')}
       </Typography>
-      Description
+      <Typography variant="h5" mt={5}>Description</Typography>
+      {props.desc}
+      <Typography variant="h5" mt={5}>Featured Fight</Typography>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+      <Typography variant="h5" mt={5}>Design</Typography>
+      {props.design}
+      <Typography variant="h5" mt={5}>Trivia</Typography>
+      {props.trivia}
+      <Typography variant="h5" mt={5}>Fights</Typography>
+      {props.fights}
+      <Typography variant="h5" mt={5}>Gallery</Typography>
 
     </Box>
   );
