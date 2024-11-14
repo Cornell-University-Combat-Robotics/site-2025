@@ -4,8 +4,7 @@ import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
 /* 
-GradientNavBar creates a navigation bar with a semi-transparent gradient for the top of the page. It must be called separately in each
-page that it is added to, and must be called at the beginning of the page. Refer to the teams.jsx page for reference.
+GradientNavBar creates a navigation bar with a semi-transparent gradient for the top of the page.
 */
 export default function GradientNavBar() {
   return (
