@@ -10,10 +10,18 @@ import Game from './pages/game';
 import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+
+const theme = createTheme();
+
+theme.typography.body1 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '1.2rem',
+};
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <main>
         <Router>
           <Routes>
@@ -28,7 +36,7 @@ function App() {
           <Footer />
         </Router>
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 
