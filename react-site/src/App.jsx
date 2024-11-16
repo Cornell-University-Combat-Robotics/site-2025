@@ -12,11 +12,7 @@ import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
-const theme = createTheme({
-  typography: {
-    fontSize: 12,
-  },
-});
+const theme = createTheme();
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
