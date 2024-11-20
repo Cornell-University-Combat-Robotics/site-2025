@@ -10,7 +10,6 @@ import Game from './pages/game';
 import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
-import GradientNavBar from './components/GradientNavBar';
 import Beater from './pages/robots/beater';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
