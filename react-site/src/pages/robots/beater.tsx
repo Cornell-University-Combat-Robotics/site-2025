@@ -9,7 +9,7 @@ export default function Beater() {
       description="Beater B. Barker? I hardly know her! With his big 🅱 energy and his quick footwork on the arena floor, Beater absolutely dominates the competition. However, his one fatal flaw is the hubris of having a flywheel: he thinks he can turn on a dime, but he has to lean on the wall for 10 seconds if he's overzealous. This can (and has) cost him the match. He weeps when he remembers that day, but he knows there are more Beater Barkers out there in the S🅱iderverse, and one of them will win the championship when the time comes."
       image="/src/assets/nardo-whole.png"
       stats={{
-        year: "2024",
+        vintage: "2024",
         height: "1.5 ft",
         weight: "30 lbs",
         fights: "3",
@@ -50,8 +50,7 @@ export default function Beater() {
           length: "3:30"
         }
       ]}
-      gallery_imgs={["https://i.imgur.com/7Vz9JZ2.png", "https://i.imgur.com/7Vz9JZ2.png"]}
-      gallery_vids={["https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
+      gallery={["/src/assets/nardo-whole.png", "/src/assets/team-photo-hearts.png", "/src/assets/team-photo-formal.png", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
     />
   );
 }
