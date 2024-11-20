@@ -30,7 +30,7 @@ function App() {
             <Route path="/teams" element={<><GradientNavBar/><Teams/></>} />
             <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
-            <Route path="/sponsors" element={<><GradientNavBar/><Sponsors /></>} />bdsnajknmds
+            <Route path="/sponsors" element={<><GradientNavBar/><Sponsors /></>} />
             <Route path="/game" element={<><NavBar/><Game /></>} />
             <Route path="/apply" element={<><GradientNavBar/><Apply /></>} />
             <Route path="/accessibility" element={<><GradientNavBar/><Accessibility /></>} />
