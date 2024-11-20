@@ -54,7 +54,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
         <Grid2 container spacing={10} sx={{ mt: 4, mb: 4 }}>
           <Grid item xs={12} md={8}>
             <Typography variant='h5'>Description</Typography>
-            <Typography mb={5}>Robot desciption...</Typography>
+            <Typography mb={5}>{props.description}</Typography>
             <Typography variant='h5'>Featured Fight</Typography>
             <iframe
               width="560"
@@ -89,7 +89,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
         {/* Design Section */}
         <Typography variant="h4" gutterBottom>Design</Typography>
-        <Typography variant="body1">{props.description}</Typography>
+        <Typography variant="body1">{props.design}</Typography>
 
         {/* Trivia Section */}
         <Box sx={{ mt: 4 }}>
