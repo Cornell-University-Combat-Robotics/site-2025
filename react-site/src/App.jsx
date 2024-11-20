@@ -10,6 +10,8 @@ import Game from './pages/game';
 import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
+import GradientNavBar from './components/GradientNavBar';
+import Beater from './pages/robots/beater';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 const theme = createTheme();
@@ -28,6 +30,7 @@ function App() {
             <Route path="/" element={<><NavBar/><About /></>} />
             <Route path="/teams" element={<><GradientNavBar/><Teams/></>} />
             <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
+            <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
             <Route path="/sponsors" element={<><GradientNavBar/><Sponsors /></>} />
             <Route path="/game" element={<><NavBar/><Game /></>} />
             <Route path="/apply" element={<><GradientNavBar/><Apply /></>} />
