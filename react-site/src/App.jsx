@@ -19,7 +19,7 @@ const theme = createTheme();
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.2rem',
+  fontSize: '1.6rem',
 };
 
 function App() {
