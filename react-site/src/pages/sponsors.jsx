@@ -1,23 +1,6 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import team from "../assets/team-photo-hearts.png";
-import platLogo from "../assets/crc_plat.png";
-import asmlLogo from "../assets/asml.png";
-import kfmLogo from "../assets/kfm.png";
-import nhlrLogo from "../assets/nhrl.png";
-import autodeskLogo from "../assets/autodesk.png";
-import cornellEngLogo from "../assets/cornell_engineering_logo.png"
-import goldLogo from "../assets/crc_gold.png"
-import keenLogo from "../assets/Keen_Insites_Logo_3.png"
-import angelLogo from "../assets/Angel_Shot_Logo.png"
-import silverLogo from "../assets/crc_silver.png"
-import boeingLogo from "../assets/boeing.png"
-import bronzeLogo from "../assets/crc_bronze.png"
-import purpleLogo from "../assets/crc_purple.png"
-import redbullLogo from "../assets/redbull.png"
-import daylightLogo from "../assets/daylight.png"
-import raymondLogo from "../assets/raymond.png"
-import sendcutsendLogo from "../assets/sendcutsend.png"
 import pdfFile from '../assets/2023-24_packet.pdf';
 
 /** Sponsors creates the Sponsors page of the website. */
@@ -101,7 +84,7 @@ export default function Sponsors() {
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box
               component="img"
-              src={platLogo}
+              src={"/sponsors/crc_plat.png"}
               alt="Large Plat Logo"
               sx={{ width: '400px', height: 'auto', mb: 2 }}
             />
@@ -116,7 +99,7 @@ export default function Sponsors() {
               <Link href="https://www.asml.com/en">
                 <Box
                   component="img"
-                  src={asmlLogo}
+                  src={"/sponsors/asml.png"}
                   alt="ASML Logo"
                   sx={{ width: '250px', height: 'auto' }}
                 />
@@ -126,7 +109,7 @@ export default function Sponsors() {
               <Link href="https://www.kfm-llc.com/">
                 <Box
                   component="img"
-                  src={kfmLogo}
+                  src={"/sponsors/kfm.png"}
                   alt="KFM Logo"
                   sx={{ width: "250px", height: 'auto' }}
                 />
@@ -136,7 +119,7 @@ export default function Sponsors() {
               <Link href="https://www.nhrl.io/">
                 <Box
                   component="img"
-                  src={nhlrLogo}
+                  src={"/sponsors/nhrl.png"}
                   alt="NHRL Logo"
                   sx={{ width: '250px', height: 'auto' }}
                 />
@@ -146,7 +129,7 @@ export default function Sponsors() {
               <Link href="https://www.autodesk.com/">
                 <Box
                   component="img"
-                  src={autodeskLogo}
+                  src={"/sponsors/autodesk.png"}
                   alt="Autodesk Logo"
                   sx={{ width: '250px', height: 'auto' }}
                 />
@@ -205,7 +188,7 @@ export default function Sponsors() {
               <Link href="https://www.engineering.cornell.edu/">
                 <Box
                   component="img"
-                  src={cornellEngLogo}
+                  src={"/sponsors/cornell_engineering_logo.png"}
                   alt="Cornell Engineering Logo"
                   sx={{ width: '350px', height: 'auto' }}
                 />
@@ -215,7 +198,7 @@ export default function Sponsors() {
               <Link href="https://angelshotapp.com/">
                 <Box
                   component="img"
-                  src={angelLogo}
+                  src={"/sponsors/Angel_Shot_Logo.png"}
                   alt="Angel Shot Logo"
                   sx={{ width: '200px', height: 'auto' }}
                 />
@@ -225,7 +208,7 @@ export default function Sponsors() {
               <Link href="https://www.keeninsites.com/">
                 <Box
                   component="img"
-                  src={keenLogo}
+                  src={"/sponsors/Keen_Insites_Logo.png"}
                   alt="Keen Insites Logo"
                   sx={{ width: "400px", height: 'auto' }}
                 />
@@ -235,7 +218,7 @@ export default function Sponsors() {
               <Link href="https://daylightsavings.us/">
                 <Box
                   component="img"
-                  src={daylightLogo}
+                  src={"/sponsors/daylight.png"}
                   alt="The Daylight Savings Company Logo"
                   sx={{ width: '400px', height: 'auto' }}
                 />
@@ -245,7 +228,7 @@ export default function Sponsors() {
               <Link href="https://www.raymondcorp.com/">
                 <Box
                   component="img"
-                  src={raymondLogo}
+                  src={"/sponsors/raymond.png"}
                   alt="Raymond Logo"
                   sx={{ width: '350px', height: 'auto' }}
                 />
@@ -257,7 +240,7 @@ export default function Sponsors() {
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box
               component="img"
-              src={goldLogo}
+              src={"/sponsors/crc_gold.png"}
               alt="Large Gold Logo"
               sx={{ width: '400px', height: 'auto', mb: 2 }}
             />
@@ -293,7 +276,7 @@ export default function Sponsors() {
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box
               component="img"
-              src={silverLogo}
+              src={"/sponsors/crc_silver.png"}
               alt="Large Silver Logo"
               sx={{ width: '400px', height: 'auto', mb: 2 }}
             />
@@ -308,7 +291,7 @@ export default function Sponsors() {
               <Link href="https://www.boeing.com/">
                 <Box
                   component="img"
-                  src={boeingLogo}
+                  src={"/sponsors/boeing.png"}
                   alt="Boeing Logo"
                   sx={{ width: '450px', height: 'auto' }}
                 />
@@ -367,7 +350,7 @@ export default function Sponsors() {
               <Link href="https://sendcutsend.com/">
                 <Box
                   component="img"
-                  src={sendcutsendLogo}
+                  src={"/sponsors/sendcutsend.png"}
                   alt="SendCutSend Logo"
                   sx={{ width: '350px', height: 'auto' }}
                 />
@@ -379,7 +362,7 @@ export default function Sponsors() {
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box
               component="img"
-              src={bronzeLogo}
+              src={"/sponsors/crc_bronze.png"}
               alt="Large Bronze Logo"
               sx={{ width: '400px', height: 'auto', mb: 2 }}
             />
@@ -415,7 +398,7 @@ export default function Sponsors() {
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box
               component="img"
-              src={purpleLogo}
+              src={"/sponsors/crc_purple.png"}
               alt="Large Purple Logo"
               sx={{ width: '400px', height: 'auto', mb: 2 }}
             />
@@ -430,7 +413,7 @@ export default function Sponsors() {
               <Link href="https://www.redbull.com/us-en">
                 <Box
                   component="img"
-                  src={redbullLogo}
+                  src={"/sponsors/redbull.png"}
                   alt="Red Bull Logo"
                   sx={{ width: '250px', height: 'auto' }}
                 />
