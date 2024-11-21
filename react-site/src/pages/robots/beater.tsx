@@ -1,7 +1,12 @@
 import React from "react";
 import IndividualRobot from "../../components/IndividualRobot";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 export default function Beater() {
+  // Used to scroll to the top of the page when rendered, there was an issue where the page would be loaded at the bottom.
+  // Not ideal, optimally called just once in App.jsx. For now, need to call in every robot page.
+  useScrollToTop();
+  
   return (
     <IndividualRobot
       name="Beater B. Barker"

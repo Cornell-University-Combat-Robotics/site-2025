@@ -14,6 +14,7 @@ import Beater from './pages/robots/beater';
 import Slugma from './pages/robots/slugma';
 import Batbot from './pages/robots/batbot';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import useScrollToTop from './hooks/useScrollToTop';
 
 const theme = createTheme();
 
@@ -23,6 +24,8 @@ theme.typography.body1 = {
 };
 
 function App() {
+  //useScrollToTop();
+
   return (
     <ThemeProvider theme={theme}>
       <main>

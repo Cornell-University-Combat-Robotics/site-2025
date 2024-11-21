@@ -47,7 +47,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: "FA '24",
       desc: "The first 3lb bot",
       image: nardoPhoto, 
-      link: "/robots/beater",
+      link: "/robots/batbot",
       color: 1,
     },
     {
@@ -55,7 +55,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: "FA '24",
       desc: "The first 3lb bot",
       image: nardoPhoto,
-      link: "/robots/beater",
+      link: "/robots/slugma",
       color: 0,
     },
     {
