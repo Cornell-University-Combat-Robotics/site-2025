@@ -1,13 +1,13 @@
 import React from "react";
 import IndividualRobot from "../../components/IndividualRobot";
 
-export default function Slugma() {
+export default function Swiss() {
   return (
     <IndividualRobot
       name="Slugma"
       makers={["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"]}
       description="FLAMETHROWERS!! Who doesn’t love flamethrowers?"
-      image="/src/assets/3lb/slugma_profile.jpg"
+      image="/src/assets/3lb/swiss_slinger_profile.png"
       stats={{
         vintage: "2024", 
         height: "0 ft",

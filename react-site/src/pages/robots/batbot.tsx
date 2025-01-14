@@ -7,7 +7,7 @@ export default function Batbot() {
       name="Fangular Momentum"
       makers={["Ruslan Black", "Gurjot Gill", "Sophie Cheng", "Ruihan Chu"]}
       description="Growing up in Gotham City’s hardware store Fangular Momentum had a tough upbringing. He decided to turn his dark past into a force for good and take on his alter ego, BatBot. Everyday he protects the aisles of Gotham City’s Home Depot from fierce foes like JokerBot and BaneBot."
-      image={"/robots/3lb/batbot.png"}
+      image={"/src/assets/3lb/batbot.png"}
       stats={{
         vintage: "2024",
         height: "10 inches",
