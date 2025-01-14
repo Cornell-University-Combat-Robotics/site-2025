@@ -32,6 +32,12 @@ export default function RobotCard(props: RobotCardProps) {
               component="img"
               image={props.image}
               alt="Robot image"
+              // Regulates size of all photos
+              sx={{
+                width: 300,
+                height: 200,
+                objectFit: 'cover'
+              }}
             />
           </Box>
           <CardContent>
@@ -39,9 +45,13 @@ export default function RobotCard(props: RobotCardProps) {
               {props.name}
             </Typography>
             <Box bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} sx={{ borderRadius: 5 }} width="19%">
-              <Typography gutterBottom align='left' variant="body2" mx={1}>
+              <Typography gutterBottom align='left' variant="body2" mx={1} 
+                sx={{ 
+                  width: '100%' // Make the Typography fill the full width of the Box
+                }}
+                >
                 {props.subteam}
-              </Typography>
+                </Typography>
             </Box>
             <Typography align='left' variant="body2">
               {props.desc}

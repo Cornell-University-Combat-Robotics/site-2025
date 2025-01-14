@@ -4,7 +4,7 @@ import IndividualRobot from "../../components/IndividualRobot";
 export default function Swiss() {
   return (
     <IndividualRobot
-      name="Slugma"
+      name="The Swiss Slinger"
       makers={["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"]}
       description="FLAMETHROWERS!! Who doesn’t love flamethrowers?"
       image="/src/assets/3lb/swiss_slinger_profile.png"

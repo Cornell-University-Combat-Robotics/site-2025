@@ -4,7 +4,7 @@ import IndividualRobot from "../../components/IndividualRobot";
 export default function Hestr() {
   return (
     <IndividualRobot
-      name="Slugma"
+      name="Dauður Hestr"
       makers={["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"]}
       description="FLAMETHROWERS!! Who doesn’t love flamethrowers?"
       image="/src/assets/3lb/hestr_profile.png"
