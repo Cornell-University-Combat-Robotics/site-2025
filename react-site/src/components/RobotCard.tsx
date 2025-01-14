@@ -44,7 +44,7 @@ export default function RobotCard(props: RobotCardProps) {
             <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
               {props.name}
             </Typography>
-            <Box bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} sx={{ borderRadius: 5 }} width="19%">
+            <Box bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} sx={{ borderRadius: 5 }} width="22%">
               <Typography gutterBottom align='left' variant="body2" mx={1} 
                 sx={{ 
                   width: '100%' // Make the Typography fill the full width of the Box
