@@ -6,7 +6,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Caleb Schlissel",
       position: ["Team Co-Lead", "Example Position 2"],
-      linkedin: "https://linkedin.com/in/rrachelpineada",
+      linkedin: "https://linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -18,7 +18,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Zander Knight",
       position: ["Kinetic Co-Lead"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -30,7 +30,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Narayan Rueppel",
       position: ["Sportsman Co-Lead"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -42,7 +42,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Aaron Harnish",
       position: ["Autonomous Co-Lead"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -54,7 +54,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Javohir Abdurazzakov",
       position: ["Marketing Co-Lead"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -63,12 +63,8 @@ const teamMembers: Record<string, MemberProps[]> = {
     {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Rachel pineada",
-      stats: [
-        ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
-        [90, 50, 80]
-      ],
       position: ["Marketing Co-Lead"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -78,7 +74,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Angela Zhu",
       position: ["Marketing Member"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -88,7 +84,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Crystal Li",
       position: ["Marketing Member"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -98,7 +94,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Evan Zhu",
       position: ["Marketing Member"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
@@ -108,7 +104,7 @@ const teamMembers: Record<string, MemberProps[]> = {
       imgSrc: "/team-members/RachelPineda.png",
       name: "Mei Ling Wood",
       position: ["Marketing Member"],
-      linkedin: "linkedin.com/in/rrachelpineada",
+      linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
         ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
         [90, 50, 80]
