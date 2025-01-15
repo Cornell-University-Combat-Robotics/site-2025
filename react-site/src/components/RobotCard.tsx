@@ -36,7 +36,11 @@ export default function RobotCard(props: RobotCardProps) {
               sx={{
                 width: 300,
                 height: 200,
-                objectFit: 'cover'
+                objectFit: 'cover',
+                backgroundColor: '#ed9191',
+                borderStyle: 'solid',
+                borderRadius: '20px',
+                
               }}
             />
           </Box>
