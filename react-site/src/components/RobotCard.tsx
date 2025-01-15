@@ -37,10 +37,10 @@ export default function RobotCard(props: RobotCardProps) {
                 width: 300,
                 height: 200,
                 objectFit: 'cover',
-                backgroundColor: '#ed9191',
-                borderStyle: 'solid',
-                borderRadius: '20px',
-                
+                // BELOW STYLED IMG BORDER
+                // backgroundColor: '#ed9191',
+                // borderStyle: 'solid',
+                // borderRadius: '20px',
               }}
             />
           </Box>

@@ -14,19 +14,13 @@ export default function RobotCardList(props: RobotCardListProps) {
   return (
     <>
       <Box sx={{
-        // OLD (display grid)
-        // display: "grid",
-        // CHANGED (display flex):
         display: "flex",
         gridTemplateColumns: `repeat(${capacity}, 1fr)`,
         gridAutoRows: '1fr',
-        gap: "5px",
-        // CHANGED (justifycontent and flexWrap):
+        gap: "5em 3em",
         justifyContent: "center",
         flexWrap: "wrap",
-        // OLD (alignItems start and justifyItems center)
-        // alignItems: "start",
-        // justifyItems: "center",
+        
       }}>
         {/* Accesses the specific category in the RobotsData file, creating a RobotCard component for each individual robot. */}
         {RobotsData[type].map((props2) => (
