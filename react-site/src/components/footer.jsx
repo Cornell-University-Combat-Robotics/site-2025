@@ -26,11 +26,13 @@ const TikTokIcon = () => {
 */
 
 const Footer = ({ setHeight }) => {
+  {/** refContainer is used to export the height of the footer so that pages
+    such as the game page can be sized appropriately */ }
   const refContainer = useRef();
   useEffect(() => {
     if (refContainer.current) {
-      console.log("Footer logging height");
-      console.log("height: " + refContainer.current.offsetHeight);
+      // console.log("Footer logging height");
+      // console.log("height: " + refContainer.current.offsetHeight);
       setHeight(refContainer.current.offsetHeight);
     }
   }, []);

@@ -4,12 +4,13 @@ import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
 const NavBar = ({ setHeight }: { setHeight: (height: number) => void }) => {
+  {/** refContainer is used to export the height of the navbar so that pages
+    such as the game page can be sized appropriately */ }
   const refContainer = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (refContainer.current) {
-      console.log("Navbar logging height");
-      console.log("height: " + refContainer.current.offsetHeight);
+      // console.log("Navbar logging height");
+      // console.log("height: " + refContainer.current.offsetHeight);
       setHeight(refContainer.current.offsetHeight);
     }
   }, [setHeight]);
