@@ -32,15 +32,16 @@ export default function Teams() {
       */}
       <div style={{backgroundColor: '#820002', width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap'}}>
         <motion.div 
-          animate={{x: ["100%", "-100%"]}} // Moves text from right to left
+          animate={{x: ["100%", "-100%"]}} // Moves text from right to left (100% -> starts out empty)
           transition={{
-            duration: 5, 
+            duration: 20, 
             repeat: Infinity, //loops forever
             ease: "linear"
           }}
         >
-          <Typography sx={{fontSize: 60}}>
-            {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "}
+          <Typography sx={{fontSize: 60}}> 
+            {/*Duplicate text to ensure no empty space*/}
+            {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "} 
           </Typography>
         </motion.div>
       </div>
