@@ -21,28 +21,28 @@ export default function RobotCard(props: RobotCardProps) {
     <Link to={props.link}>
       <Card 
         sx={{ 
-          width: 320, 
+          width: 220, 
           height: 400, 
           bgcolor: background_color, 
           color: 'white', 
           display: 'flex', 
           flexDirection: 'column', 
-          justifyContent: 'flex-start', 
+          justifyContent: 'flex-end', 
           alignItems: 'center', 
-          borderRadius: '7%', 
+          borderRadius: '14px', 
           padding: 2
         }}
-        // style={{
-        //   borderRadius: "7%",
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   flex: '0 1 auto',
-        // }}
       >
-        <CardActionArea>
+        <CardActionArea
+          sx={{
+            width: '100%',
+            height: '110%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <Box 
-            width="70%"
+            width="100%"
             height="auto" 
             borderRadius="7%" 
             bgcolor={background_color == "#820002" ? "#B23030" : "#ED9191"} 
@@ -79,7 +79,9 @@ export default function RobotCard(props: RobotCardProps) {
               justifyContent: 'flex-start',
               alignItems: 'flex-start',
               flexGrow: 1,
-              width: '100%'
+              width: '100%',
+              padding: '16px',
+              paddingBottom: '6px',
             }}
           >
             <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
