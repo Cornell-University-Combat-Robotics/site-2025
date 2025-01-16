@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, duration, Typography } from "@mui/material";
 import team_photo from "../assets/team-photo-formal.png";
 import TeamMemberList from "../components/MemberList";
+import { motion } from 'framer-motion';
 
 /** Teams creates the Teams page of the website. */
 export default function Teams() {
@@ -8,7 +9,7 @@ export default function Teams() {
     <>
     <Box position="relative" >
       <Box position="relative" display="inline-block"> {/* Set position to relative for GradientNavBar. */}
-        <img src={team_photo} style={{ width: '100%', height: 'auto' }} />
+        <img src={team_photo} style={{ width: '100%', height: 'auto', marginBottom: 50 }} />
         <Typography
           variant="h1"
           sx={{
@@ -23,6 +24,28 @@ export default function Teams() {
           MEET THE TEAM
         </Typography>
       </Box>
+
+
+      {/*
+      Effect: Scrolling bar of subteam names
+      Outer div: constant background -> only the text is scrolling
+      */}
+      <div style={{backgroundColor: '#820002', width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap'}}>
+        <motion.div 
+          animate={{x: ["100%", "-100%"]}} // Moves text from right to left
+          transition={{
+            duration: 5, 
+            repeat: Infinity, //loops forever
+            ease: "linear"
+          }}
+        >
+          <Typography sx={{fontSize: 60}}>
+            {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "}
+          </Typography>
+        </motion.div>
+      </div>
+      
+
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
         LEADS
       </Typography>
