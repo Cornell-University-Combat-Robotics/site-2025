@@ -35,7 +35,7 @@ export default function Member(props: MemberProps) {
           borderRadius: "7%",
           border: "2px #4361EE solid",
           width: '85%',
-          height: '250px',
+          height: '220px', //TODO: dont hardcode height
           marginTop: '7%',
           marginBottom: '7%',
           overflow: 'hidden'
