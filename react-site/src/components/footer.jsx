@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, IconButton } from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -25,6 +26,19 @@ const TikTokIcon = () => {
 */
 
 const Footer = () => {
+  const refContainer = useRef();
+  const [dimensions, setDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    if (refContainer.current) {
+      setDimensions({
+        width: refContainer.current.offsetWidth,
+        height: refContainer.current.offsetHeight,
+      });
+    }
+  }, []);
   return (
     <Box
       id="footer-wrapper"
@@ -36,6 +50,7 @@ const Footer = () => {
         //justifyContent: "center",
         backgroundColor: "#b11c1c",
       }}
+      ref={refContainer}
     >
       <Stack
         sx={{

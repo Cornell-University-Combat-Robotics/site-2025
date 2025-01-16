@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
-export default function NavBar() {
+const NavBar = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    if (refContainer.current) {
+      setDimensions({
+        width: refContainer.current.offsetWidth,
+        height: refContainer.current.offsetHeight,
+      });
+    }
+  }, []);
+
   return (
     <Box
       id="navbar-wrapper"
@@ -24,6 +38,7 @@ export default function NavBar() {
           display: "flex",
           gap: 2,
         }}
+        ref={refContainer}
       >
         <NavBarButton bg="none" text="About" variant="secondary" />
         <NavBarButton bg="none" text="Teams" variant="secondary" />
@@ -45,3 +60,5 @@ export default function NavBar() {
     </Box>
   );
 }
+
+export default NavBar;
