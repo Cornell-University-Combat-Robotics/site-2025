@@ -11,13 +11,17 @@ import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
 import Beater from './pages/robots/beater';
+import Slugma from './pages/robots/slugma';
+import Batbot from './pages/robots/batbot';
+import Swiss from './pages/robots/swiss';
+import Hestr from './pages/robots/hestr';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 const theme = createTheme();
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.2rem',
+  fontSize: '1.6rem',
 };
 
 function App() {
@@ -30,6 +34,10 @@ function App() {
             <Route path="/teams" element={<><GradientNavBar/><Teams/></>} />
             <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
+            <Route path="/robots/slugma" element={<><NavBar /><Slugma /></>}/>
+            <Route path="/robots/batbot" element={<><NavBar /><Batbot /></>} />
+            <Route path="/robots/swiss" element={<><NavBar /><Swiss /></>}/>
+            <Route path="/robots/hestr" element={<><NavBar /><Hestr /></>}/>
             <Route path="/sponsors" element={<><GradientNavBar/><Sponsors /></>} />
             <Route path="/game" element={<><NavBar/><Game /></>} />
             <Route path="/apply" element={<><GradientNavBar/><Apply /></>} />
