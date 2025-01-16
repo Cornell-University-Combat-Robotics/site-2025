@@ -1,55 +1,65 @@
 import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
-// DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
-import background from "../assets/background-pictures/crcbackground.png"
+import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
-import RedBox from "../components/RedBox";
+import { red } from "@mui/material/colors";
+// DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
+
 
 // Creates the About page for the website.
 function About() {
   return (
     <Box>
-      {/* contains everything that overlaps the background crcircuit */}
-      <Box position="relative" display="inline-block">
-        {/* background image */}
-      <img src={background} style={{ width: '100%', height: 'auto' }}/>
+    {/* CRCircuit as background */}
+    <Box sx={{
+      width: '100%',
+      height: '200vh',
+      backgroundImage: `url(${background})`,  // Your image URL
+      backgroundSize: 'cover',      // Ensure the image covers the area
+      backgroundPosition: 'top',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+    }}>
+      <Box>
       {/* crc logo, shifted up on top of the background image */}
-      <img src={logo} style={{ maxWidth: '40%', 
-      height: 'auto', 
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -180%)',}} />
+      <img src={logo} style={{ 
+        maxWidth: '35%', 
+        height: 'auto', 
+        top: '50%',
+        left: '50%',
+        marginTop: '15%',
+        }} 
+      />
 
       {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
        <Typography
         variant="h2"
         sx={{
           fontStyle: "italic",
-          position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -300%)',
           textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
-        }}
-      >We. Build. Robots.</Typography>
-
-      {/* who are we title and paragraph */}
-      <Box sx={{mx: '10%'}}>
+        }}>
+          We. Build. Robots.
+          </Typography>
+      </Box>
+        
+      {/* Rest of page */}
+      <Box sx={{mx:'10%', mt: '7%'}}>
         <Typography variant="h2" align="left" fontWeight="bold" 
         sx={{ 
-          fontFamily: 'Josefin Sans', 
-          transform:'translate(0%,-1000%)'}}>
+          fontFamily: 'Josefin Sans', }}>
           Who are we?
         </Typography>
         <Typography align="left">
           We&apos;re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those 
-          featured on the TV show Battlebots. Each year, we build two 12lb mechanical robots and one 3lb battlebot 
-          with AI based functionality.
+          featured on the TV show Battlebots. Each year, our Sportsman and Kinetic subteams build two 12lb mechanical robots,
+          while our Autonomous team builds a 3lb bot with AI based functionality. Our Marketing subteam keeps the team funded, 
+          maintains our website and social media, along with merch, trading cards, and more.
         </Typography>
 
         {/* stats box */}
-        <Box height="50px"/>
+        <Box height="30%" mt="5%"/>
         <Stack direction="row" spacing="25%">
           <Stack>
             <Typography variant="h3">40+</Typography>
@@ -68,9 +78,13 @@ function About() {
             <Typography>years</Typography>
           </Stack>
         </Stack>
-      </Box>
       <Box height="50px" />
-      </Box>
+    </Box>
+
+    </Box>
+
+      {/* Rest of page, needs margin */}
+      <Box sx={{mx: '10%'}}>
 
       {/* What do we value title and paragraph, OUTSIDE of previous box because comes after crcircuit image */}
       <Box sx={{mx: '10%'}}>
@@ -107,7 +121,7 @@ function About() {
         <RedBox title="JOIN US" text="Interested in joining our unique team? We'd love to meet you during our application season, regardless of major or prior experience!"
           word="APPLY!" link="/apply" />
       </Stack> */}
-
+    </Box>
     </Box>
   );
 }
