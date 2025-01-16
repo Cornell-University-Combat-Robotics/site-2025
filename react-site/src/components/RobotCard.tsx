@@ -60,10 +60,9 @@ export default function RobotCard(props: RobotCardProps) {
               alt="Robot image"
               // Regulates size of all photos
               sx={{
-                width: '100%',
-                maxWidth: 300,
-                height: 'auto',
-                objectFit: 'cover',
+                width: '220px',
+                height: '163.15px',
+                objectFit: 'fill', // set image to fill since they are warped otherwise
                 
                 // BELOW STYLED IMG BORDER
                 // backgroundColor: '#ed9191',
