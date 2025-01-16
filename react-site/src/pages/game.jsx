@@ -1,28 +1,20 @@
 import React from "react";
-import Footer from "../components/footer";
-import NavBar from "../components/NavBar";
 import { Typography, Box } from "@mui/material";
 import { motion } from "framer-motion";
 import arcade from "../assets/arcade.png"
 
-const headerHeight = NavBar.height;
-const footerHeight = Footer.height;
-
-console.log("header height: " + headerHeight);
-
-console.log("footer height: " + footerHeight);
-
-const contentHeight = `calc(100vh - ${headerHeight + footerHeight}px)`;
-
-console.log("content height: " + contentHeight);
-
-export default function Game() {
+const Game = ({
+  navbarHeight,
+  footerHeight
+}) => {
+  const contentHeight = `calc(99vh - ${navbarHeight + footerHeight}px)`;
+  console.log("Content height: " + contentHeight);
   return (
     <div>
       <Box
         sx={{
           width: "100vw",
-          height: "100vh",
+          height: contentHeight,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -50,3 +42,5 @@ export default function Game() {
     </div>
   );
 }
+
+export default Game;

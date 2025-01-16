@@ -25,18 +25,13 @@ const TikTokIcon = () => {
 };
 */
 
-const Footer = () => {
+const Footer = ({ setHeight }) => {
   const refContainer = useRef();
-  const [dimensions, setDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
   useEffect(() => {
     if (refContainer.current) {
-      setDimensions({
-        width: refContainer.current.offsetWidth,
-        height: refContainer.current.offsetHeight,
-      });
+      console.log("Footer logging height");
+      console.log("height: " + refContainer.current.offsetHeight);
+      setHeight(refContainer.current.offsetHeight);
     }
   }, []);
   return (

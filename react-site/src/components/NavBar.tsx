@@ -3,20 +3,16 @@ import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
-const NavBar = () => {
+const NavBar = ({ setHeight }: { setHeight: (height: number) => void }) => {
   const refContainer = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
+
   useEffect(() => {
     if (refContainer.current) {
-      setDimensions({
-        width: refContainer.current.offsetWidth,
-        height: refContainer.current.offsetHeight,
-      });
+      console.log("Navbar logging height");
+      console.log("height: " + refContainer.current.offsetHeight);
+      setHeight(refContainer.current.offsetHeight);
     }
-  }, []);
+  }, [setHeight]);
 
   return (
     <Box
@@ -30,6 +26,7 @@ const NavBar = () => {
         alignItems: "center",
         justifyContent: "space-between",
       }}
+      ref={refContainer}
     >
       <NavBarIcon />
       <Box
@@ -38,7 +35,6 @@ const NavBar = () => {
           display: "flex",
           gap: 2,
         }}
-        ref={refContainer}
       >
         <NavBarButton bg="none" text="About" variant="secondary" />
         <NavBarButton bg="none" text="Teams" variant="secondary" />
