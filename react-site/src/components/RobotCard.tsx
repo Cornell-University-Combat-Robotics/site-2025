@@ -87,10 +87,25 @@ export default function RobotCard(props: RobotCardProps) {
             <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
               {props.name}
             </Typography>
-            <Box bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} sx={{ borderRadius: 5 }} width="22%">
-              <Typography gutterBottom align='left' variant="body2" mx={1} 
+            <Box 
+              bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} 
+              sx={{ 
+                borderRadius: 5, 
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '0.25em, 0.75em',
+                width: 'fit-content',
+                minWidth: '60px',
+              }}
+            >
+              <Typography 
+                align='center' 
+                variant="body2" 
                 sx={{ 
-                  width: "100%"
+                  margin: 0,
+                  padding: 0,
+                  fontWeight: 'bold',
                   // display: 'flex',
                   // flexDirection: 'column',
                   // justifyContent: 'flex-start',
