@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import team_photo from "../assets/team-photo-formal.png";
+import team_photo from "../assets/background-pictures/team-photo-formal.png";
 import TeamMemberList from "../components/MemberList";
 
 /** Teams creates the Teams page of the website. */

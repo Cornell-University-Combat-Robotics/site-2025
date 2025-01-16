@@ -16,7 +16,7 @@ export default function GradientNavBar() {
         zIndex: 1000, //used to ensure the nav bar is in front of all other elements on the page
         background: 'linear-gradient(to top,  transparent, black)',
         alignItems: "center",
-        position: "absolute",
+        position: "fixed",
         py: 1.5,
         px: 4,
         display: "flex",

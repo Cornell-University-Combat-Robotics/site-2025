@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import apply from "../assets/newbies-photo.jpg";
+import apply from "../assets/background-pictures/newbies-photo.jpg";
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
