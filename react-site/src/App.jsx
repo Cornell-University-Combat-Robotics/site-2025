@@ -4,6 +4,7 @@ import NavBar from './components/navBar';
 import GradientNavBar from './components/GradientNavBar';
 import About from "./pages/about";
 import Teams from './pages/teams';
+import Marketing from './pages/marketing';
 import Robots from './pages/robots';
 import Sponsors from './pages/sponsors';
 import Game from './pages/game';
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<><NavBar/><About /></>} />
             <Route path="/teams" element={<><GradientNavBar/><Teams/></>} />
+            <Route path="/teams/marketing" element={<><GradientNavBar/><Marketing/></>} />
             <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
             <Route path="/robots/slugma" element={<><NavBar /><Slugma /></>}/>
