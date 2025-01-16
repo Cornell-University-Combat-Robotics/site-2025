@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
+// solid NavBar for when the user scrolls down
 export default function NavBar() {
   return (
     <Box
@@ -15,6 +16,7 @@ export default function NavBar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        backgroundColor: "black" 
       }}
     >
       <NavBarIcon />

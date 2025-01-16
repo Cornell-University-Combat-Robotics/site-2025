@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import team from "../assets/team-photo-hearts.png";
+import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
 
 /** Sponsors creates the Sponsors page of the website. */

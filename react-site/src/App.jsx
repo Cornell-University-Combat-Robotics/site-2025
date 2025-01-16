@@ -19,10 +19,21 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 const theme = createTheme();
 
+theme.typography.h1 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '4rem',
+};
+
+theme.typography.h2 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '2rem',
+};
+
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.6rem',
+  fontSize: '1rem',
 };
+
 
 function App() {
   return (
@@ -30,7 +41,8 @@ function App() {
       <main>
         <Router>
           <Routes>
-            <Route path="/" element={<><NavBar/><About /></>} />
+            {/* <NavBar/> */}
+            <Route path="/" element={<><GradientNavBar/><About /></>} />
             <Route path="/teams" element={<><GradientNavBar/><Teams/></>} />
             <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
