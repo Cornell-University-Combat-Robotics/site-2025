@@ -31,13 +31,12 @@ export default function Marketing(){
              */}
             <Box sx={{
                 position: 'relative', 
-                width: '400',
-                height: '400', 
+                width: '100%', 
+                height: '100%', 
                 backgroundImage: `url(${marketing_photo})`, // Use the image as a background.
                 backgroundRepeat: 'repeat', // Repeat the image both horizontally and vertically -> same blurred image will render as you scroll down
                 backgroundSize: 'contain', // Ensure the image retains its original size in repeats
-                backgroundPosition: 'top', // top of image will render before bottom
-                zIndex: -1
+                backgroundPosition: 'top' // top of image will render before bottom
             }}> 
                 {/*backdrop filter applies to the PARENT of the box (the "backdrop"). This makes the background image blurry & darker w/o changing the text components*/}
                 <Box sx={{position: 'relative', zIndex: 1, padding: 20, backdropFilter: 'blur(5px) brightness(0.5)'}}>
@@ -48,7 +47,7 @@ export default function Marketing(){
                             {"MARKETING"}
                         </Typography>
 
-                        <Typography sx={{fontSize: 20}}>    
+                        <Typography sx={{fontSize: 20, textAlign: 'left'}}>    
                             {"Within the Marketing Subteam, we specialize in promoting and enhancing CRC's brand. Our mission is to strengthen CRC's presence and reputation, elevating it beyond just a robotics team."}
                         </Typography>
                     </Box>
@@ -57,7 +56,8 @@ export default function Marketing(){
                         {"Our approach to marketing revolves around four critical subsystems:"}
                     </Typography>
 
-                    {/*This box contains a row of buttons for the different subsystems of the subteam.*/}
+                    {/*This box contains a row of buttons for the different subsystems of the subteam.
+                    change to stack -> more conventional*/}
                     <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, marginTop: 10}}>
                         {subsystems.map((subsystem, index) => (
                             
@@ -74,8 +74,8 @@ export default function Marketing(){
                         ))}
                     </Box>
 
-
-                    <Typography sx={{fontSize: 20, textAlign: "left", marginTop: 10}}>
+                    {/*TODO: change all to body 1*/}
+                    <Typography variant="body1" sx={{textAlign: "left", marginTop: 10}}>
                         {"While the subsystems are distinct, members are able to work interchangeably among them."}
                     </Typography>
 
