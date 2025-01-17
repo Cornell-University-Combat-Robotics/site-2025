@@ -18,7 +18,7 @@ export default function TeamMemberList(props: TeamMemberListProps) {
         display: "grid",
         gridTemplateColumns: `repeat(${numElements}, 1fr)`,
         gridAutoRows: '1fr',
-        gap: "5px",
+        gap: "10px",
         alignItems: "start",
         justifyItems: "center",
         ...sx
