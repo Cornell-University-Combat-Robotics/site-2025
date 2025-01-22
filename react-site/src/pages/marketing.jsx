@@ -1,6 +1,7 @@
 import { Box, Typography, Button } from "@mui/material";
 import marketing_photo from "../assets/marketing-photo.jpg";
 import TeamMemberList from "../components/MemberList";
+import React, { useState } from "react";
 
 /*Marketing subteam page within Team Page*/
 export default function Marketing(){
@@ -13,6 +14,25 @@ export default function Marketing(){
         { name: "Design", desc: "Encompasses art and graphic design for CRC’s public image and merchandise, including trading cards, stickers, clothing, and more.\nDesign fosters an environment for members to express their passions, turning our robots into beloved characters." }
     ];
     
+    //TODO: how to encapsulate for different number of buttons
+    /*
+    Effect: toggle visibility for subsystem button animations. default set to not visible.
+    - 4 different use states due to 4 different buttons. e.g. showSubsystem[0] controls visibility of 1st subsystem
+    showSubsystem: immutable state variable
+    setShowSubsystem: state updater function to modify showStats value
+    */
+    const [showSubsystem, setShowSubsystem] = useState([false, false, false, false]);
+
+    /*
+    Effect: Each element in handleSubsystemClick array is a function updating showSubsystem, 
+    setting its corresponding value to true (keeping the other showSubsystems false) when button is clicked.
+    */
+    const handleSubsystemClick =[
+        () => setShowSubsystem([true, false, false, false]),
+        () => setShowSubsystem([false, true,  false, false]),
+        () => setShowSubsystem([false, false, true, false]),
+        () => setShowSubsystem([false, false, false, true])
+    ];
 
     return(
         <>
@@ -58,15 +78,19 @@ export default function Marketing(){
 
                     {/*This box contains a row of buttons for the different subsystems of the subteam.
                     change to stack -> more conventional*/}
-                    <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, marginTop: 10}}>
+                    <Box sx={{position: 'relative', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, marginTop: 10}}>
                         {subsystems.map((subsystem, index) => (
                             
                             // TODO: on click: button renders subteam description
                             <Button key={index} sx={{flex: 1, //flex: all buttons made same size
                                 height: 180, // TODO: width doesnt seem to change even if i specify width
                                 backgroundColor: '#943131', textAlign: 'center', padding: 5, borderRadius: 2}}
-                                onClick={() => {}}
+                                onClick={handleSubsystemClick[index]}
                             >
+                                {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
+                                {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
+
+                                {/*Always display subsystem name on button*/}
                                 <Typography sx={{fontSize: 30, color: 'white'}}>
                                     {subsystem.name}
                                 </Typography>
@@ -102,5 +126,28 @@ export default function Marketing(){
 
         </Box>
         </>
+    );
+}
+
+//Effect: when clicking on a button in subteam pages, displays subsystem information over section of screen
+//TODO: maybe make export
+function SubsystemButtonDisplay({name, desc}){
+
+    return(
+        //position must be absolute (in terms of the screen, away from doc flow), else will be constrained by the button itself
+        //parent position must be relative
+        <Box sx={{bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
+            position: 'absolute'
+        }}>
+            {/*Subsystem name header*/}
+            <Typography sx={{color: 'white', fontSize: 25, fontWeight: 'bold'}}>
+                {name}
+            </Typography>
+
+            {/*Subsystem description*/}
+            <Typography variant="body1" sx={{color: 'white'}}>
+                {desc}
+            </Typography>
+        </Box>
     );
 }
