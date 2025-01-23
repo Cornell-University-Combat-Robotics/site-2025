@@ -32,7 +32,7 @@ export default function Teams() {
       */}
       <div style={{backgroundColor: '#820002', width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap'}}>
         <motion.div 
-          animate={{x: ["100%", "-100%"]}} // Moves text from right to left (100% -> starts out empty)
+          animate={{x: ["0%", "-100%"]}} // Moves text from right to left 
           transition={{
             duration: 20, 
             repeat: Infinity, //loops forever
@@ -47,22 +47,25 @@ export default function Teams() {
       </div>
       
 
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
-        LEADS
-      </Typography>
-      <TeamMemberList teamName={"Leads"} />
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
-        MARKETING
-      </Typography>
-      <TeamMemberList teamName={"Marketing"} />
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
-        KINETIC
-      </Typography>
-      <TeamMemberList teamName={"Kinetic"} />
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
-        SPORTSMAN
-      </Typography>
-      <TeamMemberList teamName={"Sportsman"} />
+      <Box sx={{margin: '10%'}}>
+        <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+          LEADS
+        </Typography>
+        <TeamMemberList teamName={"Leads"} />
+        <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+          MARKETING
+        </Typography>
+        <TeamMemberList teamName={"Marketing"} />
+        <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+          KINETIC
+        </Typography>
+        <TeamMemberList teamName={"Kinetic"} />
+        <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+          SPORTSMAN
+        </Typography>
+        <TeamMemberList teamName={"Sportsman"} />
+      </Box>
+
     </Box>
     </>
   );
