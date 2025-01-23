@@ -1,9 +1,9 @@
 import { RobotCardProps } from "../components/RobotCard";
 import nardoPhoto from "../assets/nardo-whole.png"; // VSCode says it "cannnot find the module" for this file, which clearly is bs
-import slugmaPhoto from "/src/assets/3lb/slugma_profile.jpg";
-import batbotPhoto from "/src/assets/3lb/batbot.png";
-import swissPhoto from "/src/assets/3lb/swiss_slinger_profile.png";
-import hestrPhoto from "/src/assets/3lb/hestr_profile.png";
+import slugmaPhoto from "/src/assets/3lb/the_slugma_profile.png";
+import batbotPhoto from "/src/assets/3lb/the_batbot.png";
+import swissPhoto from "/src/assets/3lb/the_swiss_slinger_profile.png";
+import hestrPhoto from "/src/assets/3lb/the_hestr_profile.png";
 
 /* 
   This file holds the necessary data for the robots. The data is stored in a dictionary (record), where the key is the category of the robot (Retired, Three_lb, etc).
@@ -65,7 +65,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Slugma",
       subteam: "FA '24",
-      desc: "The first 3lb bot",
+      desc: "",
       image: slugmaPhoto,
       link: "/robots/slugma",
       color: 0,
@@ -73,7 +73,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Fangular Momentum",
       subteam: "FA '24",
-      desc: "The first 3lb bot",
+      desc: "",
       image: batbotPhoto, 
       link: "/robots/batbot",
       color: 1,
@@ -81,7 +81,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Dauður Hestr",
       subteam: "FA '24",
-      desc: "The first 3lb bot",
+      desc: "",
       image: hestrPhoto,
       link: "/robots/hestr",
       color: 0,
@@ -89,7 +89,39 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "The Swiss Slinger",
       subteam: "FA '24",
-      desc: "The first 3lb bot",
+      desc: "",
+      image: swissPhoto,
+      link: "/robots/swiss",
+      color: 1,
+    },
+    {
+      name: "The Swiss Slinger",
+      subteam: "FA '24",
+      desc: "",
+      image: swissPhoto,
+      link: "/robots/swiss",
+      color: 0,
+    },
+    {
+      name: "The Swiss Slinger",
+      subteam: "FA '24",
+      desc: "",
+      image: swissPhoto,
+      link: "/robots/swiss",
+      color: 1,
+    },
+    {
+      name: "The Swiss Slinger",
+      subteam: "FA '24",
+      desc: "",
+      image: swissPhoto,
+      link: "/robots/swiss",
+      color: 0,
+    },
+    {
+      name: "The Swiss Slinger",
+      subteam: "FA '24",
+      desc: "",
       image: swissPhoto,
       link: "/robots/swiss",
       color: 1,
