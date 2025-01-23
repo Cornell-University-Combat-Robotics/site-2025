@@ -2,6 +2,8 @@ import { Box, Typography, Button } from "@mui/material";
 import marketing_photo from "../assets/marketing-photo.jpg";
 import TeamMemberList from "../components/MemberList";
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { Parallax } from 'react-scroll-parallax';
 
 /*Marketing subteam page within Team Page*/
 export default function Marketing() {
@@ -34,16 +36,36 @@ export default function Marketing() {
         () => setShowSubsystem([false, false, false, true])
     ];
 
+    //Purpose: React Router hook used for programmatic navigation
+    //Use: navigate('/route') to go to a specific route
+    const navigate = useNavigate();
+
     return (
         <>
             <Box sx={{ position: 'relative', overflow: 'hidden' }}>
 
                 {/*First image unblurred*/}
                 <Box sx={{
-                    overflow: 'hidden', width: '100%', height: 'auto'
+                    overflow: 'hidden', width: '100%', height: 'auto', position: 'relative'
                 }}>
                     {/*TODO: zoom in*/}
                     <img src={marketing_photo} style={{ width: '100%', height: '100%' }} />
+
+                    {/*
+                    Back button returning to teams page
+                    position must be absolute to parent to handle overlap over the box
+                    */}
+                    <Button
+                        sx={{
+                            borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
+                            position: 'absolute', bottom: '10%', left: '10%', width: 'auto'
+                        }}
+                        onClick={() => navigate('/teams')} //back to teams page
+                    >
+                        <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap'}}>
+                            {"< Back"}
+                        </Typography>
+                    </Button>
                 </Box>
 
                 {/* Effect: sets first image as unblurred background for all other components within this box 
@@ -140,12 +162,11 @@ function SubsystemButtonDisplay({ name, desc }) {
     return (
         //position must be fixed (in terms of the SCREEN, away from doc flow), else will be constrained by the button itself
         //parent position must be relative
-        //TODO: switch to hover
         <Box sx={{
             bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-            position: 'fixed', height: 'auto', 
+            position: 'fixed', height: 'auto',
             wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
-            left: '25%', right: '25%' //spacing from sides of screen
+            left: '20%', right: '20%' //spacing from sides of screen
         }}>
             {/*Subsystem name header*/}
             <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
@@ -153,9 +174,10 @@ function SubsystemButtonDisplay({ name, desc }) {
             </Typography>
 
             {/*Subsystem description*/}
-            <Typography variant="body1" sx={{ color: 'white',
+            <Typography variant="body1" sx={{
+                color: 'white',
                 whiteSpace: 'pre-line'  // Ensures that \n creates line breaks in the text
-             }}>
+            }}>
                 {desc}
             </Typography>
         </Box>
