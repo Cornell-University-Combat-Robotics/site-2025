@@ -35,7 +35,7 @@ export default function Member(props: MemberProps) {
           borderRadius: "7%",
           border: "2px #4361EE solid",
           width: '85%',
-          height: '220px', //TODO: dont hardcode height
+          height: '250px', //TODO: dont hardcode height
           marginTop: '7%',
           marginBottom: '7%',
           overflow: 'hidden'
@@ -52,7 +52,7 @@ export default function Member(props: MemberProps) {
             }}
             onClick={() => window.open(linkedin, '_blank')}
           >
-            <Typography sx={{fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
+            <Typography sx={{fontSize: '15px', color: 'white', fontFamily: 'Josefin Sans, sans-serif', textTransform: "none" }}>
               {"in"}
             </Typography>
           </Button>
@@ -111,7 +111,7 @@ export default function Member(props: MemberProps) {
       </Box>
     
       <Box sx={{textAlign: "left", width: '85%'}}>
-        <Typography sx={{ fontWeight: "bold", mt: "5px", ml: "5px"}}>{name}</Typography>
+        <Typography sx={{ fontWeight: "bold", fontSize: 25}}>{name}</Typography>
       </Box>
 
       <List sx={{ width: '85%' }}>
