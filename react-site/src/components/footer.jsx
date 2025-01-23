@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, IconButton } from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -24,7 +25,17 @@ const TikTokIcon = () => {
 };
 */
 
-const Footer = () => {
+const Footer = ({ setHeight }) => {
+  {/** refContainer is used to export the height of the footer so that pages
+    such as the game page can be sized appropriately */ }
+  const refContainer = useRef();
+  useEffect(() => {
+    if (refContainer.current) {
+      // console.log("Footer logging height");
+      // console.log("height: " + refContainer.current.offsetHeight);
+      setHeight(refContainer.current.offsetHeight);
+    }
+  }, []);
   return (
     <Box
       id="footer-wrapper"
@@ -36,6 +47,7 @@ const Footer = () => {
         //justifyContent: "center",
         backgroundColor: "#b11c1c",
       }}
+      ref={refContainer}
     >
       <Stack
         sx={{
