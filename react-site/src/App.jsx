@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from './components/navBar';
 import GradientNavBar from './components/GradientNavBar';
+import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
 import Team from './pages/team';
 import Marketing from './pages/marketing';
@@ -46,19 +47,19 @@ function App() {
         <Router>
           <Routes>
             {/* <NavBar/> */}
-            <Route path="/" element={<><GradientNavBar /><About /></>} />
-            <Route path="/team" element={<><GradientNavBar /><Team /></>} />
-            <Route path="/team/marketing" element={<><GradientNavBar /><Marketing /></>} />
-            <Route path="/robots" element={<><GradientNavBar /><Robots /></>} />
-            <Route path="/robots/beater" element={<><NavBar /><Beater /></>} />
-            <Route path="/robots/slugma" element={<><NavBar /><Slugma /></>} />
-            <Route path="/robots/batbot" element={<><NavBar /><Batbot /></>} />
-            <Route path="/robots/swiss" element={<><NavBar /><Swiss /></>} />
-            <Route path="/robots/hestr" element={<><NavBar /><Hestr /></>} />
-            <Route path="/sponsors" element={<><GradientNavBar /><Sponsors /></>} />
-            <Route path="/game" element={<><NavBar /><Game /></>} />
-            <Route path="/apply" element={<><GradientNavBar /><Apply /></>} />
-            <Route path="/accessibility" element={<><GradientNavBar /><Accessibility /></>} />
+            <Route path="/" element={<><ScrollToTop /><GradientNavBar /><About /></>} />
+            <Route path="/team" element={<><ScrollToTop /><GradientNavBar /><Team /></>} />
+            <Route path="/team/marketing" element={<><ScrollToTop /><GradientNavBar /><Marketing /></>} />
+            <Route path="/robots" element={<><ScrollToTop /><GradientNavBar /><Robots /></>} />
+            <Route path="/robots/beater" element={<><ScrollToTop /><NavBar /><Beater /></>} />
+            <Route path="/robots/slugma" element={<><ScrollToTop /><NavBar /><Slugma /></>} />
+            <Route path="/robots/batbot" element={<><ScrollToTop /><NavBar /><Batbot /></>} />
+            <Route path="/robots/swiss" element={<><ScrollToTop /><NavBar /><Swiss /></>} />
+            <Route path="/robots/hestr" element={<><ScrollToTop /><NavBar /><Hestr /></>} />
+            <Route path="/sponsors" element={<><ScrollToTop /><GradientNavBar /><Sponsors /></>} />
+            <Route path="/game" element={<><ScrollToTop /><GradientNavBar /><Game /></>} />
+            <Route path="/apply" element={<><ScrollToTop /><GradientNavBar /><Apply /></>} />
+            <Route path="/accessibility" element={<><ScrollToTop /><GradientNavBar /><Accessibility /></>} />
           </Routes>
           <Footer />
         </Router>
