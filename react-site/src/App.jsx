@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
 import GradientNavBar from './components/GradientNavBar';
 import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
