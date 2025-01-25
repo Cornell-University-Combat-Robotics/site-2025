@@ -71,7 +71,7 @@ export default function Marketing() {
                     <Button
                         sx={{
                             borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
-                            position: 'absolute', bottom: '15%', right: '10%', width: 'auto'
+                            position: 'absolute', bottom: '15%', right: '10%', width: 'auto', height: 'auto'
                         }}
                         onClick={() => navigate('/teams')} //back to teams page
                     >
@@ -107,14 +107,12 @@ export default function Marketing() {
                     </Typography>
 
                     {/*
-                    This box contains a row of buttons for the different subsystems of the subteam.
-                    TODO: change to stack -> more conventional
+                    Stack contains a row of buttons for the different subsystems of the subteam.
                     */}
-                    <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, marginTop: 10 }}>
+                    <Stack direction="row" spacing={3} marginTop={10} justifyContent={"center"} alignItems={"center"}>
                         {subsystems.map((subsystem, index) => (
 
                             <Button key={index} sx={{
-                                position: 'relative', //must set position to relative for the subsystem description to be displayed relative to entire screen
                                 flex: 1, //flex: all buttons made same size
                                 height: 180, // TODO: width doesnt seem to change even if i specify width
                                 backgroundColor: '#943131', textAlign: 'center', padding: 5, borderRadius: 2
@@ -132,7 +130,7 @@ export default function Marketing() {
                                 </Typography>
                             </Button>
                         ))}
-                    </Box>
+                    </Stack>
 
                     {/*TODO: change all to body 1*/}
                     <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>

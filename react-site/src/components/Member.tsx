@@ -1,4 +1,4 @@
-import { Box, Card, Typography, List, Button } from "@mui/material";
+import { Box, Card, Typography, List, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -26,10 +26,10 @@ export default function Member(props: MemberProps) {
 
   return (
     /*
-    Outer box contains every element (photo, buttons, positions, etc.). 
-    Inner box contains profile image & buttons (linkedin & stats).
+    Stack contains every element (photo, buttons, positions, etc.) in a column vertically
+    Inner box contains profile image & buttons (linkedin & stats)
     */
-    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems:'center', textAlign: "left" }} bgcolor={"black"} borderRadius={5} overflow='hidden'>
+   <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5} overflow={"hidden"}>
       <Box sx={{   
           position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
           borderRadius: "7%",
@@ -121,6 +121,6 @@ export default function Member(props: MemberProps) {
            </Box>
         ))}
       </List>
-    </Box>
+    </Stack>
   );
 }
