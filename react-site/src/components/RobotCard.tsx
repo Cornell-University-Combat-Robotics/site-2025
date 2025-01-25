@@ -29,10 +29,13 @@ export default function RobotCard(props: RobotCardProps) {
           color: 'white', 
           display: 'flex', 
           flexDirection: 'column', 
-          justifyContent: 'flex-end', 
+          // justifyContent: 'flex-end', 
           alignItems: 'center', 
           borderRadius: '14px', 
-          padding: '1.5em 1.5em'
+          padding: '1.5em 1.5em',
+          maxWidth: '240px',
+          // height: '100%',
+          // make em
         }}
       >
         <CardActionArea

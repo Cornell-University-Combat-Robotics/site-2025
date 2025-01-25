@@ -26,7 +26,8 @@ export default function RobotCardList(props: RobotCardListProps) {
         justifyContent: "center",
         alignItems: "center",
         margin: "70px auto",
-        // width: "fit-content",
+        // backgroundColor: "yellow",
+        width: "fit-content",
       }}>
         {/* Accesses the specific category in the RobotsData file, creating a RobotCard component for each individual robot. */}
         {RobotsData[type].map((props2) => (
