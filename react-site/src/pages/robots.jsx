@@ -5,7 +5,8 @@ import RobotCardList from '../components/RobotCardList';
 
 export default function Robots() {
   return (
-    <Box>
+    <Box sx={{padding: '10em 3em 1em 3em'}}>
+      {/* top right bottom left */}
       <img src={nardo_whole} style={{ width: '70%', height: 'auto' }} />
       <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         ROBOTS

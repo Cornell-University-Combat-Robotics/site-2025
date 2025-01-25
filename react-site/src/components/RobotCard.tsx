@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, CardMedia, CardActionArea, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, CardActionArea, Typography, autocompleteClasses } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export interface RobotCardProps {
@@ -20,9 +20,11 @@ export default function RobotCard(props: RobotCardProps) {
     // Link is the outermost compponent to make the entire card link to the individual robot page.
     <Link to={props.link}>
       <Card 
+      // size of card itself
         sx={{ 
-          width: 220, 
-          height: 400, 
+          // width: 220, 
+          // height: 400, 
+          flex: "1",
           bgcolor: background_color, 
           color: 'white', 
           display: 'flex', 
