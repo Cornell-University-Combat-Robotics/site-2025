@@ -1,20 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
-const NavBar = ({ setHeight }: { setHeight: (height: number) => void }) => {
-  {/** refContainer is used to export the height of the navbar so that pages
-    such as the game page can be sized appropriately */ }
-  const refContainer = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (refContainer.current) {
-      // console.log("Navbar logging height");
-      // console.log("height: " + refContainer.current.offsetHeight);
-      setHeight(refContainer.current.offsetHeight);
-    }
-  }, [setHeight]);
-
+// solid NavBar for when the user scrolls down
+export default function NavBar() {
   return (
     <Box
       id="navbar-wrapper"
@@ -28,7 +18,6 @@ const NavBar = ({ setHeight }: { setHeight: (height: number) => void }) => {
         justifyContent: "space-between",
         backgroundColor: "black" 
       }}
-      ref={refContainer}
     >
       <NavBarIcon />
       <Box
@@ -58,5 +47,3 @@ const NavBar = ({ setHeight }: { setHeight: (height: number) => void }) => {
     </Box>
   );
 }
-
-export default NavBar;
