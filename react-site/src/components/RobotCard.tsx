@@ -32,18 +32,22 @@ export default function RobotCard(props: RobotCardProps) {
           justifyContent: 'flex-end', 
           alignItems: 'center', 
           borderRadius: '14px', 
-          padding: 2
+          padding: '1.5em 1.5em'
         }}
       >
         <CardActionArea
+        // clickable button part of card
           sx={{
             width: '100%',
-            height: '110%',
+            height: '100%',
+            // was 110% before
             display: 'flex',
             flexDirection: 'column',
+            // backgroundColor: 'yellow',
           }}
         >
           <Box 
+            // background of image (works only with png)
             width="100%"
             height="auto" 
             borderRadius="7%" 
@@ -52,11 +56,12 @@ export default function RobotCard(props: RobotCardProps) {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              margin: '0 auto',
-              marginTop: '2em'
+              // margin: '0 auto',
+              // marginTop: '2em'
             }}
           >
             <CardMedia
+              // image itself
               component="img"
               image={props.image}
               alt="Robot image"
@@ -74,6 +79,7 @@ export default function RobotCard(props: RobotCardProps) {
             />
           </Box>
           <CardContent
+            // all written content container on card
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -85,10 +91,12 @@ export default function RobotCard(props: RobotCardProps) {
               paddingBottom: '6px',
             }}
           >
+            {/* Below is for robot title text */}
             <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
               {props.name}
             </Typography>
             <Box 
+              //pill shape container on card 
               bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} 
               sx={{ 
                 borderRadius: 5, 
@@ -101,9 +109,11 @@ export default function RobotCard(props: RobotCardProps) {
               }}
             >
               <Typography 
+                // text in pill container on card
                 align='center' 
                 variant="body2" 
                 sx={{ 
+                  // backgroundColor: 'yellow',
                   margin: 0,
                   padding: 0,
                   fontWeight: 'bold',
@@ -118,7 +128,8 @@ export default function RobotCard(props: RobotCardProps) {
                 {props.subteam}
                 </Typography>
             </Box>
-            <Typography align='left' variant="body2">
+            {/* Below is robot description text paragraph */}
+            <Typography align='left' variant="body2" paddingTop="0.5em">
               {props.desc}
             </Typography>
           </CardContent>
