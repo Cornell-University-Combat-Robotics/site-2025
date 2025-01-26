@@ -29,15 +29,20 @@ export default function Member(props: MemberProps) {
     Stack contains every element (photo, buttons, positions, etc.) in a column vertically
     Inner box contains profile image & buttons (linkedin & stats)
     */
-   <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5} overflow={"hidden"}>
+   <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5}
+      sx={{
+        width: 'auto', //maintain aspect ratio
+        height: '50vh',
+        maxWidth: 330 //ensure black box doesnt grow too wide when screen is smaller
+      }}
+   >
       <Box sx={{   
           position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
           borderRadius: "7%",
           border: "2px #4361EE solid",
-          width: '85%',
-          height: '250px', //TODO: dont hardcode height
-          marginTop: '7%',
-          marginBottom: '7%',
+          width: 'auto',
+          height: 'auto',
+          margin: '7%',
           overflow: 'hidden'
           }}>
           <img src={imgSrc} style={{ width: "100%", height: "100%" }} />

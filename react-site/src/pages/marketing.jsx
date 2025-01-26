@@ -87,17 +87,26 @@ export default function Marketing() {
                 This makes the background image blurry & darker w/o changing the text components.
                 */}
                 <Box sx={{
-                    position: 'relative', zIndex: 1, padding: 20, backdropFilter: 'blur(5px) brightness(0.5)',
+                    position: 'relative', zIndex: 1, padding: '12%', backdropFilter: 'blur(5px) brightness(0.5)',
                     height: '100%'
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
-                    <Stack direction="row" spacing={15}>
+                    <Stack direction="row" alignItems={"center"}
+                        overflow={"scroll"} //when screen size gets too smaller but has yet to trigger flexWrap, 
+                        // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
+                        sx={{
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'nowrap' },  // Children wrap only on small & extra small screens 
+                        }}
+                    >
                         {/*Text components to be placed above blurred image*/}
-                        <Typography sx={{ fontSize: 80, textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)' }}>
+                        <Typography sx={{
+                            fontSize: 80, textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+                            marginRight: 10 //must be applied in this specific typography component, else wrapping of 2nd typography will look weird
+                        }}>
                             {"MARKETING"}
                         </Typography>
 
-                        <Typography sx={{ fontSize: 20, textAlign: 'left' }}>
+                        <Typography sx={{ fontSize: 20, textAlign: 'left', minWidth: 320, wordWrap: 'break-word' }}>
                             {"Within the Marketing Subteam, we specialize in promoting and enhancing CRC's brand. Our mission is to strengthen CRC's presence and reputation, elevating it beyond just a robotics team."}
                         </Typography>
                     </Stack>
@@ -109,13 +118,19 @@ export default function Marketing() {
                     {/*
                     Stack contains a row of buttons for the different subsystems of the subteam.
                     */}
-                    <Stack direction="row" spacing={3} marginTop={10} justifyContent={"center"} alignItems={"center"}>
+                    <Stack direction="row" marginTop={10} justifyContent={"center"} alignItems={"center"}
+                        sx={{
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+                            gap: 3 //maintains both vertical and horizontal gap between buttons
+                        }}
+                    >
                         {subsystems.map((subsystem, index) => (
 
                             <Button key={index} sx={{
-                                flex: 1, //flex: all buttons made same size
-                                height: 180, // TODO: width doesnt seem to change even if i specify width
-                                backgroundColor: '#943131', textAlign: 'center', padding: 5, borderRadius: 2
+                                flex: '1 1 250px', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
+                                maxWidth: 250, // ensures that buttons dont get too big when wrapping
+                                height: 180,
+                                backgroundColor: '#943131', textAlign: 'center', borderRadius: 2
                             }}
                                 //hover functionality
                                 onMouseEnter={handleSubsystemClick[index]}
@@ -146,7 +161,7 @@ export default function Marketing() {
                         {"• Programming or wiring, our Autonomous subteam may be a better fit"}
                     </Typography>
 
-                    <Typography sx={{ fontSize: 45, textAlign: "left", marginTop: 10 }}>
+                    <Typography sx={{ fontSize: 45, textAlign: "left", marginTop: 10, marginBottom: 3 }}>
                         {"Meet the team"}
                     </Typography>
 

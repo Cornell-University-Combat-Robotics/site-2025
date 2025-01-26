@@ -16,8 +16,13 @@ export default function TeamMemberList(props: TeamMemberListProps) {
     <>
       <Box sx={{
         display: "grid",
-        gridTemplateColumns: `repeat(${numElements}, 1fr)`,
-        gridAutoRows: '1fr',
+        gridTemplateColumns: {
+          xs: `repeat(1, 1fr)`, 
+          sm: `repeat(2, 1fr)`, //2 columns (aka. 2 member cards) occupying equal width.
+          md: `repeat(3, 1fr)`,
+          lg: `repeat(${numElements}, 1fr)` 
+        },
+        gridAutoRows: '1fr', //when elements in list > numElements. Each row occupies same height.
         gap: "10px",
         alignItems: "start",
         justifyItems: "center",
