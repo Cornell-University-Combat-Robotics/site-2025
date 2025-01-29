@@ -73,7 +73,7 @@ export default function Marketing() {
                             borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
                             position: 'absolute', bottom: '15%', right: '10%', width: 'auto', height: 'auto'
                         }}
-                        onClick={() => navigate('/teams')} //back to teams page
+                        onClick={() => navigate('/team')} //back to teams page
                     >
                         <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap' }}>
                             {"< Back"}

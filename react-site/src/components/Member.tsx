@@ -39,7 +39,6 @@ export default function Member(props: MemberProps) {
       <Box sx={{
         position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
         borderRadius: "7%",
-        border: "2px #4361EE solid",
         width: 'auto',
         height: '60%', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
