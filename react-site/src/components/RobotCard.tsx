@@ -25,6 +25,7 @@ export default function RobotCard(props: RobotCardProps) {
           // width: 220, 
           // height: 400, 
           flex: "1",
+          flexShrink: "0",
           bgcolor: background_color, 
           color: 'white', 
           display: 'flex', 
@@ -32,8 +33,10 @@ export default function RobotCard(props: RobotCardProps) {
           // justifyContent: 'flex-end', 
           alignItems: 'center', 
           borderRadius: '14px', 
-          padding: '1.5em 1.5em',
+          padding: '1.2em 1.2em',
+          minWidth: '220px',
           maxWidth: '240px',
+          // maxWidth: '278.4px',
           // height: '100%',
           // make em
         }}
@@ -70,7 +73,9 @@ export default function RobotCard(props: RobotCardProps) {
               alt="Robot image"
               // Regulates size of all photos
               sx={{
-                width: '220px',
+                // width: '220px',
+                // change with to 220px if cards keep sizing weird
+                width: '100%',
                 height: '163.15px',
                 objectFit: 'fill', // set image to fill since they are warped otherwise
                 
@@ -82,20 +87,20 @@ export default function RobotCard(props: RobotCardProps) {
             />
           </Box>
           <CardContent
-            // all written content container on card
+            // written content CONTAINER on card (HOLDS card title, pill with text, and paragraph)
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'flex-start',
-              alignItems: 'flex-start',
+              // justifyContent: 'flex-start',
+              // alignItems: 'flex-start',
               flexGrow: 1,
               width: '100%',
-              padding: '16px',
+              padding: '8px',
               paddingBottom: '6px',
             }}
           >
             {/* Below is for robot title text */}
-            <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold'>
+            <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold' sx={{height: '40px', lineHeight: '1'}}>
               {props.name}
             </Typography>
             <Box 
