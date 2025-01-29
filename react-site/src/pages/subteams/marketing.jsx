@@ -1,6 +1,6 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
-import marketing_photo from "../assets/marketing-photo.jpg";
-import TeamMemberList from "../components/MemberList";
+import marketing_photo from "../../assets/marketing-photo.jpg";
+import TeamMemberList from "../../components/MemberList";
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
