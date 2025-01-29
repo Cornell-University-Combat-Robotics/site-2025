@@ -1,19 +1,22 @@
 import nardo_whole from '../assets/nardo-whole.png';
+import nardo_explode from '../assets/explode.mp4';
 import { Box, Stack, Typography } from '@mui/material';
 import RobotCard from '../components/RobotCard';
 import RobotCardList from '../components/RobotCardList';
+import ScrollControlledVideo from '../components/ScrollControlledVideo';
 
 export default function Robots() {
   return (
     <Box>
-      <img src={nardo_whole} style={{ width: '70%', height: 'auto' }} />
+      <ScrollControlledVideo videoSrc={nardo_explode} />
+      {/* <img src={nardo_whole} style={{ width: '70%', height: 'auto' }} /> */}
       <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         ROBOTS
       </Typography>
       <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
         UPCOMING ROBOTS
       </Typography>
-      
+
       <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
         <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur nisl quis diam iaculis ultricies.
@@ -25,7 +28,7 @@ export default function Robots() {
           Integer elementum lobortis mi vitae varius.
         </Typography>
       </Box>
-      
+
       <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
         <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
         <Stack spacing={2} mt='10'>
