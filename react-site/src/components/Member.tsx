@@ -50,6 +50,11 @@ export default function Member(props: MemberProps) {
           objectPosition: "center" // Centers the image within the Box
         }} />
 
+        {/* Toggle for funny image (?):
+        - add additional parameter "funnyImgSrc" in members.ts
+        - on click for arrow to toggle
+        */}
+
         {/*linkedin button*/}
         <Button
           sx={{

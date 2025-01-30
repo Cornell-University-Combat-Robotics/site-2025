@@ -53,9 +53,9 @@ function App() {
             <Route path="/" element={<><ScrollToTop /><GradientNavBar /><About /></>} />
             <Route path="/team" element={<><ScrollToTop /><GradientNavBar /><Team /></>} />
             <Route path="/team/marketing" element={<><ScrollToTop /><GradientNavBar /><Marketing /></>} />
-            <Route path="/team/marketing" element={<><ScrollToTop /><GradientNavBar /><Autonomous /></>} />
-            <Route path="/team/marketing" element={<><ScrollToTop /><GradientNavBar /><Kinetic /></>} />
-            <Route path="/team/marketing" element={<><ScrollToTop /><GradientNavBar /><Sportsman /></>} />
+            <Route path="/team/autonomous" element={<><ScrollToTop /><GradientNavBar /><Autonomous /></>} />
+            <Route path="/team/kinetic" element={<><ScrollToTop /><GradientNavBar /><Kinetic /></>} />
+            <Route path="/team/sportsman" element={<><ScrollToTop /><GradientNavBar /><Sportsman /></>} />
             <Route path="/robots" element={<><ScrollToTop /><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><ScrollToTop /><GradientNavBar /><Beater /></>} />
             <Route path="/robots/slugma" element={<><ScrollToTop /><GradientNavBar /><Slugma /></>} />
