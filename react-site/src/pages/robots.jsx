@@ -8,7 +8,21 @@ import ScrollControlledVideo from '../components/ScrollControlledVideo';
 export default function Robots() {
   return (
     <Box>
-      <ScrollControlledVideo videoSrc={nardo_explode} />
+      <Box
+      // sx={{
+      //   position: "sticky",
+      //   top: 0,
+      //   left: 0,
+      //   width: "100%",
+      //   height: "100vh",
+      //   zIndex: 10,
+      // }}
+      >
+        <ScrollControlledVideo
+          videoSrc={nardo_explode}
+        />
+      </Box>
+
       {/* <img src={nardo_whole} style={{ width: '70%', height: 'auto' }} /> */}
       <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         ROBOTS

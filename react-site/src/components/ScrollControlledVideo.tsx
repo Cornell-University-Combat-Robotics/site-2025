@@ -1,57 +1,71 @@
-import { Box } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
-interface ScrollControlledVideoProps {
-  videoSrc: string;
-}
+const HeroAnimation: React.FC = () => {
+  const html = document.documentElement;
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const contextRef = useRef<CanvasRenderingContext2D | null>(null);
 
-const ScrollControlledVideo: React.FC<ScrollControlledVideoProps> = ({ videoSrc }) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [scrollHeight, setScrollHeight] = useState(0);
+  const frameCount = 66;
 
-  useEffect(() => {
-    const updateScrollHeight = () => {
-      setScrollHeight(document.documentElement.scrollHeight - window.innerHeight);
-    };
+  const currentFrame = (index: number): string =>
+    `/src/assets/nardo-explode-frames/${index.toString().padStart(4, "0")}.png`;
 
-    updateScrollHeight();
-    window.addEventListener("resize", updateScrollHeight);
+  const preloadImages = (): void => {
+    for (let i = 1; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
+    }
+  };
 
-    return () => {
-      window.removeEventListener("resize", updateScrollHeight);
-    };
-  }, []);
+  const img = new Image();
+  img.src = currentFrame(1);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!videoRef.current) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+    contextRef.current = context;
 
-      const scrollTop = window.scrollY;
-      const progress = scrollTop / scrollHeight;
+    img.onload = function () {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      context.drawImage(img, 0, 0);
+    };
 
-      const video = videoRef.current;
-      const duration = video.duration;
+    const updateImage = (index: number): void => {
+      img.src = currentFrame(index);
+      img.onload = () => {
+        if (contextRef.current && canvas) {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          contextRef.current.drawImage(img, 0, 0);
+        }
+      };
+    };
 
-      video.currentTime = progress * duration;
+    const handleScroll = (): void => {
+      const scrollTop = html.scrollTop;
+      const maxScrollTop = window.innerHeight;
+      const scrollFraction = scrollTop / maxScrollTop;
+      const frameIndex = Math.min(
+        frameCount - 1,
+        Math.ceil(scrollFraction * frameCount)
+      );
+
+      requestAnimationFrame(() => updateImage(frameIndex + 1));
     };
 
     window.addEventListener("scroll", handleScroll);
 
+    preloadImages();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollHeight]);
+  }, []);
 
-  return (
-    <Box>
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        style={{ position: "sticky", width: "100%" }}
-      />
-    </Box>
-  );
-
+  return <canvas ref={canvasRef} id="hero-lightpass"></canvas>;
 };
 
-export default ScrollControlledVideo;
+export default HeroAnimation;
