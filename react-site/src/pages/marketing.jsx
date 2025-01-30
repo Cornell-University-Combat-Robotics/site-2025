@@ -1,9 +1,8 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Stack } from "@mui/material";
 import marketing_photo from "../assets/marketing-photo.jpg";
 import TeamMemberList from "../components/MemberList";
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Parallax } from 'react-scroll-parallax';
 
 /*Marketing subteam page within Team Page*/
 export default function Marketing() {
@@ -16,7 +15,7 @@ export default function Marketing() {
         { name: "Design", desc: "Encompasses art and graphic design for CRC’s public image and merchandise, including trading cards, stickers, clothing, and more.\n\nDesign fosters an environment for members to express their passions, turning our robots into beloved characters." }
     ];
 
-    //TODO: how to encapsulate for different number of buttons
+    //TODO: encapsulate for different number of buttons
     /*
     Effect: toggle visibility for subsystem button animations. default set to not visible.
     - 4 different use states due to 4 different buttons. e.g. showSubsystem[0] controls visibility of 1st subsystem
@@ -41,122 +40,145 @@ export default function Marketing() {
     const navigate = useNavigate();
 
     return (
-        <>
-            <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+        <Box sx={{ position: 'relative', overflow: 'hidden' }}>
 
-                {/*First image unblurred*/}
-                <Box sx={{
-                    overflow: 'hidden', width: '100%', height: 'auto', position: 'relative'
-                }}>
-                    {/*TODO: zoom in*/}
-                    <img src={marketing_photo} style={{ width: '100%', height: '100%' }} />
+            {/*Blurred background image is static (not in parallax section)*/}
+
+            {/* 
+                Effect: sets background image for entirety of subteam page 
+                Note: background image will only be displayed if there are components in the box (e.g if box has no components, no background image will be rendered) 
+                */}
+            <Box sx={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                backgroundImage: `url(${marketing_photo})`, // Use the image as a background.
+                backgroundSize: 'cover', // Ensure the image retains its original size in repeats
+                backgroundAttachment: 'fixed', // Keeps the background image fixed during scroll
+                backgroundPosition: 'center' // Ensures image is always at centre of screen no matter if resizing occurs
+            }}>
+
+                {/*
+                    Box is empty except for button. 
+                    Box has a height taking up the full viewport, allowing for the full size of the image.
+                    */}
+                <Box sx={{ height: '100vh', position: 'relative' }}>
 
                     {/*
-                    Back button returning to teams page
-                    position must be absolute to parent to handle overlap over the box
-                    */}
+                        Back button returning to teams page.
+                        Position must be absolute to parent to handle overlap over the box.
+                        */}
                     <Button
                         sx={{
                             borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
-                            position: 'absolute', bottom: '10%', left: '10%', width: 'auto'
+                            position: 'absolute', bottom: '15%', right: '10%', width: 'auto', height: 'auto'
                         }}
                         onClick={() => navigate('/teams')} //back to teams page
                     >
-                        <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap'}}>
+                        <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap' }}>
                             {"< Back"}
                         </Typography>
                     </Button>
+
                 </Box>
 
-                {/* Effect: sets first image as unblurred background for all other components within this box 
-             Note: background image will only be displayed if there are components in the box (e.g if box has no components, no background image will be rendered) 
-             */}
+                {/*
+                Backdrop filter applies to the PARENT of the box (the "backdrop"). 
+                This makes the background image blurry & darker w/o changing the text components.
+                */}
                 <Box sx={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: `url(${marketing_photo})`, // Use the image as a background.
-                    backgroundRepeat: 'repeat', // Repeat the image both horizontally and vertically -> same blurred image will render as you scroll down
-                    backgroundSize: 'contain', // Ensure the image retains its original size in repeats
-                    backgroundPosition: 'top' // top of image will render before bottom
+                    position: 'relative', zIndex: 1, padding: '12%', backdropFilter: 'blur(5px) brightness(0.5)',
+                    height: '100%'
                 }}>
-                    {/*backdrop filter applies to the PARENT of the box (the "backdrop"). This makes the background image blurry & darker w/o changing the text components*/}
-                    <Box sx={{ position: 'relative', zIndex: 1, padding: 20, backdropFilter: 'blur(5px) brightness(0.5)' }}>
-                        {/*This box is formatted using column that contains both the Marketing title & its brief blurb*/}
-                        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                            {/*Text/Components to be placed above blurred image*/}
-                            <Typography sx={{ fontSize: 80, zIndex: 1, marginRight: 10, textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)' }}>
-                                {"MARKETING"}
-                            </Typography>
-
-                            <Typography sx={{ fontSize: 20, textAlign: 'left' }}>
-                                {"Within the Marketing Subteam, we specialize in promoting and enhancing CRC's brand. Our mission is to strengthen CRC's presence and reputation, elevating it beyond just a robotics team."}
-                            </Typography>
-                        </Box>
-
-                        <Typography sx={{ fontSize: 20, textAlign: "left", marginTop: 10 }}>
-                            {"Our approach to marketing revolves around four critical subsystems:"}
+                    {/*Stack contains both the Marketing title & its brief blurb*/}
+                    <Stack direction="row" alignItems={"center"}
+                        overflow={"scroll"} //when screen size gets too smaller but has yet to trigger flexWrap, 
+                        // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
+                        sx={{
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'nowrap' },  // Children wrap only on small & extra small screens 
+                        }}
+                    >
+                        {/*Text components to be placed above blurred image*/}
+                        <Typography sx={{
+                            fontSize: 80, textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+                            marginRight: 10 //must be applied in this specific typography component, else wrapping of 2nd typography will look weird
+                        }}>
+                            {"MARKETING"}
                         </Typography>
 
-                        {/*This box contains a row of buttons for the different subsystems of the subteam.
-                    change to stack -> more conventional*/}
-                        <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, marginTop: 10 }}>
-                            {subsystems.map((subsystem, index) => (
-
-                                <Button key={index} sx={{
-                                    position: 'relative', //must set position to relative for the subsystem description to be displayed relative to entire screen
-                                    flex: 1, //flex: all buttons made same size
-                                    height: 180, // TODO: width doesnt seem to change even if i specify width
-                                    backgroundColor: '#943131', textAlign: 'center', padding: 5, borderRadius: 2
-                                }}
-                                    //hover functionality
-                                    onMouseEnter={handleSubsystemClick[index]}
-                                    onMouseLeave={() => setShowSubsystem([false, false, false, false])}
-                                >
-                                    {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
-                                    {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
-
-                                    {/*Always display subsystem name on button*/}
-                                    <Typography sx={{ fontSize: 30, color: 'white' }}>
-                                        {subsystem.name}
-                                    </Typography>
-                                </Button>
-                            ))}
-                        </Box>
-
-                        {/*TODO: change all to body 1*/}
-                        <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>
-                            {"While the subsystems are distinct, members are able to work interchangeably among them."}
+                        <Typography sx={{ fontSize: 20, textAlign: 'left', minWidth: 320, wordWrap: 'break-word' }}>
+                            {"Within the Marketing Subteam, we specialize in promoting and enhancing CRC's brand. Our mission is to strengthen CRC's presence and reputation, elevating it beyond just a robotics team."}
                         </Typography>
+                    </Stack>
 
-                        <Typography sx={{ fontSize: 30, marginTop: 10 }}>
-                            {"If you are more interested in..."}
-                        </Typography>
+                    <Typography sx={{ fontSize: 20, textAlign: "left", marginTop: 10 }}>
+                        {"Our approach to marketing revolves around four critical subsystems:"}
+                    </Typography>
 
-                        <Typography sx={{ fontSize: 20, marginTop: 5 }}>
-                            {"• Robot construction. Our Kinetic or Sportsman subteams may be a better fit"}<br />
-                            {"• Programming or wiring, our Autonomous subteam may be a better fit"}
-                        </Typography>
+                    {/*
+                    Stack contains a row of buttons for the different subsystems of the subteam.
+                    */}
+                    <Stack direction="row" marginTop={10} justifyContent={"center"} alignItems={"center"}
+                        sx={{
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+                            gap: 3 //maintains both vertical and horizontal gap between buttons
+                        }}
+                    >
+                        {subsystems.map((subsystem, index) => (
 
-                        <Typography sx={{ fontSize: 45, textAlign: "left", marginTop: 10 }}>
-                            {"Meet the team"}
-                        </Typography>
+                            <Button key={index} sx={{
+                                flex: '1 1 250px', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
+                                maxWidth: 250, // ensures that buttons dont get too big when wrapping
+                                height: 180,
+                                backgroundColor: '#943131', textAlign: 'center', borderRadius: 2
+                            }}
+                                //hover functionality
+                                onMouseEnter={handleSubsystemClick[index]}
+                                onMouseLeave={() => setShowSubsystem([false, false, false, false])}
+                            >
+                                {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
+                                {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
 
-                        <TeamMemberList teamName={"Marketing"} />
+                                {/*Always display subsystem name on button*/}
+                                <Typography sx={{ fontSize: 30, color: 'white' }}>
+                                    {subsystem.name}
+                                </Typography>
+                            </Button>
+                        ))}
+                    </Stack>
 
-                    </Box>
+                    {/*TODO: change all to body 1*/}
+                    <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>
+                        {"While the subsystems are distinct, members are able to work interchangeably among them."}
+                    </Typography>
+
+                    <Typography sx={{ fontSize: 30, marginTop: 10 }}>
+                        {"If you are more interested in..."}
+                    </Typography>
+
+                    <Typography sx={{ fontSize: 20, marginTop: 5 }}>
+                        {"• Robot construction. Our Kinetic or Sportsman subteams may be a better fit"}<br />
+                        {"• Programming or wiring, our Autonomous subteam may be a better fit"}
+                    </Typography>
+
+                    <Typography sx={{ fontSize: 45, textAlign: "left", marginTop: 10, marginBottom: 3 }}>
+                        {"Meet the team"}
+                    </Typography>
+
+                    <TeamMemberList teamName={"Marketing"} />
 
                 </Box>
-
 
 
             </Box>
-        </>
+
+
+
+        </Box>
     );
 }
 
 //Effect: when clicking on a button in subteam pages, displays subsystem information over section of screen
-//TODO: maybe make export
 function SubsystemButtonDisplay({ name, desc }) {
 
     return (

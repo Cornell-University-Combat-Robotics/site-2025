@@ -20,7 +20,7 @@ function About() {
         position: 'relative',
       }}>
         <Box> {/* Header contents */}
-          {/* crc logo, shifted up on top of the background image */}
+          {/* crc logo*/}
           <img src={logo} style={{
             maxWidth: '35%',
             height: 'auto',
