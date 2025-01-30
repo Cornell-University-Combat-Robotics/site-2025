@@ -1,91 +1,159 @@
-import React from "react";
-import { Typography, Box, Grid2, Link } from "@mui/material";
+import React, { useState } from "react";
+import { Typography, Box, Link, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
-import arcade from "../assets/gamepage/arcade.png"
-import crcvs from '../assets/gamepage/crc-versus.png'
-import crcrizz from '../assets/gamepage/crc-rizz.png'
-import mannymania from "../assets/gamepage/manny-mania.png"
-import zIndex from "@mui/material/styles/zIndex";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import arcade from "../assets/gamepage/arcade.png";
+import crcvs from "../assets/gamepage/crc-versus.png";
+import crcrizz from "../assets/gamepage/crc-rizz.png";
+import mannymania from "../assets/gamepage/manny-mania.png";
 
 const images = [
   {
-    title: 'crcvs',
+    title: "crcvs",
     url: crcvs,
-    link: '#',
+    link: "https://combatrobotics.engineering.cornell.edu/gamenew.html",
   },
   {
-    title: 'crcrizz',
+    title: "crcrizz",
     url: crcrizz,
-    link: '#',
+    link: "", // No link for crcrizz
   },
   {
-    title: 'mannymania',
+    title: "mannymania",
     url: mannymania,
-    link: '#',
+    link: "https://combatrobotics.engineering.cornell.edu/oldgame/gameold.html",
   },
-]
+];
+
 export default function Game() {
-  // const contentHeight = `calc(99vh - ${navbarHeight + footerHeight}px)`;
-  // // console.log("Content height: " + contentHeight);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
     <Box
       sx={{
         width: "100vw",
-        height: "100vh",
+        height: "82.2vh",
+        minHeight: "82.2vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         overflow: "hidden",
-      }}>
+        position: "relative",
+      }}
+    >
+      {/* Arcade Image as Background */}
       <motion.div
-        initial={{ scale: 0.5 }}
-        animate={{ scale: 1, y: "100px" }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-          ease: [0.5, 1, 0.8, 1],
-        }}
-        sx={{
-          position: 'relative'
-        }}>
-        <img
-          src={arcade}
-          sx={{
-            zIndex: -999,
-          }}
-        />
+        initial={{ scale: 0.3 }}
+        animate={{ scale: 1, y: "50px" }}
+        transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
+        style={{ position: "absolute", zIndex: -1 }}
+      >
+        <img src={arcade} style={{ width: "auto", height: "100%" }} />
       </motion.div>
-      {/* <motion.div> */}
-      <Box
-        direction="column"
-        sx={{
-          position: 'relative',
-          width: '20%',
-          height: '20%',
-        }}>
-        {images.map((image) => (
-          // <Item>
-          <Link
-            href={image.link}
-            key={image.title}
-          >
-            <img
-              src={image.url}
 
-            />
-          </Link>
-          // </Item>
-        ))}
-      </Box>
-      {/* </motion.div> */}
-      <Typography
-        variant="h1"
-        sx={{
-          zIndex: 1
-        }}>
-        Game Page
-      </Typography>
+      {/* Title */}
+      <motion.div
+        initial={{ opacity: 0, y: -150 }}
+        animate={{ opacity: 1, y: -100 }}
+        transition={{ duration: 1, delay: 1 }}
+        style={{ position: "relative", zIndex: 1 }}
+      >
+        <Typography
+          variant="h1"
+          sx={{
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          GAMES
+        </Typography>
+      </motion.div>
+
+      {/* Carousel for Game Images */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        style={{ position: "relative", zIndex: 1, marginTop: "20px" }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "visible",
+            width: "100vw",
+            maxWidth: "600px",
+          }}
+        >
+          <IconButton onClick={handlePrev} sx={{ zIndex: 2 }}>
+            <ArrowBack sx={{ color: "white" }} />
+          </IconButton>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              overflow: "visible",
+            }}
+          >
+            {images.map((image, index) => (
+              <motion.div
+                key={image.title}
+                animate={{
+                  x: `${(index - currentIndex) * 200}px`,
+                  scale: index === currentIndex ? 1.2 : 1,
+                  opacity: index === currentIndex ? 1 : 0.5,
+                }}
+                transition={{ duration: 0.5 }}
+                style={{ position: "absolute" }}
+              >
+                {image.link ? (
+                  <Link href={image.link} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={image.url}
+                      alt={image.title}
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </Link>
+                ) : (
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
+              </motion.div>
+            ))}
+          </Box>
+
+          <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
+            <ArrowForward sx={{ color: "white" }} />
+          </IconButton>
+        </Box>
+      </motion.div>
     </Box>
   );
 }

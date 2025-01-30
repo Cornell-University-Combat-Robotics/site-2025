@@ -56,7 +56,7 @@ function App() {
             <Route path="/robots/swiss" element={<><NavBar /><Swiss /></>} />
             <Route path="/robots/hestr" element={<><NavBar /><Hestr /></>} />
             <Route path="/sponsors" element={<><GradientNavBar /><Sponsors /></>} />
-            <Route path="/game" element={<><NavBar /><Game /></>} />
+            <Route path="/game" element={<><GradientNavBar /><Game /></>} />
             <Route path="/apply" element={<><GradientNavBar /><Apply /></>} />
             <Route path="/accessibility" element={<><GradientNavBar /><Accessibility /></>} />
           </Routes>
