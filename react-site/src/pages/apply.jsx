@@ -99,6 +99,56 @@ export default function Apply() {
           </Typography>
         </Box>
       </Box>
+      <Box sx={{
+        // timeline container
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'pink',
+          // backgroundImage: `url(${apply})`,
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'top',
+          // backgroundRepeat: 'no-repeat',
+          // position: 'relative',
+      }}>
+        {/* timeline sections container */}
+        <Box sx={{backgroundColor: 'blue'}}>
+          <Typography variant="h4" sx={{color:"white"}}>
+            Title 1
+          </Typography>
+          <Typography variant="p" sx={{color:"white"}}>
+            Para 1
+          </Typography>
+          {/* next few boxes contain stuff for making timeline */}
+        </Box>
+        <Box sx={{backgroundColor: 'blue'}}>
+          <Typography variant="h4" sx={{color:"white"}}>
+            Title 2
+          </Typography>
+          <Typography variant="p" sx={{color:"white"}}>
+            Para 2
+          </Typography>
+          {/* next few boxes contain stuff for making timeline */}
+        </Box>
+        <Box sx={{backgroundColor: 'blue'}}>
+          <Typography variant="h4" sx={{color:"white"}}>
+            Title 3
+          </Typography>
+          <Typography variant="p" sx={{color:"white"}}>
+            Para 3
+          </Typography>
+          {/* next few boxes contain stuff for making timeline */}
+        </Box>
+        <Box sx={{backgroundColor: 'blue'}}>
+          <Typography variant="h4" sx={{color:"white"}}>
+            Title 4
+          </Typography>
+          <Typography variant="p" sx={{color:"white"}}>
+            Para 4
+          </Typography>
+          {/* next few boxes contain stuff for making timeline */}
+        </Box>
+      </Box>
     </Box>
   );
 }
