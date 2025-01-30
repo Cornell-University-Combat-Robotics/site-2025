@@ -4,19 +4,19 @@ import NavBarButton from "./NavBarButton";
 import NavBarIcon from "./NavBarIcon";
 
 /** GradientNavBar creates a navigation bar with a semi-transparent gradient for the top of the page. 
- * Pages that implement this NavBar must set [position= "relative"] in order for the positions to be accurate.*/ 
+ * Pages that implement this NavBar must set [position= "relative"] in order for the positions to be accurate.*/
 export default function GradientNavBar() {
   return (
     <Box
       id="navbar-wrapper"
       sx={{
         top: "0px",
-        left:"0px",
-        right:"0px",
+        left: "0px",
+        right: "0px",
         zIndex: 1000, //used to ensure the nav bar is in front of all other elements on the page
         background: 'linear-gradient(to top,  transparent, black)',
         alignItems: "center",
-        position: "absolute",
+        position: "fixed",
         py: 1.5,
         px: 4,
         display: "flex",
@@ -33,7 +33,7 @@ export default function GradientNavBar() {
         }}
       >
         <NavBarButton bg="none" text="About" variant="secondary" />
-        <NavBarButton bg="none" text="Teams" variant="secondary" />
+        <NavBarButton bg="none" text="Team" variant="secondary" />
         <NavBarButton bg="none" text="Robots" variant="secondary" />
         <NavBarButton bg="none" text="Sponsors" variant="secondary" />
         <NavBarButton bg="none" text="Game" variant="secondary" />

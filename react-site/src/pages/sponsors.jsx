@@ -1,28 +1,33 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import team from "../assets/team-photo-hearts.png";
+import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
 
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
   return (
     <Box>
-      {/*Landing Page with img component in background and Typography (text) on
-      top the center of the image*/}
-      <Box position="relative" display="inline-block">
-        <img src={team} style={{ width: '100%', height: 'auto' }} />
+      <Box sx={{
+        width: '100%',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundImage: `url(${team})`,  // Your image URL
+        backgroundSize: 'cover',      // Ensure the image covers the area
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+      }}>
+        {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
         <Typography
           variant="h1"
           sx={{
-            fontFamily: 'Josefin Sans',
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)' // Add drop shadow
-          }}
-        >
-          SUPPORT THE TEAM
+            textAlign: 'center',
+            transform: 'translate(0,15%)',
+            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
+          }}>
+          SUPPORT THE <br></br>TEAM
         </Typography>
       </Box>
 
