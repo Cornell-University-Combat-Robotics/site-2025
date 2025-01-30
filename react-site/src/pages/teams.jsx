@@ -105,7 +105,7 @@ export default function Teams() {
             <TeamButton hoverColor="#501584" image={logo} to="/teams/marketing">Marketing</TeamButton>
           </Box>
         </Box>
-        <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
+        <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
           <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
             <TeamButton hoverColor="#820002" image={logo} to="/teams/marketing" sx={{ width: "447px" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={logo} to="/teams/marketing" sx={{ width: "447px" }}>Alumni</TeamButton>
