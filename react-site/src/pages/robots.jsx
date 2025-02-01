@@ -4,26 +4,12 @@ import { Box, Stack, Typography } from '@mui/material';
 import RobotCard from '../components/RobotCard';
 import RobotCardList from '../components/RobotCardList';
 import ScrollControlledVideo from '../components/ScrollControlledVideo';
+import StickyBox from '../components/StickyBox';
 
 export default function Robots() {
   return (
     <Box>
-      <Box
-      // sx={{
-      //   position: "sticky",
-      //   top: 0,
-      //   left: 0,
-      //   width: "100%",
-      //   height: "100vh",
-      //   zIndex: 10,
-      // }}
-      >
-        <ScrollControlledVideo
-          videoSrc={nardo_explode}
-        />
-      </Box>
-
-      {/* <img src={nardo_whole} style={{ width: '70%', height: 'auto' }} /> */}
+      <StickyBox />
       <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
         ROBOTS
       </Typography>
