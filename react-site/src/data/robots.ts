@@ -50,7 +50,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       name: "Fangular Momentum",
       subteam: "FA '24",
       desc: "The first 3lb bot",
-      image: batbotPhoto, 
+      image: batbotPhoto,
       link: "/robots/batbot",
       color: 1,
     },

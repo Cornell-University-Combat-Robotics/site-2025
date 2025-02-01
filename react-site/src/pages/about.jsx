@@ -3,8 +3,10 @@ import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
 import { red } from "@mui/material/colors";
-// DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
+import TimelineCell from "../components/Timeline1Cell";
+import panel1 from "../assets/home-timeline/panel-1.jpeg";
 
+// DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
 
 // Creates the About page for the website.
 function About() {
@@ -105,6 +107,12 @@ function About() {
           OUR JOURNEY
         </Typography>
 
+        {/* Timeline */}
+        <Box sx={{ mx: '15%' }}>
+          <TimelineCell date='October 2019' description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat 
+          robots, much like those featured on the TV show Battlebots. Each year, we build two 12lb mechanical bots and one 3lb 
+          battlebot with AI based functionality." image={panel1} />
+        </Box>
       </Box>
 
     </Box >
