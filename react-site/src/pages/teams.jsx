@@ -1,46 +1,65 @@
+import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import team_photo from "../assets/background-pictures/team-photo-formal.png";
-import TeamMemberList from "../components/MemberList";
 import { motion } from 'framer-motion';
-import logo from "/logo.png";
+import AutoIcon from "../assets/subteam-icons/Autonomous.png";
+import KineticIcon from "../assets/subteam-icons/Kinetic.png";
+import MarketingIcon from "../assets/subteam-icons/Marketing.png";
+import SportsmanIcon from "../assets/subteam-icons/Sportsman.png";
+import AlumniIcon from "../assets/subteam-icons/Alumni.png";
+import LeadsIcon from "../assets/subteam-icons/Leads.png";
+import WhiteAutoIcon from "../assets/subteam-icons/WhiteAutoLogo.png";
+import WhiteKineticIcon from "../assets/subteam-icons/WhiteKineticLogo.png";
+import WhiteMarketingIcon from "../assets/subteam-icons/WhiteMarketingLogo.png";
+import WhiteSportIcon from "../assets/subteam-icons/WhiteSportLogo.png";
+import WhiteTLIcon from "../assets/subteam-icons/WhiteTLLogo.png";
+import WhiteAlumIcon from "../assets/subteam-icons/WhiteAlumLogo.png";
 
-const TeamButton = ({ children, hoverColor, sx, image, to }) => (
-  <Button
-    component={Link}
-    to={to}
-    variant="outlined"
-    sx={{
-      backgroundColor: "#1C1C1C",
-      borderColor: "white",
-      borderWidth: "4px",
-      color: "white",
-      fontSize: "1.5em",
-      width: "260px",
-      height: "150px",
-      textAlign: "center",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      fontFamily: "Josefin Sans",
-      px: "20px",
-      borderRadius: "16px",
-      textTransform: "none",
-      '&:hover': {
-        color: 'white',
+// TeamButton is the button component for individual subteams on the Team page. It takes in the following props: subteam icon,
+// white subteam icon for hovering, subteam color for hovering, and the link to the subteam page. Using this component
+// enables the creation of a consistent button style for all subteams. (and no reptition!)
+const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <Button
+      component={Link}
+      to={to}
+      variant="outlined"
+      sx={{
+        backgroundColor: "#1C1C1C",
         borderColor: "white",
-        backgroundColor: hoverColor,
-      },
-      ...sx
-    }}
-  >
-    {image && <img src={image} alt="" style={{ width: "50px", height: "50px", marginBottom: "10px" }} />}
-    {children}
-  </Button>
-)
+        borderWidth: "4px",
+        color: "white",
+        fontSize: "1.5em",
+        width: "260px",
+        height: "150px",
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "Josefin Sans",
+        px: "20px",
+        borderRadius: "16px",
+        textTransform: "none",
+        '&:hover': {
+          color: 'white',
+          borderColor: "white",
+          backgroundColor: hoverColor,
+        },
+        ...sx
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {image && <img src={isHovered ? whiteImg : image} alt="" style={{ width: "60px", height: "60px", marginBottom: "10px" }} />}
+      {children}
+    </Button>
+  )
+}
 
-/** Teams creates the Teams page of the website. */
+/** Teams creates the Team page of the website. */
 export default function Teams() {
   return (
     <>
@@ -99,16 +118,16 @@ export default function Teams() {
             button is not hovered over.*/}
         <Box display='flex' justifyContent="center" alignItems="center" mt="60px" mb="40px">
           <Box display='flex' width="60%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#0E7C2B" image={logo} to="/teams/marketing">Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={logo} to="/teams/marketing">Sportsman</TeamButton>
-            <TeamButton hoverColor="#8D8D2C" image={logo} to="/teams/marketing">Autonomous</TeamButton>
-            <TeamButton hoverColor="#501584" image={logo} to="/teams/marketing">Marketing</TeamButton>
+            <TeamButton hoverColor="#0E7C2B" image={KineticIcon} whiteImg={WhiteKineticIcon} to="/teams/marketing">Kinetic</TeamButton>
+            <TeamButton hoverColor="#1F398D" image={SportsmanIcon} whiteImg={WhiteSportIcon} to="/teams/marketing">Sportsman</TeamButton>
+            <TeamButton hoverColor="#8D8D2C" image={AutoIcon} whiteImg={WhiteAutoIcon} to="/teams/marketing">Autonomous</TeamButton>
+            <TeamButton hoverColor="#501584" image={MarketingIcon} whiteImg={WhiteMarketingIcon} to="/teams/marketing">Marketing</TeamButton>
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
           <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#820002" image={logo} to="/teams/marketing" sx={{ width: "447px" }}>Team Leads</TeamButton>
-            <TeamButton hoverColor="#820002" image={logo} to="/teams/marketing" sx={{ width: "447px" }}>Alumni</TeamButton>
+            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/teams/marketing" sx={{ width: "447px" }}>Team Leads</TeamButton>
+            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/teams/marketing" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
         </Box>
 
