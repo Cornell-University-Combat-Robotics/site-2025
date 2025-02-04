@@ -62,7 +62,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     },
     {
       imgSrc: "/team-members/RachelPineda.png",
-      name: "Rachel pineada",
+      name: "Rachel Pineda",
       position: ["Marketing Co-Lead"],
       linkedin: "linkedin.com/in/rrachelpineda",
       stats: [

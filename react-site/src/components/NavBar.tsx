@@ -16,7 +16,7 @@ export default function NavBar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "black" 
+        backgroundColor: "black"
       }}
     >
       <NavBarIcon />
@@ -28,7 +28,7 @@ export default function NavBar() {
         }}
       >
         <NavBarButton bg="none" text="About" variant="secondary" />
-        <NavBarButton bg="none" text="Teams" variant="secondary" />
+        <NavBarButton bg="none" text="Team" variant="secondary" />
         <NavBarButton bg="none" text="Robots" variant="secondary" />
         <NavBarButton bg="none" text="Sponsors" variant="secondary" />
         <NavBarButton bg="none" text="Game" variant="secondary" />
