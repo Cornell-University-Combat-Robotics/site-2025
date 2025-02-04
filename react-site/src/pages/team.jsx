@@ -118,16 +118,16 @@ export default function Team() {
             button is not hovered over.*/}
         <Box display='flex' justifyContent="center" alignItems="center" mt="60px" mb="40px">
           <Box display='flex' width="60%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#0E7C2B" image={KineticIcon} whiteImg={WhiteKineticIcon} to="/teams/marketing">Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={SportsmanIcon} whiteImg={WhiteSportIcon} to="/teams/marketing">Sportsman</TeamButton>
-            <TeamButton hoverColor="#8D8D2C" image={AutoIcon} whiteImg={WhiteAutoIcon} to="/teams/marketing">Autonomous</TeamButton>
-            <TeamButton hoverColor="#501584" image={MarketingIcon} whiteImg={WhiteMarketingIcon} to="/teams/marketing">Marketing</TeamButton>
+            <TeamButton hoverColor="#0E7C2B" image={KineticIcon} whiteImg={WhiteKineticIcon} to="/team/kinetic">Kinetic</TeamButton>
+            <TeamButton hoverColor="#1F398D" image={SportsmanIcon} whiteImg={WhiteSportIcon} to="/team/sportsman">Sportsman</TeamButton>
+            <TeamButton hoverColor="#8D8D2C" image={AutoIcon} whiteImg={WhiteAutoIcon} to="/team/autonomous">Autonomous</TeamButton>
+            <TeamButton hoverColor="#501584" image={MarketingIcon} whiteImg={WhiteMarketingIcon} to="/team/marketing">Marketing</TeamButton>
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
           <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/teams/marketing" sx={{ width: "447px" }}>Team Leads</TeamButton>
-            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/teams/marketing" sx={{ width: "447px" }}>Alumni</TeamButton>
+            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/teams/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
+            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/teams/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
         </Box>
 
