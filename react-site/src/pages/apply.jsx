@@ -57,6 +57,7 @@ export default function Apply() {
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: 'lime',
+
           // backgroundImage: `url(${apply})`,
           // backgroundSize: 'cover',
           // backgroundPosition: 'top',
@@ -106,50 +107,169 @@ export default function Apply() {
       </Typography>
       <Box sx={{
         // timeline container
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          // display: 'flex',
+          // justifyContent: 'center',
+          // alignItems: 'center',
           backgroundColor: 'pink',
-          // backgroundImage: `url(${apply})`,
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'top',
-          // backgroundRepeat: 'no-repeat',
-          // position: 'relative',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '10px',
+          margin: '30px',
       }}>
-        {/* timeline sections container */}
-        <Box sx={{backgroundColor: 'blue'}}>
-          <Typography variant="h4" sx={{color:"white"}}>
-            Title 1
+        {/* below is container for 01 02 03 04 */}
+        <Box sx={{
+              position: 'relative', 
+              display: 'inline-block',
+              backgroundColor: 'blue'}}>
+          <Typography variant="h1" 
+              sx={{
+                fontSize: '8rem', 
+                fontWeight: 'bold',
+                color: 'rgba(0,0,0,0.1)', 
+                position: 'relative'}}>
+            01
           </Typography>
-          <Typography variant="p" sx={{color:"white"}}>
-            Para 1
+          {/* below is text overlayed */}
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            APPLICATIONS DUE
+          </Typography>
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            All applications (Freshmen, Upperclassmen, and Transfer) are due October 17th, 11:59pm
           </Typography>
           {/* next few boxes contain stuff for making timeline */}
         </Box>
-        <Box sx={{backgroundColor: 'blue'}}>
-          <Typography variant="h4" sx={{color:"white"}}>
-            Title 2
+        <Box sx={{
+              position: 'relative', 
+              display: 'inline-block',
+              backgroundColor: 'blue'}}>
+          <Typography variant="h1" 
+              sx={{
+                fontSize: '8rem', 
+                fontWeight: 'bold',
+                color: 'rgba(0,0,0,0.1)', 
+                position: 'relative'}}>
+            01
           </Typography>
-          <Typography variant="p" sx={{color:"white"}}>
-            Para 2
+          {/* below is text overlayed */}
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            APPLICATIONS DUE
+          </Typography>
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            All applications (Freshmen, Upperclassmen, and Transfer) are due October 17th, 11:59pm
           </Typography>
           {/* next few boxes contain stuff for making timeline */}
         </Box>
-        <Box sx={{backgroundColor: 'blue'}}>
-          <Typography variant="h4" sx={{color:"white"}}>
-            Title 3
+        <Box sx={{
+              position: 'relative', 
+              display: 'inline-block',
+              backgroundColor: 'blue'}}>
+          <Typography variant="h1" 
+              sx={{
+                fontSize: '8rem', 
+                fontWeight: 'bold',
+                color: 'rgba(0,0,0,0.1)', 
+                position: 'relative'}}>
+            01
           </Typography>
-          <Typography variant="p" sx={{color:"white"}}>
-            Para 3
+          {/* below is text overlayed */}
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            APPLICATIONS DUE
+          </Typography>
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            All applications (Freshmen, Upperclassmen, and Transfer) are due October 17th, 11:59pm
           </Typography>
           {/* next few boxes contain stuff for making timeline */}
         </Box>
-        <Box sx={{backgroundColor: 'blue'}}>
-          <Typography variant="h4" sx={{color:"white"}}>
-            Title 4
+        <Box sx={{
+              position: 'relative', 
+              display: 'inline-block',
+              backgroundColor: 'blue'}}>
+          <Typography variant="h1" 
+              sx={{
+                fontSize: '8rem', 
+                fontWeight: 'bold',
+                color: 'rgba(0,0,0,0.1)', 
+                position: 'relative'}}>
+            01
           </Typography>
-          <Typography variant="p" sx={{color:"white"}}>
-            Para 4
+          {/* below is text overlayed */}
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            APPLICATIONS DUE
+          </Typography>
+          <Typography variant="h4" 
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black'
+              }}>
+            All applications (Freshmen, Upperclassmen, and Transfer) are due October 17th, 11:59pm
           </Typography>
           {/* next few boxes contain stuff for making timeline */}
         </Box>
