@@ -56,8 +56,8 @@ const teamMembers: Record<string, MemberProps[]> = {
       position: ["Marketing Co-Lead"],
       linkedin: "linkedin.com/in/rrachelpineda",
       stats: [
-        ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"], 
-        [90, 50, 80]
+        ["Understanding of Unity", "Suika Functionality", "Suika GUI"], 
+        [45, 100, 100]
       ]
     },
     {
