@@ -36,6 +36,12 @@ theme.typography.h2 = {
   fontWeight: 'normal',
 };
 
+theme.typography.h3 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '2rem',
+  fontWeight: 'normal',
+};
+
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
   fontSize: '1rem',
