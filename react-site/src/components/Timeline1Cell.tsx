@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Card, CardMedia, CardContent, CardActions, Button, Typography } from "@mui/material";
 
 export interface Timeline1Cell {
     date: string
@@ -9,20 +9,24 @@ export interface Timeline1Cell {
 
 export default function TimelineCell(props: Timeline1Cell) {
     return (
-        <Box sx={{
-            width: '50%',
-            height: '80vh',
-            backgroundImage: `url(${props.image})`,  // Your image URL
-            backgroundSize: 'cover',      // Ensure the image covers the area
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            position: 'relative',
-        }
-        }>
-            <Typography> {props.description} </Typography>
-
-
-        </Box >
+        <Card sx={{ width: "250px", height: "335px" }}>
+            <CardMedia
+                sx={{ height: 140 }}
+                image={`url(${props.image})`}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {props.date}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {props.description}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+            </CardActions>
+        </Card>
 
     )
 
