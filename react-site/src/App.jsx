@@ -21,6 +21,8 @@ import Batbot from './pages/robots/batbot';
 import Swiss from './pages/robots/swiss';
 import Hestr from './pages/robots/hestr';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Leads from './pages/subteams/leads';
+import Alumni from './pages/subteams/alumni';
 
 const theme = createTheme();
 
@@ -56,6 +58,8 @@ function App() {
             <Route path="/team/autonomous" element={<><ScrollToTop /><GradientNavBar /><Autonomous /></>} />
             <Route path="/team/kinetic" element={<><ScrollToTop /><GradientNavBar /><Kinetic /></>} />
             <Route path="/team/sportsman" element={<><ScrollToTop /><GradientNavBar /><Sportsman /></>} />
+            <Route path="/team/leads" element={<><ScrollToTop /><GradientNavBar /><Leads /></>} />
+            <Route path="/team/alumni" element={<><ScrollToTop /><GradientNavBar /><Alumni /></>} />
             <Route path="/robots" element={<><ScrollToTop /><GradientNavBar /><Robots /></>} />
             <Route path="/robots/beater" element={<><ScrollToTop /><GradientNavBar /><Beater /></>} />
             <Route path="/robots/slugma" element={<><ScrollToTop /><GradientNavBar /><Slugma /></>} />

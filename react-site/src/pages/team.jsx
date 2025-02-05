@@ -3,10 +3,10 @@ import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import team_photo from "../assets/background-pictures/team-photo-formal.png";
 import { motion } from 'framer-motion';
-import AutoIcon from "../assets/subteam-icons/Autonomous.png";
-import KineticIcon from "../assets/subteam-icons/Kinetic.png";
-import MarketingIcon from "../assets/subteam-icons/Marketing.png";
-import SportsmanIcon from "../assets/subteam-icons/Sportsman.png";
+import AutoIcon from "../assets/subteam-icons/AutoThicker4.png";
+import KineticIcon from "../assets/subteam-icons/KineticThicker.png";
+import MarketingIcon from "../assets/subteam-icons/MarketingThicker.png";
+import SportsmanIcon from "../assets/subteam-icons/SportsmanThicker.png";
 import AlumniIcon from "../assets/subteam-icons/Alumni.png";
 import LeadsIcon from "../assets/subteam-icons/Leads.png";
 import WhiteAutoIcon from "../assets/subteam-icons/WhiteAutoLogo.png";
@@ -53,7 +53,7 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {image && <img src={isHovered ? whiteImg : image} alt="" style={{ width: "60px", height: "60px", marginBottom: "10px" }} />}
+      {image && <img src={isHovered ? whiteImg : image} alt="" style={{ width: "70px", height: "70px", marginBottom: "10px" }} />}
       {children}
     </Button>
   )
@@ -126,8 +126,8 @@ export default function Team() {
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
           <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/teams/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
-            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/teams/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
+            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/team/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
+            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/team/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
         </Box>
 
