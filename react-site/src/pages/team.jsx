@@ -3,7 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import team_photo from "../assets/background-pictures/team-photo-formal.png";
 import { motion } from 'framer-motion';
-import AutoIcon from "../assets/subteam-icons/AutoThicker4.png";
+import AutoIcon from "../assets/subteam-icons/AutoThicker.png";
 import KineticIcon from "../assets/subteam-icons/KineticThicker.png";
 import MarketingIcon from "../assets/subteam-icons/MarketingThicker.png";
 import SportsmanIcon from "../assets/subteam-icons/SportsmanThicker.png";
