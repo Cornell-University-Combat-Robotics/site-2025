@@ -1,11 +1,13 @@
 import { m } from "framer-motion";
 import { MemberProps } from "../components/Member";
 
+// TODO: Remove public/team-members folder
+
 // All member structs are defined in allMembers and then called in their respective teams in teamMembers.
 // Individual member structs are defined by image source, name, position, LinkedIn, and stats.
 const allMembers: Record<string, MemberProps> = {
   calebSchlissel: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/caleb-schlissel.jpg",
     name: "Caleb Schlissel",
     position: ["Team Co-Lead"],
     linkedin: "https://www.linkedin.com/in/caleb-schlissel-0129/",
@@ -15,7 +17,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   stellaTaglich: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/stella-taglich.jpg",
     name: "Stella Taglich",
     position: ["Team Co-Lead"],
     linkedin: "https://www.linkedin.com/in/stellataglich/",
@@ -25,7 +27,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   zanderKnight: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/zander-knight.jpg",
     name: "Zander Knight",
     position: ["Kinetic Co-Lead"],
     linkedin: "https://www.linkedin.com/in/zander-knight-3aab8724a/",
@@ -35,7 +37,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   jamesLaSalle: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/james-lasalle.jpg",
     name: "James LaSalle",
     position: ["Kinetic Co-Lead"],
     linkedin: "https://www.linkedin.com/in/james-lasalle-589860256/",
@@ -45,7 +47,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   ethanHernandez: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/ethan-hernandez.jpg",
     name: "Ethan Hernandez",
     position: ["Kinetic Member", "MechE Trainer"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -55,7 +57,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   kevinSturm: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/kevin-sturm.jpg",
     name: "Kevin Sturm",
     position: ["Kinetic Member", "Social Lead", "Test Box Lead"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -65,7 +67,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   mattewAnazco: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/mattew-anazco.jpg",
     name: "Mattew Anazco",
     position: ["Kinetic Member", "MechE Trainer"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -75,7 +77,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   castielLi: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/castiel-li.JPG",
     name: "Castiel Li",
     position: ["Kinetic Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -85,7 +87,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   gurjotGill: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/gurjot-gill.JPG",
     name: "Gurjot Gill",
     position: ["Kinetic Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -95,7 +97,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   kailaDanielson: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/kaila-danielson.JPG",
     name: "Kaila Danielson",
     position: ["Kinetic Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -105,7 +107,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   spencerHumes: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/spencer-humes.JPG",
     name: "Spencer Humes",
     position: ["Kinetic Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -115,7 +117,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   narayanRueppel: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/narayan-rueppel.jpg",
     name: "Narayan Rueppel",
     position: ["Sportsman Co-Lead"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -125,7 +127,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   manuelyFelizPortes: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/manuely-feliz-portes.jpg",
     name: "Manuely Feliz Portes",
     position: ["Sportsman Co-Lead"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -135,7 +137,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   alexJenkins: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/alex-jenkins.jpg",
     name: "Alex Jenkins",
     position: ["Sportsman Member", "Training Lead", "Former Subteam Co-Lead"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -145,7 +147,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   kaiRodger: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/kai-rodger.jpg",
     name: "Kai Rodger",
     position: ["Sportsman Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -155,7 +157,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   tylerSprague: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/tyler-sprague.jpg",
     name: "Tyler Sprague",
     position: ["Sportsman Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -165,7 +167,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   jasonChoi: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/jason-choi.jpg",
     name: "Jason Choi",
     position: ["Sportsman Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -175,7 +177,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   ruiHanChu: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/ruihan-chu.jpg",
     name: "RuiHan Chu",
     position: ["Sportsman Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -325,7 +327,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   sophieCheng: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/sophie-cheng.JPG",
     name: "Sophie Cheng",
     position: ["Autonomous Member"],
     linkedin: "linkedin.com/in/rrachelpineda",
@@ -345,7 +347,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   rachelPineda: {
-    imgSrc: "/team-members/RachelPineda.png",
+    imgSrc: "src/assets/members/rachel-pineda.jpg",
     name: "Rachel Pineda",
     position: ["Marketing Co-Lead"],
     linkedin: "linkedin.com/in/rrachelpineda",
