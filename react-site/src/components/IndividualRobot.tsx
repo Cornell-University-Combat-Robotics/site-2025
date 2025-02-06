@@ -1,9 +1,16 @@
-import { Box, Typography, Stack, Grid2, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Link } from "@mui/material";
+import { Box, Typography, Stack, Grid2, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Link, Button } from "@mui/material";
 import ReactPlayer from 'react-player/youtube'; // Documentation: https://www.npmjs.com/package/react-player
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
+/*
+TODO:
+1) Image gallery handling
+2) resizing of screen: red box goes down
+3) youtube video constant height
+4) expands when click on picture
+*/
 
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
@@ -45,6 +52,18 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+  //controls when image is blown to full size of the screen (when gallery button clicked)
+  //Note: fullImage cannot be a single boolean, which causes all images to enlarge when clicking any one of them.
+  const [fullImage, setFullImage] = useState([false, false, false]); //false: no image selected as default
+
+  const handleImageClick = [
+    () => setFullImage([true, false, false]),
+    () => setFullImage([false, true, false]),
+    () => setFullImage([false, false, true])
+  ];
+
   {/* Updates array of visible images in gallery carousell: 3 images at once.
   Requires "..." to combine two slices into a single array */}
   const visibleImages = [
@@ -84,14 +103,14 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           {/*Description*/}
           <Box width={'100%'} >
             <Typography variant='h3'>Description</Typography>
-            <Typography mb={5} mt={2} sx={{fontSize: 20}}>{props.description}</Typography>
+            <Typography mb={5} mt={2} sx={{ fontSize: 20 }}>{props.description}</Typography>
           </Box>
 
-          <Box width={'100%'} height={'100%'}>
+          <Box width={'100%'} height={'100%'} >
             <Typography variant='h3' mb={2}>Featured Fight</Typography>
             <iframe
               width="100%"
-              height="80%"
+              height="100%"
               src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
               title="YouTube video player"
               frameBorder="0"
@@ -127,7 +146,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
       {/* Design Section */}
       <Typography variant="h3" gutterBottom>Design</Typography>
-      <Typography sx={{fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
+      <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
 
       {/* Trivia Section */}
       <Box sx={{ mt: 4 }}>
@@ -149,7 +168,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
         <TableContainer component={Paper} sx={{ bgcolor: '#820002' }}>
           <Table>
             <TableHead>
-              <TableRow sx={{borderBlock: "7px solid #1C1C1C"}}>
+              <TableRow sx={{ borderBlock: "7px solid #1C1C1C" }}>
                 <TableCell sx={{ color: 'white' }}>Event</TableCell>
                 <TableCell sx={{ color: 'white' }}>Opponent</TableCell>
                 <TableCell sx={{ color: 'white' }}>Result</TableCell>
@@ -160,7 +179,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             </TableHead>
             <TableBody>
               {props.fights.map((fight, index) => (
-                <TableRow key={index} sx={{borderBlock: "7px solid #1C1C1C"}}>
+                <TableRow key={index} sx={{ borderBlock: "7px solid #1C1C1C" }}>
                   <TableCell sx={{ color: 'white' }}>{fight.event}</TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.opponent}</TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.result}</TableCell>
@@ -191,16 +210,74 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           <ArrowBack sx={{ color: "white" }} />
         </IconButton>
 
-          {visibleImages.map((imageName, index) => (
-            <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} >
+        {visibleImages.map((imageName, index) => (
+          <Button
+            sx={{
+              width: '100%',
+              height: '100%',
+              position: 'relative',
+              zIndex: 10
+            }}
+            onMouseEnter={handleImageClick[index]}
+            onMouseLeave={() => setFullImage([false, false, false])}
+          >
+            <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} position={'relative'} >
               <img src={imageName} style={{
                 width: '100%',
                 height: '100%',
                 objectFit: "cover",
                 objectPosition: "center"
               }} />
+
             </Box>
-          ))}
+
+
+            {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
+            {fullImage[index] &&
+              <Box
+                sx={{
+                  position: "fixed",
+                  top: '0',
+                  bottom: '0',
+                  left: '0',
+                  right: '0',
+                  width: '100vw',
+                  height: '100vh',
+                  bgcolor: 'rgba(0, 0, 0, 0.8)',
+                  justifyContent: 'center', //horizontally center
+                  alignContent: "center" //vertically center
+                }}>
+                <Box
+
+                  sx={{
+                    width: 'auto', //determined by margin
+                    height: 'auto',
+                    position: "relative", //when you assign position, must specific top/bottom/left/right
+                    overflow: "hidden",
+                    borderRadius: 10
+                  }}
+
+
+                >
+                  <img
+                    src={imageName}
+                    style={{
+                      width: '50vw',
+                      height: '70vh',
+                      objectPosition: 'center',
+                      objectFit: 'cover',
+                      zIndex: 10000,
+                      borderRadius: 15
+                    }}
+                  />
+
+
+                </Box>
+              </Box>
+
+            }
+          </Button>
+        ))}
 
         <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
           <ArrowForward sx={{ color: "white" }} />
@@ -212,4 +289,8 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     </Box>
 
   )
+}
+
+function FullImageRender() {
+
 }
