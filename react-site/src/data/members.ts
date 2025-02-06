@@ -111,6 +111,18 @@ const teamMembers: Record<string, MemberProps[]> = {
       ]
     },
   ],
+  Alumni: [
+    {
+      imgSrc: "/team-members/RachelPineda.png",
+      name: "Caleb Schlissel",
+      position: ["Team Co-Lead", "Example Position 2"],
+      linkedin: "https://linkedin.com/in/rrachelpineda",
+      stats: [
+        ["Crossword Enthusiasm", "Linkedin", "Dress to Impress Player"],
+        [90, 50, 80]
+      ]
+    },
+  ]
 };
 
 export default teamMembers;
