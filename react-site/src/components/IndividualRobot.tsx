@@ -52,9 +52,6 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  //<tag> declares type of reference
-  const backgroundRef = useRef<HTMLDivElement>(null); // When image is blown up, attach this to component that is image's "background"
-
   //controls when image is blown to full size of the screen (when gallery button clicked)
   //array with length == size of visible images
   const [fullImage, setFullImage] = useState([false, false, false]); //false: no image selected as default
@@ -74,10 +71,6 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     ...props.gallery.slice(0, Math.max(0, (currentIndex + 3) - props.gallery.length))
   ];
 
-  //when image is blown up, and user wants to exit image -> click on background -> TODO: handleOutsideClick
-  //event listener -> TODO: useEffect
-  
-
   //prevIndex: refers to current index (before updated)
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % props.gallery.length);
@@ -86,6 +79,19 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + props.gallery.length) % props.gallery.length);
   };
+
+  /** true: you WANT to remove the fully blown image*/
+  const [removeFullImage, setRemoveFullImage] = useState(false);
+
+  useEffect(() => {
+    /** Side effect logic: reset blown image state
+    NOTE: since this changes the dependency, useEffect will re-run!
+    Must wrap side effects in conditional logic to prevent infinite looping */
+    if(removeFullImage){
+      setFullImage([false, false, false])
+      setRemoveFullImage(false)
+    }
+  }, [removeFullImage]); // Dependency array: Runs when any listed dependency changes (aka. when clicking anywhere during full image screen)
 
   return (
     <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: '10%', paddingBottom: '10%', textAlign: 'left' }}>
@@ -223,7 +229,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
               position: 'relative'
             }}
             onClick={() => {
-              handleImageClick[index](); 
+              handleImageClick[index]();
             }}
           >
             <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} position={'relative'} zIndex={0} >
@@ -236,38 +242,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             </Box>
 
             {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
-            {fullImage[index] && 
-              <Box
-                sx={{
-                  position: "fixed",
-                  top: '0', //need to declare at least one of top or bottom when using non-relative position
-                  left: '0', //need to declare at least one of left or right when using non-relative position
-                  width: '100vw',
-                  height: '100vh',
-                  bgcolor: 'rgba(0, 0, 0, 0.8)',
-                  justifyContent: 'center', //horizontally center
-                  alignContent: "center", //vertically center
-                  zIndex: 1 //note: only zIndex of components of same hierarchy level are compared! higher zIndex: appears more FRONT
-                }}
-                ref={backgroundRef}
-              >
-                
-                  <img
-                    src={imageName}
-                    style={{
-                      maxWidth: '50vw', //if not taking up max, can just auto fit
-                      maxHeight: '70vh',
-                      minWidth: '30vw',
-                      minHeight: '40vh', //ensures minimum size -> if auto size of image too small, will increase, maintaining aspect ratio
-                      objectPosition: 'center',
-                      objectFit: 'cover',
-                      borderRadius: 15
-                    }}
-                  />
-
-              </Box>
-
-            }
+            {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage}/>}
           </Button>
         ))}
 
@@ -281,4 +256,61 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     </Box>
 
   )
+}
+
+{/**Component that handles rendering of full image when image button is clicked*/}
+function FullImageRender({imageName, setRemoveFullImage}) {
+
+    {/** Event listener that handles mouse click. */}
+    const handleOutsideClick = (event) => {
+      if(event.type === "click" ){ //only runs when mouse clicked
+        setRemoveFullImage(true); 
+        /*
+        NOTE: Reason why setFullImage([false, false, false]) was not used here.
+        Problem lies in React's asynchronous re-rendering. When calling setFullImage here 
+        -- 
+        assuming there is corresponding useEffect event listener in parent function that is dependent on the state of full image 
+        (aka. is activated when fullImage state is changed) 
+        -- 
+        the state of fullImage IS changed! Therefore, useEffect does start running.
+        However, somehow, no re-rendering is called. One possibility could be that the call to re-rendering in setFullImage is
+        lost along the way to useEffect.
+        
+        As opposed to this current implementation, where a helper constant is changed that allows setFullImage to be called WITHIN
+        useEffect itself, React can respond immediately to the change in state & thus re-render the image (or lack thereof).
+        */
+      }
+    };
+
+  return (
+    <Box
+      sx={{
+        position: "fixed",
+        top: '0', //need to declare at least one of top or bottom when using non-relative position
+        left: '0', //need to declare at least one of left or right when using non-relative position
+        width: '100vw',
+        height: '100vh',
+        bgcolor: 'rgba(0, 0, 0, 0.8)',
+        justifyContent: 'center', //horizontally center
+        alignContent: "center", //vertically center
+        zIndex: 1 //note: only zIndex of components of same hierarchy level are compared! higher zIndex: appears more FRONT
+      }}
+      onClick={handleOutsideClick} //auto removes event listener when box component is removed
+    >
+
+      <img
+        src={imageName}
+        style={{
+          maxWidth: '50vw', //if not taking up max, can just auto fit
+          maxHeight: '70vh',
+          minWidth: '30vw',
+          minHeight: '40vh', //ensures minimum size -> if auto size of image too small, will increase, maintaining aspect ratio
+          objectPosition: 'center',
+          objectFit: 'cover',
+          borderRadius: 15
+        }}
+      />
+
+    </Box>
+  );
 }
