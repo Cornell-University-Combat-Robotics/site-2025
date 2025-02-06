@@ -1,6 +1,8 @@
 import { Box, Grid, Grid2, Typography, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
 import ReactPlayer from 'react-player/youtube'; // Documentation: https://www.npmjs.com/package/react-player
 import React from "react";
+import { useParams } from 'react-router-dom';
+import { robotData } from "../data/robotData.ts";
 
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
@@ -8,53 +10,30 @@ import React from "react";
   This file serves as a general component for individual robot pages. The idea is that it will format and render an IndividualRobot page
   completely, using the specific input passed in. This way, all the actual individual robot pages need to do is pass in the correct data to this reusable component.
 */
-export interface IndividualRobotProps {
-  name: string; // Name of the robot
-  makers: string[]; // Members who worked on the robot
-  description: string; // Short description of the bot
-  image: string; // Link to the file location of the primary robot location
-  stats: {
-    vintage: string;
-    height: string;
-    weight: string;
-    fights: string;
-    wins: string;
-    top_speed: string;
-    weapon_speed: string;
-    most_damaged_part: string;
-    favorite_movie: string;
-  }
-  featured_fight: string; // Youtube link
-  design: string;
-  trivia: string[];
-  fights: {
-    event: string;
-    opponent: string;
-    result: string;
-    by: string;
-    video: string;
-    length: string;
-  }[];
-  gallery: string[]; // Link to the file location of pictures & videos
-}
+export default function IndividualRobot() {
+  const { robotId } = useParams();
+  const robotInfo = robotData[robotId || ""];
 
-export default function IndividualRobot(props: IndividualRobotProps) {
+  if (!robotInfo) {
+    return <div>Robot not found</div>;
+  }
+
   return (
     <Box sx={{ p: 3 }}>
       <Box sx={{ textAlign: 'left', ml: 15 }}>
         {/* Header Section */}
         <Typography variant='h2' gutterBottom fontWeight='bold'>
-          {props.name}
+          {robotInfo.name}
         </Typography>
         <Typography variant="h4" align="left" width='90%' style={{ fontStyle: 'italic' }}>
-          {props.makers.join(', ')}
+          {robotInfo.makers.join(', ')}
         </Typography>
 
         {/* Description & Featured Section */}
         <Grid2 container spacing={10} sx={{ mt: 4, mb: 4 }}>
           <Grid item xs={12} md={8}>
             <Typography variant='h5'>Description</Typography>
-            <Typography mb={5}>{props.description}</Typography>
+            <Typography mb={5}>{robotInfo.description}</Typography>
             <Typography variant='h5'>Featured Fight</Typography>
             <iframe
               width="560"
@@ -71,13 +50,13 @@ export default function IndividualRobot(props: IndividualRobotProps) {
               <CardMedia
                 component="img"
                 height="180"
-                image={props.image}
+                image={robotInfo.image}
                 alt="Robot image" />
               <Typography variant="h5" color="white" gutterBottom>
                 Stats
               </Typography>
               <List>
-                {Object.entries(props.stats).map(([key, value]) => (
+                {Object.entries(robotInfo.stats).map(([key, value]) => (
                   <ListItem key={key} sx={{ color: "white" }}>
                     {key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase())}: {value}
                   </ListItem>
@@ -89,7 +68,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
         {/* Design Section */}
         <Typography variant="h4" gutterBottom>Design</Typography>
-        <Typography variant="body1">{props.design}</Typography>
+        <Typography variant="body1">{robotInfo.design}</Typography>
 
         {/* Trivia Section */}
         <Box sx={{ mt: 4 }}>
@@ -97,7 +76,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             Trivia
           </Typography>
           <List sx={{ listStyleType: 'disc' }}>
-            {props.trivia.map((fact, index) => (
+            {robotInfo.trivia.map((fact, index) => (
               <ListItem key={index} sx={{ display: 'list-item' }}>{fact}</ListItem>
             ))}
           </List>
@@ -116,12 +95,12 @@ export default function IndividualRobot(props: IndividualRobotProps) {
                   <TableCell sx={{ color: 'white' }}>Opponent</TableCell>
                   <TableCell sx={{ color: 'white' }}>Result</TableCell>
                   <TableCell sx={{ color: 'white' }}>By</TableCell>
-                  <TableCell sx={{ color: 'white' }}>Video</TableCell>
-                  <TableCell sx={{ color: 'white' }}>Length (sec)</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Watch</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Length</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {props.fights.map((fight, index) => (
+                {robotInfo.fights.map((fight, index) => (
                   <TableRow key={index}>
                     <TableCell sx={{ color: 'white' }}>{fight.event}</TableCell>
                     <TableCell sx={{ color: 'white' }}>{fight.opponent}</TableCell>
@@ -153,7 +132,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             alignItems: "start",
             justifyItems: "center",
           }}>
-            {props.gallery.map((props2) => (
+            {robotInfo.gallery.map((props2) => (
               props2.includes('youtube')
                 ?
                 <ReactPlayer url={props2} width="100%" />
@@ -166,33 +145,5 @@ export default function IndividualRobot(props: IndividualRobotProps) {
         </Box>
       </Box>
     </Box>
-
-    /* <Box ml={15} mt={7} style={{ textAlign: 'left' }}>
-      <Typography variant="h2" align="left">{props.name}</Typography>
-      {/* **Include the nickname
-      <Typography variant="h4" align="left" width='80%' style={{ fontStyle: 'italic' }}>
-        {props.makers.join(', ')}
-      </Typography>
-      <Typography variant="h5" mt={5}>Description</Typography>
-      {props.description}
-      <Typography variant="h5" mt={5}>Featured Fight</Typography>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-      <Typography variant="h5" mt={5}>Design</Typography>
-      {props.design}
-      <Typography variant="h5" mt={5}>Trivia</Typography>
-      {props.trivia}
-      <Typography variant="h5" mt={5}>Fights</Typography>
-      {props.fights}
-      <Typography variant="h5" mt={5}>Gallery</Typography>
-
-    </Box> */
-  )
+  );
 }
