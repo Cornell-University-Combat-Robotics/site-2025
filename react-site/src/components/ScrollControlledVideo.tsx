@@ -5,7 +5,7 @@ const HeroAnimation: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
 
-  const frameCount = 66;
+  const frameCount = 185;
 
   const currentFrame = (index: number): string =>
     `/src/assets/nardo-explode-frames/${index.toString().padStart(4, "0")}.png`;
@@ -65,7 +65,7 @@ const HeroAnimation: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id="hero-lightpass"></canvas>;
+  return <canvas ref={canvasRef} id="robot-animation"></canvas>;
 };
 
 export default HeroAnimation;
