@@ -129,7 +129,7 @@ export default function Apply() {
         {/* below is container for 01 02 03 04 */}
         <Box 
           component="img"
-          src={join02}
+          src={join01}
           alt="large 01 image"
           width="100%"
         >
@@ -160,14 +160,14 @@ export default function Apply() {
         </Box>
         <Box 
           component="img"
-          src={join02}
+          src={join03}
           alt="large 03 image"
           width="100%"
         >
         </Box>
         <Box
           component="img"
-          src={join02}
+          src={join04}
           alt="large 04 image"
           width="100%"
         >
