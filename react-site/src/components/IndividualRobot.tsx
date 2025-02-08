@@ -61,6 +61,18 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     () => setFullImage([false, false, true]),
   ];
 
+  useEffect(() => {
+    //checks if fullImage state != [false, false, false]
+    if(!fullImage.every(image => !image)){
+      //prevents scrolling when image is blown up
+      console.log("one image is visible")
+      document.body.style.overflow = 'hidden'
+    }else{
+      //re-activates scrolling when image is removed
+      document.body.style.overflow = 'auto'
+    }
+  }, [fullImage]); 
+
   //controls number of images in the visible list in the gallery section
   const [numImages, setNumImages] = useState(3);
 
@@ -128,16 +140,19 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       {/* 
       Description & Featured Section: 2 columns, with 1st column having 2 rows
       */}
-      <Stack direction={"row"} spacing={'5%'} width={'100%'} height={'100%'} mt={7} >
+      <Stack direction={isMD ? "column" : "row"} spacing={isMD ? "10%" : "5%"} width={'100%'} height={'100%'} mt={7} justifyContent={"center"} alignItems={isMD ? "center" : "left"} >
         {/*Containing 2 rows: description and video*/}
-        <Stack direction={"column"} spacing={'5%'} height={'80vh'} width={'75%'} >
+        <Stack direction={"column"} spacing={'5%'} height={"80vh"} width={isMD ? "100%" : "75%"} >
           {/*Description*/}
           <Box width={'100%'} >
             <Typography variant='h3'>Description</Typography>
             <Typography mb={5} mt={2} sx={{ fontSize: 20 }}>{props.description}</Typography>
           </Box>
 
-          <Box width={'100%'} height={'100%'} >
+
+          <Box width={'100%'} minWidth={isMD ? 400 : 500} 
+            sx={{aspectRatio: '16/9'}} //height changes according to width
+          >
             <Typography variant='h3' mb={2}>Featured Fight</Typography>
             <iframe
               width="100%"
@@ -153,7 +168,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
         </Stack>
 
         {/*Containing the stats of the robot*/}
-        <Box height={'100%'} width={'auto'}>
+        <Box height={'100%'} width={'auto'} minWidth={320} maxWidth={400}>
           <Paper sx={{ bgcolor: '#820002', p: 3, borderRadius: 4 }}>
             <CardMedia
               component="img"
@@ -176,7 +191,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       </Stack>
 
       {/* Design Section */}
-      <Typography variant="h3" gutterBottom>Design</Typography>
+      <Typography variant="h3" gutterBottom mt={5}>Design</Typography>
       <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
 
       {/* Trivia Section */}
