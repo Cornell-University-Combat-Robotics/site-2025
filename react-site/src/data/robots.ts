@@ -59,7 +59,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: ["Sportsman", "2023-2024"],
       desc: "The second kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
       image: nardoPhoto,
-      link: "/robots/beater",
+      link: "/robots/nardo",
       color: 1,
     },
     {
@@ -67,7 +67,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: ["Autonomous", "2023-2024"],
       desc: "The third kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
       image: louisPhoto,
-      link: "/robots/beater",
+      link: "/robots/louis",
       color: 0,
     },
     {
@@ -125,7 +125,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       subteam: ["Spring 2024"],
       desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
       image: kennyPhoto,
-      link: "/robots/beater",
+      link: "/robots/kenny",
       color: 1,
     },
     {
