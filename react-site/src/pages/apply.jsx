@@ -116,9 +116,13 @@ export default function Apply() {
           // alignItems: 'center',
           backgroundColor: 'pink',
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateColumns: 'repeat(2, minmax(0,1fr))',
           gap: '10px',
           margin: '40px 120px',
+          width: '500px',
+          height: '300px',
+          margin: '20px auto',
+          padding: '10px',
 
           // backgroundImage: `url(${apply})`,
           // backgroundSize: 'cover',
@@ -126,51 +130,145 @@ export default function Apply() {
           // backgroundRepeat: 'no-repeat',
           // position: 'relative',
       }}>
-        {/* below is container for 01 02 03 04 */}
-        <Box 
-          component="img"
-          src={join01}
-          alt="large 01 image"
-          width="100%"
+        {/* below is containers for 01 02 03 04 */}
+        <Box
+          sx={{
+            width: '100%',
+            height: 'auto',
+            backgroundImage: `url(${join01})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            // padding: "20px",
+            // alignItems: "flex-end",
+            // justifyContent: "center",
+          }}
         >
-          {/* <Typography variant="h4" 
+          <Typography 
             sx={{
-              fontSize: '20px',
-              fontWeight: 'bold',
-              color: 'black'
-              }}>
-            APPLICATIONS DUE
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
+          >
+            Wuzzup
           </Typography>
-          <Typography variant="h4" 
+          <Typography 
             sx={{
-              fontSize: '20px',
-              fontWeight: 'bold',
-              color: 'black'
-              }}>
-            All applications (Freshmen, Upperclassmen, and Transfer) are due October 17th, 11:59pm
-          </Typography> */}
-          {/* next few boxes contain stuff for making timeline */}
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "flex-start",
+              textAlign: "left",
+              // marginBottom: "10px",
+            }}
+          >
+            Wuzzup
+          </Typography>
         </Box>
         <Box
-          component="img"
-          src={join02}
-          alt="large 02 image"
-          width="100%"
+          sx={{
+            width: '100%',
+            height: 'auto',
+            backgroundImage: `url(${join02})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-        </Box>
-        <Box 
-          component="img"
-          src={join03}
-          alt="large 03 image"
-          width="100%"
-        >
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
+          >
+            Wuzzup
+          </Typography>
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "flex-start",
+              textAlign: "left",
+              marginBottom: "10px",
+            }}
+          >
+            Wuzzup
+          </Typography>
         </Box>
         <Box
-          component="img"
-          src={join04}
-          alt="large 04 image"
-          width="100%"
+        sx={{
+          width: '100%',
+          height: 'auto',
+          backgroundImage: `url(${join03})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
         >
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
+          >
+            Wuzzup
+          </Typography>
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "flex-start",
+              textAlign: "left",
+              marginBottom: "10px",
+            }}
+          >
+            Wuzzup
+          </Typography>
+        </Box>
+        <Box
+        sx={{
+          width: '100%',
+          height: 'auto',
+          backgroundImage: `url(${join04})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        >
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
+          >
+            Wuzzup
+          </Typography>
+          <Typography 
+            sx={{
+              // margin: "auto",
+              // alignSelf: "flex-end",
+              alignSelf: "flex-start",
+              textAlign: "left",
+              marginBottom: "10px",
+            }}
+          >
+            Wuzzup
+          </Typography>
         </Box>
       </Box>
 
