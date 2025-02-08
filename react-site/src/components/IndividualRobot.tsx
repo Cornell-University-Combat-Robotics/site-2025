@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Grid2, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Link, Button } from "@mui/material";
+import { Box, Typography, Stack, Grid2, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Link, Button, useMediaQuery, useTheme } from "@mui/material";
 import ReactPlayer from 'react-player/youtube'; // Documentation: https://www.npmjs.com/package/react-player
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -9,7 +9,6 @@ TODO:
 1) Image gallery handling
 2) resizing of screen: red box goes down
 3) youtube video constant height
-4) expands when click on picture
 */
 
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
@@ -62,13 +61,16 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     () => setFullImage([false, false, true]),
   ];
 
+  //controls number of images in the visible list in the gallery section
+  const [numImages, setNumImages] = useState(3);
+
   {/* Updates array of visible images in gallery carousell: 3 images at once.
   Requires "..." to combine two slices into a single array */}
   const visibleImages = [
     //2nd parameter of slice: ensures that end index of this single array slice does not exceed gallery length
-    ...props.gallery.slice(currentIndex % props.gallery.length, Math.min(currentIndex + 3, props.gallery.length)),
+    ...props.gallery.slice(currentIndex % props.gallery.length, Math.min(currentIndex + numImages, props.gallery.length)),
     //handles overflow images -> if gallery length exceeded in first array slice
-    ...props.gallery.slice(0, Math.max(0, (currentIndex + 3) - props.gallery.length))
+    ...props.gallery.slice(0, Math.max(0, (currentIndex + numImages) - props.gallery.length))
   ];
 
   //prevIndex: refers to current index (before updated)
@@ -87,11 +89,29 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     /** Side effect logic: reset blown image state
     NOTE: since this changes the dependency, useEffect will re-run!
     Must wrap side effects in conditional logic to prevent infinite looping */
-    if(removeFullImage){
+    if (removeFullImage) {
       setFullImage([false, false, false])
       setRemoveFullImage(false)
     }
   }, [removeFullImage]); // Dependency array: Runs when any listed dependency changes (aka. when clicking anywhere during full image screen)
+
+  //gets theme
+  const theme = useTheme();
+
+  //useMediaQuery() returns boolean based on if the size of screen is medium or smaller
+  const isMD = useMediaQuery(theme.breakpoints.down("md"))
+  const isMDToLG = useMediaQuery(theme.breakpoints.between("md", "lg"))
+  const isLG = useMediaQuery(theme.breakpoints.up("lg"))
+
+  useEffect(() => {
+    if (isMD) {
+      setNumImages(1)
+    } else if (isMDToLG) {  
+      setNumImages(2)
+    } else {
+      setNumImages(3)
+    }
+  }, [isMD, isMDToLG, isLG]); //dependecy array: only activates listener when any of these values change
 
   return (
     <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: '10%', paddingBottom: '10%', textAlign: 'left' }}>
@@ -171,12 +191,12 @@ export default function IndividualRobot(props: IndividualRobotProps) {
         </List>
       </Box>
 
-      {/* Fights Section */}
-      <Box sx={{ mb: 4, mt: 4 }} >
+      {/* Fights Section: allows scrolling when minWidth reached */}
+      <Box sx={{ mb: 4, mt: 4, overflowX: 'scroll' }} >
         <Typography variant="h3" gutterBottom>
           Fights
         </Typography>
-        <TableContainer component={Paper} sx={{ bgcolor: '#820002' }}>
+        <TableContainer component={Paper} sx={{ bgcolor: '#820002', minWidth: '700px' }}>
           <Table>
             <TableHead>
               <TableRow sx={{ borderBlock: "7px solid #1C1C1C" }}>
@@ -242,7 +262,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             </Box>
 
             {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
-            {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage}/>}
+            {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage} />}
           </Button>
         ))}
 
@@ -258,29 +278,29 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   )
 }
 
-{/**Component that handles rendering of full image when image button is clicked*/}
-function FullImageRender({imageName, setRemoveFullImage}) {
+{/**Component that handles rendering of full image when image button is clicked*/ }
+function FullImageRender({ imageName, setRemoveFullImage }) {
 
-    {/** Event listener that handles mouse click. */}
-    const handleOutsideClick = (event) => {
-      if(event.type === "click" ){ //only runs when mouse clicked
-        setRemoveFullImage(true); 
-        /*
-        NOTE: Reason why setFullImage([false, false, false]) was not used here.
-        Problem lies in React's asynchronous re-rendering. When calling setFullImage here 
-        -- 
-        assuming there is corresponding useEffect event listener in parent function that is dependent on the state of full image 
-        (aka. is activated when fullImage state is changed) 
-        -- 
-        the state of fullImage IS changed! Therefore, useEffect does start running.
-        However, somehow, no re-rendering is called. One possibility could be that the call to re-rendering in setFullImage is
-        lost along the way to useEffect.
-        
-        As opposed to this current implementation, where a helper constant is changed that allows setFullImage to be called WITHIN
-        useEffect itself, React can respond immediately to the change in state & thus re-render the image (or lack thereof).
-        */
-      }
-    };
+  {/** Event listener that handles mouse click. */ }
+  const handleOutsideClick = (event) => {
+    if (event.type === "click") { //only runs when mouse clicked
+      setRemoveFullImage(true);
+      /*
+      NOTE: Reason why setFullImage([false, false, false]) was not used here.
+      Problem lies in React's asynchronous re-rendering. When calling setFullImage here 
+      -- 
+      assuming there is corresponding useEffect event listener in parent function that is dependent on the state of full image 
+      (aka. is activated when fullImage state is changed) 
+      -- 
+      the state of fullImage IS changed! Therefore, useEffect does start running.
+      However, somehow, no re-rendering is called. One possibility could be that the call to re-rendering in setFullImage is
+      lost along the way to useEffect.
+      
+      As opposed to this current implementation, where a helper constant is changed that allows setFullImage to be called WITHIN
+      useEffect itself, React can respond immediately to the change in state & thus re-render the image (or lack thereof).
+      */
+    }
+  };
 
   return (
     <Box
