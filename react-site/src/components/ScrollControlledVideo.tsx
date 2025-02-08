@@ -5,8 +5,10 @@ const HeroAnimation: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
 
-  const frameCount = 185;
+  // Set this to the number of frames there are in the video
+  const frameCount = 180;
 
+  // Set this to the path where the folder of the frames are
   const currentFrame = (index: number): string =>
     `/src/assets/nardo-explode-frames/${index.toString().padStart(4, "0")}.png`;
 
@@ -44,9 +46,14 @@ const HeroAnimation: React.FC = () => {
       };
     };
 
+    // this function controls how far the video has played/which frame you are on
+    // depending on how much you have scrolled
+    // ScrollTop should be the size of the whole page?
+    // maxScrollTop is how much of the screen you want to have scrolled past before 
+    // the video starts scrolling
     const handleScroll = (): void => {
       const scrollTop = html.scrollTop;
-      const maxScrollTop = window.innerHeight;
+      const maxScrollTop = window.innerHeight * 0.8;
       const scrollFraction = scrollTop / maxScrollTop;
       const frameIndex = Math.min(
         frameCount - 1,

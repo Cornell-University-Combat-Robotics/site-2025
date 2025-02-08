@@ -1,9 +1,7 @@
 import nardo_whole from '../assets/nardo-whole.png';
-import nardo_explode from '../assets/explode.mp4';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import RobotCard from '../components/RobotCard';
 import RobotCardList from '../components/RobotCardList';
-import ScrollControlledVideo from '../components/ScrollControlledVideo';
 import StickyBox from '../components/StickyBox';
 
 export default function Robots() {
