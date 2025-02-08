@@ -2,7 +2,6 @@ import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
-import TimelineCell from "../components/Timeline1Cell";
 import Carousel from "../components/Carousel";
 // DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
 

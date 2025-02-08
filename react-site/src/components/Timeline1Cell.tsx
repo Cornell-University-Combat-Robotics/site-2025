@@ -9,10 +9,9 @@ export interface Timeline1Cell {
 
 export default function TimelineCell(props: Timeline1Cell) {
     return (
-        <Card sx={{ width: "250px", height: "335px" }}>
+        <Card sx={{ width: "100%", height: "100%", backgroundImage: `url(${props.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
             <CardMedia
-                sx={{ height: 140 }}
-                image={`url(${props.image})`}
+                sx={{ height: "0%" }}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -22,10 +21,6 @@ export default function TimelineCell(props: Timeline1Cell) {
                     {props.description}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
         </Card>
 
     )
