@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from './components/NavBar';
 import GradientNavBar from './components/GradientNavBar';
 import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
@@ -33,6 +32,12 @@ theme.typography.h1 = {
 theme.typography.h2 = {
   fontFamily: 'Josefin Sans, sans-serif',
   fontSize: '2.5rem',
+  fontWeight: 'normal',
+};
+
+theme.typography.h3 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '2rem',
   fontWeight: 'normal',
 };
 

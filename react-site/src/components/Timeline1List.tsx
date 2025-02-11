@@ -3,7 +3,7 @@ import CellData from "../data/timeline1.ts";
 import React from "react";
 import { Box } from "@mui/material";
 
-
+/*** This will merge with Carousel in the future */
 export default function Timeline1List() {
     return (
         <>

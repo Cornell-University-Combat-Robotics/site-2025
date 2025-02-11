@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Box, IconButton, Slide, Stack } from "@mui/material";
 import { NavigateBefore, NavigateNext, PropaneSharp } from "@mui/icons-material";
-import Cell from "./Timeline1Cell.tsx";
+import Cell from "./TimelineCell.tsx";
+import DarkCell from "./TimelineCellDark.tsx";
 
-function Carousel() {
+export interface Carousel1 {
+    image: string,
+    numCells: number
+}
+
+function Carousel(props: Carousel1) {
     //stores cells (that are displayed in timeline)
     const [cells, setCells] = useState<React.ReactElement[]>([]);
     //current cell that is displayed
@@ -13,35 +19,39 @@ function Carousel() {
 
     //how many cards per page
     const cellsPerPage = 3;
-    //dummy array of cells (empty)
-    const duplicateCards: React.ReactElement[] = Array.from(
-        { length: 10 },
-        (_, i) => <Cell
-            date='October 2019'
-            description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat 
-                  robots, much like those featured on the TV show Battlebots. Each year, we build two 12lb mechanical bots and one 3lb 
-                  battlebot with AI based functionality."
-            image={"../assets/background-pictures/team-photo-hearts.png"}
-            key={1} />
+
+    const refreshCards: React.ReactElement[] = Array.from(
+        { length: props.numCells },
+        (_, i) => i === currentPage ?
+            < Cell
+                date='October 2019'
+                description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those featured on the TV show Battlebots.Each year, we build two 12lb mechanical bots and one 3lb battlebot with AI based functionality."
+                image={props.image}
+                key={1} />
+            :
+            <DarkCell date='October 2019'
+                description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those featured on the TV show Battlebots.Each year, we build two 12lb mechanical bots and one 3lb battlebot with AI based functionality."
+                image={props.image}
+                key={1} />
     );
 
     // handle button press for scroll left (->)
     const handleNextPage = () => {
         setSlideDirection("left");
-        setCurrentPage((prevPage) => prevPage + 1);
+        setCurrentPage((prevPage) => prevPage === refreshCards.length - 1 ? 0 : prevPage + 1); //support wraparound
     }
 
     // handle button press for scroll right (<-)
     const handlePrevPage = () => {
         setSlideDirection("right");
-        setCurrentPage((prevPage) => prevPage - 1);
+        setCurrentPage((prevPage) => prevPage === 0 ? refreshCards.length - 1 : prevPage - 1);
+        // prevpage is passed in through useState because it is a function
     }
 
     // sets initial data (blank timeline)
     useEffect(() => {
-        setCells(duplicateCards);
-    }, []); //empty array means this only runs once
-    // need to link actual contents of cells to cells array
+        setCells(refreshCards);
+    });
 
     return (
         // contains entire carousel
@@ -51,24 +61,22 @@ function Carousel() {
             alignItems: "center",
             justifyContent: "center",
             height: "50%",
-            width: "110%",
-            backgroundColor: "green"
+            width: "100%",
         }}>
             {/* handle previous page (<) button click */}
             <IconButton onClick={handlePrevPage}
-                sx={{ margin: 5, }}
-                disabled={currentPage === 0}> {/* disables this button when you are at the beginning of the array (cannot go back to -1) */}
-                <NavigateBefore sx={{ color: "white" }} />
+                sx={{ margin: "0%" }}>
+                <NavigateBefore sx={{ color: "white", transform: 'scale(2)', }} />
             </IconButton>
 
             {/* contains cards */}
             <Box sx={{
-                height: "85vh",
-                display: "flex",
+                height: "90vh",
+                // width: "100vh",
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                {/* iterate over each cell in cells */}
+                {/* iterate over each cell in cells: INITIALIZATION*/}
                 {cells.map((cell, index) => (
                     <Box
                         key={`cell-${index}`}  //creates unique identifier for each cell
@@ -76,8 +84,6 @@ function Carousel() {
                             width: "100%",
                             height: "100%",
                             justifyContent: "center",
-                            alignItems: "space-between",
-                            backgroundColor: "purple",
                             display: currentPage === index ? "block" : "none", //checks if card is index (should be displayed) and only displays it if true
                         }} >
                         {/* slide animation */}
@@ -91,6 +97,7 @@ function Carousel() {
                                 sx={{
                                     width: "100%",
                                     height: "100%",
+                                    zIndex: "1000",
                                 }}>
                                 {cells.slice(
                                     index * cellsPerPage,
@@ -103,11 +110,8 @@ function Carousel() {
             </Box>
             {/* handle previous page (<) button click */}
             < IconButton onClick={handleNextPage}
-                sx={{ margin: 5, }}
-                disabled={currentPage >= Math.ceil((cells.length || 0) / cellsPerPage) - 1}
-            // disables this button when you are at the beginning of the array (cannot go back to -1)
-            >
-                <NavigateNext sx={{ color: "white" }} />
+                sx={{ margin: "0%", }} >
+                <NavigateNext sx={{ color: "white", transform: 'scale(2)', }} />
             </IconButton>
         </Box >
     );
