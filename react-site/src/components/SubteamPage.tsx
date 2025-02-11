@@ -6,9 +6,11 @@ import marketing_photo from "../assets/marketing-photo.jpg"; //ignore these erro
 import sportsman_photo from "../assets/sportsman-photo.jpg";
 import kinetic_photo from "../assets/kinetic-photo.jpg";
 import autonomous_photo from "../assets/autonomous-photo.jpg";
+import leads_photo from "../assets/leads-photo.jpg";
+import alumni_photo from "../assets/alumni-photo.jpg";
 
 /*
-For each individual subtema page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
+For each individual subteam page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
 
 This file serves as a general component for individual subteam pages. 
@@ -137,7 +139,7 @@ export default function SubteamPage(props: SubteamProps) {
                     {/*
                 Stack contains a row of buttons for the different subsystems of the subteam.
                 */}
-                    <Stack direction="row" marginTop={10} justifyContent={"center"} alignItems={"center"}
+                    {props.name != "Leads" && props.name != "Alumni" && <Stack direction="row" marginTop={10} justifyContent={"center"} alignItems={"center"}
                         sx={{
                             flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
                             gap: 3 //maintains both vertical and horizontal gap between buttons
@@ -164,16 +166,16 @@ export default function SubteamPage(props: SubteamProps) {
                                 </Typography>
                             </Button>
                         ))}
-                    </Stack>
+                    </Stack>}
 
                     {/*TODO: change all to body 1*/}
-                    <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>
                         {"While the subsystems are distinct, members are able to work interchangeably among them."}
-                    </Typography>
+                    </Typography>}
 
-                    <Typography sx={{ fontSize: 30, marginTop: 10, marginBottom: 5 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ fontSize: 30, marginTop: 10, marginBottom: 5 }}>
                         {"If you are more interested in..."}
-                    </Typography>
+                    </Typography>}
 
                     {/*List of bullet points for other interests
                                     <Typography key={index} sx={{ fontSize: 20, marginTop: 5 }}>*/}
@@ -214,6 +216,10 @@ function GetSubteamPhoto(subteamName){
             return `url(${kinetic_photo})`;
         case "sportsman":
             return `url(${sportsman_photo})`;
+        case "leads":
+            return `url(${leads_photo})`;
+        case "alumni":
+            return `url(${alumni_photo})`;
     }
 }
 
