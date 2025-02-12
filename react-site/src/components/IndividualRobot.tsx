@@ -4,13 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
-/*
-TODO:
-1) Image gallery handling
-2) resizing of screen: red box goes down
-3) youtube video constant height
-*/
-
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
 
@@ -55,6 +48,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   //array with length == size of visible images
   const [fullImage, setFullImage] = useState([false, false, false]); //false: no image selected as default
 
+  //note: even if number of images visible on screen changes, its still fine, cuz it gets first index
   const handleImageClick = [
     () => setFullImage([true, false, false]),
     () => setFullImage([false, true, false]),
@@ -65,7 +59,6 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     //checks if fullImage state != [false, false, false]
     if(!fullImage.every(image => !image)){
       //prevents scrolling when image is blown up
-      console.log("one image is visible")
       document.body.style.overflow = 'hidden'
     }else{
       //re-activates scrolling when image is removed
@@ -140,7 +133,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       {/* 
       Description & Featured Section: 2 columns, with 1st column having 2 rows
       */}
-      <Stack direction={isMD ? "column" : "row"} spacing={isMD ? "10%" : "5%"} width={'100%'} height={'100%'} mt={7} justifyContent={"center"} alignItems={isMD ? "center" : "left"} >
+       <Stack direction={isMD ? "column" : "row"} spacing={isMD ? "10%" : "5%"} width={'100%'} height={'100%'} mt={7} justifyContent={"center"} alignItems={isMD ? "center" : "left"} >
         {/*Containing 2 rows: description and video*/}
         <Stack direction={"column"} spacing={'5%'} height={"80vh"} width={isMD ? "100%" : "75%"} >
           {/*Description*/}
@@ -150,13 +143,13 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           </Box>
 
 
-          <Box width={'100%'} minWidth={isMD ? 400 : 500} 
-            sx={{aspectRatio: '16/9'}} //height changes according to width
+          <Box width={'100%'} maxWidth={800} overflow={"hidden"}
           >
             <Typography variant='h3' mb={2}>Featured Fight</Typography>
             <iframe
+              style={{aspectRatio: '16/9'}} 
+   
               width="100%"
-              height="100%"
               src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
               title="YouTube video player"
               frameBorder="0"
@@ -191,7 +184,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       </Stack>
 
       {/* Design Section */}
-      <Typography variant="h3" gutterBottom mt={5}>Design</Typography>
+      <Typography variant="h3" gutterBottom mt={15}>Design</Typography>
       <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
 
       {/* Trivia Section */}
