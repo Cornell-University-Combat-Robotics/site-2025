@@ -116,13 +116,17 @@ export default function Apply() {
           // alignItems: 'center',
           backgroundColor: 'pink',
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, minmax(0,1fr))',
-          gap: '10px',
-          margin: '40px 120px',
-          width: '500px',
-          height: '300px',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          // gridTemplateColumns: 'repeat(2, minmax(0,1fr))',
+          // gap: '40px 2px',
+          // margin: '40px 120px',
+          width: '1000px',
+          height: '600px',
           margin: '20px auto',
-          padding: '10px',
+          // padding: '0px',
+          lineHeight: '1.2',
+          padding: "10px",
+
 
           // backgroundImage: `url(${apply})`,
           // backgroundSize: 'cover',
@@ -130,146 +134,175 @@ export default function Apply() {
           // backgroundRepeat: 'no-repeat',
           // position: 'relative',
       }}>
-        {/* below is containers for 01 02 03 04 */}
         <Box
+          // container for 01020304
           sx={{
-            width: '100%',
+            width: '90%',
             height: 'auto',
             backgroundImage: `url(${join01})`,
-            backgroundSize: "cover",
+            backgroundSize: "100%",
             backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            // padding: "20px",
-            // alignItems: "flex-end",
-            // justifyContent: "center",
           }}
         >
-          <Typography 
+          <Typography variant="h3"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
-              alignSelf: "center",
-              textAlign: "center",
+              alignSelf: "flex-end",
+              textAlign: "right",
+              marginTop: "50px",
+              marginRight: "20px",
             }}
           >
-            Wuzzup
+            INFO SESSIONS
           </Typography>
-          <Typography 
+          <Typography variant="body1" 
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
               alignSelf: "flex-start",
               textAlign: "left",
+              marginBottom: "10px",
+              marginRight: "60px",
+              marginLeft: "10px",
+              fontSize: "15pt",
               // marginBottom: "10px",
             }}
           >
-            Wuzzup
+            We highly encourage you to meet our team at an info session! If you cannot make any sessions you may contact us, but we strongly recommend attending an info session to meet the team directly.
           </Typography>
         </Box>
         <Box
+          // container for 01020304
           sx={{
-            width: '100%',
+            width: '90%',
             height: 'auto',
             backgroundImage: `url(${join02})`,
-            backgroundSize: "cover",
+            backgroundSize: "100%",
             backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            flexDirection: "column",
+            justifyContent: "space-between",
           }}
         >
-          <Typography 
+          <Typography variant="h3"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
-              alignSelf: "center",
-              textAlign: "center",
+              alignSelf: "flex-end",
+              textAlign: "right",
+              marginTop: "50px",
+              marginRight: "20px",
             }}
           >
-            Wuzzup
+            APPLICATIONS DUE
           </Typography>
-          <Typography 
+          <Typography variant="body1" 
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
               alignSelf: "flex-start",
               textAlign: "left",
               marginBottom: "10px",
+              marginRight: "60px",
+              marginLeft: "10px",
+              fontSize: "15pt",
+              // marginBottom: "10px",
             }}
           >
-            Wuzzup
+            All applications (Freshman, Upperclassmen, and Transfer) are due October 17th, 11:59pm
           </Typography>
         </Box>
         <Box
-        sx={{
-          width: '100%',
-          height: 'auto',
-          backgroundImage: `url(${join03})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+          // container for 01020304
+          sx={{
+            width: '90%',
+            height: 'auto',
+            backgroundImage: `url(${join03})`,
+            backgroundSize: "100%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
         >
-          <Typography 
+          <Typography variant="h3"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
-              alignSelf: "center",
-              textAlign: "center",
+              alignSelf: "flex-end",
+              textAlign: "right",
+              marginTop: "50px",
+              marginRight: "20px",
             }}
           >
-            Wuzzup
+            GROUP INTERVIEW
           </Typography>
-          <Typography 
+          <Typography variant="body1" 
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
               alignSelf: "flex-start",
               textAlign: "left",
               marginBottom: "10px",
+              marginRight: "60px",
+              marginLeft: "10px",
+              fontSize: "15pt",
+              // marginBottom: "10px",
             }}
           >
-            Wuzzup
+            Work with other applicants (and more importantly, have fun!) in our group interview
           </Typography>
         </Box>
         <Box
-        sx={{
-          width: '100%',
-          height: 'auto',
-          backgroundImage: `url(${join04})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+          // container for 01020304
+          sx={{
+            width: '90%',
+            height: 'auto',
+            backgroundImage: `url(${join04})`,
+            backgroundSize: "100%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
         >
-          <Typography 
+          <Typography variant="h3"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
-              alignSelf: "center",
-              textAlign: "center",
+              alignSelf: "flex-end",
+              textAlign: "right",
+              marginTop: "50px",
+              marginRight: "20px",
             }}
           >
-            Wuzzup
+            INDIVIDUAL INTERVIEW
           </Typography>
-          <Typography 
+          <Typography variant="body1" 
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
               alignSelf: "flex-start",
               textAlign: "left",
               marginBottom: "10px",
+              marginRight: "60px",
+              marginLeft: "10px",
+              fontSize: "15pt",
+              // marginBottom: "10px",
             }}
           >
-            Wuzzup
+            We want to see your interest and fit for your chosen subteam, but no prior experience is necessary.
           </Typography>
         </Box>
+        
       </Box>
 
 
