@@ -70,6 +70,10 @@ export default function Team() {
           SPORTSMAN
         </Typography>
         <TeamMemberList teamName={"Sportsman"} />
+        <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+          ALUMNI
+        </Typography>
+        <TeamMemberList teamName={"Alumni"} />
       </Box>
     </>
   );

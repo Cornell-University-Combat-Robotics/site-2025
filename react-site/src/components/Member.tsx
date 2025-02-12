@@ -68,8 +68,8 @@ export default function Member(props: MemberProps) {
 
         {/*animation controller for stats button*/}
         <AnimatePresence> {/*allows for exiting (w/o AnimatePresence, only entering animation would occur)*/}
-          {/*if statement: if showStates == true, code in (...) will run*/}
-          {showStats && (
+          {/*if statement: if showStates == true and stats exist, code in (...) will run*/}
+          {showStats && stats[0]?.length > 0 && (
             <motion.div
               //Fly in from left: Initial state placed outside the visible area
               initial={{ x: -300, y: yStats }} //initial state
@@ -86,7 +86,7 @@ export default function Member(props: MemberProps) {
                 }}
               >
                 <List sx={{ width: '85%' }}>
-                  {props.stats[0].map((desc, index) => ( //gets first row (descriptions)
+                  {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography sx={{ fontSize: 17, color: 'black', whiteSpace: 'nowrap', overflow: 'scroll' }}>
                         {desc}
@@ -94,7 +94,7 @@ export default function Member(props: MemberProps) {
 
                       {/*percentage bar: outer div is the full bar (black), inner div is the percentage filled (red)*/}
                       <div style={{ backgroundColor: 'black', width: '100%', height: 21, opacity: 2 }}>
-                        <div style={{ backgroundColor: '#A10305', width: `${props.stats[1][index]}%`, height: '100%', opacity: 1 }}>
+                        <div style={{ backgroundColor: '#A10305', width: `${stats[1][index]}%`, height: '100%', opacity: 1 }}>
                         </div>
                       </div>
                     </Box>
@@ -107,20 +107,22 @@ export default function Member(props: MemberProps) {
 
         {/*stats button*/}
         {/*technically doesnt have to be a button*/}
-        <Button
-          sx={{
-            position: 'absolute', // Makes the button overlap
-            borderRadius: 4, bgcolor: '#A10305',
-            bottom: '5%', right: '5%', // Places button within parent (Box)
-            minWidth: 0, width: '20%'
-          }}
-          onMouseEnter={() => setShowStats(true)}
-          onMouseLeave={() => setShowStats(false)}
-        >
-          <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
-            {"Stats"}
-          </Typography>
-        </Button>
+        {stats[0]?.length > 0 && (
+          <Button
+            sx={{
+              position: 'absolute', // Makes the button overlap
+              borderRadius: 4, bgcolor: '#A10305',
+              bottom: '5%', right: '5%', // Places button within parent (Box)
+              minWidth: 0, width: '20%'
+            }}
+            onMouseEnter={() => setShowStats(true)}
+            onMouseLeave={() => setShowStats(false)}
+          >
+            <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
+              {"Stats"}
+            </Typography>
+          </Button>
+        )}
       </Box>
 
       <Box sx={{ textAlign: "left", width: '85%' }}>
@@ -133,13 +135,13 @@ export default function Member(props: MemberProps) {
       </Box>
 
       <List sx={{ width: '85%' }}>
-        {props.position.map((position, index) => (
+        {position.map((roles, index) => (
           <Box key={index} bgcolor={"#373737"} sx={{ borderRadius: 2, textAlign: "left" }} marginBottom={2}>
             <Typography sx={{
               ml: "15px", fontSize: "20px",
               whiteSpace: 'nowrap', overflow: 'scroll'
             }}>
-              {position}
+              {roles}
             </Typography>
           </Box>
         ))}
