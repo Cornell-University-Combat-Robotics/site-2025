@@ -73,8 +73,8 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Fangular Momentum",
       subteam: "FA '24",
-      desc: "",
-      image: batbotPhoto, 
+      desc: "The first 3lb bot",
+      image: batbotPhoto,
       link: "/robots/batbot",
       color: 1,
     },

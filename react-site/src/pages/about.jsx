@@ -2,7 +2,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
-import { red } from "@mui/material/colors";
+import Carousel from "../components/Carousel";
+import panel1 from "../assets/home-timeline/panel-3.jpg";
 // DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
 
 
@@ -104,6 +105,11 @@ function About() {
         <Typography variant="h2" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans', my: '15%' }}>
           OUR JOURNEY
         </Typography>
+
+        {/* Timeline */}
+        <Box >
+          <Carousel image={panel1} numCells={10} />
+        </Box>
 
       </Box>
 
