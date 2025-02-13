@@ -167,32 +167,6 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       </Box>
     </Box>
 
-    /* <Box ml={15} mt={7} style={{ textAlign: 'left' }}>
-      <Typography variant="h2" align="left">{props.name}</Typography>
-      {/* **Include the nickname
-      <Typography variant="h4" align="left" width='80%' style={{ fontStyle: 'italic' }}>
-        {props.makers.join(', ')}
-      </Typography>
-      <Typography variant="h5" mt={5}>Description</Typography>
-      {props.description}
-      <Typography variant="h5" mt={5}>Featured Fight</Typography>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-      <Typography variant="h5" mt={5}>Design</Typography>
-      {props.design}
-      <Typography variant="h5" mt={5}>Trivia</Typography>
-      {props.trivia}
-      <Typography variant="h5" mt={5}>Fights</Typography>
-      {props.fights}
-      <Typography variant="h5" mt={5}>Gallery</Typography>
-
-    </Box> */
+  
   )
 }

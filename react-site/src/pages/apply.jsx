@@ -1,4 +1,4 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider} from "@mui/material";
+import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
@@ -7,6 +7,17 @@ import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
+
+  //list of all events in the recruitment timeline
+  const event = [
+    { name: 'Project Team Fest', date: '6/9/25' },
+    { name: 'Clubfest', date: '6/10/25' },
+    { name: 'Info Session 1', date: '6/11/25' },
+    { name: 'Info Session 2', date: '6/12/25' },
+    { name: 'Info Session 3', date: '6/13/25' },
+    { name: 'Applications Due', date: '11.59PM  7/1/25' }
+  ];
+
   return (
     <Box sx={{}}>
       {/* above is body of site */}
@@ -33,106 +44,180 @@ export default function Apply() {
           JOIN US!
         </Typography>
       </Box>
-        <Typography 
-        // Our applications...h3 writing
-          variant="h3"
+
+      <Box padding={10} textAlign={"center"}>
+        <Typography
+          // Our applications...h3 writing
+          variant="h2"
           sx={{
-            textAlign: 'center',
             color: 'white',
-            margin: '1em 2em'
+            mb: 2
           }}>
-          Our applications for Fall 2024 are open! All applications are due October 17th, 11:59PM
+          Our applications for Fall 2024 are open!
         </Typography>
-        <Typography 
+
+        <Typography
+          // Our applications...h3 writing
+          variant="h2"
+          sx={{
+            color: '#B21D1D',
+            fontWeight: 'bold'
+          }}>
+          All applications are due October 17th, 11:59PM
+        </Typography>
+      </Box>
+
+
+      <Typography
         // Recruitment Timeline h1
-          variant="h1"
-          sx={{
-            textAlign: 'center',
-            color: 'white',
-            // add margins when text size smaller
-          }}>
-          RECRUITMENT TIMELINE
-        </Typography>
-      <Box sx={{
-        // timeline container
-          display: 'flex',
+        variant="h1"
+        sx={{
+          textAlign: 'center',
+          color: 'white',
+          mb: 0
+          // add margins when text size smaller
+        }}>
+        RECRUITMENT TIMELINE
+      </Typography>
+
+
+      {/*Contains geometric timeline*/}
+      <Box
+        sx={{
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'lime',
+          padding: 10
+        }}
+      >
+        {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
+        <svg width="100%" height="20%">
 
-          // backgroundImage: `url(${apply})`,
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'top',
-          // backgroundRepeat: 'no-repeat',
-          // position: 'relative',
+          <line
+            x1="10%" //coordinates of the line: 10% from the left
+            x2="85%" //TODO: change, last element is slightly off
+            y1="10%" //set 10% from top of svg component
+            y2="10%" 
+            stroke={"white"}
+            stroke-width="5"
+          >
+          </line>
+
+          {event.map(({ name, date }, index) => {
+            const xPos = [`${10 + index * 15}%`]; //increments x position to the right according to index
+
+            return (
+              <g> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
+                <circle
+                  cx={xPos}
+                  cy="10%" //same as line -> falls on line
+                  r={10} //radius
+                  fill="white" //color
+                >
+                </circle>
+
+                {/*Note: svg components do support attributes that Material-UI components usually use (e.g. variant, color)*/}
+                <text key={index} fill="white" fontFamily='Josefin Sans, sans-serif' fontSize={25} y="50%" 
+                  textAnchor="middle" //horizontally centered
+                >
+                  {/*use tspan to separate texts, since svg does not support new-line*/}
+                  <tspan x={xPos} >
+                    {name}
+                  </tspan>
+                  <tspan x={xPos} 
+                    dy="2rem" //changes y position of this tspan relative to tspan above
+                  > 
+                    {date}
+                  </tspan>
+                </text>
+              </g>
+            );
+          })}
+
+        </svg>
+
+
+      </Box>
+
+      <Box sx={{
+        // timeline container
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'lime',
+
+        // backgroundImage: `url(${apply})`,
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'top',
+        // backgroundRepeat: 'no-repeat',
+        // position: 'relative',
       }}>
         {/* timeline sections container */}
-        <Box sx={{backgroundColor: 'purple'}}>
-          <Typography variant="h4" sx={{color:"white"}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
           {/* next few boxes contain stuff for making timeline */}
         </Box>
-        <Box sx={{backgroundColor: 'purple'}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
           {/* box */}
-          <Typography variant="h4" sx={{color:"white"}}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
         </Box>
-        <Box sx={{backgroundColor: 'purple'}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
           {/* box */}
-          <Typography variant="h4" sx={{color:"white"}}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
         </Box>
-        <Box sx={{backgroundColor: 'purple'}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
           {/* next few boxes contain stuff for making timeline */}
-          <Typography variant="h4" sx={{color:"white"}}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
         </Box>
-        <Box sx={{backgroundColor: 'purple'}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
           {/* box */}
-          <Typography variant="h4" sx={{color:"white"}}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
         </Box>
-        <Box sx={{backgroundColor: 'purple'}}>
+        <Box sx={{ backgroundColor: 'purple' }}>
           {/* box */}
-          <Typography variant="h4" sx={{color:"white"}}>
+          <Typography variant="h4" sx={{ color: "white" }}>
             Hi
           </Typography>
         </Box>
       </Box>
-      <Typography variant="h3" sx={{color: "white"}}>
+      <Typography variant="h3" sx={{ color: "white" }}>
         NEW MEMBER EXPERIENCE
       </Typography>
 
 
       <Box sx={{
         // timeline container
-          // display: 'flex',
-          // justifyContent: 'center',
-          // alignItems: 'center',
-          backgroundColor: 'pink',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          // gridTemplateColumns: 'repeat(2, minmax(0,1fr))',
-          // gap: '40px 2px',
-          // margin: '40px 120px',
-          width: '1000px',
-          height: '600px',
-          margin: '20px auto',
-          // padding: '0px',
-          lineHeight: '1.2',
-          padding: "10px",
+        // display: 'flex',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        backgroundColor: 'pink',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        // gridTemplateColumns: 'repeat(2, minmax(0,1fr))',
+        // gap: '40px 2px',
+        // margin: '40px 120px',
+        width: '1000px',
+        height: '600px',
+        margin: '20px auto',
+        // padding: '0px',
+        lineHeight: '1.2',
+        padding: "10px",
 
 
-          // backgroundImage: `url(${apply})`,
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'top',
-          // backgroundRepeat: 'no-repeat',
-          // position: 'relative',
+        // backgroundImage: `url(${apply})`,
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'top',
+        // backgroundRepeat: 'no-repeat',
+        // position: 'relative',
       }}>
         <Box
           // container for 01020304
@@ -160,7 +245,7 @@ export default function Apply() {
           >
             INFO SESSIONS
           </Typography>
-          <Typography variant="body1" 
+          <Typography variant="body1"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
@@ -202,7 +287,7 @@ export default function Apply() {
           >
             APPLICATIONS DUE
           </Typography>
-          <Typography variant="body1" 
+          <Typography variant="body1"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
@@ -244,7 +329,7 @@ export default function Apply() {
           >
             GROUP INTERVIEW
           </Typography>
-          <Typography variant="body1" 
+          <Typography variant="body1"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
@@ -286,7 +371,7 @@ export default function Apply() {
           >
             INDIVIDUAL INTERVIEW
           </Typography>
-          <Typography variant="body1" 
+          <Typography variant="body1"
             sx={{
               // margin: "auto",
               // alignSelf: "flex-end",
@@ -302,7 +387,7 @@ export default function Apply() {
             We want to see your interest and fit for your chosen subteam, but no prior experience is necessary.
           </Typography>
         </Box>
-        
+
       </Box>
 
 
@@ -314,7 +399,7 @@ export default function Apply() {
 
 
 
-      <Box sx={{backgroundColor: 'orange'}}>
+      <Box sx={{ backgroundColor: 'orange' }}>
         {/* above encompasses all slider timeline data */}
         <Box>
           <Box>
