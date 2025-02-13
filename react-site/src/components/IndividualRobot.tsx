@@ -4,13 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
-/*
-TODO:
-1) Image gallery handling
-2) resizing of screen: red box goes down
-3) youtube video constant height
-*/
-
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
 
@@ -55,6 +48,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   //array with length == size of visible images
   const [fullImage, setFullImage] = useState([false, false, false]); //false: no image selected as default
 
+  //note: even if number of images visible on screen changes, its still fine, cuz it gets first index
   const handleImageClick = [
     () => setFullImage([true, false, false]),
     () => setFullImage([false, true, false]),
@@ -63,15 +57,14 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
   useEffect(() => {
     //checks if fullImage state != [false, false, false]
-    if(!fullImage.every(image => !image)){
+    if (!fullImage.every(image => !image)) {
       //prevents scrolling when image is blown up
-      console.log("one image is visible")
       document.body.style.overflow = 'hidden'
-    }else{
+    } else {
       //re-activates scrolling when image is removed
       document.body.style.overflow = 'auto'
     }
-  }, [fullImage]); 
+  }, [fullImage]);
 
   //controls number of images in the visible list in the gallery section
   const [numImages, setNumImages] = useState(3);
@@ -118,7 +111,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   useEffect(() => {
     if (isMD) {
       setNumImages(1)
-    } else if (isMDToLG) {  
+    } else if (isMDToLG) {
       setNumImages(2)
     } else {
       setNumImages(3)
@@ -142,7 +135,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       */}
       <Stack direction={isMD ? "column" : "row"} spacing={isMD ? "10%" : "5%"} width={'100%'} height={'100%'} mt={7} justifyContent={"center"} alignItems={isMD ? "center" : "left"} >
         {/*Containing 2 rows: description and video*/}
-        <Stack direction={"column"} spacing={'5%'} height={"80vh"} width={isMD ? "100%" : "75%"} >
+        <Stack direction={"column"} spacing={'5%'} height={"80%"} width={isMD ? "100%" : "75%"} >
           {/*Description*/}
           <Box width={'100%'} >
             <Typography variant='h3'>Description</Typography>
@@ -150,13 +143,13 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           </Box>
 
 
-          <Box width={'100%'} minWidth={isMD ? 400 : 500} 
-            sx={{aspectRatio: '16/9'}} //height changes according to width
+          <Box width={'100%'} maxWidth={800} overflow={"hidden"}
           >
             <Typography variant='h3' mb={2}>Featured Fight</Typography>
             <iframe
+              style={{ aspectRatio: '16/9' }}
+
               width="100%"
-              height="100%"
               src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
               title="YouTube video player"
               frameBorder="0"
@@ -191,7 +184,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       </Stack>
 
       {/* Design Section */}
-      <Typography variant="h3" gutterBottom mt={5}>Design</Typography>
+      <Typography variant="h3" gutterBottom mt={15}>Design</Typography>
       <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
 
       {/* Trivia Section */}
@@ -250,36 +243,41 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
       {/* Carousel for Gallery Images */}
 
-      <Stack direction="row" spacing={6} height="50vh" width="auto" alignItems={"center"} justifyContent={"center"} >
+      <Stack direction="row" spacing={2} alignItems={"center"} justifyContent={"center"}>
 
         <IconButton onClick={handlePrev} >
           <ArrowBack sx={{ color: "white" }} />
         </IconButton>
 
-        {visibleImages.map((imageName, index) => (
-          <Button
-            sx={{
-              width: '100%',
-              height: '100%',
-              position: 'relative'
-            }}
-            onClick={() => {
-              handleImageClick[index]();
-            }}
-          >
-            <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} position={'relative'} zIndex={0} >
-              <img src={imageName} style={{
+        <Stack direction="row" spacing={6} height="35vh" alignItems={"center"} justifyContent={"center"}>
+
+          {visibleImages.map((imageName, index) => (
+            <Button
+              sx={{
                 width: '100%',
                 height: '100%',
-                objectFit: "cover",
-                objectPosition: "center"
-              }} />
-            </Box>
+                position: 'relative'
+              }}
+              onClick={() => {
+                handleImageClick[index]();
+              }}
+            >
+              <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} position={'relative'} zIndex={0} >
+                <img src={imageName} style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: "cover",
+                  objectPosition: "center"
+                }} />
+              </Box>
 
-            {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
-            {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage} />}
-          </Button>
-        ))}
+              {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
+              {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage} />}
+            </Button>
+          ))}
+
+
+        </Stack>
 
         <IconButton onClick={handleNext} >
           <ArrowForward sx={{ color: "white" }} />
@@ -323,8 +321,8 @@ function FullImageRender({ imageName, setRemoveFullImage }) {
         position: "fixed",
         top: '0', //need to declare at least one of top or bottom when using non-relative position
         left: '0', //need to declare at least one of left or right when using non-relative position
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         bgcolor: 'rgba(0, 0, 0, 0.8)',
         justifyContent: 'center', //horizontally center
         alignContent: "center", //vertically center
@@ -336,13 +334,12 @@ function FullImageRender({ imageName, setRemoveFullImage }) {
       <img
         src={imageName}
         style={{
-          maxWidth: '50vw', //if not taking up max, can just auto fit
+          maxWidth: '60vw', //if not taking up max, can just auto fit
           maxHeight: '70vh',
           minWidth: '30vw',
           minHeight: '40vh', //ensures minimum size -> if auto size of image too small, will increase, maintaining aspect ratio
           objectPosition: 'center',
-          objectFit: 'cover',
-          borderRadius: 15
+          objectFit: 'contain',
         }}
       />
 
