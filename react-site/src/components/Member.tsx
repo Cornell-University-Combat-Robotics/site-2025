@@ -88,7 +88,12 @@ export default function Member(props: MemberProps) {
                 <List sx={{ width: '85%' }}>
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
-                      <Typography sx={{ fontSize: 17, color: 'black', whiteSpace: 'nowrap', overflow: 'scroll' }}>
+                      <Typography sx={{
+                        fontSize: 17,
+                        color: 'black',
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word'
+                      }}>
                         {desc}
                       </Typography>
 

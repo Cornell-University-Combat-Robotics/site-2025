@@ -197,7 +197,7 @@ const allMembers: Record<string, MemberProps> = {
   },
   xiaYanZhao: {
     imgSrc: "src/assets/members/xia-yan-zhao.jpg",
-    name: "XiaYan Zhao",
+    name: "Xiayan Zhao",
     position: ["Sportsman Member"],
     linkedin: "https://www.linkedin.com/in/xiayan-z-14aa45272",
     stats: [
