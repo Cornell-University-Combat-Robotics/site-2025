@@ -4,18 +4,16 @@ import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
 import Carousel from "../components/Carousel";
 import panel1 from "../assets/home-timeline/panel-3.jpg";
-// DO NOT DELETE:: import background2 from "../assets/background-pictures/crcircuit.png"
-
 
 // Creates the About page for the website.
 function About() {
   return (
-    <Box>
+    <Box >
       {/* CRCircuit as background */}
       <Box sx={{
         width: '100%',
-        backgroundImage: `url(${background})`,  // Your image URL
-        backgroundSize: 'cover',      // Ensure the image covers the area
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
         backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
@@ -101,35 +99,13 @@ function About() {
           At CRC, we prioritize building a passionate, diverse team eager to learn and collaborate, regardless of technical experience, and leverage our unique interdisciplinary skills to dominate the competition.
         </Typography>
 
-        {/* our journey timeline */}
-        <Typography variant="h2" fontWeight="bold" sx={{ fontFamily: 'Josefin Sans', my: '15%' }}>
-          OUR JOURNEY
-        </Typography>
-
-        {/* Timeline */}
-        <Box >
-          <Carousel image={panel1} numCells={10} />
-        </Box>
-
       </Box>
-
+      {/* Timeline */}
+      <Box marginTop="10%" marginLeft="0%" sx={{ width: "98vw", }}>
+        <Carousel image={panel1} numCells={10} description={"We received project team status from Cornell, allowing us to set up shop in the Experiential Learning Lab (ELL) and provide higher standards of member education."} />
+      </Box>
     </Box >
   );
 }
 
 export default About
-
-{/* Removed Join Us and Sponsor Us Boxes*/ }
-{/* <Box height="80px" />
-<Box>
-  <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans' }}>
-    You can shape the future of our team!
-  </Typography>
-</Box>
-
-<Stack direction="row" sx={{ gap: 10, padding: 8 }} >
-  <RedBox title="SUPPORT US" text="We're always looking to form valuable partnerships with companies and sponsors, and rely heavily on individual donations to keep our team running." 
-    word="SPONSOR!" link="/sponsors" />
-  <RedBox title="JOIN US" text="Interested in joining our unique team? We'd love to meet you during our application season, regardless of major or prior experience!"
-    word="APPLY!" link="/apply" />
-</Stack> */}

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Box, IconButton, Slide, Stack } from "@mui/material";
-import { NavigateBefore, NavigateNext, PropaneSharp } from "@mui/icons-material";
+import { NavigateBefore, NavigateNext, Lens, RadioButtonUnchecked } from "@mui/icons-material";
 import Cell from "./TimelineCell.tsx";
-import DarkCell from "./TimelineCellDark.tsx";
+import CellData from "../data/timeline1.ts";
+
 
 export interface Carousel1 {
-    image: string,
-    numCells: number
+    numCells: number,
 }
 
+// Carousel makes the image carousel for the About page.
+// NOTE: This carousel does not support full wrap around if you plan to have 
+// a number of cells that is not divisible by 3, the last cell will just be 
+// a giant image. 
 function Carousel(props: Carousel1) {
     //stores cells (that are displayed in timeline)
     const [cells, setCells] = useState<React.ReactElement[]>([]);
@@ -20,100 +24,107 @@ function Carousel(props: Carousel1) {
     //how many cards per page
     const cellsPerPage = 3;
 
-    const refreshCards: React.ReactElement[] = Array.from(
-        { length: props.numCells },
-        (_, i) => i === currentPage ?
-            < Cell
-                date='October 2019'
-                description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those featured on the TV show Battlebots.Each year, we build two 12lb mechanical bots and one 3lb battlebot with AI based functionality."
-                image={props.image}
-                key={1} />
-            :
-            <DarkCell date='October 2019'
-                description="We’re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those featured on the TV show Battlebots.Each year, we build two 12lb mechanical bots and one 3lb battlebot with AI based functionality."
-                image={props.image}
-                key={1} />
-    );
+    {
+        CellData.map((cell) => (
+            <Cell {...cell} />
+        ))
+    }
+
+    const refreshCards: React.ReactElement[] = CellData.map((cell) => (
+        <Cell {...cell} />
+    ));
 
     // handle button press for scroll left (->)
     const handleNextPage = () => {
         setSlideDirection("left");
-        setCurrentPage((prevPage) => prevPage === refreshCards.length - 1 ? 0 : prevPage + 1); //support wraparound
+        setCurrentPage((prevPage) => (prevPage + 1) % Math.ceil(refreshCards.length / cellsPerPage)); //support wraparound
     }
 
     // handle button press for scroll right (<-)
     const handlePrevPage = () => {
         setSlideDirection("right");
-        setCurrentPage((prevPage) => prevPage === 0 ? refreshCards.length - 1 : prevPage - 1);
+        setCurrentPage((prevPage) => (prevPage - 1 + Math.ceil(refreshCards.length / cellsPerPage)) % Math.ceil(refreshCards.length / cellsPerPage));
         // prevpage is passed in through useState because it is a function
     }
 
     // sets initial data (blank timeline)
     useEffect(() => {
         setCells(refreshCards);
-    });
+    }, []);
 
     return (
-        // contains entire carousel
-        <Box sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "50%",
-            width: "100%",
-        }}>
-            {/* handle previous page (<) button click */}
-            <IconButton onClick={handlePrevPage}
-                sx={{ margin: "0%" }}>
-                <NavigateBefore sx={{ color: "white", transform: 'scale(2)', }} />
-            </IconButton>
-
-            {/* contains cards */}
+        <Box>
+            {/* contains entire carousel, items added to this box go to the right (row) */}
             <Box sx={{
-                height: "90vh",
-                // width: "100vh",
-                justifyContent: "center",
+                display: "flex",
+                flexDirection: "row",
                 alignItems: "center",
+                justifyContent: "center",
+                height: "50%",
+                width: "100%",
             }}>
-                {/* iterate over each cell in cells: INITIALIZATION*/}
-                {cells.map((cell, index) => (
-                    <Box
-                        key={`cell-${index}`}  //creates unique identifier for each cell
-                        sx={{
-                            width: "100%",
-                            height: "100%",
-                            justifyContent: "center",
-                            display: currentPage === index ? "block" : "none", //checks if card is index (should be displayed) and only displays it if true
-                        }} >
-                        {/* slide animation */}
-                        <Slide direction={slideDirection} in={currentPage === index} >
-                            {/* format cards as stack */}
-                            <Stack
-                                spacing={"0%"}
-                                direction="row"
-                                alignContent="center"
-                                justifyContent="center"
-                                sx={{
-                                    width: "100%",
-                                    height: "100%",
-                                    zIndex: "1000",
-                                }}>
-                                {cells.slice(
-                                    index * cellsPerPage,
-                                    index * cellsPerPage + cellsPerPage
-                                )}
-                            </Stack>
-                        </Slide>
-                    </Box>
-                ))}
+                {/* handle previous page (<) button click */}
+                <IconButton onClick={handlePrevPage}
+                    sx={{ margin: "2%" }}>
+                    <NavigateBefore sx={{ color: "white", transform: 'scale(2)', }} />
+                </IconButton>
+
+                {/* contains cards */}
+                <Box sx={{
+                    height: "90vh",
+                    width: "100vw",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: '#3D0E0E',
+                    zIndex: "-10"
+                }}>
+                    {/* iterate over each panel: 3 CELLS! must use Array.from because we go by cells */}
+                    {Array.from({ length: Math.ceil(cells.length / cellsPerPage) }).map((_, index) => (
+                        <Box
+                            key={`cell-${index}`}  //creates unique identifier for each row
+                            sx={{
+                                width: "100%",
+                                height: "100%",
+                                justifyContent: "center",
+                                display: currentPage === index ? "block" : "none", //checks if card is index (should be displayed) and only displays it if true
+                            }} >
+
+                            {/* slide animation */}
+                            <Slide direction={slideDirection} in={currentPage === index} >
+                                {/* format cards as stack */}
+                                <Stack
+                                    spacing={"0%"}
+                                    direction="row"
+                                    alignContent="center"
+                                    justifyContent="center"
+                                    sx={{
+                                        zIndex: "1000",
+                                    }}>
+                                    {cells.slice(
+                                        index * cellsPerPage,
+                                        index * cellsPerPage + cellsPerPage
+                                    )}
+                                </Stack>
+                            </Slide>
+                        </Box>
+                    ))}
+                </Box>
+
+                {/* handle previous page (<) button click */}
+                < IconButton onClick={handleNextPage}
+                    sx={{ margin: "2%", }} >
+                    <NavigateNext sx={{ color: "white", transform: 'scale(2)', }} />
+                </IconButton>
+            </Box >
+            {/* circles on bottom */}
+            <Box sx={{ mt: "-5%" }}>
+                <Lens sx={{ color: "white" }}></Lens>
+                <RadioButtonUnchecked sx={{ color: "white" }}></RadioButtonUnchecked>
+                <RadioButtonUnchecked sx={{ color: "white" }}></RadioButtonUnchecked>
             </Box>
-            {/* handle previous page (<) button click */}
-            < IconButton onClick={handleNextPage}
-                sx={{ margin: "0%", }} >
-                <NavigateNext sx={{ color: "white", transform: 'scale(2)', }} />
-            </IconButton>
-        </Box >
+            <Box sx={{ mt: "2%" }} />
+
+        </Box>
     );
 
 }
