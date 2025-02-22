@@ -1,10 +1,13 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
+import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
+import React from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
+import slugma from "../assets/3lb/slugma_profile.jpg"
+
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
 
@@ -74,7 +77,7 @@ export default function Apply() {
         sx={{
           textAlign: 'center',
           color: 'white',
-          mb: 0
+          mb: 10
           // add margins when text size smaller
         }}>
         RECRUITMENT TIMELINE
@@ -86,7 +89,8 @@ export default function Apply() {
         sx={{
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 10
+          width: '100%',
+          height: '100%'
         }}
       >
         {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
@@ -158,23 +162,80 @@ export default function Apply() {
       </Box>
 
 
+
+
       <Typography variant="h1" mb={20}>
         NEW MEMBER EXPERIENCE
       </Typography>
 
-      <FAQSection/>
+      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} >
+        {/*arrow*/}
+        <svg width="10%" //svg component takes up 10% of stack & full height of stack
+         > 
+          <line
+              x1="50%" //coordinates of the line: 50% from the left of svg component
+              x2="50%" 
+              y1="5%" //set 5% from top of svg component
+              y2="90%"
+              stroke={"#820002"}
+              stroke-width="25"
+            >
+          </line>
 
+          {/*equilateral triangle: TODO -> rn is hardcoded... */}
+          <polygon points="0,10 100,10 50,100" //(50,10): 50% from left of svg, 10% from top of svg
+            fill="#820002"
+            transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
+          />
+        </svg>
 
+        <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
+          <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          <MemberExperienceComponent bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          <MemberExperienceComponent bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
+          <MemberExperienceComponent bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+        </Stack>
+      </Stack>
+
+      <FAQSection />
     </Box>
   );
 }
 
-function MemberExperienceComponent() {
-  return(
-    <Box>
-      <img/>
+function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
+  return (
+    <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems="center" >
+      <img
+        src={img}
+        style={{
+          objectPosition: "center",
+          objectFit: "cover",
+          maxHeight: 400,
+          minWidth: 400
+        }}
+      />
 
-    </Box>
+
+      {/*descriptions */}
+      <Box textAlign={"left"} padding={5}
+        bgcolor={bgcolor} //bgcolors arent inherited
+      >
+        <Typography variant="h4" >
+          {title}
+        </Typography>
+
+        <Typography fontSize={30} fontStyle="italic" mb={5}>
+          {subtitle}
+        </Typography>
+
+        <Typography fontSize={20}>
+          {desc}
+        </Typography>
+      </Box>
+
+    </Stack>
   );
 }
 
