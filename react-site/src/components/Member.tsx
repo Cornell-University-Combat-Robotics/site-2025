@@ -22,7 +22,7 @@ export default function Member(props: MemberProps) {
   const [showStats, setShowStats] = useState(false);
 
   //starting y position for stats animation: -100% relative to parent (member card)
-  const yStats = "-103%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
+  const yStats = "-101%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
 
   return (
     /*
@@ -32,7 +32,7 @@ export default function Member(props: MemberProps) {
     <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5}
       sx={{
         width: 'auto', //maintain aspect ratio
-        height: '50vh',
+        minHeight: '47vh',
         maxWidth: 330 //ensure black box doesnt grow too wide when screen is smaller
       }}
     >
@@ -42,7 +42,8 @@ export default function Member(props: MemberProps) {
         width: 'auto',
         height: '60%', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        aspectRatio: '1'
       }}>
         <img src={imgSrc} style={{
           width: "100%", height: "100%",
