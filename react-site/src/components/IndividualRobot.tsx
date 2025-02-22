@@ -34,16 +34,20 @@ export default function IndividualRobot() {
           <Grid item xs={12} md={8}>
             <Typography variant='h5'>Description</Typography>
             <Typography mb={5}>{robotInfo.description}</Typography>
-            <Typography variant='h5'>Featured Fight</Typography>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            {robotInfo.featured_fight ? (
+              <>
+                <Typography variant='h5'>Featured Fight</Typography>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={robotInfo.featured_fight}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </>
+            ) : null}
           </Grid>
           <Grid item xs={12} md={4}>
             <Paper sx={{ bgcolor: '#820002', p: 2, borderRadius: 4 }}>
@@ -107,14 +111,17 @@ export default function IndividualRobot() {
                     <TableCell sx={{ color: 'white' }}>{fight.result}</TableCell>
                     <TableCell sx={{ color: 'white' }}>{fight.by}</TableCell>
                     <TableCell>
-                      <a href={fight.video} target="_blank" rel="noopener noreferrer">
-                        Watch
-                      </a>
+                      {fight.video && fight.video.trim() !== "" ? (
+                        <a href={fight.video} target="_blank" rel="noopener noreferrer">
+                          Watch
+                        </a>
+                      ) : ""}
                     </TableCell>
                     <TableCell sx={{ color: 'white' }}>{fight.length}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
+
             </Table>
           </TableContainer>
         </Box>
@@ -132,16 +139,14 @@ export default function IndividualRobot() {
             alignItems: "start",
             justifyItems: "center",
           }}>
-            {robotInfo.gallery.map((props2) => (
-              props2.includes('youtube')
-                ?
-                <ReactPlayer url={props2} width="100%" />
-                :
-                <img src={props2} width='80%' />
+            {robotInfo.gallery.map((item, index) => (
+              item.includes('youtube') ? (
+                <ReactPlayer key={index} url={item} width="100%" />
+              ) : (
+                <img key={index} src={item} width="80%" alt={`Gallery item ${index + 1}`} />
+              )
             ))}
-
           </Box>
-
         </Box>
       </Box>
     </Box>
