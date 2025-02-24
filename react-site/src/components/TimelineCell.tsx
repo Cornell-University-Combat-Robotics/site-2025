@@ -34,7 +34,7 @@ export default function TimelineCell(props: Timeline1Cell) {
                     objectFit: "cover",
                     position: "relative",
                     px: "10%",
-                    py: "10%"
+                    py: "15%"
                 }}>
                     <Typography variant="h3" style={{ zIndex: "1" }}> {props.date} </Typography>
                     <Typography style={{ zIndex: "1", paddingRight: "20%" }}> {props.description} </Typography>
@@ -45,13 +45,3 @@ export default function TimelineCell(props: Timeline1Cell) {
     )
 
 }
-
-{/* <img src={props.image} style={{
-                width: "100%",
-                height: "100%",
-                zIndex: "-100",
-                objectFit: "cover",
-                opacity: "60%",
-                position: "relative",
-                objectPosition: "center",
-            }} /> */}

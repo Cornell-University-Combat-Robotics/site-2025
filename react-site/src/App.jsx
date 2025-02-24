@@ -33,7 +33,7 @@ theme.typography.h1 = {
 
 theme.typography.h2 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2.5rem',
+  fontSize: '2.8rem',
   fontWeight: 'normal',
 };
 
@@ -49,6 +49,9 @@ theme.typography.body1 = {
   fontWeight: 'normal',
 };
 
+theme.palette.primary = {
+  main: '#3D0E0E'
+}
 
 function App() {
   return (

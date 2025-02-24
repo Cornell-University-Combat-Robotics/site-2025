@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Slide, Stack } from "@mui/material";
-import { NavigateBefore, NavigateNext, Lens, RadioButtonUnchecked } from "@mui/icons-material";
+import { Box, IconButton, Slide, Stack, RadioGroup, Radio, FormControlLabel } from "@mui/material";
+import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import Cell from "./TimelineCell.tsx";
 import CellData from "../data/timeline1.ts";
 
@@ -24,11 +24,7 @@ function Carousel(props: Carousel1) {
     //how many cards per page
     const cellsPerPage = 3;
 
-    {
-        CellData.map((cell) => (
-            <Cell {...cell} />
-        ))
-    }
+    const pages = 3;
 
     const refreshCards: React.ReactElement[] = CellData.map((cell) => (
         <Cell {...cell} />
@@ -45,6 +41,11 @@ function Carousel(props: Carousel1) {
         setSlideDirection("right");
         setCurrentPage((prevPage) => (prevPage - 1 + Math.ceil(refreshCards.length / cellsPerPage)) % Math.ceil(refreshCards.length / cellsPerPage));
         // prevpage is passed in through useState because it is a function
+    }
+
+    const handleDotChange = (event) => {
+        setCurrentPage(Number(event.target.value)); // when user clicks on a circle, it moves the timeline to that number
+        console.log("Number: " + Number(event.target.value));
     }
 
     // sets initial data (blank timeline)
@@ -71,7 +72,7 @@ function Carousel(props: Carousel1) {
 
                 {/* contains cards */}
                 <Box sx={{
-                    height: "90vh",
+                    height: "90vh", // if you change this, also change it in TimelineCell 
                     width: "100vw",
                     justifyContent: "center",
                     alignItems: "center",
@@ -116,14 +117,22 @@ function Carousel(props: Carousel1) {
                     <NavigateNext sx={{ color: "white", transform: 'scale(2)', }} />
                 </IconButton>
             </Box >
-            {/* circles on bottom */}
-            <Box sx={{ mt: "-5%" }}>
-                <Lens sx={{ color: "white" }}></Lens>
-                <RadioButtonUnchecked sx={{ color: "white" }}></RadioButtonUnchecked>
-                <RadioButtonUnchecked sx={{ color: "white" }}></RadioButtonUnchecked>
-            </Box>
-            <Box sx={{ mt: "2%" }} />
 
+            {/* Dots */}
+            <RadioGroup row value={currentPage} onChange={handleDotChange} sx={{
+                mt: "-5%", justifyContent: "center",
+                alignItems: "center", mb: "1%", gap: "1%"
+            }}>
+                {[...Array(pages)].map((_, index) => (
+                    <FormControlLabel
+                        key={index}
+                        value={String(index)}
+                        control={<Radio size="small"
+                            sx={{ color: "white", '&.Mui-checked': { color: "white" }, transform: 'scale(2)', mx: "1%" }} />}
+                        label=""
+                    />
+                ))}
+            </RadioGroup>
         </Box>
     );
 
