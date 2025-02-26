@@ -1,17 +1,19 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
-import slugma from "../assets/3lb/slugma_profile.jpg"
+import slugma from "../assets/3lb/slugma_profile.jpg";
+import robot_scroll from "../assets/robot_scroll.png";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
 
-  //list of all events in the recruitment timeline
+  /** list of all events in the recruitment timeline */
   const event = [
     { name: 'Project Team Fest', date: '6/9/25' },
     { name: 'Clubfest', date: '6/10/25' },
@@ -20,6 +22,29 @@ export default function Apply() {
     { name: 'Info Session 3', date: '6/13/25' },
     { name: 'Applications Due', date: '11.59PM  7/1/25' }
   ];
+
+  /** 
+   * Effect: Getting user's scroll progress in the viewport
+   * useScroll() returns an object with two MotionValue values: 
+   * - { scrollY == current vertical scroll position, scrollYProgress == normalized scroll value between 0 & 1 }
+   * but you can choose to get only one property */
+  const { scrollYProgress } = useScroll();
+
+  /** 
+   * Effect: Maps scrolling (0 → 1) to movement (0px → 300px).
+   * useTransform(inputValue, inputRange, outputRange): 
+   * - inputValue: A MotionValue that you want to transform.	
+   * - inputRange: An array of values representing the expected range of inputValue.
+   * - outputRange: An array of mapped values that correspond to inputRange.
+  */
+  const yPos = useTransform(scrollYProgress, [0, 1], [0, 300])
+
+  const [yValue, setYValue] = useState();
+
+  useMotionValueEvent(yPos, "change", (latest) => {
+    setYValue(latest);
+    console.log("yPos: ", yPos.get())
+  });
 
   return (
     <Box sx={{}}>
@@ -102,7 +127,7 @@ export default function Apply() {
             y1="10%" //set 10% from top of svg component
             y2="10%"
             stroke={"white"}
-            stroke-width="5"
+            strokeWidth="5"
           >
           </line>
 
@@ -110,7 +135,7 @@ export default function Apply() {
             const xPos = [`${10 + index * 15}%`]; //increments x position to the right according to index
 
             return (
-              <g> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
+              <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
                 <circle
                   cx={xPos}
                   cy="10%" //same as line -> falls on line
@@ -168,18 +193,21 @@ export default function Apply() {
         NEW MEMBER EXPERIENCE
       </Typography>
 
-      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} >
+
+ 
+
+      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} position="relative" >
         {/*arrow*/}
         <svg width="10%" //svg component takes up 10% of stack & full height of stack
-         > 
+        >
           <line
-              x1="50%" //coordinates of the line: 50% from the left of svg component
-              x2="50%" 
-              y1="5%" //set 5% from top of svg component
-              y2="90%"
-              stroke={"#820002"}
-              stroke-width="25"
-            >
+            x1="50%" //coordinates of the line: 50% from the left of svg component
+            x2="50%"
+            y1="5%" //set 5% from top of svg component
+            y2="90%"
+            stroke={"#820002"}
+            strokeWidth="25"
+          >
           </line>
 
           {/*equilateral triangle: TODO -> rn is hardcoded... */}
@@ -188,6 +216,37 @@ export default function Apply() {
             transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
           />
         </svg>
+
+        <motion.div style={{ y: yPos, position: "absolute", left: -47 }}>
+          <Box zIndex={100}>
+            <img src={robot_scroll} style={{ transform: "scale(0.4)" }} />
+          </Box>
+        </motion.div>
+
+
+{/* 
+        <Box
+          key={yValue}
+          zIndex={100}
+          position="absolute"
+          left={-47}
+          y={yValue}
+          style={{ transform: `translateY(${yValue}px)` }} // ✅ Uses updated state
+          transition="transform 0.1s linear"
+        >
+          {console.log("yvalue: ", yValue)}
+          <img
+            src={robot_scroll}
+            style={{
+              transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
+            }}
+          />
+        </Box>
+        */}
+
+
+
+
 
         <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
           <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
