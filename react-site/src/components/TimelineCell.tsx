@@ -29,7 +29,7 @@ export default function TimelineCell(props: Timeline1Cell) {
                     width: "inherit",
                     height: "inherit",
                     zIndex: "100",
-                    backdropFilter: "brightness(0.5)",
+                    backdropFilter: "brightness(0.4)",
                     textAlign: 'left',
                     objectFit: "cover",
                     position: "relative",
