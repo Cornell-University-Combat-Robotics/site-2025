@@ -1,6 +1,6 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
@@ -39,14 +39,46 @@ export default function Apply() {
   */
   const yPos = useTransform(scrollYProgress, [0, 1], [0, 300])
 
+  const [isVisible, setIsVisible] = useState(false);
+
   const [yValue, setYValue] = useState();
 
   useMotionValueEvent(yPos, "change", (latest) => {
     setYValue(latest);
-    console.log("yPos: ", yPos.get())
+    //console.log("yPos: ", yPos.get())
   });
 
+  /** attach this to component that you want to listen to in user's viewport */
+  const ref = useRef(null);
+
+
+  //always active?
+  useEffect(() => {
+    //what is entry?
+    //entry: an IntersectionObserverEntry object
+    //IntersectionObserver stays attached and keeps detecting visibility changes automatically.
+    const observer = new IntersectionObserver(([entry]) => {
+      //entry.isIntersecting is TRUE when element is visible in the viewport & FALSE when element is not visible (scrolled out of view)
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    },
+      { threshold: 0.2 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
+    );
+
+    //only runs when ref is not null -> meaning ref is attached to an object
+    if (ref.current) {
+      { console.log("parent can be observed", ref) }
+      observer.observe(ref.current) //attaches the observer -> starts tracking visibility changes for this ref component
+    }
+
+  }, [] //no dependencies: meaning the useEffect only runs ONCE on the first render => prevents observer from being created every render (inefficient)
+  );
+
   return (
+    
     <Box sx={{}}>
       {/* above is body of site */}
       <Box sx={{
@@ -194,9 +226,12 @@ export default function Apply() {
       </Typography>
 
 
- 
 
-      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} position="relative" >
+
+      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={ref}
+
+      // Ensures scrolling
+      >
         {/*arrow*/}
         <svg width="10%" //svg component takes up 10% of stack & full height of stack
         >
@@ -215,26 +250,16 @@ export default function Apply() {
             fill="#820002"
             transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
           />
+
         </svg>
 
-        <motion.div style={{ y: yPos, position: "absolute", left: -47 }}>
-          <Box zIndex={100}>
-            <img src={robot_scroll} style={{ transform: "scale(0.4)" }} />
-          </Box>
-        </motion.div>
-
-
-{/* 
+        {/*
         <Box
-          key={yValue}
           zIndex={100}
-          position="absolute"
-          left={-47}
-          y={yValue}
-          style={{ transform: `translateY(${yValue}px)` }} // ✅ Uses updated state
-          transition="transform 0.1s linear"
+          position="sticky"
+          left={47}
+          top={"40%"}
         >
-          {console.log("yvalue: ", yValue)}
           <img
             src={robot_scroll}
             style={{
@@ -242,10 +267,24 @@ export default function Apply() {
             }}
           />
         </Box>
-        */}
+         */}
 
-
-
+        {isVisible && (
+          <Box
+            zIndex={100}
+            position="fixed"
+            left={-47}
+            top={"50%"}
+            ref={ref}
+          >
+            <img
+              src={robot_scroll}
+              style={{
+                transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
+              }}
+            />
+          </Box>)
+        }
 
 
         <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
