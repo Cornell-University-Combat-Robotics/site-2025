@@ -33,7 +33,7 @@ export default function Member(props: MemberProps) {
       sx={{
         width: '100%', //maintain aspect ratio
         height: '50vh',
-        maxWidth: 330 //ensure black box doesnt grow too wide when screen is smaller
+        maxWidth: 300 //ensure black box doesnt grow too wide when screen is smaller
       }}
     >
       <Box sx={{
@@ -161,8 +161,8 @@ export default function Member(props: MemberProps) {
         {position.map((roles, index) => (
           <Box key={index} bgcolor={"#373737"} sx={{
             borderRadius: 2, textAlign: "left",
-            minHeight: 30
-          }} marginBottom={1.5}>
+            height: 25
+          }} marginBottom={1}>
             <Typography sx={{
               ml: "10px", fontSize: "20px",
               whiteSpace: 'nowrap', overflow: 'scroll'

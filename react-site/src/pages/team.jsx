@@ -86,7 +86,7 @@ export default function Team() {
       Effect: Scrolling bar of subteam names
       Outer div: constant background -> only the text is scrolling
       */}
-        <div style={{ backgroundColor: '#820002', width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+        <div style={{ width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap' }}>
           <motion.div
             animate={{ x: ["0%", "-100%"] }} // Moves text from right to left 
             transition={{
@@ -102,7 +102,7 @@ export default function Team() {
           </motion.div>
         </div>
 
-        <Typography sx={{ fontSize: 30, maxWidth: '70%', margin: '0 auto', textAlign: 'center' }}>
+        <Typography sx={{ fontSize: 30, maxWidth: '90%', margin: '0 auto', textAlign: 'center' }}>
           {"Our entire team consists of four subteams: Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
         <Typography sx={{ fontSize: 30, maxWidth: '70%', margin: '0 auto', textAlign: 'center' }}>
@@ -117,7 +117,7 @@ export default function Team() {
             when clicked. &hover is for making the text color white (don't change when
             button is not hovered over.*/}
         <Box display='flex' justifyContent="center" alignItems="center" mt="60px" mb="40px">
-          <Box display='flex' width="60%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
+          <Box display='flex' width="75%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
             <TeamButton hoverColor="#0E7C2B" image={KineticIcon} whiteImg={WhiteKineticIcon} to="/team/kinetic">Kinetic</TeamButton>
             <TeamButton hoverColor="#1F398D" image={SportsmanIcon} whiteImg={WhiteSportIcon} to="/team/sportsman">Sportsman</TeamButton>
             <TeamButton hoverColor="#8D8D2C" image={AutoIcon} whiteImg={WhiteAutoIcon} to="/team/autonomous">Autonomous</TeamButton>
@@ -125,7 +125,7 @@ export default function Team() {
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
-          <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
+          <Box display='flex' width="63%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
             <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/team/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/team/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
