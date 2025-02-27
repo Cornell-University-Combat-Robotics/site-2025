@@ -1,4 +1,4 @@
-import { Box, Card, Typography, List, Button, Stack } from "@mui/material";
+import { Box, Typography, List, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -22,7 +22,7 @@ export default function Member(props: MemberProps) {
   const [showStats, setShowStats] = useState(false);
 
   //starting y position for stats animation: -100% relative to parent (member card)
-  const yStats = "-103%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
+  const yStats = "-101%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
 
   return (
     /*
@@ -31,18 +31,18 @@ export default function Member(props: MemberProps) {
     */
     <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5}
       sx={{
-        width: 'auto', //maintain aspect ratio
+        width: '100%', //maintain aspect ratio
         height: '50vh',
         maxWidth: 330 //ensure black box doesnt grow too wide when screen is smaller
       }}
     >
       <Box sx={{
         position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
-        borderRadius: "7%",
+        borderRadius: 5,
         width: 'auto',
-        height: '60%', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
+        height: '30vh', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}>
         <img src={imgSrc} style={{
           width: "100%", height: "100%",
@@ -143,11 +143,28 @@ export default function Member(props: MemberProps) {
         </Typography>
       </Box>
 
-      <List sx={{ width: '85%' }}>
+      <List sx={{
+        width: '85%',
+        //maxHeight: 150, // Fixed max height
+        overflow: 'auto', // Enable scrolling
+        // '&::-webkit-scrollbar': { // Customize scrollbar
+        //   width: '4px'
+        // },
+        // '&::-webkit-scrollbar-track': {
+        //   background: '#black'
+        // },
+        // '&::-webkit-scrollbar-thumb': {
+        //   background: '#888',
+        //   borderRadius: '4px'
+        // }
+      }}>
         {position.map((roles, index) => (
-          <Box key={index} bgcolor={"#373737"} sx={{ borderRadius: 2, textAlign: "left" }} marginBottom={2}>
+          <Box key={index} bgcolor={"#373737"} sx={{
+            borderRadius: 2, textAlign: "left",
+            minHeight: 30
+          }} marginBottom={1.5}>
             <Typography sx={{
-              ml: "15px", fontSize: "20px",
+              ml: "10px", fontSize: "20px",
               whiteSpace: 'nowrap', overflow: 'scroll'
             }}>
               {roles}
