@@ -48,14 +48,27 @@ export default function Game() {
         alignItems: "center",
         overflow: "hidden",
         position: "relative",
+        // backgroundColor: "yellow"
       }}
     >
+      <Box 
+        sx={{
+          backgroundColor:"yellow",
+          // width: "1020px",
+          width: "80.4vh",
+          // height: "560px",
+          height: "56.6vh",
+          marginTop: "290px",
+          marginLeft: "20px",
+          zIndex: "10",
+          }}>
+      </Box>
       {/* Arcade Image as Background */}
       <motion.div
         initial={{ scale: 0.3 }}
         animate={{ scale: 1, y: "50px" }}
         transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
-        style={{ position: "absolute", zIndex: -1 }}
+        style={{ position: "absolute", zIndex: -1}}
       >
         <img src={arcade} style={{ width: "auto", height: "100%" }} />
       </motion.div>
@@ -83,7 +96,7 @@ export default function Game() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        style={{ position: "relative", zIndex: 1, marginTop: "20px" }}
+        style={{ position: "relative", zIndex: 1, marginTop: "20px"}}
       >
         <Box
           sx={{
