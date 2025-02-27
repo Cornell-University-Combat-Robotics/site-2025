@@ -1,4 +1,4 @@
-import { Box, Card, Typography, List, Button, Stack } from "@mui/material";
+import { Box, Typography, List, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -22,7 +22,7 @@ export default function Member(props: MemberProps) {
   const [showStats, setShowStats] = useState(false);
 
   //starting y position for stats animation: -100% relative to parent (member card)
-  const yStats = "-103%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
+  const yStats = "-101%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
 
   return (
     /*
@@ -31,18 +31,18 @@ export default function Member(props: MemberProps) {
     */
     <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5}
       sx={{
-        width: 'auto', //maintain aspect ratio
+        width: '100%', //maintain aspect ratio
         height: '50vh',
         maxWidth: 330 //ensure black box doesnt grow too wide when screen is smaller
       }}
     >
       <Box sx={{
         position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
-        borderRadius: "7%",
+        borderRadius: 5,
         width: 'auto',
-        height: '60%', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
+        height: '30vh', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}>
         <img src={imgSrc} style={{
           width: "100%", height: "100%",
@@ -72,8 +72,8 @@ export default function Member(props: MemberProps) {
 
         {/*animation controller for stats button*/}
         <AnimatePresence> {/*allows for exiting (w/o AnimatePresence, only entering animation would occur)*/}
-          {/*if statement: if showStates == true, code in (...) will run*/}
-          {showStats && (
+          {/*if statement: if showStates == true and stats exist, code in (...) will run*/}
+          {showStats && stats[0]?.length > 0 && (
             <motion.div
               //Fly in from left: Initial state placed outside the visible area
               initial={{ x: -300, y: yStats }} //initial state
@@ -90,15 +90,20 @@ export default function Member(props: MemberProps) {
                 }}
               >
                 <List sx={{ width: '85%' }}>
-                  {props.stats[0].map((desc, index) => ( //gets first row (descriptions)
+                  {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
-                      <Typography sx={{ fontSize: 17, color: 'black', whiteSpace: 'nowrap', overflow: 'scroll' }}>
+                      <Typography sx={{
+                        fontSize: 17,
+                        color: 'black',
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word'
+                      }}>
                         {desc}
                       </Typography>
 
                       {/*percentage bar: outer div is the full bar (black), inner div is the percentage filled (red)*/}
                       <div style={{ backgroundColor: 'black', width: '100%', height: 21, opacity: 2 }}>
-                        <div style={{ backgroundColor: '#A10305', width: `${props.stats[1][index]}%`, height: '100%', opacity: 1 }}>
+                        <div style={{ backgroundColor: '#A10305', width: `${stats[1][index]}%`, height: '100%', opacity: 1 }}>
                         </div>
                       </div>
                     </Box>
@@ -111,20 +116,22 @@ export default function Member(props: MemberProps) {
 
         {/*stats button*/}
         {/*technically doesnt have to be a button*/}
-        <Button
-          sx={{
-            position: 'absolute', // Makes the button overlap
-            borderRadius: 4, bgcolor: '#A10305',
-            bottom: '5%', right: '5%', // Places button within parent (Box)
-            minWidth: 0, width: '20%'
-          }}
-          onMouseEnter={() => setShowStats(true)}
-          onMouseLeave={() => setShowStats(false)}
-        >
-          <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
-            {"Stats"}
-          </Typography>
-        </Button>
+        {stats[0]?.length > 0 && (
+          <Button
+            sx={{
+              position: 'absolute', // Makes the button overlap
+              borderRadius: 4, bgcolor: '#A10305',
+              bottom: '5%', right: '5%', // Places button within parent (Box)
+              minWidth: 0, width: '20%'
+            }}
+            onMouseEnter={() => setShowStats(true)}
+            onMouseLeave={() => setShowStats(false)}
+          >
+            <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
+              {"Stats"}
+            </Typography>
+          </Button>
+        )}
       </Box>
 
       <Box sx={{ textAlign: "left", width: '85%' }}>
@@ -136,14 +143,31 @@ export default function Member(props: MemberProps) {
         </Typography>
       </Box>
 
-      <List sx={{ width: '85%' }}>
-        {props.position.map((position, index) => (
-          <Box key={index} bgcolor={"#373737"} sx={{ borderRadius: 2, textAlign: "left" }} marginBottom={2}>
+      <List sx={{
+        width: '85%',
+        //maxHeight: 150, // Fixed max height
+        overflow: 'auto', // Enable scrolling
+        // '&::-webkit-scrollbar': { // Customize scrollbar
+        //   width: '4px'
+        // },
+        // '&::-webkit-scrollbar-track': {
+        //   background: '#black'
+        // },
+        // '&::-webkit-scrollbar-thumb': {
+        //   background: '#888',
+        //   borderRadius: '4px'
+        // }
+      }}>
+        {position.map((roles, index) => (
+          <Box key={index} bgcolor={"#373737"} sx={{
+            borderRadius: 2, textAlign: "left",
+            minHeight: 30
+          }} marginBottom={1.5}>
             <Typography sx={{
-              ml: "15px", fontSize: "20px",
+              ml: "10px", fontSize: "20px",
               whiteSpace: 'nowrap', overflow: 'scroll'
             }}>
-              {position}
+              {roles}
             </Typography>
           </Box>
         ))}

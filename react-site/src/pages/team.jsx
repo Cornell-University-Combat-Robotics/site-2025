@@ -130,7 +130,6 @@ export default function Team() {
             <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/team/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
         </Box>
-
       </Box>
     </>
   );
