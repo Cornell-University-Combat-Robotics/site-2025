@@ -40,7 +40,9 @@ export default function Game() {
     <Box
       sx={{
         width: "100vw",
-        height: "82.2vh",
+        // height: "82.2vh",
+        // 82.2vh original height but causes black body to show under header
+        height: "92.5vh",
         minHeight: "82.2vh",
         display: "flex",
         flexDirection: "column",
@@ -66,7 +68,7 @@ export default function Game() {
       {/* Arcade Image as Background */}
       <motion.div
         initial={{ scale: 0.3 }}
-        animate={{ scale: 1, y: "50px" }}
+        animate={{ scale: 0.85, y: "10px" }}
         transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
         style={{ position: "absolute", zIndex: -1}}
       >
@@ -74,7 +76,7 @@ export default function Game() {
       </motion.div>
 
       {/* Title */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: -100 }}
         transition={{ duration: 1, delay: 1 }}
@@ -89,16 +91,16 @@ export default function Game() {
         >
           GAMES
         </Typography>
-      </motion.div>
+      </motion.div> */}
 
       {/* Carousel for Game Images */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         style={{ position: "relative", zIndex: 1, marginTop: "20px"}}
-      >
-        <Box
+      > */}
+        {/* <Box
           sx={{
             position: "relative",
             display: "flex",
@@ -108,12 +110,12 @@ export default function Game() {
             width: "100vw",
             maxWidth: "600px",
           }}
-        >
-          <IconButton onClick={handlePrev} sx={{ zIndex: 2 }}>
+        > */}
+          {/* <IconButton onClick={handlePrev} sx={{ zIndex: 2 }}>
             <ArrowBack sx={{ color: "white" }} />
-          </IconButton>
+          </IconButton> */}
 
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -160,13 +162,13 @@ export default function Game() {
                 )}
               </motion.div>
             ))}
-          </Box>
+          </Box> */}
 
-          <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
+          {/* <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
             <ArrowForward sx={{ color: "white" }} />
-          </IconButton>
-        </Box>
-      </motion.div>
+          </IconButton> */}
+        {/* </Box> */}
+      {/* </motion.div> */}
     </Box>
   );
 }
