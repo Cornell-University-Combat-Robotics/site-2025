@@ -164,11 +164,15 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/beater-b-barker/PXL_20240420_002930841.jpg",
+      "/src/assets/retired/beater-b-barker/PXL_20240420_003111230.jpg",
+      "/src/assets/retired/beater-b-barker/PXL_20240420_003358932.jpg",
+      "/src/assets/retired/beater-b-barker/PXL_20240420_145847329.jpg",
       "/src/assets/retired/beater-b-barker/IMG_0390.jpeg",
-      "/src/assets/retired/beater-b-barker/IMG_0432.jpeg",
       "/src/assets/retired/beater-b-barker/IMG_5773.JPG",
-      "/src/assets/retired/beater-b-barker/IMG_6360.jpeg"
+      "/src/assets/retired/beater-b-barker/IMG_6360.jpeg",
+      "/src/assets/retired/beater-b-barker/737305434.220657.jpg",
+      "/src/assets/retired/beater-b-barker/IMG_0432.jpeg",
+      "/src/assets/retired/beater-b-barker/IMG_6957.jpeg",
     ]
   },
 
@@ -285,8 +289,10 @@ export const robotData: { [key: string]: RobotData } = {
       // "/src/assets/3lb/nardo-whole.png",
       // "/src/assets/3lb/team-photo-hearts.png",
       // "/src/assets/3lb/team-photo-formal.png",
+      "/src/assets/3lb/slugma_cad.png",
       "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+
     ]
   },
 
@@ -378,7 +384,8 @@ export const robotData: { [key: string]: RobotData } = {
     gallery: [
       "/src/assets/3lb/two-face/two-face-1.png",
       "/src/assets/3lb/two-face/two-face-2.png",
-      "/src/assets/3lb/two-face/two-face-3.png"
+      "/src/assets/3lb/two-face/two-face-3.png",
+      "/src/assets/3lb/two-face/two-face-pixel.png"
     ]
   },
 
