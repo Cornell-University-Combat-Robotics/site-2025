@@ -913,12 +913,12 @@ export const robotData: { [key: string]: RobotData } = {
       "/src/assets/3lb/fortunate-son/fortunate-son-4.png",
       "/src/assets/3lb/fortunate-son/fortunate-son-5.png",
       "/src/assets/3lb/fortunate-son/fortunate-son-6.png",
-      "/src/assets/3lb/fortunate-son/fortunate-son-7.jpg",
-      "/src/assets/3lb/fortunate-son/fortunate-son-8.gif",
-      "/src/assets/3lb/fortunate-son/fortunate-son-9.jpg",
-      "/src/assets/3lb/fortunate-son/fortunate-son-10.jpg",
-      "/src/assets/3lb/fortunate-son/fortunate-son-11.jpg",
-      "/src/assets/3lb/fortunate-son/fortunate-son-12.jpg"
+      // "/src/assets/3lb/fortunate-son/fortunate-son-7.jpg",
+      // "/src/assets/3lb/fortunate-son/fortunate-son-8.gif",
+      // "/src/assets/3lb/fortunate-son/fortunate-son-9.jpg",
+      // "/src/assets/3lb/fortunate-son/fortunate-son-10.jpg",
+      // "/src/assets/3lb/fortunate-son/fortunate-son-11.jpg",
+      // "/src/assets/3lb/fortunate-son/fortunate-son-12.jpg"
     ]
   },
 
@@ -980,15 +980,15 @@ export const robotData: { [key: string]: RobotData } = {
       "/src/assets/mini/gorge-rusel/gorge-rusel-1.jpg",
       "/src/assets/mini/gorge-rusel/gorge-rusel-2.jpg",
       "/src/assets/mini/gorge-rusel/gorge-rusel-3.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-4.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-5.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-6.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-7.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-8.gif",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-9.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-10.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-11.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-12.jpg"
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-4.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-5.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-6.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-7.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-8.gif",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-9.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-10.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-11.jpg",
+      // "/src/assets/mini/gorge-rusel/gorge-rusel-12.jpg"
     ]
   },
 
@@ -1132,8 +1132,8 @@ export const robotData: { [key: string]: RobotData } = {
       "/src/assets/3lb/knuckles/knuckles-2.jpg",
       "/src/assets/3lb/knuckles/knuckles-3.png",
       "/src/assets/3lb/knuckles/knuckles-4.jpg",
-      "/src/assets/3lb/knuckles/knuckles-5.jpg",
-      "/src/assets/3lb/knuckles/knuckles-6.jpg"
+      // "/src/assets/3lb/knuckles/knuckles-5.jpg",
+      // "/src/assets/3lb/knuckles/knuckles-6.jpg"
     ]
   },
 
@@ -1162,7 +1162,7 @@ export const robotData: { [key: string]: RobotData } = {
       most_damaged_part: "Everything",
       favorite_movie: "Braveheart"
     },
-    featured_fight: "https://www.youtube.com/watch?v=tLyMYeTSIGk",
+    featured_fight: "https://www.youtube.com/embed/tLyMYeTSIGk?si=AQHij7teWSeoEjWH",
     design:
       "Armed solely with a wedge and fueled by bravery, L Billet distracts opponents with repurposed parts.",
     trivia: [
@@ -1429,7 +1429,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/milo/milo-pixel.png",
+      // "/src/assets/3lb/milo/milo-pixel.png",
       "/src/assets/3lb/milo/milo.png",
       "/src/assets/3lb/milo/milovsrichard.mp4"
     ]
@@ -1498,7 +1498,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/perrybot/perrybot-pixel.png",
+      // "/src/assets/3lb/perrybot/perrybot-pixel.png",
       "/src/assets/3lb/perrybot/perrybot.png",
       "/src/assets/3lb/perrybot/perrybot-1.png",
       "/src/assets/3lb/perrybot/perrybot-2.png",
@@ -1534,7 +1534,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/rocky/rocky-pixel.png",
+      // "/src/assets/3lb/rocky/rocky-pixel.png",
       "/src/assets/3lb/rocky/rocky.png",
       "/src/assets/3lb/rocky/rocky-1.png",
       "/src/assets/3lb/rocky/rocky-2.jpg",
@@ -1568,7 +1568,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/rolypoly/rolypoly-pixel.png",
+      // "/src/assets/3lb/rolypoly/rolypoly-pixel.png",
       "/src/assets/3lb/rolypoly/rolypoly.png",
       "/src/assets/3lb/rolypoly/rolypoly-1.jpg",
       "/src/assets/3lb/rolypoly/rolypoly-2.jpg"
@@ -1609,7 +1609,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/mini/rosie-junior/rosie-junior-pixel.png",
+      // "/src/assets/mini/rosie-junior/rosie-junior-pixel.png",
       "/src/assets/mini/rosie-junior/rosie-junior.png",
       "/src/assets/mini/rosie-junior/rosie-junior-1.jpg",
       "/src/assets/mini/rosie-junior/rosie-junior-2.jpg",
@@ -1631,7 +1631,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Rosie is a 12lb horizontal spinner known for her hefty steel weapon and a unique indirect drive system.",
-    image: "/src/assets/3lb/rosie/rosie.png",
+    image: "/src/assets/retired/rosie/rosie.png",
     stats: {
       vintage: "2023",
       height: "4\"",
@@ -1686,10 +1686,14 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/rosie/rosie-pixel.png",
-      "/src/assets/3lb/rosie/rosie.png",
-      "/src/assets/3lb/rosie/rosie-1.jpg",
-      "/src/assets/3lb/rosie/rosie-2.jpg"
+      "/src/assets/retired/rosie/rosie-1.png",
+      "/src/assets/retired/rosie/rosie-2.mp4",
+      "/src/assets/retired/rosie/rosie-3.jpg",
+      "/src/assets/retired/rosie/rosie-4.png",
+      "/src/assets/retired/rosie/rosie-5.jpg",
+      "/src/assets/retired/rosie/rosie-6.png",
+      "/src/assets/retired/rosie/rosie-7.png",
+
     ]
   },
 
@@ -1711,7 +1715,7 @@ export const robotData: { [key: string]: RobotData } = {
       favorite_movie: "Yasuke"
     },
     featured_fight:
-      "https://www.youtube.com/embed/8Z0ITRnkJ8k?si=xpAXZ8PoHvwmsCVL",
+      "",
     design:
       "Featuring passive ramps and an active top-mounted spinner, Samurai’s design blends defense with swift offensive maneuvers.",
     trivia: [

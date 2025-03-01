@@ -38,6 +38,9 @@ import stevePhoto from "../assets/3lb/steve/steve.png";
 import testBoxPhoto from "../assets/3lb/test-box/test-box.png";
 import wabbitPhoto from "../assets/3lb/wabbit/wabbit.png";
 import brunobotPhoto from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
+import logoPhoto from "../assets/3lb/logobot/logobot.png";
+import miloPhoto from "../assets/3lb/milo/milo.png";
+import shadowPhoto from "../assets/3lb/shadow-richard/shadow-richard.png";
 
 
 /* 
@@ -268,6 +271,22 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       color: 0,
     },
     {
+      name: "Logobot",
+      subteam: ["FA '24"],
+      desc: "",
+      image: logoPhoto,
+      link: "/robots/logobot",
+      color: 1,
+    },
+    {
+      name: "Milo",
+      subteam: ["SP '22"],
+      desc: "",
+      image: miloPhoto,
+      link: "/robots/milo",
+      color: 0,
+    },
+    {
       name: "Mommy Issues",
       subteam: ["SP '24"],
       desc: "",
@@ -314,6 +333,14 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: scorpionPhoto,
       link: "/robots/scorpion",
       color: 0,
+    },
+    {
+      name: "Shadow Richard",
+      subteam: ["FA '24"],
+      desc: "",
+      image: shadowPhoto,
+      link: "/robots/shadowRichard",
+      color: 1,
     },
     {
       name: "Slugma",

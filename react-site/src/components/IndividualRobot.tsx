@@ -133,21 +133,29 @@ export default function IndividualRobot() {
           </Typography>
           <Box sx={{
             display: "grid",
-            gridTemplateColumns: `repeat(${3}, 1fr)`,
+            gridTemplateColumns: `repeat(3, 1fr)`,
             gridAutoRows: '1fr',
             gap: "5px",
             alignItems: "start",
             justifyItems: "center",
           }}>
-            {robotInfo.gallery.map((item, index) => (
-              item.includes('youtube') ? (
-                <ReactPlayer key={index} url={item} width="100%" />
-              ) : (
-                <img key={index} src={item} width="80%" alt={`Gallery item ${index + 1}`} />
-              )
-            ))}
+            {robotInfo.gallery.map((item, index) => {
+              if (item.includes('youtube')) {
+                return <ReactPlayer key={index} url={item} width="100%" />;
+              } else if (item.endsWith('.mp4')) {
+                return (
+                  <video key={index} controls width="80%">
+                    <source src={item} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                );
+              } else {
+                return <img key={index} src={item} width="80%" alt={`Gallery item ${index + 1}`} />;
+              }
+            })}
           </Box>
         </Box>
+
       </Box>
     </Box>
   );
