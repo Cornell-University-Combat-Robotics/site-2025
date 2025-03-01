@@ -1996,33 +1996,6 @@ export const robotData: { [key: string]: RobotData } = {
       "/src/assets/3lb/test-box/test-box-2.jpg"
     ]
   },
-
-  underConstruction: {
-    name: "Under Construction",
-    makers: [],
-    description: "This page is under construction.",
-    image: "/src/assets/3lb/under-construction/under-construction.png",
-    stats: {
-      vintage: "TBD",
-      height: "TBD",
-      weight: "TBD",
-      fights: "TBD",
-      wins: "TBD",
-      top_speed: "TBD",
-      weapon_speed: "TBD",
-      most_damaged_part: "TBD",
-      favorite_movie: "Construction highlight reels"
-    },
-    featured_fight: "",
-    design: "This page is under construction.",
-    trivia: [
-      "This page is under construction.",
-      "Estimated completion: Sometime soon... or not."
-    ],
-    fights: [],
-    gallery: ["/src/assets/3lb/under-construction/under-construction.png"]
-  },
-
   wabbit: {
     name: "Wabbit",
     makers: ["Isaac Newcomb", "Michelle Zhou", "Sofie Halpern"],
@@ -2051,9 +2024,13 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/wabbit/wabbit-pixel.png",
       "/src/assets/3lb/wabbit/wabbit.png",
-      "/src/assets/3lb/wabbit/wabbit-1.png"
+      "/src/assets/3lb/wabbit/wabbit-1.png",
+      "/src/assets/3lb/wabbit/wabbit-2.jpg",
+      "/src/assets/3lb/wabbit/wabbit-3.jpg",
+      "/src/assets/3lb/wabbit/wabbit-4.jpg",
+      "/src/assets/3lb/wabbit/wabbit-5.jpg",
+      "/src/assets/3lb/wabbit/wabbit-6.jpg",
     ]
   },
 
@@ -2188,7 +2165,8 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/richard/richard-v1.png",
+      "/src/assets/retired/richard/richard-pixel.png",
+      "/src/assets/retired/richard/richard-v2.jpg",
       "/src/assets/retired/richard/richard-v3.png",
       "/src/assets/retired/richard/richard-2.jpg",
       "/src/assets/retired/richard/richard-1.jpg",
@@ -2215,232 +2193,5 @@ export const robotData: { [key: string]: RobotData } = {
       "/src/assets/retired/richard/richard-lines.png"
     ]
   },
-
-  wabbit: {
-    name: "Wabbit",
-    makers: ["Isaac Newcomb", "Michelle Zhou", "Sofie Halpern"],
-    description:
-      "Wabbit, the Rabbit Rapper, is a two-wheel-drive vertical spinner with an HDPE chassis and expressive, ear-like uprights.",
-    image: "/src/assets/3lb/wabbit/wabbit.png",
-    stats: {
-      vintage: "2020",
-      height: "4 inches",
-      weight: "3 lbs",
-      fights: "None",
-      wins: "None",
-      top_speed: "Limitless",
-      weapon_speed: "Bunny Hops",
-      most_damaged_part: "Teeth",
-      favorite_movie: "Monty Python and the Holy Grail"
-    },
-    featured_fight: "",
-    design:
-      "Built on an HDPE chassis with aluminum uprights and wedges, Wabbit blends aggressive combat with playful rap aesthetics.",
-    trivia: [
-      "One of CRC's first designs.",
-      "His battery, ESCs, and motors are heavily constrained.",
-      "His initial design had too many screws—earning him the nickname 'Dentist Bot.'",
-      "He fears holy hand grenades."
-    ],
-    fights: [],
-    gallery: [
-      "/src/assets/3lb/wabbit/wabbit-pixel.png",
-      "/src/assets/3lb/wabbit/wabbit.png",
-      "/src/assets/3lb/wabbit/wabbit-1.png"
-    ]
-  },
-
-  richard: {
-    name: "Richard",
-    makers: [
-      "V1: Anna Boese, Erhunmwunse Eghafona, Isaac Newcomb, James Courtenay, Mohammad Ali Moghaddasi, Ricky Wang, Sofie Halpern, Spencer Hurst",
-      "V2-3: Anna Boese, Isaac Newcomb, James Courtenay, James LaSalle, Mohammed Chowdhury, Spencer Hurst, Stella Taglich, Zander Knight"
-    ],
-    description:
-      "Richard, CRC's first competition-ready robot, is a 12lb vertical spinner with a weapon that smashes opponents into the air.",
-    image: "/src/assets/retired/richard/richard-v1.png",
-    stats: {
-      vintage: "2022",
-      height: "6.75\"",
-      weight: "12 lbs",
-      fights: "12",
-      wins: "6",
-      top_speed: "5 mph",
-      weapon_speed: "138 mph",
-      most_damaged_part: "Weapon",
-      favorite_movie: "Real Steel"
-    },
-    featured_fight:
-      "https://www.youtube.com/embed/wf528BQr0eA?start=17856",
-    design:
-      "Designed initially in Fall 2021, Richard has evolved through multiple iterations to improve reliability and durability.",
-    trivia: [
-      "Richard hates tea.",
-      "Can self-right by charging into a wall with its weapon active.",
-      "Originally had a soft aluminum weapon.",
-      "Loves milk.",
-      "The 'cute' tape on his weapon started as a TikTok joke.",
-      "Tape stickers are replaced for luck."
-    ],
-    fights: [
-      {
-        event: "Apr 23 2022",
-        opponent: "Blue Cheese",
-        result: "Win",
-        by: "KO",
-        video: "https://youtu.be/wf528BQr0eA?t=5239",
-        length: "104"
-      },
-      {
-        event: "Apr 23 2022",
-        opponent: "Hot Leaf Juice",
-        result: "Loss",
-        by: "KO",
-        video: "https://youtu.be/wf528BQr0eA?t=8804",
-        length: "126"
-      },
-      {
-        event: "Apr 23 2022",
-        opponent: "Milktank",
-        result: "Win",
-        by: "KO",
-        video: "https://youtu.be/wf528BQr0eA?t=17852",
-        length: "154"
-      },
-      {
-        event: "Apr 23 2022",
-        opponent: "Teleport",
-        result: "Win",
-        by: "Judges",
-        video: "https://youtu.be/wf528BQr0eA?t=29989",
-        length: "180"
-      },
-      {
-        event: "Apr 23 2022",
-        opponent: "Krunk",
-        result: "Loss",
-        by: "KO",
-        video: "https://youtu.be/wf528BQr0eA?t=33573",
-        length: "22"
-      },
-      {
-        event: "Dec 17 2022 Champs",
-        opponent: "Demogorgon",
-        result: "Win",
-        by: "KO",
-        video: "https://youtu.be/b79xlq1G41M?t=24429",
-        length: "19"
-      },
-      {
-        event: "Dec 17 2022 Champs",
-        opponent: "Disko",
-        result: "Win",
-        by: "Judges",
-        video: "https://youtu.be/b79xlq1G41M?t=19861",
-        length: "180"
-      },
-      {
-        event: "Dec 17 2022 Champs",
-        opponent: "Buzzzz-Kill",
-        result: "Loss",
-        by: "KO",
-        video: "https://youtu.be/b79xlq1G41M?t=2011",
-        length: "57"
-      },
-      {
-        event: "Dec 17 2022 Champs",
-        opponent: "RAM PLAN (Full Combat)",
-        result: "Loss",
-        by: "Judges",
-        video: "https://youtu.be/b79xlq1G41M?t=32012",
-        length: "180"
-      },
-      {
-        event: "Mar 18 2023",
-        opponent: "KillaJoule",
-        result: "Loss",
-        by: "KO",
-        video: "https://youtu.be/hukdvLa4o8A?t=8978",
-        length: "89"
-      },
-      {
-        event: "Mar 18 2023",
-        opponent: "Rosie",
-        result: "Win",
-        by: "Judges",
-        video: "https://www.youtube.com/live/xQTbCkwBmD4?feature=share&t=17615",
-        length: "180"
-      },
-      {
-        event: "Mar 18 2023",
-        opponent: "BlackJack",
-        result: "Loss",
-        by: "KO",
-        video: "https://www.youtube.com/live/xQTbCkwBmD4?feature=share&t=27874",
-        length: "98"
-      }
-    ],
-    gallery: [
-      "/src/assets/retired/richard/richard-v1.png",
-      "/src/assets/retired/richard/richard-v3.png",
-      "/src/assets/retired/richard/richard-2.jpg",
-      "/src/assets/retired/richard/richard-1.jpg",
-      "/src/assets/retired/richard/richard-5.jpg",
-      "/src/assets/retired/richard/richard-6.png",
-      "/src/assets/retired/richard/richard-7.jpeg",
-      "/src/assets/retired/richard/richard-8.mp4",
-      "/src/assets/retired/richard/richard-9.png",
-      "/src/assets/retired/richard/richard-10.mp4",
-      "/src/assets/retired/richard/richard-11.jpeg",
-      "/src/assets/retired/richard/richard-12.jpeg",
-      "/src/assets/retired/richard/richard-13.jpg",
-      "/src/assets/retired/richard/richard-14.jpeg",
-      "/src/assets/retired/richard/richard-15.jpg",
-      "/src/assets/retired/richard/richard-16.jpg",
-      "/src/assets/retired/richard/richard-17.jpg",
-      "/src/assets/retired/richard/richard-18.jpg",
-      "/src/assets/retired/richard/richard-19.jpg",
-      "/src/assets/retired/richard/richard-20.jpg",
-      "/src/assets/retired/richard/richard-21.jpg",
-      "/src/assets/retired/richard/richard-22.jpg",
-      "/src/assets/retired/richard/richard-23.png",
-      "/src/assets/retired/richard/richard-24.jpg",
-      "/src/assets/retired/richard/richard-lines.png"
-    ]
-  },
-
-  wabbit: {
-    name: "Wabbit",
-    makers: ["Isaac Newcomb", "Michelle Zhou", "Sofie Halpern"],
-    description:
-      "Wabbit, the Rabbit Rapper, is a two-wheel-drive vertical spinner with an HDPE chassis and expressive, ear-like uprights.",
-    image: "/src/assets/3lb/wabbit/wabbit.png",
-    stats: {
-      vintage: "2020",
-      height: "4 inches",
-      weight: "3 lbs",
-      fights: "None",
-      wins: "None",
-      top_speed: "Limitless",
-      weapon_speed: "Bunny Hops",
-      most_damaged_part: "Teeth",
-      favorite_movie: "Monty Python and the Holy Grail"
-    },
-    featured_fight: "",
-    design:
-      "Built on an HDPE chassis with aluminum uprights and wedges, Wabbit blends aggressive combat with playful rap aesthetics.",
-    trivia: [
-      "One of CRC's first designs.",
-      "His battery, ESCs, and motors are heavily constrained.",
-      "His initial design had too many screws—earning him the nickname 'Dentist Bot.'",
-      "He fears holy hand grenades."
-    ],
-    fights: [],
-    gallery: [
-      "/src/assets/3lb/wabbit/wabbit-pixel.png",
-      "/src/assets/3lb/wabbit/wabbit.png",
-      "/src/assets/3lb/wabbit/wabbit-1.png"
-    ]
-  }
 };
 
