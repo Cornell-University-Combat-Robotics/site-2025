@@ -1,6 +1,7 @@
 import { Box, Button, List, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Fade } from '@mui/material';
 import TeamMemberList from "./MemberList";
 import marketing_photo from "../assets/marketing-photo.jpg"; //ignore these errors, vscode is wrong
 import sportsman_photo from "../assets/sportsman-photo.jpg";
@@ -229,24 +230,26 @@ function SubsystemButtonDisplay({ name, desc }) {
     return (
         //position must be fixed (in terms of the SCREEN, away from doc flow), else will be constrained by the button itself
         //parent position must be relative
-        <Box sx={{
-            bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-            position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
-            wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
-            left: '20%', right: '20%' //spacing from sides of screen
-        }}>
-            {/*Subsystem name header*/}
-            <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
-                {name}
-            </Typography>
-
-            {/*Subsystem description*/}
-            <Typography variant="body1" sx={{
-                color: 'white',
-                whiteSpace: 'pre-line'  // Ensures that \n creates line breaks in the text
+        <Fade in={true} timeout={300}>
+            <Box sx={{
+              bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
+              position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
+              wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
+              left: '20%', right: '20%' //spacing from sides of screen
             }}>
-                {desc}
-            </Typography>
-        </Box>
+                {/*Subsystem name header*/}
+                <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
+                    {name}
+                </Typography>
+
+                {/*Subsystem description*/}
+                <Typography variant="body1" sx={{
+                    color: 'white',
+                    whiteSpace: 'pre-line'  // Ensures that \n creates line breaks in the text
+                }}>
+                    {desc}
+                </Typography>
+            </Box>
+        </Fade>
     );
 }
