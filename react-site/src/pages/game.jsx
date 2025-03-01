@@ -55,18 +55,20 @@ export default function Game() {
     >
       <motion.div
         initial={{ scale: 0.3 }}
-        animate={{ scale: 0.85, y: "45px" }}
+        animate={{ scale: 0.85, y: "45px"}}
         transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
         style={{ position: "absolute", zIndex: 0}}
       >
         <Box 
           sx={{
             backgroundColor:"yellow",
+            width: "1020px",
+            height: "560px",
             // width: "1020px",
-            width: "80.4vh",
+            // width: "80.4vh",
             // height: "560px",
-            height: "56.6vh",
-            marginTop: "290px",
+            // height: "56.6vh",
+            // marginTop: "290px",
             marginLeft: "20px",
             // zIndex: "3",
             // zIndex doesnt serve purpose anymore since its wrapped in the motion div now
@@ -90,8 +92,9 @@ export default function Game() {
             width: "200px",
             // height: "560px",
             height: "200px",
-            marginTop: "290px",
-            marginLeft: "20px",
+            // marginTop: "290px",
+            // marginLeft: "20px",
+            // zIndex: "1",
             // zIndex: "3",
             // zIndex doesnt serve purpose anymore since its wrapped in the motion div now
             }}>
