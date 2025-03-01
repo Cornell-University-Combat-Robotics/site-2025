@@ -41,6 +41,8 @@ import brunobotPhoto from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
 import logoPhoto from "../assets/3lb/logobot/logobot.png";
 import miloPhoto from "../assets/3lb/milo/milo.png";
 import shadowPhoto from "../assets/3lb/shadow-richard/shadow-richard.png";
+import stuffedMannyPhoto from "../assets/3lb/stuffed-manny/stuffed-manny.png";
+import swissCheesePhoto from "../assets/3lb/swiss-cheese/swiss-cheese.png";
 
 
 /* 
@@ -356,6 +358,22 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: stevePhoto,
       link: "/robots/steve",
+      color: 1,
+    },
+    {
+      name: "Stuffed Manny",
+      subteam: ["SP '22"],
+      desc: "",
+      image: stuffedMannyPhoto,
+      link: "/robots/stuffedManny",
+      color: 0,
+    },
+    {
+      name: "Swiss Cheese",
+      subteam: ["2020"],
+      desc: "",
+      image: swissCheesePhoto,
+      link: "/robots/swissCheese",
       color: 1,
     },
     {

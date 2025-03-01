@@ -310,7 +310,7 @@ export const robotData: { [key: string]: RobotData } = {
     featured_fight:
       "",
     design:
-      "The Swiss Slinger uses a spinning mechanism similar to Slugma’s to deliver rapid-fire attacks.",
+      "The Swiss Slinger uses a spinning mechanism similar to Slugma's to deliver rapid-fire attacks.",
     trivia: [
       "Originally named Venus Fly Trap; later changed due to design hazards."
     ],
@@ -1888,10 +1888,16 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/steve/steve-pixel.png",
       "/src/assets/3lb/steve/steve-1.PNG",
       "/src/assets/3lb/steve/steve-2.PNG",
-      "/src/assets/3lb/steve/steve-3.jpg"
+      "/src/assets/3lb/steve/steve-3.jpg",
+      "/src/assets/3lb/steve/steve-4.jpg",
+      "/src/assets/3lb/steve/steve-5.jpg",
+      "/src/assets/3lb/steve/steve-6.jpg",
+      "/src/assets/3lb/steve/steve-7.jpg",
+      "/src/assets/3lb/steve/steve-8.png",
+      "/src/assets/3lb/steve/steve-9.png",
+      "/src/assets/3lb/steve/steve.png"
     ]
   },
 
@@ -1899,7 +1905,7 @@ export const robotData: { [key: string]: RobotData } = {
     name: "Stuffed Manny",
     makers: ["Sofie Halpern's Friend"],
     description:
-      "Stuffed Manny is the plush incarnation of Manny – CRC's beloved mascot turned merchandise icon.",
+      "Stuffed Manny is the plush incarnation of Manny - CRC's beloved mascot turned merchandise icon.",
     image: "/src/assets/3lb/stuffed-manny/stuffed-manny.png",
     stats: {
       vintage: "Spring 2022",
@@ -1921,9 +1927,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/stuffed-manny/stuffed-manny-pixel.png",
       "/src/assets/3lb/stuffed-manny/stuffed-manny.png",
-      "/src/assets/3lb/stuffed-manny/stuffed-manny-1.jpg"
     ]
   },
 
@@ -1954,7 +1958,6 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/swiss-cheese/swiss-cheese-pixel.png",
       "/src/assets/3lb/swiss-cheese/swiss-cheese.png",
       "/src/assets/3lb/swiss-cheese/swiss-cheese-1.jpg"
     ]
@@ -1983,17 +1986,18 @@ export const robotData: { [key: string]: RobotData } = {
     },
     featured_fight: "",
     design:
-      "A 5'×5'×2.5' steel box with polycarbonate walls—a paradox of strength and cost-efficiency.",
+      "A 5' x 5' x 2.5' steel box with polycarbonate walls—a paradox of strength and cost-efficiency.",
     trivia: [
       "The first test box was made of wood and had a hole.",
       "A metal iteration is in development.",
-      "It’s said that thinking about its constraints hurts both physically and emotionally."
+      "It's said that thinking about its constraints hurts both physically and emotionally."
     ],
     fights: [],
     gallery: [
       "/src/assets/3lb/test-box/test-box.png",
       "/src/assets/3lb/test-box/test-box-1.jpg",
-      "/src/assets/3lb/test-box/test-box-2.jpg"
+      "/src/assets/3lb/test-box/test-box-2.jpg",
+      "/src/assets/3lb/test-box/test-box-3.jpg"
     ]
   },
 
