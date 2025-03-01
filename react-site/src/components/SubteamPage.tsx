@@ -232,10 +232,10 @@ function SubsystemButtonDisplay({ name, desc }) {
         //parent position must be relative
         <Fade in={true} timeout={300}>
             <Box sx={{
-                bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-                position: 'fixed', height: 'auto',
-                wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
-                left: '20%', right: '20%' //spacing from sides of screen
+              bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
+              position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
+              wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
+              left: '20%', right: '20%' //spacing from sides of screen
             }}>
                 {/*Subsystem name header*/}
                 <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
