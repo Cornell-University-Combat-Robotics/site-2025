@@ -1,4 +1,4 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack } from "@mui/material";
+import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import React, { useEffect, useState, useRef } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -40,20 +40,46 @@ export default function Apply() {
   const yPos = useTransform(scrollYProgress, [0, 1], [0, 300])
 
   const [isVisible, setIsVisible] = useState(false);
+  const [isBottomCrossed, setIsBottomCrossed] = useState(false);
+  /*
+  Scenarios:
+  1) above stack component: isVisible = false && isBottomCrossed = false -> DON't render
+  3) within stack component: isVisible = true && isBottomCrossed = false -> RENDER
+  2) below stack component: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON't render
+  */
 
   const [yValue, setYValue] = useState();
 
-  useMotionValueEvent(yPos, "change", (latest) => {
-    setYValue(latest);
-    //console.log("yPos: ", yPos.get())
-  });
-
   /** attach this to component that you want to listen to in user's viewport */
   const ref = useRef(null);
+  const arrow = useRef(null);
 
+  const [userBottom, setUserBottom] = useState(window.innerHeight + window.scrollY);
+  const [refBottom, setRefBottom] = useState(0);
 
+  const [arrowBottom, setArrowBottom] = useState(0);
+
+  useEffect(() => {
+    if (ref.current) {
+      // Get initial absolute position
+      const refComp = ref.current.getBoundingClientRect();
+      setRefBottom(refComp.bottom + window.scrollY);
+    }
+
+    if (arrow.current) {
+      const refArrow = arrow.current.getBoundingClientRect();
+      setArrowBottom(refArrow.bottom + window.scrollY);
+    }
+  }, []);
+
+  /*
+  Idea: 1) find a way to control the length of the svg component
+  2) use window listener to determine where is the bottom??? of the user's viewport & also get the bottom of the svg component
+  - unrender when they hit
+  */
   //always active?
   useEffect(() => {
+
     //what is entry?
     //entry: an IntersectionObserverEntry object
     //IntersectionObserver stays attached and keeps detecting visibility changes automatically.
@@ -65,20 +91,42 @@ export default function Apply() {
         setIsVisible(false);
       }
     },
-      { threshold: 0.2 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
+      { threshold: 0.05 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
     );
 
     //only runs when ref is not null -> meaning ref is attached to an object
     if (ref.current) {
-      { console.log("parent can be observed", ref) }
       observer.observe(ref.current) //attaches the observer -> starts tracking visibility changes for this ref component
     }
 
-  }, [] //no dependencies: meaning the useEffect only runs ONCE on the first render => prevents observer from being created every render (inefficient)
-  );
+    //update bottom of window position by listening to user's scroll
+    const handleScroll = () => {
+
+      setUserBottom(window.innerHeight + window.scrollY);
+    };
+
+
+    window.addEventListener("scroll", handleScroll);
+
+
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }, []); //no dependencies: meaning the useEffect only runs ONCE on the first render => prevents observer from being created every render (inefficient)
+
+  useEffect(() => {
+    //console.log("userBottom value: ", userBottom)
+    //console.log("refBottom value: ", refBottom)
+    //okay, so refBottom is always 8133 now, which indicates where the bottom of the stack (where it crosses into the red faq)
+
+    if (userBottom >= arrowBottom) {
+      setIsBottomCrossed(true);
+    } else {
+      setIsBottomCrossed(false);
+    }
+  }, [userBottom, refBottom]);
 
   return (
-    
+
     <Box sx={{}}>
       {/* above is body of site */}
       <Box sx={{
@@ -249,6 +297,7 @@ export default function Apply() {
           <polygon points="0,10 100,10 50,100" //(50,10): 50% from left of svg, 10% from top of svg
             fill="#820002"
             transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
+            ref={arrow}
           />
 
         </svg>
@@ -269,22 +318,30 @@ export default function Apply() {
         </Box>
          */}
 
-        {isVisible && (
+        {isVisible && !isBottomCrossed && (
           <Box
             zIndex={100}
             position="fixed"
             left={-47}
             top={"50%"}
-            ref={ref}
           >
-            <img
-              src={robot_scroll}
-              style={{
-                transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
-              }}
-            />
+            <RobotScroll />
           </Box>)
         }
+
+        {/** TODO completely separate robot scroll image that is suppose to stay at the bottom of the arrow if user scrolls down past it & disappear when user scrolls up past it*/}
+        {/*
+        {isBottomCrossed && 
+          (<Box
+            zIndex={100}
+            position="fixed"
+            left={-47}
+            top={"50%"}
+          >
+            <RobotScroll />
+          </Box>) 
+        }
+           */}
 
 
         <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
@@ -299,6 +356,18 @@ export default function Apply() {
 
       <FAQSection />
     </Box>
+  );
+}
+
+{/** Component containing robot scrolling image */}
+function RobotScroll() {
+  return (
+    <img
+      src={robot_scroll}
+      style={{
+        transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
+      }}
+    />
   );
 }
 
