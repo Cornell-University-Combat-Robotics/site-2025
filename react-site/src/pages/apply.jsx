@@ -1,6 +1,7 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import React, { useEffect, useState, useRef } from "react";
+import RedBox from "../components/RedBox.tsx";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
@@ -153,32 +154,18 @@ export default function Apply() {
         </Typography>
       </Box>
 
-      <Box padding={10} textAlign={"center"}>
-        <Typography
-          // Our applications...h3 writing
-          variant="h2"
-          sx={{
-            color: 'white',
-            mb: 2
-          }}>
-          Our applications for Fall 2024 are open!
-        </Typography>
-
-        <Typography
-          // Our applications...h3 writing
-          variant="h2"
-          sx={{
-            color: '#B21D1D',
-            fontWeight: 'bold'
-          }}>
-          All applications are due October 17th, 11:59PM
-        </Typography>
-      </Box>
-
+      <RedBox
+        title="Our applications for Fall 2024 are open!"
+        text="All applications are due October 17th, 11:59pm."
+        word="Apply Now!"
+        link="/sponsors"
+        mTop="5%"
+        mSide="15%"
+      />
 
       <Typography
         // Recruitment Timeline h1
-        variant="h1"
+        variant="h2"
         sx={{
           textAlign: 'center',
           color: 'white',
@@ -269,7 +256,7 @@ export default function Apply() {
 
 
 
-      <Typography variant="h1" mb={20}>
+      <Typography variant="h2" mb={20}>
         NEW MEMBER EXPERIENCE
       </Typography>
 
@@ -359,7 +346,7 @@ export default function Apply() {
   );
 }
 
-{/** Component containing robot scrolling image */}
+{/** Component containing robot scrolling image */ }
 function RobotScroll() {
   return (
     <img

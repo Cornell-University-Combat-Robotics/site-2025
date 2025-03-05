@@ -39,6 +39,11 @@ theme.typography.body1 = {
   fontWeight: 'normal',
 };
 
+theme.typography.body2 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '1.5rem',
+  fontWeight: 'normal',
+};
 
 function App() {
   return (
