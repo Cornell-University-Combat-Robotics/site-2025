@@ -154,6 +154,27 @@ export default function Apply() {
         </Typography>
       </Box>
 
+      {/* Alternative text for when applications are closed */}
+      {/* <Box padding={10} textAlign={"center"}>
+        <Typography
+          // Our applications...h3 writing
+          variant="h2"
+          sx={{
+            mb: '2%'
+          }}>
+          Our applications for Fall 2024 are closed.
+        </Typography>
+
+        <Typography
+          // Our applications...h3 writing
+          variant="h2"
+          sx={{
+            fontWeight: 'bold'
+          }}>
+          Check back next fall for more application info!
+        </Typography>
+      </Box> */}
+
       <RedBox
         title="Our applications for Fall 2024 are open!"
         text="All applications are due October 17th, 11:59pm."
