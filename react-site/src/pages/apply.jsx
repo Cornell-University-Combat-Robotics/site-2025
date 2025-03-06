@@ -1,6 +1,6 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, forwardRef } from "react";
 import RedBox from "../components/RedBox.tsx";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
@@ -9,6 +9,7 @@ import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
 import slugma from "../assets/3lb/slugma_profile.jpg";
 import robot_scroll from "../assets/robot_scroll.png";
+import arrow_img from "../assets/arrow.png";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 /** Apply creates the Apply page for the website. */
@@ -54,23 +55,26 @@ export default function Apply() {
   /** attach this to component that you want to listen to in user's viewport */
   const ref = useRef(null);
   const arrow = useRef(null);
+  const robot = useRef(null); //for robot img
 
   const [userBottom, setUserBottom] = useState(window.innerHeight + window.scrollY);
-  const [refBottom, setRefBottom] = useState(0);
 
   const [arrowBottom, setArrowBottom] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      // Get initial absolute position
-      const refComp = ref.current.getBoundingClientRect();
-      setRefBottom(refComp.bottom + window.scrollY);
-    }
+    //do i need this? doesnt serve any fxn currently...
+    const updateArrowBottom = () => {
+      const refArrow = arrow.current.getBoundingClientRect();
+      setArrowBottom(refArrow.bottom + window.scrollY);
+    };
+
+    window.addEventListener("resize", updateArrowBottom)
 
     if (arrow.current) {
       const refArrow = arrow.current.getBoundingClientRect();
       setArrowBottom(refArrow.bottom + window.scrollY);
     }
+
   }, []);
 
   /*
@@ -92,7 +96,7 @@ export default function Apply() {
         setIsVisible(false);
       }
     },
-      { threshold: 0.05 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
+      { threshold: 0.2 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
     );
 
     //only runs when ref is not null -> meaning ref is attached to an object
@@ -102,8 +106,12 @@ export default function Apply() {
 
     //update bottom of window position by listening to user's scroll
     const handleScroll = () => {
-
       setUserBottom(window.innerHeight + window.scrollY);
+
+      if (robot.current) {
+        const refRobot = robot.current.getBoundingClientRect();
+        console.log("ROBOTTTTT bottom ", refRobot.bottom);
+      }
     };
 
 
@@ -124,7 +132,15 @@ export default function Apply() {
     } else {
       setIsBottomCrossed(false);
     }
-  }, [userBottom, refBottom]);
+  }, [userBottom, arrowBottom]);
+
+  {/* 
+  useEffect(() => {
+    console.log("Bottom: ", isBottomCrossed)
+    console.log("user bottom: ", userBottom)
+    console.log("constan bottom: ", arrowBottom)
+  }, [isBottomCrossed, userBottom])
+  */}
 
   return (
 
@@ -284,7 +300,7 @@ export default function Apply() {
 
 
 
-      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={ref}
+      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={ref} position="relative"
 
       // Ensures scrolling
       >
@@ -301,41 +317,59 @@ export default function Apply() {
           >
           </line>
 
-          {/*equilateral triangle: TODO -> rn is hardcoded... */}
+          {/*equilateral triangle: TODO -> rn is hardcoded... 
           <polygon points="0,10 100,10 50,100" //(50,10): 50% from left of svg, 10% from top of svg
             fill="#820002"
             transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
             ref={arrow}
           />
+          */}
+
+          {/*
+          <circle
+            cx="50%"
+            cy="5%" //same as y1 of line
+            r={25} //radius
+            fill="#820002" //color
+          >
+          </circle>
+
+          <circle
+            cx="50%"
+            cy="90%" //same as y2 of line
+            r={25} //radius
+            fill="#820002" //color
+          >
+          </circle>
+                */}
 
         </svg>
 
-        {/*
-        <Box
-          zIndex={100}
-          position="sticky"
-          left={47}
-          top={"40%"}
-        >
-          <img
-            src={robot_scroll}
-            style={{
-              transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
-            }}
-          />
-        </Box>
-         */}
+        <img
+          src={arrow_img}
+          style={{
+            transform: "scale(0.6)",
+            zIndex: "100",
+            position: "absolute",
+            bottom: "7%",
+            left: "8%"
+          }}
+          ref={arrow}
+        />
 
-        {isVisible && !isBottomCrossed && (
-          <Box
-            zIndex={100}
-            position="fixed"
-            left={-47}
-            top={"50%"}
-          >
-            <RobotScroll />
-          </Box>)
+
+        {!isVisible && !isBottomCrossed &&
+          <RobotImage pos={"absolute"} top={"0%"} ref={null}/>
         }
+
+        {isBottomCrossed &&
+          <RobotImage pos={"absolute"} bottom={"2%"} ref={null}/>
+        }
+
+        {isVisible && !isBottomCrossed &&
+          <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
+        }
+
 
         {/** TODO completely separate robot scroll image that is suppose to stay at the bottom of the arrow if user scrolls down past it & disappear when user scrolls up past it*/}
         {/*
@@ -367,17 +401,29 @@ export default function Apply() {
   );
 }
 
-{/** Component containing robot scrolling image */ }
-function RobotScroll() {
+{/** Component containing robot scrolling image 
+  functional components (like RobotImage) can't accept refs directly 
+  unless they are wrapped with React.forwardRef
+
+  NOTE: const NOT a ref
+  once you've defined the RobotImage component with forwardRef, you can use it like any other React component
+  */ }
+const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
   return (
     <img
       src={robot_scroll}
       style={{
-        transform: "scale(0.4)" // scale the image down, maintaining aspect ratio
+        transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
+        zIndex: "100",
+        position: pos,
+        left: "7%",
+        ...(top ? { top } : {}), // Apply top only if passed????
+        ...(bottom ? { bottom } : {}), // Apply bottom only if passed
+        ref: {ref}
       }}
     />
   );
-}
+});
 
 function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
   return (
