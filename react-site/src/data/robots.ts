@@ -55,7 +55,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Beater B. Barker",
       subteam: ["Kinetic", "2023-2024"],
-      desc: "Beater desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Beater B. Barker? I hardly know her!",
       image: beaterPhoto,
       link: "/robots/beater",
       color: 0,
@@ -63,7 +63,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Nardo",
       subteam: ["Sportsman", "2023-2024"],
-      desc: "The second kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Named as a tribute to Leonardo, his legacy carries on.",
       image: nardoPhoto,
       link: "/robots/nardo",
       color: 1,
@@ -71,7 +71,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Louis XVII",
       subteam: ["Autonomous", "2023-2024"],
-      desc: "The third kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "On detecting an enemy, Louis charges with his mighty sword.",
       image: louisPhoto,
       link: "/robots/louis",
       color: 0,
@@ -79,7 +79,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Rosie",
       subteam: ["Kinetic", "2022-2023"],
-      desc: "The fourth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Rumored to smell, though unconfirmed.",
       image: rosiePhoto,
       link: "/robots/rosie",
       color: 1,
@@ -87,7 +87,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Florence",
       subteam: ["Sportsman", "2022-2023"],
-      desc: "The fifth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Florence is an Italian Magikarp.",
       image: florencePhoto,
       link: "/robots/florence",
       color: 0,
@@ -95,7 +95,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Richard",
       subteam: ["Kinetic", "2021-2023"],
-      desc: "The sixth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Loves milk.",
       image: richardPhoto,
       link: "/robots/richard",
       color: 1,
@@ -103,7 +103,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Lance",
       subteam: ["Sportsman", "Autonomous", "2021-2022"],
-      desc: "The seventh kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Lance can wave to you.",
       image: lancePhoto,
       link: "/robots/lance",
       color: 0,
@@ -111,7 +111,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Manny",
       subteam: ["Sportsman", "Autonomous", "2021-2022"],
-      desc: "The eighth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Survived a brain transplant from Arduino to Raspberry Pi.",
       image: mannyPhoto,
       link: "/robots/manny",
       color: 1,
@@ -119,7 +119,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Donatello",
       subteam: ["2019-2021"],
-      desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Donatello's original name was intended to be Big Red Bonk.",
       image: donatelloPhoto,
       link: "/robots/donatello",
       color: 0,
@@ -129,34 +129,34 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Kenny",
       subteam: ["Spring 2024"],
-      desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Kenny’s favorite color is blue!",
       image: kennyPhoto,
       link: "/robots/kenny",
-      color: 1,
+      color: 0,
     },
     {
       name: "Gorge Rusel",
       subteam: ["Spring 2023"],
-      desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "He's often found watching Formula 1 after his morning cry.",
       image: gorgeruselPhoto,
       link: "/robots/gorgerusel",
-      color: 0,
+      color: 1,
     },
     {
       name: "L Billet",
       subteam: ["Spring 2023"],
-      desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "Lives on in our hearts.",
       image: lbilletPhoto,
       link: "/robots/lBillet",
-      color: 1,
+      color: 0,
     },
     {
       name: "Rosie Junior",
       subteam: ["Spring 2023"],
-      desc: "The ninth kinetic bot Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus auctor turpis sed luctus. Donec lobortis, sem eget scelerisque venenatis, sapien lectus viverra dui, vulputate commodo.",
+      desc: "She holds the world record for fastest combat robot to be built (by default).",
       image: rosiejrPhoto,
       link: "/robots/rosieJunior",
-      color: 0,
+      color: 1,
     },
   ],
   Three_lb: [
@@ -214,7 +214,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: hestrPhoto,
       link: "/robots/hestr",
-      color: 0,
+      color: 1,
     },
     {
       name: "Dumb and Dumber",
@@ -222,7 +222,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: dumbAndDumberPhoto,
       link: "/robots/dumbanddumber",
-      color: 1,
+      color: 0,
     },
     {
       name: "Fangular Momentum",
@@ -230,7 +230,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: batbotPhoto,
       link: "/robots/batbot",
-      color: 1,
+      color: 0,
     },
     {
       name: "Fortunate Son",
@@ -238,7 +238,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: fortunateSonPhoto,
       link: "/robots/fortunateson",
-      color: 0,
+      color: 1,
     },
     {
       name: "Hanako",
@@ -246,7 +246,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: hanakoPhoto,
       link: "/robots/hanako",
-      color: 1,
+      color: 0,
     },
     {
       name: "Heave Ho",
@@ -254,7 +254,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: heaveHoPhoto,
       link: "/robots/heaveHo",
-      color: 0,
+      color: 1,
     },
     {
       name: "Idiot Sandwich",
@@ -294,7 +294,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: mommyIssuesPhoto,
       link: "/robots/mommyIssues",
-      color: 1,
+      color: 0,
     },
     {
       name: "PerryBot",
@@ -302,7 +302,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: perryBotPhoto,
       link: "/robots/perrybot",
-      color: 0,
+      color: 1,
     },
     {
       name: "Rocky",
@@ -310,7 +310,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: rockyPhoto,
       link: "/robots/rocky",
-      color: 1,
+      color: 0,
     },
     {
       name: "RolyPoly",
@@ -318,7 +318,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: rolypolyPhoto,
       link: "/robots/rolypoly",
-      color: 0,
+      color: 1,
     },
     {
       name: "Samurai",
@@ -358,7 +358,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: stevePhoto,
       link: "/robots/steve",
-      color: 1,
+      color: 0,
     },
     {
       name: "Stuffed Manny",
@@ -366,7 +366,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: stuffedMannyPhoto,
       link: "/robots/stuffedManny",
-      color: 0,
+      color: 1,
     },
     {
       name: "Swiss Cheese",
@@ -374,7 +374,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: swissCheesePhoto,
       link: "/robots/swissCheese",
-      color: 1,
+      color: 0,
     },
     {
       name: "Swiss Slinger",
@@ -390,7 +390,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: testBoxPhoto,
       link: "/robots/testBox",
-      color: 0,
+      color: 1,
     },
     {
       name: "Two Face",
@@ -398,7 +398,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "",
       image: twoFacePhoto,
       link: "/robots/twoface",
-      color: 1,
+      color: 0,
     },
     {
       name: "Wabbit",
