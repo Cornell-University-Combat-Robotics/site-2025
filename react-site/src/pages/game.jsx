@@ -59,7 +59,7 @@ export default function Game() {
         transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
         style={{ position: "absolute", zIndex: 0}}
       >
-        <Box 
+        {/* <Box 
           sx={{
             backgroundColor:"yellow",
             width: "1020px",
@@ -70,10 +70,23 @@ export default function Game() {
             // height: "56.6vh",
             // marginTop: "290px",
             marginLeft: "20px",
+            marginBottom: "16px",
             // zIndex: "3",
             // zIndex doesnt serve purpose anymore since its wrapped in the motion div now
             }}>
-        </Box>
+        </Box> */}
+
+<iframe 
+  src="https://combatrobotics.engineering.cornell.edu/oldgame/gameold.html" 
+  // you may need gameold.html game.js game.json game.data game.wasm
+  width="1020px" 
+  height="560px" 
+  style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }} 
+  title="Combat Robotics Game"
+  allowFullScreen
+/>
+{/* "../assets/gamepage/arcade.png" */}
+
 
       </motion.div>
       
