@@ -79,7 +79,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Rosie",
       subteam: ["Kinetic", "2022-2023"],
-      desc: "Rumored to smell, though unconfirmed.",
+      desc: "In a love triangle with Richard and Florence.",
       image: rosiePhoto,
       link: "/robots/rosie",
       color: 1,
@@ -95,7 +95,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     {
       name: "Richard",
       subteam: ["Kinetic", "2021-2023"],
-      desc: "Loves milk.",
+      desc: "Richard hates tea.",
       image: richardPhoto,
       link: "/robots/richard",
       color: 1,
