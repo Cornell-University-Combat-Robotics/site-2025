@@ -3,18 +3,18 @@ import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import team_photo from "../assets/background-pictures/team-photo-formal.png";
 import { motion } from 'framer-motion';
-import AutoIcon from "../assets/subteam-icons/AutoThicker.png";
-import KineticIcon from "../assets/subteam-icons/KineticThicker.png";
-import MarketingIcon from "../assets/subteam-icons/MarketingThicker.png";
-import SportsmanIcon from "../assets/subteam-icons/SportsmanThicker.png";
-import AlumniIcon from "../assets/subteam-icons/Alumni.png";
-import LeadsIcon from "../assets/subteam-icons/Leads.png";
-import WhiteAutoIcon from "../assets/subteam-icons/WhiteAutoLogo.png";
-import WhiteKineticIcon from "../assets/subteam-icons/WhiteKineticLogo.png";
-import WhiteMarketingIcon from "../assets/subteam-icons/WhiteMarketingLogo.png";
-import WhiteSportIcon from "../assets/subteam-icons/WhiteSportLogo.png";
-import WhiteTLIcon from "../assets/subteam-icons/WhiteTLLogo.png";
-import WhiteAlumIcon from "../assets/subteam-icons/WhiteAlumLogo.png";
+import AlumColor from "../assets/subteam-icons/AlumColor.png";
+import AlumWhite from "../assets/subteam-icons/AlumWhite.png";
+import AutonColor from "../assets/subteam-icons/AutonColor.png";
+import AutonWhite from "../assets/subteam-icons/AutonWhite.png";
+import KineticColor from "../assets/subteam-icons/KineticColor.png";
+import KineticWhite from "../assets/subteam-icons/KineticWhite.png";
+import MarketingColor from "../assets/subteam-icons/MarketingColor.png";
+import MarketingWhite from "../assets/subteam-icons/MarketingWhite.png";
+import SportsmanColor from "../assets/subteam-icons/SportsmanColor.png";
+import SportsmanWhite from "../assets/subteam-icons/SportsmanWhite.png";
+import TLColor from "../assets/subteam-icons/TLColor.png";
+import TLWhite from "../assets/subteam-icons/TLWhite.png";
 
 // TeamButton is the button component for individual subteams on the Team page. It takes in the following props: subteam icon,
 // white subteam icon for hovering, subteam color for hovering, and the link to the subteam page. Using this component
@@ -86,7 +86,7 @@ export default function Team() {
       Effect: Scrolling bar of subteam names
       Outer div: constant background -> only the text is scrolling
       */}
-        <div style={{ backgroundColor: '#820002', width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+        <div style={{ width: '100%', marginBottom: 50, overflow: 'hidden', whiteSpace: 'nowrap' }}>
           <motion.div
             animate={{ x: ["0%", "-100%"] }} // Moves text from right to left 
             transition={{
@@ -102,7 +102,7 @@ export default function Team() {
           </motion.div>
         </div>
 
-        <Typography sx={{ fontSize: 30, maxWidth: '70%', margin: '0 auto', textAlign: 'center' }}>
+        <Typography sx={{ fontSize: 30, maxWidth: '90%', margin: '0 auto', textAlign: 'center' }}>
           {"Our entire team consists of four subteams: Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
         <Typography sx={{ fontSize: 30, maxWidth: '70%', margin: '0 auto', textAlign: 'center' }}>
@@ -117,17 +117,17 @@ export default function Team() {
             when clicked. &hover is for making the text color white (don't change when
             button is not hovered over.*/}
         <Box display='flex' justifyContent="center" alignItems="center" mt="60px" mb="40px">
-          <Box display='flex' width="60%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#0E7C2B" image={KineticIcon} whiteImg={WhiteKineticIcon} to="/team/kinetic">Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={SportsmanIcon} whiteImg={WhiteSportIcon} to="/team/sportsman">Sportsman</TeamButton>
-            <TeamButton hoverColor="#8D8D2C" image={AutoIcon} whiteImg={WhiteAutoIcon} to="/team/autonomous">Autonomous</TeamButton>
-            <TeamButton hoverColor="#501584" image={MarketingIcon} whiteImg={WhiteMarketingIcon} to="/team/marketing">Marketing</TeamButton>
+          <Box display='flex' width="75%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
+            <TeamButton hoverColor="#0E7C2B" image={KineticColor} whiteImg={KineticWhite} to="/team/kinetic">Kinetic</TeamButton>
+            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman">Sportsman</TeamButton>
+            <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous">Autonomous</TeamButton>
+            <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing">Marketing</TeamButton>
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px">
-          <Box display='flex' width="50%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
-            <TeamButton hoverColor="#820002" image={LeadsIcon} whiteImg={WhiteTLIcon} to="/team/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
-            <TeamButton hoverColor="#820002" image={AlumniIcon} whiteImg={WhiteAlumIcon} to="/team/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
+          <Box display='flex' width="63%" justifyContent="space-evenly" sx={{ flexDirection: 'row' }}>
+            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "447px" }}>Team Leads</TeamButton>
+            <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "447px" }}>Alumni</TeamButton>
           </Box>
         </Box>
       </Box>
