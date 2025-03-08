@@ -169,7 +169,7 @@ export default function Game() {
               <motion.div
                 key={image.title}
                 animate={{
-                  x: `${(index - currentIndex) * 200}px`,
+                  x: `${(index - currentIndex) * 170}px`,
                   scale: index === currentIndex ? 1.2 : 1,
                   opacity: index === currentIndex ? 1 : 0.5,
                 }}
