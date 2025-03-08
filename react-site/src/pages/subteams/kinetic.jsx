@@ -5,10 +5,10 @@ export default function Kinetic() {
 
     //array for subsystem with key-value pairs
     const subsystems = [
-        { name: "Drivetrain", desc: "Encompasses the locomotion system of the robot. Kinetic meticulously selects the drive systems to ensure our robots are agile, responsive, and formidable on the battlefield." },
-        { name: "Weapon", desc: "Encompasses the attacking method of the robot. Kinetic's arsenal is optimized for maximum impact and high energy spinning to destroy our opponents." },
-        { name: "Chassis", desc: "Generates revenue, maintains corporate relations, delivers pitches, and identifies opportunities for members and the team.\n\nThis subsystem strives to expand our network and secure the resources necessary for CRC's growth." },
-        { name: "Electronics", desc: "Encompasses the motors, ESCs, batteries, power switches, and wires of the robot for RC control. Kinetic ensures that all electronics are built to last through 3-minute matches." }
+        { name: "Drivetrain", desc: "The locomotion system of the robot. Kinetic meticulously selects the drive systems to ensure our robots are agile, responsive, and formidable on the battlefield." },
+        { name: "Weapon", desc: "The attacking method of the robot. Kinetic's arsenal is optimized for maximum impact and high energy spinning to destroy our opponents." },
+        { name: "Chassis", desc: "The shell, armor, and internal structure of the robot. Kinetic engineers these elements to withstand the rigors of intense battles and outlast the competition." },
+        { name: "Electronics", desc: "The motors, ESCs, batteries, power switches, and wires of the robot for RC control. Kinetic ensures that all electronics are built to last through 3-minute matches." }
     ];
 
     return (

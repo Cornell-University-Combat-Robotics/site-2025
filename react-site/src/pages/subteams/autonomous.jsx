@@ -5,7 +5,7 @@ export default function Autonomous() {
 
     //array for subsystem with key-value pairs
     const subsystems = [
-        { name: "Machine Learning / Computer Vision", desc: "Researches and builds the machine learning model to detect our robot from a camera outside of the box through object detection, as well as using computer vision algorithms to find the robot’s position in the arena. " },
+        { name: "Machine Learning / Computer Vision", desc: "Researches and builds the machine learning model to detect our robot from a camera outside of the box through object detection, as well as using computer vision algorithms to find the robot's position in the arena. " },
         { name: "Algorithm Design", desc: "Designs an algorithm that takes the positions of robots in the arena and other state variables as input to decide what our robot should do. This year, we plan to develop situational strategies through experimenting with simulated battles, possibly involving reinforcement learning." },
         { name: "Robot Construction", desc: "Researches robot types and components to purchase, as well as ensuring consistent communication between our sensors, computer, and motors. In the Spring semester, we will build and test our new robot." },
         //what about optional subtitle
