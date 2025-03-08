@@ -10,7 +10,6 @@ import join04 from "../assets/background-pictures/join-04-background.png";
 import slugma from "../assets/3lb/slugma_profile.jpg";
 import robot_scroll from "../assets/robot_scroll.png";
 import arrow_img from "../assets/arrow.png";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
@@ -25,71 +24,63 @@ export default function Apply() {
     { name: 'Applications Due', date: '11.59PM  7/1/25' }
   ];
 
-  /** 
-   * Effect: Getting user's scroll progress in the viewport
-   * useScroll() returns an object with two MotionValue values: 
-   * - { scrollY == current vertical scroll position, scrollYProgress == normalized scroll value between 0 & 1 }
-   * but you can choose to get only one property */
-  const { scrollYProgress } = useScroll();
-
-  /** 
-   * Effect: Maps scrolling (0 → 1) to movement (0px → 300px).
-   * useTransform(inputValue, inputRange, outputRange): 
-   * - inputValue: A MotionValue that you want to transform.	
-   * - inputRange: An array of values representing the expected range of inputValue.
-   * - outputRange: An array of mapped values that correspond to inputRange.
-  */
-  const yPos = useTransform(scrollYProgress, [0, 1], [0, 300])
-
+  /** boolean value for when user's viewport successfully intersects with arrow */
   const [isVisible, setIsVisible] = useState(false);
+
+  /** boolean value for when the user has scrolled past the maximum allowed distance for the robot scrolling animation */
   const [isBottomCrossed, setIsBottomCrossed] = useState(false);
-  /*
-  Scenarios:
-  1) above stack component: isVisible = false && isBottomCrossed = false -> DON't render
-  3) within stack component: isVisible = true && isBottomCrossed = false -> RENDER
-  2) below stack component: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON't render
-  */
 
-  const [yValue, setYValue] = useState();
+  /** scrolling robot's distance from the bottom of user's viewport */
+  const [robotFromBottom, setRobotFromBottom] = useState(0);
 
-  /** attach this to component that you want to listen to in user's viewport */
-  const ref = useRef(null);
+  /*attach these references to components that you want to listen to in user's viewport */
+
+  /** referencing the rectangular body of the arrow */
+  const arrowBar = useRef(null);
+
+  /** referencing the triangle of the arrow */
   const arrow = useRef(null);
-  const robot = useRef(null); //for robot img
 
+  /** referencing the SCROLLING robot image */
+  const robot = useRef(null);
+
+  /** bottom of user's viewport based on window's height and how much user has scrolled */
   const [userBottom, setUserBottom] = useState(window.innerHeight + window.scrollY);
 
+  /** bottom of the triangular arrow component */
   const [arrowBottom, setArrowBottom] = useState(0);
 
+  //no dependency array: runs ONLY at the FIRST render of the window
   useEffect(() => {
-    //do i need this? doesnt serve any fxn currently...
+    //doesn't seem to be working fully -> still weird when resizing TODO
     const updateArrowBottom = () => {
       const refArrow = arrow.current.getBoundingClientRect();
       setArrowBottom(refArrow.bottom + window.scrollY);
     };
-
     window.addEventListener("resize", updateArrowBottom)
 
+    /* Reference will already be attached to arrow component by the first render
+    We only want to run this code once, because at the first render, the user is at the top of the screen (NOTE: NOT ALWAYS THOOOOO), 
+    so window.scrollY = 0, and we're just getting the bottom of the arrow in the ENTIRE webpage
+    */
     if (arrow.current) {
+      //getBoundingClientRect(): provides information about the element’s size and position relative to the viewport
       const refArrow = arrow.current.getBoundingClientRect();
       setArrowBottom(refArrow.bottom + window.scrollY);
     }
 
   }, []);
 
-  /*
-  Idea: 1) find a way to control the length of the svg component
-  2) use window listener to determine where is the bottom??? of the user's viewport & also get the bottom of the svg component
-  - unrender when they hit
-  */
-  //always active?
+
   useEffect(() => {
 
-    //what is entry?
-    //entry: an IntersectionObserverEntry object
-    //IntersectionObserver stays attached and keeps detecting visibility changes automatically.
+    /* [entry]: an IntersectionObserverEntry object -> contains details about observed element (arrowBar.current) 
+    and how it intersects with the viewport or another container.
+
+    IntersectionObserver effect: allows you to detect when an element enters or leaves the viewport
+    - stays attached and keeps detecting visibility changes automatically, even tho this useEffect only runs once */
     const observer = new IntersectionObserver(([entry]) => {
-      //entry.isIntersecting is TRUE when element is visible in the viewport & FALSE when element is not visible (scrolled out of view)
+      //entry.isIntersecting is TRUE when element is visible in user's viewport & FALSE when scrolled out of view
       if (entry.isIntersecting) {
         setIsVisible(true);
       } else {
@@ -99,48 +90,43 @@ export default function Apply() {
       { threshold: 0.2 } //controls how much of the element must be visible before [entry.isIntersecting] becomes true
     );
 
-    //only runs when ref is not null -> meaning ref is attached to an object
-    if (ref.current) {
-      observer.observe(ref.current) //attaches the observer -> starts tracking visibility changes for this ref component
+    //only runs when arrowBar is not null -> meaning arrowBar must be successfully attached to an object
+    if (arrowBar.current) {
+      observer.observe(arrowBar.current) //attaches the observer -> starts tracking visibility changes for this component
     }
 
-    //update bottom of window position by listening to user's scroll
     const handleScroll = () => {
       setUserBottom(window.innerHeight + window.scrollY);
-
-      if (robot.current) {
-        const refRobot = robot.current.getBoundingClientRect();
-        console.log("ROBOTTTTT bottom ", refRobot.bottom);
-      }
     };
 
-
+    //listens for user scrolling
     window.addEventListener("scroll", handleScroll);
-
 
     return () => window.removeEventListener("scroll", handleScroll);
 
   }, []); //no dependencies: meaning the useEffect only runs ONCE on the first render => prevents observer from being created every render (inefficient)
 
+  /** Runs every time the reference for [robot] is updated (aka. when ref attached to scrolling robot component)
+   * Effect: sets value of robot's distance from bottom of user's viewport */
   useEffect(() => {
-    //console.log("userBottom value: ", userBottom)
-    //console.log("refBottom value: ", refBottom)
-    //okay, so refBottom is always 8133 now, which indicates where the bottom of the stack (where it crosses into the red faq)
+    if (robot.current) {
+      const refRobot = robot.current.getBoundingClientRect();
+      setRobotFromBottom(refRobot.bottom);
+    }
+  }, [robot.current]);
 
-    if (userBottom >= arrowBottom) {
+  /** Runs every time [userBottom] is updated (aka. when user scrolls) */
+  useEffect(() => {
+    /* MUST include value of [robotFromBottom]. 
+    Else, will be true as soon as user's viewport scrolls past the triangular arrow -> if robot image is not placed at the bottom
+    of the viewport, then there will be a sudden jump from the scrolling robot to the static robot at the bottom of the arrow.
+    */
+    if (userBottom >= (arrowBottom + robotFromBottom)) {
       setIsBottomCrossed(true);
     } else {
       setIsBottomCrossed(false);
     }
-  }, [userBottom, arrowBottom]);
-
-  {/* 
-  useEffect(() => {
-    console.log("Bottom: ", isBottomCrossed)
-    console.log("user bottom: ", userBottom)
-    console.log("constan bottom: ", arrowBottom)
-  }, [isBottomCrossed, userBottom])
-  */}
+  }, [userBottom]);
 
   return (
 
@@ -300,10 +286,7 @@ export default function Apply() {
 
 
 
-      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={ref} position="relative"
-
-      // Ensures scrolling
-      >
+      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={arrowBar} position="relative">
         {/*arrow*/}
         <svg width="10%" //svg component takes up 10% of stack & full height of stack
         >
@@ -316,33 +299,6 @@ export default function Apply() {
             strokeWidth="25"
           >
           </line>
-
-          {/*equilateral triangle: TODO -> rn is hardcoded... 
-          <polygon points="0,10 100,10 50,100" //(50,10): 50% from left of svg, 10% from top of svg
-            fill="#820002"
-            transform="translate(15, 2600)" //shifts the triangle 20 units right and 30 units down
-            ref={arrow}
-          />
-          */}
-
-          {/*
-          <circle
-            cx="50%"
-            cy="5%" //same as y1 of line
-            r={25} //radius
-            fill="#820002" //color
-          >
-          </circle>
-
-          <circle
-            cx="50%"
-            cy="90%" //same as y2 of line
-            r={25} //radius
-            fill="#820002" //color
-          >
-          </circle>
-                */}
-
         </svg>
 
         <img
@@ -357,34 +313,27 @@ export default function Apply() {
           ref={arrow}
         />
 
+        {/*
+        Scenarios:
+        1) above arrow: isVisible = false && isBottomCrossed = false -> DON'T render
+        3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
+        2) below arrow: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON'T render
+        */}
 
+        {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
         {!isVisible && !isBottomCrossed &&
-          <RobotImage pos={"absolute"} top={"0%"} ref={null}/>
+          <RobotImage pos={"absolute"} top={"0%"} ref={null} />
         }
 
+        {/*static robot image at the bottom of the triangular part of arrow*/}
         {isBottomCrossed &&
-          <RobotImage pos={"absolute"} bottom={"2%"} ref={null}/>
+          <RobotImage pos={"absolute"} bottom={"2%"} ref={null} />
         }
 
+        {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
         {isVisible && !isBottomCrossed &&
           <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
         }
-
-
-        {/** TODO completely separate robot scroll image that is suppose to stay at the bottom of the arrow if user scrolls down past it & disappear when user scrolls up past it*/}
-        {/*
-        {isBottomCrossed && 
-          (<Box
-            zIndex={100}
-            position="fixed"
-            left={-47}
-            top={"50%"}
-          >
-            <RobotScroll />
-          </Box>) 
-        }
-           */}
-
 
         <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
           <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
@@ -401,25 +350,22 @@ export default function Apply() {
   );
 }
 
-{/** Component containing robot scrolling image 
-  functional components (like RobotImage) can't accept refs directly 
-  unless they are wrapped with React.forwardRef
-
-  NOTE: const NOT a ref
-  once you've defined the RobotImage component with forwardRef, you can use it like any other React component
+{/** Component containing robot scrolling image:
+  - Note: must use const & forwardRef cuz functional components (like function RobotImage = ...) can't accept refs directly 
+  unless wrapped with React.forwardRef
   */ }
 const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
   return (
     <img
       src={robot_scroll}
+      ref={ref} //attach ref only if passed
       style={{
         transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
         zIndex: "100",
         position: pos,
         left: "7%",
-        ...(top ? { top } : {}), // Apply top only if passed????
-        ...(bottom ? { bottom } : {}), // Apply bottom only if passed
-        ref: {ref}
+        ...(top ? { top } : {}), // optional argument: Apply top only if passed
+        ...(bottom ? { bottom } : {}) // Apply bottom only if passed
       }}
     />
   );
