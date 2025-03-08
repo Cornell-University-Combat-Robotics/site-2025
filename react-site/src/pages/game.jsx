@@ -77,7 +77,8 @@ export default function Game() {
         </Box> */}
 
 <iframe 
-  src="https://combatrobotics.engineering.cornell.edu/oldgame/gameold.html" 
+  src="media/index.html" 
+  // src="oldgame/gameold.html"
   // you may need gameold.html game.js game.json game.data game.wasm
   width="1020px" 
   height="560px" 
