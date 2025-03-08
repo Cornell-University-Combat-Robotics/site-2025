@@ -76,16 +76,17 @@ export default function Game() {
             }}>
         </Box> */}
 
-<iframe 
-  src="media/index.html" 
-  // src="oldgame/gameold.html"
+{/* <iframe 
+  // src="media/index.html" 
+  src="oldgame/gameold.html"
   // you may need gameold.html game.js game.json game.data game.wasm
   width="1020px" 
   height="560px" 
   style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }} 
   title="Combat Robotics Game"
   allowFullScreen
-/>
+/> */}
+
 {/* "../assets/gamepage/arcade.png" */}
 
 
@@ -116,7 +117,7 @@ export default function Game() {
       </motion.div>
 
       {/* Title */}
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: -100 }}
         transition={{ duration: 1, delay: 1 }}
@@ -131,16 +132,16 @@ export default function Game() {
         >
           GAMES
         </Typography>
-      </motion.div> */}
+      </motion.div>
 
       {/* Carousel for Game Images */}
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         style={{ position: "relative", zIndex: 1, marginTop: "20px"}}
-      > */}
-        {/* <Box
+      >
+        <Box
           sx={{
             position: "relative",
             display: "flex",
@@ -150,12 +151,12 @@ export default function Game() {
             width: "100vw",
             maxWidth: "600px",
           }}
-        > */}
-          {/* <IconButton onClick={handlePrev} sx={{ zIndex: 2 }}>
+        >
+          <IconButton onClick={handlePrev} sx={{ zIndex: 2 }}>
             <ArrowBack sx={{ color: "white" }} />
-          </IconButton> */}
+          </IconButton>
 
-          {/* <Box
+          <Box
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -202,13 +203,13 @@ export default function Game() {
                 )}
               </motion.div>
             ))}
-          </Box> */}
+          </Box>
 
-          {/* <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
+          <IconButton onClick={handleNext} sx={{ zIndex: 2 }}>
             <ArrowForward sx={{ color: "white" }} />
-          </IconButton> */}
-        {/* </Box> */}
-      {/* </motion.div> */}
+          </IconButton>
+        </Box>
+      </motion.div>
     </Box>
   );
 }
