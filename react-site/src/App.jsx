@@ -52,6 +52,11 @@ theme.typography.body1 = {
 theme.palette.primary = {
   main: '#3D0E0E'
 }
+theme.typography.body2 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '1.5rem',
+  fontWeight: 'normal',
+};
 
 function App() {
   return (

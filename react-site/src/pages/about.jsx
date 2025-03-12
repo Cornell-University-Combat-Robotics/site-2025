@@ -104,6 +104,7 @@ function About() {
         <Carousel numCells={10} />
       </Box>
     </Box >
+
   );
 }
 
