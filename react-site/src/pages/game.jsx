@@ -7,26 +7,36 @@ import crcvs from "../assets/gamepage/crc-versus.png";
 import crcrizz from "../assets/gamepage/crc-rizz.png";
 import mannymania from "../assets/gamepage/manny-mania.png";
 
+
+// src="media/index.html" 
+// src="oldgame/gameold.html"
+
 const images = [
   {
     title: "crcvs",
     url: crcvs,
-    link: "https://combatrobotics.engineering.cornell.edu/gamenew.html",
+    src: "media/index.html",
+    // link: "https://combatrobotics.engineering.cornell.edu/gamenew.html",
   },
   {
     title: "crcrizz",
     url: crcrizz,
-    link: "", // No link for crcrizz
+    src: "",
+    // link: "", // No link for crcrizz
   },
   {
     title: "mannymania",
     url: mannymania,
-    link: "https://combatrobotics.engineering.cornell.edu/oldgame/gameold.html",
+    src: "oldgame/gameold.html",
+    // src is new, link is old
+    // link: "https://combatrobotics.engineering.cornell.edu/oldgame/gameold.html",
   },
 ];
 
 export default function Game() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [iframeSrc, setIframeSrc] = useState(images[0].src);
+  // new thing above
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -35,6 +45,12 @@ export default function Game() {
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
+
+  const handleImageClick = (index) => {
+    setIframeSrc(images[index].src);
+    setCurrentIndex(index);
+  };
+  // const handleImageClick is new
 
   return (
     <Box
@@ -76,16 +92,19 @@ export default function Game() {
             }}>
         </Box> */}
 
-{/* <iframe 
+
+{/* screen with game that loads */}
+<iframe 
   // src="media/index.html" 
-  src="oldgame/gameold.html"
-  // you may need gameold.html game.js game.json game.data game.wasm
+  // src="oldgame/gameold.html"
+  src={iframeSrc}
+  // new src thing
   width="1020px" 
   height="560px" 
-  style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }} 
+  style={{ marginLeft: "20px", marginBottom: "16px", border: "none"}} 
   title="Combat Robotics Game"
   allowFullScreen
-/> */}
+/>
 
 {/* "../assets/gamepage/arcade.png" */}
 
@@ -174,7 +193,9 @@ export default function Game() {
                   opacity: index === currentIndex ? 1 : 0.5,
                 }}
                 transition={{ duration: 0.5 }}
-                style={{ position: "absolute" }}
+                style={{ position: "absolute", cursor: "pointer"}}
+                onClick={() => handleImageClick(index)}
+                // new onclick
               >
                 {image.link ? (
                   <Link href={image.link} target="_blank" rel="noopener noreferrer">
