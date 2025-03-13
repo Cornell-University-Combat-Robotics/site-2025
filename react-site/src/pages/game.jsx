@@ -34,9 +34,11 @@ const images = [
 ];
 
 export default function Game() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [iframeSrc, setIframeSrc] = useState(images[0].src);
-  // new thing above
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [iframeSrc, setIframeSrc] = useState(images[1].src);
+  // new thing above with images[] thing
+  const [gameSelected, setGameSelected] = useState(false);
+  // New state to track if a game is selected
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -49,6 +51,8 @@ export default function Game() {
   const handleImageClick = (index) => {
     setIframeSrc(images[index].src);
     setCurrentIndex(index);
+    setGameSelected(true);
+    // Hide title and carousel when a game is selected
   };
   // const handleImageClick is new
 
@@ -94,17 +98,17 @@ export default function Game() {
 
 
 {/* screen with game that loads */}
-<iframe 
-  // src="media/index.html" 
-  // src="oldgame/gameold.html"
-  src={iframeSrc}
-  // new src thing
-  width="1020px" 
-  height="560px" 
-  style={{ marginLeft: "20px", marginBottom: "16px", border: "none"}} 
-  title="Combat Robotics Game"
-  allowFullScreen
-/>
+    <iframe 
+      // src="media/index.html" 
+      // src="oldgame/gameold.html"
+      src={iframeSrc}
+      // new src thing
+      width="1020px" 
+      height="560px" 
+      style={{ marginLeft: "20px", marginBottom: "16px", border: "none"}} 
+      title="Combat Robotics Game"
+      allowFullScreen
+    />
 
 {/* "../assets/gamepage/arcade.png" */}
 
@@ -136,6 +140,8 @@ export default function Game() {
       </motion.div>
 
       {/* Title */}
+    
+    {!gameSelected && (
       <motion.div
         initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: -100 }}
@@ -152,8 +158,12 @@ export default function Game() {
           GAMES
         </Typography>
       </motion.div>
+    )}
+    {/* excalamation mark thing new */}
 
       {/* Carousel for Game Images */}
+    
+    {!gameSelected && (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -231,6 +241,8 @@ export default function Game() {
           </IconButton>
         </Box>
       </motion.div>
+    )}
+    {/* exclamation mark thing way way up top is new */}
     </Box>
   );
 }
