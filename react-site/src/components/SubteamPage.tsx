@@ -81,22 +81,7 @@ export default function SubteamPage(props: SubteamProps) {
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
                 <Box sx={{ height: '100vh', position: 'relative' }}>
-
-                    {/*
-                    Back button returning to teams page.
-                    Position must be absolute to parent to handle overlap over the box.
-                    */}
-                    <Button
-                        sx={{
-                            borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
-                            position: 'absolute', bottom: '15%', left: '10%', width: 'auto', height: 'auto'
-                        }}
-                        onClick={() => navigate('/team')} //back to teams page
-                    >
-                        <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap', margin: 0.5 }}>
-                            {"< Back"}
-                        </Typography>
-                    </Button>
+                 
 
                 </Box>
 
