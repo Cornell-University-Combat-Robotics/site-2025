@@ -107,7 +107,7 @@ export default function Member(props: MemberProps) {
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography
-                        variant="body1"
+                        variant="body2"
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',
@@ -143,7 +143,7 @@ export default function Member(props: MemberProps) {
             onMouseLeave={() => setShowStats(false)}
           >
 
-            <Typography variant="body1" sx={{ color: 'white', textTransform: "none" }}>
+            <Typography variant="body2" sx={{ color: 'white', textTransform: "none" }}>
               {"Stats"}
             </Typography>
           </Button>

@@ -45,16 +45,17 @@ theme.typography.h3 = {
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1rem',
+  fontSize: '1.5rem',
   fontWeight: 'normal',
 };
+
 
 theme.palette.primary = {
   main: '#3D0E0E'
 }
 theme.typography.body2 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.5rem',
+  fontSize: '1rem',
   fontWeight: 'normal',
 };
 
