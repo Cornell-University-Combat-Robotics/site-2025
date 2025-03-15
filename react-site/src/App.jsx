@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import GradientNavBar from './components/GradientNavBar';
 import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
@@ -19,6 +19,7 @@ import Slugma from './pages/robots/slugma';
 import Batbot from './pages/robots/batbot';
 import Swiss from './pages/robots/swiss';
 import Hestr from './pages/robots/hestr';
+import Merch from './pages/merch';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Leads from './pages/subteams/leads';
 import Alumni from './pages/subteams/alumni';
@@ -60,6 +61,9 @@ theme.typography.body2 = {
 };
 
 function App() {
+
+  const merch_url = "https://www.redbubble.com/people/CombatRobots/shop"
+
   return (
     <ThemeProvider theme={theme}>
       <main>
@@ -83,6 +87,7 @@ function App() {
             <Route path="/sponsors" element={<><ScrollToTop /><GradientNavBar /><Sponsors /></>} />
             <Route path="/game" element={<><ScrollToTop /><GradientNavBar /><Game /></>} />
             <Route path="/apply" element={<><ScrollToTop /><GradientNavBar /><Apply /></>} />
+            <Route path="/merch" element={<><ScrollToTop /><GradientNavBar /><Link to={merch_url}/></>} />
             <Route path="/accessibility" element={<><ScrollToTop /><GradientNavBar /><Accessibility /></>} />
           </Routes>
           <Footer />

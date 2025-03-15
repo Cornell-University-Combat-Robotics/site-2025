@@ -33,6 +33,7 @@ export default function NavBar() {
         <NavBarButton bg="none" text="Sponsors" variant="secondary" />
         <NavBarButton bg="none" text="Game" variant="secondary" />
         <NavBarButton bg="none" text="Apply" variant="secondary" />
+        <NavBarButton bg="none" text="Merch" variant="secondary" />
         {/* This is a highlighted button with a background, if needed.
           <NavBarButton
             bg="#FF3225"

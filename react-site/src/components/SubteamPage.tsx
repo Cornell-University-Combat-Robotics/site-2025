@@ -81,6 +81,7 @@ export default function SubteamPage(props: SubteamProps) {
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
                 <Box sx={{ height: '100vh', position: 'relative' }}>
+
                  
 
                 </Box>
