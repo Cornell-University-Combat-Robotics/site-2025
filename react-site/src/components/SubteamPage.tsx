@@ -123,24 +123,24 @@ export default function SubteamPage(props: SubteamProps) {
                             {props.name.toUpperCase()}
                         </Typography>
 
-                        <Typography sx={{ fontSize: 20, textAlign: 'left', minWidth: 320, wordWrap: 'break-word' }}>
+                        <Typography variant='body1' sx={{ textAlign: 'left', minWidth: 320, wordWrap: 'break-word' }}>
                             {props.desc}
                         </Typography>
 
                     </Stack>
 
-                    <Typography sx={{ fontSize: 20, textAlign: "left", marginTop: 10 }}>
+                    <Typography variant='body1' sx={{ textAlign: "left", marginTop: 10 }}>
                         {props.optionalDesc}
                     </Typography>
 
-                    <Typography sx={{ fontSize: 20, textAlign: "left", marginTop: 10 }}>
+                    <Typography variant='body1' sx={{ textAlign: "left", marginTop: 10 }}>
                         {props.subsystemIntro}
                     </Typography>
 
                     {/*
                 Stack contains a row of buttons for the different subsystems of the subteam.
                 */}
-                    {props.name != "Leads" && props.name != "Alumni" && <Stack direction="row" marginTop={10} justifyContent={"center"} alignItems={"center"}
+                    {props.name != "Leads" && props.name != "Alumni" && <Stack direction="row" marginTop={3} justifyContent={"center"} alignItems={"center"}
                         sx={{
                             flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
                             gap: 3 //maintains both vertical and horizontal gap between buttons
@@ -150,8 +150,8 @@ export default function SubteamPage(props: SubteamProps) {
 
                             <Button key={index} sx={{
                                 flex: '1 1 250px', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
-                                maxWidth: 250, // ensures that buttons dont get too big when wrapping
-                                height: 180,
+                                maxWidth: 220, // ensures that buttons dont get too big when wrapping
+                                height: 120,
                                 backgroundColor: '#943131', textAlign: 'center', borderRadius: 2
                             }}
                                 //hover functionality
@@ -162,7 +162,7 @@ export default function SubteamPage(props: SubteamProps) {
                                 {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
 
                                 {/*Always display subsystem name on button*/}
-                                <Typography sx={{ fontSize: 23, color: 'white' }}>
+                                <Typography sx={{ fontSize: 23, color: 'white', textTransform: 'none' }}>
                                     {subsystem.name}
                                 </Typography>
                             </Button>
@@ -207,8 +207,8 @@ export default function SubteamPage(props: SubteamProps) {
 }
 
 //Effect: returns image url for subteam photo
-function GetSubteamPhoto(subteamName){
-    switch(subteamName.toLowerCase()){
+function GetSubteamPhoto(subteamName) {
+    switch (subteamName.toLowerCase()) {
         case "marketing":
             return `url(${marketing_photo})`;
         case "autonomous":
@@ -232,20 +232,21 @@ function SubsystemButtonDisplay({ name, desc }) {
         //parent position must be relative
         <Fade in={true} timeout={300}>
             <Box sx={{
-              bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-              position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
-              wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
-              left: '20%', right: '20%' //spacing from sides of screen
+                bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
+                position: 'fixed', height: 'auto', transform: 'translateY(65%)',  // Center the box vertically
+                wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
+                left: '20%', right: '20%' //spacing from sides of screen
             }}>
                 {/*Subsystem name header*/}
-                <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
+                <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold', textTransform: 'none' }}>
                     {name}
                 </Typography>
 
                 {/*Subsystem description*/}
                 <Typography variant="body1" sx={{
                     color: 'white',
-                    whiteSpace: 'pre-line'  // Ensures that \n creates line breaks in the text
+                    whiteSpace: 'pre-line',  // Ensures that \n creates line breaks in the text
+                    textTransform: 'none'    // Prevent ALL CAPS
                 }}>
                     {desc}
                 </Typography>
