@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export interface FAQSection {
   qn: string[],
-  ans: string[]
+  ans: string[] //cuz need link
 }
 
 function FAQ(props: FAQSection) {

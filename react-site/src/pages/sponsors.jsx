@@ -6,8 +6,8 @@ import FAQ from "../components/FAQ";
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
 
-   /** list of all FAQ questions & answers */
-   const questions = [
+  /** list of all FAQ questions & answers */
+  const questions = [
     "I am a company, how can I sponsor?",
     "I am an individual (not a company), how can I donate?",
     "I am a company and want to renew or update my sponsorship packet, what is the process?",
@@ -21,6 +21,25 @@ export default function Sponsors() {
     "Email us and we would be happy to make arrangements!"
   ];
 
+  //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
+  {/**
+  otherInterest = {
+    [
+    <p>
+      Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor. {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
+    </p>,
+    <p>
+      • Coding for websites and video games, check out the Marketing Subteam {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>,
+    <p>
+      • Business and corporate sponsorships, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>
+    ,
+    <p>
+      Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>
+    ]}
+ */}
   return (
     <Box>
       <Box sx={{
@@ -461,7 +480,7 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      <FAQ qn={questions} ans={answers}/>
+      <FAQ qn={questions} ans={answers} />
 
     </Box>
   );
