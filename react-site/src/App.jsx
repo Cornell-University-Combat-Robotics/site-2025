@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import GradientNavBar from './components/GradientNavBar';
 import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
@@ -45,20 +45,24 @@ theme.typography.h3 = {
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1rem',
+  fontSize: '1.5rem',
   fontWeight: 'normal',
 };
+
 
 theme.palette.primary = {
   main: '#3D0E0E'
 }
 theme.typography.body2 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.5rem',
+  fontSize: '1rem',
   fontWeight: 'normal',
 };
 
 function App() {
+
+  const merch_url = "https://www.redbubble.com/people/CombatRobots/shop"
+
   return (
     <ThemeProvider theme={theme}>
       <main>

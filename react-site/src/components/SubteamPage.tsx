@@ -9,8 +9,9 @@ import kinetic_photo from "../assets/kinetic-photo.jpg";
 import autonomous_photo from "../assets/autonomous-photo.jpg";
 import leads_photo from "../assets/leads-photo.jpg";
 import alumni_photo from "../assets/alumni-photo.jpg";
+import { Link } from "react-router-dom";
 
-/*
+/**
 For each individual subteam page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
 
@@ -33,7 +34,7 @@ export interface SubteamProps {
 export default function SubteamPage(props: SubteamProps) {
 
     //TODO: encapsulate for different number of buttons
-    /*
+    /**    
     Effect: toggle visibility for subsystem button animations. default set to not visible.
     - 4 different use states due to 4 different buttons. e.g. showSubsystem[0] controls visibility of 1st subsystem
     showSubsystem: immutable state variable
@@ -41,7 +42,7 @@ export default function SubteamPage(props: SubteamProps) {
     */
     const [showSubsystem, setShowSubsystem] = useState([false, false, false, false]);
 
-    /*
+    /**
     Effect: Each element in handleSubsystemClick array is a function updating showSubsystem, 
     setting its corresponding value to true (keeping the other showSubsystems false) when button is clicked.
     */
@@ -52,8 +53,8 @@ export default function SubteamPage(props: SubteamProps) {
         () => setShowSubsystem([false, false, false, true])
     ];
 
-    //Purpose: React Router hook used for programmatic navigation
-    //Use: navigate('/route') to go to a specific route
+    /**Purpose: React Router hook used for programmatic navigation
+    Use: navigate('/route') to go to a specific route*/
     const navigate = useNavigate();
 
     return (
@@ -81,21 +82,7 @@ export default function SubteamPage(props: SubteamProps) {
                 */}
                 <Box sx={{ height: '100vh', position: 'relative' }}>
 
-                    {/*
-                    Back button returning to teams page.
-                    Position must be absolute to parent to handle overlap over the box.
-                    */}
-                    <Button
-                        sx={{
-                            borderRadius: 2, textAlign: 'center', outline: 2, outlineColor: 'white',
-                            position: 'absolute', bottom: '15%', left: '10%', width: 'auto', height: 'auto'
-                        }}
-                        onClick={() => navigate('/team')} //back to teams page
-                    >
-                        <Typography sx={{ fontSize: 25, color: 'white', whiteSpace: 'nowrap', margin: 0.5 }}>
-                            {"< Back"}
-                        </Typography>
-                    </Button>
+                 
 
                 </Box>
 
@@ -206,9 +193,9 @@ export default function SubteamPage(props: SubteamProps) {
     );
 }
 
-//Effect: returns image url for subteam photo
-function GetSubteamPhoto(subteamName){
-    switch(subteamName.toLowerCase()){
+/** Effect: returns image url for subteam photo*/
+function GetSubteamPhoto(subteamName) {
+    switch (subteamName.toLowerCase()) {
         case "marketing":
             return `url(${marketing_photo})`;
         case "autonomous":
@@ -224,7 +211,7 @@ function GetSubteamPhoto(subteamName){
     }
 }
 
-//Effect: when clicking on a button in subteam pages, displays subsystem information over section of screen
+/** Effect: when clicking on a button in subteam pages, displays subsystem information over section of screen */
 function SubsystemButtonDisplay({ name, desc }) {
 
     return (
@@ -232,10 +219,10 @@ function SubsystemButtonDisplay({ name, desc }) {
         //parent position must be relative
         <Fade in={true} timeout={300}>
             <Box sx={{
-              bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-              position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
-              wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
-              left: '20%', right: '20%' //spacing from sides of screen
+                bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
+                position: 'fixed', height: 'auto', transform: 'translateY(-30%)',  // Center the box vertically
+                wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
+                left: '20%', right: '20%' //spacing from sides of screen
             }}>
                 {/*Subsystem name header*/}
                 <Typography sx={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
@@ -251,5 +238,12 @@ function SubsystemButtonDisplay({ name, desc }) {
                 </Typography>
             </Box>
         </Fade>
+    );
+}
+
+{/** Component creating hyperlink to other pages */ }
+export function LinkToOtherSubteams({ url, text }) {
+    return (
+        <Link to={url} style={{ color: "white", textDecoration: "underline" }}>{text}</Link>
     );
 }

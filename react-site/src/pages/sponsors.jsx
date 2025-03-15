@@ -1,10 +1,45 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
+import FAQ from "../components/FAQ";
 
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
+
+  /** list of all FAQ questions & answers */
+  const questions = [
+    "I am a company, how can I sponsor?",
+    "I am an individual (not a company), how can I donate?",
+    "I am a company and want to renew or update my sponsorship packet, what is the process?",
+    "I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?"
+  ];
+
+  const answers = [
+    "Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor.",
+    "You can donate through the same platforms a company would: via mail by filling out the donation form listed on the Sponsorship Packet, or electronically donate through Cornell, or donate on Giving Day.",
+    "Donate through the same portal listed above, and email us to notify you wish to renew or update your sponsorship.",
+    "Email us and we would be happy to make arrangements!"
+  ];
+
+  //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
+  {/**
+  otherInterest = {
+    [
+    <p>
+      Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor. {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
+    </p>,
+    <p>
+      • Coding for websites and video games, check out the Marketing Subteam {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>,
+    <p>
+      • Business and corporate sponsorships, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>
+    ,
+    <p>
+      Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+    </p>
+    ]}
+ */}
   return (
     <Box>
       <Box sx={{
@@ -445,137 +480,8 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* FAQ Section:
-      This section uses a Box component to create a full-width background with a dark red color.
-      - The padding and box-sizing ensure consistent spacing without causing overflow.
-      - The content includes a centered Typography title ("FAQ") followed by Accordion components 
-        for each FAQ item. The Accordion items use expand icons (ExpandMoreIcon) to toggle visibility.
-      - Each AccordionSummary contains a Typography element with italic styling, and the 
-        AccordionDetails contain the answer text.
-      - Dividers are used between Accordion items for separation.
-      - The footer contains a centered Typography with contact information for further questions. */}
-      <Box
-        justifyContent="center"
-        alignItems="center"
-        backgroundColor="#63080A"
-        mt={5}
-        sx={{
-          color: 'white',
-          paddingY: '40px',
-          paddingX: '20px',
-          width: '100%',
-          margin: '0 auto',
-          boxSizing: 'border-box',
-        }}
-      >
-        <Box width="100%" justifyContent="center" alignItems="center">
-          <Typography variant="h4" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
-            FAQ
-          </Typography>
+      <FAQ qn={questions} ans={answers} />
 
-          <Box width="75%" justifyContent="center" alignItems="center" mx="auto">
-            {/* Accordion Items */}
-            <>
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company, how can I sponsor?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am an individual (not a company), how can I donate?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    You can donate through the same platforms a company would: via mail by filling out the donation form listed on the Sponsorship Packet, or electronically donate through Cornell, or donate on Giving Day.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company and want to renew or update my sponsorship packet, what is the process?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Donate through the same portal listed above, and email us to notify you wish to renew or update your sponsorship.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Email us and we would be happy to make arrangements!
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-            </>
-          </Box>
-
-          {/* Footer */}
-          <Typography
-            align="center"
-            sx={{
-              fontStyle: 'italic',
-              fontFamily: 'Josefin Sans',
-              mt: 4,
-              color: 'white',
-            }}
-          >
-            If you have any further questions, please email us at combatrobotics@cornell.edu.
-          </Typography>
-        </Box>
-      </Box>
     </Box>
   );
 }

@@ -1,8 +1,8 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
+import FAQ from "../components/FAQ";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
 import RedBox from "../components/RedBox.tsx";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
@@ -127,6 +127,21 @@ export default function Apply() {
       setIsBottomCrossed(false);
     }
   }, [userBottom]);
+
+  /** list of all FAQ questions & answers */
+  const questions = [
+    "Does CRC offer class credits?",
+    "What is the time commitment for this team?",
+    "Do I need technical experience? ",
+    "Can I join multiple subteams?"
+  ];
+
+  const answers = [
+    "Yes! All new members will enroll in ENGRG 1400 (Engineering Project Team Onboarding) for 1 credit (S/U) during their first full semester on the team. After this, members will enroll in ENGRG 3400 (Engineering Student Project Teams) for 3 credits (S/U) each semester. This credit can be applied to a number of degree requirements, such as Advisor-Approved and Technical electives.",
+    "Members are expected to spend 9 hours per week on CRC-related projects, in line with the team being a 3-credit course. This time is broken down into a 1-hour General Body meeting, three 2-hour subteam meetings, and 2 hours of involvement in projects or extra work sessions. We schedule our meetings around the availability of our members so that everyone can attend every meeting!",
+    "No! Upon joining the team, new members will have the opportunity to experience our customized training program to prepare them to join their respective subteams. We will teach you everything you need to know, no experience necessary!",
+    "Applicants are encouraged to apply to as many subteams as they are interested in joining. However, new members will only join one subteam upon being accepted to the team."
+  ];
 
   return (
 
@@ -345,7 +360,7 @@ export default function Apply() {
         </Stack>
       </Stack>
 
-      <FAQSection />
+      <FAQ qn={questions} ans={answers}/>
     </Box>
   );
 }
@@ -403,133 +418,6 @@ function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
       </Box>
 
     </Stack>
-  );
-}
-
-function FAQSection() {
-  return (
-    <Box
-      justifyContent="center"
-      alignItems="center"
-      backgroundColor="#63080A"
-      mt={5}
-      sx={{
-        color: 'white',
-        paddingY: '40px',
-        paddingX: '20px',
-        width: '100%',
-        margin: '0 auto',
-        boxSizing: 'border-box',
-      }}
-    >
-      <Box width="100%" justifyContent="center" alignItems="center">
-        <Typography variant="h4" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
-          FAQ
-        </Typography>
-
-        <Box width="75%" justifyContent="center" alignItems="center" mx="auto">
-          {/* Accordion Items */}
-          <>
-            <Accordion
-              sx={{
-                backgroundColor: '#63080A',
-                color: 'white',
-                boxShadow: 'none',
-                width: '100%',
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                  I am a company, how can I sponsor?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-            <Accordion
-              sx={{
-                backgroundColor: '#63080A',
-                color: 'white',
-                boxShadow: 'none',
-                width: '100%',
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                  I am an individual (not a company), how can I donate?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  You can donate through the same platforms a company would: via mail by filling out the donation form listed on the Sponsorship Packet, or electronically donate through Cornell, or donate on Giving Day.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-            <Accordion
-              sx={{
-                backgroundColor: '#63080A',
-                color: 'white',
-                boxShadow: 'none',
-                width: '100%',
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                  I am a company and want to renew or update my sponsorship packet, what is the process?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Donate through the same portal listed above, and email us to notify you wish to renew or update your sponsorship.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-            <Accordion
-              sx={{
-                backgroundColor: '#63080A',
-                color: 'white',
-                boxShadow: 'none',
-                width: '100%',
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                  I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Email us and we would be happy to make arrangements!
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-          </>
-        </Box>
-
-        {/* Footer */}
-        <Typography
-          align="center"
-          sx={{
-            fontStyle: 'italic',
-            fontFamily: 'Josefin Sans',
-            mt: 4,
-            color: 'white',
-          }}
-        >
-          If you have any further questions, please email us at combatrobotics@cornell.edu.
-        </Typography>
-      </Box>
-    </Box>
   );
 }
 
