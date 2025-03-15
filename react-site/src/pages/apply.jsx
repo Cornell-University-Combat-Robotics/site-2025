@@ -411,6 +411,7 @@ function FAQSection() {
     <Box
       justifyContent="center"
       alignItems="center"
+      textAlign="left"
       backgroundColor="#63080A"
       mt={5}
       sx={{

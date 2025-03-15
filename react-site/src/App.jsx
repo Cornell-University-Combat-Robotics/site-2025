@@ -19,7 +19,6 @@ import Slugma from './pages/robots/slugma';
 import Batbot from './pages/robots/batbot';
 import Swiss from './pages/robots/swiss';
 import Hestr from './pages/robots/hestr';
-import Merch from './pages/merch';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Leads from './pages/subteams/leads';
 import Alumni from './pages/subteams/alumni';
@@ -87,7 +86,6 @@ function App() {
             <Route path="/sponsors" element={<><ScrollToTop /><GradientNavBar /><Sponsors /></>} />
             <Route path="/game" element={<><ScrollToTop /><GradientNavBar /><Game /></>} />
             <Route path="/apply" element={<><ScrollToTop /><GradientNavBar /><Apply /></>} />
-            <Route path="/merch" element={<><ScrollToTop /><GradientNavBar /><Link to={merch_url}/></>} />
             <Route path="/accessibility" element={<><ScrollToTop /><GradientNavBar /><Accessibility /></>} />
           </Routes>
           <Footer />
