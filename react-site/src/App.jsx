@@ -45,7 +45,7 @@ theme.typography.h3 = {
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1rem',
+  fontSize: '1.5rem',
   fontWeight: 'normal',
 };
 
