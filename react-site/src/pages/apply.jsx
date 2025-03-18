@@ -1,8 +1,8 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
+import FAQ from "../components/FAQ";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
 import RedBox from "../components/RedBox.tsx";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
@@ -129,8 +129,22 @@ export default function Apply() {
     }
   }, [userBottom]);
 
-
   // =========================================== WEBSITE CONTENTS START HERE ======================================================
+  /** list of all FAQ questions & answers */
+  const questions = [
+    "Does CRC offer class credits?",
+    "What is the time commitment for this team?",
+    "Do I need technical experience? ",
+    "Can I join multiple subteams?"
+  ];
+
+  const answers = [
+    "Yes! All new members will enroll in ENGRG 1400 (Engineering Project Team Onboarding) for 1 credit (S/U) during their first full semester on the team. After this, members will enroll in ENGRG 3400 (Engineering Student Project Teams) for 3 credits (S/U) each semester. This credit can be applied to a number of degree requirements, such as Advisor-Approved and Technical electives.",
+    "Members are expected to spend 9 hours per week on CRC-related projects, in line with the team being a 3-credit course. This time is broken down into a 1-hour General Body meeting, three 2-hour subteam meetings, and 2 hours of involvement in projects or extra work sessions. We schedule our meetings around the availability of our members so that everyone can attend every meeting!",
+    "No! Upon joining the team, new members will have the opportunity to experience our customized training program to prepare them to join their respective subteams. We will teach you everything you need to know, no experience necessary!",
+    "Applicants are encouraged to apply to as many subteams as they are interested in joining. However, new members will only join one subteam upon being accepted to the team."
+  ];
+
   return (
 
     <Box>
@@ -349,7 +363,7 @@ export default function Apply() {
         </Stack>
       </Box>
 
-      <FAQSection />
+      <FAQ qn={questions} ans={answers}/>
     </Box>
   );
 }

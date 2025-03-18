@@ -1,5 +1,6 @@
 import SubteamPage from "../../components/SubteamPage";
 import React from "react";
+import { LinkToOtherSubteams } from "../../components/SubteamPage";
 
 export default function Kinetic() {
 
@@ -12,17 +13,24 @@ export default function Kinetic() {
     ];
 
     return (
-       <SubteamPage
-                name = "Kinetic"
-                desc = "Within the Kinetic Subteam, we specialize in the construction of 12lb high kinetic energy combat robots, including vertical spinners, horizontal spinners, full-body spinners, and drums. Our mission is to design and build highly efficient robots that excel in competitions."
-                optionalDesc = "We prioritize three key elements: damage-dealing capability, durability, and adaptability. Kinetic is dedicated to maintaining a competitive edge in the world of robotic warfare."
-                subsystemIntro = "Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
-                subsystems={subsystems}
-                otherInterest={[
-                    "• Creating creative/unique robots, our Sportsman Subteam may be a better fit",
-                    "• Circuitry/autonomous robots, our Autonomous Subteam may be a better fit",
-                    "• Front-end or game programming, business, art/design, our Marketing Subteam may be a better fit" 
-                ]}
-            />
+        <SubteamPage
+            name="Kinetic"
+            desc="Within the Kinetic Subteam, we specialize in the construction of 12lb high kinetic energy combat robots, including vertical spinners, horizontal spinners, full-body spinners, and drums. Our mission is to design and build highly efficient robots that excel in competitions."
+            optionalDesc="We prioritize three key elements: damage-dealing capability, durability, and adaptability. Kinetic is dedicated to maintaining a competitive edge in the world of robotic warfare."
+            subsystemIntro="Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
+            subsystems={subsystems}
+            otherInterest={[
+                <p>
+                    • Creating creative/unique robots, our {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
+                </p>,
+                <p>
+                    • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
+                </p>
+                ,
+                <p>
+                    • Front-end or game programming, business, art/design, our {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam may be a better fit
+                </p>
+            ]}
+        />
     );
 }
