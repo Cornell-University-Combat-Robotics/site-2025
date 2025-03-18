@@ -1,8 +1,8 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
+import FAQ from "../components/FAQ";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
 import RedBox from "../components/RedBox.tsx";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
@@ -13,6 +13,7 @@ import arrow_img from "../assets/arrow.png";
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
+  // ================================= JAVASCRIPT COMMANDS: SCROLL DOWN FOR WEBSITE ======================================================
 
   /** list of all events in the recruitment timeline */
   const event = [
@@ -128,10 +129,26 @@ export default function Apply() {
     }
   }, [userBottom]);
 
+  // =========================================== WEBSITE CONTENTS START HERE ======================================================
+  /** list of all FAQ questions & answers */
+  const questions = [
+    "Does CRC offer class credits?",
+    "What is the time commitment for this team?",
+    "Do I need technical experience? ",
+    "Can I join multiple subteams?"
+  ];
+
+  const answers = [
+    "Yes! All new members will enroll in ENGRG 1400 (Engineering Project Team Onboarding) for 1 credit (S/U) during their first full semester on the team. After this, members will enroll in ENGRG 3400 (Engineering Student Project Teams) for 3 credits (S/U) each semester. This credit can be applied to a number of degree requirements, such as Advisor-Approved and Technical electives.",
+    "Members are expected to spend 9 hours per week on CRC-related projects, in line with the team being a 3-credit course. This time is broken down into a 1-hour General Body meeting, three 2-hour subteam meetings, and 2 hours of involvement in projects or extra work sessions. We schedule our meetings around the availability of our members so that everyone can attend every meeting!",
+    "No! Upon joining the team, new members will have the opportunity to experience our customized training program to prepare them to join their respective subteams. We will teach you everything you need to know, no experience necessary!",
+    "Applicants are encouraged to apply to as many subteams as they are interested in joining. However, new members will only join one subteam upon being accepted to the team."
+  ];
+
   return (
 
-    <Box sx={{}}>
-      {/* above is body of site */}
+    <Box>
+      {/* header */}
       <Box sx={{
         width: '100%',
         height: '100vh',
@@ -156,8 +173,18 @@ export default function Apply() {
         </Typography>
       </Box>
 
-      {/* Alternative text for when applications are closed */}
-      {/* <Box padding={10} textAlign={"center"}>
+      {/* Page contents */}
+      <Box sx={{ mx: '15%' }}>
+        <RedBox
+          title="Our applications for Fall 2024 are open!"
+          text="All applications are due October 17th, 11:59pm."
+          word="Apply Now!"
+          link="/sponsors"
+          mTop="5%"
+        />
+
+        {/* Alternative text for when applications are closed */}
+        {/* <Box padding={10} textAlign={"center"}>
         <Typography
           // Our applications...h3 writing
           variant="h2"
@@ -177,175 +204,166 @@ export default function Apply() {
         </Typography>
       </Box> */}
 
-      <RedBox
-        title="Our applications for Fall 2024 are open!"
-        text="All applications are due October 17th, 11:59pm."
-        word="Apply Now!"
-        link="/sponsors"
-        mTop="5%"
-        mSide="15%"
-      />
-
-      <Typography
-        // Recruitment Timeline h1
-        variant="h2"
-        sx={{
-          textAlign: 'center',
-          color: 'white',
-          mb: 10
-          // add margins when text size smaller
-        }}>
-        RECRUITMENT TIMELINE
-      </Typography>
+        <Typography
+          // Recruitment Timeline
+          variant="h2"
+          sx={{
+            textAlign: 'center',
+            mt: "10%",
+            mb: '5%'
+            // add margins when text size smaller
+          }}>
+          RECRUITMENT TIMELINE
+        </Typography>
 
 
-      {/*Contains geometric timeline*/}
-      <Box
-        sx={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
-        <svg width="100%" height="20%">
-
-          <line
-            x1="10%" //coordinates of the line: 10% from the left
-            x2="85%" //TODO: change, last element is slightly off
-            y1="10%" //set 10% from top of svg component
-            y2="10%"
-            stroke={"white"}
-            strokeWidth="5"
-          >
-          </line>
-
-          {event.map(({ name, date }, index) => {
-            const xPos = [`${10 + index * 15}%`]; //increments x position to the right according to index
-
-            return (
-              <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
-                <circle
-                  cx={xPos}
-                  cy="10%" //same as line -> falls on line
-                  r={10} //radius
-                  fill="white" //color
-                >
-                </circle>
-
-                {/*Note: svg components do support attributes that Material-UI components usually use (e.g. variant, color)*/}
-                <text key={index} fill="white" fontFamily='Josefin Sans, sans-serif' fontSize={25} y="50%"
-                  textAnchor="middle" //horizontally centered
-                >
-                  {/*use tspan to separate texts, since svg does not support new-line*/}
-                  <tspan x={xPos} >
-                    {name}
-                  </tspan>
-                  <tspan x={xPos}
-                    dy="2rem" //changes y position of this tspan relative to tspan above
-                  >
-                    {date}
-                  </tspan>
-                </text>
-              </g>
-            );
-          })}
-
-        </svg>
-
-
-      </Box>
-
-
-      <Box width="100%" height="100%" mb={20}
-        sx={{
-          display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
-        }}>
-        <Box sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          width: '60%',
-          gap: '30px 40px',
-          height: '100%',
-        }}>
-          <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! If you cannot make any sessions you may contact us, but we strongly recommend attending an info session to meet the team directly." img={`url(${join01})`} />
-          <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 17th, 11:59pm" img={`url(${join02})`} />
-          <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} />
-          <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} />
-        </Box>
-      </Box>
-
-
-
-
-      <Typography variant="h2" mb={20}>
-        NEW MEMBER EXPERIENCE
-      </Typography>
-
-
-
-
-      <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={arrowBar} position="relative">
-        {/*arrow*/}
-        <svg width="10%" //svg component takes up 10% of stack & full height of stack
-        >
-          <line
-            x1="50%" //coordinates of the line: 50% from the left of svg component
-            x2="50%"
-            y1="5%" //set 5% from top of svg component
-            y2="90%"
-            stroke={"#820002"}
-            strokeWidth="25"
-          >
-          </line>
-        </svg>
-
-        <img
-          src={arrow_img}
-          style={{
-            transform: "scale(0.6)",
-            zIndex: "100",
-            position: "absolute",
-            bottom: "7%",
-            left: "8%"
+        {/*Contains geometric timeline*/}
+        <Box
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            height: '100%',
+            overflow: 'visible'
           }}
-          ref={arrow}
-        />
+        >
+          {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
+          <svg width="100%" height="20%">
+            <line
+              x1="0%" //coordinates of the line: 10% from the left
+              x2="100%" //TODO: change, last element is slightly off
+              y1="10%" //set 10% from top of svg component
+              y2="10%"
+              stroke={"#820002"}
+              strokeWidth="5"
+            >
+            </line>
 
-        {/*
+            {event.map(({ name, date }, index) => {
+              const xPos = [`${index * 20}%`]; //increments x position to the right according to index
+
+              return (
+                <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
+                  <circle
+                    cx={xPos}
+                    cy="10%" //same as line -> falls on line
+                    r={10} //radius
+                    fill="#820002" //color
+                  >
+                  </circle>
+
+                  {/*Note: svg components don't support attributes that Material-UI components usually use (e.g. variant, color)*/}
+                  <text key={index} fill="white" fontFamily='Josefin Sans, sans-serif' fontSize={24} y="50%"
+                    textAnchor="middle" //horizontally centered
+                  >
+                    {/*use tspan to separate texts, since svg does not support new-line*/}
+                    <tspan x={xPos} >
+                      {name}
+                    </tspan>
+                    <tspan x={xPos}
+                      dy="2rem" //changes y position of this tspan relative to tspan above
+                    >
+                      {date}
+                    </tspan>
+                  </text>
+                </g>
+              );
+            })}
+
+          </svg>
+
+
+        </Box>
+
+
+        <Box width="100%" height="100%" mb={'10%'}
+          sx={{
+            display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
+          }}>
+          <Box sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '4% 4%',
+            height: '100%',
+          }}>
+            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} />
+            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 17th, 11:59pm" img={`url(${join02})`} />
+            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} />
+            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} />
+          </Box>
+        </Box>
+
+
+
+
+        <Typography variant="h2" mb={20}>
+          NEW MEMBER EXPERIENCE
+        </Typography>
+
+
+
+
+        <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={arrowBar} position="relative">
+          {/*arrow*/}
+          <svg width="10%" //svg component takes up 10% of stack & full height of stack
+          >
+            <line
+              x1="50%" //coordinates of the line: 50% from the left of svg component
+              x2="50%"
+              y1="5%" //set 5% from top of svg component
+              y2="90%"
+              stroke={"#820002"}
+              strokeWidth="25"
+            >
+            </line>
+          </svg>
+
+          <img
+            src={arrow_img}
+            style={{
+              transform: "scale(0.6)",
+              zIndex: "100",
+              position: "absolute",
+              bottom: "7%",
+              left: "8%"
+            }}
+            ref={arrow}
+          />
+
+          {/*
         Scenarios:
         1) above arrow: isVisible = false && isBottomCrossed = false -> DON'T render
         3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
         2) below arrow: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON'T render
         */}
 
-        {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
-        {!isVisible && !isBottomCrossed &&
-          <RobotImage pos={"absolute"} top={"0%"} ref={null} />
-        }
+          {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
+          {!isVisible && !isBottomCrossed &&
+            <RobotImage pos={"absolute"} top={"0%"} ref={null} />
+          }
 
-        {/*static robot image at the bottom of the triangular part of arrow*/}
-        {isBottomCrossed &&
-          <RobotImage pos={"absolute"} bottom={"2%"} ref={null} />
-        }
+          {/*static robot image at the bottom of the triangular part of arrow*/}
+          {isBottomCrossed &&
+            <RobotImage pos={"absolute"} bottom={"2%"} ref={null} />
+          }
 
-        {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
-        {isVisible && !isBottomCrossed &&
-          <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
-        }
+          {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
+          {isVisible && !isBottomCrossed &&
+            <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
+          }
 
-        <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
-          <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-          <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-          <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-          <MemberExperienceComponent bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-          <MemberExperienceComponent bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
-          <MemberExperienceComponent bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
+            <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            <MemberExperienceComponent bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            <MemberExperienceComponent bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
+            <MemberExperienceComponent bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+          </Stack>
         </Stack>
-      </Stack>
+      </Box>
 
-      <FAQSection />
+      <FAQ qn={questions} ans={answers}/>
     </Box>
   );
 }
@@ -427,7 +445,7 @@ function FAQSection() {
           FAQ
         </Typography>
 
-        <Box width="75%" justifyContent="center" alignItems="center" mx="auto">
+        <Box justifyContent="center" alignItems="center" mx="auto">
           {/* Accordion Items */}
           <>
             <Accordion
@@ -542,6 +560,7 @@ function ApplicationSteplist({ name, desc, img }) {
         height: '100%',
         backgroundImage: img,
         backgroundSize: "100%",
+        filter: 'blur(0.4px)',
         backgroundPosition: "center",
         backgroundRepeat: 'no-repeat'
       }}
@@ -562,10 +581,8 @@ function ApplicationSteplist({ name, desc, img }) {
         sx={{
           textAlign: "left",
           mb: "10px",
-          mr: 15,
-          ml: "10px",
+          mx: '2%',
           mt: 5,
-          fontSize: 23,
           lineHeight: 1.5
         }}
       >

@@ -1,6 +1,7 @@
 import { Box, Typography, List, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import linkedin_button from "../assets/linkedin_button.png";
 
 export interface MemberProps {
   imgSrc: string;
@@ -55,19 +56,32 @@ export default function Member(props: MemberProps) {
         - on click for arrow to toggle
         */}
 
-        {/*linkedin button*/}
+        {/*linkedin button
+                  for text version of linkedin button: 
+                  */}
         <Button
           sx={{
             position: 'absolute', // Makes the button overlap
             borderRadius: 4, bgcolor: '#A10305',
             bottom: '5%', left: '5%',  // Places button within parent (Box)
-            minWidth: 0, width: '15%'
+            minWidth: 0, width: '16%', height: '16%'
           }}
           onClick={() => window.open(linkedin, '_blank')}
         >
+          {/* Text version:
           <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Josefin Sans, sans-serif', textTransform: "none" }}>
             {"in"}
           </Typography>
+           */}
+          <img
+            src={linkedin_button}
+            style={{
+              width: '65%',
+              height: '65%',
+              objectFit: "contain",
+              objectPosition: "center"
+            }}
+          />
         </Button>
 
         {/*animation controller for stats button*/}
@@ -92,12 +106,13 @@ export default function Member(props: MemberProps) {
                 <List sx={{ width: '85%' }}>
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
-                      <Typography sx={{
-                        fontSize: 17,
-                        color: 'black',
-                        wordWrap: 'break-word',
-                        overflowWrap: 'break-word'
-                      }}>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: 'black',
+                          wordWrap: 'break-word',
+                          overflowWrap: 'break-word'
+                        }}>
                         {desc}
                       </Typography>
 
@@ -127,7 +142,8 @@ export default function Member(props: MemberProps) {
             onMouseEnter={() => setShowStats(true)}
             onMouseLeave={() => setShowStats(false)}
           >
-            <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Arial', textTransform: "none" }}>
+
+            <Typography variant="body2" sx={{ color: 'white', textTransform: "none" }}>
               {"Stats"}
             </Typography>
           </Button>

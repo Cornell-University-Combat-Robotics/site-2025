@@ -38,6 +38,7 @@ export default function GradientNavBar() {
         <NavBarButton bg="none" text="Sponsors" variant="secondary" />
         <NavBarButton bg="none" text="Game" variant="secondary" />
         <NavBarButton bg="none" text="Apply" variant="secondary" />
+        <NavBarButton bg="none" text="Merch" variant="secondary" />
       </Box>
     </Box>
   );

@@ -1,7 +1,8 @@
 import SubteamPage from "../../components/SubteamPage";
 import React from "react";
+import { LinkToOtherSubteams } from "../../components/SubteamPage";
 
-/*Marketing subteam page within Team Page*/
+/** Marketing subteam page within Team Page */
 export default function Marketing() {
 
     //array for subsystem with key-value pairs
@@ -20,8 +21,12 @@ export default function Marketing() {
             subsystemIntro="Our approach to marketing revolves around four critical subsystems:" //TODO: make bold
             subsystems={subsystems}
             otherInterest={[
-                "• Robot construction. our Kinetic or Sportsman subteams may be a better fit",
-                "• Programming or wiring, our Autonomous subteam may be a better fit"
+                <p>
+                    • Robot construction. Our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
+                </p>,
+                <p>
+                    • Programming or wiring, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
+                </p>
             ]}
         />
     );
