@@ -76,7 +76,6 @@ function Carousel(props: Carousel1) {
                     width: "100vw",
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: '#3D0E0E',
                     zIndex: "-10"
                 }}>
                     {/* iterate over each panel: 3 CELLS! must use Array.from because we go by cells */}
