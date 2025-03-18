@@ -28,31 +28,22 @@ const StickyBox: React.FC = () => {
   }, []);
 
   return (
-    <Container maxWidth="sm">
-      <Box
-        sx={{
-          height: "120vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          position: "relative",
-          width: "100%",
-        }}
-      >
-        <Box
-          ref={videoRef}
-          sx={{
-            position: isSticky ? "sticky" : "relative",
-            top: isSticky ? "50px" : "unset",
-            display: "flex",
-            justifyContent: "center",
-            width: "100vw",
-          }}
-        >
-          <ScrollControlledVideo />
-        </Box>
-      </Box>
-    </Container>
+    <Box
+      ref={videoRef}
+      sx={{
+        position: isSticky ? "sticky" : "relative",
+        // top: isSticky ? "5%" : "unset",
+        display: "flex",
+        justifyContent: "center",
+        width: "98vw",
+        height: "auto",
+        flexDirection: "column",
+        alignItems: "center",
+        overflow: 'hidden',
+      }}
+    >
+      <ScrollControlledVideo />
+    </Box>
   );
 };
 

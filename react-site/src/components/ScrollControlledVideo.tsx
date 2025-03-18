@@ -30,8 +30,8 @@ const HeroAnimation: React.FC = () => {
     contextRef.current = context;
 
     img.onload = function () {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = img.width;
+      canvas.height = img.height;
       context.drawImage(img, 0, 0);
     };
 
