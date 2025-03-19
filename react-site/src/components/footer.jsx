@@ -80,12 +80,12 @@ const Footer = () => {
         </IconButton>
       </Stack>
 
-      <Box display="flex" justifyContent="flex-end" alignItems="center" width="100%" mr="2%" flexDirection="row" gap="1%">
-        <Typography variant="body1" color="white" >
+      <Box display="flex" justifyContent="flex-end" alignItems="center" width="100%" mr="2%" flexDirection="row" gap="0.5%">
+        <Typography variant="body2" color="white" >
           This organization is a registered student organization of Cornell University.
         </Typography>
         <a href="/accessibility">
-          <Typography color="white" sx={{ textDecoration: 'underline' }}>
+          <Typography variant="body2" color="white" sx={{ textDecoration: 'underline' }}>
             Accessibility Assistance
           </Typography>
         </a>

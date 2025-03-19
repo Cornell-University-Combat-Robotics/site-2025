@@ -22,7 +22,7 @@ export default function Apply() {
     { name: 'Info Session 1', date: '6/11/25' },
     { name: 'Info Session 2', date: '6/12/25' },
     { name: 'Info Session 3', date: '6/13/25' },
-    { name: 'Applications Due', date: '11.59PM  7/1/25' }
+    { name: 'Applications Due', date: '11:59PM  7/1/25' }
   ];
 
   /** boolean value for when user's viewport successfully intersects with arrow */
@@ -209,7 +209,7 @@ export default function Apply() {
           variant="h2"
           sx={{
             textAlign: 'center',
-            mt: "10%",
+            mt: "7%",
             mb: '5%'
             // add margins when text size smaller
           }}>
@@ -220,9 +220,11 @@ export default function Apply() {
         {/*Contains geometric timeline*/}
         <Box
           sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
+            position: 'relative',
+            //justifyContent: 'center',
+            //alignItems: 'center',
+            width: '130%',
+            left: '-15%',
             height: '100%',
             overflow: 'visible'
           }}
@@ -230,8 +232,8 @@ export default function Apply() {
           {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
           <svg width="100%" height="20%">
             <line
-              x1="0%" //coordinates of the line: 10% from the left
-              x2="100%" //TODO: change, last element is slightly off
+              x1="10%" //coordinates of the line: 10% from the left
+              x2="90%" //TODO: change, last element is slightly off
               y1="10%" //set 10% from top of svg component
               y2="10%"
               stroke={"#820002"}
@@ -240,7 +242,7 @@ export default function Apply() {
             </line>
 
             {event.map(({ name, date }, index) => {
-              const xPos = [`${index * 20}%`]; //increments x position to the right according to index
+              const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`]; //increments x position to the right according to index
 
               return (
                 <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
@@ -276,7 +278,7 @@ export default function Apply() {
         </Box>
 
 
-        <Box width="100%" height="100%" mb={'10%'}
+        <Box width="100%" height="100%" mt={'10%'} mb={'15%'}
           sx={{
             display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
           }}>
@@ -296,7 +298,7 @@ export default function Apply() {
 
 
 
-        <Typography variant="h2" mb={20}>
+        <Typography variant="h2" mb={5}>
           NEW MEMBER EXPERIENCE
         </Typography>
 
