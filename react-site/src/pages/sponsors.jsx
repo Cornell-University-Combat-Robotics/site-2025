@@ -6,6 +6,9 @@ import FAQ from "../components/FAQ";
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
 
+  const cornellDonate = "https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1"
+  const givingDay = "https://givingday.cornell.edu/campaigns/combat-robotics"
+
   /** list of all FAQ questions & answers */
   const questions = [
     "I am a company, how can I sponsor?",
@@ -14,32 +17,24 @@ export default function Sponsors() {
     "I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?"
   ];
 
-  const answers = [
-    "Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor.",
-    "You can donate through the same platforms a company would: via mail by filling out the donation form listed on the Sponsorship Packet, or electronically donate through Cornell, or donate on Giving Day.",
-    "Donate through the same portal listed above, and email us to notify you wish to renew or update your sponsorship.",
-    "Email us and we would be happy to make arrangements!"
-  ];
-
   //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
-  {/**
-  otherInterest = {
+  const answers =
     [
-    <p>
-      Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor. {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
-    </p>,
-    <p>
-      • Coding for websites and video games, check out the Marketing Subteam {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
-    </p>,
-    <p>
-      • Business and corporate sponsorships, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
-    </p>
-    ,
-    <p>
-      Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
-    </p>
-    ]}
- */}
+      <p>
+        Via mail by filling out the donation form listed on the {LinkToID({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToID({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToID({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
+      </p>,
+      <p>
+        You can donate through the same platforms a company would: via mail by filling out the donation form listed on the {LinkToID({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToID({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToID({ id: givingDay, text: "Giving Day" })}.
+      </p>,
+      <p>
+        Donate through the same {LinkToID({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
+      </p>
+      ,
+      <p>
+        Email us and we would be happy to make arrangements!
+      </p>
+    ]
+
   return (
     <Box>
       <Box sx={{
@@ -66,7 +61,7 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
+      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }} id="sponsor-box">
         OUR SPONSORS
       </Typography>
       {/*Three horizontal buttons for 3 actions users can do. Nested in a double 
@@ -77,10 +72,10 @@ export default function Sponsors() {
       when clicked. &hover is for making the text color white (don't change when
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
-        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
+        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }} >
           <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
-          <Button href="https://givingday.cornell.edu/campaigns/combat-robotics" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
         </Box>
       </Box>
 
@@ -483,5 +478,18 @@ export default function Sponsors() {
       <FAQ qn={questions} ans={answers} />
 
     </Box>
+  );
+}
+
+function LinkToID({ id, text }) {
+  return (
+    //not sure why you can't use Link instead, but at least <a> works
+    <a href={id}
+      target="_blank" // Opens in a new tab
+      rel="noopener noreferrer" // Security best practice
+      style={{ color: "white", textDecoration: "underline" }}
+    >
+      {text}
+    </ a>
   );
 }
