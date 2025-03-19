@@ -295,17 +295,11 @@ export default function Apply() {
           </Box>
         </Box>
 
-
-
-
         <Typography variant="h2" mb={5}>
           NEW MEMBER EXPERIENCE
         </Typography>
 
-
-
-
-        <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={arrowBar} position="relative">
+        <Stack direction="row" gap={10} ref={arrowBar} position="relative">
           {/*arrow*/}
           <svg width="10%" //svg component takes up 10% of stack & full height of stack
           >
@@ -354,7 +348,7 @@ export default function Apply() {
             <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
           }
 
-          <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
+          <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
             <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
             <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
             <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
@@ -365,7 +359,7 @@ export default function Apply() {
         </Stack>
       </Box>
 
-      <FAQ qn={questions} ans={answers}/>
+      <FAQ qn={questions} ans={answers} />
     </Box>
   );
 }
@@ -409,11 +403,12 @@ function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
       <Box textAlign={"left"} padding={5}
         bgcolor={bgcolor} //bgcolors arent inherited
       >
-        <Typography variant="h4" >
+        <Typography variant="h4" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
         </Typography>
 
-        <Typography fontSize={30} fontStyle="italic" mb={5}>
+        {/* Why is this not italicized?? */}
+        <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
           {subtitle}
         </Typography>
 

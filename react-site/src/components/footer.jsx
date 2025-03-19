@@ -15,6 +15,8 @@ const Footer = () => {
         bottom: "0px",
         display: "flex",
         height: "2.5%",
+        minHeight: "50px",
+        padding: "6px 0",
         backgroundColor: "#b11c1c",
       }}
     >
