@@ -22,7 +22,7 @@ export default function Apply() {
     { name: 'Info Session 1', date: '6/11/25' },
     { name: 'Info Session 2', date: '6/12/25' },
     { name: 'Info Session 3', date: '6/13/25' },
-    { name: 'Applications Due', date: '11.59PM  7/1/25' }
+    { name: 'Applications Due', date: '11:59PM  7/1/25' }
   ];
 
   /** boolean value for when user's viewport successfully intersects with arrow */
@@ -209,7 +209,7 @@ export default function Apply() {
           variant="h2"
           sx={{
             textAlign: 'center',
-            mt: "10%",
+            mt: "7%",
             mb: '5%'
             // add margins when text size smaller
           }}>
@@ -220,9 +220,11 @@ export default function Apply() {
         {/*Contains geometric timeline*/}
         <Box
           sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
+            position: 'relative',
+            //justifyContent: 'center',
+            //alignItems: 'center',
+            width: '130%',
+            left: '-15%',
             height: '100%',
             overflow: 'visible'
           }}
@@ -230,8 +232,8 @@ export default function Apply() {
           {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
           <svg width="100%" height="20%">
             <line
-              x1="0%" //coordinates of the line: 10% from the left
-              x2="100%" //TODO: change, last element is slightly off
+              x1="10%" //coordinates of the line: 10% from the left
+              x2="90%" //TODO: change, last element is slightly off
               y1="10%" //set 10% from top of svg component
               y2="10%"
               stroke={"#820002"}
@@ -240,7 +242,7 @@ export default function Apply() {
             </line>
 
             {event.map(({ name, date }, index) => {
-              const xPos = [`${index * 20}%`]; //increments x position to the right according to index
+              const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`]; //increments x position to the right according to index
 
               return (
                 <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
@@ -276,7 +278,7 @@ export default function Apply() {
         </Box>
 
 
-        <Box width="100%" height="100%" mb={'10%'}
+        <Box width="100%" height="100%" mt={'10%'} mb={'15%'}
           sx={{
             display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
           }}>
@@ -293,17 +295,11 @@ export default function Apply() {
           </Box>
         </Box>
 
-
-
-
-        <Typography variant="h2" mb={20}>
+        <Typography variant="h2" mb={5}>
           NEW MEMBER EXPERIENCE
         </Typography>
 
-
-
-
-        <Stack direction="row" paddingRight={20} paddingLeft={20} gap={10} ref={arrowBar} position="relative">
+        <Stack direction="row" gap={10} ref={arrowBar} position="relative">
           {/*arrow*/}
           <svg width="10%" //svg component takes up 10% of stack & full height of stack
           >
@@ -352,7 +348,7 @@ export default function Apply() {
             <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
           }
 
-          <Stack direction="column" alignItems="center" rowGap={10} height="100%" width="80%" mb={20}>
+          <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
             <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
             <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
             <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
@@ -363,7 +359,7 @@ export default function Apply() {
         </Stack>
       </Box>
 
-      <FAQ qn={questions} ans={answers}/>
+      <FAQ qn={questions} ans={answers} />
     </Box>
   );
 }
@@ -407,11 +403,12 @@ function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
       <Box textAlign={"left"} padding={5}
         bgcolor={bgcolor} //bgcolors arent inherited
       >
-        <Typography variant="h4" >
+        <Typography variant="h4" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
         </Typography>
 
-        <Typography fontSize={30} fontStyle="italic" mb={5}>
+        {/* Why is this not italicized?? */}
+        <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
           {subtitle}
         </Typography>
 

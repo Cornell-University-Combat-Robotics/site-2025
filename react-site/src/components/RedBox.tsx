@@ -14,14 +14,14 @@ export interface RedBoxProps {
 export default function RedBox(props: RedBoxProps) {
   return (
     <Box bgcolor="#820002" sx={{ borderRadius: 5, my: `${props.mTop}`, mx: `${props.mSide}` }}>
-      <Typography variant="body2" sx={{ pt: '5%', pb: '2%', textAlign: "center" }}>{props.title}</Typography>
-      <Typography variant="body2" sx={{ pb: '5%', textAlign: "center", fontWeight: 'bold' }}>{props.text}</Typography>
+      <Typography variant="body1" sx={{ pt: '5%', pb: '2%', textAlign: "center" }}>{props.title}</Typography>
+      <Typography variant="body1" sx={{ pb: '2%', textAlign: "center", fontWeight: 'bold' }}>{props.text}</Typography>
       {/* TODO: Restrict link area to only the button. */}
       <Box sx={{ paddingBottom: `${props.mTop}` }}>
         <Link to={props.link} style={{ color: "inherit" }}>
           {/* button */}
-          <Box bgcolor="#B23030" boxShadow={7} sx={{ borderRadius: 12, width: "50%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
-            <Typography variant="h4" sx={{ textAlign: "center", padding: 1, fontFamily: 'Josefin Sans' }}>{props.word}</Typography>
+          <Box bgcolor="rgba(255, 94, 94, 0.5)" sx={{ borderRadius: 12, width: "50%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto", boxShadow: "3px 5px 0px rgba(0, 0, 0, 0.4)" }}>
+            <Typography variant="body1" sx={{ textAlign: "center", padding: 1 }}>{props.word}</Typography>
           </Box>
         </Link>
       </Box>
