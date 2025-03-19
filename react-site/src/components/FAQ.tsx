@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export interface FAQSection {
   qn: string[],
-  ans: string[] //cuz need link
+  ans: JSX.Element[] //cuz need link, so need to pass in <p> instead of string
 }
 
 function FAQ(props: FAQSection) {
