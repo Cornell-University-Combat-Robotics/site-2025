@@ -314,9 +314,9 @@ export default function Apply() {
           NEW MEMBER EXPERIENCE
         </Typography>
 
-        <Stack direction="row" gap={10} ref={arrowBar} position="relative">
+        <Stack direction="row" gap={10} ref={arrowBar} position="relative" >
           {/*arrow*/}
-          <svg width="10%" //svg component takes up 10% of stack & full height of stack
+          <svg width="10%" //svg component takes up 10% of stack & full height of stack 
           >
             <line
               x1="50%" //coordinates of the line: 50% from the left of svg component
@@ -336,7 +336,7 @@ export default function Apply() {
               zIndex: "100",
               position: "absolute",
               bottom: "7%",
-              left: "8%"
+              left: "-8%"
             }}
             ref={arrow}
           />
@@ -350,17 +350,17 @@ export default function Apply() {
 
           {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
           {!isVisible && !isBottomCrossed &&
-            <RobotImage pos={"absolute"} top={"0%"} ref={null} />
+            <RobotImage pos={"absolute"} top={"0%"} ref={null} lft={"-9.25%"} />
           }
 
           {/*static robot image at the bottom of the triangular part of arrow*/}
           {isBottomCrossed &&
-            <RobotImage pos={"absolute"} bottom={"2%"} ref={null} />
+            <RobotImage pos={"absolute"} bottom={"2%"} ref={null} lft={"-9.25%"} />
           }
 
           {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
           {isVisible && !isBottomCrossed &&
-            <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
+            <RobotImage pos={"fixed"} top={"20%"} lft={"8.5%"} ref={robot} />
           }
 
           <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
@@ -383,7 +383,7 @@ export default function Apply() {
   - Note: must use const & forwardRef cuz functional components (like function RobotImage = ...) can't accept refs directly 
   unless wrapped with React.forwardRef
   */ }
-const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
+const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
   return (
     <img
       src={robot_scroll}
@@ -392,7 +392,7 @@ const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
         transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
         zIndex: "100",
         position: pos,
-        left: "7%",
+        left: lft,
         ...(top ? { top } : {}), // optional argument: Apply top only if passed
         ...(bottom ? { bottom } : {}) // Apply bottom only if passed
       }}
