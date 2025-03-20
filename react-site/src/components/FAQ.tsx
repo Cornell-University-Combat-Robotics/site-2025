@@ -83,4 +83,18 @@ function QnAndDescription({qn, ans}) {
   );
 }
 
+export function LinkToPage ({ id, text }) {
+  return (
+    //not sure why you can't use Link instead, but at least <a> works
+    <a href={id}
+      target="_blank" // Opens in a new tab
+      rel="noopener noreferrer" // Security best practice
+      style={{ color: "white", textDecoration: "underline" }}
+    >
+      {text}
+    </ a>
+  );
+}
+
+
 export default FAQ;
