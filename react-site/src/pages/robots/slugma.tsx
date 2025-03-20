@@ -52,7 +52,7 @@ export default function Slugma() {
           length: "3:30"
         }
       ]}
-      gallery={["/src/assets/nardo-whole.png", "/src/assets/team-photo-hearts.png", "/src/assets/team-photo-formal.png", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]}
+      gallery={["../src/assets/3lb/slugma_profile.jpg", "../src/assets/3lb/batbot.png", "../src/assets/3lb/hestr_profile.png", "../src/assets/3lb/slugma_profile.jpg", "../src/assets/3lb/swiss_slinger_profile.png"]}
     />
   );
 }

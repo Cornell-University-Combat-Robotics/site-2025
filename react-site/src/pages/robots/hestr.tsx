@@ -5,27 +5,30 @@ export default function Hestr() {
   return (
     <IndividualRobot
       name="Dauður Hestr"
-      makers={["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"]}
-      description="FLAMETHROWERS!! Who doesn’t love flamethrowers?"
+      makers={["Xia Yan Zhao", "Tyler Loverjoy", "Ethan Decamp", "Kaila Danielson"]}
+      description="Dauður Hestr is themed around Nordic culture, specifically their strongest warrior’s hammer: mjolnir. 
+      The gray color and lightning follow’s Thor’s specialities and strikes fear into the hearts of those around it."
       image="/src/assets/3lb/hestr_profile.png"
       stats={{
-        vintage: "2024", 
-        height: "0 ft",
-        weight: "0 lbs",
-        fights: "None, yet...",
-        wins: "∞",
-        top_speed: "So much faster than a slug",
-        weapon_speed: "5 rpm",
-        most_damaged_part: "Lifter",
-        favorite_movie: "Pokemon: Destiny Deoxys"
+        vintage: "2024",
+        height: "4.1 inches",
+        weight: "2.99 lbs, yet inliftable",
+        fights: "at least 3.2",
+        wins: "100%, you can't beat a dead horse",
+        top_speed: "Lightning fast",
+        weapon_speed: "419 oz-in (30.20 kgf-cm)",
+        most_damaged_part: "Our big Hammer 🔨",
+        favorite_movie: "Thor: Ragnarok 🎬"
       }}
       featured_fight="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
-      design="Slugma is an all-rounder battle-bot, with not one, but two weapons in its arsenal: 
-      a vertical lifter and a flamethrower. By firstly lifting its opponent off the ground, 
-      Slugma activates its secret move: paralysis. Then, Slugma activates its fire breathing ability 
-      to deal fatal damage, ending the battle once-and-for-all."
-      trivia={["Slugma was originally named Venus Fly Trap, following the team’s original idea of making vertical clampers. But having hot TPU drip down onto the top of our robot would unfortunately be fatal, and so we changed the clampers to vertical lifters instead!", 
-        "Trivia 2"]}
+      design="Dauður Hestr is a sportsman-type robot, with a large hammer that takes most of its weight. 
+      The hammer is hollow aluminum, and is actuated by a series of gears. 
+      With a strong weapon motor, the drive motors tried to balance speed and pushing force with an emphasis on pushing force."
+      trivia={["Yeah, I'm gonna take my horse to the old town road……",
+        "I'm gonna ride 'til I can't no more",
+        "Dead Horse",
+        "Dauður Hestr is a mix of old norse and icelandic so it sounds better.",
+        "Dauður Hestr is a poker shark. "]}
       fights={[
         {
           event: "Event 1",

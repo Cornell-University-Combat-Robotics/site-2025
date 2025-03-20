@@ -30,13 +30,24 @@ export default function NavBarButton(props: NavBarButtonProps) {
       }}
       disableRipple
     >
-      <Link
-        // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
-        to={"/" + (props.text.toLowerCase() == "about" ? "" : props.text.toLowerCase())}
-        style={{ color: "inherit" }}
-      >
-        <Typography variant="body1" sx={{ margin: 0 }}>{props.text}</Typography>
-      </Link>
+      {/*if merch button clicked, then should open up in another page
+      - note: cannot use if-statement in jsx component*/}
+      {props.text.toLowerCase() === "merch" ? (
+        <Link to={"https://www.redbubble.com/people/CombatRobots/shop"}
+          target="_blank" //Opens in a new tab
+          rel="noopener noreferrer" //Prevents security vulnerabilities when opening external links, apparently lol
+          style={{ color: "white" }}>
+          <Typography variant="body2" sx={{ margin: 0 }}>{props.text}</Typography>
+        </Link>
+      ) : (
+        <Link
+          // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
+          to={"/" + (props.text.toLowerCase() == "about" ? "" : props.text.toLowerCase())}
+          style={{ color: "inherit" }}
+        >
+          <Typography variant="body2" sx={{ margin: 0 }}>{props.text}</Typography>
+        </Link>
+      )}
     </Button>
   );
 }
