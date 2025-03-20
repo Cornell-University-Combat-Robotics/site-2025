@@ -30,8 +30,8 @@ export default function RobotCardList(props: RobotCardListProps) {
         width: "fit-content",
       }}>
         {/* Accesses the specific category in the RobotsData file, creating a RobotCard component for each individual robot. */}
-        {RobotsData[type].map((props2) => (
-          <RobotCard {...props2} />
+        {RobotsData[type].map((props2, index) => (
+          <RobotCard key={index} {...props2} />
         ))}
       </Box>
     </>
