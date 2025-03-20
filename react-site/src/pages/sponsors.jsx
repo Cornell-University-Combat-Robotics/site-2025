@@ -2,6 +2,7 @@ import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, Acco
 import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
 import FAQ from "../components/FAQ";
+import { LinkToPage } from "../components/FAQ.tsx";
 
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
@@ -21,13 +22,20 @@ export default function Sponsors() {
   const answers =
     [
       <p>
-        Via mail by filling out the donation form listed on the {LinkToID({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToID({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToID({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
+        Via mail by filling out the donation form listed on the {LinkToPage
+       ({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToPage
+       ({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToPage
+       ({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
       </p>,
       <p>
-        You can donate through the same platforms a company would: via mail by filling out the donation form listed on the {LinkToID({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToID({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToID({ id: givingDay, text: "Giving Day" })}.
+        You can donate through the same platforms a company would: via mail by filling out the donation form listed on the {LinkToPage
+       ({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToPage
+       ({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToPage
+       ({ id: givingDay, text: "Giving Day" })}.
       </p>,
       <p>
-        Donate through the same {LinkToID({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
+        Donate through the same {LinkToPage
+       ({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
       </p>
       ,
       <p>
@@ -478,18 +486,5 @@ export default function Sponsors() {
       <FAQ qn={questions} ans={answers} />
 
     </Box>
-  );
-}
-
-function LinkToID({ id, text }) {
-  return (
-    //not sure why you can't use Link instead, but at least <a> works
-    <a href={id}
-      target="_blank" // Opens in a new tab
-      rel="noopener noreferrer" // Security best practice
-      style={{ color: "white", textDecoration: "underline" }}
-    >
-      {text}
-    </ a>
   );
 }
