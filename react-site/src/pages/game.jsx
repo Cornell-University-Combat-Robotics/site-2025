@@ -70,6 +70,7 @@ export default function Game() {
         alignItems: "center",
         overflow: "hidden",
         position: "relative",
+        
         // backgroundColor: "yellow"
       }}
     >
@@ -108,6 +109,7 @@ export default function Game() {
       style={{ marginLeft: "20px", marginBottom: "16px", border: "none"}} 
       title="Combat Robotics Game"
       allowFullScreen
+      cursor="crosshair"
     />
 
 {/* "../assets/gamepage/arcade.png" */}
@@ -120,9 +122,9 @@ export default function Game() {
         initial={{ scale: 0.3 }}
         animate={{ scale: 0.85, y: "45px" }}
         transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
-        style={{ position: "absolute", zIndex: -1}}
+        style={{ position: "absolute", zIndex: -1,}}
       >
-        <img src={arcade} style={{ width: "auto", height: "100%" }} />
+        <img src={arcade} style={{ width: "auto", height: "100%", }} />
         {/* <Box 
           sx={{
             backgroundColor:"yellow",
@@ -146,7 +148,7 @@ export default function Game() {
         initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: -100 }}
         transition={{ duration: 1, delay: 1 }}
-        style={{ position: "relative", zIndex: 1 }}
+        style={{ position: "relative", zIndex: 1,  }}
       >
         <Typography
           variant="h1"
@@ -168,7 +170,7 @@ export default function Game() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        style={{ position: "relative", zIndex: 1, marginTop: "20px"}}
+        style={{ position: "relative", zIndex: 1, marginTop: "20px", }}
       >
         <Box
           sx={{
@@ -192,6 +194,7 @@ export default function Game() {
               alignItems: "center",
               width: "100%",
               overflow: "visible",
+              
             }}
           >
             {images.map((image, index) => (
