@@ -6,7 +6,7 @@ const HeroAnimation: React.FC = () => {
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
 
   // Set this to the number of frames there are in the video
-  const frameCount = 180;
+  const frameCount = 185;
 
   // Set this to the path where the folder of the frames are
   const currentFrame = (index: number): string =>

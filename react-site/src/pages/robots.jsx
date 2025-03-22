@@ -1,7 +1,8 @@
 import nardo_whole from '../assets/nardo-whole.png';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Container } from '@mui/material';
 import RobotCard from '../components/RobotCard';
 import RobotCardList from '../components/RobotCardList';
+import StickyBox from '../components/StickyBox.tsx';
 
 export default function Robots() {
   return (
