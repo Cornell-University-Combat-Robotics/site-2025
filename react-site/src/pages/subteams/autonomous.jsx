@@ -25,14 +25,14 @@ export default function Autonomous() {
                     • More intensive robot building and simpler circuits (with no coding), check out the {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
                 </p>,
                 <p>
-                    • Coding for websites and video games, check out the Marketing Subteam {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+                    • Coding for websites and video games, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
                 </p>,
                 <p>
                     • Business and corporate sponsorships, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
                 </p>
                 ,
                 <p>
-                    Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+                    • Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
                 </p>
             ]}
         />
