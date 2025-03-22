@@ -534,9 +534,19 @@ function ApplicationSteplist({ name, desc, img }) {
 }
 
 function LinkToID({ id, text }) {
+
+  const [isHover, setHover] = useState(false);
+
   return (
     <a href={`#${id}`}
-      style={{ color: "white", textDecoration: "underline" }}
+      style={{ 
+        color: isHover ? "red" : "white", 
+        textDecoration: "underline" 
+      }}
+
+
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       {text}
     </ a>
