@@ -22,7 +22,7 @@ export default function Marketing() {
             subsystems={subsystems}
             otherInterest={[
                 <p>
-                    • Robot construction. Our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
+                    • Robot construction, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
                 </p>,
                 <p>
                     • Programming or wiring, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
