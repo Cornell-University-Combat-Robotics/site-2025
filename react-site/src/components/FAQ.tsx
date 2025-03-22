@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -84,12 +84,21 @@ function QnAndDescription({qn, ans}) {
 }
 
 export function LinkToPage ({ id, text }) {
+
+  const [isHover, setHover] = useState(false);
+
   return (
     //not sure why you can't use Link instead, but at least <a> works
     <a href={id}
       target="_blank" // Opens in a new tab
       rel="noopener noreferrer" // Security best practice
-      style={{ color: "white", textDecoration: "underline" }}
+      style={{ 
+        color: isHover ? "red" : "white", 
+        textDecoration: "underline" 
+      }}
+
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       {text}
     </ a>

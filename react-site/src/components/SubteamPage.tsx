@@ -82,7 +82,7 @@ export default function SubteamPage(props: SubteamProps) {
                 */}
                 <Box sx={{ height: '100vh', position: 'relative' }}>
 
-                 
+
 
                 </Box>
 
@@ -244,7 +244,18 @@ function SubsystemButtonDisplay({ name, desc }) {
 
 {/** Component creating hyperlink to other pages */ }
 export function LinkToOtherSubteams({ url, text }) {
+
+    const [isHover, setHover] = useState(false);
+
     return (
-        <Link to={url} style={{ color: "white", textDecoration: "underline" }}>{text}</Link>
+        <Link 
+            to={url}
+            style={{
+                color: isHover ? "red" : "white",
+                textDecoration: "underline"
+            }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+        > {text}</Link >
     );
 }

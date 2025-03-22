@@ -155,10 +155,22 @@ export default function Apply() {
       ,
       <p>
         Applicants are encouraged to apply to as many {LinkToPage
-       ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
+          ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
       </p>
     ]
 
+  const [yPos, setYPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setYPos(window.scrollY);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
 
@@ -314,9 +326,9 @@ export default function Apply() {
           NEW MEMBER EXPERIENCE
         </Typography>
 
-        <Stack direction="row" gap={10} ref={arrowBar} position="relative">
+        <Stack direction="row" gap={10} ref={arrowBar} position="relative" >
           {/*arrow*/}
-          <svg width="10%" //svg component takes up 10% of stack & full height of stack
+          <svg width="30%" //svg component takes up 10% of stack & full height of stack 
           >
             <line
               x1="50%" //coordinates of the line: 50% from the left of svg component
@@ -327,41 +339,85 @@ export default function Apply() {
               strokeWidth="25"
             >
             </line>
+
+            {/*Must have foreign object tag to nest MUI component within svg*/}
+            <foreignObject x="0%" y="90%" width="100%" height="3%" >
+              <img
+                src={arrow_img}
+                style={{
+                  zIndex: "100",
+                  width: "100%",
+                  height: "100%"
+                }}
+                ref={arrow}
+              />
+            </foreignObject>
+
+
+            {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component*/}
+            {!isVisible && !isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+
+            {/*static robot image at the bottom of the triangular part of arrow*/}
+            {isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y="89%" >
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+
+            {/** right idea, wrong math
+           * 
+            {isVisible && !isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y={`${yPos / 60}%`} >
+                {console.log("inner yPos", yPos / 150)};
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+           * 
+           */}
+
           </svg>
 
-          <img
-            src={arrow_img}
-            style={{
-              transform: "scale(0.6)",
-              zIndex: "100",
-              position: "absolute",
-              bottom: "7%",
-              left: "8%"
-            }}
-            ref={arrow}
-          />
+
 
           {/*
+
+
         Scenarios:
         1) above arrow: isVisible = false && isBottomCrossed = false -> DON'T render
         3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
         2) below arrow: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON'T render
         */}
 
-          {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
-          {!isVisible && !isBottomCrossed &&
-            <RobotImage pos={"absolute"} top={"0%"} ref={null} />
-          }
-
-          {/*static robot image at the bottom of the triangular part of arrow*/}
-          {isBottomCrossed &&
-            <RobotImage pos={"absolute"} bottom={"2%"} ref={null} />
-          }
-
-          {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
+          {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)            */}
           {isVisible && !isBottomCrossed &&
-            <RobotImage pos={"fixed"} top={"20%"} ref={robot} />
+            <RobotImage pos={"fixed"} top={"20%"} lft={"10.6%"} ref={robot} />
           }
+
 
           <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
             <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
@@ -383,7 +439,7 @@ export default function Apply() {
   - Note: must use const & forwardRef cuz functional components (like function RobotImage = ...) can't accept refs directly 
   unless wrapped with React.forwardRef
   */ }
-const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
+const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
   return (
     <img
       src={robot_scroll}
@@ -392,7 +448,7 @@ const RobotImage = forwardRef(({ pos, top, bottom }, ref) => {
         transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
         zIndex: "100",
         position: pos,
-        left: "7%",
+        left: lft,
         ...(top ? { top } : {}), // optional argument: Apply top only if passed
         ...(bottom ? { bottom } : {}) // Apply bottom only if passed
       }}
@@ -478,9 +534,19 @@ function ApplicationSteplist({ name, desc, img }) {
 }
 
 function LinkToID({ id, text }) {
+
+  const [isHover, setHover] = useState(false);
+
   return (
     <a href={`#${id}`}
-      style={{ color: "white", textDecoration: "underline" }}
+      style={{ 
+        color: isHover ? "red" : "white", 
+        textDecoration: "underline" 
+      }}
+
+
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       {text}
     </ a>
