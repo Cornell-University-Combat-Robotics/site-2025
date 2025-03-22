@@ -155,7 +155,7 @@ export default function Apply() {
       ,
       <p>
         Applicants are encouraged to apply to as many {LinkToPage
-       ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
+          ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
       </p>
     ]
 
@@ -316,7 +316,7 @@ export default function Apply() {
 
         <Stack direction="row" gap={10} ref={arrowBar} position="relative" >
           {/*arrow*/}
-          <svg width="10%" //svg component takes up 10% of stack & full height of stack 
+          <svg width="30%" //svg component takes up 10% of stack & full height of stack 
           >
             <line
               x1="50%" //coordinates of the line: 50% from the left of svg component
@@ -327,19 +327,52 @@ export default function Apply() {
               strokeWidth="25"
             >
             </line>
+
+            {/*Must have foreign object tag to nest MUI component within svg*/}
+            <foreignObject x="0%" y="90%" width="100%" height="3%" >
+              <img
+                src={arrow_img}
+                style={{
+                  zIndex: "100",
+                  width: "100%",
+                  height: "100%"
+                }}
+                ref={arrow}
+              />
+            </foreignObject>
+
+
+            {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component*/}
+            {!isVisible && !isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+
+            {/*static robot image at the bottom of the triangular part of arrow*/}
+            {isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y="89%" >
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+
+      
           </svg>
 
-          <img
-            src={arrow_img}
-            style={{
-              transform: "scale(0.6)",
-              zIndex: "100",
-              position: "absolute",
-              bottom: "7%",
-              left: "-8%"
-            }}
-            ref={arrow}
-          />
 
           {/*
         Scenarios:
@@ -347,20 +380,10 @@ export default function Apply() {
         3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
         2) below arrow: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON'T render
         */}
-
-          {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component */}
-          {!isVisible && !isBottomCrossed &&
-            <RobotImage pos={"absolute"} top={"0%"} ref={null} lft={"-9.25%"} />
-          }
-
-          {/*static robot image at the bottom of the triangular part of arrow*/}
-          {isBottomCrossed &&
-            <RobotImage pos={"absolute"} bottom={"2%"} ref={null} lft={"-9.25%"} />
-          }
-
+          
           {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
           {isVisible && !isBottomCrossed &&
-            <RobotImage pos={"fixed"} top={"20%"} lft={"8.5%"} ref={robot} />
+            <RobotImage pos={"fixed"} top={"20%"} lft={"10.6%"} ref={robot} />
           }
 
           <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
