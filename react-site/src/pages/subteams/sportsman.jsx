@@ -1,5 +1,6 @@
 import SubteamPage from "../../components/SubteamPage";
 import React from "react";
+import { LinkToOtherSubteams } from "../../components/SubteamPage";
 
 export default function Sportsman() {
 
@@ -20,9 +21,15 @@ export default function Sportsman() {
             subsystemIntro="Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
             subsystems={subsystems}
             otherInterest={[
-                "• Efficient and destructive robots, our Kinetic Subteam may be a better fit",
-                "• Circuitry/autonomous robots, our Autonomous Subteam may be a better fit",
-                "• Front-end or game programming, business, art/design, our Marketing Subteam may be a better fit"
+                <p>
+                    • Efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam may be a better fit
+                </p>,
+                <p>
+                    • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
+                </p>,
+                <p>
+                    • Front-end or game programming, business, art/design, our {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam may be a better fit
+                </p>
             ]}
         />
     );

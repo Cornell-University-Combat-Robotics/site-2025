@@ -1,10 +1,48 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
+import FAQ from "../components/FAQ";
+import { LinkToPage } from "../components/FAQ.tsx";
 
 /** Sponsors creates the Sponsors page of the website. */
 export default function Sponsors() {
+
+  const cornellDonate = "https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1"
+  const givingDay = "https://givingday.cornell.edu/campaigns/combat-robotics"
+
+  /** list of all FAQ questions & answers */
+  const questions = [
+    "I am a company, how can I sponsor?",
+    "I am an individual (not a company), how can I donate?",
+    "I am a company and want to renew or update my sponsorship packet, what is the process?",
+    "I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?"
+  ];
+
+  //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
+  const answers =
+    [
+      <p>
+        Via mail by filling out the donation form listed on the {LinkToPage
+       ({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToPage
+       ({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToPage
+       ({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
+      </p>,
+      <p>
+        You can donate through the same platforms a company would: via mail by filling out the donation form listed on the {LinkToPage
+       ({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToPage
+       ({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToPage
+       ({ id: givingDay, text: "Giving Day" })}.
+      </p>,
+      <p>
+        Donate through the same {LinkToPage
+       ({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
+      </p>
+      ,
+      <p>
+        Email us and we would be happy to make arrangements!
+      </p>
+    ]
+
   return (
     <Box>
       <Box sx={{
@@ -31,7 +69,7 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
-      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
+      <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }} id="sponsor-box">
         OUR SPONSORS
       </Typography>
       {/*Three horizontal buttons for 3 actions users can do. Nested in a double 
@@ -42,10 +80,10 @@ export default function Sponsors() {
       when clicked. &hover is for making the text color white (don't change when
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
-        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
+        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }} >
           <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=27217&dids=5398&sort=1&bledit=1" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
-          <Button href="https://givingday.cornell.edu/campaigns/combat-robotics" target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
         </Box>
       </Box>
 
@@ -445,137 +483,8 @@ export default function Sponsors() {
         </Box>
       </Box>
 
-      {/* FAQ Section:
-      This section uses a Box component to create a full-width background with a dark red color.
-      - The padding and box-sizing ensure consistent spacing without causing overflow.
-      - The content includes a centered Typography title ("FAQ") followed by Accordion components 
-        for each FAQ item. The Accordion items use expand icons (ExpandMoreIcon) to toggle visibility.
-      - Each AccordionSummary contains a Typography element with italic styling, and the 
-        AccordionDetails contain the answer text.
-      - Dividers are used between Accordion items for separation.
-      - The footer contains a centered Typography with contact information for further questions. */}
-      <Box
-        justifyContent="center"
-        alignItems="center"
-        backgroundColor="#63080A"
-        mt={5}
-        sx={{
-          color: 'white',
-          paddingY: '40px',
-          paddingX: '20px',
-          width: '100%',
-          margin: '0 auto',
-          boxSizing: 'border-box',
-        }}
-      >
-        <Box width="100%" justifyContent="center" alignItems="center">
-          <Typography variant="h4" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
-            FAQ
-          </Typography>
+      <FAQ qn={questions} ans={answers} />
 
-          <Box width="75%" justifyContent="center" alignItems="center" mx="auto">
-            {/* Accordion Items */}
-            <>
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company, how can I sponsor?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Via mail by filling out the donation form listed on the Sponsorship Packet above, or electronically donate through Cornell (shown above), or donate on Giving Day (shown above). Please email us to notify you wish to become a sponsor.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am an individual (not a company), how can I donate?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    You can donate through the same platforms a company would: via mail by filling out the donation form listed on the Sponsorship Packet, or electronically donate through Cornell, or donate on Giving Day.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company and want to renew or update my sponsorship packet, what is the process?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Donate through the same portal listed above, and email us to notify you wish to renew or update your sponsorship.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-
-              <Accordion
-                sx={{
-                  backgroundColor: '#63080A',
-                  color: 'white',
-                  boxShadow: 'none',
-                  width: '100%',
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-                  <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
-                    I am a company and would like to make an arrangement not listed on the Sponsorship Packet, what should I do?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Email us and we would be happy to make arrangements!
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Divider sx={{ backgroundColor: 'white', my: 2 }} />
-            </>
-          </Box>
-
-          {/* Footer */}
-          <Typography
-            align="center"
-            sx={{
-              fontStyle: 'italic',
-              fontFamily: 'Josefin Sans',
-              mt: 4,
-              color: 'white',
-            }}
-          >
-            If you have any further questions, please email us at combatrobotics@cornell.edu.
-          </Typography>
-        </Box>
-      </Box>
     </Box>
   );
 }

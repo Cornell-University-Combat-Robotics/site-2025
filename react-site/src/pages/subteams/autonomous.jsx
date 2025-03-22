@@ -1,5 +1,6 @@
 import SubteamPage from "../../components/SubteamPage";
 import React from "react";
+import { LinkToOtherSubteams } from "../../components/SubteamPage";
 
 export default function Autonomous() {
 
@@ -18,12 +19,23 @@ export default function Autonomous() {
             optionalDesc="Autonomous aims to push boundaries in the autonomous robotics field, challenging ourselves to see how well our algorithms can perform in the arena, and continuously enhancing them over time."
             subsystemIntro="Our approach to robot design revolves around three critical subsystems that all members are in together:" //TODO: make bold
             subsystems={subsystems}
+            //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
             otherInterest={[
-                "• More intensive robot building and simpler circuits (with no coding), check out the Kinetic Subteam or the Sportsman Subteam",
-                "• Coding for websites and video games, check out the Marketing Subteam",
-                "• Business and corporate sponsorships, check out the Marketing Subteam",
-                "• Art and design, check out the Marketing Subteam"
+                <p>
+                    • More intensive robot building and simpler circuits (with no coding), check out the {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
+                </p>,
+                <p>
+                    • Coding for websites and video games, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+                </p>,
+                <p>
+                    • Business and corporate sponsorships, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+                </p>
+                ,
+                <p>
+                    • Art and design, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam
+                </p>
             ]}
         />
     );
 }
+

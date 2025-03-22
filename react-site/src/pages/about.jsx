@@ -87,7 +87,7 @@ function About() {
       </Box>
 
       {/* Rest of page, separate from rest because background image is too small */}
-      <Box sx={{ mx: '15%', mt: '15%', mb: '10%' }}>
+      <Box sx={{ mx: '15%', mt: '15%', mb: '7%' }}>
         {/* What do we value title and paragraph */}
         <Typography variant="h2" align="left" >
           What do we value?
@@ -100,10 +100,16 @@ function About() {
 
       </Box>
       {/* Timeline */}
+      <Box sx={{ mb: '2%' }}>
+        <Typography variant="h2">
+          OUR HISTORY
+        </Typography>
+      </Box>
       <Box marginLeft="0%" sx={{ width: "98vw", }}>
         <Carousel numCells={10} />
       </Box>
     </Box >
+
   );
 }
 
