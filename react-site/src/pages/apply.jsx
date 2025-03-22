@@ -159,6 +159,18 @@ export default function Apply() {
       </p>
     ]
 
+  const [yPos, setYPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setYPos(window.scrollY);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
 
@@ -370,21 +382,42 @@ export default function Apply() {
               </foreignObject>
             }
 
-      
+            {/** right idea, wrong math
+           * 
+            {isVisible && !isBottomCrossed &&
+              <foreignObject height="6.5%" width="100%" x="0%" y={`${yPos / 60}%`} >
+                {console.log("inner yPos", yPos / 150)};
+                <img
+                  src={robot_scroll}
+                  style={{
+                    zIndex: "100",
+                    width: "95%",
+                    height: "95%"
+                  }}
+                />
+              </foreignObject>
+            }
+           * 
+           */}
+
           </svg>
 
 
+
           {/*
+
+
         Scenarios:
         1) above arrow: isVisible = false && isBottomCrossed = false -> DON'T render
         3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
         2) below arrow: isVisible = false (depends on threshold) && isBottomCrossed = true -> DON'T render
         */}
-          
-          {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)*/}
+
+          {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)            */}
           {isVisible && !isBottomCrossed &&
             <RobotImage pos={"fixed"} top={"20%"} lft={"10.6%"} ref={robot} />
           }
+
 
           <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
             <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
