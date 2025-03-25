@@ -1,5 +1,5 @@
 import { Box, Button, List, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Fade } from '@mui/material';
 import TeamMemberList from "./MemberList";
@@ -52,6 +52,8 @@ export default function SubteamPage(props: SubteamProps) {
         () => setShowSubsystem([false, false, true, false]),
         () => setShowSubsystem([false, false, false, true])
     ];
+
+
 
     /**Purpose: React Router hook used for programmatic navigation
     Use: navigate('/route') to go to a specific route*/
@@ -137,13 +139,22 @@ export default function SubteamPage(props: SubteamProps) {
 
                             <Button key={index} sx={{
                                 flex: '1 1 250px', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
-                                maxWidth: 220, // ensures that buttons dont get too big when wrapping
+                                maxWidth: 220, // ensures that buttons dont get too big when wrapping 
                                 height: 120,
-                                backgroundColor: '#943131', textAlign: 'center', borderRadius: 2
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
+                                border: '3px solid white',
+                                '&:hover': { //on mouse hover
+                                    backgroundColor: 'rgba(148, 49, 49, 0.7)', // Customize hover background color if needed
+                                    border: '3px solid white', // Make sure border stays white on hover
+                                },
                             }}
                                 //hover functionality
-                                onMouseEnter={handleSubsystemClick[index]}
-                                onMouseLeave={() => setShowSubsystem([false, false, false, false])}
+                                onMouseEnter={() => {
+                                    handleSubsystemClick[index]();
+                                }}
+                                onMouseLeave={() => {
+                                    setShowSubsystem([false, false, false, false])
+                                }}
                             >
                                 {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
                                 {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
@@ -220,7 +231,7 @@ function SubsystemButtonDisplay({ name, desc }) {
         <Fade in={true} timeout={300}>
             <Box sx={{
                 bgcolor: 'black', textAlign: 'left', borderRadius: 5, padding: 5, zIndex: 100,
-                position: 'fixed', height: 'auto', transform: 'translateY(65%)',  // Center the box vertically
+                position: 'fixed', height: 'auto', transform: 'translateY(-100%)',  //Moves the element DOWN by 100% relative to its own position (default y position, since top attribute not set, so at TOP of BOX parent container)
                 wordWrap: 'break-word',  // Ensure the text breaks to the next line when it exceeds the container width
                 left: '20%', right: '20%' //spacing from sides of screen
             }}>
@@ -248,7 +259,7 @@ export function LinkToOtherSubteams({ url, text }) {
     const [isHover, setHover] = useState(false);
 
     return (
-        <Link 
+        <Link
             to={url}
             style={{
                 color: isHover ? "red" : "white",
