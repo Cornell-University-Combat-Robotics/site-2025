@@ -161,23 +161,6 @@ export default function Apply() {
       </p>
     ]
 
-  const [yPos, setYPos] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setYPos(window.scrollY);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
-  /**Purpose: React Router hook used for programmatic navigation
-  Use: navigate('/route') to go to a specific route*/
-  const navigate = useNavigate();
-
   return (
 
     <Box>
@@ -451,7 +434,7 @@ export default function Apply() {
             mb: 15
           }}
           onClick={ () => {
-            navigate('/robots#3lb_apply_link')
+            window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
           <Typography variant="body1" >
