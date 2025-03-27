@@ -408,6 +408,33 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       link: "/robots/wabbit",
       color: 1,
     }
+  ],
+  /*for apply page 3lb, only need 3 robots*/
+  Shortened_Three_lb: [
+    {
+      name: "Slugma",
+      subteam: ["FA '24"],
+      desc: "",
+      image: slugmaPhoto,
+      link: "/robots/slugma",
+      color: 0,
+    },
+    {
+      name: "Fangular Momentum",
+      subteam: ["FA '24"],
+      desc: "The first 3lb bot",
+      image: batbotPhoto,
+      link: "/robots/batbot",
+      color: 1,
+    },
+    {
+      name: "Dauður Hestr",
+      subteam: ["FA '24"],
+      desc: "",
+      image: hestrPhoto,
+      link: "/robots/hestr",
+      color: 0,
+    }
   ]
 };
 

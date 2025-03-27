@@ -1,7 +1,8 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef } from "@mui/material";
+import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef, Button } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import FAQ from "../components/FAQ";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
+import { useNavigate } from "react-router-dom";
 import RedBox from "../components/RedBox.tsx";
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
@@ -11,6 +12,7 @@ import slugma from "../assets/3lb/slugma_profile.jpg";
 import robot_scroll from "../assets/robot_scroll.png";
 import arrow_img from "../assets/arrow.png";
 import { LinkToPage } from "../components/FAQ.tsx";
+import RobotCardList from '../components/RobotCardList';
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
@@ -158,19 +160,6 @@ export default function Apply() {
           ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
       </p>
     ]
-
-  const [yPos, setYPos] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setYPos(window.scrollY);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
 
   return (
 
@@ -430,6 +419,31 @@ export default function Apply() {
         </Stack>
       </Box>
 
+      {/* Box for 3lb robot cards & info */}
+      <Box width="100%" height="auto" justifyContent={"center"} alignItems={"center"} >
+        <Typography variant="h2" mb={5}>{"A few of our past 3lb robots..."}</Typography>
+
+        <RobotCardList type='Shortened_Three_lb' capacity={3} />
+
+        <Button
+          sx={{
+            border: "2px solid white",
+            borderRadius: 100,
+            paddingY: 2,
+            paddingX: 3,
+            mb: 15
+          }}
+          onClick={ () => {
+            window.open('/robots#3lb_apply_link', '_blank');
+          }}
+        >
+          <Typography variant="body1" >
+            {"Click to see more!"}
+          </Typography>
+        </Button>
+
+      </Box>
+
       <FAQ qn={questions} ans={answers} />
     </Box>
   );
@@ -539,9 +553,9 @@ function LinkToID({ id, text }) {
 
   return (
     <a href={`#${id}`}
-      style={{ 
-        color: isHover ? "red" : "white", 
-        textDecoration: "underline" 
+      style={{
+        color: isHover ? "red" : "white",
+        textDecoration: "underline"
       }}
 
 

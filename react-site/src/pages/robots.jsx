@@ -3,8 +3,28 @@ import { Box, Stack, Typography, Container } from '@mui/material';
 import RobotCard from '../components/RobotCard';
 import RobotCardList from '../components/RobotCardList';
 import StickyBox from '../components/StickyBox.tsx';
+import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 export default function Robots() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const id_hash = location.hash.substring(1); // Remove the '#' from the hash
+
+    //get component that # id is attached to
+    const comp_id = document.getElementById(id_hash);
+    if (comp_id != null) {
+      comp_id.scrollIntoView({
+        behavior: 'smooth' // Scroll to the element smoothly
+      }); 
+    }
+  }, [location]);
+  /* Trigger this effect whenever the location (hash) changes: Example
+  If the page is reloaded and the URL has a hash (e.g., /robots#section-id) (aka. when navigated from apply page), 
+  useEffect will run because the location changes upon page load */
+
+
   return (
     <Container mx="15%">
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -74,12 +94,13 @@ export default function Robots() {
         <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
           3 LB ROBOTS
         </Typography>
-        <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-          <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
+        <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }} >
+          <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }} >
             These are the 3lb robots that new members create as a part of CRC's training program!
           </Typography>
         </Box>
         <RobotCardList type='Three_lb' capacity={4} />
+        <Box width="100%" height="20vh" id="3lb_apply_link"></Box>
       </Box>
     </Container>
   );
