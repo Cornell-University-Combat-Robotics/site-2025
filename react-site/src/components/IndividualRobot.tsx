@@ -1,8 +1,8 @@
-import { Box, Typography, Stack, Grid2, Card, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Link, Button, useMediaQuery, useTheme } from "@mui/material";
-import ReactPlayer from 'react-player/youtube'; // Documentation: https://www.npmjs.com/package/react-player
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { Box, Typography, Stack, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Button, useMediaQuery, useTheme } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { useParams } from 'react-router-dom';
+import { robotData } from "../data/robotData.ts";
 
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
@@ -10,37 +10,13 @@ import { ArrowBack, ArrowForward } from "@mui/icons-material";
   This file serves as a general component for individual robot pages. The idea is that it will format and render an IndividualRobot page
   completely, using the specific input passed in. This way, all the actual individual robot pages need to do is pass in the correct data to this reusable component.
 */
-export interface IndividualRobotProps {
-  name: string; // Name of the robot
-  makers: string[]; // Members who worked on the robot
-  description: string; // Short description of the bot
-  image: string; // Link to the file location of the primary robot location
-  stats: {
-    vintage: string;
-    height: string;
-    weight: string;
-    fights: string;
-    wins: string;
-    top_speed: string;
-    weapon_speed: string;
-    most_damaged_part: string;
-    favorite_movie: string;
-  }
-  featured_fight: string; // Youtube link
-  design: string;
-  trivia: string[];
-  fights: {
-    event: string;
-    opponent: string;
-    result: string;
-    by: string;
-    video: string;
-    length: string;
-  }[];
-  gallery: string[]; // Link to the file location of pictures & videos -> TODO: separate images & videos
-}
+export default function IndividualRobot() {
+  const { robotId } = useParams();
+  const robotInfo = robotData[robotId || ""];
 
-export default function IndividualRobot(props: IndividualRobotProps) {
+  if (!robotInfo) {
+    return <div>Robot not found</div>;
+  }
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -73,18 +49,18 @@ export default function IndividualRobot(props: IndividualRobotProps) {
   Requires "..." to combine two slices into a single array */}
   const visibleImages = [
     //2nd parameter of slice: ensures that end index of this single array slice does not exceed gallery length
-    ...props.gallery.slice(currentIndex % props.gallery.length, Math.min(currentIndex + numImages, props.gallery.length)),
+    ...robotInfo.gallery.slice(currentIndex % robotInfo.gallery.length, Math.min(currentIndex + numImages, robotInfo.gallery.length)),
     //handles overflow images -> if gallery length exceeded in first array slice
-    ...props.gallery.slice(0, Math.max(0, (currentIndex + numImages) - props.gallery.length))
+    ...robotInfo.gallery.slice(0, Math.max(0, (currentIndex + numImages) - robotInfo.gallery.length))
   ];
 
   //prevIndex: refers to current index (before updated)
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % props.gallery.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % robotInfo.gallery.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + props.gallery.length) % props.gallery.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + robotInfo.gallery.length) % robotInfo.gallery.length);
   };
 
   /** true: you WANT to remove the fully blown image*/
@@ -122,12 +98,12 @@ export default function IndividualRobot(props: IndividualRobotProps) {
     <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: '10%', paddingBottom: '10%', textAlign: 'left' }}>
       {/* Header Section */}
       <Typography variant='h2' gutterBottom fontWeight='bold'>
-        {props.name}
+        {robotInfo.name}
       </Typography>
 
       {/* Names of Builders */}
       <Typography variant="h4" align="left" width='90%' style={{ fontStyle: 'italic' }}>
-        {props.makers.join(', ')}
+        {robotInfo.makers.join(', ')}
       </Typography>
 
       {/* 
@@ -139,24 +115,24 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           {/*Description*/}
           <Box width={'100%'} >
             <Typography variant='h3'>Description</Typography>
-            <Typography mb={5} mt={2} sx={{ fontSize: 20 }}>{props.description}</Typography>
+            <Typography mb={5} mt={2} sx={{ fontSize: 20 }}>{robotInfo.description}</Typography>
           </Box>
 
 
-          <Box width={'100%'} maxWidth={800} overflow={"hidden"}
+          {robotInfo.featured_fight ? ( <Box width={'100%'} maxWidth={800} overflow={"hidden"}
           >
             <Typography variant='h3' mb={2}>Featured Fight</Typography>
             <iframe
               style={{ aspectRatio: '16/9' }}
 
               width="100%"
-              src="https://www.youtube.com/embed/CCGriVVoWeM?start=28006"
+              src={robotInfo.featured_fight}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </Box>
+          </Box> ) : null}
 
         </Stack>
 
@@ -166,14 +142,14 @@ export default function IndividualRobot(props: IndividualRobotProps) {
             <CardMedia
               component="img"
               height="180"
-              image={props.image}
+              image={robotInfo.image}
               alt="Robot image"
               sx={{ borderRadius: 4 }} />
             <Typography fontSize={30} color="white" fontWeight={"bold"} mt={2} >
               Stats
             </Typography>
             <List> {/*TODO: remove padding*/}
-              {Object.entries(props.stats).map(([key, value]) => (
+              {Object.entries(robotInfo.stats).map(([key, value]) => (
                 <ListItem key={key} sx={{ color: "white", fontSize: 20, fontFamily: 'Josefin Sans, sans-serif' }}>
                   {key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase())}: {value}
                 </ListItem>
@@ -185,7 +161,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
 
       {/* Design Section */}
       <Typography variant="h3" gutterBottom mt={15}>Design</Typography>
-      <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{props.design}</Typography>
+      <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{robotInfo.design}</Typography>
 
       {/* Trivia Section */}
       <Box sx={{ mt: 4 }}>
@@ -193,7 +169,7 @@ export default function IndividualRobot(props: IndividualRobotProps) {
           Trivia
         </Typography>
         <List sx={{ listStyleType: 'disc', fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>
-          {props.trivia.map((fact, index) => (
+          {robotInfo.trivia.map((fact, index) => (
             <ListItem key={index} sx={{ display: 'list-item' }}>{fact}</ListItem>
           ))}
         </List>
@@ -217,16 +193,18 @@ export default function IndividualRobot(props: IndividualRobotProps) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.fights.map((fight, index) => (
+              {robotInfo.fights.map((fight, index) => (
                 <TableRow key={index} sx={{ borderBlock: "7px solid #1C1C1C" }}>
                   <TableCell sx={{ color: 'white' }}>{fight.event}</TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.opponent}</TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.result}</TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.by}</TableCell>
                   <TableCell>
-                    <a href={fight.video} target="_blank" rel="noopener noreferrer">
-                      Watch
-                    </a>
+                    {fight.video && fight.video.trim() !== "" ? (
+                      <a href={fight.video} target="_blank" rel="noopener noreferrer">
+                        Watch
+                      </a>
+                    ) : ""}
                   </TableCell>
                   <TableCell sx={{ color: 'white' }}>{fight.length}</TableCell>
                 </TableRow>
@@ -240,17 +218,12 @@ export default function IndividualRobot(props: IndividualRobotProps) {
       <Typography variant="h3" mb={3}>
         {"Gallery"}
       </Typography>
-
       {/* Carousel for Gallery Images */}
-
       <Stack direction="row" spacing={2} alignItems={"center"} justifyContent={"center"}>
-
         <IconButton onClick={handlePrev} >
           <ArrowBack sx={{ color: "white" }} />
         </IconButton>
-
         <Stack direction="row" spacing={6} height="35vh" alignItems={"center"} justifyContent={"center"}>
-
           {visibleImages.map((imageName, index) => (
             <Button
               sx={{
@@ -275,25 +248,17 @@ export default function IndividualRobot(props: IndividualRobotProps) {
               {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage} />}
             </Button>
           ))}
-
-
         </Stack>
-
         <IconButton onClick={handleNext} >
           <ArrowForward sx={{ color: "white" }} />
         </IconButton>
-
       </Stack>
-
-
     </Box>
-
   )
 }
 
 {/**Component that handles rendering of full image when image button is clicked*/ }
 function FullImageRender({ imageName, setRemoveFullImage }) {
-
   {/** Event listener that handles mouse click. */ }
   const handleOutsideClick = (event) => {
     if (event.type === "click") { //only runs when mouse clicked
@@ -330,7 +295,6 @@ function FullImageRender({ imageName, setRemoveFullImage }) {
       }}
       onClick={handleOutsideClick} //auto removes event listener when box component is removed
     >
-
       <img
         src={imageName}
         style={{
@@ -342,7 +306,6 @@ function FullImageRender({ imageName, setRemoveFullImage }) {
           objectFit: 'contain',
         }}
       />
-
     </Box>
   );
 }

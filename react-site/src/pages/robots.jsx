@@ -57,6 +57,21 @@ export default function Robots() {
         </Box>
         <RobotCardList type='Retired' capacity={3} />
         <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+          MINI ROBOTS
+        </Typography>
+        <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
+          <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur nisl quis diam iaculis ultricies.
+            Proin at fringilla lacus, vulputate viverra nisl. Phasellus et nibh sed metus varius fringilla in eu nulla.
+            Donec convallis eros id eros elementum gravida. Phasellus at pulvinar lacus.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Aenean ut ipsum vel massa condimentum feugiat. Donec at molestie nisi.
+            Suspendisse suscipit arcu vitae venenatis tempor. Duis non arcu sem. Donec sit amet ultricies mi, id varius eros.
+            Integer elementum lobortis mi vitae varius.
+          </Typography>
+        </Box>
+        <RobotCardList type='Mini' capacity={4} />
+        <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
           3 LB ROBOTS
         </Typography>
         <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
