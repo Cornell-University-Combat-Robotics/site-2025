@@ -14,11 +14,7 @@ import Game from './pages/game';
 import Apply from './pages/apply';
 import Footer from './components/footer';
 import Accessibility from './pages/accessibility';
-import Beater from './pages/robots/beater';
-import Slugma from './pages/robots/slugma';
-import Batbot from './pages/robots/batbot';
-import Swiss from './pages/robots/swiss';
-import Hestr from './pages/robots/hestr';
+import IndividualRobot from './components/IndividualRobot';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Leads from './pages/subteams/leads';
 import Alumni from './pages/subteams/alumni';
@@ -78,11 +74,7 @@ function App() {
             <Route path="/team/leads" element={<><ScrollToTop /><GradientNavBar /><Leads /></>} />
             <Route path="/team/alumni" element={<><ScrollToTop /><GradientNavBar /><Alumni /></>} />
             <Route path="/robots" element={<><ScrollToTop /><GradientNavBar /><Robots /></>} />
-            <Route path="/robots/beater" element={<><ScrollToTop /><GradientNavBar /><Beater /></>} />
-            <Route path="/robots/slugma" element={<><ScrollToTop /><GradientNavBar /><Slugma /></>} />
-            <Route path="/robots/batbot" element={<><ScrollToTop /><GradientNavBar /><Batbot /></>} />
-            <Route path="/robots/swiss" element={<><ScrollToTop /><GradientNavBar /><Swiss /></>} />
-            <Route path="/robots/hestr" element={<><ScrollToTop /><GradientNavBar /><Hestr /></>} />
+            <Route path="/robots/:robotId" element={<><ScrollToTop /><GradientNavBar /><IndividualRobot /></>} />
             <Route path="/sponsors" element={<><ScrollToTop /><GradientNavBar /><Sponsors /></>} />
             <Route path="/game" element={<><ScrollToTop /><GradientNavBar /><Game /></>} />
             <Route path="/apply" element={<><ScrollToTop /><GradientNavBar /><Apply /></>} />
