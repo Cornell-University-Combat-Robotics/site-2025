@@ -16,8 +16,9 @@ export default function Robots() {
     const comp_id = document.getElementById(id_hash);
     if (comp_id != null) {
       comp_id.scrollIntoView({
-        behavior: 'smooth' // Scroll to the element smoothly
-      }); 
+        behavior: 'smooth', // Scroll to the element smoothly
+        block: 'center'
+      });
     }
   }, [location]);
   /* Trigger this effect whenever the location (hash) changes: Example
@@ -99,8 +100,9 @@ export default function Robots() {
             These are the 3lb robots that new members create as a part of CRC's training program!
           </Typography>
         </Box>
-        <RobotCardList type='Three_lb' capacity={4} />
-        <Box width="100%" height="20vh" id="3lb_apply_link"></Box>
+        <Box id="3lb_apply_link">
+          <RobotCardList type='Three_lb' capacity={4} />
+        </Box>
       </Box>
     </Container>
   );
