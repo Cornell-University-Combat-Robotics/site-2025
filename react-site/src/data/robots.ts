@@ -413,7 +413,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
   Shortened_Three_lb: [
     {
       name: "Slugma",
-      subteam: "FA '24",
+      subteam: ["FA '24"],
       desc: "",
       image: slugmaPhoto,
       link: "/robots/slugma",
@@ -421,7 +421,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     },
     {
       name: "Fangular Momentum",
-      subteam: "FA '24",
+      subteam: ["FA '24"],
       desc: "The first 3lb bot",
       image: batbotPhoto,
       link: "/robots/batbot",
@@ -429,7 +429,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     },
     {
       name: "Dauður Hestr",
-      subteam: "FA '24",
+      subteam: ["FA '24"],
       desc: "",
       image: hestrPhoto,
       link: "/robots/hestr",
