@@ -40,6 +40,7 @@ export default function Member(props: MemberProps) {
       <Box sx={{
         position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
         borderRadius: 5,
+        // height corresponding to viewport size is a problem
         width: 'auto',
         height: '30vh', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
@@ -93,7 +94,7 @@ export default function Member(props: MemberProps) {
               initial={{ x: -300, y: yStats }} //initial state
               animate={{ x: 0, y: yStats }} //state after animation
               exit={{ x: -300, y: yStats }} //exit state
-              style={{ height: '100%' }}
+              style={{ height: '100%'}}
             >
               <Stack
                 direction="column"
@@ -111,7 +112,7 @@ export default function Member(props: MemberProps) {
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',
-                          overflowWrap: 'break-word'
+                          overflowWrap: 'break-word',
                         }}>
                         {desc}
                       </Typography>
@@ -158,7 +159,7 @@ export default function Member(props: MemberProps) {
           {name}
         </Typography>
       </Box>
-
+      
       <List sx={{
         width: '85%',
         //maxHeight: 150, // Fixed max height

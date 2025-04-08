@@ -8,13 +8,13 @@ export default function Alumni() {
   const subsystems = [];
 
   return (
-    <SubteamPage
-      name="Alumni"
-      desc="Once you're on CRC, you're a CRC member for life. Our team has a vibrant alumni community, and we love staying connected post-graduation!"
-      optionalDesc=""
-      subsystemIntro=""
-      subsystems={subsystems}
-      otherInterest={[]}
-    />
+      <SubteamPage
+        name="Alumni"
+        desc="Once you're on CRC, you're a CRC member for life. Our team has a vibrant alumni community, and we love staying connected post-graduation!"
+        optionalDesc=""
+        subsystemIntro=""
+        subsystems={subsystems}
+        otherInterest={[]}
+      />
   );
 }

@@ -69,6 +69,8 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
+    <Box padding="0px 12.5%">
+
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }} id="sponsor-box">
         OUR SPONSORS
       </Typography>
@@ -80,9 +82,9 @@ export default function Sponsors() {
       when clicked. &hover is for making the text color white (don't change when
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
-        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }} >
+        <Box display='flex' gap="10px 20px" justifyContent="space-between" sx={{ flexDirection: 'row' }} >
           <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", margin: "0px 10px", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
           <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
         </Box>
       </Box>
@@ -91,10 +93,10 @@ export default function Sponsors() {
       hence "column". The Typography is the text component, we have with to 75% of
       screen. */}
       <Box display='flex' justifyContent="center" alignItems="center" sx={{ flexDirection: 'column' }}>
-        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='justify' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet.
         </Typography>
-        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='justify' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           You can also directly donate through Cornell above, please specify that the donation is for Combat Robotics at Cornell. We are a 501(c)(3) organization and all donations are tax deductible. Reach out to us directly if you're interested in making a specific arrangement not outlined in the sponsorship packet above.
         </Typography>
       </Box>
@@ -484,6 +486,8 @@ export default function Sponsors() {
       </Box>
 
       <FAQ qn={questions} ans={answers} />
+      
+    </Box>
 
     </Box>
   );
