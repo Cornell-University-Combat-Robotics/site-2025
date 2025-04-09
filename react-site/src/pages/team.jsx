@@ -42,6 +42,8 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         justifyContent: "center",
         paddingLeft: 0,
         paddingRight: 0,
+        paddingTop: "2%",
+        paddingBottom: "2%",
 
 
         //for text within team button
@@ -50,15 +52,18 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
 
         fontSize: {
           xs: "3.5vw",
-          sm: "2.5vw",
+          sm: "2.3vw",
           md: "2vw",
           lg: "1.7vw"
         },
-        width: "30vw",
+
         height: {
           xs: "10vh",
+          sm: "10vh",
           md: "18vh",
+          lg: "18vh",
         },
+   
         textTransform: "none",
         '&:hover': {
           color: 'white',
@@ -72,10 +77,10 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
       {image && <img src={isHovered ? whiteImg : image} alt=""
 
         style={{
-          marginBottom: "5%",
+          marginBottom: "2%",
           //width & height for same size of screen can be same since images are same length & width
-          width: "5vw",
-          height: "5vw",
+          //no width property cuz team buttons have diff widths
+          height: "50%"
         }}
       />}
       {children}
@@ -126,12 +131,23 @@ export default function Team() {
           </motion.div>
         </div>
 
-        <Typography variant="h5" sx={{ maxWidth: '70%', margin: '2% auto', textAlign: 'center' }}>
+        <Typography 
+         sx={{ maxWidth: '70%', margin: '2% auto', textAlign: 'center',
+          fontSize: {
+            xs: "3vw",
+            sm: "2.2vw" 
+          }
+          }}>
           {"Our entire team consists of four subteams:"}
           <br />
           {"Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
-        <Typography variant="h5" sx={{ maxWidth: '70%', margin: '2% auto', textAlign: 'center' }}>
+        <Typography sx={{ maxWidth: '85%', margin: '2% auto', textAlign: 'center',
+           fontSize: {
+            xs: "3vw",
+            sm: "2.2vw" 
+          }
+         }}>
           {"Click the buttons below to learn more about each of them!"}
         </Typography>
 
@@ -142,40 +158,39 @@ export default function Team() {
             details. &focus is for when the button is clicked (removing the blue border 
             when clicked. &hover is for making the text color white (don't change when
             button is not hovered over.*/}
-        <Box display='flex' justifyContent="center" alignItems="center" mt="7vw" mb="3vw">
-          <Box width="75%" justifyContent={"center"}
+        <Box display='flex' justifyContent="center" alignItems="center" mt="7vw" mb="3vw" >
+          <Box width="75vw" justifyContent={"center"} 
             sx={{
               display: 'flex',
               flexDirection: 'row',
-              flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+              flexWrap: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}
           >
-            <TeamButton hoverColor="#0E7C2B" image={KineticColor} whiteImg={KineticWhite} to="/team/kinetic" >Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman">Sportsman</TeamButton>
-            <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous">Autonomous</TeamButton>
-            <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing">Marketing</TeamButton>
+            <TeamButton hoverColor="#0E7C2B" image={KineticColor} whiteImg={KineticWhite} to="/team/kinetic" sx={{ width: "30vw" }} >Kinetic</TeamButton>
+            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }}>Sportsman</TeamButton>
+            <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous" sx={{ width: "30vw" }}>Autonomous</TeamButton>
+            <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing" sx={{ width: "30vw" }}>Marketing</TeamButton>
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px" >
-          <Box display='flex' width="63%" justifyContent={"center"}
+          <Box display='flex' width="63vw" justifyContent={"center"}
             sx={{
               display: 'flex',
               flexDirection: 'row',
-              flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+              flexWrap: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}>
-            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "50vw" }}>
+            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>
               Team Leads
             </TeamButton>
-            <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "50vw" }}>Alumni</TeamButton>
+            <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "100%" }}>Alumni</TeamButton>
           </Box>
         </Box>
       </Box>
     </>
   );
 }
-//bottom button widths same size as above
-//bigger sized icons
+
