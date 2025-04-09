@@ -61,7 +61,7 @@ theme.typography.h3 = {
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.5rem',
+  fontSize: '2.0vw',
   fontWeight: 'normal',
 };
 
@@ -72,6 +72,12 @@ theme.palette.primary = {
 theme.typography.body2 = {
   fontFamily: 'Josefin Sans, sans-serif',
   fontSize: '1rem',
+  fontWeight: 'normal',
+};
+
+theme.typography.body3 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '3.0vw',
   fontWeight: 'normal',
 };
 

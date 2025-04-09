@@ -15,12 +15,14 @@ import SportsmanColor from "../assets/subteam-icons/SportsmanColor.png";
 import SportsmanWhite from "../assets/subteam-icons/SportsmanWhite.png";
 import TLColor from "../assets/subteam-icons/TLColor.png";
 import TLWhite from "../assets/subteam-icons/TLWhite.png";
+import { useTheme } from '@mui/material/styles';
 
 // TeamButton is the button component for individual subteams on the Team page. It takes in the following props: subteam icon,
 // white subteam icon for hovering, subteam color for hovering, and the link to the subteam page. Using this component
 // enables the creation of a consistent button style for all subteams. (and no reptition!)
 const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const theme = useTheme();
   return (
     <Button
       component={Link}
@@ -45,16 +47,24 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         paddingTop: "2%",
         paddingBottom: "2%",
 
-
         //for text within team button
         textAlign: "center",
         fontFamily: "Josefin Sans",
 
+        /*
         fontSize: {
-          xs: "3.5vw",
-          sm: "2.3vw",
+          xs: "3vw",
+          sm: "2.2vw",
           md: "2vw",
           lg: "1.7vw"
+        },
+        */
+
+        fontSize: {
+          xs: theme.typography.body3.fontSize, //body1 too small
+          sm: theme.typography.body1.fontSize,
+          md: theme.typography.body1.fontSize,
+          lg: theme.typography.body1.fontSize,
         },
 
         height: {
@@ -63,7 +73,7 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
           md: "18vh",
           lg: "18vh",
         },
-   
+
         textTransform: "none",
         '&:hover': {
           color: 'white',
@@ -90,6 +100,7 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
 
 /** Team() creates the Team page of the website. */
 export default function Team() {
+  const theme = useTheme();
   return (
     <>
       <Box position="relative" >
@@ -131,23 +142,32 @@ export default function Team() {
           </motion.div>
         </div>
 
-        <Typography 
-         sx={{ maxWidth: '70%', margin: '2% auto', textAlign: 'center',
-          fontSize: {
-            xs: "3vw",
-            sm: "2.2vw" 
-          }
+        <Typography
+          sx={{
+            maxWidth: '70%', margin: '2% auto', textAlign: 'center',
+
+            fontSize: {
+              xs: theme.typography.body3.fontSize,
+              sm: theme.typography.body3.fontSize,
+              md: theme.typography.body1.fontSize,
+              lg: theme.typography.body1.fontSize,
+            },
           }}>
           {"Our entire team consists of four subteams:"}
           <br />
           {"Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
-        <Typography sx={{ maxWidth: '85%', margin: '2% auto', textAlign: 'center',
-           fontSize: {
-            xs: "3vw",
-            sm: "2.2vw" 
-          }
-         }}>
+        <Typography sx={{
+          maxWidth: '85%', margin: '2% auto', textAlign: 'center',
+
+
+          fontSize: {
+            xs: theme.typography.body3.fontSize,
+            sm: theme.typography.body3.fontSize,
+            md: theme.typography.body1.fontSize,
+            lg: theme.typography.body1.fontSize,
+          },
+        }}>
           {"Click the buttons below to learn more about each of them!"}
         </Typography>
 
@@ -159,7 +179,7 @@ export default function Team() {
             when clicked. &hover is for making the text color white (don't change when
             button is not hovered over.*/}
         <Box display='flex' justifyContent="center" alignItems="center" mt="7vw" mb="3vw" >
-          <Box width="75vw" justifyContent={"center"} 
+          <Box width="75vw" justifyContent={"center"}
             sx={{
               display: 'flex',
               flexDirection: 'row',
