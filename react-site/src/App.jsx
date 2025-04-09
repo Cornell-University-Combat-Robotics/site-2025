@@ -23,9 +23,22 @@ const theme = createTheme();
 
 theme.typography.h1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '6rem',
+  fontSize: '8vw',
   fontWeight: 'normal',
 };
+
+theme.typography.h4 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '5vw',
+  fontWeight: 'normal',
+};
+
+theme.typography.h5 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '2.6vw',
+  fontWeight: 'normal',
+};
+
 
 theme.typography.h2 = {
   fontFamily: 'Josefin Sans, sans-serif',
