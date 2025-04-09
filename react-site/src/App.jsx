@@ -30,9 +30,22 @@ const theme = createTheme();
 
 theme.typography.h1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '6rem',
+  fontSize: '8vw',
   fontWeight: 'normal',
 };
+
+theme.typography.h4 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '5vw',
+  fontWeight: 'normal',
+};
+
+theme.typography.h5 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '2.6vw',
+  fontWeight: 'normal',
+};
+
 
 theme.typography.h2 = {
   fontFamily: 'Josefin Sans, sans-serif',
@@ -48,7 +61,7 @@ theme.typography.h3 = {
 
 theme.typography.body1 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.5rem',
+  fontSize: '2.0vw',
   fontWeight: 'normal',
 };
 
@@ -59,6 +72,12 @@ theme.palette.primary = {
 theme.typography.body2 = {
   fontFamily: 'Josefin Sans, sans-serif',
   fontSize: '1rem',
+  fontWeight: 'normal',
+};
+
+theme.typography.body3 = {
+  fontFamily: 'Josefin Sans, sans-serif',
+  fontSize: '3.0vw',
   fontWeight: 'normal',
 };
 
