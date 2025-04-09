@@ -23,19 +23,19 @@ export default function Sponsors() {
     [
       <p>
         Via mail by filling out the donation form listed on the {LinkToPage
-       ({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToPage
-       ({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToPage
-       ({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
+          ({ id: pdfFile, text: "Sponsorship Packet" })} above, or electronically donate through {LinkToPage
+            ({ id: cornellDonate, text: "Cornell" })} (shown above), or donate on {LinkToPage
+              ({ id: givingDay, text: "Giving Day" })} (shown above). Please email us to notify you wish to become a sponsor.
       </p>,
       <p>
         You can donate through the same platforms a company would: via mail by filling out the donation form listed on the {LinkToPage
-       ({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToPage
-       ({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToPage
-       ({ id: givingDay, text: "Giving Day" })}.
+          ({ id: pdfFile, text: "Sponsorship Packet" })}, or electronically donate through {LinkToPage
+            ({ id: cornellDonate, text: "Cornell" })}, or donate on {LinkToPage
+              ({ id: givingDay, text: "Giving Day" })}.
       </p>,
       <p>
         Donate through the same {LinkToPage
-       ({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
+          ({ id: pdfFile, text: "portal" })} listed above, and email us to notify you wish to renew or update your sponsorship.
       </p>
       ,
       <p>
@@ -81,9 +81,66 @@ export default function Sponsors() {
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
         <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
-          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>SPONSORSHIP PACKET</Button>
-          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE HERE</Button>
-          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>GIVING DAY</Button>
+          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{
+            backgroundColor: "#820002",
+            color: "white",
+            fontSize: "1.5em",
+            width: "330px",
+            height: "100px",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            px: "20px",
+            borderRadius: "16px",
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+            '&:focus': { outline: 'none', },
+            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
+          }}>
+            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+              SPONSORSHIP PACKET
+            </Typography>
+          </Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{
+            backgroundColor: "#820002",
+            color: "white",
+            fontSize: "1.5em",
+            width: "330px",
+            height: "100px",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            px: "20px",
+            borderRadius: "16px",
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+            '&:focus': { outline: 'none', },
+            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
+          }}>
+            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+              DONATE HERE
+            </Typography>
+          </Button>
+          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{
+            backgroundColor: "#820002",
+            color: "white",
+            fontSize: "1.5em",
+            width: "330px",
+            height: "100px",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            px: "20px",
+            borderRadius: "16px",
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+            '&:focus': { outline: 'none', },
+            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
+          }}>
+            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+              GIVING DAY
+            </Typography>
+          </Button>
         </Box>
       </Box>
 
