@@ -8,7 +8,6 @@ import RobotMobile from './mobile/RobotMobile.jsx';
 export default function Robots() {
   <RobotDesktop />
   const isMobile = useContext(MobileContext);
-  console.log("called" + isMobile);
   return (
     <div>
       {isMobile ? <RobotMobile /> : <RobotDesktop />}

@@ -2,7 +2,7 @@ import nardo_whole from '../../assets/nardo-whole.png';
 import { Box, Stack, Typography, Container } from '@mui/material';
 import RobotCard from '../../components/RobotCard';
 import RobotCardList from '../../components/RobotCardList';
-import StickyBox from '../../components/StickyBox.tsx';
+import StickyBoxMobile from '../../components/StickyBoxMobile.tsx';
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
@@ -27,9 +27,9 @@ export default function RobotMobile() {
 
 
     return (
-        <Container mx="15%">
+        <Container sx={{ mx: '15%' }}>
             <Box display="flex" flexDirection="column" alignItems="center">
-                <StickyBox />
+                <StickyBoxMobile />
                 <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
                     ROBOTS
                 </Typography>
@@ -37,7 +37,7 @@ export default function RobotMobile() {
                     UPCOMING ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-                    <Typography sx={{ fontFamily: 'Josefin Sans' }}>
+                    <Typography textAlign='left' sx={{ fontFamily: 'Josefin Sans' }}>
                         Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                     </Typography>
                 </Box>

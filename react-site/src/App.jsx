@@ -26,41 +26,77 @@ import Alumni from './pages/subteams/alumni';
 // mobile context
 export const MobileContext = createContext();
 
-const theme = createTheme();
+const theme = createTheme({
+  typography: {
+    h1: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '6rem',
+      fontWeight: 'normal',
+    },
+    h2: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '2.8rem',
+      fontWeight: 'normal',
+    },
+    h3: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '2rem',
+      fontWeight: 'normal',
+    },
+    body1: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '1.5rem',
+      fontWeight: 'normal',
+    },
+    body2: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '1.1rem',
+      fontWeight: 'normal',
+    },
+  },
+  palette: {
+    primary: {
+      main: '#3D0E0E'
+    }
+  }
+});
 
-theme.typography.h1 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '6rem',
-  fontWeight: 'normal',
-};
+// const theme = createTheme();
+// theme.typography.h1 = {
+//   fontFamily: 'Josefin Sans, sans-serif',
+//   fontSize: '6rem',
+//   fontWeight: 'normal',
+// };
 
-theme.typography.h2 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2.8rem',
-  fontWeight: 'normal',
-};
+// theme.typography.h2 = {
+//   fontFamily: 'Josefin Sans, sans-serif',
+//   fontSize: '2.8rem',
+//   fontWeight: 'normal',
+// };
 
-theme.typography.h3 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2rem',
-  fontWeight: 'normal',
-};
+// theme.typography.h3 = {
+//   fontFamily: 'Josefin Sans, sans-serif',
+//   fontSize: '2rem',
+//   fontWeight: 'normal',
+// };
 
-theme.typography.body1 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1.5rem',
-  fontWeight: 'normal',
-};
+// theme.typography.body1 = {
+//   fontFamily: 'Josefin Sans, sans-serif',
+//   fontSize: '1.5rem',
+//   fontWeight: 'normal',
+// };
+
+// bodymoibile = 1.1rem
 
 
-theme.palette.primary = {
-  main: '#3D0E0E'
-}
-theme.typography.body2 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1rem',
-  fontWeight: 'normal',
-};
+// theme.palette.primary = {
+// main: '#3D0E0E'
+// }
+// theme.typography.body2 = {
+// fontFamily: 'Josefin Sans, sans-serif',
+// fontSize: '1rem',
+// fontWeight: 'normal',
+// };
 
 function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
