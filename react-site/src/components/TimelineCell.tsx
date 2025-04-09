@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export interface Timeline1Cell {
     date: string
@@ -11,11 +11,13 @@ export interface Timeline1Cell {
  * Creates a timeline cell for the About page Carousel. Represents the selected cell.
  */
 export default function TimelineCell(props: Timeline1Cell) {
+    const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
+
     return (
         <Box>
             <Box sx={{
                 height: '90vh',
-                width: '28vw',
+                width: isMobile ? '68vw' : '28vw',
                 backgroundImage: `url(${props.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',

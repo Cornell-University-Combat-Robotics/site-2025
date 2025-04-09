@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Slide, Stack, RadioGroup, Radio, FormControlLabel } from "@mui/material";
+import { Box, IconButton, Slide, Stack, RadioGroup, Radio, FormControlLabel, useMediaQuery, useTheme } from "@mui/material";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import Cell from "./TimelineCell.tsx";
 import CellData from "../data/timeline1.ts";
@@ -21,10 +21,11 @@ function Carousel(props: Carousel1) {
     //determines animation direction (slide left or slide right)
     const [slideDirection, setSlideDirection] = useState<"right" | "left" | undefined>("left");
 
+    const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
     //how many cards per page
-    const cellsPerPage = 3;
+    const cellsPerPage = isMobile ? 1 : 3;
 
-    const pages = 3;
+    const pages = cells.length / cellsPerPage;
 
     const refreshCards: React.ReactElement[] = CellData.map((cell) => (
         <Cell {...cell} />
