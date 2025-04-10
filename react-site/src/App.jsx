@@ -16,7 +16,8 @@ import Robots from './pages/robots';
 import Sponsors from './pages/sponsors';
 import Game from './pages/game';
 import Apply from './pages/apply';
-import Footer from './components/footer';
+import FooterDesktop from './components/FooterDesktop';
+import FooterMobile from './components/mobile/FooterMobile';
 import Accessibility from './pages/accessibility';
 import IndividualRobot from './components/IndividualRobot';
 import Leads from './pages/subteams/leads';
@@ -110,7 +111,7 @@ function App() {
               <Route path="/accessibility" element={<><Accessibility /></>} />
             </Routes>
           </main>
-          <Footer />
+          {isMobile ? <FooterMobile /> : <FooterDesktop />}
         </Router>
       </MobileContext.Provider>
     </ThemeProvider>

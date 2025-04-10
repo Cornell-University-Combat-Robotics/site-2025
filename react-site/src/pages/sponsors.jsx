@@ -1,7 +1,7 @@
 import { Box, Button, Typography, Grid2, Link, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2023-24_packet.pdf';
-import FAQ from "../components/FAQ";
+import FAQ from "../components/FAQ.tsx";
 import { LinkToPage } from "../components/FAQ.tsx";
 
 /** Sponsors creates the Sponsors page of the website. */
