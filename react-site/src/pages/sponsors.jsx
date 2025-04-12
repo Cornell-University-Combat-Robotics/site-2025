@@ -102,6 +102,107 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
+      <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" paddingTop="20px" paddingBottom="20px" sx={{backgroundColor:"white"}}>
+        <Box display="flex" flex="1" flex-direction="row" marginBottom="20px" width="100%" height="100%" sx={{backgroundColor:"#212D38"}}>
+          <Box display="flex" flex="0.7" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+            <Box
+              maxWidth="100%"
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              // sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>PLATINUM</Typography>
+          </Box>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            
+            
+            
+            
+            {/* <img></img>
+            <img></img>
+            <img></img>
+            <img></img> */}
+          </Box>
+        </Box>
+        <Box>
+          <Box>
+            <img></img>
+          </Box>
+          <Box>
+            <img></img>
+            <img></img>
+            <img></img>
+            <img></img>
+          </Box>
+        </Box>
+        <Box>
+          <Box>
+            <img></img>
+          </Box>
+          <Box>
+            <img></img>
+            <img></img>
+            <img></img>
+            <img></img>
+          </Box>
+        </Box>
+        <Box>
+          <Box>
+            <img></img>
+          </Box>
+          <Box>
+            <img></img>
+            <img></img>
+            <img></img>
+            <img></img>
+          </Box>
+        </Box>
+        <Box>
+          <Box>
+            <img></img>
+          </Box>
+          <Box>
+            <img></img>
+            <img></img>
+            <img></img>
+            <img></img>
+          </Box>
+        </Box>
+      </Box>
+
       {/* Sponsor Logos Section with Light Blue Rectangle:
       The outer Box centers the content inside horizontally with flexbox. 
       The nested Box (inside) sets the width to 75% of the screen and creates
