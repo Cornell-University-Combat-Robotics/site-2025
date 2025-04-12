@@ -28,15 +28,15 @@ function About() {
             height: 'auto',
             top: '50%',
             left: '50%',
-            marginTop: isMobile ? '30%' : '15%',
+            marginTop: isMobile ? '40%' : '15%',
           }}
           />
 
           {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
           <Typography
-            variant="h3"
+            variant={isMobile ? "mobileH2" : "desktopH2"}
+            display="block"
             sx={{
-              fontStyle: "italic",
               top: '50%',
               left: '50%',
               textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
@@ -48,10 +48,10 @@ function About() {
 
         {/* Page contents */}
         <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '7%', mb: '10%' }}>
-          <Typography variant={isMobile ? "h3" : "h2"} align="left">
+          <Typography variant={isMobile ? "mobileH2" : "desktopH2"} align="left">
             Who are we?
           </Typography>
-          <Typography align="left" sx={{ fontSize: isMobile ? '1.1rem' : 'inherit' }}>
+          <Typography variant={isMobile ? "mobileBody" : "desktopBody"} display="block" align="left">
             We&apos;re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those
             featured on the TV show Battlebots. Each year, our Sportsman and Kinetic subteams build two 12lb mechanical robots,
             while our Autonomous team builds a 3lb bot with AI based functionality. Our Marketing subteam keeps the team funded,
@@ -66,24 +66,24 @@ function About() {
                 {/* First row: members and majors */}
                 <Stack direction="row" spacing={5} sx={{ width: '100%', justifyContent: 'center' }}>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant="h3">40+</Typography>
-                    <Typography variant="h4">members</Typography>
+                    <Typography variant={"mobileH2"}>40+</Typography>
+                    <Typography variant={"mobileH3"}>members</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant="h3">30+</Typography>
-                    <Typography variant="h4">majors</Typography>
+                    <Typography variant={"mobileH2"}>30+</Typography>
+                    <Typography variant={"mobileH3"}>majors</Typography>
                   </Stack>
                 </Stack>
 
                 {/* Second row: colleges and years */}
                 <Stack direction="row" spacing={5} sx={{ width: '100%', justifyContent: 'center' }}>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant="h3">5+</Typography>
-                    <Typography variant="h4">colleges</Typography>
+                    <Typography variant={"mobileH2"}>5+</Typography>
+                    <Typography variant={"mobileH3"}>colleges</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant="h3">6+</Typography>
-                    <Typography variant="h4">years</Typography>
+                    <Typography variant={"mobileH2"}>6+</Typography>
+                    <Typography variant={"mobileH3"}>years</Typography>
                   </Stack>
                 </Stack>
               </Stack>
@@ -91,20 +91,20 @@ function About() {
               // Desktop layout: single row
               <Stack direction="row" spacing="23%">
                 <Stack>
-                  <Typography variant="h2">40+</Typography>
-                  <Typography>members</Typography>
+                  <Typography variant="desktopBody">40+</Typography>
+                  <Typography variant="desktopBody">members</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="h2">30+</Typography>
-                  <Typography>majors</Typography>
+                  <Typography variant="desktopBody">30+</Typography>
+                  <Typography variant="desktopBody">majors</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="h2">5+</Typography>
-                  <Typography>colleges</Typography>
+                  <Typography variant="desktopBody">5+</Typography>
+                  <Typography variant="desktopBody">colleges</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="h2">6+</Typography>
-                  <Typography>years</Typography>
+                  <Typography variant="desktopBody">6+</Typography>
+                  <Typography variant="desktopBody">years</Typography>
                 </Stack>
               </Stack>
             )}
@@ -118,11 +118,11 @@ function About() {
       {/* Rest of page, separate from rest because background image is too small */}
       <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '30%' : '15%', mb: '20%' }}>
         {/* What do we value title and paragraph */}
-        <Typography variant={isMobile ? 'h3' : "h2"} align="left" >
+        <Typography variant={isMobile ? 'mobileH3' : "desktopH2"} align="left" >
           What do we value?
         </Typography>
 
-        <Typography align="left" sx={{ fontSize: isMobile ? '1.1rem' : 'inherit' }}>
+        <Typography align="left" variant={isMobile ? 'mobileBody' : "desktopBody"} display="block">
           We work towards establishing CRC as one of Cornell&apos;s premier environments, embodying technical excellence, start-up spirit, and strong camaraderie.
           At CRC, we prioritize building a passionate, diverse team eager to learn and collaborate, regardless of technical experience, and leverage our unique interdisciplinary skills to dominate the competition.
         </Typography>
