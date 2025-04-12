@@ -488,7 +488,7 @@ function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
       <Box textAlign={"left"} padding={5}
         bgcolor={bgcolor} //bgcolors arent inherited
       >
-        <Typography variant="h4" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+        <Typography variant="h2" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
         </Typography>
 
