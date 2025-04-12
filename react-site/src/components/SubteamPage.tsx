@@ -54,12 +54,22 @@ export default function SubteamPage(props: SubteamProps) {
         () => setShowSubsystem([false, false, false, true])
     ];
 
+    const theme = useTheme();
 
+    const bodyTextStyle = {
+        fontSize: {
+            xs: theme.typography.mobileBody.fontSize,
+            sm: theme.typography.mobileBody.fontSize,
+            md: theme.typography.desktopBody.fontSize, //not ideal
+            lg: theme.typography.desktopBody.fontSize,
+        },
+        fontFamily: theme.typography.mobileBody.fontFamily,
+    };
 
     /**Purpose: React Router hook used for programmatic navigation
     Use: navigate('/route') to go to a specific route*/
     const navigate = useNavigate();
-    const theme = useTheme();
+
 
     return (
         <Box sx={{ position: 'relative', overflow: 'hidden' }}>
@@ -96,15 +106,15 @@ export default function SubteamPage(props: SubteamProps) {
             */}
                 <Box sx={{
                     position: 'relative', zIndex: 1, padding: '12%', backdropFilter: 'blur(5px) brightness(0.5)',
-                    height: '100%'
+                    height: '100%',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
                     <Stack direction="row" alignItems={"center"} justifyContent={"center"}
-                        columnGap={10} //for desktop
+                        columnGap={12} //for desktop
                         rowGap={"1vh"} //for mobile
                         // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
                         sx={{
-                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'nowrap' },  // Children wrap only on small & extra small screens 
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },  // Children wrap only on small & extra small screens 
                         }}
                     >
                         {/*Text components to be placed above blurred image*/}
@@ -114,19 +124,17 @@ export default function SubteamPage(props: SubteamProps) {
                                 textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
                                 //note: cannot use variant here, cuz it's not responsive
                                 fontSize: {
-                                    xs: theme.typography.h1.fontSize,
-                                    lg: theme.typography.h2.fontSize,
-                                }
+                                    xs: theme.typography.mobileH2.fontSize,
+                                    lg: theme.typography.desktopH2.fontSize, //todo slightly small
+                                },
+                                fontFamily: theme.typography.mobileBody.fontFamily
                             }}>
                             {props.name.toUpperCase()}
                         </Typography>
 
                         <Typography sx={{
                             textAlign: 'left', minWidth: 320, wordWrap: 'break-word',
-                            fontSize: {
-                                xs: theme.typography.body3.fontSize,
-                                lg: theme.typography.body2.fontSize,
-                            }
+                            ...bodyTextStyle //spread operator (...) to inject the properties of one object into another
                         }}>
                             {props.desc}
                         </Typography>
@@ -136,20 +144,14 @@ export default function SubteamPage(props: SubteamProps) {
                     <Typography sx={{
                         textAlign: "left", mt: "6vw", //kinda counterintuitive, but vw works better than vh here
                         display: 'block', //ensure typographies arent combined tgt (not sure why this isnt automatic...)
-                        fontSize: {
-                            xs: theme.typography.body3.fontSize,
-                            lg: theme.typography.body2.fontSize,
-                        }
+                        ...bodyTextStyle
                     }}>
                         {props.optionalDesc}
                     </Typography>
 
                     <Typography sx={{
                         textAlign: "left", mt: "6vw", mb: "5vh", display: 'block',
-                        fontSize: {
-                            xs: theme.typography.body3.fontSize,
-                            lg: theme.typography.body2.fontSize,
-                        }
+                        ...bodyTextStyle
                     }}>
                         {props.subsystemIntro}
                     </Typography>
@@ -168,10 +170,19 @@ export default function SubteamPage(props: SubteamProps) {
                             {props.subsystems.map((subsystem, index) => (
 
                                 <Button key={index} sx={{
-                                    flex: '1 1 30vw', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
+                                    //the 3 following properties resizes width but with constraints -> pertains only to width, not height, cuz flex direction of stack is row
+                                    width: {
+                                        xs: "20vw",
+                                        lg: "40vw"
+                                    },
                                     minWidth: 130, // ensures that buttons dont get too small or big when wrapping 
-                                    maxWidth: 230,
-                                    height: 120,
+                                    maxWidth: 400,
+                                    height: {
+                                        xs: "10vh",
+                                        lg: "40vh"
+                                    },
+                                    minHeight: 120,
+                                    maxHeight: 250,
                                     backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
                                     border: '3px solid white',
                                     '&:hover': { //on mouse hover
@@ -192,10 +203,8 @@ export default function SubteamPage(props: SubteamProps) {
 
                                     {/*Always display subsystem name on button*/}
                                     <Typography sx={{
-                                        fontSize: {
-                                            xs: theme.typography.body3.fontSize,
-                                            lg: theme.typography.body2.fontSize,
-                                        }, color: 'white', textTransform: 'none'
+                                        color: 'white', textTransform: 'none',
+                                        ...bodyTextStyle
                                     }}>
                                         {subsystem.name}
                                     </Typography>
@@ -204,11 +213,11 @@ export default function SubteamPage(props: SubteamProps) {
                         </Stack>}
 
                     {/*TODO: change all to body 1*/}
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body2" sx={{ textAlign: "left", display: "block", mb: 10 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mb: 10, ...bodyTextStyle }} >
                         {"While the subsystems are distinct, members are able to work interchangeably among them."}
                     </Typography>}
 
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body1" sx={{ marginTop: 10, marginBottom: 5 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ marginTop: 10, marginBottom: 5, ...bodyTextStyle }}>
                         {"If you are more interested in..."}
                     </Typography>}
 
@@ -217,13 +226,21 @@ export default function SubteamPage(props: SubteamProps) {
 
                     <Box textAlign={"left"} marginInline={10} >
                         {props.otherInterest.map((bulletPoint, index) => (
-                            <Typography key={index} sx={{ fontSize: 20, marginTop: 2 }}>
+                            <Typography key={index} sx={{ marginTop: 2, ...bodyTextStyle }}>
                                 {bulletPoint}
                             </Typography>
                         ))}
                     </Box>
 
-                    <Typography sx={{ fontSize: 45, textAlign: "left", marginTop: 10, marginBottom: 3 }}>
+                    <Typography sx={{
+                        textAlign: "left", marginTop: 10, marginBottom: 3,
+
+                        fontSize: {
+                            xs: theme.typography.mobileH2.fontSize,
+                            lg: theme.typography.desktopH2.fontSize, //todo slightly small
+                        },
+                        fontFamily: theme.typography.mobileBody.fontFamily
+                    }}>
                         {"Meet the team"}
                     </Typography>
 

@@ -35,6 +35,7 @@ const theme = createTheme({
     mobileH1: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '15vw',
+      fontWeight: 'normal',
     },
     mobileH2: {
       fontFamily: 'Josefin Sans, sans-serif',
@@ -43,7 +44,8 @@ const theme = createTheme({
     },
     mobileH3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '5.5vw'
+      fontSize: '5.5vw',
+      fontWeight: 'normal',
     },
     desktopH1: {
       fontFamily: 'Josefin Sans, sans-serif',
