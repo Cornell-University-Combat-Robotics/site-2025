@@ -32,14 +32,14 @@ export default function RobotDesktop() {
         <Container mx="15%">
             <Box display="flex" flexDirection="column" alignItems="center" mx='5%'>
                 <StickyBox />
-                <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
+                <Typography variant="desktopH1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
                     ROBOTS
                 </Typography>
-                <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+                <Typography variant="desktopH2" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
                     UPCOMING ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-                    <Typography sx={{ fontFamily: 'Josefin Sans' }}>
+                    <Typography variant="desktopBody">
                         Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                     </Typography>
                 </Box>

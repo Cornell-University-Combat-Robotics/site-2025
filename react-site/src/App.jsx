@@ -29,40 +29,43 @@ import Alumni from './pages/subteams/alumni';
 export const MobileContext = createContext();
 
 // mobile font sizes: body2 for paragraphs,
-// h1 for header
+// headers are same as regular
 const theme = createTheme({
   typography: {
-    h1: {
+    mobileH1: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '8vw',
       fontWeight: 'normal',
     },
-    h2: {
+    mobileH2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '5vw',
+      fontSize: '5vw'
+    },
+    desktopH1: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '8vw',
       fontWeight: 'normal',
     },
-    h3: {
+    desktopH2: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '4vw',
+      fontWeight: 'normal',
+    },
+    desktopH3: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '2.6vw',
       fontWeight: 'normal',
     },
-    body1: {
+    mobileBody: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '3.5vw',
       fontWeight: 'normal',
     },
-    body2: {
+    desktopBody: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '2.0vw',
       fontWeight: 'normal',
     },
-    body3: {
-      fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '3.5vw',
-      fontWeight: 'normal',
-
-    }
   },
   palette: {
     primary: {
