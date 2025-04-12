@@ -34,12 +34,16 @@ const theme = createTheme({
   typography: {
     mobileH1: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '8vw',
-      fontWeight: 'normal',
+      fontSize: '15vw',
     },
     mobileH2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '5vw'
+      fontSize: '8vw',
+      fontWeight: 'normal',
+    },
+    mobileH3: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '5.5vw'
     },
     desktopH1: {
       fontFamily: 'Josefin Sans, sans-serif',

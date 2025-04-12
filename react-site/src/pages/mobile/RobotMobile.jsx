@@ -34,11 +34,11 @@ export default function RobotMobile() {
             <Box display="flex" flexDirection="column" alignItems="center" sx={{ px: '5%' }}>
                 {/* This is the actual robot animation component */}
                 <StickyBoxMobile />
-                <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
+                <Typography variant="mobileH1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
                     ROBOTS
                 </Typography>
 
-                <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
+                <Typography variant="mobileH2" sx={{ fontFamily: 'Josefin Sans' }}>
                     UPCOMING ROBOTS
                 </Typography>
 
@@ -52,8 +52,9 @@ export default function RobotMobile() {
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <img src={Benny} style={{ width: '50%', height: 'auto', marginLeft: '-5%' }} />
                     <Stack spacing={2} mt='10'>
-                        <Typography variant='h2' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benjamin R. Johm Esq. | Kinetic</Typography>
-                        <Typography variant='body1' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
+                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benny R. Johm</Typography>
+                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Kinetic </Typography>
+                        <Typography variant='mobileBody' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
                             Benjamin R. Johm Esq. is Kinetic's latest creation....
                         </Typography>
                     </Stack>
