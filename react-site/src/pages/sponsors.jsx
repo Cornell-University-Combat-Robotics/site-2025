@@ -103,16 +103,15 @@ export default function Sponsors() {
       </Box>
 
       <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" paddingTop="20px" paddingBottom="20px" sx={{backgroundColor:"white"}}>
-        <Box display="flex" flex="1" flex-direction="row" marginBottom="20px" width="100%" height="100%" sx={{backgroundColor:"#212D38"}}>
-          <Box display="flex" flex="0.7" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%" sx={{backgroundColor:"#212D38"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
             <Box
-              maxWidth="100%"
               component="img"
               src={"/sponsors/crc_plat.png"}
               alt="Large Plat Logo"
-              // sx={{ width: '400px', height: 'auto', mb: 2 }}
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>PLATINUM</Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
           <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
