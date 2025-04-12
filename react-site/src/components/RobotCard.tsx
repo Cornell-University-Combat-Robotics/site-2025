@@ -9,6 +9,7 @@ export interface RobotCardProps {
   image: string; // Link to the file location of the robot
   link: string; // Link to the individual robot page
   color: number; // 0 for red, 1 for pink
+  hasDescription: boolean;
   // In the future, we should remove the color prop since it requires hard-coding (seen in robots.ts).
   // Instead, RobotCardList should automatically alternate colors.
 }
@@ -23,7 +24,7 @@ export default function RobotCard(props: RobotCardProps) {
         // size of card itself
         sx={{
           // width: 220, 
-          // height: 400, 
+          height: props.hasDescription ? "380px" : "300px",
           flex: "1",
           flexShrink: "0",
           bgcolor: background_color,
@@ -37,7 +38,6 @@ export default function RobotCard(props: RobotCardProps) {
           minWidth: '220px',
           maxWidth: '240px',
           // maxWidth: '278.4px',
-          // height: '100%',
           // make em
         }}
       >
@@ -133,7 +133,6 @@ export default function RobotCard(props: RobotCardProps) {
                     variant="body2"
                     sx={{
                       // backgroundColor: 'yellow',
-                      fontWeight: 'bold',
                       padding: '0.2em 0.5em', // Added internal padding to prevent text overlap
                       lineHeight: 1.2 // Adjusted line height for better readability
                       // display: 'flex',
