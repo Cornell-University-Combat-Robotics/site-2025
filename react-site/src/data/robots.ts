@@ -59,6 +59,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: beaterPhoto,
       link: "/robots/beater",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Nardo",
@@ -67,6 +68,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: nardoPhoto,
       link: "/robots/nardo",
       color: 1,
+      hasDescription: true,
     },
     {
       name: "Louis XVII",
@@ -75,6 +77,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: louisPhoto,
       link: "/robots/louis",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Rosie",
@@ -83,6 +86,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: rosiePhoto,
       link: "/robots/rosie",
       color: 1,
+      hasDescription: true,
     },
     {
       name: "Florence",
@@ -91,6 +95,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: florencePhoto,
       link: "/robots/florence",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Richard",
@@ -99,6 +104,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: richardPhoto,
       link: "/robots/richard",
       color: 1,
+      hasDescription: true,
     },
     {
       name: "Lance",
@@ -107,6 +113,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: lancePhoto,
       link: "/robots/lance",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Manny",
@@ -115,6 +122,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: mannyPhoto,
       link: "/robots/manny",
       color: 1,
+      hasDescription: true,
     },
     {
       name: "Donatello",
@@ -123,6 +131,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: donatelloPhoto,
       link: "/robots/donatello",
       color: 0,
+      hasDescription: true,
     },
   ],
   Mini: [
@@ -133,6 +142,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: kennyPhoto,
       link: "/robots/kenny",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Gorge Rusel",
@@ -141,6 +151,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: gorgeruselPhoto,
       link: "/robots/gorgerusel",
       color: 1,
+      hasDescription: true,
     },
     {
       name: "L Billet",
@@ -149,6 +160,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: lbilletPhoto,
       link: "/robots/lBillet",
       color: 0,
+      hasDescription: true,
     },
     {
       name: "Rosie Junior",
@@ -157,6 +169,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: rosiejrPhoto,
       link: "/robots/rosieJunior",
       color: 1,
+      hasDescription: true,
     },
   ],
   Three_lb: [
@@ -167,6 +180,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: biggieCheesePhoto,
       link: "/robots/biggiecheese",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Black Beetle",
@@ -175,6 +189,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: blackBeetlePhoto,
       link: "/robots/blackbeetle",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Bobby & Bobbo",
@@ -183,6 +198,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: bobbyBobboPhoto,
       link: "/robots/bobbyBobbo",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Brunobot & Lukebot",
@@ -191,6 +207,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: brunobotPhoto,
       link: "/robots/brunobotLukebot",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "CRC-Chan",
@@ -199,6 +216,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: crcChanPhoto,
       link: "/robots/crcchan",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "CRSuit",
@@ -207,6 +225,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: crcuitPhoto,
       link: "/robots/crsuit",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Dauður Hestr",
@@ -215,6 +234,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: hestrPhoto,
       link: "/robots/hestr",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Dumb and Dumber",
@@ -223,6 +243,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: dumbAndDumberPhoto,
       link: "/robots/dumbanddumber",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Fangular Momentum",
@@ -231,6 +252,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: batbotPhoto,
       link: "/robots/batbot",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Fortunate Son",
@@ -239,6 +261,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: fortunateSonPhoto,
       link: "/robots/fortunateson",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Hanako",
@@ -247,6 +270,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: hanakoPhoto,
       link: "/robots/hanako",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Heave Ho",
@@ -255,6 +279,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: heaveHoPhoto,
       link: "/robots/heaveHo",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Idiot Sandwich",
@@ -263,6 +288,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: idiotSandwichPhoto,
       link: "/robots/idiotSandwich",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Knuckles",
@@ -271,6 +297,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: knucklesPhoto,
       link: "/robots/knuckles",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Logobot",
@@ -279,6 +306,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: logoPhoto,
       link: "/robots/logobot",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Milo",
@@ -287,6 +315,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: miloPhoto,
       link: "/robots/milo",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Mommy Issues",
@@ -295,6 +324,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: mommyIssuesPhoto,
       link: "/robots/mommyIssues",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "PerryBot",
@@ -303,6 +333,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: perryBotPhoto,
       link: "/robots/perrybot",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Rocky",
@@ -311,6 +342,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: rockyPhoto,
       link: "/robots/rocky",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "RolyPoly",
@@ -319,6 +351,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: rolypolyPhoto,
       link: "/robots/rolypoly",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Samurai",
@@ -327,6 +360,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: samuraiPhoto,
       link: "/robots/samurai",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Scorpion",
@@ -335,6 +369,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: scorpionPhoto,
       link: "/robots/scorpion",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Shadow Richard",
@@ -343,6 +378,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: shadowPhoto,
       link: "/robots/shadowRichard",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Slugma",
@@ -351,6 +387,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: slugmaPhoto,
       link: "/robots/slugma",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Steve",
@@ -359,6 +396,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: stevePhoto,
       link: "/robots/steve",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Stuffed Manny",
@@ -367,6 +405,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: stuffedMannyPhoto,
       link: "/robots/stuffedManny",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Swiss Cheese",
@@ -375,6 +414,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: swissCheesePhoto,
       link: "/robots/swissCheese",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Swiss Slinger",
@@ -383,6 +423,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: swissPhoto,
       link: "/robots/swiss",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Test Box",
@@ -391,6 +432,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: testBoxPhoto,
       link: "/robots/testBox",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Two Face",
@@ -399,6 +441,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: twoFacePhoto,
       link: "/robots/twoface",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Wabbit",
@@ -407,6 +450,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: wabbitPhoto,
       link: "/robots/wabbit",
       color: 1,
+      hasDescription: false,
     }
   ],
   /*for apply page 3lb, only need 3 robots*/
@@ -418,6 +462,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: slugmaPhoto,
       link: "/robots/slugma",
       color: 0,
+      hasDescription: false,
     },
     {
       name: "Fangular Momentum",
@@ -426,6 +471,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: batbotPhoto,
       link: "/robots/batbot",
       color: 1,
+      hasDescription: false,
     },
     {
       name: "Dauður Hestr",
@@ -434,6 +480,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: hestrPhoto,
       link: "/robots/hestr",
       color: 0,
+      hasDescription: false,
     }
   ]
 };

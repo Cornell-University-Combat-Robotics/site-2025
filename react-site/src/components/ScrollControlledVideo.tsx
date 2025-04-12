@@ -72,7 +72,7 @@ const HeroAnimation: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id="robot-animation"></canvas>;
+  return <canvas ref={canvasRef} id="robot-animation" />;
 };
 
 export default HeroAnimation;

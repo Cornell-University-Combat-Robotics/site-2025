@@ -1,3 +1,5 @@
+import Benny from '../assets/new-robots/BennyRJohm.png';
+import Capsize from '../assets/new-robots/Capsize.png';
 import nardo_whole from '../assets/nardo-whole.png';
 import { Box, Stack, Typography, Container } from '@mui/material';
 import RobotCard from '../components/RobotCard';
@@ -28,7 +30,7 @@ export default function RobotDesktop() {
 
     return (
         <Container mx="15%">
-            <Box display="flex" flexDirection="column" alignItems="center">
+            <Box display="flex" flexDirection="column" alignItems="center" mx='5%'>
                 <StickyBox />
                 <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
                     ROBOTS
@@ -41,8 +43,8 @@ export default function RobotDesktop() {
                         Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                     </Typography>
                 </Box>
-                <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
-                    <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
+                <Stack direction='row' spacing={'10%'} sx={{ mt: 5 }}>
+                    <img src={Benny} style={{ width: '40%', height: 'auto' }} />
                     <Stack spacing={2} mt='10'>
                         <Typography variant='h3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benjamin R. Johm Esq. | Kinetic</Typography>
                         <Typography variant='body1' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
@@ -57,7 +59,7 @@ export default function RobotDesktop() {
                             Capsize is Sportsman's latest robot...
                         </Typography>
                     </Stack>
-                    <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
+                    <img src={Capsize} style={{ width: '50%', height: 'auto' }} />
                 </Stack>
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
@@ -72,7 +74,7 @@ export default function RobotDesktop() {
                     RETIRED ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-                    <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
+                    <Typography width='100%' sx={{ fontFamily: 'Josefin Sans' }}>
                         Here are all of our robots from previous years, in all their retired glory!
                     </Typography>
                 </Box>
@@ -81,14 +83,8 @@ export default function RobotDesktop() {
                     MINI ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-                    <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur nisl quis diam iaculis ultricies.
-                        Proin at fringilla lacus, vulputate viverra nisl. Phasellus et nibh sed metus varius fringilla in eu nulla.
-                        Donec convallis eros id eros elementum gravida. Phasellus at pulvinar lacus.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        Aenean ut ipsum vel massa condimentum feugiat. Donec at molestie nisi.
-                        Suspendisse suscipit arcu vitae venenatis tempor. Duis non arcu sem. Donec sit amet ultricies mi, id varius eros.
-                        Integer elementum lobortis mi vitae varius.
+                    <Typography width='100%' sx={{ fontFamily: 'Josefin Sans' }}>
+                        These are the valiant mini-bots that supported our 12lb robots in competition.
                     </Typography>
                 </Box>
                 <RobotCardList type='Mini' capacity={4} />
@@ -96,7 +92,7 @@ export default function RobotDesktop() {
                     3 LB ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }} >
-                    <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }} >
+                    <Typography width='100%' sx={{ fontFamily: 'Josefin Sans' }} >
                         These are the 3lb robots that new members create as a part of CRC's training program!
                     </Typography>
                 </Box>
