@@ -33,10 +33,10 @@ const StickyBoxMobile: React.FC = () => {
             sx={{
                 position: "sticky",
                 // marginBottom: isSticky ? "100vh" : "0vh",
-                mx: 'auto',
+                mx: '0',
                 display: "flex",
                 justifyContent: "center",
-                width: "98vw",
+                width: "100vw",
                 height: "auto",
                 flexDirection: "column",
                 alignItems: "center",

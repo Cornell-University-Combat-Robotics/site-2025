@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import GradientNavBar from './components/GradientNavBar';
+import NavBarMobile from './components/mobile/NavBarMobile';
 import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
 import Team from './pages/team';
@@ -27,6 +28,8 @@ import Alumni from './pages/subteams/alumni';
 // mobile context
 export const MobileContext = createContext();
 
+// mobile font sizes: body3 for paragraphs,
+// h1 for header
 const theme = createTheme({
   typography: {
     h1: {
@@ -90,7 +93,7 @@ function App() {
       <MobileContext.Provider value={isMobile}>
         <Router>
           <ScrollToTop />
-          <GradientNavBar />
+          {isMobile ? <NavBarMobile /> : <GradientNavBar />}
           <main>
             <Routes>
               <Route path="/" element={<><About /></>} />

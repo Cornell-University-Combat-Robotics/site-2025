@@ -30,8 +30,8 @@ export default function RobotMobile() {
 
 
     return (
-        <Container sx={{ mx: '5%', width: '100vw' }}>
-            <Box display="flex" flexDirection="column" alignItems="center" sx={{ mx: 'auto', }}>
+        <Container>
+            <Box display="flex" flexDirection="column" alignItems="center">
                 {/* This is the actual robot animation component */}
                 <StickyBoxMobile />
                 <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
