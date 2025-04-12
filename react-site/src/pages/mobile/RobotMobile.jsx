@@ -1,3 +1,6 @@
+import Benny from '../../assets/new-robots/BennyRJohm.png';
+import Capsize from '../../assets/new-robots/Capsize.png';
+// import Benny from '../../assets/new-robots/BennyRJohm.png';
 import nardo_whole from '../../assets/nardo-whole.png';
 import { Box, Stack, Typography, Container } from '@mui/material';
 import RobotCard from '../../components/RobotCard';
@@ -27,71 +30,83 @@ export default function RobotMobile() {
 
 
     return (
-        <Container sx={{ mx: '15%' }}>
-            <Box display="flex" flexDirection="column" alignItems="center">
+        <Container sx={{ mx: '5%', width: '100vw' }}>
+            <Box display="flex" flexDirection="column" alignItems="center" sx={{ mx: 'auto', }}>
+                {/* This is the actual robot animation component */}
                 <StickyBoxMobile />
-                <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', mt: 5 }}>
+                <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
                     ROBOTS
                 </Typography>
-                <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+
+                <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans' }}>
                     UPCOMING ROBOTS
                 </Typography>
-                <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
+
+                <Box display='flex' justifyContent='center' alignItems='center' sx={{ my: "20%" }}>
                     <Typography textAlign='left' sx={{ fontFamily: 'Josefin Sans' }}>
                         Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                     </Typography>
                 </Box>
+
+                {/* First robot section */}
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
-                    <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
+                    <img src={Benny} style={{ width: '50%', height: 'auto', marginLeft: '-5%' }} />
                     <Stack spacing={2} mt='10'>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benjamin R. Johm Esq. | Kinetic</Typography>
-                        <Typography variant='body1' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
-                            Benjamin R. Johm Esq. is Kinetic's latest creation....
-                        </Typography>
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Benny</Typography>
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Kinetic</Typography>
                     </Stack>
                 </Stack>
+                <Typography variant='body1' align='left' width='100%' sx={{ my: '10%' }}>
+                    Benjamin R. Johm Esq. is Kinetic's latest creation....
+                </Typography>
+
+                {/* Second robot section */}
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <Stack spacing={2} mt='10'>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Capsize | Sportsman</Typography>
-                        <Typography variant='body1' align='left' width='80%'>
-                            Capsize is Sportsman's latest robot...
-                        </Typography>
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Capsize</Typography>
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Sportsman </Typography>
                     </Stack>
-                    <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
+                    <img src={Capsize} style={{ width: '50%', height: 'auto' }} />
                 </Stack>
-                <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
+                <Typography variant='body1' align='left' width='100%' sx={{ fontFamily: 'Josefin Sans', my: '10%' }}>
+                    Capsize is Sportsman's latest robot...
+                </Typography>
+
+                {/* Third robot section */}
+                <Stack direction='row' spacing={4} marginLeft='-5%' sx={{ mt: 5 }}>
                     <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
-                    <Stack spacing={2} mt='10'>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Huey | Autonomous</Typography>
-                        <Typography variant='body1' align='left' width='80%'>
-                            Huey is Autonomous' next robot to waddle into competition...
-                        </Typography>
+                    <Stack spacing={2} mt='10%' >
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Huey</Typography>
+                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Autonomous</Typography>
                     </Stack>
                 </Stack>
-                <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+                <Typography variant='body1' align='left' width='100%' sx={{ fontFamily: 'Josefin Sans', my: '10%' }}>
+                    Huey is Autonomous' next robot to waddle into competition...
+                </Typography>
+
+                {/* Retired robots section */}
+                <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
                     RETIRED ROBOTS
                 </Typography>
-                <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
-                    <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
+                <Box display='flex' justifyContent='center' alignItems='center'>
+                    <Typography width='100%' sx={{ fontFamily: 'Josefin Sans' }}>
                         Here are all of our robots from previous years, in all their retired glory!
                     </Typography>
                 </Box>
                 <RobotCardList type='Retired' capacity={3} />
-                <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+
+                {/* Mini robots section */}
+                <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
                     MINI ROBOTS
                 </Typography>
-                <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
+                <Box display='flex' justifyContent='center' alignItems='center' >
                     <Typography width='75%' sx={{ fontFamily: 'Josefin Sans' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur nisl quis diam iaculis ultricies.
-                        Proin at fringilla lacus, vulputate viverra nisl. Phasellus et nibh sed metus varius fringilla in eu nulla.
-                        Donec convallis eros id eros elementum gravida. Phasellus at pulvinar lacus.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        Aenean ut ipsum vel massa condimentum feugiat. Donec at molestie nisi.
-                        Suspendisse suscipit arcu vitae venenatis tempor. Duis non arcu sem. Donec sit amet ultricies mi, id varius eros.
-                        Integer elementum lobortis mi vitae varius.
+                        These are the mini-bots that helped our 12lb bots in battle!
                     </Typography>
                 </Box>
                 <RobotCardList type='Mini' capacity={4} />
+
+                {/* 3LB robots section */}
                 <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
                     3 LB ROBOTS
                 </Typography>

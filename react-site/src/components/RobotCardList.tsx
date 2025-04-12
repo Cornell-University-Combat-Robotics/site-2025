@@ -17,8 +17,8 @@ export default function RobotCardList(props: RobotCardListProps) {
         display: "grid",
         // gridTemplateColumns: `repeat(${capacity}, 1fr)`,
         gridTemplateColumns: {
-          xs: `repeat(2, 1fr)`,
-          sm: `repeat(2, 1fr)`,
+          xs: `repeat(1, 1fr)`,
+          sm: `repeat(1, 1fr)`,
           md: `repeat(${capacity}, 1fr)`,
         },
         gridAutoRows: '1fr',
@@ -26,6 +26,7 @@ export default function RobotCardList(props: RobotCardListProps) {
         justifyContent: "center",
         alignItems: "center",
         margin: "70px auto",
+        height: 'auto',
         // backgroundColor: "yellow",
         width: "fit-content",
       }}>
