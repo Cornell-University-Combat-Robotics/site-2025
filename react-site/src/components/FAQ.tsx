@@ -25,7 +25,7 @@ function FAQ(props: FAQSection) {
       }}
     >
       <Box width="100%" justifyContent="center" alignItems="center">
-        <Typography variant="h4" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
+        <Typography variant="h2" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
           FAQ
         </Typography>
 

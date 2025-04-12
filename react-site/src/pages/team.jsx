@@ -135,7 +135,7 @@ export default function Team() {
               ease: "linear"
             }}
           >
-            <Typography variant="h4" >
+            <Typography variant="h2" >
               {/*Duplicate text to ensure no empty space*/}
               {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "}
             </Typography>

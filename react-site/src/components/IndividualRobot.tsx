@@ -102,7 +102,7 @@ export default function IndividualRobot() {
       </Typography>
 
       {/* Names of Builders */}
-      <Typography variant="h4" align="left" width='90%' style={{ fontStyle: 'italic' }}>
+      <Typography variant="h2" align="left" width='90%' style={{ fontStyle: 'italic' }}>
         {robotInfo.makers.join(', ')}
       </Typography>
 

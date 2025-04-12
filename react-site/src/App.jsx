@@ -35,28 +35,15 @@ theme.typography.h1 = {
   fontWeight: 'normal',
 };
 
-theme.typography.h4 = {
+theme.typography.h2 = {
   fontFamily: 'Josefin Sans, sans-serif',
   fontSize: '5vw',
   fontWeight: 'normal',
 };
 
-theme.typography.h5 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2.6vw',
-  fontWeight: 'normal',
-};
-
-
-theme.typography.h2 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2.8rem',
-  fontWeight: 'normal',
-};
-
 theme.typography.h3 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '2rem',
+  fontSize: '2.6vw',
   fontWeight: 'normal',
 };
 
@@ -66,21 +53,22 @@ theme.typography.body1 = {
   fontWeight: 'normal',
 };
 
-
-theme.palette.primary = {
-  main: '#3D0E0E'
-}
 theme.typography.body2 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '1rem',
+  fontSize: '1.7vw',
   fontWeight: 'normal',
 };
 
 theme.typography.body3 = {
   fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '3.0vw',
+  fontSize: '3.5vw',
   fontWeight: 'normal',
 };
+
+theme.palette.primary = {
+  main: '#3D0E0E'
+}
+
 
 function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
