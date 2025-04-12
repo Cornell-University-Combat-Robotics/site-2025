@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Box, IconButton, Slide, Stack, RadioGroup, Radio, FormControlLabel, useMediaQuery, useTheme } from "@mui/material";
+import React, { useState, useEffect, useContext } from "react";
+import { Box, IconButton, Slide, Stack, RadioGroup, Radio, FormControlLabel } from "@mui/material";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import Cell from "./TimelineCell.tsx";
 import CellData from "../data/timeline1.ts";
+import { MobileContext } from "../App.jsx";
 
 
 export interface Carousel1 {
@@ -21,7 +22,7 @@ function Carousel(props: Carousel1) {
     //determines animation direction (slide left or slide right)
     const [slideDirection, setSlideDirection] = useState<"right" | "left" | undefined>("left");
 
-    const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
+    const isMobile = useContext(MobileContext);
     //how many cards per page
     const cellsPerPage = isMobile ? 1 : 3;
 
@@ -73,8 +74,7 @@ function Carousel(props: Carousel1) {
 
                 {/* contains cards */}
                 <Box sx={{
-                    height: "90vh", // if you change this, also change it in TimelineCell 
-                    width: "100vw",
+                    height: isMobile ? '65vh' : "90vh", // if you change this, also change it in TimelineCell 
                     justifyContent: "center",
                     alignItems: "center",
                     zIndex: "-10"
@@ -119,20 +119,22 @@ function Carousel(props: Carousel1) {
             </Box >
 
             {/* Dots */}
-            <RadioGroup row value={currentPage} onChange={handleDotChange} sx={{
-                mt: "-5%", justifyContent: "center",
-                alignItems: "center", mb: "1%", gap: "1%"
-            }}>
-                {[...Array(pages)].map((_, index) => (
-                    <FormControlLabel
-                        key={index}
-                        value={String(index)}
-                        control={<Radio size="small"
-                            sx={{ color: "white", '&.Mui-checked': { color: "white" }, transform: 'scale(2)', mx: "1%" }} />}
-                        label=""
-                    />
-                ))}
-            </RadioGroup>
+            {!isMobile &&
+                <RadioGroup row value={currentPage} onChange={handleDotChange} sx={{
+                    mt: "-5%", justifyContent: "center",
+                    alignItems: "center", mb: "1%", gap: "1%"
+                }}>
+                    {[...Array(pages)].map((_, index) => (
+                        <FormControlLabel
+                            key={index}
+                            value={String(index)}
+                            control={<Radio size="small"
+                                sx={{ color: "white", '&.Mui-checked': { color: "white" }, transform: 'scale(2)', mx: "1%" }} />}
+                            label=""
+                        />
+                    ))}
+                </RadioGroup>
+            }
         </Box>
     );
 

@@ -1,5 +1,6 @@
-import React from "react";
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import React, { useContext } from "react";
+import { Box, Typography } from "@mui/material";
+import { MobileContext } from "../App.jsx";
 
 export interface Timeline1Cell {
     date: string
@@ -11,13 +12,12 @@ export interface Timeline1Cell {
  * Creates a timeline cell for the About page Carousel. Represents the selected cell.
  */
 export default function TimelineCell(props: Timeline1Cell) {
-    const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
-
+    const isMobile = useContext(MobileContext);
     return (
         <Box>
             <Box sx={{
-                height: '90vh',
-                width: isMobile ? '68vw' : '28vw',
+                height: isMobile ? '65vh' : '90vh',
+                width: isMobile ? '78vw' : '28vw',
                 backgroundImage: `url(${props.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -39,7 +39,7 @@ export default function TimelineCell(props: Timeline1Cell) {
                     py: "15%"
                 }}>
                     <Typography variant="h3" style={{ zIndex: "1" }}> {props.date} </Typography>
-                    <Typography style={{ zIndex: "1", paddingRight: "20%" }}> {props.description} </Typography>
+                    <Typography variant={isMobile ? "h4" : "body1"} style={{ zIndex: "1", paddingRight: "20%" }}> {props.description} </Typography>
                 </Box>
             </Box >
         </Box>

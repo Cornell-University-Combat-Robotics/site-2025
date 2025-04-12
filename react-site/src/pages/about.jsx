@@ -1,4 +1,6 @@
-import { Box, Stack, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
+import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
@@ -6,7 +8,7 @@ import Carousel from "../components/Carousel";
 
 // Creates the About page for the website.
 function About() {
-  const isMobile = useMediaQuery(useTheme().breakpoints.down('sm'));
+  const isMobile = useContext(MobileContext);
 
   return (
     <Box >
@@ -26,7 +28,7 @@ function About() {
             height: 'auto',
             top: '50%',
             left: '50%',
-            marginTop: isMobile ? '25%' : '15%',
+            marginTop: isMobile ? '30%' : '15%',
           }}
           />
 
@@ -45,11 +47,8 @@ function About() {
         </Box>
 
         {/* Page contents */}
-        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '10%' : '7%', mb: '10%' }}>
-          <Typography variant={isMobile ? "h5" : "h2"} align="left"
-            sx={{
-              fontFamily: 'Josefin Sans',
-            }}>
+        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '7%', mb: '10%' }}>
+          <Typography variant={isMobile ? "h3" : "h2"} align="left">
             Who are we?
           </Typography>
           <Typography align="left" sx={{ fontSize: isMobile ? '1.1rem' : 'inherit' }}>
@@ -59,7 +58,7 @@ function About() {
             maintains our website and social media, along with merch, trading cards, and more.
           </Typography>
           {/* stats box */}
-          <Box height="30%" sx={{ mt: '10%', mx: 'auto', mb: '5%' }}>
+          <Box height="30%" sx={{ mt: isMobile ? '20%' : '10%', mx: 'auto', mb: isMobile ? '10%' : '5%' }}>
             {/* entire stats */}
             {isMobile ? (
               // Mobile layout: 2×2 grid
@@ -68,11 +67,11 @@ function About() {
                 <Stack direction="row" spacing={5} sx={{ width: '100%', justifyContent: 'center' }}>
                   <Stack sx={{ alignItems: 'center' }}>
                     <Typography variant="h3">40+</Typography>
-                    <Typography>members</Typography>
+                    <Typography variant="h4">members</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
                     <Typography variant="h3">30+</Typography>
-                    <Typography>majors</Typography>
+                    <Typography variant="h4">majors</Typography>
                   </Stack>
                 </Stack>
 
@@ -80,11 +79,11 @@ function About() {
                 <Stack direction="row" spacing={5} sx={{ width: '100%', justifyContent: 'center' }}>
                   <Stack sx={{ alignItems: 'center' }}>
                     <Typography variant="h3">5+</Typography>
-                    <Typography>colleges</Typography>
+                    <Typography variant="h4">colleges</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
                     <Typography variant="h3">6+</Typography>
-                    <Typography>years</Typography>
+                    <Typography variant="h4">years</Typography>
                   </Stack>
                 </Stack>
               </Stack>
@@ -112,12 +111,12 @@ function About() {
           </Box>
 
           {/* video, temporarily set as our team photo */}
-          <img src={team_photo} style={{ maxWidth: isMobile ? '95%' : '70%', height: 'auto', transform: isMobile ? 'translate(0, 15%)' : 'translate(0, 30%)', display: 'block', margin: '0 auto' }} />
+          <img src={team_photo} style={{ maxWidth: isMobile ? '95%' : '70%', height: 'auto', transform: 'translate(0, 30%)', display: 'block', margin: '0 auto' }} />
         </Box>
       </Box>
 
       {/* Rest of page, separate from rest because background image is too small */}
-      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '15%', mb: '7%' }}>
+      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '30%' : '15%', mb: '20%' }}>
         {/* What do we value title and paragraph */}
         <Typography variant={isMobile ? 'h3' : "h2"} align="left" >
           What do we value?
@@ -135,7 +134,7 @@ function About() {
           OUR HISTORY
         </Typography>
       </Box>
-      <Box marginLeft="0%" sx={{ width: "98vw", }}>
+      <Box marginLeft="0%" sx={{ width: "98vw", mb: '15%' }}>
         <Carousel numCells={10} />
       </Box>
     </Box >
