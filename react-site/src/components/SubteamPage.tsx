@@ -10,6 +10,7 @@ import autonomous_photo from "../assets/autonomous-photo.jpg";
 import leads_photo from "../assets/leads-photo.jpg";
 import alumni_photo from "../assets/alumni-photo.jpg";
 import { Link } from "react-router-dom";
+import { useTheme } from '@mui/material/styles';
 
 /**
 For each individual subteam page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
@@ -58,6 +59,7 @@ export default function SubteamPage(props: SubteamProps) {
     /**Purpose: React Router hook used for programmatic navigation
     Use: navigate('/route') to go to a specific route*/
     const navigate = useNavigate();
+    const theme = useTheme();
 
     return (
         <Box sx={{ position: 'relative', overflow: 'hidden' }}>
@@ -97,82 +99,116 @@ export default function SubteamPage(props: SubteamProps) {
                     height: '100%'
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
-                    <Stack direction="row" alignItems={"center"}
-                        overflow={"scroll"} //when screen size gets too smaller but has yet to trigger flexWrap, 
+                    <Stack direction="row" alignItems={"center"} justifyContent={"center"}
+                        columnGap={10} //for desktop
+                        rowGap={"1vh"} //for mobile
                         // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
                         sx={{
                             flexWrap: { xs: 'wrap', sm: 'wrap', md: 'nowrap' },  // Children wrap only on small & extra small screens 
                         }}
                     >
                         {/*Text components to be placed above blurred image*/}
-                        <Typography sx={{
-                            fontSize: 80, textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
-                            marginRight: 10 //must be applied in this specific typography component, else wrapping of 2nd typography will look weird
-                        }}>
+                        <Typography
+                            sx={{
+                                textAlign: "center",
+                                textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+                                //note: cannot use variant here, cuz it's not responsive
+                                fontSize: {
+                                    xs: theme.typography.h1.fontSize,
+                                    lg: theme.typography.h2.fontSize,
+                                }
+                            }}>
                             {props.name.toUpperCase()}
                         </Typography>
 
-                        <Typography variant='body1' sx={{ textAlign: 'left', minWidth: 320, wordWrap: 'break-word' }}>
+                        <Typography sx={{
+                            textAlign: 'left', minWidth: 320, wordWrap: 'break-word',
+                            fontSize: {
+                                xs: theme.typography.body3.fontSize,
+                                lg: theme.typography.body2.fontSize,
+                            }
+                        }}>
                             {props.desc}
                         </Typography>
 
                     </Stack>
 
-                    <Typography variant='body1' sx={{ textAlign: "left", marginTop: 10 }}>
+                    <Typography sx={{
+                        textAlign: "left", mt: "6vw", //kinda counterintuitive, but vw works better than vh here
+                        display: 'block', //ensure typographies arent combined tgt (not sure why this isnt automatic...)
+                        fontSize: {
+                            xs: theme.typography.body3.fontSize,
+                            lg: theme.typography.body2.fontSize,
+                        }
+                    }}>
                         {props.optionalDesc}
                     </Typography>
 
-                    <Typography variant='body1' sx={{ textAlign: "left", marginTop: 10 }}>
+                    <Typography sx={{
+                        textAlign: "left", mt: "6vw", mb: "5vh", display: 'block',
+                        fontSize: {
+                            xs: theme.typography.body3.fontSize,
+                            lg: theme.typography.body2.fontSize,
+                        }
+                    }}>
                         {props.subsystemIntro}
                     </Typography>
 
                     {/*
                 Stack contains a row of buttons for the different subsystems of the subteam.
                 */}
-                    {props.name != "Leads" && props.name != "Alumni" && <Stack direction="row" marginTop={3} justifyContent={"center"} alignItems={"center"}
-                        sx={{
-                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
-                            gap: 3 //maintains both vertical and horizontal gap between buttons
-                        }}
-                    >
-                        {props.subsystems.map((subsystem, index) => (
-
-                            <Button key={index} sx={{
-                                flex: '1 1 250px', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
-                                maxWidth: 220, // ensures that buttons dont get too big when wrapping 
-                                height: 120,
-                                backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
-                                border: '3px solid white',
-                                '&:hover': { //on mouse hover
-                                    backgroundColor: 'rgba(148, 49, 49, 0.7)', // Customize hover background color if needed
-                                    border: '3px solid white', // Make sure border stays white on hover
-                                },
+                    {props.name != "Leads" && props.name != "Alumni" &&
+                        <Stack direction="row" marginTop={3} justifyContent={"center"} alignItems={"center"}
+                            sx={{
+                                flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+                                gap: 3, //maintains both vertical and horizontal gap between buttons
+                                mb: 10
                             }}
-                                //hover functionality
-                                onMouseEnter={() => {
-                                    handleSubsystemClick[index]();
-                                }}
-                                onMouseLeave={() => {
-                                    setShowSubsystem([false, false, false, false])
-                                }}
-                            >
-                                {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
-                                {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
+                        >
+                            {props.subsystems.map((subsystem, index) => (
 
-                                {/*Always display subsystem name on button*/}
-                                <Typography sx={{ fontSize: 23, color: 'white', textTransform: 'none' }}>
-                                    {subsystem.name}
-                                </Typography>
-                            </Button>
-                        ))}
-                    </Stack>}
+                                <Button key={index} sx={{
+                                    flex: '1 1 30vw', //flexGrow, flexShrink: all buttons set relative to each other; flexBasis: base width when screen large enough
+                                    minWidth: 130, // ensures that buttons dont get too small or big when wrapping 
+                                    maxWidth: 230,
+                                    height: 120,
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
+                                    border: '3px solid white',
+                                    '&:hover': { //on mouse hover
+                                        backgroundColor: 'rgba(148, 49, 49, 0.7)', // Customize hover background color if needed
+                                        border: '3px solid white', // Make sure border stays white on hover
+                                    },
+                                }}
+                                    //hover functionality
+                                    onMouseEnter={() => {
+                                        handleSubsystemClick[index]();
+                                    }}
+                                    onMouseLeave={() => {
+                                        setShowSubsystem([false, false, false, false])
+                                    }}
+                                >
+                                    {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
+                                    {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
+
+                                    {/*Always display subsystem name on button*/}
+                                    <Typography sx={{
+                                        fontSize: {
+                                            xs: theme.typography.body3.fontSize,
+                                            lg: theme.typography.body2.fontSize,
+                                        }, color: 'white', textTransform: 'none'
+                                    }}>
+                                        {subsystem.name}
+                                    </Typography>
+                                </Button>
+                            ))}
+                        </Stack>}
 
                     {/*TODO: change all to body 1*/}
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body1" sx={{ textAlign: "left", marginTop: 10 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body2" sx={{ textAlign: "left", display: "block", mb: 10 }}>
                         {"While the subsystems are distinct, members are able to work interchangeably among them."}
                     </Typography>}
 
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ fontSize: 30, marginTop: 10, marginBottom: 5 }}>
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography variant="body1" sx={{ marginTop: 10, marginBottom: 5 }}>
                         {"If you are more interested in..."}
                     </Typography>}
 
@@ -241,7 +277,7 @@ function SubsystemButtonDisplay({ name, desc }) {
                 </Typography>
 
                 {/*Subsystem description*/}
-                <Typography variant="body1" sx={{
+                <Typography variant="body2" sx={{
                     color: 'white',
                     whiteSpace: 'pre-line',  // Ensures that \n creates line breaks in the text
                     textTransform: 'none'    // Prevent ALL CAPS

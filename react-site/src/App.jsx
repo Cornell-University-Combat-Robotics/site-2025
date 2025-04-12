@@ -39,21 +39,13 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '2.8rem',
+      fontSize: '5vw',
       fontWeight: 'normal',
     },
     h3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '2rem',
-      fontWeight: 'normal',
-    },
-    h4: {
-      fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '5vw',
-    },
-    h5: {
-      fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '2.6vw',
+      fontWeight: 'normal',
     },
     body1: {
       fontFamily: 'Josefin Sans, sans-serif',
@@ -62,13 +54,9 @@ const theme = createTheme({
     },
     body2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '1.1rem',
+      fontSize: '1.7vw',
       fontWeight: 'normal',
     },
-    body3: {
-      fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '3.0vw',
-    }
   },
   palette: {
     primary: {
@@ -76,12 +64,6 @@ const theme = createTheme({
     }
   }
 });
-
-theme.typography.body3 = {
-  fontFamily: 'Josefin Sans, sans-serif',
-  fontSize: '3.0vw',
-  fontWeight: 'normal',
-};
 
 function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))

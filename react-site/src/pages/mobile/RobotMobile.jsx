@@ -52,8 +52,10 @@ export default function RobotMobile() {
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <img src={Benny} style={{ width: '50%', height: 'auto', marginLeft: '-5%' }} />
                     <Stack spacing={2} mt='10'>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Benny</Typography>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Kinetic</Typography>
+                        <Typography variant='h2' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benjamin R. Johm Esq. | Kinetic</Typography>
+                        <Typography variant='body1' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
+                            Benjamin R. Johm Esq. is Kinetic's latest creation....
+                        </Typography>
                     </Stack>
                 </Stack>
                 <Typography variant='body1' align='left' width='100%' sx={{ my: '10%' }}>
@@ -63,8 +65,10 @@ export default function RobotMobile() {
                 {/* Second robot section */}
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <Stack spacing={2} mt='10'>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Capsize</Typography>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Sportsman </Typography>
+                        <Typography variant='h2' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Capsize | Sportsman</Typography>
+                        <Typography variant='body1' align='left' width='80%'>
+                            Capsize is Sportsman's latest robot...
+                        </Typography>
                     </Stack>
                     <img src={Capsize} style={{ width: '50%', height: 'auto' }} />
                 </Stack>
@@ -75,9 +79,11 @@ export default function RobotMobile() {
                 {/* Third robot section */}
                 <Stack direction='row' spacing={4} marginLeft='-5%' sx={{ mt: 5 }}>
                     <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
-                    <Stack spacing={2} mt='10%' >
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}> Huey</Typography>
-                        <Typography variant='h4' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Autonomous</Typography>
+                    <Stack spacing={2} mt='10'>
+                        <Typography variant='h2' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Huey | Autonomous</Typography>
+                        <Typography variant='body1' align='left' width='80%'>
+                            Huey is Autonomous' next robot to waddle into competition...
+                        </Typography>
                     </Stack>
                 </Stack>
                 <Typography variant='body1' align='left' width='100%' sx={{ fontFamily: 'Josefin Sans', my: '10%' }}>
