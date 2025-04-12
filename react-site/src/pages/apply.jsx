@@ -1,6 +1,6 @@
 import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef, Button } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
-import FAQ from "../components/FAQ";
+import FAQ from "../components/FAQ.tsx";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
 import RedBox from "../components/RedBox.tsx";
@@ -433,7 +433,7 @@ export default function Apply() {
             paddingX: 3,
             mb: 15
           }}
-          onClick={ () => {
+          onClick={() => {
             window.open('/robots#3lb_apply_link', '_blank');
           }}
         >

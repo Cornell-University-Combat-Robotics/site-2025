@@ -100,7 +100,7 @@ export default function RobotCard(props: RobotCardProps) {
             }}
           >
             {/* Below is for robot title text */}
-            <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold' sx={{ height: '40px', lineHeight: '1' }}>
+            <Typography gutterBottom align='left' variant="body1" component="div" fontWeight='bold' sx={{ height: '40px', lineHeight: '1', mt: '2%' }}>
               {props.name}
             </Typography>
             <Box
