@@ -31,7 +31,7 @@ export default function RobotMobile() {
 
     return (
         <Container>
-            <Box display="flex" flexDirection="column" alignItems="center">
+            <Box display="flex" flexDirection="column" alignItems="center" sx={{ px: '5%' }}>
                 {/* This is the actual robot animation component */}
                 <StickyBoxMobile />
                 <Typography variant="h1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
@@ -113,7 +113,7 @@ export default function RobotMobile() {
                 <RobotCardList type='Mini' capacity={4} />
 
                 {/* 3LB robots section */}
-                <Typography variant="h3" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
+                <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 15 }}>
                     3 LB ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }} >
