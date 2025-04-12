@@ -69,7 +69,7 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
-    <Box padding="0px 12.5%">
+    <Box padding="0px 6%">
 
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }} id="sponsor-box">
         OUR SPONSORS
@@ -82,10 +82,11 @@ export default function Sponsors() {
       when clicked. &hover is for making the text color white (don't change when
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
-        <Box display='flex' gap="10px 20px" justifyContent="space-between" sx={{ flexDirection: 'row' }} >
-          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
-          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", margin: "0px 10px", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
-          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button>
+        <Box display='flex' gap="20px" justifyContent="center" flexWrap="wrap" sx={{ flexDirection: 'row' }} >
+          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "100%", maxWidth:"330px", minWidth:"250px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "100%", maxWidth:"330px", minWidth:"250px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          {/* <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button> */}
+          {/* delete giving day button */}
         </Box>
       </Box>
 
@@ -112,12 +113,13 @@ export default function Sponsors() {
       - Finally, a light blue vertical rectangle is created using an absolutely 
         positioned Box component on the right edge. */}
 
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+      <Box display="flex" mt={5}>
+        {/* you removed justfycontent center and align items center */}
+        {/* put body around sponsorhsips */}
         <Box
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          width="75%"
           sx={{
             backgroundColor: '#212D38',
             padding: '20px',
@@ -139,7 +141,7 @@ export default function Sponsors() {
           </Box>
 
           {/* Right side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
+          <Grid2 container spacing={3} ml="8%" sx={{ maxWidth: '60%' }}>
             <Grid2 item xs={6} sm={3}>
               <Link href="https://www.asml.com/en">
                 <Box
@@ -183,7 +185,8 @@ export default function Sponsors() {
           </Grid2>
 
           {/* Light Blue Rectangle */}
-          <Box
+          {/* Make light blue rectangle a wide border with cyan color */}
+          {/* <Box
             sx={{
               position: 'absolute',
               right: '0px',
@@ -192,7 +195,7 @@ export default function Sponsors() {
               width: '20px',
               backgroundColor: '#2AF1F1', // Light blue color
             }}
-          />
+          /> */}
         </Box>
       </Box>
 
@@ -208,7 +211,6 @@ export default function Sponsors() {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          width="75%"
           sx={{
             backgroundColor: '#342819',
             padding: '20px',
@@ -309,7 +311,6 @@ export default function Sponsors() {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          width="75%"
           sx={{
             backgroundColor: '#383838',
             padding: '20px',
@@ -370,7 +371,6 @@ export default function Sponsors() {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          width="75%"
           sx={{
             backgroundColor: '#352216',
             padding: '20px',
@@ -431,7 +431,6 @@ export default function Sponsors() {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          width="75%"
           sx={{
             backgroundColor: '#291936',
             padding: '20px',
