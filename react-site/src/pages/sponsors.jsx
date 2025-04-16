@@ -102,8 +102,13 @@ export default function Sponsors() {
         </Typography>
       </Box>
 
+
+
+      {/* Below is better version of sponsor ribbons */}
       <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" paddingTop="20px" paddingBottom="20px" sx={{backgroundColor:"white"}}>
-        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%" sx={{backgroundColor:"#212D38"}}>
+        
+        {/* Platinum */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
           <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
             <Box
               component="img"
@@ -146,60 +151,197 @@ export default function Sponsors() {
                 sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
               />
             </Box>
-            
-            
-            
-            
-            {/* <img></img>
-            <img></img>
-            <img></img>
-            <img></img> */}
           </Box>
         </Box>
-        <Box>
-          <Box>
-            <img></img>
+        
+        {/* Gold */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+            <Box
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
+            />
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
-        <Box>
-          <Box>
-            <img></img>
+
+        {/* Silver */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+            <Box
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
+            />
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
-        <Box>
-          <Box>
-            <img></img>
+
+        {/* Bronze */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+            <Box
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
+            />
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
-        <Box>
-          <Box>
-            <img></img>
+
+        {/* Partners */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+            <Box
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
+            />
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
+
       </Box>
 
       {/* Sponsor Logos Section with Light Blue Rectangle:
