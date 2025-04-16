@@ -2,6 +2,9 @@ import { Box, Typography, List, Button, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import linkedin_button from "../assets/linkedin_button.png";
+import { useTheme } from '@mui/material/styles';
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
 
 export interface MemberProps {
   imgSrc: string;
@@ -15,6 +18,8 @@ export default function Member(props: MemberProps) {
   const { imgSrc, name, position, linkedin, stats } = props;
   // const size = props.size ?? "inherit";
 
+  const theme = useTheme();
+  const isMobile = useContext(MobileContext);
   /*
   Effect: toggle visibility for button animations
   showStats: immutable state variable
@@ -56,15 +61,13 @@ export default function Member(props: MemberProps) {
         - on click for arrow to toggle
         */}
 
-        {/*linkedin button
-                  for text version of linkedin button: 
-                  */}
+        {/* linkedin button for text version of linkedin button */}
         <Button
           sx={{
             position: 'absolute', // Makes the button overlap
             borderRadius: 4, bgcolor: '#A10305',
             bottom: '5%', left: '5%',  // Places button within parent (Box)
-            minWidth: 0, width: '16%', height: '16%'
+            minWidth: 0, width: '16%', height: '15%'
           }}
           onClick={() => window.open(linkedin, '_blank')}
         >
@@ -107,11 +110,13 @@ export default function Member(props: MemberProps) {
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography
-                        variant="body2"
+                       
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',
-                          overflowWrap: 'break-word'
+                          fontSize: 20, //no variants needed here cuz member cards aren't resized with screen, just wrapped
+                          overflowWrap: 'break-word',
+                          fontFamily: theme.typography.mobileH1.fontFamily,
                         }}>
                         {desc}
                       </Typography>
@@ -137,13 +142,20 @@ export default function Member(props: MemberProps) {
               position: 'absolute', // Makes the button overlap
               borderRadius: 4, bgcolor: '#A10305',
               bottom: '5%', right: '5%', // Places button within parent (Box)
-              minWidth: 0, width: '20%'
+              width: '25%', height: '15%'
             }}
             onMouseEnter={() => setShowStats(true)}
             onMouseLeave={() => setShowStats(false)}
           >
 
-            <Typography variant="body2" sx={{ color: 'white', textTransform: "none" }}>
+            <Typography sx={{
+              color: 'white', textTransform: "none",
+              fontSize: {
+                xs: 18,
+                lg: 22, //im hardcoding this, its too specific to use variants
+              },
+              fontFamily: theme.typography.desktopBody.fontFamily
+            }}>
               {"Stats"}
             </Typography>
           </Button>
@@ -151,8 +163,11 @@ export default function Member(props: MemberProps) {
       </Box>
 
       <Box sx={{ textAlign: "left", width: '85%' }}>
-        <Typography sx={{
+        <Typography 
+        //no need variant here cuz constant througout
+        sx={{
           fontWeight: "bold", fontSize: 25,
+          fontFamily: theme.typography.mobileH1.fontFamily,
           whiteSpace: 'nowrap', overflow: 'scroll'
         }}>
           {name}
@@ -181,6 +196,7 @@ export default function Member(props: MemberProps) {
           }} marginBottom={1}>
             <Typography sx={{
               ml: "10px", fontSize: "20px",
+              fontFamily: theme.typography.mobileH1.fontFamily,
               whiteSpace: 'nowrap', overflow: 'scroll'
             }}>
               {roles}

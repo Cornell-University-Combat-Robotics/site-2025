@@ -67,9 +67,19 @@ const theme = createTheme({
       fontSize: '3.5vw',
       fontWeight: 'normal',
     },
+    mobileBody2: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '2.0vw',
+      fontWeight: 'normal',
+    },
     desktopBody: {
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '2.0vw',
+      fontWeight: 'normal',
+    },
+    desktopBody2: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '1.5vw',
       fontWeight: 'normal',
     },
   },
