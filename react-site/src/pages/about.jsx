@@ -28,7 +28,7 @@ function About() {
             height: 'auto',
             top: '50%',
             left: '50%',
-            marginTop: isMobile ? '40%' : '15%',
+            marginTop: isMobile ? '40%' : '18%',
           }}
           />
 
@@ -36,6 +36,7 @@ function About() {
           <Typography
             variant={isMobile ? "mobileH2" : "desktopH2"}
             display="block"
+            mb={isMobile ? '20%' : '18%'}
             sx={{
               top: '50%',
               left: '50%',
@@ -47,8 +48,8 @@ function About() {
         </Box>
 
         {/* Page contents */}
-        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '7%', mb: '10%' }}>
-          <Typography variant={isMobile ? "mobileH2" : "desktopH2"} align="left">
+        <Box sx={{ mx: isMobile ? '8%' : '15%', mb: '10%' }}>
+          <Typography variant={isMobile ? "mobileH2" : "desktopH2"} display="block" align="left">
             Who are we?
           </Typography>
           <Typography variant={isMobile ? "mobileBody" : "desktopBody"} display="block" align="left">
@@ -58,7 +59,7 @@ function About() {
             maintains our website and social media, along with merch, trading cards, and more.
           </Typography>
           {/* stats box */}
-          <Box height="30%" sx={{ mt: isMobile ? '20%' : '10%', mx: 'auto', mb: isMobile ? '10%' : '5%' }}>
+          <Box height="30%" sx={{ mt: isMobile ? '20%' : '12%', mx: 'auto', mb: isMobile ? '10%' : '2%' }}>
             {/* entire stats */}
             {isMobile ? (
               // Mobile layout: 2×2 grid
@@ -89,22 +90,22 @@ function About() {
               </Stack>
             ) : (
               // Desktop layout: single row
-              <Stack direction="row" spacing="23%">
+              <Stack direction="row" spacing="17%">
                 <Stack>
-                  <Typography variant="desktopBody">40+</Typography>
-                  <Typography variant="desktopBody">members</Typography>
+                  <Typography variant="desktopH3">40+</Typography>
+                  <Typography variant="desktopH3">members</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="desktopBody">30+</Typography>
-                  <Typography variant="desktopBody">majors</Typography>
+                  <Typography variant="desktopH3">30+</Typography>
+                  <Typography variant="desktopH3">majors</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="desktopBody">5+</Typography>
-                  <Typography variant="desktopBody">colleges</Typography>
+                  <Typography variant="desktopH3">5+</Typography>
+                  <Typography variant="desktopH3">colleges</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="desktopBody">6+</Typography>
-                  <Typography variant="desktopBody">years</Typography>
+                  <Typography variant="desktopH3">6+</Typography>
+                  <Typography variant="desktopH3">years</Typography>
                 </Stack>
               </Stack>
             )}
@@ -116,9 +117,9 @@ function About() {
       </Box>
 
       {/* Rest of page, separate from rest because background image is too small */}
-      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '30%' : '15%', mb: '20%' }}>
+      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '30%' : '18%', mb: isMobile ? '20%' : '10%'}}>
         {/* What do we value title and paragraph */}
-        <Typography variant={isMobile ? 'mobileH3' : "desktopH2"} align="left" >
+        <Typography variant={isMobile ? 'mobileH2' : "desktopH2"} display="block" align="left" >
           What do we value?
         </Typography>
 
@@ -130,11 +131,11 @@ function About() {
       </Box>
       {/* Timeline */}
       <Box sx={{ mb: '2%' }}>
-        <Typography variant={isMobile ? 'h3' : "h2"}>
+        <Typography variant={isMobile ? 'mobileH2' : "desktopH2"}>
           OUR HISTORY
         </Typography>
       </Box>
-      <Box marginLeft="0%" sx={{ width: "98vw", mb: '15%' }}>
+      <Box marginLeft="0%" sx={{ width: "98vw", mb: isMobile ? '15%' : '5%' }}>
         <Carousel numCells={10} />
       </Box>
     </Box >

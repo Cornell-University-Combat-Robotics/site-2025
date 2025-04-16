@@ -25,7 +25,6 @@ export default function TimelineCell(props: Timeline1Cell) {
                 zIndex: "-1",
                 position: 'relative',
                 overflow: 'hidden',
-
             }}>
                 <Box sx={{
                     width: "inherit",
@@ -38,8 +37,8 @@ export default function TimelineCell(props: Timeline1Cell) {
                     px: "10%",
                     py: "15%"
                 }}>
-                    <Typography variant="h3" style={{ zIndex: "1" }}> {props.date} </Typography>
-                    <Typography variant={isMobile ? "h4" : "body1"} style={{ zIndex: "1", paddingRight: "20%" }}> {props.description} </Typography>
+                    <Typography variant={isMobile ? "mobileH3" : "desktopH3"} style={{ zIndex: "1" }} display="block"> {props.date} </Typography>
+                    <Typography variant={isMobile ? "mobileBody" : "desktopBody"} style={{ zIndex: "1", wordWrap: "break-word", overflowWrap: "break-word", whiteSpace: "normal" }}> {props.description} </Typography>
                 </Box>
             </Box >
         </Box>

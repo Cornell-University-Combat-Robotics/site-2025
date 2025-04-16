@@ -33,13 +33,15 @@ function Carousel(props: Carousel1) {
     ));
 
     // handle button press for scroll left (->)
-    const handleNextPage = () => {
+    const handleNextPage = (event) => {
+        event.preventDefault();
         setSlideDirection("left");
         setCurrentPage((prevPage) => (prevPage + 1) % Math.ceil(refreshCards.length / cellsPerPage)); //support wraparound
     }
 
     // handle button press for scroll right (<-)
-    const handlePrevPage = () => {
+    const handlePrevPage = (event) => {
+        event.preventDefault();
         setSlideDirection("right");
         setCurrentPage((prevPage) => (prevPage - 1 + Math.ceil(refreshCards.length / cellsPerPage)) % Math.ceil(refreshCards.length / cellsPerPage));
         // prevpage is passed in through useState because it is a function
@@ -77,7 +79,9 @@ function Carousel(props: Carousel1) {
                     height: isMobile ? '65vh' : "90vh", // if you change this, also change it in TimelineCell 
                     justifyContent: "center",
                     alignItems: "center",
-                    zIndex: "-10"
+                    zIndex: "-10",
+                    overflowY: "hidden",
+                    position: isMobile ? "relative" : "static"
                 }}>
                     {/* iterate over each panel: 3 CELLS! must use Array.from because we go by cells */}
                     {Array.from({ length: Math.ceil(cells.length / cellsPerPage) }).map((_, index) => (
