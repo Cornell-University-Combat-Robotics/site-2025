@@ -51,22 +51,14 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         textAlign: "center",
         fontFamily: "Josefin Sans",
 
-        /*
-        fontSize: {
-          xs: "3vw",
-          sm: "2.2vw",
-          md: "2vw",
-          lg: "1.7vw"
-        },
-        */
 
         fontSize: {
-          xs: theme.typography.body3.fontSize, //body1 too small
-          sm: theme.typography.body1.fontSize,
-          md: theme.typography.body1.fontSize,
-          lg: theme.typography.body1.fontSize,
+          xs: theme.typography.mobileBody.fontSize,
+          sm: theme.typography.mobileBody.fontSize,
+          md: theme.typography.desktopBody.fontSize,
+          lg: theme.typography.desktopBody.fontSize,
         },
-
+   
         height: {
           xs: "10vh",
           sm: "10vh",
@@ -107,7 +99,7 @@ export default function Team() {
         <Box position="relative" display="inline-block"> {/* Set position to relative for GradientNavBar. */}
           <img src={team_photo} style={{ width: '100%', height: 'auto', marginBottom: "5%" }} />
           <Typography
-            variant="h1"
+            variant="desktopH1"
             sx={{
               fontFamily: 'Josefin Sans',
               position: 'absolute',
@@ -135,7 +127,7 @@ export default function Team() {
               ease: "linear"
             }}
           >
-            <Typography variant="h2" >
+            <Typography variant="desktopH2" >
               {/*Duplicate text to ensure no empty space*/}
               {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "}
             </Typography>
@@ -147,25 +139,28 @@ export default function Team() {
             maxWidth: '70%', margin: '2% auto', textAlign: 'center',
 
             fontSize: {
-              xs: theme.typography.body3.fontSize,
-              sm: theme.typography.body3.fontSize,
-              md: theme.typography.body1.fontSize,
-              lg: theme.typography.body1.fontSize,
+              xs: theme.typography.mobileBody.fontSize,
+              sm: theme.typography.mobileBody.fontSize,
+              md: theme.typography.desktopBody.fontSize,
+              lg: theme.typography.desktopBody.fontSize,
             },
+            fontFamily: theme.typography.mobileBody.fontFamily, //idk why need this, but set to mobileBody cuz all font families same anyways
           }}>
           {"Our entire team consists of four subteams:"}
           <br />
           {"Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
-        <Typography sx={{
+        <Typography 
+
+        sx={{
           maxWidth: '85%', margin: '2% auto', textAlign: 'center',
 
-
+          fontFamily: theme.typography.mobileBody.fontFamily,
           fontSize: {
-            xs: theme.typography.body3.fontSize,
-            sm: theme.typography.body3.fontSize,
-            md: theme.typography.body1.fontSize,
-            lg: theme.typography.body1.fontSize,
+            xs: theme.typography.mobileBody.fontSize,
+            sm: theme.typography.mobileBody.fontSize,
+            md: theme.typography.desktopBody.fontSize,
+            lg: theme.typography.desktopBody.fontSize,
           },
         }}>
           {"Click the buttons below to learn more about each of them!"}
