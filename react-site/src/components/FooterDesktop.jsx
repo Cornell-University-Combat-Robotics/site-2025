@@ -3,7 +3,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
@@ -46,7 +45,7 @@ const Footer = () => {
         </IconButton>
         <IconButton aria-label="Facebook">
           <a
-            href="https://www.facebook.com/cucombatrobotics/"
+            href="https://www.facebook.com/combatroboticscornell"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,20 +54,11 @@ const Footer = () => {
         </IconButton>
         <IconButton aria-label="LinkedIn">
           <a
-            href="https://www.linkedin.com/in/bigred-hacks-698107269/"
+            href="https://www.linkedin.com/company/combat-robotics-at-cornell"
             target="_blank"
             rel="noopener noreferrer"
           >
             <LinkedInIcon sx={{ color: "white", fontSize: "25px" }} />
-          </a>
-        </IconButton>
-        <IconButton aria-label="GitHub">
-          <a
-            href="https://github.com/Cornell-University-Combat-Robotics"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon sx={{ color: "white", fontSize: "25px" }} />
           </a>
         </IconButton>
         <IconButton aria-label="YouTube">

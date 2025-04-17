@@ -22,14 +22,14 @@ export default function TimelineCell(props: Timeline1Cell) {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                zIndex: "-1",
+                //zIndex: "-1",
                 position: 'relative',
                 overflow: 'hidden',
             }}>
                 <Box sx={{
-                    width: "inherit",
-                    height: "inherit",
-                    zIndex: "100",
+                    width: "fit-content",
+                    height: "100%",
+                    //zIndex: "100",
                     backdropFilter: "brightness(0.4)",
                     textAlign: 'left',
                     objectFit: "cover",
@@ -37,8 +37,8 @@ export default function TimelineCell(props: Timeline1Cell) {
                     px: "10%",
                     py: "15%"
                 }}>
-                    <Typography variant={isMobile ? "mobileH3" : "desktopH3"} style={{ zIndex: "1" }} display="block"> {props.date} </Typography>
-                    <Typography variant={isMobile ? "mobileBody" : "desktopBody"} style={{ zIndex: "1", wordWrap: "break-word", overflowWrap: "break-word", whiteSpace: "normal" }}> {props.description} </Typography>
+                    <Typography variant={isMobile ? "mobileH2" : "desktopH3"} display="block"> {props.date} </Typography>
+                    <Typography variant={isMobile ? "mobileH3" : "desktopBody"}> {props.description} </Typography>
                 </Box>
             </Box >
         </Box>

@@ -7,7 +7,7 @@ import { MobileContext } from "../App.jsx";
 
 
 export interface Carousel1 {
-    numCells: number,
+    numCells: number, // This is not used anywhere, can be removed
 }
 
 // Carousel makes the image carousel for the About page.
@@ -40,6 +40,7 @@ function Carousel(props: Carousel1) {
     }
 
     // handle button press for scroll right (<-)
+    // TODO: Going back should not be going right
     const handlePrevPage = (event) => {
         event.preventDefault();
         setSlideDirection("right");
@@ -61,25 +62,19 @@ function Carousel(props: Carousel1) {
         <Box>
             {/* contains entire carousel, items added to this box go to the right (row) */}
             <Box sx={{
+                position: "relative",
                 display: "flex",
-                flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
                 height: "50%",
                 width: "100%",
             }}>
-                {/* handle previous page (<) button click */}
-                <IconButton onClick={handlePrevPage}
-                    sx={{ margin: "2%" }}>
-                    <NavigateBefore sx={{ color: "white", transform: 'scale(2)', }} />
-                </IconButton>
-
-                {/* contains cards */}
+                {/* contains cards - takes full width */}
                 <Box sx={{
                     height: isMobile ? '65vh' : "90vh", // if you change this, also change it in TimelineCell 
+                    width: "100%",
                     justifyContent: "center",
                     alignItems: "center",
-                    zIndex: "-10",
                     overflowY: "hidden",
                     position: isMobile ? "relative" : "static"
                 }}>
@@ -103,7 +98,7 @@ function Carousel(props: Carousel1) {
                                     alignContent="center"
                                     justifyContent="center"
                                     sx={{
-                                        zIndex: "1000",
+                                        //zIndex: "1000",
                                     }}>
                                     {cells.slice(
                                         index * cellsPerPage,
@@ -115,9 +110,26 @@ function Carousel(props: Carousel1) {
                     ))}
                 </Box>
 
-                {/* handle previous page (<) button click */}
-                < IconButton onClick={handleNextPage}
-                    sx={{ margin: "2%", }} >
+                {/* Overlayed nav button - handle previous page (<) button click */}
+                <IconButton onClick={handlePrevPage}
+                    sx={{
+                        position: "absolute",
+                        left: "2%",
+                        //zIndex: 1500,
+                        backgroundColor: "rgba(0, 0, 0, 0.2)",
+                        "&hover": { backgroundColor: "rgba(0, 0, 0, 0.4)" },
+                    }}>
+                    <NavigateBefore sx={{ color: "white", transform: 'scale(2)', }} />
+                </IconButton>
+                {/* handle next page (>) button click */}
+                <IconButton onClick={handleNextPage}
+                    sx={{
+                        position: "absolute",
+                        right: "2%",
+                        //zIndex: 1500,
+                        backgroundColor: "rgba(0,0,0,0.2)",
+                        "&:hover": { backgroundColor: "rgba(0,0,0,0.4)" }
+                    }}>
                     <NavigateNext sx={{ color: "white", transform: 'scale(2)', }} />
                 </IconButton>
             </Box >
