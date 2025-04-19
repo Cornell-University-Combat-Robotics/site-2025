@@ -109,7 +109,7 @@ export default function Sponsors() {
         
         {/* Platinum */}
         <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
-          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#212D38"}}>
             <Box
               component="img"
               src={"/sponsors/crc_plat.png"}
@@ -118,7 +118,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#212D38"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -157,7 +157,7 @@ export default function Sponsors() {
         {/* Gold */}
         {/* NOTE: Every other banner uses flexDirection="row-reverse" which flips banner orientation */}
         <Box display="flex" flexDirection="row-reverse" marginBottom="20px" width="100%">
-          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#342819"}}>
             <Box
               component="img"
               src={"/sponsors/crc_gold.png"}
@@ -166,7 +166,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>GOLD</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#342819"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -212,7 +212,7 @@ export default function Sponsors() {
 
         {/* Silver */}
         <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
-          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#383838"}}>
             <Box
               component="img"
               src={"/sponsors/crc_silver.png"}
@@ -221,7 +221,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>SILVER</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#383838"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -235,7 +235,7 @@ export default function Sponsors() {
 
         {/* Bronze */}
         <Box display="flex" flexDirection="row-reverse" marginBottom="20px" width="100%">
-          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#352216"}}>
             <Box
               component="img"
               src={"/sponsors/crc_bronze.png"}
@@ -244,7 +244,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BRONZE</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#352216"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -258,7 +258,7 @@ export default function Sponsors() {
 
         {/* Partners */}
         <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
-          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"yellow"}}>
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#291936"}}>
             <Box
               component="img"
               src={"/sponsors/crc_purple.png"}
@@ -267,7 +267,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PARTNERS</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"purple"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#291936"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -280,6 +280,388 @@ export default function Sponsors() {
           </Box>
         </Box>
 
+      </Box>
+
+      {/* Sponsor Logos Section with Light Blue Rectangle:
+      The outer Box centers the content inside horizontally with flexbox. 
+      The nested Box (inside) sets the width to 75% of the screen and creates
+      a dark blue background for the section. Inside this, we have two main parts:
+      - Left side: Displays the large Platinum logo and a title ("PLATINUM").
+      - Right side: Uses a Grid2 component for a responsive layout of sponsor logos. 
+        Each sponsor logo is wrapped in a Link component for external navigation. 
+        The ml (margin-left) offsets the Grid2 from the left side for better spacing.
+      - Finally, a light blue vertical rectangle is created using an absolutely 
+        positioned Box component on the right edge. */}
+
+      <Box display="flex" mt={5}>
+        {/* you removed justfycontent center and align items center */}
+        {/* put body around sponsorhsips */}
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            backgroundColor: '#212D38',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={"/sponsors/crc_plat.png"}
+              alt="Large Plat Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              PLATINUM
+            </Typography>
+          </Box>
+
+          {/* Right side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="8%" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.asml.com/en">
+                <Box
+                  component="img"
+                  src={"/sponsors/asml.png"}
+                  alt="ASML Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.kfm-llc.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/kfm.png"}
+                  alt="KFM Logo"
+                  sx={{ width: "250px", height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.nhrl.io/">
+                <Box
+                  component="img"
+                  src={"/sponsors/nhrl.png"}
+                  alt="NHRL Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.autodesk.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/autodesk.png"}
+                  alt="Autodesk Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Light Blue Rectangle */}
+          {/* Make light blue rectangle a wide border with cyan color */}
+          {/* <Box
+            sx={{
+              position: 'absolute',
+              right: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#2AF1F1', // Light blue color
+            }}
+          /> */}
+        </Box>
+      </Box>
+
+      {/* Gold Sponsor Logos Section with Gold Rectangle:
+      This section follows the same double Box structure as above for consistent 
+      layout. The outer Box centers the content, and the inner Box sets the width 
+      and adds the gold background color. The left side has a gold rectangle (Box)
+      positioned absolutely, creating a decorative gold stripe on the left edge.
+      - The sponsor logos are displayed using a Grid2 component for responsiveness.
+      - The last part displays the large Gold logo with a "GOLD" title below it. */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            backgroundColor: '#342819',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Gold Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#DEBF28', // Gold color
+            }}
+          />
+          {/* Left side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.engineering.cornell.edu/">
+                <Box
+                  component="img"
+                  src={"/sponsors/cornell_engineering_logo.png"}
+                  alt="Cornell Engineering Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://angelshotapp.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/Angel_Shot_Logo.png"}
+                  alt="Angel Shot Logo"
+                  sx={{ width: '200px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.keeninsites.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/Keen_Insites_Logo.png"}
+                  alt="Keen Insites Logo"
+                  sx={{ width: "400px", height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://daylightsavings.us/">
+                <Box
+                  component="img"
+                  src={"/sponsors/daylight.png"}
+                  alt="The Daylight Savings Company Logo"
+                  sx={{ width: '400px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.raymondcorp.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/raymond.png"}
+                  alt="Raymond Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={"/sponsors/crc_gold.png"}
+              alt="Large Gold Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              GOLD
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Silver Sponsor Logos Section with Grey Rectangle:
+      Similar to the previous sections, this follows the same Box layout pattern.
+      - The inner Box sets the width, background color (grey), and positions the 
+        light grey rectangle on the right using absolute positioning.
+      - The left side shows the large Silver logo and title ("SILVER").
+      - The right side includes a single sponsor logo (Boeing) displayed in a Grid2 item.
+      - The layout maintains consistency across sections, with the grey rectangle 
+        adding a visual separator. */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            backgroundColor: '#383838',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={"/sponsors/crc_silver.png"}
+              alt="Large Silver Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              SILVER
+            </Typography>
+          </Box>
+
+          {/* Right side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} mx="auto" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.boeing.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/boeing.png"}
+                  alt="Boeing Logo"
+                  sx={{ width: '450px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Light Grey Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              right: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#B8B8B8', // Light grey color
+            }}
+          />
+        </Box>
+      </Box>
+
+      {/* Bronze Sponsor Logos Section with Bronze Rectangle:
+      Follows the same structure as the previous sections with a double Box layout.
+      - The background color is set to a dark bronze shade.
+      - The left edge has a bronze vertical rectangle positioned absolutely for design.
+      - The sponsor logos are listed in a responsive Grid2 component.
+      - The section ends with the large Bronze logo and "BRONZE" title centered 
+        vertically and horizontally. */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            backgroundColor: '#352216',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Bronze Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#CF5401', // Bronze color
+            }}
+          />
+          {/* Left side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} mx="auto" my="auto" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://sendcutsend.com/">
+                <Box
+                  component="img"
+                  src={"/sponsors/sendcutsend.png"}
+                  alt="SendCutSend Logo"
+                  sx={{ width: '350px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={"/sponsors/crc_bronze.png"}
+              alt="Large Bronze Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              BRONZE
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Partner Logos Section with Purple Rectangle:
+      This section continues the layout pattern for consistency.
+      - The background is set to a dark purple, matching the theme color for partners.
+      - The left side displays the large purple logo and the title "PARTNERS".
+      - The right side uses a Grid2 component for partner logos, including the Red Bull 
+        logo and a Typography component for Bovay Laboratory Complex (styled as a link).
+      - A light purple rectangle is positioned absolutely on the right edge for design.
+      - This section, like the others, maintains alignment and visual hierarchy. */}
+      <Box display="flex" justifyContent="center" alignItems="center" mt={5} mb={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            backgroundColor: '#291936',
+            padding: '20px',
+            color: 'white',
+            position: 'relative'
+          }}
+        >
+          {/* Left side: large logo and title */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box
+              component="img"
+              src={"/sponsors/crc_purple.png"}
+              alt="Large Purple Logo"
+              sx={{ width: '400px', height: 'auto', mb: 2 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
+              PARTNERS
+            </Typography>
+          </Box>
+
+          {/* Right side: Sponsor logos Grid2 */}
+          <Grid2 container spacing={3} ml="90px" alignItems="center" justifyContent="center" sx={{ maxWidth: '60%' }}>
+            <Grid2 item xs={6} sm={3}>
+              <Link href="https://www.redbull.com/us-en">
+                <Box
+                  component="img"
+                  src={"/sponsors/redbull.png"}
+                  alt="Red Bull Logo"
+                  sx={{ width: '250px', height: 'auto' }}
+                />
+              </Link>
+            </Grid2>
+            <Grid2 item xs={6} sm={3}>
+              <Link style={{ textDecoration: 'none', color: "white" }} href="https://www.cee.cornell.edu/cee/facilities/bovay-laboratory-complex">
+                <Typography sx={{ fontFamily: 'Montserrat', fontSize: "2.5rem" }}> BOVAY LABORATORY COMPLEX </Typography>
+              </Link>
+            </Grid2>
+          </Grid2>
+
+          {/* Light Purple Rectangle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              right: '0px',
+              top: 0,
+              bottom: 0,
+              width: '20px',
+              backgroundColor: '#8307E4', // Light purple color
+            }}
+          />
+        </Box>
       </Box>
 
       <FAQ qn={questions} ans={answers} />
