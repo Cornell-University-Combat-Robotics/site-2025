@@ -73,7 +73,8 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#3D0E0E'
+      main: '#3D0E0E',
+      grey: '#1C1C1C'
     }
   }
 });
