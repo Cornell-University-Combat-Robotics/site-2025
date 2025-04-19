@@ -23,6 +23,7 @@ import Accessibility from './pages/accessibility';
 import IndividualRobot from './components/IndividualRobot';
 import Leads from './pages/subteams/leads';
 import Alumni from './pages/subteams/alumni';
+import PageNotFound from './pages/PageNotFound.jsx';
 
 
 // mobile context
@@ -117,6 +118,7 @@ function App() {
               <Route path="/game" element={<><Game /></>} />
               <Route path="/apply" element={<><Apply /></>} />
               <Route path="/accessibility" element={<><Accessibility /></>} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </main>
           {isMobile ? <FooterMobile /> : <FooterDesktop />}
