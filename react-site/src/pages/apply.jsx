@@ -179,7 +179,7 @@ export default function Apply() {
       }}>
         {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
         <Typography
-          variant="h1"
+          variant="desktopH1"
           sx={{
             textAlign: 'center',
             transform: 'translate(0,15%)',
@@ -222,7 +222,7 @@ export default function Apply() {
 
         <Typography
           // Recruitment Timeline
-          variant="h2"
+          variant="desktopH2"
           sx={{
             textAlign: 'center',
             mt: "7%",
@@ -311,7 +311,7 @@ export default function Apply() {
           </Box>
         </Box>
 
-        <Typography variant="h2" mb={5} id="newbie-ex">
+        <Typography variant="desktopH2" mb={5} id="newbie-ex">
           NEW MEMBER EXPERIENCE
         </Typography>
 
@@ -421,7 +421,7 @@ export default function Apply() {
 
       {/* Box for 3lb robot cards & info */}
       <Box width="100%" height="auto" justifyContent={"center"} alignItems={"center"} >
-        <Typography variant="h2" mb={5}>{"A few of our past 3lb robots..."}</Typography>
+        <Typography variant="desktopH2" mb={5}>{"A few of our past 3lb robots..."}</Typography>
 
         <RobotCardList type='Shortened_Three_lb' capacity={3} />
 
@@ -437,7 +437,7 @@ export default function Apply() {
             window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
-          <Typography variant="body1" >
+          <Typography variant="desktopBody">
             {"Click to see more!"}
           </Typography>
         </Button>
@@ -488,16 +488,15 @@ function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
       <Box textAlign={"left"} padding={5}
         bgcolor={bgcolor} //bgcolors arent inherited
       >
-        <Typography variant="h2" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+        <Typography variant="desktopH3" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
         </Typography>
 
-        {/* Why is this not italicized?? */}
         <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
           {subtitle}
         </Typography>
 
-        <Typography fontSize={20}>
+        <Typography fontSize={20} fontFamily='Josefin Sans, sans-serif'>
           {desc}
         </Typography>
       </Box>
@@ -520,25 +519,27 @@ function ApplicationSteplist({ name, desc, img }) {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <Typography variant="h3" //figure out
+      <Typography variant="desktopH3" //figure out
         sx={{
           textAlign: "right",
           mt: 10,
           mb: 5,
           marginRight: 3,
-          textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)'
+          textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+          display: "block"
         }}
       >
         {name}
       </Typography>
 
-      <Typography variant="body1"
+      <Typography variant="desktopBody"
         sx={{
           textAlign: "left",
           mb: "10px",
           mx: '2%',
           mt: 5,
-          lineHeight: 1.5
+          lineHeight: 1.5,
+          display: "block", // necessary to align text to the left
         }}
       >
         {desc}
