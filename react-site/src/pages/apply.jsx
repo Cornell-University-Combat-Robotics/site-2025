@@ -429,7 +429,7 @@ export default function Apply() {
           sx={{
             border: "2px solid white",
             borderRadius: 100,
-            paddingY: 2,
+            paddingY: 1,
             paddingX: 3,
             mb: 15
           }}
@@ -437,7 +437,7 @@ export default function Apply() {
             window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
-          <Typography variant="desktopBody">
+          <Typography variant="desktopBody" fontSize={20} color="white">
             {"Click to see more!"}
           </Typography>
         </Button>
