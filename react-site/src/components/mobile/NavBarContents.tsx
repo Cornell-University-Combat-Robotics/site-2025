@@ -10,34 +10,34 @@ import CustomIconButton from "../IconButton";
 export default function NavBarContents({ open, onClose }) {
     const theme = useTheme();
 
-    // disable scroll while navbar is open
-    useEffect(() => {
-        console.log(open);
-        if (!open) return; // if navbar is not open, do not disable scroll
+    // // disable scroll while navbar is open
+    // useEffect(() => {
+    //     console.log(open);
+    //     if (!open) return; // if navbar is not open, do not disable scroll
 
-        // block scrollwheel (for testing on desktop)
-        const preventWheel = (e: WheelEvent) => e.preventDefault();
-        window.addEventListener("wheel", preventWheel, { passive: false });
+    //     // block scrollwheel (for testing on desktop)
+    //     const preventWheel = (e: WheelEvent) => e.preventDefault();
+    //     window.addEventListener("wheel", preventWheel, { passive: false });
 
-        // block touch (mobile)
-        const preventTouch = (e: TouchEvent) => e.preventDefault();
-        window.addEventListener("touchmove", preventTouch, { passive: false });
+    //     // block touch (mobile)
+    //     const preventTouch = (e: TouchEvent) => e.preventDefault();
+    //     window.addEventListener("touchmove", preventTouch, { passive: false });
 
-        // block keyboard scrolling (arrow keys, spacebar)
-        const preventKeys = (e: KeyboardEvent) => {
-            if (["Space", "ArrowUp", "ArrowDown"].includes(e.code)) {
-                e.preventDefault();
-            }
-        };
-        window.addEventListener("keydown", preventKeys);
+    //     // block keyboard scrolling (arrow keys, spacebar)
+    //     const preventKeys = (e: KeyboardEvent) => {
+    //         if (["Space", "ArrowUp", "ArrowDown"].includes(e.code)) {
+    //             e.preventDefault();
+    //         }
+    //     };
+    //     window.addEventListener("keydown", preventKeys);
 
-        // allow scroll if open
-        return () => {
-            window.removeEventListener("wheel", preventWheel);
-            window.removeEventListener("touchmove", preventTouch);
-            window.removeEventListener("keydown", preventKeys);
-        };
-    }, [open]); // rerun when open changes
+    //     // allow scroll if open
+    //     return () => {
+    //         window.removeEventListener("wheel", preventWheel);
+    //         window.removeEventListener("touchmove", preventTouch);
+    //         window.removeEventListener("keydown", preventKeys);
+    //     };
+    // }, [open]); // rerun when open changes
 
     return (
         <Box
