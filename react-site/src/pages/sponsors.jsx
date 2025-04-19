@@ -118,7 +118,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#212D38"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid cyan" sx={{backgroundColor:"#212D38"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -166,7 +166,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>GOLD</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#342819"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderLeft="1.5rem solid #DEBF28" sx={{backgroundColor:"#342819"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -221,7 +221,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>SILVER</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#383838"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid #B8B8B8" sx={{backgroundColor:"#383838"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -244,7 +244,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BRONZE</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#352216"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderLeft="1.5rem solid #CF5401" sx={{backgroundColor:"#352216"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
@@ -267,7 +267,7 @@ export default function Sponsors() {
             />
             <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PARTNERS</Typography>
           </Box>
-          <Box display="flex" flex="1.5" flexWrap="wrap" sx={{backgroundColor:"#291936"}}>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid #8307E4" sx={{backgroundColor:"#291936"}}>
             <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
               <Box
                 component="img"
