@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import NavBarButton from "./NavBarButton";
-import NavBarIcon from "./NavBarIcon";
+import IconButton from "./IconButton";
 
 /** GradientNavBar creates a navigation bar with a semi-transparent gradient for the top of the page. 
  * Pages that implement this NavBar must set [position= "relative"] in order for the positions to be accurate.*/
@@ -23,7 +23,7 @@ export default function GradientNavBar() {
         justifyContent: "space-between",
       }}
     >
-      <NavBarIcon />
+      <IconButton image="/logo.png" to="/" width="2rem" height="2rem" />
       <Box
         id="navbar-links"
         sx={{
