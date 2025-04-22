@@ -97,10 +97,10 @@ export default function Sponsors() {
       hence "column". The Typography is the text component, we have with to 75% of
       screen. */}
       <Box display='flex' justifyContent="center" alignItems="center" sx={{ flexDirection: 'column' }}>
-        <Typography align='justify' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='left' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet.
         </Typography>
-        <Typography align='justify' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='left' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           You can also directly donate through Cornell above, please specify that the donation is for Combat Robotics at Cornell. We are a 501(c)(3) organization and all donations are tax deductible. Reach out to us directly if you're interested in making a specific arrangement not outlined in the sponsorship packet above.
         </Typography>
       </Box>
@@ -230,8 +230,7 @@ export default function Sponsors() {
                 component="img"
                 src={"/sponsors/boeing.png"}
                 alt="Boeing Logo"
-                sx={{ width: '200%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
-                // since there's only one sponsor, make it 200% width
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
               />
             </Box>
           </Box>
@@ -254,8 +253,7 @@ export default function Sponsors() {
                 component="img"
                 src={"/sponsors/sendcutsend.png"}
                 alt="SendCutSend Logo"
-                sx={{ width: '200%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
-                // since there's only one, make width 200%
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
               />
             </Box>
           </Box>
