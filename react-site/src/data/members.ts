@@ -381,8 +381,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Marketing Member"],
     linkedin: "https://www.linkedin.com/in/caedy-lee-4022792b7/",
     stats: [
-      ["Hot Water Addiction", "Pizza Crust", "TV Consumption"],
-      [90, 5, 70]
+      ["Hot Water Addiction", "Pizza Crust", "Arcane"],
+      [80, 5, 100]
     ]
   },
   crystalLi: {

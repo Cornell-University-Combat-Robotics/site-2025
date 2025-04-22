@@ -1,0 +1,160 @@
+import React from "react";
+import { Box, Card, CardContent, CardMedia, CardActionArea, Typography, autocompleteClasses } from "@mui/material";
+import { Link } from "react-router-dom";
+
+export interface RobotCardProps {
+    name: string; // Name of the robot
+    subteam: string[] // Subteam the bot belongs to (Kinetic, Sportsman, etc). For 3lb bots, this will be the semester they were built.
+    desc?: string; // Short description of the bot
+    image: string; // Link to the file location of the robot
+    link: string; // Link to the individual robot page
+    color: number; // 0 for red, 1 for pink
+    hasDescription: boolean;
+    // In the future, we should remove the color prop since it requires hard-coding (seen in robots.ts).
+    // Instead, RobotCardList should automatically alternate colors.
+}
+
+export default function RobotCardMobile(props: RobotCardProps) {
+    const background_color = props.color === 0 ? "#820002" : "#B85658";
+
+    return (
+        // Link is the outermost compponent to make the entire card link to the individual robot page.
+        < Link to={props.link} >
+            <Card
+                // size of card itself
+                sx={{
+                    // width: 220, 
+                    height: props.hasDescription ? "330px" : "250px",
+                    flex: "1",
+                    flexShrink: "0",
+                    bgcolor: background_color,
+                    color: 'white',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    // justifyContent: 'flex-end', 
+                    alignItems: 'center',
+                    borderRadius: '14px',
+                    padding: '1.2em 1.2em',
+                    minWidth: '220px',
+                    maxWidth: '240px',
+                    // maxWidth: '278.4px',
+                    // make em
+                }}
+            >
+                <CardActionArea
+                    // clickable button part of card
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                        // was 110% before
+                        display: 'flex',
+                        flexDirection: 'column',
+                        // backgroundColor: 'yellow',
+                    }}
+                >
+                    <Box
+                        // background of image (works only with png)
+                        width="100%"
+                        height="auto"
+                        borderRadius="7%"
+                        bgcolor={background_color == "#820002" ? "#B23030" : "#ED9191"}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            // margin: '0 auto',
+                            // marginTop: '2em'
+                        }}
+                    >
+                        <CardMedia
+                            // image itself
+                            component="img"
+                            image={props.image}
+                            alt="Robot image"
+                            // Regulates size of all photos
+                            sx={{
+                                // width: '220px',
+                                // change with to 220px if cards keep sizing weird
+                                width: '100%',
+                                height: '163.15px',
+                                objectFit: 'fill', // set image to fill since they are warped otherwise
+
+                                // BELOW STYLED IMG BORDER
+                                // backgroundColor: '#ed9191',
+                                // borderStyle: 'solid',
+                                // borderRadius: '20px',
+                            }}
+                        />
+                    </Box>
+                    <CardContent
+                        // written content CONTAINER on card (HOLDS card title, pill with text, and paragraph)
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            // justifyContent: 'flex-start',
+                            // alignItems: 'flex-start',
+                            flexGrow: 1,
+                            width: '100%',
+                            padding: '8px',
+                            paddingBottom: '6px',
+                        }}
+                    >
+                        {/* Below is for robot title text */}
+                        <Typography gutterBottom align='left' variant="mobileBody" component="div" fontWeight='bold' sx={{ height: '40px', lineHeight: '1', mt: '2%' }}>
+                            {props.name}
+                        </Typography>
+                        <Box
+                            // Changed: Added a wrapping Box to handle multiple subteams dynamically
+                            sx={{
+                                display: 'flex',
+                                flexWrap: 'wrap', // Allows subteam pills to wrap if necessary
+                                gap: '5px', // Adds spacing between subteam pills
+                                marginBottom: '8px'
+                            }}
+                        >
+                            {props.subteam.map((team, index) => (
+                                <Box
+                                    //pill shape container on card 
+                                    key={index}
+                                    bgcolor={props.color === 0 ? "#B23030" : "#ED9191"}
+                                    sx={{
+                                        borderRadius: 5,
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        padding: '0.5em, 1em',
+                                        width: 'fit-content',
+                                        minWidth: '60px',
+                                    }}
+                                >
+                                    <Typography
+                                        // text in pill container on card
+                                        align='center'
+                                        variant="mobileBody"
+                                        sx={{
+                                            // backgroundColor: 'yellow',
+                                            padding: '0.2em 0.5em', // Added internal padding to prevent text overlap
+                                            lineHeight: 1.2 // Adjusted line height for better readability
+                                            // display: 'flex',
+                                            // flexDirection: 'column',
+                                            // justifyContent: 'flex-start',
+                                            // alignItems: 'flex=start',
+                                            // flexGrow: 1,
+                                            // width: '100%' // Make the Typography fill the full width of the Box
+                                        }}
+                                    >
+                                        {team}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                        {/* Below is robot description text paragraph */}
+                        <Typography align='left' variant="mobileBody" paddingTop="0.5em">
+                            {props.desc}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </Link >
+    );
+}

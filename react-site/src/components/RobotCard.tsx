@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 export interface RobotCardProps {
   name: string; // Name of the robot
-  subteam: string // Subteam the bot belongs to (Kinetic, Sportsman, etc). For 3lb bots, this will be the semester they were built.
+  subteam: string[] // Subteam the bot belongs to (Kinetic, Sportsman, etc). For 3lb bots, this will be the semester they were built.
   desc?: string; // Short description of the bot
   image: string; // Link to the file location of the robot
   link: string; // Link to the individual robot page
   color: number; // 0 for red, 1 for pink
+  hasDescription: boolean;
   // In the future, we should remove the color prop since it requires hard-coding (seen in robots.ts).
   // Instead, RobotCardList should automatically alternate colors.
 }
@@ -19,30 +20,29 @@ export default function RobotCard(props: RobotCardProps) {
   return (
     // Link is the outermost compponent to make the entire card link to the individual robot page.
     <Link to={props.link}>
-      <Card 
-      // size of card itself
-        sx={{ 
+      <Card
+        // size of card itself
+        sx={{
           // width: 220, 
-          // height: 400, 
+          height: props.hasDescription ? "380px" : "300px",
           flex: "1",
           flexShrink: "0",
-          bgcolor: background_color, 
-          color: 'white', 
-          display: 'flex', 
-          flexDirection: 'column', 
+          bgcolor: background_color,
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
           // justifyContent: 'flex-end', 
-          alignItems: 'center', 
-          borderRadius: '14px', 
+          alignItems: 'center',
+          borderRadius: '14px',
           padding: '1.2em 1.2em',
           minWidth: '220px',
           maxWidth: '240px',
           // maxWidth: '278.4px',
-          // height: '100%',
           // make em
         }}
       >
         <CardActionArea
-        // clickable button part of card
+          // clickable button part of card
           sx={{
             width: '100%',
             height: '100%',
@@ -52,12 +52,12 @@ export default function RobotCard(props: RobotCardProps) {
             // backgroundColor: 'yellow',
           }}
         >
-          <Box 
+          <Box
             // background of image (works only with png)
             width="100%"
-            height="auto" 
-            borderRadius="7%" 
-            bgcolor={background_color == "#820002" ? "#B23030" : "#ED9191"} 
+            height="auto"
+            borderRadius="7%"
+            bgcolor={background_color == "#820002" ? "#B23030" : "#ED9191"}
             sx={{
               display: 'flex',
               justifyContent: 'center',
@@ -78,7 +78,7 @@ export default function RobotCard(props: RobotCardProps) {
                 width: '100%',
                 height: '163.15px',
                 objectFit: 'fill', // set image to fill since they are warped otherwise
-                
+
                 // BELOW STYLED IMG BORDER
                 // backgroundColor: '#ed9191',
                 // borderStyle: 'solid',
@@ -100,41 +100,53 @@ export default function RobotCard(props: RobotCardProps) {
             }}
           >
             {/* Below is for robot title text */}
-            <Typography gutterBottom align='left' variant="h5" component="div" fontWeight='bold' sx={{height: '40px', lineHeight: '1'}}>
+            <Typography gutterBottom align='left' variant="body1" component="div" fontWeight='bold' sx={{ height: '40px', lineHeight: '1', mt: '2%' }}>
               {props.name}
             </Typography>
-            <Box 
-              //pill shape container on card 
-              bgcolor={props.color === 0 ? "#B23030" : "#ED9191"} 
-              sx={{ 
-                borderRadius: 5, 
+            <Box
+              // Changed: Added a wrapping Box to handle multiple subteams dynamically
+              sx={{
                 display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '0.25em, 0.75em',
-                width: 'fit-content',
-                minWidth: '60px',
+                flexWrap: 'wrap', // Allows subteam pills to wrap if necessary
+                gap: '5px', // Adds spacing between subteam pills
+                marginBottom: '8px'
               }}
             >
-              <Typography 
-                // text in pill container on card
-                align='center' 
-                variant="body2" 
-                sx={{ 
-                  // backgroundColor: 'yellow',
-                  margin: 0,
-                  padding: 0,
-                  fontWeight: 'bold',
-                  // display: 'flex',
-                  // flexDirection: 'column',
-                  // justifyContent: 'flex-start',
-                  // alignItems: 'flex=start',
-                  // flexGrow: 1,
-                  // width: '100%' // Make the Typography fill the full width of the Box
-                }}
-              >
-                {props.subteam}
-                </Typography>
+              {props.subteam.map((team, index) => (
+                <Box
+                  //pill shape container on card 
+                  key={index}
+                  bgcolor={props.color === 0 ? "#B23030" : "#ED9191"}
+                  sx={{
+                    borderRadius: 5,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '0.5em, 1em',
+                    width: 'fit-content',
+                    minWidth: '60px',
+                  }}
+                >
+                  <Typography
+                    // text in pill container on card
+                    align='center'
+                    variant="body2"
+                    sx={{
+                      // backgroundColor: 'yellow',
+                      padding: '0.2em 0.5em', // Added internal padding to prevent text overlap
+                      lineHeight: 1.2 // Adjusted line height for better readability
+                      // display: 'flex',
+                      // flexDirection: 'column',
+                      // justifyContent: 'flex-start',
+                      // alignItems: 'flex=start',
+                      // flexGrow: 1,
+                      // width: '100%' // Make the Typography fill the full width of the Box
+                    }}
+                  >
+                    {team}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
             {/* Below is robot description text paragraph */}
             <Typography align='left' variant="body2" paddingTop="0.5em">
