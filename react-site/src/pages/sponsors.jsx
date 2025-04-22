@@ -64,8 +64,11 @@ export default function Sponsors() {
             textAlign: 'center',
             transform: 'translate(0,15%)',
             textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
+            fontSize: 'clamp(2rem, 10vw, 6rem)',
+            maxWidth: '90%'
           }}>
-          SUPPORT THE <br></br>TEAM
+          SUPPORT THE <br></br> TEAM
+          {/* SUPPORT THE TEAM */}
         </Typography>
       </Box>
 
@@ -227,7 +230,8 @@ export default function Sponsors() {
                 component="img"
                 src={"/sponsors/boeing.png"}
                 alt="Boeing Logo"
-                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+                sx={{ width: '200%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+                // since there's only one sponsor, make it 200% width
               />
             </Box>
           </Box>
@@ -250,7 +254,8 @@ export default function Sponsors() {
                 component="img"
                 src={"/sponsors/sendcutsend.png"}
                 alt="SendCutSend Logo"
-                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+                sx={{ width: '200%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+                // since there's only one, make width 200%
               />
             </Box>
           </Box>
@@ -273,6 +278,24 @@ export default function Sponsors() {
                 component="img"
                 src={"/sponsors/redbull.png"}
                 alt="Redbull Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+              {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/tastelli.JPG"}
+                alt="Tastelli Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+              {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/poppi.png"}
+                alt="Poppi Logo"
                 sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
               />
               {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
