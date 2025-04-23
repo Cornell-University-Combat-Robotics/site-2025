@@ -64,10 +64,15 @@ export default function Sponsors() {
             textAlign: 'center',
             transform: 'translate(0,15%)',
             textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
+            fontSize: 'clamp(2rem, 10vw, 6rem)',
+            maxWidth: '90%'
           }}>
-          SUPPORT THE <br></br>TEAM
+          SUPPORT THE <br></br> TEAM
+          {/* SUPPORT THE TEAM */}
         </Typography>
       </Box>
+
+    <Box padding="0px 6%">
 
       <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', mt: 5 }} id="sponsor-box">
         OUR SPONSORS
@@ -80,67 +85,11 @@ export default function Sponsors() {
       when clicked. &hover is for making the text color white (don't change when
       button is not hovered over.*/}
       <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="40px">
-        <Box display='flex' width="75%" justifyContent="space-between" sx={{ flexDirection: 'row' }}>
-          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{
-            backgroundColor: "#820002",
-            color: "white",
-            fontSize: "1.5em",
-            width: "330px",
-            height: "100px",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            px: "20px",
-            borderRadius: "16px",
-            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
-            '&:focus': { outline: 'none', },
-            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
-          }}>
-            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-              SPONSORSHIP PACKET
-            </Typography>
-          </Button>
-          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{
-            backgroundColor: "#820002",
-            color: "white",
-            fontSize: "1.5em",
-            width: "330px",
-            height: "100px",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            px: "20px",
-            borderRadius: "16px",
-            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
-            '&:focus': { outline: 'none', },
-            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
-          }}>
-            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-              DONATE HERE
-            </Typography>
-          </Button>
-          <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{
-            backgroundColor: "#820002",
-            color: "white",
-            fontSize: "1.5em",
-            width: "330px",
-            height: "100px",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            px: "20px",
-            borderRadius: "16px",
-            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
-            '&:focus': { outline: 'none', },
-            '&:hover': { color: 'white', boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.7)' },
-          }}>
-            <Typography sx={{ fontFamily: 'Josefin Sans', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-              GIVING DAY
-            </Typography>
-          </Button>
+        <Box display='flex' gap="20px" justifyContent="center" flexWrap="wrap" sx={{ flexDirection: 'row' }} >
+          <Button href={pdfFile} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "100%", maxWidth:"330px", minWidth:"250px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', }, }}>VIEW OUR SPONSORSHIP PACKET</Button>
+          <Button href={cornellDonate} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "100%", maxWidth:"330px", minWidth:"250px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH CORNELL</Button>
+          {/* <Button href={givingDay} target="_blank" rel="noopener noreferrer" sx={{ backgroundColor: "#820002", color: "white", fontSize: "1.5em", width: "330px", height: "100px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", px: "20px", borderRadius: "16px", '&:focus': { outline: 'none', }, '&:hover': { color: 'white', } }}>DONATE THROUGH GIVING DAY</Button> */}
+          {/* delete giving day button */}
         </Box>
       </Box>
 
@@ -148,399 +97,215 @@ export default function Sponsors() {
       hence "column". The Typography is the text component, we have with to 75% of
       screen. */}
       <Box display='flex' justifyContent="center" alignItems="center" sx={{ flexDirection: 'column' }}>
-        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='left' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           As a new robotics team, we rely heavily on raising money from sponsorships and donations and we'd be glad to hear from you! Read more about our history and the benefits of supporting our team outlined in the Sponsorship Packet.
         </Typography>
-        <Typography align='justify' width='75%' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
+        <Typography align='left' sx={{ fontFamily: 'Josefin Sans', my: 2 }}>
           You can also directly donate through Cornell above, please specify that the donation is for Combat Robotics at Cornell. We are a 501(c)(3) organization and all donations are tax deductible. Reach out to us directly if you're interested in making a specific arrangement not outlined in the sponsorship packet above.
         </Typography>
       </Box>
 
-      {/* Sponsor Logos Section with Light Blue Rectangle:
-      The outer Box centers the content inside horizontally with flexbox. 
-      The nested Box (inside) sets the width to 75% of the screen and creates
-      a dark blue background for the section. Inside this, we have two main parts:
-      - Left side: Displays the large Platinum logo and a title ("PLATINUM").
-      - Right side: Uses a Grid2 component for a responsive layout of sponsor logos. 
-        Each sponsor logo is wrapped in a Link component for external navigation. 
-        The ml (margin-left) offsets the Grid2 from the left side for better spacing.
-      - Finally, a light blue vertical rectangle is created using an absolutely 
-        positioned Box component on the right edge. */}
 
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="75%"
-          sx={{
-            backgroundColor: '#212D38',
-            padding: '20px',
-            color: 'white',
-            position: 'relative'
-          }}
-        >
-          {/* Left side: large logo and title */}
-          <Box display="flex" flexDirection="column" alignItems="center">
+
+      {/* Below is better version of sponsor ribbons */}
+      <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" paddingTop="20px" paddingBottom="20px">
+        
+        {/* Platinum */}
+        <Box display="flex" flexDirection="row" marginBottom="40px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#212D38"}}>
             <Box
               component="img"
               src={"/sponsors/crc_plat.png"}
               alt="Large Plat Logo"
-              sx={{ width: '400px', height: 'auto', mb: 2 }}
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
-              PLATINUM
-            </Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PLATINUM</Typography>
           </Box>
-
-          {/* Right side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.asml.com/en">
-                <Box
-                  component="img"
-                  src={"/sponsors/asml.png"}
-                  alt="ASML Logo"
-                  sx={{ width: '250px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.kfm-llc.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/kfm.png"}
-                  alt="KFM Logo"
-                  sx={{ width: "250px", height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.nhrl.io/">
-                <Box
-                  component="img"
-                  src={"/sponsors/nhrl.png"}
-                  alt="NHRL Logo"
-                  sx={{ width: '250px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.autodesk.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/autodesk.png"}
-                  alt="Autodesk Logo"
-                  sx={{ width: '250px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-          </Grid2>
-
-          {/* Light Blue Rectangle */}
-          <Box
-            sx={{
-              position: 'absolute',
-              right: '0px',
-              top: 0,
-              bottom: 0,
-              width: '20px',
-              backgroundColor: '#2AF1F1', // Light blue color
-            }}
-          />
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid cyan" sx={{backgroundColor:"#212D38"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/kfm.png"}
+                alt="KFM Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/nhrl.png"}
+                alt="NHRL Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/asml.png"}
+                alt="ASML Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/autodesk.png"}
+                alt="Autodesk Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+          </Box>
         </Box>
-      </Box>
-
-      {/* Gold Sponsor Logos Section with Gold Rectangle:
-      This section follows the same double Box structure as above for consistent 
-      layout. The outer Box centers the content, and the inner Box sets the width 
-      and adds the gold background color. The left side has a gold rectangle (Box)
-      positioned absolutely, creating a decorative gold stripe on the left edge.
-      - The sponsor logos are displayed using a Grid2 component for responsiveness.
-      - The last part displays the large Gold logo with a "GOLD" title below it. */}
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="75%"
-          sx={{
-            backgroundColor: '#342819',
-            padding: '20px',
-            color: 'white',
-            position: 'relative'
-          }}
-        >
-          {/* Gold Rectangle */}
-          <Box
-            sx={{
-              position: 'absolute',
-              left: '0px',
-              top: 0,
-              bottom: 0,
-              width: '20px',
-              backgroundColor: '#DEBF28', // Gold color
-            }}
-          />
-          {/* Left side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} ml="90px" sx={{ maxWidth: '60%' }}>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.engineering.cornell.edu/">
-                <Box
-                  component="img"
-                  src={"/sponsors/cornell_engineering_logo.png"}
-                  alt="Cornell Engineering Logo"
-                  sx={{ width: '350px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://angelshotapp.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/Angel_Shot_Logo.png"}
-                  alt="Angel Shot Logo"
-                  sx={{ width: '200px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.keeninsites.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/Keen_Insites_Logo.png"}
-                  alt="Keen Insites Logo"
-                  sx={{ width: "400px", height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://daylightsavings.us/">
-                <Box
-                  component="img"
-                  src={"/sponsors/daylight.png"}
-                  alt="The Daylight Savings Company Logo"
-                  sx={{ width: '400px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.raymondcorp.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/raymond.png"}
-                  alt="Raymond Logo"
-                  sx={{ width: '350px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-          </Grid2>
-
-          {/* Left side: large logo and title */}
-          <Box display="flex" flexDirection="column" alignItems="center">
+        
+        {/* Gold */}
+        {/* NOTE: Every other banner uses flexDirection="row-reverse" which flips banner orientation */}
+        <Box display="flex" flexDirection="row-reverse" marginBottom="40px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#342819"}}>
             <Box
               component="img"
               src={"/sponsors/crc_gold.png"}
               alt="Large Gold Logo"
-              sx={{ width: '400px', height: 'auto', mb: 2 }}
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
-              GOLD
-            </Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>GOLD</Typography>
+          </Box>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderLeft="1.5rem solid #DEBF28" sx={{backgroundColor:"#342819"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/cornell_engineering_logo.png"}
+                alt="Cornell Engineering Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/Angel_Shot_Logo.png"}
+                alt="Angel Shot Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/Keen_Insites_Logo.png"}
+                alt="Keen Insites"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/daylight.png"}
+                alt="The Daylight Savings Company Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/raymond.png"}
+                alt="Raymond Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
-      </Box>
 
-      {/* Silver Sponsor Logos Section with Grey Rectangle:
-      Similar to the previous sections, this follows the same Box layout pattern.
-      - The inner Box sets the width, background color (grey), and positions the 
-        light grey rectangle on the right using absolute positioning.
-      - The left side shows the large Silver logo and title ("SILVER").
-      - The right side includes a single sponsor logo (Boeing) displayed in a Grid2 item.
-      - The layout maintains consistency across sections, with the grey rectangle 
-        adding a visual separator. */}
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="75%"
-          sx={{
-            backgroundColor: '#383838',
-            padding: '20px',
-            color: 'white',
-            position: 'relative'
-          }}
-        >
-          {/* Left side: large logo and title */}
-          <Box display="flex" flexDirection="column" alignItems="center">
+        {/* Silver */}
+        <Box display="flex" flexDirection="row" marginBottom="40px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#383838"}}>
             <Box
               component="img"
               src={"/sponsors/crc_silver.png"}
               alt="Large Silver Logo"
-              sx={{ width: '400px', height: 'auto', mb: 2 }}
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
-              SILVER
-            </Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>SILVER</Typography>
           </Box>
-
-          {/* Right side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} mx="auto" sx={{ maxWidth: '60%' }}>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.boeing.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/boeing.png"}
-                  alt="Boeing Logo"
-                  sx={{ width: '450px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-          </Grid2>
-
-          {/* Light Grey Rectangle */}
-          <Box
-            sx={{
-              position: 'absolute',
-              right: '0px',
-              top: 0,
-              bottom: 0,
-              width: '20px',
-              backgroundColor: '#B8B8B8', // Light grey color
-            }}
-          />
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid #B8B8B8" sx={{backgroundColor:"#383838"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/boeing.png"}
+                alt="Boeing Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
+          </Box>
         </Box>
-      </Box>
 
-      {/* Bronze Sponsor Logos Section with Bronze Rectangle:
-      Follows the same structure as the previous sections with a double Box layout.
-      - The background color is set to a dark bronze shade.
-      - The left edge has a bronze vertical rectangle positioned absolutely for design.
-      - The sponsor logos are listed in a responsive Grid2 component.
-      - The section ends with the large Bronze logo and "BRONZE" title centered 
-        vertically and horizontally. */}
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="75%"
-          sx={{
-            backgroundColor: '#352216',
-            padding: '20px',
-            color: 'white',
-            position: 'relative'
-          }}
-        >
-          {/* Bronze Rectangle */}
-          <Box
-            sx={{
-              position: 'absolute',
-              left: '0px',
-              top: 0,
-              bottom: 0,
-              width: '20px',
-              backgroundColor: '#CF5401', // Bronze color
-            }}
-          />
-          {/* Left side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} mx="auto" my="auto" sx={{ maxWidth: '60%' }}>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://sendcutsend.com/">
-                <Box
-                  component="img"
-                  src={"/sponsors/sendcutsend.png"}
-                  alt="SendCutSend Logo"
-                  sx={{ width: '350px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-          </Grid2>
-
-          {/* Left side: large logo and title */}
-          <Box display="flex" flexDirection="column" alignItems="center">
+        {/* Bronze */}
+        <Box display="flex" flexDirection="row-reverse" marginBottom="40px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#352216"}}>
             <Box
               component="img"
               src={"/sponsors/crc_bronze.png"}
-              alt="Large Bronze Logo"
-              sx={{ width: '400px', height: 'auto', mb: 2 }}
+              alt="Large Plat Logo"
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
-              BRONZE
-            </Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BRONZE</Typography>
+          </Box>
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderLeft="1.5rem solid #CF5401" sx={{backgroundColor:"#352216"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/sendcutsend.png"}
+                alt="SendCutSend Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+            </Box>
           </Box>
         </Box>
-      </Box>
 
-      {/* Partner Logos Section with Purple Rectangle:
-      This section continues the layout pattern for consistency.
-      - The background is set to a dark purple, matching the theme color for partners.
-      - The left side displays the large purple logo and the title "PARTNERS".
-      - The right side uses a Grid2 component for partner logos, including the Red Bull 
-        logo and a Typography component for Bovay Laboratory Complex (styled as a link).
-      - A light purple rectangle is positioned absolutely on the right edge for design.
-      - This section, like the others, maintains alignment and visual hierarchy. */}
-      <Box display="flex" justifyContent="center" alignItems="center" mt={5} mb={5}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          width="75%"
-          sx={{
-            backgroundColor: '#291936',
-            padding: '20px',
-            color: 'white',
-            position: 'relative'
-          }}
-        >
-          {/* Left side: large logo and title */}
-          <Box display="flex" flexDirection="column" alignItems="center">
+        {/* Partners */}
+        <Box display="flex" flexDirection="row" marginBottom="20px" width="100%">
+          <Box flex="0 1 40%" display="flex" flexDirection="column" justifyContent="center" alignItems="center" padding="20px" sx={{backgroundColor:"#291936"}}>
             <Box
               component="img"
               src={"/sponsors/crc_purple.png"}
               alt="Large Purple Logo"
-              sx={{ width: '400px', height: 'auto', mb: 2 }}
+              sx={{ width: '100%', height: 'auto', maxWidth: "300px", objectFit: "contain"}}
             />
-            <Typography variant="h2" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold' }}>
-              PARTNERS
-            </Typography>
+            <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>PARTNERS</Typography>
           </Box>
-
-          {/* Right side: Sponsor logos Grid2 */}
-          <Grid2 container spacing={3} ml="90px" alignItems="center" justifyContent="center" sx={{ maxWidth: '60%' }}>
-            <Grid2 item xs={6} sm={3}>
-              <Link href="https://www.redbull.com/us-en">
-                <Box
-                  component="img"
-                  src={"/sponsors/redbull.png"}
-                  alt="Red Bull Logo"
-                  sx={{ width: '250px', height: 'auto' }}
-                />
-              </Link>
-            </Grid2>
-            <Grid2 item xs={6} sm={3}>
-              <Link style={{ textDecoration: 'none', color: "white" }} href="https://www.cee.cornell.edu/cee/facilities/bovay-laboratory-complex">
-                <Typography sx={{ fontFamily: 'Montserrat', fontSize: "2.5rem" }}> BOVAY LABORATORY COMPLEX </Typography>
-              </Link>
-            </Grid2>
-          </Grid2>
-
-          {/* Light Purple Rectangle */}
-          <Box
-            sx={{
-              position: 'absolute',
-              right: '0px',
-              top: 0,
-              bottom: 0,
-              width: '20px',
-              backgroundColor: '#8307E4', // Light purple color
-            }}
-          />
+          <Box display="flex" flex="1.5" flexWrap="wrap" borderRight="1.5rem solid #8307E4" sx={{backgroundColor:"#291936"}}>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/redbull.png"}
+                alt="Redbull Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+              {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/tastelli.JPG"}
+                alt="Tastelli Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+              {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+            </Box>
+            <Box width={{xs: "100%", sm: "50%"}} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+              <Box
+                component="img"
+                src={"/sponsors/poppi.png"}
+                alt="Poppi Logo"
+                sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain"}}
+              />
+              {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+            </Box>
+          </Box>
         </Box>
+
       </Box>
 
       <FAQ qn={questions} ans={answers} />
+      
+    </Box>
 
     </Box>
   );
