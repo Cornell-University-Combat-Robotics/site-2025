@@ -32,9 +32,7 @@ const images = [
 export default function Game() {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [iframeSrc, setIframeSrc] = useState(images[1].src);
-    // new thing above with images[] thing
     const [gameSelected, setGameSelected] = useState(false);
-    // New state to track if a game is selected
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -50,13 +48,11 @@ export default function Game() {
         setGameSelected(true);
         // Hide title and carousel when a game is selected
     };
-    // const handleImageClick is new
 
     return (
         <Box
             sx={{
                 width: "100vw",
-                // height: "82.2vh",
                 // 82.2vh original height but causes black body to show under header
                 height: "92.5vh",
                 minHeight: "82.2vh",
@@ -66,8 +62,6 @@ export default function Game() {
                 alignItems: "center",
                 overflow: "hidden",
                 position: "relative",
-
-                // backgroundColor: "yellow"
             }}
         >
             <motion.div
@@ -76,28 +70,9 @@ export default function Game() {
                 transition={{ duration: 1, delay: 0.5, ease: [0.5, 1, 0.8, 1] }}
                 style={{ position: "absolute", zIndex: 0 }}
             >
-                {/* <Box 
-          sx={{
-            backgroundColor:"yellow",
-            width: "1020px",
-            height: "560px",
-            // width: "1020px",
-            // width: "80.4vh",
-            // height: "560px",
-            // height: "56.6vh",
-            // marginTop: "290px",
-            marginLeft: "20px",
-            marginBottom: "16px",
-            // zIndex: "3",
-            // zIndex doesnt serve purpose anymore since its wrapped in the motion div now
-            }}>
-        </Box> */}
-
 
                 {/* screen with game that loads */}
                 <iframe
-                    // src="media/index.html" 
-                    // src="oldgame/gameold.html"
                     src={iframeSrc}
                     // new src thing
                     width="1020px"
@@ -107,9 +82,6 @@ export default function Game() {
                     allowFullScreen
                     cursor="crosshair"
                 />
-
-                {/* "../assets/gamepage/arcade.png" */}
-
 
             </motion.div>
 
@@ -121,20 +93,6 @@ export default function Game() {
                 style={{ position: "absolute", zIndex: -1, }}
             >
                 <img src={arcade} style={{ width: "auto", height: "100%", }} />
-                {/* <Box 
-          sx={{
-            backgroundColor:"yellow",
-            // width: "1020px",
-            width: "200px",
-            // height: "560px",
-            height: "200px",
-            // marginTop: "290px",
-            // marginLeft: "20px",
-            // zIndex: "1",
-            // zIndex: "3",
-            // zIndex doesnt serve purpose anymore since its wrapped in the motion div now
-            }}>
-        </Box> */}
             </motion.div>
 
             {/* Title */}
@@ -147,7 +105,7 @@ export default function Game() {
                     style={{ position: "relative", zIndex: 1, }}
                 >
                     <Typography
-                        variant="h1"
+                        variant="desktopH2"
                         sx={{
                             color: "white",
                             textAlign: "center",
@@ -157,10 +115,8 @@ export default function Game() {
                     </Typography>
                 </motion.div>
             )}
-            {/* excalamation mark thing new */}
 
             {/* Carousel for Game Images */}
-
             {!gameSelected && (
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -241,7 +197,6 @@ export default function Game() {
                     </Box>
                 </motion.div>
             )}
-            {/* exclamation mark thing way way up top is new */}
         </Box>
     );
 }
