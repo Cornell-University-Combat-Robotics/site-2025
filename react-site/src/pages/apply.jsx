@@ -1,8 +1,7 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef, Button } from "@mui/material";
+import { Typography, Box, Stack, Button } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import FAQ from "../components/FAQ.tsx";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
-import { useNavigate } from "react-router-dom";
 import RedBox from "../components/RedBox.tsx";
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
@@ -13,10 +12,16 @@ import robot_scroll from "../assets/robot_scroll.png";
 import arrow_img from "../assets/arrow.png";
 import { LinkToPage } from "../components/FAQ.tsx";
 import RobotCardList from '../components/RobotCardList';
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
+import { useTheme } from '@mui/material/styles';
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
   // ================================= JAVASCRIPT COMMANDS: SCROLL DOWN FOR WEBSITE ======================================================
+  const isMobile = useContext(MobileContext);
+
+  const theme = useTheme();
 
   /** list of all events in the recruitment timeline */
   const event = [
@@ -179,7 +184,7 @@ export default function Apply() {
       }}>
         {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
         <Typography
-          variant="h1"
+          variant= { isMobile ? "mobileH1" : "desktopH1"}
           sx={{
             textAlign: 'center',
             transform: 'translate(0,15%)',
@@ -196,7 +201,7 @@ export default function Apply() {
           text="All applications are due October 17th, 11:59pm."
           word="Apply Now!"
           link="/sponsors"
-          mTop="5%"
+          mT="8vw"
         />
 
         {/* Alternative text for when applications are closed */}
@@ -222,10 +227,10 @@ export default function Apply() {
 
         <Typography
           // Recruitment Timeline
-          variant="h2"
+          variant= { isMobile ? "mobileH2" : "desktopH2"}
           sx={{
             textAlign: 'center',
-            mt: "7%",
+            mt: "8vw",
             mb: '5%'
             // add margins when text size smaller
           }}>
@@ -265,13 +270,17 @@ export default function Apply() {
                   <circle
                     cx={xPos}
                     cy="10%" //same as line -> falls on line
-                    r={10} //radius
+                    r={ isMobile ? 6 : 15 } //radius
                     fill="#820002" //color
                   >
                   </circle>
 
                   {/*Note: svg components don't support attributes that Material-UI components usually use (e.g. variant, color)*/}
-                  <text key={index} fill="white" fontFamily='Josefin Sans, sans-serif' fontSize={24} y="50%"
+                  <text key={index} fill="white" fontFamily= {theme.typography.mobileH1.fontFamily} 
+                    fontSize={
+                      isMobile ? theme.typography.mobileBody2.fontSize : theme.typography.desktopBody2.fontSize
+                    } 
+                    y= { isMobile ? "25%" : "50%" }
                     textAnchor="middle" //horizontally centered
                   >
                     {/*use tspan to separate texts, since svg does not support new-line*/}
@@ -279,7 +288,7 @@ export default function Apply() {
                       {name}
                     </tspan>
                     <tspan x={xPos}
-                      dy="2rem" //changes y position of this tspan relative to tspan above
+                      dy="2vw" //changes y position of this tspan relative to tspan above
                     >
                       {date}
                     </tspan>
@@ -311,12 +320,16 @@ export default function Apply() {
           </Box>
         </Box>
 
-        <Typography variant="h2" mb={5} id="newbie-ex">
+
+        <Typography variant={isMobile ? "mobileH2" : "desktopH2" } mb={5} id="newbie-ex">
           NEW MEMBER EXPERIENCE
         </Typography>
 
+
         <Stack direction="row" gap={10} ref={arrowBar} position="relative" >
-          {/*arrow*/}
+
+          { !isMobile && 
+          /*arrow*/
           <svg width="30%" //svg component takes up 10% of stack & full height of stack 
           >
             <line
@@ -390,7 +403,7 @@ export default function Apply() {
            */}
 
           </svg>
-
+          }
 
 
           {/*
@@ -403,7 +416,7 @@ export default function Apply() {
         */}
 
           {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)            */}
-          {isVisible && !isBottomCrossed &&
+          {isVisible && !isBottomCrossed && !isMobile && 
             <RobotImage pos={"fixed"} top={"20%"} lft={"10.6%"} ref={robot} />
           }
 
@@ -421,7 +434,7 @@ export default function Apply() {
 
       {/* Box for 3lb robot cards & info */}
       <Box width="100%" height="auto" justifyContent={"center"} alignItems={"center"} >
-        <Typography variant="h2" mb={5}>{"A few of our past 3lb robots..."}</Typography>
+        <Typography variant={isMobile ? "mobileH3" : "desktopH3"}>{"A few of our past 3lb robots..."}</Typography>
 
         <RobotCardList type='Shortened_Three_lb' capacity={3} />
 
@@ -429,7 +442,7 @@ export default function Apply() {
           sx={{
             border: "2px solid white",
             borderRadius: 100,
-            paddingY: 2,
+            paddingY: 1,
             paddingX: 3,
             mb: 15
           }}
@@ -437,7 +450,7 @@ export default function Apply() {
             window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
-          <Typography variant="body1" >
+          <Typography variant="desktopBody" fontSize={20} color="white">
             {"Click to see more!"}
           </Typography>
         </Button>
@@ -453,117 +466,117 @@ export default function Apply() {
   - Note: must use const & forwardRef cuz functional components (like function RobotImage = ...) can't accept refs directly 
   unless wrapped with React.forwardRef
   */ }
-const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
-  return (
-    <img
-      src={robot_scroll}
-      ref={ref} //attach ref only if passed
-      style={{
-        transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
-        zIndex: "100",
-        position: pos,
-        left: lft,
-        ...(top ? { top } : {}), // optional argument: Apply top only if passed
-        ...(bottom ? { bottom } : {}) // Apply bottom only if passed
-      }}
-    />
-  );
-});
-
-function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
-  return (
-    <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems="center" >
+  const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
+    return (
       <img
-        src={img}
+        src={robot_scroll}
+        ref={ref} //attach ref only if passed
         style={{
-          objectPosition: "center",
-          objectFit: "cover",
-          maxHeight: 400,
-          minWidth: 400
+          transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
+          zIndex: "100",
+          position: pos,
+          left: lft,
+          ...(top ? { top } : {}), // optional argument: Apply top only if passed
+          ...(bottom ? { bottom } : {}) // Apply bottom only if passed
         }}
       />
-
-
-      {/*descriptions */}
-      <Box textAlign={"left"} padding={5}
-        bgcolor={bgcolor} //bgcolors arent inherited
+    );
+  });
+  
+  function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
+    return (
+      <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems="center" >
+        <img
+          src={img}
+          style={{
+            objectPosition: "center",
+            objectFit: "cover",
+            maxHeight: 400,
+            minWidth: 400
+          }}
+        />
+  
+  
+        {/*descriptions */}
+        <Box textAlign={"left"} padding={5}
+          bgcolor={bgcolor} //bgcolors arent inherited
+        >
+          <Typography variant="desktopH3" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+            {title}
+          </Typography>
+  
+          <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
+            {subtitle}
+          </Typography>
+  
+          <Typography fontSize={20} fontFamily='Josefin Sans, sans-serif'>
+            {desc}
+          </Typography>
+        </Box>
+  
+      </Stack>
+    );
+  }
+  
+  {/*For the big red numbers*/ }
+  function ApplicationSteplist({ name, desc, img }) {
+    return (
+      <Box
+        sx={{
+          width: '100%',
+          height: '100%',
+          backgroundImage: img,
+          backgroundSize: "100%",
+          filter: 'blur(0.4px)',
+          backgroundPosition: "center",
+          backgroundRepeat: 'no-repeat'
+        }}
       >
-        <Typography variant="h2" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
-          {title}
+        <Typography variant="desktopH3" //figure out
+          sx={{
+            textAlign: "right",
+            mt: 10,
+            mb: 5,
+            marginRight: 3,
+            textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+            display: "block"
+          }}
+        >
+          {name}
         </Typography>
-
-        {/* Why is this not italicized?? */}
-        <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
-          {subtitle}
-        </Typography>
-
-        <Typography fontSize={20}>
+  
+        <Typography variant="desktopBody"
+          sx={{
+            textAlign: "left",
+            mb: "10px",
+            mx: '2%',
+            mt: 5,
+            lineHeight: 1.5,
+            display: "block", // necessary to align text to the left
+          }}
+        >
           {desc}
         </Typography>
       </Box>
-
-    </Stack>
-  );
-}
-
-{/*For the big red numbers*/ }
-function ApplicationSteplist({ name, desc, img }) {
-  return (
-    <Box
-      sx={{
-        width: '100%',
-        height: '100%',
-        backgroundImage: img,
-        backgroundSize: "100%",
-        filter: 'blur(0.4px)',
-        backgroundPosition: "center",
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <Typography variant="h3" //figure out
-        sx={{
-          textAlign: "right",
-          mt: 10,
-          mb: 5,
-          marginRight: 3,
-          textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)'
+    );
+  }
+  
+  function LinkToID({ id, text }) {
+  
+    const [isHover, setHover] = useState(false);
+  
+    return (
+      <a href={`#${id}`}
+        style={{
+          color: isHover ? "red" : "white",
+          textDecoration: "underline"
         }}
+  
+  
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
-        {name}
-      </Typography>
-
-      <Typography variant="body1"
-        sx={{
-          textAlign: "left",
-          mb: "10px",
-          mx: '2%',
-          mt: 5,
-          lineHeight: 1.5
-        }}
-      >
-        {desc}
-      </Typography>
-    </Box>
-  );
-}
-
-function LinkToID({ id, text }) {
-
-  const [isHover, setHover] = useState(false);
-
-  return (
-    <a href={`#${id}`}
-      style={{
-        color: isHover ? "red" : "white",
-        textDecoration: "underline"
-      }}
-
-
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      {text}
-    </ a>
-  );
-}
-
+        {text}
+      </ a>
+    );
+  }
