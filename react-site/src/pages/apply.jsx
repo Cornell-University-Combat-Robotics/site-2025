@@ -1,8 +1,7 @@
-import { Typography, Box, Accordion, AccordionSummary, AccordionDetails, Divider, Stack, setRef, Button } from "@mui/material";
+import { Typography, Box, Stack, Button } from "@mui/material";
 import apply from "../assets/background-pictures/newbies-photo.jpg";
 import FAQ from "../components/FAQ.tsx";
 import React, { useEffect, useState, useRef, forwardRef } from "react";
-import { useNavigate } from "react-router-dom";
 import RedBox from "../components/RedBox.tsx";
 import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
@@ -322,7 +321,7 @@ export default function Apply() {
         </Box>
 
 
-        <Typography variant="h2" mb={5} id="newbie-ex">
+        <Typography variant={isMobile ? "mobileH2" : "desktopH2" } mb={5} id="newbie-ex">
           NEW MEMBER EXPERIENCE
         </Typography>
 
@@ -435,7 +434,7 @@ export default function Apply() {
 
       {/* Box for 3lb robot cards & info */}
       <Box width="100%" height="auto" justifyContent={"center"} alignItems={"center"} >
-        <Typography variant="h2" mb={5}>{"A few of our past 3lb robots..."}</Typography>
+        <Typography variant={isMobile ? "mobileH3" : "desktopH3"}>{"A few of our past 3lb robots..."}</Typography>
 
         <RobotCardList type='Shortened_Three_lb' capacity={3} />
 
@@ -443,7 +442,7 @@ export default function Apply() {
           sx={{
             border: "2px solid white",
             borderRadius: 100,
-            paddingY: 2,
+            paddingY: 1,
             paddingX: 3,
             mb: 15
           }}
@@ -451,7 +450,7 @@ export default function Apply() {
             window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
-          <Typography variant="body1" >
+          <Typography variant="desktopBody" fontSize={20} color="white">
             {"Click to see more!"}
           </Typography>
         </Button>
