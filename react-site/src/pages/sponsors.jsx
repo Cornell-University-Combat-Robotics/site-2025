@@ -59,7 +59,7 @@ export default function Sponsors() {
       }}>
         {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
         <Typography
-          variant="h1"
+          variant="desktopH1"
           sx={{
             textAlign: 'center',
             transform: 'translate(0,15%)',
