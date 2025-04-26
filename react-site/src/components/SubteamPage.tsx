@@ -75,7 +75,7 @@ export default function SubteamPage(props: SubteamProps) {
     const isMobile = useContext(MobileContext);
 
     return (
-        <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+        <Box sx={{ position: 'relative' }}>
 
             {/*Blurred background image is static (not in parallax section)*/}
 
@@ -161,9 +161,7 @@ export default function SubteamPage(props: SubteamProps) {
                         {props.subsystemIntro}
                     </Typography>
 
-                    {/*
-                Stack contains a row of buttons for the different subsystems of the subteam.
-                */}
+                    {/* Stack contains a row of buttons for the different subsystems of the subteam.*/}
                     {props.name != "Leads" && props.name != "Alumni" &&
                         <Stack direction="row" justifyContent={"center"} alignItems={"center"}
                             sx={{
