@@ -17,7 +17,7 @@ const images = [
     {
         title: "crcrizz",
         url: crcrizz,
-        src: "",
+        src: "suika-web/index.html",
         // link: "", // No link for crcrizz
     },
     {
@@ -72,16 +72,18 @@ export default function Game() {
             >
 
                 {/* screen with game that loads */}
-                <iframe
-                    src={iframeSrc}
-                    // new src thing
-                    width="1020px"
-                    height="560px"
-                    style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }}
-                    title="Combat Robotics Game"
-                    allowFullScreen
-                    cursor="crosshair"
-                />
+                {gameSelected &&
+                    <iframe
+                        src={iframeSrc}
+                        // new src thing
+                        width="1020px"
+                        height="560px"
+                        style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }}
+                        title="Combat Robotics Game"
+                        allowFullScreen
+                        cursor="crosshair"
+                    />
+                }
 
             </motion.div>
 
