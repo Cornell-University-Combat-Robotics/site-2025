@@ -15,6 +15,7 @@ import RobotCardList from '../components/RobotCardList';
 import { useContext } from 'react';
 import { MobileContext } from '../App.jsx';
 import { useTheme } from '@mui/material/styles';
+import { Desk } from "@mui/icons-material";
 
 /** Apply creates the Apply page for the website. */
 export default function Apply() {
@@ -184,7 +185,7 @@ export default function Apply() {
       }}>
         {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
         <Typography
-          variant= { isMobile ? "mobileH1" : "desktopH1"}
+          variant={isMobile ? "mobileH1" : "desktopH1"}
           sx={{
             textAlign: 'center',
             transform: 'translate(0,15%)',
@@ -195,7 +196,8 @@ export default function Apply() {
       </Box>
 
       {/* Page contents */}
-      <Box sx={{ mx: '15%' }}>
+      {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
+      <Box mx={ isMobile ? "7%" : "15%"} alignItems={"center"}>
         <RedBox
           title="Our applications for Fall 2024 are open!"
           text="All applications are due October 17th, 11:59pm."
@@ -227,7 +229,7 @@ export default function Apply() {
 
         <Typography
           // Recruitment Timeline
-          variant= { isMobile ? "mobileH2" : "desktopH2"}
+          variant={isMobile ? "mobileH2" : "desktopH2"}
           sx={{
             textAlign: 'center',
             mt: "8vw",
@@ -244,19 +246,20 @@ export default function Apply() {
             position: 'relative',
             //justifyContent: 'center',
             //alignItems: 'center',
-            width: '130%',
-            left: '-15%',
-            height: '100%',
-            overflow: 'visible'
+            width: '100%',
+            height: {
+              xs: '5vh',
+              lg: '50%'
+            }
           }}
         >
           {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
-          <svg width="100%" height="20%">
+          <svg width="100%" height="100%">
             <line
               x1="10%" //coordinates of the line: 10% from the left
               x2="90%" //TODO: change, last element is slightly off
-              y1="10%" //set 10% from top of svg component
-              y2="10%"
+              y1="20%" //set 10% from top of svg component
+              y2="20%"
               stroke={"#820002"}
               strokeWidth="5"
             >
@@ -269,18 +272,18 @@ export default function Apply() {
                 <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
                   <circle
                     cx={xPos}
-                    cy="10%" //same as line -> falls on line
-                    r={ isMobile ? 6 : 15 } //radius
+                    cy="20%" //same as line -> falls on line
+                    r={isMobile ? 6 : 15} //radius
                     fill="#820002" //color
                   >
                   </circle>
 
                   {/*Note: svg components don't support attributes that Material-UI components usually use (e.g. variant, color)*/}
-                  <text key={index} fill="white" fontFamily= {theme.typography.mobileH1.fontFamily} 
+                  <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
                     fontSize={
                       isMobile ? theme.typography.mobileBody2.fontSize : theme.typography.desktopBody2.fontSize
-                    } 
-                    y= { isMobile ? "25%" : "50%" }
+                    }
+                    y={isMobile ? "70%" : "70%"}
                     textAnchor="middle" //horizontally centered
                   >
                     {/*use tspan to separate texts, since svg does not support new-line*/}
@@ -303,7 +306,7 @@ export default function Apply() {
         </Box>
 
 
-        <Box width="100%" height="100%" mt={'10%'} mb={'15%'}
+        <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '10%'}
           sx={{
             display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
           }}>
@@ -321,70 +324,70 @@ export default function Apply() {
         </Box>
 
 
-        <Typography variant={isMobile ? "mobileH2" : "desktopH2" } mb={5} id="newbie-ex">
+        <Typography variant={isMobile ? "mobileH2" : "desktopH2"} mb={10} id="newbie-ex">
           NEW MEMBER EXPERIENCE
         </Typography>
 
 
-        <Stack direction="row" gap={10} ref={arrowBar} position="relative" >
+        <Stack direction="row" gap={10} ref={arrowBar} position="relative" width="100%" >
 
-          { !isMobile && 
-          /*arrow*/
-          <svg width="30%" //svg component takes up 10% of stack & full height of stack 
-          >
-            <line
-              x1="50%" //coordinates of the line: 50% from the left of svg component
-              x2="50%"
-              y1="5%" //set 5% from top of svg component
-              y2="90%"
-              stroke={"#820002"}
-              strokeWidth="25"
+          {!isMobile &&
+            /*arrow*/
+            <svg width="30%" //svg component takes up 10% of stack & full height of stack 
             >
-            </line>
+              <line
+                x1="50%" //coordinates of the line: 50% from the left of svg component
+                x2="50%"
+                y1="5%" //set 5% from top of svg component
+                y2="90%"
+                stroke={"#820002"}
+                strokeWidth="25"
+              >
+              </line>
 
-            {/*Must have foreign object tag to nest MUI component within svg*/}
-            <foreignObject x="0%" y="90%" width="100%" height="3%" >
-              <img
-                src={arrow_img}
-                style={{
-                  zIndex: "100",
-                  width: "100%",
-                  height: "100%"
-                }}
-                ref={arrow}
-              />
-            </foreignObject>
-
-
-            {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component*/}
-            {!isVisible && !isBottomCrossed &&
-              <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
+              {/*Must have foreign object tag to nest MUI component within svg*/}
+              <foreignObject x="0%" y="90%" width="100%" height="3%" >
                 <img
-                  src={robot_scroll}
+                  src={arrow_img}
                   style={{
                     zIndex: "100",
-                    width: "95%",
-                    height: "95%"
+                    width: "50%",
+                    height: "100%"
                   }}
+                  ref={arrow}
                 />
               </foreignObject>
-            }
 
-            {/*static robot image at the bottom of the triangular part of arrow*/}
-            {isBottomCrossed &&
-              <foreignObject height="6.5%" width="100%" x="0%" y="89%" >
-                <img
-                  src={robot_scroll}
-                  style={{
-                    zIndex: "100",
-                    width: "95%",
-                    height: "95%"
-                  }}
-                />
-              </foreignObject>
-            }
 
-            {/** right idea, wrong math
+              {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component*/}
+              {!isVisible && !isBottomCrossed &&
+                <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
+                  <img
+                    src={robot_scroll}
+                    style={{
+                      zIndex: "100",
+                      width: "35%",
+                      height: "70%"
+                    }}
+                  />
+                </foreignObject>
+              }
+
+              {/*static robot image at the bottom of the triangular part of arrow*/}
+              {isBottomCrossed &&
+                <foreignObject height="6.5%" width="100%" x="0%" y="89%" >
+                  <img
+                    src={robot_scroll}
+                    style={{
+                      zIndex: "100",
+                      width: "35%",
+                      height: "70%"
+                    }}
+                  />
+                </foreignObject>
+              }
+
+              {/** right idea, wrong math
            * 
             {isVisible && !isBottomCrossed &&
               <foreignObject height="6.5%" width="100%" x="0%" y={`${yPos / 60}%`} >
@@ -402,7 +405,7 @@ export default function Apply() {
            * 
            */}
 
-          </svg>
+            </svg>
           }
 
 
@@ -416,19 +419,34 @@ export default function Apply() {
         */}
 
           {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)            */}
-          {isVisible && !isBottomCrossed && !isMobile && 
-            <RobotImage pos={"fixed"} top={"20%"} lft={"10.6%"} ref={robot} />
+          {isVisible && !isBottomCrossed && !isMobile &&
+            <RobotImage pos={"fixed"} top={"20%"} lft={"16.5%"} ref={robot} />
           }
 
 
-          <Stack direction="column" alignItems="center" rowGap={10} height="100%" mb={20}>
-            <MemberExperienceComponent bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-            <MemberExperienceComponent bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-            <MemberExperienceComponent bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-            <MemberExperienceComponent bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-            <MemberExperienceComponent bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
-            <MemberExperienceComponent bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-          </Stack>
+          {!isMobile &&
+            <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={7} mb={20} width="100%">
+              <MemberExperienceComponentDesktop bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
+              <MemberExperienceComponentDesktop bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            </Stack>
+          }
+
+
+          {isMobile &&
+            <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={5} mb={20} width="100%">
+              <MemberExperienceComponentMobile bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentMobile bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentMobile bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentMobile bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentMobile bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
+              <MemberExperienceComponentMobile bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+            </Stack>
+          }
+
         </Stack>
       </Box>
 
@@ -466,117 +484,178 @@ export default function Apply() {
   - Note: must use const & forwardRef cuz functional components (like function RobotImage = ...) can't accept refs directly 
   unless wrapped with React.forwardRef
   */ }
-  const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
-    return (
-      <img
-        src={robot_scroll}
-        ref={ref} //attach ref only if passed
-        style={{
-          transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
-          zIndex: "100",
-          position: pos,
-          left: lft,
-          ...(top ? { top } : {}), // optional argument: Apply top only if passed
-          ...(bottom ? { bottom } : {}) // Apply bottom only if passed
-        }}
-      />
-    );
-  });
-  
-  function MemberExperienceComponent({ bgcolor, img, title, subtitle, desc }) {
-    return (
-      <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems="center" >
+const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
+
+  return (
+    <img
+      src={robot_scroll}
+      ref={ref} //attach ref only if passed
+      style={{
+        transform: "scale(0.4)", // scale the image down, maintaining aspect ratio
+        zIndex: "100",
+        position: pos,
+        left: lft,
+        ...(top ? { top } : {}), // optional argument: Apply top only if passed
+        ...(bottom ? { bottom } : {}) // Apply bottom only if passed
+      }}
+    />
+  );
+});
+
+function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc }) {
+
+  const isMobile = useContext(MobileContext);
+
+  return (
+    <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems={"center"} justifyContent={"left"} gap={10} paddingRight={10}>
+
+      <Box width="40%" height="100%" >
         <img
           src={img}
           style={{
             objectPosition: "center",
             objectFit: "cover",
-            maxHeight: 400,
-            minWidth: 400
+            width: "100%", height: "100%"
           }}
         />
-  
-  
-        {/*descriptions */}
-        <Box textAlign={"left"} padding={5}
-          bgcolor={bgcolor} //bgcolors arent inherited
-        >
-          <Typography variant="desktopH3" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
-            {title}
-          </Typography>
-  
-          <Typography fontSize={30} mb={5} sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic' }}>
-            {subtitle}
-          </Typography>
-  
-          <Typography fontSize={20} fontFamily='Josefin Sans, sans-serif'>
-            {desc}
-          </Typography>
-        </Box>
-  
-      </Stack>
-    );
-  }
-  
-  {/*For the big red numbers*/ }
-  function ApplicationSteplist({ name, desc, img }) {
-    return (
-      <Box
-        sx={{
-          width: '100%',
-          height: '100%',
-          backgroundImage: img,
-          backgroundSize: "100%",
-          filter: 'blur(0.4px)',
-          backgroundPosition: "center",
-          backgroundRepeat: 'no-repeat'
-        }}
+      </Box>
+
+
+      {/*descriptions */}
+      <Box textAlign={"left"} width="60%" height="100%"
+        bgcolor={bgcolor} //bgcolors arent inherited
+        mt={7}
+        mb={7}
       >
-        <Typography variant="desktopH3" //figure out
-          sx={{
-            textAlign: "right",
-            mt: 10,
-            mb: 5,
-            marginRight: 3,
-            textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
-            display: "block"
-          }}
-        >
-          {name}
+        <Typography variant="desktopH3" display="block" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+          {title}
         </Typography>
-  
-        <Typography variant="desktopBody"
-          sx={{
-            textAlign: "left",
-            mb: "10px",
-            mx: '2%',
-            mt: 5,
-            lineHeight: 1.5,
-            display: "block", // necessary to align text to the left
-          }}
-        >
+
+        <Typography variant="desktopBody" display="block" sx={{
+          textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic',
+          mb: { xs: 2, lg: 5 }
+        }}>
+          {subtitle}
+        </Typography>
+
+        <Typography variant="desktopBody2" >
           {desc}
         </Typography>
       </Box>
-    );
-  }
-  
-  function LinkToID({ id, text }) {
-  
-    const [isHover, setHover] = useState(false);
-  
-    return (
-      <a href={`#${id}`}
-        style={{
-          color: isHover ? "red" : "white",
-          textDecoration: "underline"
+
+    </Stack>
+  );
+}
+
+{/*For the big red numbers*/ }
+function ApplicationSteplist({ name, desc, img }) {
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        backgroundImage: img,
+        backgroundSize: "100%",
+        filter: 'blur(0.4px)',
+        backgroundPosition: "center",
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <Typography variant="desktopH3" //figure out
+        sx={{
+          textAlign: "right",
+          mt: 10,
+          mb: 5,
+          marginRight: 3,
+          textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+          display: "block"
         }}
-  
-  
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
       >
-        {text}
-      </ a>
-    );
-  }
+        {name}
+      </Typography>
+
+      <Typography variant="desktopBody"
+        sx={{
+          textAlign: "left",
+          mb: "10px",
+          mx: '2%',
+          mt: 5,
+          lineHeight: 1.5,
+          display: "block", // necessary to align text to the left
+        }}
+      >
+        {desc}
+      </Typography>
+    </Box>
+  );
+}
+
+function LinkToID({ id, text }) {
+
+  const [isHover, setHover] = useState(false);
+
+  return (
+    <a href={`#${id}`}
+      style={{
+        color: isHover ? "red" : "white",
+        textDecoration: "underline"
+      }}
+
+
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {text}
+    </ a>
+  );
+}
+
+
+function MemberExperienceComponentMobile({ bgcolor, img, title, subtitle, desc }) {
+
+  const isMobile = useContext(MobileContext);
+
+  return (
+
+    <Stack direction="column" alignItems="center" justifyContent="center" bgcolor={bgcolor} width="80%" padding={4}>
+
+      <Box textAlign={"center"} width="100%"
+        bgcolor={bgcolor} //bgcolors arent inherited 
+      >
+        <Typography variant="mobileH3" display="block" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+          {title}
+        </Typography>
+      </Box>
+
+      <Box width="100%" bgcolor={bgcolor} pt={3} pb={3}>
+        <img
+          src={img}
+          style={{
+            objectPosition: "center",
+            objectFit: "cover",
+            width: "70%"
+          }}
+        />
+      </Box>
+
+      {/*descriptions */}
+      <Box textAlign={"left"} width="100%"
+        bgcolor={bgcolor} //bgcolors arent inherited
+      >
+
+        <Typography variant="mobileBody" display="block" sx={{
+          textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic',
+          mb: { xs: 2, lg: 5 }
+        }}>
+          {subtitle}
+        </Typography>
+
+        <Typography variant="mobileBody" >
+          {desc}
+        </Typography>
+      </Box>
+
+
+    </Stack>
+  );
+}
