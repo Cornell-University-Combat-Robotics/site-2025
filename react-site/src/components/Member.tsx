@@ -111,7 +111,7 @@ export default function Member(props: MemberProps) {
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography
-                       
+                        fontFamily='Josefin Sans, sans-serif'
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',
@@ -163,7 +163,7 @@ export default function Member(props: MemberProps) {
 
       <Box sx={{ textAlign: "left", width: '85%' }}>
         <Typography 
-        //no need variant here cuz constant througout
+        //no need variant here cuz constant throughout
         sx={{
           fontWeight: "bold", fontSize: 25,
           fontFamily: theme.typography.mobileH1.fontFamily,

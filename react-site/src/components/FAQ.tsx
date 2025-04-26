@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
 export interface FAQSection {
   qn: string[],
   ans: JSX.Element[] //cuz need link, so need to pass in <p> instead of string
 }
 
 function FAQ(props: FAQSection) {
+  const isMobile = useContext(MobileContext);
+  
   return (
     <Box
       justifyContent="center"
@@ -25,7 +28,7 @@ function FAQ(props: FAQSection) {
       }}
     >
       <Box width="100%" justifyContent="center" alignItems="center">
-        <Typography variant="h2" align="center" sx={{ fontFamily: 'Josefin Sans', mb: 4 }}>
+        <Typography variant={isMobile ? 'mobileH2' : 'desktopH2'} display='block' align="center">
           FAQ
         </Typography>
 
@@ -41,14 +44,17 @@ function FAQ(props: FAQSection) {
         {/* Footer */}
         <Typography
           align="center"
-          sx={{
-            fontStyle: 'italic',
-            fontFamily: 'Josefin Sans',
-            mt: 4,
-            color: 'white',
-          }}
+          variant={isMobile ? 'mobileBody' : 'desktopBody2'}
+          display={'block'}
+          sx={{ mt: 4 }}
         >
-          If you have any further questions, please email us at combatrobotics@cornell.edu.
+          If you have any further questions, please email us at{' '}
+          <a 
+            href="mailto:combatrobotics@cornell.edu"
+            style={{ color: 'white', textDecoration: 'underline' }}
+          >
+            combatrobotics@cornell.edu
+          </a>.
         </Typography>
       </Box>
     </Box>
@@ -57,6 +63,8 @@ function FAQ(props: FAQSection) {
 
 
 function QnAndDescription({qn, ans}) {
+  const isMobile = useContext(MobileContext);
+
   return (
     <Box>
       <Accordion
@@ -68,12 +76,12 @@ function QnAndDescription({qn, ans}) {
         }}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-          <Typography sx={{ fontStyle: 'italic', fontFamily: 'Josefin Sans' }}>
+          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody2'}>
             {qn}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody2'}>
             {ans}
           </Typography>
         </AccordionDetails>
