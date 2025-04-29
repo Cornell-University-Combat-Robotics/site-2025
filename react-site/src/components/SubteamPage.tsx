@@ -97,18 +97,18 @@ export default function SubteamPage(props: SubteamProps) {
                 Box is empty except for button. 
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
-                <Box sx={{ height: '100vh', position: 'relative' }}>
-
-
-
-                </Box>
+                <Box sx={{ height: '100vh', position: 'relative' }} />
 
                 {/*
             Backdrop filter applies to the PARENT of the box (the "backdrop"). 
             This makes the background image blurry & darker w/o changing the text components.
             */}
                 <Box sx={{
-                    position: 'relative', zIndex: 1, padding: '12%', backdropFilter: 'blur(5px) brightness(0.5)',
+                    position: 'relative',
+                    zIndex: 1,
+                    padding: '12%',
+                    paddingBottom: '0',
+                    backdropFilter: 'blur(5px) brightness(0.5)',
                     height: '100%',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
@@ -252,7 +252,11 @@ export default function SubteamPage(props: SubteamProps) {
                         {"Meet the team"}
                     </Typography>
 
-                    <TeamMemberList teamName={props.name} />
+                    <TeamMemberList teamName={props.name} sx={{
+                        marginLeft: '-15%',
+                        width: '130%',
+                        paddingLeft: '0'
+                    }} />
 
                 </Box>
 
