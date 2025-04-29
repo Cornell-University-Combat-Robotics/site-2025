@@ -8,7 +8,7 @@ const allMembers: Record<string, MemberProps> = {
   calebSchlissel: {
     imgSrc: "../src/assets/members/caleb-schlissel.jpg",
     name: "Caleb Schlissel",
-    position: ["Team Co-Lead"],
+    position: ["Team Co-Lead", "Former Sportsman Co-Lead (2023-24)"],
     linkedin: "https://www.linkedin.com/in/caleb-schlissel-0129/",
     stats: [
       ["Big Brain", "Social Life", "Pancreas"],
@@ -18,7 +18,7 @@ const allMembers: Record<string, MemberProps> = {
   stellaTaglich: {
     imgSrc: "../src/assets/members/stella-taglich.jpg",
     name: "Stella Taglich",
-    position: ["Team Co-Lead"],
+    position: ["Team Co-Lead", "Former Kinetic Co-Lead (2023-24)"],
     linkedin: "https://www.linkedin.com/in/stellataglich/",
     stats: [
       ["Finding Car Keys", "Quality of AUX", "Average Volume Level"],
@@ -26,7 +26,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   zanderKnight: {
-    imgSrc: "../src/assets/members/zander-knight.jpg", 
+    imgSrc: "../src/assets/members/zander-knight.jpg",
     name: "Zander Knight",
     position: ["Kinetic Co-Lead"],
     linkedin: "https://www.linkedin.com/in/zander-knight-3aab8724a/",
@@ -37,7 +37,7 @@ const allMembers: Record<string, MemberProps> = {
   },
   jamesLaSalle: {
     imgSrc: "../src/assets/members/james-lasalle.jpg",
-    name: "James LaSalle", 
+    name: "James LaSalle",
     position: ["Kinetic Co-Lead"],
     linkedin: "https://www.linkedin.com/in/james-lasalle-589860256/",
     stats: [
@@ -276,7 +276,7 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   graceLim: {
-    imgSrc: "../src/assets/members/grace-lim.jpg", 
+    imgSrc: "../src/assets/members/grace-lim.jpg",
     name: "Grace Lim",
     position: ["Autonomous Member", "Former Subteam Co-Lead"],
     linkedin: "https://www.linkedin.com/in/graceelimm/",
@@ -297,7 +297,7 @@ const allMembers: Record<string, MemberProps> = {
   },
   riddhiLamba: {
     imgSrc: "../src/assets/members/riddhi-lamba.JPG",
-    name: "Riddhi Lamba", 
+    name: "Riddhi Lamba",
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/riddhi-lamba/",
     stats: [
@@ -329,7 +329,7 @@ const allMembers: Record<string, MemberProps> = {
     imgSrc: "../src/assets/members/sophie-cheng.JPG",
     name: "Sophie Cheng",
     position: ["Autonomous Member"],
-    linkedin: "https://www.linkedin.com/in/sophie-cheng-394357246/", 
+    linkedin: "https://www.linkedin.com/in/sophie-cheng-394357246/",
     stats: [
       ["Potassium", "Penmanship", "\"P\" Alliteration"],
       [90, 90, 100]
@@ -447,19 +447,19 @@ const allMembers: Record<string, MemberProps> = {
   },
   sardorRahmatulloev: {
     imgSrc: "../src/assets/members/sardor-rahmatulloev.jpg",
-    name: "Sardor Rahmatulloev", 
+    name: "Sardor Rahmatulloev",
     position: ["Marketing Member", "Former Team Co-Lead"],
     linkedin: "https://www.linkedin.com/in/sardor-rahmatulloev/",
     stats: [
       ["Getting the bag", "GitHub", "Chaotic"],
-      [80, 10, 100] 
+      [80, 10, 100]
     ]
   },
   // ALUMNI
   annaBoese: {
     imgSrc: "../src/assets/members/anna-boese.jpg",
     name: "Anna Boese",
-    position: ["Kinetic Member", "MechE Trainer", "Former Kinetic Subteam Co-Lead (2023)", "Former Kinetic Vice Subteam Lead (2022)"],
+    position: ["Alum 2024", "Kinetic Member", "MechE Trainer", "Former Kinetic Subteam Co-Lead (2023)", "Former Kinetic Vice Subteam Lead (2022)"],
     linkedin: "https://www.linkedin.com/in/anna-boese-4a304819b/",
     stats: [
       ["Hair Color Consistency", "Short Term Memory", "Adaptability"],
@@ -479,7 +479,7 @@ const allMembers: Record<string, MemberProps> = {
   zarifPathan: {
     imgSrc: "../src/assets/members/zarif-pathan.jpg",
     name: "Zarif Pathan",
-    position: ["Sportsman Member"],
+    position: ["Alum 2024", "Sportsman Member"],
     linkedin: "https://www.linkedin.com/in/zarif-pathan/",
     stats: [
       ["Water Bending", "Circuitry", "Drip"],
@@ -489,7 +489,7 @@ const allMembers: Record<string, MemberProps> = {
   katieHuntley: {
     imgSrc: "../src/assets/members/katie-huntley.jpg",
     name: "Katie Huntley",
-    position: ["Autonomous Member"],
+    position: ["Alum 2024", "Autonomous Trainer", "Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/katieahuntley/",
     stats: [
       ["sleep schedule", "craftiness", "español"],
@@ -776,7 +776,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.castielLi,
     allMembers.gurjotGill,
     allMembers.kailaDanielson,
-    allMembers.spencerHumes,  
+    allMembers.spencerHumes,
   ],
   Sportsman: [
     allMembers.narayanRueppel,
