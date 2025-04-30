@@ -60,8 +60,8 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         height: {
           xs: "10vh",
           sm: "10vh",
-          md: "24vh",
-          lg: "24vh",
+          md: "20vh",
+          lg: "20vh",
         },
 
         textTransform: "none",
@@ -80,7 +80,7 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
           marginBottom: "2%",
           //width & height for same size of screen can be same since images are same length & width
           //no width property cuz team buttons have diff widths
-          height: "70%"
+          height: "60%"
         }}
       />}
       {children}
