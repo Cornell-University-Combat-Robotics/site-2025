@@ -351,6 +351,7 @@ export default function Apply() {
               >
               </line>
 
+
               {/*Must have foreign object tag to nest MUI component within svg*/}
               <foreignObject x="0%" y="90%" width="100%" height="3%" >
                 <img
@@ -364,8 +365,8 @@ export default function Apply() {
                 />
               </foreignObject>
 
-
-              {/*static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component*/}
+            {/** TODO: uncomment when robot scroll fixed
+              // static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component
               {!isVisible && !isBottomCrossed &&
                 <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
                   <img
@@ -379,7 +380,7 @@ export default function Apply() {
                 </foreignObject>
               }
 
-              {/*static robot image at the bottom of the triangular part of arrow*/}
+              // static robot image at the bottom of the triangular part of arrow
               {isBottomCrossed &&
                 <foreignObject height="6.5%" width="100%" x="0%" y="89%" >
                   <img
@@ -392,6 +393,7 @@ export default function Apply() {
                   />
                 </foreignObject>
               }
+       */}
 
               {/** right idea, wrong math
            * 
@@ -425,9 +427,12 @@ export default function Apply() {
         */}
 
           {/*scrolling robot image -> fixed at middle of screen (idk why middle equals top = 20%)            */}
+
+          {/** TODO: uncomment when robot scroll fixed
           {isVisible && !isBottomCrossed && !isMobile &&
             <RobotImage pos={"fixed"} top={"20%"} lft={"16.5%"} ref={robot} />
           }
+             */}
 
 
           {!isMobile &&
