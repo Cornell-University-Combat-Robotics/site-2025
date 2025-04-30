@@ -54,7 +54,12 @@ export default function RobotMobile() {
                         <Typography variant='mobileH3' align='left'>Benny R. Johm</Typography>
                         <Typography variant='mobileH3' align='left'>Kinetic </Typography>
                         <Typography variant='mobileBody2' align='left' width='80%'>
-                            Benjamin R. Johm Esq. is Kinetic's latest creation....
+                            Benny R. Johm is interesting not only because of his name, but because
+                            he is CRC's first hubmotor robot, its first drum design, and is CRC's
+                            largest weapon to date. He is a continued innovation from the Kinetic
+                            Subteam's most recent and most successful robot, Beater B. Barker, by
+                            refining the drivetrain and electronics while bringing the hubmotor
+                            concept to CRC to make our robots more compact.
                         </Typography>
                     </Stack>
                 </Stack>
