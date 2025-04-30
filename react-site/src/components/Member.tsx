@@ -179,8 +179,7 @@ export default function Member(props: MemberProps) {
           alignItems: 'center',
           flexDirection: 'column',
           overflowY: 'auto',
-        }
-        }>
+        }}>
         {/* Name */}
         < Box sx={{ textAlign: "left", width: '100%' }}>
           <Typography

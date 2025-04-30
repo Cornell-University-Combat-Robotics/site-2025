@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Box, Stack, Typography, Container } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 import RobotCard from '../../components/RobotCard';
 import RobotCardList from '../../components/RobotCardList';
@@ -36,15 +35,15 @@ export default function RobotMobile() {
             <Box display="flex" flexDirection="column" alignItems="center" sx={{ px: '5%', width: "90%" }}>
                 {/* This is the actual robot animation component */}
                 <StickyBoxMobile />
-                <Typography variant="mobileH1" sx={{ fontFamily: 'Josefin Sans', my: "10%" }}>
+                <Typography variant="mobileH1" sx={{ my: "10%" }}>
                     ROBOTS
                 </Typography>
 
-                <Typography variant="mobileH2" sx={{ fontFamily: 'Josefin Sans', marginBottom: '5%' }}>
+                <Typography variant="mobileH2" sx={{ marginBottom: '5%' }}>
                     UPCOMING ROBOTS
                 </Typography>
 
-                <Typography variant="mobileBody" textAlign='left' sx={{ fontFamily: 'Josefin Sans', marginBottom: '15%' }}>
+                <Typography variant="mobileBody" textAlign='left' sx={{ marginBottom: '15%' }}>
                     Take a sneak peek at the robots we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                 </Typography>
 
@@ -52,10 +51,15 @@ export default function RobotMobile() {
                 <Stack direction='row' spacing={'5%'} sx={{ marginTop: '10%' }}>
                     <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Benny R. Johm</Typography>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Kinetic </Typography>
-                        <Typography variant='mobileBody' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
-                            Benjamin R. Johm Esq. is Kinetic's latest creation....
+                        <Typography variant='mobileH3' align='left'>Benny R. Johm</Typography>
+                        <Typography variant='mobileH3' align='left'>Kinetic </Typography>
+                        <Typography variant='mobileBody2' align='left' width='80%'>
+                            Benny R. Johm is interesting not only because of his name, but because
+                            he is CRC's first hubmotor robot, its first drum design, and is CRC's
+                            largest weapon to date. He is a continued innovation from the Kinetic
+                            Subteam's most recent and most successful robot, Beater B. Barker, by
+                            refining the drivetrain and electronics while bringing the hubmotor
+                            concept to CRC to make our robots more compact.
                         </Typography>
                     </Stack>
                 </Stack>
@@ -63,10 +67,10 @@ export default function RobotMobile() {
                 {/* Second robot section */}
                 <Stack direction='row' spacing={'5%'} sx={{ my: '10%' }}>
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Capsize</Typography>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Sportsman </Typography>
-                        <Typography variant='mobileBody' align='left' width='80%' sx={{ fontFamily: 'Josefin Sans' }}>
-                            Capsize is Sportsman's latest robot...
+                        <Typography variant='mobileH3' align='left'>Capsize</Typography>
+                        <Typography variant='mobileH3' align='left'>Sportsman </Typography>
+                        <Typography variant='mobileBody2' align='left' width='80%'>
+                            Capsize sports a powerful 4 wheel indirect drive, which combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.
                         </Typography>
                     </Stack>
                     <img src={Capsize} style={{ width: '40%', height: '40%', marginLeft: '-5%', paddingTop: '10%' }} />
@@ -76,15 +80,16 @@ export default function RobotMobile() {
                 <Stack direction='row' spacing={'5%'} sx={{ my: '5%' }}>
                     <img src={Huey} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Huey </Typography>
-                        <Typography variant='mobileH3' align='left' sx={{ fontFamily: 'Josefin Sans' }}>Autonomous </Typography>
-                        <Typography variant='mobileBody' align='left' width='100%' sx={{ fontFamily: 'Josefin Sans' }}>
-                            Huey is Autonomous' next robot to waddle into competition...                        </Typography>
+                        <Typography variant='mobileH3' align='left'>Huey </Typography>
+                        <Typography variant='mobileH3' align='left'>Autonomous </Typography>
+                        <Typography variant='mobileBody2' align='left' width='100%'>
+                            Huey is Autonomous' second iteration on a fully autonomous robot for NHRL, reimagining the previous year's design to be more accurate. Huey is a 3-lb kinetic robot that uses a camera outside the arena and a pathing algorithm to locate the bots and hunt the enemy robot. We are excited by the interchangeability of our autonomous design this year, since any robot can be used with our camera setup.
+                        </Typography>
                     </Stack>
                 </Stack>
 
                 {/* Retired robots section */}
-                <Typography variant="mobileH2" sx={{ fontFamily: 'Josefin Sans', marginTop: '20%', marginBottom: '5%' }}>
+                <Typography variant="mobileH2" sx={{ marginTop: '20%', marginBottom: '5%' }}>
                     RETIRED ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
@@ -95,7 +100,7 @@ export default function RobotMobile() {
                 <RobotCardList type='Retired' capacity={3} />
 
                 {/* Mini robots section */}
-                <Typography variant="mobileH2" sx={{ fontFamily: 'Josefin Sans', marginTop: '10%', marginBottom: '5%' }}>
+                <Typography variant="mobileH2" sx={{ marginTop: '10%', marginBottom: '5%' }}>
                     MINI ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
@@ -106,7 +111,7 @@ export default function RobotMobile() {
                 <RobotCardList type='Mini' capacity={4} />
 
                 {/* 3LB robots section */}
-                <Typography variant="mobileH2" sx={{ fontFamily: 'Josefin Sans', marginTop: '10%', marginBottom: '5%' }}>
+                <Typography variant="mobileH2" sx={{ marginTop: '10%', marginBottom: '5%' }}>
                     3 LB ROBOTS
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>

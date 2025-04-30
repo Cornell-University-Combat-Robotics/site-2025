@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Card, CardContent, CardMedia, CardActionArea, Typography, autocompleteClasses } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useTheme } from '@mui/material/styles';
 
 export interface RobotCardProps {
   name: string; // Name of the robot
@@ -16,6 +17,7 @@ export interface RobotCardProps {
 
 export default function RobotCard(props: RobotCardProps) {
   const background_color = props.color === 0 ? "#820002" : "#B85658";
+  const theme = useTheme();
 
   return (
     // Link is the outermost compponent to make the entire card link to the individual robot page.
@@ -100,7 +102,7 @@ export default function RobotCard(props: RobotCardProps) {
             }}
           >
             {/* Below is for robot title text */}
-            <Typography gutterBottom align='left' variant="body1" component="div" fontWeight='bold' sx={{ height: '40px', lineHeight: '1', mt: '2%' }}>
+            <Typography gutterBottom fontFamily={theme.typography.desktopBody.fontFamily} align='left' component="div" fontWeight='bold' fontSize={20} sx={{ lineHeight: '1', mt: '2%' }}>
               {props.name}
             </Typography>
             <Box
@@ -130,7 +132,7 @@ export default function RobotCard(props: RobotCardProps) {
                   <Typography
                     // text in pill container on card
                     align='center'
-                    variant="body2"
+                    fontFamily={theme.typography.desktopBody.fontFamily}
                     sx={{
                       // backgroundColor: 'yellow',
                       padding: '0.2em 0.5em', // Added internal padding to prevent text overlap
@@ -149,7 +151,7 @@ export default function RobotCard(props: RobotCardProps) {
               ))}
             </Box>
             {/* Below is robot description text paragraph */}
-            <Typography align='left' variant="body2" paddingTop="0.5em">
+            <Typography align='left' fontFamily={theme.typography.desktopBody.fontFamily} paddingTop="0.5em">
               {props.desc}
             </Typography>
           </CardContent>
