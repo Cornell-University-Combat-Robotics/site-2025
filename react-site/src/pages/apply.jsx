@@ -8,6 +8,12 @@ import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
 import slugma from "../assets/3lb/slugma_profile.jpg";
+import photo1 from "../assets/apply-timeline/photo-1.jpg";
+import photo2 from "../assets/apply-timeline/photo-2.jpg";
+import photo3 from "../assets/apply-timeline/photo-3.png";
+import photo4 from "../assets/apply-timeline/photo-4.jpg";
+import photo5 from "../assets/apply-timeline/photo-5.jpg";
+
 import robot_scroll from "../assets/robot_scroll.png";
 import arrow_img from "../assets/arrow.png";
 import { LinkToPage } from "../components/FAQ.tsx";
@@ -197,7 +203,7 @@ export default function Apply() {
 
       {/* Page contents */}
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
-      <Box mx={ isMobile ? "7%" : "15%"} alignItems={"center"}>
+      <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
         <RedBox
           title="Our applications for Fall 2024 are open!"
           text="All applications are due October 17th, 11:59pm."
@@ -281,7 +287,7 @@ export default function Apply() {
                   {/*Note: svg components don't support attributes that Material-UI components usually use (e.g. variant, color)*/}
                   <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
                     fontSize={
-                      isMobile ? theme.typography.mobileBody2.fontSize : theme.typography.desktopBody2.fontSize
+                      isMobile ? theme.typography.mobileBody3.fontSize : theme.typography.desktopBody2.fontSize
                     }
                     y={isMobile ? "70%" : "70%"}
                     textAnchor="middle" //horizontally centered
@@ -426,24 +432,22 @@ export default function Apply() {
 
           {!isMobile &&
             <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={7} mb={20} width="100%">
-              <MemberExperienceComponentDesktop bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentDesktop bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentDesktop bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentDesktop bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentDesktop bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
-              <MemberExperienceComponentDesktop bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#242121"} img={photo1} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, new members into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams!"} />
+              <MemberExperienceComponentDesktop bgcolor={"#292626"} img={photo2} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"New members experience their first GBody meeting and meet the full team! They will catch up on all the new developments of each subteam in fun and lively weekly meetings."} />
+              <MemberExperienceComponentDesktop bgcolor={"#542D2D"} img={photo3} title={"NEWBIE DESIGN REVIEW"} subtitle={"Late November"} desc={"Newbies launch their 3lb projects, with CRC trainers guiding them through the ideation process and explaining all the steps to creating competitive combat robotcs and effective marketing."} />
+              <MemberExperienceComponentDesktop bgcolor={"#762627"} img={photo4} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing 3lb projects, new members will create a presentation to showcase to the rest of the team and show off all their hard work creating a 3lb robot from scratch!"} />
+              <MemberExperienceComponentDesktop bgcolor={"#741112"} img={photo5} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"Newbies are officially welcomed as full-fledged members of their respective subteams."} />
             </Stack>
           }
 
 
           {isMobile &&
             <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={5} mb={20} width="100%">
-              <MemberExperienceComponentMobile bgcolor={"#242121"} img={slugma} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentMobile bgcolor={"#292626"} img={slugma} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentMobile bgcolor={"#3F3030"} img={slugma} title={"NEWBIE DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentMobile bgcolor={"#542D2D"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early November"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
-              <MemberExperienceComponentMobile bgcolor={"#762627"} img={slugma} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing your 3lb Projects with the help of CRC mentors, you and your project teammates will have the opportunity to show all of your hard work from this past semester! Family and friends are welcome to join and share pizza with the team."} />
-              <MemberExperienceComponentMobile bgcolor={"#741112"} img={slugma} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"During onboarding, members integrate into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams."} />
+              <MemberExperienceComponentMobile bgcolor={"#242121"} img={photo1} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, new members into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams!"} />
+              <MemberExperienceComponentMobile bgcolor={"#292626"} img={photo2} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"New members experience their first GBody meeting and meet the full team! They will catch up on all the new developments of each subteam in fun and lively weekly meetings."} />
+              <MemberExperienceComponentMobile bgcolor={"#542D2D"} img={photo3} title={"NEWBIE DESIGN REVIEW"} subtitle={"Late November"} desc={"Newbies launch their 3lb projects, with CRC trainers guiding them through the ideation process and explaining all the steps to creating competitive combat robotcs and effective marketing."} />
+              <MemberExperienceComponentMobile bgcolor={"#762627"} img={photo4} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing 3lb projects, new members will create a presentation to showcase to the rest of the team and show off all their hard work creating a 3lb robot from scratch!"} />
+              <MemberExperienceComponentMobile bgcolor={"#741112"} img={photo5} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"Newbies are officially welcomed as full-fledged members of their respective subteams."} />
             </Stack>
           }
 
@@ -507,25 +511,32 @@ function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc 
   const isMobile = useContext(MobileContext);
 
   return (
-    <Stack direction="row" width="100%" bgcolor={bgcolor} alignItems={"center"} justifyContent={"left"} gap={10} paddingRight={10}>
-
-      <Box width="40%" height="100%" >
-        <img
-          src={img}
-          style={{
-            objectPosition: "center",
-            objectFit: "cover",
-            width: "100%", height: "100%"
-          }}
-        />
-      </Box>
-
+    <Box bgcolor={bgcolor}
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: '130%',
+        alignItems: 'left',
+        overflow: 'hidden'
+      }}>
+      {/* box with image */}
+      {/* <Box width="50%" height="150%" backgroundColor="white"> */}
+      <img
+        src={img}
+        style={{
+          objectPosition: "center",
+          objectFit: "cover",
+          width: "50%",
+          // height: "100%"
+        }}
+      />
+      {/* </Box> */}
 
       {/*descriptions */}
       <Box textAlign={"left"} width="60%" height="100%"
         bgcolor={bgcolor} //bgcolors arent inherited
-        mt={7}
-        mb={7}
+        py='4%'
+        px="4%"
       >
         <Typography variant="desktopH3" display="block" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
@@ -543,7 +554,7 @@ function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc 
         </Typography>
       </Box>
 
-    </Stack>
+    </Box >
   );
 }
 
@@ -556,7 +567,7 @@ function ApplicationSteplist({ name, desc, img }) {
         height: '100%',
         backgroundImage: img,
         backgroundSize: "100%",
-        filter: 'blur(0.4px)',
+        // filter: 'blur(0.4px)', blur is here to make text more legible on top of red, but it also blurs the text rn
         backgroundPosition: "center",
         backgroundRepeat: 'no-repeat'
       }}
