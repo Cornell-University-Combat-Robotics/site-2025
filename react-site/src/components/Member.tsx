@@ -28,29 +28,31 @@ export default function Member(props: MemberProps) {
   const [showStats, setShowStats] = useState(false);
 
   //starting y position for stats animation: -100% relative to parent (member card)
-  const yStats = "-101%"; //this is a weird value, idk why its like that (if its -100%, its too low on the card)
+  const yStats = "-104%"; //this is a weird value, need some offset otherwise it shows the top part of the image
 
   return (
     /*
-    Stack contains every element (photo, buttons, positions, etc.) in a column vertically
-    Inner box contains profile image & buttons (linkedin & stats)
+    Root, contains every element (photo, buttons, positions, etc.) in a column vertically
     */
     <Stack direction={"column"} alignItems={"center"} textAlign={"left"} bgcolor={"black"} borderRadius={5}
       sx={{
-        width: '100%', //maintain aspect ratio
-        height: '50vh',
-        maxWidth: 300 //ensure black box doesnt grow too wide when screen is smaller
+        width: '240px', // width and height are hardcoded for consistency on all devices
+        height: '400px',
+        my: '3%',
+        mx: '2%',
       }}
     >
+      {/*  Profile image & buttons (linkedin & stats)*/}
       <Box sx={{
         position: 'relative', // Ensures child elements with position: absolute are relative to this Box 
         borderRadius: 5,
         // height corresponding to viewport size is a problem
-        width: 'auto',
-        height: '30vh', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
+        width: '90%',
+        height: '50%', //note: height CANNOT be auto -> if it is, animation from stats button will cause height to warp to fit animation box
         margin: '7%',
         overflow: 'hidden',
       }}>
+        {/* Image of member */}
         <img src={imgSrc} style={{
           width: "100%", height: "100%",
           objectFit: "cover", // Ensures the image covers the Box without distortion
@@ -66,22 +68,21 @@ export default function Member(props: MemberProps) {
         <Button
           sx={{
             position: 'absolute', // Makes the button overlap
-            borderRadius: 4, bgcolor: '#A10305',
-            bottom: '5%', left: '5%',  // Places button within parent (Box)
-            minWidth: 0, width: '16%', height: '15%'
+            borderRadius: 4,
+            bgcolor: '#A10305',
+            bottom: '5%',
+            left: '5%',  // Places button within parent (Box)
+            minWidth: 0,
+            width: '30px',
+            height: '30px'
           }}
           onClick={() => window.open(linkedin, '_blank')}
         >
-          {/* Text version:
-          <Typography sx={{ fontSize: '15px', color: 'white', fontFamily: 'Josefin Sans, sans-serif', textTransform: "none" }}>
-            {"in"}
-          </Typography>
-           */}
           <img
             src={linkedin_button}
             style={{
-              width: '65%',
-              height: '65%',
+              width: '14px',
+              height: '24px',
               objectFit: "contain",
               objectPosition: "center"
             }}
@@ -97,21 +98,23 @@ export default function Member(props: MemberProps) {
               initial={{ x: -300, y: yStats }} //initial state
               animate={{ x: 0, y: yStats }} //state after animation
               exit={{ x: -300, y: yStats }} //exit state
-              style={{ height: '100%'}}
+              style={{ height: '100%' }}
             >
               <Stack
                 direction="column"
                 sx={{
-                  width: '100%', height: '100%',
+                  width: '100%',
+                  height: '110%',
                   backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                  alignItems: 'center', justifyContent: 'flex-start'
+                  alignItems: 'center',
+                  justifyContent: 'flex-start'
                 }}
               >
                 <List sx={{ width: '85%' }}>
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography
-                        fontFamily='Josefin Sans, sans-serif'
+                        variant={isMobile ? "mobileBody2" : "desktopBody3"}
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',
@@ -121,7 +124,7 @@ export default function Member(props: MemberProps) {
                       </Typography>
 
                       {/*percentage bar: outer div is the full bar (black), inner div is the percentage filled (red)*/}
-                      <div style={{ backgroundColor: 'black', width: '100%', height: 21, opacity: 2 }}>
+                      < div style={{ backgroundColor: 'black', width: '100%', height: 21, opacity: 2 }}>
                         <div style={{ backgroundColor: '#A10305', width: `${stats[1][index]}%`, height: '100%', opacity: 1 }}>
                         </div>
                       </div>
@@ -135,74 +138,91 @@ export default function Member(props: MemberProps) {
 
         {/*stats button*/}
         {/*technically doesnt have to be a button*/}
-        {stats[0]?.length > 0 && (
-          <Button
-            sx={{
-              position: 'absolute', // Makes the button overlap
-              borderRadius: 4, bgcolor: '#A10305',
-              bottom: '5%', right: '5%', // Places button within parent (Box)
-              width: '25%', height: '15%'
-            }}
-            onMouseEnter={() => setShowStats(true)}
-            onMouseLeave={() => setShowStats(false)}
-          >
+        {
+          stats[0]?.length > 0 && (
+            <Button
+              sx={{
+                position: 'absolute', // Makes the button overlap
+                borderRadius: 2,
+                bgcolor: '#A10305',
+                bottom: '5%',
+                right: '5%', // Places button within parent (Box)
+                width: '20px',
+                height: '30px'
+              }}
+              onMouseEnter={() => setShowStats(true)}
+              onMouseLeave={() => setShowStats(false)}
+            >
+              <Typography sx={{
+                color: 'white',
+                textTransform: "none",
+                fontSize: {
+                  xs: 18,
+                  lg: 20, //im hardcoding this, its too specific to use variants
+                },
+                fontFamily: theme.typography.desktopBody.fontFamily
+              }}>
+                {"Stats"}
+              </Typography>
+            </Button>
+          )
+        }
+      </Box >
 
-            <Typography sx={{
-              color: 'white', textTransform: "none",
-              fontSize: {
-                xs: 18,
-                lg: 22, //im hardcoding this, its too specific to use variants
-              },
-              fontFamily: theme.typography.desktopBody.fontFamily
-            }}>
-              {"Stats"}
-            </Typography>
-          </Button>
-        )}
-      </Box>
-
-      <Box sx={{ textAlign: "left", width: '85%' }}>
-        <Typography 
-        //no need variant here cuz constant throughout
+      {/* name and roles */}
+      < Box
+        width="85%"
+        height="40%"
+        overflow="hidden"
         sx={{
-          fontWeight: "bold", fontSize: 25,
-          fontFamily: theme.typography.mobileH1.fontFamily,
-          whiteSpace: 'nowrap', overflow: 'scroll'
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          overflowY: 'auto',
         }}>
-          {name}
-        </Typography>
-      </Box>
-      
-      <List sx={{
-        width: '85%',
-        //maxHeight: 150, // Fixed max height
-        overflow: 'auto', // Enable scrolling
-        // '&::-webkit-scrollbar': { // Customize scrollbar
-        //   width: '4px'
-        // },
-        // '&::-webkit-scrollbar-track': {
-        //   background: '#black'
-        // },
-        // '&::-webkit-scrollbar-thumb': {
-        //   background: '#888',
-        //   borderRadius: '4px'
-        // }
-      }}>
-        {position.map((roles, index) => (
-          <Box key={index} bgcolor={"#373737"} sx={{
-            borderRadius: 2, textAlign: "left",
-            height: 25
-          }} marginBottom={1}>
-            <Typography sx={{
-              ml: "10px", fontSize: "20px",
+        {/* Name */}
+        < Box sx={{ textAlign: "left", width: '100%' }}>
+          <Typography
+            //no need variant here cuz constant througout
+            sx={{
+              fontWeight: "bold",
+              fontSize: 25,
               fontFamily: theme.typography.mobileH1.fontFamily,
-              whiteSpace: 'nowrap', overflow: 'scroll'
+              whiteSpace: 'nowrap',
+              textWrap: 'auto'
             }}>
-              {roles}
-            </Typography>
-          </Box>
-        ))}
-      </List>
-    </Stack>
+            {name}
+          </Typography>
+        </Box >
+
+        {/* Roles */}
+        < List sx={{
+          width: '100%',
+        }}>
+          {
+            position.map((roles, index) => (
+              <Box key={index} bgcolor={"#373737"} sx={{
+                borderRadius: 2,
+                textAlign: "left",
+                px: '5%',
+                display: 'inline-block',
+                height: "auto",
+                width: 'hug'
+              }} marginBottom={1}>
+                <Typography sx={{
+                  fontSize: "20px",
+                  fontFamily: theme.typography.mobileH1.fontFamily,
+                  wordBreak: 'break-word',
+                  overflow: ''
+                }}>
+                  {roles}
+                </Typography>
+              </Box>
+            ))
+          }
+        </List >
+      </Box >
+
+    </Stack >
   );
 }

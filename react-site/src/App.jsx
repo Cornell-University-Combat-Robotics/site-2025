@@ -70,6 +70,11 @@ const theme = createTheme({
     },
     mobileBody2: {
       fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '3vw',
+      fontWeight: 'normal',
+    },
+    mobileBody3: {
+      fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '2.0vw',
       fontWeight: 'normal',
     },
@@ -83,6 +88,11 @@ const theme = createTheme({
       fontSize: '1.5vw',
       fontWeight: 'normal',
     },
+    desktopBody3: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '1.25vw',
+      fontWeight: 'normal',
+    }
   },
   palette: {
     primary: {
