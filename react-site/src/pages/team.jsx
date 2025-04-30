@@ -37,15 +37,13 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         },
         borderRadius: "16px",
         color: "white",
-
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         paddingLeft: 0,
         paddingRight: 0,
-        paddingTop: "2%",
-        paddingBottom: "2%",
+        py: '2%',
 
         //for text within team button
         textAlign: "center",
@@ -58,12 +56,12 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
           md: theme.typography.desktopBody.fontSize,
           lg: theme.typography.desktopBody.fontSize,
         },
-   
+
         height: {
           xs: "10vh",
           sm: "10vh",
-          md: "18vh",
-          lg: "18vh",
+          md: "24vh",
+          lg: "24vh",
         },
 
         textTransform: "none",
@@ -82,7 +80,7 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
           marginBottom: "2%",
           //width & height for same size of screen can be same since images are same length & width
           //no width property cuz team buttons have diff widths
-          height: "50%"
+          height: "70%"
         }}
       />}
       {children}
@@ -150,19 +148,19 @@ export default function Team() {
           <br />
           {"Kinetic, Sportsman, Autonomous, and Marketing."}
         </Typography>
-        <Typography 
+        <Typography
 
-        sx={{
-          maxWidth: '85%', margin: '2% auto', textAlign: 'center',
+          sx={{
+            maxWidth: '85%', margin: '2% auto', textAlign: 'center',
 
-          fontFamily: theme.typography.mobileBody.fontFamily,
-          fontSize: {
-            xs: theme.typography.mobileBody.fontSize,
-            sm: theme.typography.mobileBody.fontSize,
-            md: theme.typography.desktopBody.fontSize,
-            lg: theme.typography.desktopBody.fontSize,
-          },
-        }}>
+            fontFamily: theme.typography.mobileBody.fontFamily,
+            fontSize: {
+              xs: theme.typography.mobileBody.fontSize,
+              sm: theme.typography.mobileBody.fontSize,
+              md: theme.typography.desktopBody.fontSize,
+              lg: theme.typography.desktopBody.fontSize,
+            },
+          }}>
           {"Click the buttons below to learn more about each of them!"}
         </Typography>
 
