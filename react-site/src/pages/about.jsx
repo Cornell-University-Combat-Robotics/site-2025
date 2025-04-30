@@ -11,7 +11,7 @@ function About() {
   const isMobile = useContext(MobileContext);
 
   return (
-    <Box >
+    <Box>
       {/* CRCircuit as background */}
       <Box sx={{
         width: '100%',
@@ -20,6 +20,7 @@ function About() {
         backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
+        //backgroundColor: 'yellow'
       }}>
         <Box> {/* Header contents */}
           {/* crc logo*/}
@@ -36,7 +37,7 @@ function About() {
           <Typography
             variant={isMobile ? "mobileH2" : "desktopH2"}
             display="block"
-            mb={isMobile ? '20%' : '18%'}
+            mb={isMobile ? '20%' : '0%'}
             sx={{
               top: '50%',
               left: '50%',
@@ -46,9 +47,7 @@ function About() {
             We. Build. Robots.
           </Typography>
         </Box>
-
-        {/* Page contents */}
-        <Box sx={{ mx: isMobile ? '8%' : '15%', mb: '10%' }}>
+        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: '20%', mb: '10%' }}>
           <Typography variant={isMobile ? "mobileH2" : "desktopH2"} display="block" align="left">
             Who are we?
           </Typography>
@@ -110,16 +109,14 @@ function About() {
               </Stack>
             )}
           </Box>
-
-          {/* video, temporarily set as our team photo */}
-          <img src={team_photo} style={{ maxWidth: isMobile ? '95%' : '70%', height: 'auto', transform: 'translate(0, 30%)', display: 'block', margin: '0 auto' }} />
         </Box>
       </Box>
 
       {/* Rest of page, separate from rest because background image is too small */}
-      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '30%' : '18%', mb: isMobile ? '20%' : '10%'}}>
+      <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '0%', mb: isMobile ? '20%' : '10%' }}>
+        <img src={team_photo} style={{ maxWidth: isMobile ? '95%' : '70%', height: 'auto', margin: '0 auto' }} />
         {/* What do we value title and paragraph */}
-        <Typography variant={isMobile ? 'mobileH2' : "desktopH2"} display="block" align="left" >
+        <Typography variant={isMobile ? 'mobileH2' : "desktopH2"} display="block" align="left" mt={isMobile ? '20%' : '10%'}>
           What do we value?
         </Typography>
 

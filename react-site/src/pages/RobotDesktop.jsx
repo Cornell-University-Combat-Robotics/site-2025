@@ -46,7 +46,7 @@ export default function RobotDesktop() {
                     <img src={Benny} style={{ width: '50%', height: 'auto' }} />
                     <Stack spacing={2} mt='10'>
                         <Typography variant='desktopH3' align='left'>Benjamin R. Johm Esq. | Kinetic</Typography>
-                        <Typography variant='desktopBody' align='left' width='80%'>
+                        <Typography variant='desktopBody2' align='left' width='80%'>
                             Benjamin R. Johm Esq. is Kinetic's latest creation....
                         </Typography>
                     </Stack>
@@ -54,8 +54,8 @@ export default function RobotDesktop() {
                 <Stack direction='row' spacing={5} sx={{ mt: 5 }}>
                     <Stack spacing={2} mt='10'>
                         <Typography variant='desktopH3' align='left'>Capsize | Sportsman</Typography>
-                        <Typography variant='desktopBody' align='left' width='80%'>
-                            Capsize is Sportsman's latest robot...
+                        <Typography variant='desktopBody2' align='left' width='80%'>
+                            Capsize sports a powerful 4 wheel indirect drive, which combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.
                         </Typography>
                     </Stack>
                     <img src={Capsize} style={{ width: '50%', height: 'auto' }} />
@@ -64,8 +64,8 @@ export default function RobotDesktop() {
                     <img src={nardo_whole} style={{ width: '50%', height: 'auto' }} />
                     <Stack spacing={2} mt='10'>
                         <Typography variant='desktopH3' align='left'>Huey | Autonomous</Typography>
-                        <Typography variant='desktopBody' align='left' width='80%'>
-                            Huey is Autonomous' next robot to waddle into competition...
+                        <Typography variant='desktopBody2' align='left' width='80%'>
+                            Huey is Autonomous' second iteration on a fully autonomous robot for NHRL, reimagining the previous year's design to be more accurate. Huey is a 3-lb kinetic robot that uses a camera outside the arena and a pathing algorithm to locate the bots and hunt the enemy robot. We are excited by the interchangeability of our autonomous design this year, since any robot can be used with our camera setup.
                         </Typography>
                     </Stack>
                 </Stack>

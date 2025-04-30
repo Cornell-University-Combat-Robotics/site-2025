@@ -97,12 +97,12 @@ export default function IndividualRobot() {
   return (
     <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: '10%', paddingBottom: '10%', textAlign: 'left' }}>
       {/* Header Section */}
-      <Typography variant='h2' gutterBottom fontWeight='bold'>
+      <Typography variant='desktopH2' gutterBottom fontWeight='bold'>
         {robotInfo.name}
       </Typography>
 
       {/* Names of Builders */}
-      <Typography variant="h2" align="left" width='90%' style={{ fontStyle: 'italic' }}>
+      <Typography variant="desktopH3" display="block" align="left" width='90%' style={{ fontStyle: 'italic' }}>
         {robotInfo.makers.join(', ')}
       </Typography>
 
@@ -114,14 +114,14 @@ export default function IndividualRobot() {
         <Stack direction={"column"} spacing={'5%'} height={"80%"} width={isMD ? "100%" : "75%"} >
           {/*Description*/}
           <Box width={'100%'} >
-            <Typography variant='h3'>Description</Typography>
-            <Typography mb={5} mt={2} sx={{ fontSize: 20 }}>{robotInfo.description}</Typography>
+            <Typography variant='desktopH3'>Description</Typography>
+            <Typography mb={5} mt={2} variant="desktopBody2" display="block">{robotInfo.description}</Typography>
           </Box>
 
 
           {robotInfo.featured_fight ? ( <Box width={'100%'} maxWidth={800} overflow={"hidden"}
           >
-            <Typography variant='h3' mb={2}>Featured Fight</Typography>
+            <Typography variant='desktopH3' mb={2}>Featured Fight</Typography>
             <iframe
               style={{ aspectRatio: '16/9' }}
 
@@ -145,7 +145,7 @@ export default function IndividualRobot() {
               image={robotInfo.image}
               alt="Robot image"
               sx={{ borderRadius: 4 }} />
-            <Typography fontSize={30} color="white" fontWeight={"bold"} mt={2} >
+            <Typography variant="desktopH3" color="white" fontWeight={"bold"} mt={2} >
               Stats
             </Typography>
             <List> {/*TODO: remove padding*/}
@@ -160,12 +160,12 @@ export default function IndividualRobot() {
       </Stack>
 
       {/* Design Section */}
-      <Typography variant="h3" gutterBottom mt={15}>Design</Typography>
-      <Typography sx={{ fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>{robotInfo.design}</Typography>
+      <Typography variant="desktopH3" gutterBottom mt={15}>Design</Typography>
+      <Typography variant="desktopBody2" display="block">{robotInfo.design}</Typography>
 
       {/* Trivia Section */}
       <Box sx={{ mt: 4 }}>
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="desktopH3" gutterBottom>
           Trivia
         </Typography>
         <List sx={{ listStyleType: 'disc', fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>
@@ -177,7 +177,7 @@ export default function IndividualRobot() {
 
       {/* Fights Section: allows scrolling when minWidth reached */}
       <Box sx={{ mb: 4, mt: 4, overflowX: 'scroll' }} >
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="desktopH3" gutterBottom>
           Fights
         </Typography>
         <TableContainer component={Paper} sx={{ bgcolor: '#820002', minWidth: '700px' }}>
@@ -215,11 +215,11 @@ export default function IndividualRobot() {
       </Box>
 
       {/* Gallery Section */}
-      <Typography variant="h3" mb={3}>
+      <Typography variant="desktopH3">
         {"Gallery"}
       </Typography>
       {/* Carousel for Gallery Images */}
-      <Stack direction="row" spacing={2} alignItems={"center"} justifyContent={"center"}>
+      <Stack direction="row" spacing={2} alignItems={"center"} justifyContent={"center"} mt="2%">
         <IconButton onClick={handlePrev} >
           <ArrowBack sx={{ color: "white" }} />
         </IconButton>
