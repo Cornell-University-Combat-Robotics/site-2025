@@ -303,9 +303,9 @@ export default function Sponsors() {
 
         </Box>
 
-        <FAQ qn={questions} ans={answers} />
-
       </Box>
+
+      <FAQ qn={questions} ans={answers} />
 
     </Box>
   );
