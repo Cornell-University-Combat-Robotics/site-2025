@@ -304,10 +304,10 @@ export default function Sponsors() {
 
           </Box>
 
-          <FAQ qn={questions} ans={answers} />
-
         </Box>
       </Container>
+
+      <FAQ qn={questions} ans={answers} />
     </Box>
   );
 }
