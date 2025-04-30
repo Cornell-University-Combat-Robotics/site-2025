@@ -203,7 +203,9 @@ export default function Apply() {
 
       {/* Page contents */}
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
-      <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
+      <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"} paddingTop="8vw">
+
+        {/*
         <RedBox
           title="Our applications for Fall 2024 are open!"
           text="All applications are due October 17th, 11:59pm."
@@ -211,7 +213,7 @@ export default function Apply() {
           link="/sponsors"
           mT="8vw"
         />
-
+*/}
         {/* Alternative text for when applications are closed */}
         {/* <Box padding={10} textAlign={"center"}>
         <Typography
@@ -365,7 +367,7 @@ export default function Apply() {
                 />
               </foreignObject>
 
-            {/** TODO: uncomment when robot scroll fixed
+              {/** TODO: uncomment when robot scroll fixed
               // static robot image at the top of the rectangular part of arrow -> absolute in terms of the stack component
               {!isVisible && !isBottomCrossed &&
                 <foreignObject height="6.5%" width="100%" x="0%" y="3%" >
