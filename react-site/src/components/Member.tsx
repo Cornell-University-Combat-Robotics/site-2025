@@ -11,6 +11,7 @@ export interface MemberProps {
   name: string;
   position: string[];
   linkedin: string; //linkedin url
+  // should make stats optional
   stats: [[string, string, string], [number, number, number]]; //stats: all [0] rows refer to the stat description (e.g. battlebots knowledge), all [1] rows refer to the stat percentage (e.g. 10%)
 }
 
