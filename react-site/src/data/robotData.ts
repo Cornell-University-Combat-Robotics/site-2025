@@ -1,3 +1,66 @@
+import manny from "../assets/retired/manny/manny.png";
+import manny_1 from "../assets/retired/manny/manny-1.jpg";
+import manny_2 from "../assets/retired/manny/manny-2.jpeg";
+import manny_3 from "../assets/retired/manny/manny-3.jpg";
+import manny_4 from "../assets/retired/manny/manny-4.jpeg";
+
+import donatello from "../assets/retired/donatello/donatello.png";
+import donatello_1 from "../assets/retired/donatello/donatello-1.jpg";
+import donatello_2 from "../assets/retired/donatello/donatello-2.gif";
+import donatello_3 from "../assets/retired/donatello/donatello-3.png";
+import donatello_4 from "../assets/retired/donatello/donatello-4.png";
+import donatello_5 from "../assets/retired/donatello/donatello-5.png";
+import donatello_6 from "../assets/retired/donatello/donatello-6.jpg";
+
+
+import kenny from "../assets/mini/kenny/kenny.png";
+import kenny_1 from "../assets/retired/beater-b-barker/PXL_20240420_003358932.jpg";
+import kenny_2 from "../assets/retired/beater-b-barker/IMG_0390.jpeg";
+import kenny_3 from "../assets/retired/beater-b-barker/IMG_0432.jpeg";
+import kenny_4 from "../assets/retired/beater-b-barker/IMG_5773.JPG";
+import kenny_5 from "../assets/retired/beater-b-barker/IMG_6360.jpeg";
+
+import gorgerusel from "../assets/mini/gorge-rusel/gorge-rusel.png";
+import gorge_rusel_1 from "../assets/mini/gorge-rusel/gorge-rusel-1.jpg";
+import gorge_rusel_2 from "../assets/mini/gorge-rusel/gorge-rusel-2.jpg";
+import gorge_rusel_3 from "../assets/mini/gorge-rusel/gorge-rusel-3.jpg";
+
+import lBillet from "../assets/mini/l-billet/l-billet.png";
+import lBillet_1 from "../assets/mini/l-billet/l-billet.png";
+
+import rosieJunior from "../assets/mini/rosie-junior/rosie-junior.png";
+import rosie_junior_1 from "../assets/mini/rosie-junior/rosie-junior.png";
+import rosie_junior_2 from "../assets/mini/rosie-junior/rosie-junior-1.jpg";
+import rosie_junior_3 from "../assets/mini/rosie-junior/rosie-junior-2.jpg";
+import rosie_junior_4 from "../assets/mini/rosie-junior/rosie-junior-3.jpg";
+
+import biggiechesse from "../assets/3lb/biggie-cheese/biggie-cheese.png";
+import biggiecheese_1 from "../assets/3lb/biggie-cheese/biggie-cheese-1.png";
+import biggiecheese_2 from "../assets/3lb/biggie-cheese/biggie-cheese-2.png";
+import biggiecheese_3 from "../assets/3lb/biggie-cheese/biggie-cheese-3.png";
+import biggiecheese_4 from "../assets/3lb/biggie-cheese/biggie-cheese-4.png";
+import biggiecheese_5 from "../assets/3lb/biggie-cheese/biggie-cheese-5.png";
+import biggiecheese_6 from "../assets/3lb/biggie-cheese/biggie-cheese-6.png";
+
+import blackbeetle from "../assets/3lb/black-beetle/black-beetle.png";
+import blackbeetle_1 from "../assets/3lb/black-beetle/black-beetle-1.PNG";
+import blackbeetle_2 from "../assets/3lb/black-beetle/black-beetle-2.PNG";
+import blackbeetle_3 from "../assets/3lb/black-beetle/black-beetle-3.PNG";
+import blackbeetle_4 from "../assets/3lb/black-beetle/black-beetle-4.PNG";
+import blackbeetle_5 from "../assets/3lb/black-beetle/black-beetle-5.PNG";
+import blackbeetle_6 from "../assets/3lb/black-beetle/black-beetle-6.PNG";
+import blackbeetle_7 from "../assets/3lb/black-beetle/black-beetle-7.PNG";
+import blackbeetle_8 from "../assets/3lb/black-beetle/black-beetle-8.PNG";
+import blackbeetle_9 from "../assets/3lb/black-beetle/black-beetle-9.PNG";
+
+import bobbyBobbo from "../assets/3lb/bobby-bobbo/bobby-bobbo.png";
+import bobbybobbo_1 from "../assets/3lb/bobby-bobbo/bobby-bobbo-1.jpg";
+import bobbybobbo_2 from "../assets/3lb/bobby-bobbo/bobby-bobbo-2.jpg";
+import bobbybobbo_3 from "../assets/3lb/bobby-bobbo/bobby-bobbo-3.jpg";
+
+import brunobotLukebot from  "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
+import brunobotLukebot_1 from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
+
 export interface RobotData {
   name: string;
   makers: string[];
@@ -29,6 +92,47 @@ export interface RobotData {
 }
 
 export const robotData: { [key: string]: RobotData } = {
+
+  donatello: {
+    name: "Donatello",
+    makers: ["Erhunmwunse Eghafona", "Mohammad Ali Moghaddasi", "Michelle Zhou", "Ricky Wang", "Rob Measner", "Sana Gaya", "Sofie Halpern", "Stefan Bell"],
+    description:
+      "Donatello was the first bot to ever be designed and started by CRC. He was designed in 2019, when COVID 19 meant that clubs and teams could not meet in person. This led to the design of Donatello to be a little scattered. He was never fully finished and all that remains of him are his fiberglass outer shell and hammer.",
+    image: donatello,
+    stats: {
+      vintage: "2019",
+      height: "15 inches",
+      weight: "15 lbs",
+      fights: "0",
+      wins: "0",
+      top_speed: "0.1 mph",
+      weapon_speed: "Hammer fall",
+      most_damaged_part: "Chassis",
+      favorite_movie: "Teenage Mutant Ninja Turtles"
+    },
+    featured_fight:
+      "",
+    design:
+      "Donatello uses a hammer as its main weapon. The hammer was pulled using a motor. His chassis is made of wood that fiberglass melted around it.",
+      trivia: [
+        "Donatello was CRC's first robot but was never finished.", 
+        "Donatello's hammer is now used as a regular hammer by CRC members.",
+        "Donatello's shell is used as a storage container for parts.",
+        "Donatello was named after Donatello from the teenage mutant ninja turtles.",
+        "Donatello's original name was intended to be Big Red Bonk."
+      ],
+    fights: [
+    ],
+    gallery: [
+      donatello_1,
+      donatello_2,
+      donatello_3,
+      donatello_4,
+      donatello_5,
+      donatello_6
+    ]
+  },
+
   batbot: {
     name: "Fangular Momentum",
     makers: ["Ruslan Black", "Gurjot Gill", "Sophie Cheng", "Ruihan Chu"],
@@ -394,7 +498,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Zander Knight", "Tyler Sprague"],
     description:
       "Kenny, CRC's newest Minibot, was built to assist Beater B. Barker in competition by controlling the opponent.",
-    image: "/src/assets/mini/kenny/kenny.png",
+    image: kenny,
     stats: {
       vintage: "2024",
       height: "3.9 inches",
@@ -454,11 +558,11 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/beater-b-barker/PXL_20240420_003358932.jpg",
-      "/src/assets/retired/beater-b-barker/IMG_0390.jpeg",
-      "/src/assets/retired/beater-b-barker/IMG_0432.jpeg",
-      "/src/assets/retired/beater-b-barker/IMG_5773.JPG",
-      "/src/assets/retired/beater-b-barker/IMG_6360.jpeg"
+      kenny_1,
+      kenny_2,
+      kenny_3,
+      kenny_4,
+      kenny_5
     ]
   },
 
@@ -562,7 +666,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Caleb Schlissel", "Shao Stassen", "Zander Knight"],
     description:
       "Born Chester Latorace Cheese, Biggie Cheese began rapping at age 9 and soon embraced robot combat. He’s a talented musical artist and hopeless romantic whose spinners shatter steel.",
-    image: "/src/assets/3lb/biggie-cheese/biggie-cheese.png",
+    image: biggiechesse,
     stats: {
       vintage: "2022",
       height: "5 inches",
@@ -582,12 +686,12 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-1.png",
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-2.png",
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-3.png",
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-4.png",
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-5.png",
-      "/src/assets/3lb/biggie-cheese/biggie-cheese-6.png",
+      biggiecheese_1,
+      biggiecheese_2,
+      biggiecheese_3,
+      biggiecheese_4,
+      biggiecheese_5,
+      biggiecheese_6
       // "/src/assets/3lb/biggie-cheese/biggie-cheese-7.jpg",
       // "/src/assets/3lb/biggie-cheese/biggie-cheese-8.gif",
       // "/src/assets/3lb/biggie-cheese/biggie-cheese-9.jpg",
@@ -602,7 +706,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Richard Jin"],
     description:
       "Black Beetle is an electrifying combat robot with a glossy black exoskeleton and a pneumatic flipper that launches opponents into the air.",
-    image: "/src/assets/3lb/black-beetle/black-beetle.png",
+    image: blackbeetle,
     stats: {
       vintage: "2021",
       height: "???",
@@ -624,15 +728,15 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/black-beetle/black-beetle-1.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-2.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-3.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-4.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-5.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-6.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-7.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-8.PNG",
-      "/src/assets/3lb/black-beetle/black-beetle-9.PNG"
+      blackbeetle_1,
+      blackbeetle_2,
+      blackbeetle_3,
+      blackbeetle_4,
+      blackbeetle_5,
+      blackbeetle_6,
+      blackbeetle_7,
+      blackbeetle_8,
+      blackbeetle_9
     ]
   },
 
@@ -641,7 +745,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Unknown"],
     description:
       "These two have our hearts. Bobby is the larger, less sharp one, while Bobbo is the smaller ball of unyielding rage.",
-    image: "/src/assets/3lb/bobby-bobbo/bobby-bobbo.png",
+    image: bobbyBobbo,
     stats: {
       vintage: "Spring 2022",
       height: "1 in",
@@ -663,9 +767,9 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/bobby-bobbo/bobby-bobbo-1.jpg",
-      "/src/assets/3lb/bobby-bobbo/bobby-bobbo-2.jpg",
-      "/src/assets/3lb/bobby-bobbo/bobby-bobbo-3.jpg",
+      bobbybobbo_1,
+      bobbybobbo_2,
+      bobbybobbo_3
       // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-4.jpg",
       // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-5.jpg",
       // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-6.jpg",
@@ -683,7 +787,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Ethan Zhang", "Grace Lim", "Linda Hu", "Luke Murphy", "Sardor Rahmatulloev", "Shao Stassen"],
     description:
       "Brunobot and Lukebot are the spectral guides of current team leads, offering task tracking and management advice.",
-    image: "/src/assets/3lb/brunobot-lukebot/brunobot-lukebot.png",
+    image: brunobotLukebot,
     stats: {
       vintage: "2022",
       height: "3 bits",
@@ -704,7 +808,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/brunobot-lukebot/brunobot-lukebot.png",
+      brunobotLukebot_1
     ]
   },
 
@@ -942,7 +1046,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Right alongside his twin L Billet, Gorge Rusel is a star minibot known for his emotional struggles and Formula 1 obsession.",
-    image: "/src/assets/mini/gorge-rusel/gorge-rusel.png",
+    image: gorgerusel,
     stats: {
       vintage: "2023",
       height: "3 inches",
@@ -984,9 +1088,9 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/mini/gorge-rusel/gorge-rusel-1.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-2.jpg",
-      "/src/assets/mini/gorge-rusel/gorge-rusel-3.jpg",
+      gorge_rusel_1,
+      gorge_rusel_2,
+      gorge_rusel_3
       // "/src/assets/mini/gorge-rusel/gorge-rusel-4.jpg",
       // "/src/assets/mini/gorge-rusel/gorge-rusel-5.jpg",
       // "/src/assets/mini/gorge-rusel/gorge-rusel-6.jpg",
@@ -1157,7 +1261,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "A beloved mini bot known for his heroic sacrifice that disabled an enemy's weapon. His built-in turbo button makes him unforgettable.",
-    image: "/src/assets/mini/l-billet/l-billet.png",
+    image: lBillet,
     stats: {
       vintage: "2023",
       height: "3 inches",
@@ -1188,7 +1292,7 @@ export const robotData: { [key: string]: RobotData } = {
         length: "85"
       }
     ],
-    gallery: ["/src/assets/mini/l-billet/l-billet.png"]
+    gallery: [lBillet_1]
   },
 
   lance: {
@@ -1345,7 +1449,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Manny is CRC’s first autonomous robot with facial and sign recognition, lifting his tusks and dropping his hammer on target.",
-    image: "/src/assets/retired/manny/manny.png",
+    image: manny,
     stats: {
       vintage: "2022",
       height: "6 inches",
@@ -1369,10 +1473,10 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/retired/manny/manny-1.jpg",
-      "/src/assets/retired/manny/manny-2.jpeg",
-      "/src/assets/retired/manny/manny-3.jpg",
-      "/src/assets/retired/manny/manny-4.jpeg"
+      manny_1,
+      manny_2,
+      manny_3,
+      manny_4
     ]
   },
 
@@ -1595,7 +1699,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Rosie Junior never actually fought—she stayed on the sidelines, preferring not to hurt anyone.",
-    image: "/src/assets/mini/rosie-junior/rosie-junior.png",
+    image: rosieJunior,
     stats: {
       vintage: "2023",
       height: "3 inches",
@@ -1617,10 +1721,10 @@ export const robotData: { [key: string]: RobotData } = {
     fights: [],
     gallery: [
       // "/src/assets/mini/rosie-junior/rosie-junior-pixel.png",
-      "/src/assets/mini/rosie-junior/rosie-junior.png",
-      "/src/assets/mini/rosie-junior/rosie-junior-1.jpg",
-      "/src/assets/mini/rosie-junior/rosie-junior-2.jpg",
-      "/src/assets/mini/rosie-junior/rosie-junior-3.jpg"
+      rosie_junior_1,
+      rosie_junior_2,
+      rosie_junior_3,
+      rosie_junior_4
     ]
   },
 
