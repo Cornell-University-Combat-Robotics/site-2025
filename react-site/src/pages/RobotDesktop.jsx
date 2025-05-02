@@ -90,6 +90,8 @@ export default function RobotDesktop() {
                 </Typography>
             </Box>
             <RobotCardList type='Retired' capacity={3} />
+
+            {/* minibots */}
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
                 MINI ROBOTS
             </Typography>
@@ -98,7 +100,12 @@ export default function RobotDesktop() {
                     These are the valiant mini-bots that supported our 12lb robots in competition.
                 </Typography>
             </Box>
-            <RobotCardList type='Mini' capacity={4} />
+            {/* wrapping robot card list centers it (idk why sob) */}
+            <Box>
+                <RobotCardList type='Mini' capacity={4} />
+            </Box>
+
+            {/* 3lb */}
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
                 3 LB ROBOTS
             </Typography>
