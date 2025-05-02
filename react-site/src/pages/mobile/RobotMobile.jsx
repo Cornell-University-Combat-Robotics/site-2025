@@ -48,12 +48,12 @@ export default function RobotMobile() {
                 </Typography>
 
                 {/* First robot section */}
+                <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ marginTop: '10%' }}>
-                    <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
                     <Stack spacing={'2.5%'} mt='10'>
                         <Typography variant='mobileH3' align='left'>Benny R. Johm</Typography>
                         <Typography variant='mobileH3' align='left'>Kinetic </Typography>
-                        <Typography variant='mobileBody2' align='left' width='80%'>
+                        <Typography variant='mobileBody2' align='left' width='100%'>
                             Benny R. Johm is interesting not only because of his name, but because
                             he is CRC's first hubmotor robot, its first drum design, and is CRC's
                             largest weapon to date. He is a continued innovation from the Kinetic
@@ -65,20 +65,20 @@ export default function RobotMobile() {
                 </Stack>
 
                 {/* Second robot section */}
+                <img src={Capsize} style={{ width: '40%', height: '40%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ my: '10%' }}>
                     <Stack spacing={'2.5%'} mt='10'>
                         <Typography variant='mobileH3' align='left'>Capsize</Typography>
                         <Typography variant='mobileH3' align='left'>Sportsman </Typography>
-                        <Typography variant='mobileBody2' align='left' width='80%'>
+                        <Typography variant='mobileBody2' align='left' width='100%'>
                             Capsize sports a powerful 4 wheel indirect drive, which combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.
                         </Typography>
                     </Stack>
-                    <img src={Capsize} style={{ width: '40%', height: '40%', marginLeft: '-5%', paddingTop: '10%' }} />
                 </Stack>
 
                 {/* Third robot section */}
+                <img src={Huey} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ my: '5%' }}>
-                    <img src={Huey} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
                     <Stack spacing={'2.5%'} mt='10'>
                         <Typography variant='mobileH3' align='left'>Huey </Typography>
                         <Typography variant='mobileH3' align='left'>Autonomous </Typography>
