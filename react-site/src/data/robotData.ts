@@ -1,3 +1,81 @@
+import beater1 from "../assets/retired/beater-b-barker/transparent.png";
+import beater2 from "../assets/retired/beater-b-barker/PXL_20240420_003111230.jpg";
+import beater3 from "../assets/retired/beater-b-barker/PXL_20240420_003358932.jpg";
+import beater4 from "../assets/retired/beater-b-barker/PXL_20240420_145847329.jpg";
+import beater5 from "../assets/retired/beater-b-barker/IMG_0390.jpeg";
+import beater6 from "../assets/retired/beater-b-barker/IMG_5773.JPG";
+import beater7 from "../assets/retired/beater-b-barker/IMG_6360.jpeg";
+import beater8 from "../assets/retired/beater-b-barker/737305434.220657.jpg";
+import beater9 from "../assets/retired/beater-b-barker/IMG_0432.jpeg";
+import beater10 from "../assets/retired/beater-b-barker/IMG_6957.jpeg";
+
+import nardo_main from "../assets/retired/nardo/nardo main.png";
+import nardo1 from "../assets/retired/nardo/nardo 2.png";
+import nardo2 from "../assets/retired/nardo/nardo 3.jpeg";
+import nardo3 from "../assets/retired/nardo/nardo 4.JPG";
+import nardo4 from "../assets/retired/nardo/nardo 6.JPG";
+
+import louis1 from "../assets/retired/louis/louis-1.png";
+import louis2 from "../assets/retired/louis/IMG_6782.JPG";
+import louis3 from "../assets/retired/louis/20240420_104441.jpg";
+
+import rosie_main from "../assets/retired/rosie/rosie.png";
+import rosie1 from "../assets/retired/rosie/rosie-1.png";
+import rosie2 from "../assets/retired/rosie/rosie-2.mp4";
+import rosie3 from "../assets/retired/rosie/rosie-3.jpg";
+import rosie4 from "../assets/retired/rosie/rosie-4.png";
+import rosie5 from "../assets/retired/rosie/rosie-5.jpg";
+import rosie6 from "../assets/retired/rosie/rosie-6.png";
+import rosie7 from "../assets/retired/rosie/rosie-7.png";
+
+import florence_main from "../assets/retired/florence/florence.JPG";
+import florence1 from "../assets/retired/florence/florence-8.jpg";
+import florence2 from "../assets/retired/florence/florence-11.jpg";
+import florence3 from "../assets/retired/florence/florence-video-1.mp4";
+import florence4 from "../assets/retired/florence/florence-video-2.mp4";
+import florence5 from "../assets/retired/florence/florence-3.jpg";
+import florence6 from "../assets/retired/florence/florence-4.jpg";
+import florence7 from "../assets/retired/florence/florence-6.jpg";
+import florence8 from "../assets/retired/florence/florence-7.jpg";
+import florence9 from "../assets/retired/florence/florence-video-3.mp4";
+import florence10 from "../assets/retired/florence/florence-10.jpg";
+import florence11 from "../assets/retired/florence/florence-2.JPG";
+import florence12 from "../assets/retired/florence/florence-9.jpg";
+
+import richard_main from "../assets/retired/richard/richard-v1.png";
+import richard1 from "../assets/retired/richard/richard-pixel.png";
+import richard2 from "../assets/retired/richard/richard-v2.jpg";
+import richard3 from "../assets/retired/richard/richard-v3.png";
+import richard4 from "../assets/retired/richard/richard-2.jpg";
+import richard5 from "../assets/retired/richard/richard-1.jpg";
+import richard6 from "../assets/retired/richard/richard-5.jpg";
+import richard7 from "../assets/retired/richard/richard-6.png";
+import richard8 from "../assets/retired/richard/richard-7.jpeg";
+import richard9 from "../assets/retired/richard/richard-8.mp4";
+import richard10 from "../assets/retired/richard/richard-9.png";
+import richard11 from "../assets/retired/richard/richard-10.mp4";
+import richard12 from "../assets/retired/richard/richard-11.jpeg";
+import richard13 from "../assets/retired/richard/richard-12.jpeg";
+import richard14 from "../assets/retired/richard/richard-13.jpg";
+import richard15 from "../assets/retired/richard/richard-14.jpeg";
+import richard16 from "../assets/retired/richard/richard-15.jpg";
+import richard17 from "../assets/retired/richard/richard-16.jpg";
+import richard18 from "../assets/retired/richard/richard-17.jpg";
+import richard19 from "../assets/retired/richard/richard-18.jpg";
+import richard20 from "../assets/retired/richard/richard-19.jpg";
+import richard21 from "../assets/retired/richard/richard-20.jpg";
+import richard22 from "../assets/retired/richard/richard-21.jpg";
+import richard23 from "../assets/retired/richard/richard-22.jpg";
+import richard24 from "../assets/retired/richard/richard-23.png";
+import richard25 from "../assets/retired/richard/richard-24.jpg";
+import richard26 from "../assets/retired/richard/richard-lines.png";
+
+import lance_main from "../assets/retired/lance/lance.png";
+import lance1 from "../assets/retired/lance/lance-1.jpeg";
+import lance2 from "../assets/retired/lance/lance-2.mp4";
+import lance3 from "../assets/retired/lance/lance-3.jpg";
+import lance4 from "../assets/retired/lance/lance-4.jpg";
+
 import manny from "../assets/retired/manny/manny.png";
 import manny_1 from "../assets/retired/manny/manny-1.jpg";
 import manny_2 from "../assets/retired/manny/manny-2.jpeg";
@@ -11,7 +89,6 @@ import donatello_3 from "../assets/retired/donatello/donatello-3.png";
 import donatello_4 from "../assets/retired/donatello/donatello-4.png";
 import donatello_5 from "../assets/retired/donatello/donatello-5.png";
 import donatello_6 from "../assets/retired/donatello/donatello-6.jpg";
-
 
 import kenny from "../assets/mini/kenny/kenny.png";
 import kenny_1 from "../assets/retired/beater-b-barker/PXL_20240420_003358932.jpg";
@@ -204,7 +281,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Beater B. Barker? I hardly know her! With his big 🅱 energy and his quick footwork on the arena floor, Beater absolutely dominates the competition. However, his one fatal flaw is the hubris of having a flywheel: he thinks he can turn on a dime, but he has to lean on the wall for 10 seconds if he's overzealous.",
-    image: "/src/assets/retired/beater-b-barker/transparent.png",
+    image: beater1,
     stats: {
       vintage: "2024",
       height: "5.4 inches",
@@ -268,15 +345,15 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/beater-b-barker/PXL_20240420_003111230.jpg",
-      "/src/assets/retired/beater-b-barker/PXL_20240420_003358932.jpg",
-      "/src/assets/retired/beater-b-barker/PXL_20240420_145847329.jpg",
-      "/src/assets/retired/beater-b-barker/IMG_0390.jpeg",
-      "/src/assets/retired/beater-b-barker/IMG_5773.JPG",
-      "/src/assets/retired/beater-b-barker/IMG_6360.jpeg",
-      "/src/assets/retired/beater-b-barker/737305434.220657.jpg",
-      "/src/assets/retired/beater-b-barker/IMG_0432.jpeg",
-      "/src/assets/retired/beater-b-barker/IMG_6957.jpeg",
+      beater2,
+      beater3,
+      beater4,
+      beater5,
+      beater6,
+      beater7,
+      beater8,
+      beater9,
+      beater10
     ]
   },
 
@@ -574,7 +651,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Louis XVII is CRC's first competition-ready autonomous robot that uses an object detection model to identify targets. On detecting an enemy, he charges with his mighty sword.",
-    image: "/src/assets/retired/louis/louis-1.png",
+    image: louis1,
     stats: {
       vintage: "2024",
       height: "6'7\"",
@@ -595,8 +672,8 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/retired/louis/IMG_6782.JPG",
-      "/src/assets/retired/louis/20240420_104441.jpg",
+      louis2,
+      louis3,
       "https://www.youtube.com/embed/h5GmDUyQwPU?si=H5xcpEor-MdjNQGx",
       "https://www.youtube.com/embed/9w-z1FVGgCQ?si=22n3HiZlpaWTX4oU"
     ]
@@ -610,7 +687,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Nardo was born from our team's desire to improve our engineering process. Named as a tribute to Leonardo, his legacy carries on.",
-    image: "/src/assets/retired/nardo/nardo main.png",
+    image: nardo_main,
     stats: {
       vintage: "2024",
       height: "4.5 inches",
@@ -653,11 +730,10 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/nardo/nardo 1.png",
-      "/src/assets/retired/nardo/nardo 2.png",
-      "/src/assets/retired/nardo/nardo 3.jpeg",
-      "/src/assets/retired/nardo/nardo 4.JPG",
-      "/src/assets/retired/nardo/nardo 6.JPG"
+      nardo1,
+      nardo2,
+      nardo3,
+      nardo4,
     ]
   },
 
@@ -924,7 +1000,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Florence is a two-wheeled tri-flipper with a triangular chassis. Her weapon allows her to jump into a defensive table position and perform the 'Florence Flop.'",
-    image: "/src/assets/retired/florence/florence.JPG",
+    image: florence_main,
     stats: {
       vintage: "2022",
       height: "3.25\" (13\" extended)",
@@ -976,18 +1052,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/florence/florence-8.jpg",
-      "/src/assets/retired/florence/florence-11.jpg",
-      "/src/assets/retired/florence/florence-video-1.mp4",
-      "/src/assets/retired/florence/florence-video-2.mp4",
-      "/src/assets/retired/florence/florence-3.jpg",
-      "/src/assets/retired/florence/florence-4.jpg",
-      "/src/assets/retired/florence/florence-6.jpg",
-      "/src/assets/retired/florence/florence-7.jpg",
-      "/src/assets/retired/florence/florence-video-3.mp4",
-      "/src/assets/retired/florence/florence-10.jpg",
-      "/src/assets/retired/florence/florence-2.JPG",
-      "/src/assets/retired/florence/florence-9.jpg"
+      florence1, florence2, florence3, florence4, florence5, florence6, florence7, florence8, florence9, florence10, florence11, florence12
     ]
   },
 
@@ -1316,7 +1381,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "CRC’s first competition-ready robot for Sportsman, Lance is an adorable, loveable roomba armed with a lance for flipping opponents.",
-    image: "/src/assets/retired/lance/lance.png",
+    image: lance_main,
     stats: {
       vintage: "2022",
       height: "2.5\"",
@@ -1358,10 +1423,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/lance/lance-1.jpeg",
-      "/src/assets/retired/lance/lance-2.mp4",
-      "/src/assets/retired/lance/lance-3.jpg",
-      "/src/assets/retired/lance/lance-4.jpg"
+      lance1, lance2, lance3, lance4
     ]
   },
 
@@ -1742,7 +1804,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Rosie is a 12lb horizontal spinner known for her hefty steel weapon and a unique indirect drive system.",
-    image: "/src/assets/retired/rosie/rosie.png",
+    image: rosie_main,
     stats: {
       vintage: "2023",
       height: "4\"",
@@ -1797,14 +1859,13 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/rosie/rosie-1.png",
-      "/src/assets/retired/rosie/rosie-2.mp4",
-      "/src/assets/retired/rosie/rosie-3.jpg",
-      "/src/assets/retired/rosie/rosie-4.png",
-      "/src/assets/retired/rosie/rosie-5.jpg",
-      "/src/assets/retired/rosie/rosie-6.png",
-      "/src/assets/retired/rosie/rosie-7.png",
-
+      rosie1,
+      rosie2,
+      rosie3,
+      rosie4,
+      rosie5,
+      rosie6,
+      rosie7,
     ]
   },
 
@@ -2157,7 +2218,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "Richard, CRC's first competition-ready robot, is a 12lb vertical spinner with a weapon that smashes opponents into the air.",
-    image: "/src/assets/retired/richard/richard-v1.png",
+    image: richard_main,
     stats: {
       vintage: "2022",
       height: "6.75\"",
@@ -2280,32 +2341,11 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/retired/richard/richard-pixel.png",
-      "/src/assets/retired/richard/richard-v2.jpg",
-      "/src/assets/retired/richard/richard-v3.png",
-      "/src/assets/retired/richard/richard-2.jpg",
-      "/src/assets/retired/richard/richard-1.jpg",
-      "/src/assets/retired/richard/richard-5.jpg",
-      "/src/assets/retired/richard/richard-6.png",
-      "/src/assets/retired/richard/richard-7.jpeg",
-      "/src/assets/retired/richard/richard-8.mp4",
-      "/src/assets/retired/richard/richard-9.png",
-      "/src/assets/retired/richard/richard-10.mp4",
-      "/src/assets/retired/richard/richard-11.jpeg",
-      "/src/assets/retired/richard/richard-12.jpeg",
-      "/src/assets/retired/richard/richard-13.jpg",
-      "/src/assets/retired/richard/richard-14.jpeg",
-      "/src/assets/retired/richard/richard-15.jpg",
-      "/src/assets/retired/richard/richard-16.jpg",
-      "/src/assets/retired/richard/richard-17.jpg",
-      "/src/assets/retired/richard/richard-18.jpg",
-      "/src/assets/retired/richard/richard-19.jpg",
-      "/src/assets/retired/richard/richard-20.jpg",
-      "/src/assets/retired/richard/richard-21.jpg",
-      "/src/assets/retired/richard/richard-22.jpg",
-      "/src/assets/retired/richard/richard-23.png",
-      "/src/assets/retired/richard/richard-24.jpg",
-      "/src/assets/retired/richard/richard-lines.png"
+      richard1, richard2, richard3, richard4, richard5, richard6, richard7,
+      richard8, richard9, richard10, richard11, richard12, richard13,
+      richard14, richard15, richard16, richard17, richard18, richard19,
+      richard20, richard21, richard22, richard23, richard24, richard25,
+      richard26
     ]
   },
 };

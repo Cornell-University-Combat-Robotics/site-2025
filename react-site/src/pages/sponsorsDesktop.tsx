@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
 import team from "../assets/background-pictures/team-photo-hearts.png";
 import pdfFile from '../assets/2024-2025_Sponsorship_Packet.pdf';
