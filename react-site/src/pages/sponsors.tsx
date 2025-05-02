@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from 'react';
 import { MobileContext } from '../App.jsx';
 import SponsorsDesktop from './sponsorsDesktop.jsx';
