@@ -32,12 +32,12 @@ export default function Apply() {
 
   /** list of all events in the recruitment timeline */
   const event = [
-    { name: 'Project Team Fest', date: '6/9/25' },
-    { name: 'Clubfest', date: '6/10/25' },
-    { name: 'Info Session 1', date: '6/11/25' },
-    { name: 'Info Session 2', date: '6/12/25' },
-    { name: 'Info Session 3', date: '6/13/25' },
-    { name: 'Applications Due', date: '11:59PM  7/1/25' }
+    { name: 'Project Team Fest', date: '9/4/25' },
+    { name: 'Clubfest', date: '9/13/25' },
+    { name: 'Info Session 1', date: 'TBD' },
+    { name: 'Info Session 2', date: 'TBD' },
+    { name: 'Info Session 3', date: 'TBD' },
+    { name: 'Applications Due', date: '10/16/25' }
   ];
 
   /** boolean value for when user's viewport successfully intersects with arrow */
@@ -203,37 +203,37 @@ export default function Apply() {
 
       {/* Page contents */}
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
-      <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"} paddingTop="8vw">
+      <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
 
-        {/*
+
         <RedBox
-          title="Our applications for Fall 2024 are open!"
-          text="All applications are due October 17th, 11:59pm."
-          word="Apply Now!"
-          link="/sponsors"
-          mT="8vw"
+          title="Our applications for Fall 2025 open August 25th!"
+          text="All applications are due October 16th, 11:59pm."
+          word="Apply"
+          link="https://forms.gle/EGwrHn7QumkidiXVA"
+          mT="64px"
         />
-*/}
-        {/* Alternative text for when applications are closed */}
-        {/* <Box padding={10} textAlign={"center"}>
-        <Typography
-          // Our applications...h3 writing
-          variant="h2"
-          sx={{
-            mb: '2%'
-          }}>
-          Our applications for Fall 2024 are closed.
-        </Typography>
 
-        <Typography
-          // Our applications...h3 writing
-          variant="h2"
-          sx={{
-            fontWeight: 'bold'
-          }}>
-          Check back next fall for more application info!
-        </Typography>
-      </Box> */}
+        {/* Alternative text for when applications are closed */}
+        {/* <Stack py={"64px"}>
+          <Typography
+            // Our applications...h3 writing
+            variant="desktopBody"
+            sx={{
+              mb: '2%'
+            }}>
+            Our applications for Fall 2025 are not yet open.
+          </Typography>
+
+          <Typography
+            // Our applications...h3 writing
+            variant="desktopBody"
+            sx={{
+              fontWeight: 'bold'
+            }}>
+            Check back in the fall for more application info!
+          </Typography>
+        </Stack> */}
 
         <Typography
           // Recruitment Timeline
@@ -325,7 +325,7 @@ export default function Apply() {
             height: '100%',
           }}>
             <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} />
-            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 17th, 11:59pm" img={`url(${join02})`} />
+            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} />
             <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} />
             <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} />
           </Box>
@@ -487,7 +487,7 @@ export default function Apply() {
       </Box>
 
       <FAQ qn={questions} ans={answers} />
-    </Box>
+    </Box >
   );
 }
 

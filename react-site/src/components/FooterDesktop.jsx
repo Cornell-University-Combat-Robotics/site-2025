@@ -10,12 +10,14 @@ const Footer = () => {
     <Box
       id="footer-wrapper"
       sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: 'center',
         width: "100%",
         bottom: "0px",
-        display: "flex",
         height: "2.5%",
         minHeight: "50px",
-        padding: "6px 0",
+        gap: '4%',
         backgroundColor: "#b11c1c",
       }}
     >
@@ -72,18 +74,27 @@ const Footer = () => {
         </IconButton>
       </Stack>
 
-      <Box display="flex" justifyContent="flex-end" alignItems="center" width="100%" mr="2%" flexDirection="row" gap="0.5%">
-        <Typography variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17}>
-          This organization is a registered student organization of Cornell University.
-        </Typography>
+      <Typography width='50%' variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17}>
+        This organization is a registered student organization of Cornell University.
+      </Typography>
+
+      <Box sx={{
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
+        <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment">
+          <Typography variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17} sx={{ textDecoration: 'underline', textAlign: 'right' }}>
+            Equal Education and Employment
+          </Typography>
+        </a>
         <a href="/accessibility">
-          <Typography variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17} sx={{ textDecoration: 'underline' }}>
+          <Typography variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17} sx={{ textDecoration: 'underline', textAlign: 'right' }}>
             Accessibility Assistance
           </Typography>
         </a>
       </Box>
 
-    </Box>
+    </Box >
   );
 };
 
