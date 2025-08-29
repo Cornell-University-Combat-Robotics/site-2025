@@ -13,7 +13,7 @@ import photo2 from "../assets/apply-timeline/photo-2.jpg";
 import photo3 from "../assets/apply-timeline/photo-3.png";
 import photo4 from "../assets/apply-timeline/photo-4.jpg";
 import photo5 from "../assets/apply-timeline/photo-5.jpg";
-
+import { Link } from "react-router-dom";
 import robot_scroll from "../assets/robot_scroll.png";
 import arrow_img from "../assets/arrow.png";
 import { LinkToPage } from "../components/FAQ.tsx";
@@ -468,15 +468,14 @@ export default function Apply() {
         <RobotCardList type='Shortened_Three_lb' capacity={3} />
 
         <Button
+          component={Link}  // Make the Button act like a Link
+          to="/robots#3lb_apply_link"
           sx={{
             border: "2px solid white",
             borderRadius: 100,
             paddingY: 1,
             paddingX: 3,
             mb: 15
-          }}
-          onClick={() => {
-            window.open('/robots#3lb_apply_link', '_blank');
           }}
         >
           <Typography variant="desktopBody" fontSize={20} color="white">
