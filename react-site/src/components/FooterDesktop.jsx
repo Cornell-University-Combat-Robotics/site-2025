@@ -4,6 +4,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -87,11 +88,11 @@ const Footer = () => {
             Equal Education and Employment
           </Typography>
         </a>
-        <a href="/accessibility">
+        <Link to="/accessibility">
           <Typography variant="body2" color="white" fontFamily='Josefin Sans, sans-serif' fontSize={17} sx={{ textDecoration: 'underline', textAlign: 'right' }}>
             Accessibility Assistance
           </Typography>
-        </a>
+        </Link>
       </Box>
 
     </Box >
