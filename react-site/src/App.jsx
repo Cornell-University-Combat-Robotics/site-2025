@@ -2,7 +2,7 @@ import './App.css'
 import { createContext } from 'react';
 import { useMediaQuery } from '@mui/material';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import GradientNavBar from './components/GradientNavBar';
 import NavBarMobile from './components/mobile/NavBarMobile';
