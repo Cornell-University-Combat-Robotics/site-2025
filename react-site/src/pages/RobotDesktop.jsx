@@ -34,13 +34,13 @@ export default function RobotDesktop() {
                 ROBOTS
             </Typography>
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
-                UPCOMING ROBOTS
+                RECENT ROBOTS
             </Typography>
-            <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
+            {/* <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
                 <Typography variant="desktopBody">
                     Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
                 </Typography>
-            </Box>
+            </Box> */}
             {/* first robot */}
             <Stack direction='row' spacing={5} sx={{ mt: "8%", alignItems: 'center', justifyContent: 'center' }}>
                 <img src={Benny} style={{ width: '50%', height: '30%' }} />

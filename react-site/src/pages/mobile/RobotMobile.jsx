@@ -40,12 +40,12 @@ export default function RobotMobile() {
                 </Typography>
 
                 <Typography variant="mobileH2" sx={{ marginBottom: '5%' }}>
-                    UPCOMING ROBOTS
+                    RECENT ROBOTS
                 </Typography>
-
+                {/* 
                 <Typography variant="mobileBody" textAlign='left' sx={{ marginBottom: '15%' }}>
                     Take a sneak peek at the robots we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
-                </Typography>
+                </Typography> */}
 
                 {/* First robot section */}
                 <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
