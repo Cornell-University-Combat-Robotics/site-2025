@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { useParams } from 'react-router-dom';
 import { robotData } from "../data/robotData.ts";
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
 
 /* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
   it when the user navigates to it.
@@ -13,6 +15,7 @@ import { robotData } from "../data/robotData.ts";
 export default function IndividualRobot() {
   const { robotId } = useParams();
   const robotInfo = robotData[robotId || ""];
+  const isMobile = useContext(MobileContext);
 
   if (!robotInfo) {
     return <div>Robot not found</div>;
@@ -95,14 +98,14 @@ export default function IndividualRobot() {
   }, [isMD, isMDToLG, isLG]); //dependecy array: only activates listener when any of these values change
 
   return (
-    <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: '10%', paddingBottom: '10%', textAlign: 'left' }}>
+    <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: isMobile ? '20%' : '10%', paddingBottom: '10%', textAlign: 'left' }}>
       {/* Header Section */}
-      <Typography variant='desktopH2' gutterBottom fontWeight='bold'>
+      <Typography variant= {isMobile ? "mobileH2" : "desktopH2"} gutterBottom fontWeight='bold'>
         {robotInfo.name}
       </Typography>
 
       {/* Names of Builders */}
-      <Typography variant="desktopH3" display="block" align="left" width='90%' style={{ fontStyle: 'italic' }}>
+      <Typography variant= {isMobile ? "mobileBody" : "desktopBody"} display="block" align="left" width='90%' style={{ fontStyle: 'italic' }}>
         {robotInfo.makers.join(', ')}
       </Typography>
 
@@ -114,8 +117,8 @@ export default function IndividualRobot() {
         <Stack direction={"column"} spacing={'5%'} height={"80%"} width={isMD ? "100%" : "75%"} >
           {/*Description*/}
           <Box width={'100%'} >
-            <Typography variant='desktopH3'>Description</Typography>
-            <Typography mb={5} mt={2} variant="desktopBody2" display="block">{robotInfo.description}</Typography>
+            <Typography variant= {isMobile ? "mobileH3" : "desktopH3"}>Description</Typography>
+            <Typography mb={5} mt={2} variant= {isMobile ? "mobileBody" : "desktopBody2"} display="block">{robotInfo.description}</Typography>
           </Box>
 
 
