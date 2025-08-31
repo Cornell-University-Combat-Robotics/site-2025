@@ -36,7 +36,7 @@ export default function NavBarButtonMobile(props: NavBarButtonMobileProps) {
             sx={{
                 marginLeft: props.isAccess || props.isEEE ? '0%' : '10%',
                 paddingLeft: '0%',
-                paddingY : props.isAccess || props.isEEE ? '0%' : '1%',
+                paddingY: props.isAccess || props.isEEE ? '0%' : '1%',
                 justifyContent: "flex-start",
                 backgroundColor: props.bg,
                 "&:hover": { backgroundColor: props.bg },
@@ -61,7 +61,8 @@ export default function NavBarButtonMobile(props: NavBarButtonMobileProps) {
                     >
                         <Typography
                             variant="mobileBody"
-                            color="blue"
+
+                            sx={{textDecoration: "underline", textTransform: "none"}}
                         >{props.text}</Typography>
                     </Link>
                 ) : (
@@ -73,7 +74,7 @@ export default function NavBarButtonMobile(props: NavBarButtonMobileProps) {
                         >
                             <Typography
                                 variant="mobileBody"
-                                color="blue"
+                                sx={{textDecoration: "underline", textTransform: "none"}}
                             >{props.text}</Typography>
                         </Link>
                     ) : (
