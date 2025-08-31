@@ -8,6 +8,8 @@ export interface NavBarButtonMobileProps {
     bg: string;
     text: string; // About | Teams | Robots | Sponsors | Game | Apply
     close?: () => void;
+    isAccess?: boolean;
+    isEEE?: boolean;
     to?: string; // /
     sx?: SxProps<Theme>;
 }
@@ -32,7 +34,9 @@ export default function NavBarButtonMobile(props: NavBarButtonMobileProps) {
             fullWidth={true}
             onClick={processClick}
             sx={{
-                marginLeft: '10%',
+                marginLeft: props.isAccess || props.isEEE ? '0%' : '10%',
+                paddingLeft: '0%',
+                paddingY : props.isAccess || props.isEEE ? '0%' : '1%',
                 justifyContent: "flex-start",
                 backgroundColor: props.bg,
                 "&:hover": { backgroundColor: props.bg },
@@ -49,13 +53,39 @@ export default function NavBarButtonMobile(props: NavBarButtonMobileProps) {
                     <Typography variant="mobileH2" sx={{ margin: 0, textAlign: 'left' }}>{props.text}</Typography>
                 </Link>
             ) : (
-                <Link
-                    // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
-                    to={"/" + (text == "about" ? "" : text)}
-                    style={{ color: "white" }}
-                >
-                    <Typography variant="mobileH2" sx={{ margin: 0, textAlign: 'left' }}>{props.text}</Typography>
-                </Link>
+                props.isAccess ? (
+                    <Link
+                        // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
+                        to={"/accessibility"}
+                        style={{ color: "inherit" }}
+                    >
+                        <Typography
+                            variant="mobileBody"
+                            color="blue"
+                        >{props.text}</Typography>
+                    </Link>
+                ) : (
+                    props.isEEE ? (
+                        <Link
+                            // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
+                            to={"https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"}
+                            style={{ color: "inherit" }}
+                        >
+                            <Typography
+                                variant="mobileBody"
+                                color="blue"
+                            >{props.text}</Typography>
+                        </Link>
+                    ) : (
+                        <Link
+                            // Sets the link of each NavBar button to the corresponding page, but with "About" to empty since it's the home page.
+                            to={"/" + (text == "about" ? "" : text)}
+                            style={{ color: "white" }}
+                        >
+                            <Typography variant="mobileH2" sx={{ margin: 0, textAlign: 'left' }}>{props.text}</Typography>
+                        </Link>
+                    )
+                )
             ))}
         </Button>
     );
