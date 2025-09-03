@@ -1,0 +1,271 @@
+import { Box, Typography, Stack, CardMedia, Paper, List, ListItem, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Button, useMediaQuery, useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { useParams } from 'react-router-dom';
+import { robotData } from "../data/robotData.ts";
+import { useContext } from 'react';
+import { MobileContext } from '../App.jsx';
+
+/* **For each individual robot page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
+  it when the user navigates to it.
+
+  This file serves as a general component for individual robot pages. The idea is that it will format and render an IndividualRobot page
+  completely, using the specific input passed in. This way, all the actual individual robot pages need to do is pass in the correct data to this reusable component.
+*/
+export default function IndivNormal({ FullImageRender }) {
+  const { robotId } = useParams();
+  const robotInfo = robotData[robotId || ""];
+  const isMobile = useContext(MobileContext);
+
+  if (!robotInfo) {
+    return <div>Robot not found</div>;
+  }
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  //controls when image is blown to full size of the screen (when gallery button clicked)
+  //array with length == size of visible images
+  const [fullImage, setFullImage] = useState([false, false, false]); //false: no image selected as default
+
+  //note: even if number of images visible on screen changes, its still fine, cuz it gets first index
+  const handleImageClick = [
+    () => setFullImage([true, false, false]),
+    () => setFullImage([false, true, false]),
+    () => setFullImage([false, false, true]),
+  ];
+
+  useEffect(() => {
+    //checks if fullImage state != [false, false, false]
+    if (!fullImage.every(image => !image)) {
+      //prevents scrolling when image is blown up
+      document.body.style.overflow = 'hidden'
+    } else {
+      //re-activates scrolling when image is removed
+      document.body.style.overflow = 'auto'
+    }
+  }, [fullImage]);
+
+  //controls number of images in the visible list in the gallery section
+  const [numImages, setNumImages] = useState(3);
+
+  {/* Updates array of visible images in gallery carousell: 3 images at once.
+  Requires "..." to combine two slices into a single array */}
+  const visibleImages = [
+    //2nd parameter of slice: ensures that end index of this single array slice does not exceed gallery length
+    ...robotInfo.gallery.slice(currentIndex % robotInfo.gallery.length, Math.min(currentIndex + numImages, robotInfo.gallery.length)),
+    //handles overflow images -> if gallery length exceeded in first array slice
+    ...robotInfo.gallery.slice(0, Math.max(0, (currentIndex + numImages) - robotInfo.gallery.length))
+  ];
+
+  //prevIndex: refers to current index (before updated)
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % robotInfo.gallery.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + robotInfo.gallery.length) % robotInfo.gallery.length);
+  };
+
+  /** true: you WANT to remove the fully blown image*/
+  const [removeFullImage, setRemoveFullImage] = useState(false);
+
+  useEffect(() => {
+    /** Side effect logic: reset blown image state
+    NOTE: since this changes the dependency, useEffect will re-run!
+    Must wrap side effects in conditional logic to prevent infinite looping */
+    if (removeFullImage) {
+      setFullImage([false, false, false])
+      setRemoveFullImage(false)
+    }
+  }, [removeFullImage]); // Dependency array: Runs when any listed dependency changes (aka. when clicking anywhere during full image screen)
+
+  //gets theme
+  const theme = useTheme();
+
+  //useMediaQuery() returns boolean based on if the size of screen is medium or smaller
+  const isMD = useMediaQuery(theme.breakpoints.down("md"))
+  const isMDToLG = useMediaQuery(theme.breakpoints.between("md", "lg"))
+  const isLG = useMediaQuery(theme.breakpoints.up("lg"))
+
+  const bodyTextStyle = {
+        fontSize: isMobile ? theme.typography.mobileBody.fontSize : theme.typography.desktopBody3.fontSize, 
+        fontFamily: theme.typography.mobileBody.fontFamily
+  };
+
+  useEffect(() => {
+    if (isMD) {
+      setNumImages(1)
+    } else if (isMDToLG) {
+      setNumImages(2)
+    } else {
+      setNumImages(3)
+    }
+  }, [isMD, isMDToLG, isLG]); //dependecy array: only activates listener when any of these values change
+
+  return (
+    <Box sx={{ paddingRight: '12%', paddingLeft: '12%', paddingTop: isMobile ? '20%' : '10%', paddingBottom: '10%', textAlign: 'left' }}>
+      {/* Header Section */}
+      <Typography variant= {isMobile ? "mobileH2" : "desktopH2"} gutterBottom fontWeight='bold'>
+        {robotInfo.name}
+      </Typography>
+
+      {/* Names of Builders */}
+      <Typography variant= {isMobile ? "mobileBody" : "desktopBody"} display="block" align="left" width='90%' style={{ fontStyle: 'italic' }}>
+        {robotInfo.makers.join(', ')}
+      </Typography>
+
+      {/* 
+      Description & Featured Section: 2 columns, with 1st column having 2 rows
+      */}
+      <Stack direction={isMD ? "column" : "row"} spacing={isMD ? "10%" : "5%"} width={'100%'} height={'100%'} mt={7} justifyContent={"center"} alignItems={isMD ? "center" : "left"} >
+        {/*Containing 2 rows: description and video*/}
+        <Stack direction={"column"} spacing={'5%'} height={"80%"} width={isMD ? "100%" : "75%"} >
+          {/*Description*/}
+          <Box width={'100%'} >
+            <Typography variant= {isMobile ? "mobileH3" : "desktopH3"}>Description</Typography>
+            <Typography mb={5} mt={2} variant= {isMobile ? "mobileBody" : "desktopBody2"} display="block">{robotInfo.description}</Typography>
+          </Box>
+
+
+          {robotInfo.featured_fight ? ( <Box width={'100%'} maxWidth={800} overflow={"hidden"}
+          >
+            <Typography variant= {isMobile ? "mobileH3" : 'desktopH3'} mb={2}>Featured Fight</Typography>
+            <iframe
+              style={{ aspectRatio: '16/9' }}
+
+              width="100%"
+              src={robotInfo.featured_fight}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </Box> ) : null}
+
+        </Stack>
+
+        {/*Containing the stats of the robot*/}
+        <Box height={'100%'} width={'auto'} minWidth={320} maxWidth={400}>
+          <Paper sx={{ bgcolor: '#820002', p: 3, borderRadius: 4 }}>
+            <CardMedia
+              component="img"
+              height="180"
+              image={robotInfo.image}
+              alt="Robot image"
+              sx={{ borderRadius: 4 }} />
+            <Typography variant={isMobile ? "mobileH3" : 'desktopBody'} color="white" fontWeight={"bold"} mt={2} >
+              Stats
+            </Typography>
+            <List> {/*TODO: remove padding*/}
+              {Object.entries(robotInfo.stats).map(([key, value]) => (
+                <ListItem key={key} sx={{ color: "white", fontSize: 20, fontFamily: 'Josefin Sans, sans-serif' }}>
+                  {key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase())}: {value}
+                </ListItem>
+              ))}
+            </List>
+          </Paper>
+        </Box>
+      </Stack>
+ 
+      {/* Design Section */}
+      <Box sx={{ mt: 4 }}>
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom >Design</Typography>
+        <Typography mt={2} variant={isMobile ? "mobileBody" : 'desktopBody2'} display="block">{robotInfo.design}</Typography>
+      </Box>
+
+      {/* Trivia Section */}
+      <Box sx={{ mt: 5 }}>
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom>
+          Trivia
+        </Typography>
+        <List sx={{ listStyleType: 'disc', ml: 5, 
+          fontSize: isMobile ? theme.typography.mobileBody.fontSize : theme.typography.desktopBody2.fontSize, 
+          fontFamily: theme.typography.mobileBody.fontFamily }}
+        >
+          {robotInfo.trivia.map((fact, index) => (
+            <ListItem key={index} sx={{ display: 'list-item' }}>{fact}</ListItem>
+          ))}
+        </List>
+      </Box>
+
+      {/* Fights Section: allows scrolling when minWidth reached */}
+      <Box sx={{ mb: 4, mt: 4, overflowX: 'scroll' }} >
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom>
+          Fights
+        </Typography>
+        <TableContainer component={Paper} sx={{ bgcolor: '#820002', minWidth: '700px' }}>
+          <Table>
+            <TableHead>
+              <TableRow sx={{ borderBlock: "7px solid #1C1C1C" }}>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, height: '40px', fontWeight: 'bold' }}>Event</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Opponent</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Result</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>By</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Video</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Length (sec)</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {robotInfo.fights.map((fight, index) => (
+                <TableRow key={index} sx={{ borderBlock: "7px solid #1C1C1C" }}>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.event}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.opponent}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.result}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.by}</TableCell>
+                  <TableCell>
+                    {fight.video && fight.video.trim() !== "" ? (
+                      <a href={fight.video} target="_blank" rel="noopener noreferrer" >
+                        <Typography sx={{...bodyTextStyle}}> Watch </Typography>
+                      </a>
+                    ) : ""}
+                  </TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.length}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+
+      {/* Gallery Section */}
+      <Typography variant={isMobile ? "mobileH3" : 'desktopH3'}>
+        {"Gallery"}
+      </Typography>
+      {/* Carousel for Gallery Images */}
+      <Stack direction="row" spacing={2} alignItems={"center"} justifyContent={"center"} mt="2%">
+        <IconButton onClick={handlePrev} >
+          <ArrowBack sx={{ color: "white" }} />
+        </IconButton>
+        <Stack direction="row" spacing={6} height="35vh" alignItems={"center"} justifyContent={"center"}>
+          {visibleImages.map((imageName, index) => (
+            <Button
+              sx={{
+                width: '100%',
+                height: '100%',
+                position: 'relative'
+              }}
+              onClick={() => {
+                handleImageClick[index]();
+              }}
+            >
+              <Box key={index} borderRadius={5} overflow={"hidden"} width={'100%'} height={'100%'} position={'relative'} zIndex={0} >
+                <img src={imageName} style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: "cover",
+                  objectPosition: "center"
+                }} />
+              </Box>
+
+              {/*image only blown to full size when button is clicked (aka. useState toggled to true)*/}
+              {fullImage[index] && <FullImageRender imageName={imageName} setRemoveFullImage={setRemoveFullImage} />}
+            </Button>
+          ))}
+        </Stack>
+        <IconButton onClick={handleNext} >
+          <ArrowForward sx={{ color: "white" }} />
+        </IconButton>
+      </Stack>
+    </Box>
+  )
+}

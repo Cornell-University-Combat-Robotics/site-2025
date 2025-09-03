@@ -139,6 +139,7 @@ import brunobotLukebot from  "../assets/3lb/brunobot-lukebot/brunobot-lukebot.pn
 import brunobotLukebot_1 from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
 
 export interface RobotData {
+  is3lb: boolean;
   name: string;
   makers: string[];
   description: string;
@@ -171,6 +172,7 @@ export interface RobotData {
 export const robotData: { [key: string]: RobotData } = {
 
   donatello: {
+    is3lb: false,
     name: "Donatello",
     makers: ["Erhunmwunse Eghafona", "Mohammad Ali Moghaddasi", "Michelle Zhou", "Ricky Wang", "Rob Measner", "Sana Gaya", "Sofie Halpern", "Stefan Bell"],
     description:
@@ -211,6 +213,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   batbot: {
+    is3lb: true,
     name: "Fangular Momentum",
     makers: ["Ruslan Black", "Gurjot Gill", "Sophie Cheng", "Ruihan Chu"],
     description:
@@ -267,6 +270,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   beater: {
+    is3lb: false,
     name: "Beater B. Barker",
     makers: [
       "Anna Boese",
@@ -358,6 +362,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   hestr: {
+    is3lb: true,
     name: "Dauður Hestr",
     makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
     description:
@@ -417,6 +422,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   slugma: {
+    is3lb: true,
     name: "Slugma",
     makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
     description:
@@ -478,6 +484,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   swiss: {
+    is3lb: true,
     name: "The Swiss Slinger",
     makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
     description:
@@ -537,6 +544,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   twoface: {
+    is3lb: true,
     name: "Two-Face",
     makers: ["Rachel Pineda", "Tyler Sprague", "Chris Adonizio"],
     description:
@@ -571,6 +579,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   kenny: {
+    is3lb: false,
     name: "Kenny",
     makers: ["Zander Knight", "Tyler Sprague"],
     description:
@@ -644,6 +653,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   louis: {
+    is3lb: false,
     name: "Louis XVII",
     makers: [
       "Ethan Zhang", "Shao Stassen", "Aaron Harnish", "Richard Jin", "Christopher Adonizio",
@@ -680,6 +690,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   nardo: {
+    is3lb: false,
     name: "Nardo",
     makers: [
       "Caleb Schlissel", "Alex Jenkins", "Charles Liu", "Marcus Esposito", "Narayan Rueppel",
@@ -738,6 +749,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   biggiecheese: {
+    is3lb: true,
     name: "Biggie Cheese",
     makers: ["Caleb Schlissel", "Shao Stassen", "Zander Knight"],
     description:
@@ -778,6 +790,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   blackbeetle: {
+    is3lb: true,
     name: "Black Beetle",
     makers: ["Richard Jin"],
     description:
@@ -817,6 +830,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   bobbyBobbo: {
+    is3lb: true,
     name: "Bobby & Bobbo",
     makers: ["Unknown"],
     description:
@@ -859,6 +873,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   brunobotLukebot: {
+    is3lb: true,
     name: "Brunobot & Lukebot",
     makers: ["Ethan Zhang", "Grace Lim", "Linda Hu", "Luke Murphy", "Sardor Rahmatulloev", "Shao Stassen"],
     description:
@@ -889,6 +904,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   crcchan: {
+    is3lb: true,
     name: "CRC-Chan",
     makers: ["Caleb Schlissel", "Grace Lim", "James LaSalle", "Linda Hu", "Luke Murphy"],
     description:
@@ -925,6 +941,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   crsuit: {
+    is3lb: true,
     name: "CRSuit",
     makers: ["Ruby Wang"],
     description:
@@ -959,6 +976,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   dumbanddumber: {
+    is3lb: true,
     name: "Dumb and Dumber",
     makers: ["Blaze Ezlakowski", "Charles Liu", "Molly Drumm", "Sebastian Rivera"],
     description:
@@ -993,6 +1011,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   florence: {
+    is3lb: false,
     name: "Florence",
     makers: [
       "Alex Jenkins", "Bruno Tassari", "Caleb Schlissel", "Charles Liu", "Marcus Esposito",
@@ -1057,6 +1076,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   fortunateson: {
+    is3lb: true,
     name: "Fortunate Son",
     makers: ["James Courtenay", "Ruby Wang", "Spencer Hurst"],
     description:
@@ -1099,6 +1119,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   gorgerusel: {
+    is3lb: false,
     name: "Gorge Rusel",
     makers: [
       "James Courtenay",
@@ -1169,6 +1190,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   hanako: {
+    is3lb: true,
     name: "Hanako",
     makers: ["Linda Hu", "Narayan Rueppel", "Stella Taglich"],
     description:
@@ -1206,6 +1228,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   heaveHo: {
+    is3lb: true,
     name: "Heave-Ho",
     makers: ["Bruno Tassari", "Erhunmwunse Eghafona"],
     description:
@@ -1244,6 +1267,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   idiotSandwich: {
+    is3lb: true,
     name: "Idiot Sandwich",
     makers: ["Anna Boese", "Lucien Eckert"],
     description:
@@ -1278,6 +1302,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   knuckles: {
+    is3lb: true,
     name: "Knuckles",
     makers: ["Katie Huntley", "Sana Gaya", "Shawn Chen"],
     description:
@@ -1314,6 +1339,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   lBillet: {
+    is3lb: false,
     name: "L Billet",
     makers: [
       "James Courtenay",
@@ -1361,6 +1387,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   lance: {
+    is3lb: false,
     name: "Lance",
     makers: [
       "Bruno Tassari",
@@ -1428,6 +1455,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   logobot: {
+    is3lb: true,
     name: "Logobot",
     makers: ["Edith Chen", "Luke Murphy", "Maya Zamor"],
     description:
@@ -1502,6 +1530,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   manny: {
+    is3lb: false,
     name: "Manny",
     makers: [
       "Bruno Tassari", "Charles Liu", "Isaac Newcomb", "Kevin Liu", "Marcus Esposito", "Michelle Zhou",
@@ -1543,6 +1572,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   milo: {
+    is3lb: true,
     name: "Milo",
     makers: ["Luke Murphy"],
     description:
@@ -1609,6 +1639,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   mommyIssues: {
+    is3lb: true,
     name: "Mommy Issues",
     makers: ["Aaron Harnish", "Angela Zhu", "Ethan Hernandez"],
     description:
@@ -1645,6 +1676,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   perrybot: {
+    is3lb: true,
     name: "Perrybot",
     makers: [],
     description:
@@ -1680,6 +1712,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   rocky: {
+    is3lb: true,
     name: "Rocky",
     makers: ["Marcus Esposito", "Mohammad Ali Moghaddasi"],
     description:
@@ -1716,6 +1749,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   rolypoly: {
+    is3lb: true,
     name: "Rolypoly",
     makers: [],
     description:
@@ -1749,6 +1783,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   rosieJunior: {
+    is3lb: false,
     name: "Rosie Junior",
     makers: [
       "James Courtenay",
@@ -1791,6 +1826,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   rosie: {
+    is3lb: false,
     name: "Rosie",
     makers: [
       "Anna Boese",
@@ -1870,6 +1906,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   samurai: {
+    is3lb: true,
     name: "Samurai",
     makers: ["Vishnu Nair", "Javohir Abdurazzakov", "Jenny Wu", "Manuely Feliz Portes"],
     description:
@@ -1905,6 +1942,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   scorpion: {
+    is3lb: true,
     name: "Scorpion",
     makers: ["Evan Zhu", "Mei Ling Wood", "Alyssa Hsu", "Kai Rodger"],
     description:
@@ -1980,6 +2018,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   shadowRichard: {
+    is3lb: true,
     name: "Shadow Richard",
     makers: ["Lucien Eckert", "Luke Murphy"],
     description:
@@ -2007,6 +2046,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   steve: {
+    is3lb: true,
     name: "Steve",
     makers: ["Ethan Zhang", "James LaSalle", "Sardor Rahmatulloev", "Zarif Pathan"],
     description:
@@ -2074,6 +2114,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   stuffedManny: {
+    is3lb: true,
     name: "Stuffed Manny",
     makers: ["Sofie Halpern's Friend"],
     description:
@@ -2104,6 +2145,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   swissCheese: {
+    is3lb: true,
     name: "Swiss Cheese",
     makers: ["Kevin Liu", "Ricky Wang", "Shubham Mathur"],
     description:
@@ -2136,6 +2178,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   testBox: {
+    is3lb: true,
     name: "Test Box",
     makers: [
       "Luke Murphy", "Shawn Chen", "Spencer Hurst", "Sofie Halpern", "Narayan Rueppel",
@@ -2173,6 +2216,7 @@ export const robotData: { [key: string]: RobotData } = {
     ]
   },
   wabbit: {
+    is3lb: true,
     name: "Wabbit",
     makers: ["Isaac Newcomb", "Michelle Zhou", "Sofie Halpern"],
     description:
@@ -2211,6 +2255,7 @@ export const robotData: { [key: string]: RobotData } = {
   },
 
   richard: {
+    is3lb: false,
     name: "Richard",
     makers: [
       "V1: Anna Boese, Erhunmwunse Eghafona, Isaac Newcomb, James Courtenay, Mohammad Ali Moghaddasi, Ricky Wang, Sofie Halpern, Spencer Hurst",
