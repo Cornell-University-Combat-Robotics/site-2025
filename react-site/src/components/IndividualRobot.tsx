@@ -87,6 +87,11 @@ export default function IndividualRobot() {
   const isMDToLG = useMediaQuery(theme.breakpoints.between("md", "lg"))
   const isLG = useMediaQuery(theme.breakpoints.up("lg"))
 
+  const bodyTextStyle = {
+        fontSize: isMobile ? theme.typography.mobileBody.fontSize : theme.typography.desktopBody3.fontSize, 
+        fontFamily: theme.typography.mobileBody.fontFamily
+  };
+
   useEffect(() => {
     if (isMD) {
       setNumImages(1)
@@ -124,7 +129,7 @@ export default function IndividualRobot() {
 
           {robotInfo.featured_fight ? ( <Box width={'100%'} maxWidth={800} overflow={"hidden"}
           >
-            <Typography variant='desktopH3' mb={2}>Featured Fight</Typography>
+            <Typography variant= {isMobile ? "mobileH3" : 'desktopH3'} mb={2}>Featured Fight</Typography>
             <iframe
               style={{ aspectRatio: '16/9' }}
 
@@ -148,7 +153,7 @@ export default function IndividualRobot() {
               image={robotInfo.image}
               alt="Robot image"
               sx={{ borderRadius: 4 }} />
-            <Typography variant="desktopH3" color="white" fontWeight={"bold"} mt={2} >
+            <Typography variant={isMobile ? "mobileH3" : 'desktopBody'} color="white" fontWeight={"bold"} mt={2} >
               Stats
             </Typography>
             <List> {/*TODO: remove padding*/}
@@ -161,17 +166,22 @@ export default function IndividualRobot() {
           </Paper>
         </Box>
       </Stack>
-
+ 
       {/* Design Section */}
-      <Typography variant="desktopH3" gutterBottom mt={15}>Design</Typography>
-      <Typography variant="desktopBody2" display="block">{robotInfo.design}</Typography>
+      <Box sx={{ mt: 4 }}>
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom >Design</Typography>
+        <Typography mt={2} variant={isMobile ? "mobileBody" : 'desktopBody2'} display="block">{robotInfo.design}</Typography>
+      </Box>
 
       {/* Trivia Section */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="desktopH3" gutterBottom>
+      <Box sx={{ mt: 5 }}>
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom>
           Trivia
         </Typography>
-        <List sx={{ listStyleType: 'disc', fontSize: 20, fontFamily: 'Josefin Sans, sans-serif', ml: 5 }}>
+        <List sx={{ listStyleType: 'disc', ml: 5, 
+          fontSize: isMobile ? theme.typography.mobileBody.fontSize : theme.typography.desktopBody2.fontSize, 
+          fontFamily: theme.typography.mobileBody.fontFamily }}
+        >
           {robotInfo.trivia.map((fact, index) => (
             <ListItem key={index} sx={{ display: 'list-item' }}>{fact}</ListItem>
           ))}
@@ -180,36 +190,36 @@ export default function IndividualRobot() {
 
       {/* Fights Section: allows scrolling when minWidth reached */}
       <Box sx={{ mb: 4, mt: 4, overflowX: 'scroll' }} >
-        <Typography variant="desktopH3" gutterBottom>
+        <Typography variant={isMobile ? "mobileH3" : 'desktopH3'} gutterBottom>
           Fights
         </Typography>
         <TableContainer component={Paper} sx={{ bgcolor: '#820002', minWidth: '700px' }}>
           <Table>
             <TableHead>
               <TableRow sx={{ borderBlock: "7px solid #1C1C1C" }}>
-                <TableCell sx={{ color: 'white' }}>Event</TableCell>
-                <TableCell sx={{ color: 'white' }}>Opponent</TableCell>
-                <TableCell sx={{ color: 'white' }}>Result</TableCell>
-                <TableCell sx={{ color: 'white' }}>By</TableCell>
-                <TableCell sx={{ color: 'white' }}>Video</TableCell>
-                <TableCell sx={{ color: 'white' }}>Length (sec)</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, height: '40px', fontWeight: 'bold' }}>Event</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Opponent</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Result</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>By</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Video</TableCell>
+                <TableCell sx={{ color: 'white', ...bodyTextStyle, fontWeight: 'bold' }}>Length (sec)</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {robotInfo.fights.map((fight, index) => (
                 <TableRow key={index} sx={{ borderBlock: "7px solid #1C1C1C" }}>
-                  <TableCell sx={{ color: 'white' }}>{fight.event}</TableCell>
-                  <TableCell sx={{ color: 'white' }}>{fight.opponent}</TableCell>
-                  <TableCell sx={{ color: 'white' }}>{fight.result}</TableCell>
-                  <TableCell sx={{ color: 'white' }}>{fight.by}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.event}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.opponent}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.result}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.by}</TableCell>
                   <TableCell>
                     {fight.video && fight.video.trim() !== "" ? (
-                      <a href={fight.video} target="_blank" rel="noopener noreferrer">
-                        Watch
+                      <a href={fight.video} target="_blank" rel="noopener noreferrer" >
+                        <Typography sx={{...bodyTextStyle}}> Watch </Typography>
                       </a>
                     ) : ""}
                   </TableCell>
-                  <TableCell sx={{ color: 'white' }}>{fight.length}</TableCell>
+                  <TableCell sx={{ color: 'white', ...bodyTextStyle }}>{fight.length}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -218,7 +228,7 @@ export default function IndividualRobot() {
       </Box>
 
       {/* Gallery Section */}
-      <Typography variant="desktopH3">
+      <Typography variant={isMobile ? "mobileH3" : 'desktopH3'}>
         {"Gallery"}
       </Typography>
       {/* Carousel for Gallery Images */}
