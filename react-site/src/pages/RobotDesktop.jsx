@@ -89,7 +89,7 @@ export default function RobotDesktop() {
                     Here are all of our robots from previous years, in all their retired glory!
                 </Typography>
             </Box>
-            <RobotCardList type='Retired' capacity={3} />
+            <RobotCardList type='Retired' capacity={4} />
 
             {/* minibots */}
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
