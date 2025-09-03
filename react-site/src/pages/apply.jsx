@@ -381,10 +381,10 @@ export default function Apply() {
             gap: '4% 4%',
             height: '100%',
           }}>
-            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} />
-            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} />
-            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} />
-            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} />
+            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} isMobile={isMobile} />
+            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} isMobile={isMobile} />
+            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} isMobile={isMobile} />
+            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} isMobile={isMobile} />
           </Box>
         </Box>
 
@@ -622,7 +622,7 @@ function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc 
 }
 
 {/*For the big red numbers*/ }
-function ApplicationSteplist({ name, desc, img }) {
+function ApplicationSteplist({ name, desc, img, isMobile }) {
   return (
     <Box
       sx={{
@@ -639,7 +639,7 @@ function ApplicationSteplist({ name, desc, img }) {
         sx={{
           textAlign: "right",
           mt: 10,
-          mb: 5,
+          mb: 2,
           marginRight: 3,
           textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
           display: "block"
@@ -648,12 +648,12 @@ function ApplicationSteplist({ name, desc, img }) {
         {name}
       </Typography>
 
-      <Typography variant="desktopBody"
+      <Typography variant={isMobile ? "mobileBody" : "desktopBody"}
         sx={{
           textAlign: "left",
           mb: "10px",
           mx: '2%',
-          mt: 5,
+          mt: 2,
           lineHeight: 1.5,
           display: "block", // necessary to align text to the left
         }}
