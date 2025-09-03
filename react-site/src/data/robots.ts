@@ -1,9 +1,9 @@
 import { RobotCardProps } from "../components/RobotCard";
 import nardoPhoto from "/src/assets/retired/nardo/transparent.png"; // VSCode says it "cannnot find the module" for this file, which clearly is bs
-import slugmaPhoto from "/src/assets/3lb/the_slugma_profile.png";
-import batbotPhoto from "/src/assets/3lb/the_batbot.png";
-import swissPhoto from "/src/assets/3lb/the_swiss_slinger_profile.png";
-import hestrPhoto from "/src/assets/3lb/the_hestr_profile.png";
+import slugmaPhoto from "/src/assets/3lb/slugma/the_slugma_profile.png";
+import batbotPhoto from "/src/assets/3lb/batbot/the_batbot.png";
+import swissPhoto from "/src/assets/3lb/swiss-slinger/swiss_slinger_profile.png";
+import hestrPhoto from "/src/assets/3lb/hestr/the_hestr_profile.png";
 import beaterPhoto from "/src/assets/retired/beater-b-barker/transparent.png";
 import louisPhoto from "/src/assets/retired/louis/transparent.png";
 import rosiePhoto from "/src/assets/retired/rosie/rosie.png";

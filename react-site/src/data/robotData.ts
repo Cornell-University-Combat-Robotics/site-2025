@@ -135,8 +135,10 @@ import bobbybobbo_1 from "../assets/3lb/bobby-bobbo/bobby-bobbo-1.jpg";
 import bobbybobbo_2 from "../assets/3lb/bobby-bobbo/bobby-bobbo-2.jpg";
 import bobbybobbo_3 from "../assets/3lb/bobby-bobbo/bobby-bobbo-3.jpg";
 
-import brunobotLukebot from  "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
+import brunobotLukebot from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
 import brunobotLukebot_1 from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
+
+
 
 export interface RobotData {
   is3lb: boolean;
@@ -193,13 +195,13 @@ export const robotData: { [key: string]: RobotData } = {
       "",
     design:
       "Donatello uses a hammer as its main weapon. The hammer was pulled using a motor. His chassis is made of wood that fiberglass melted around it.",
-      trivia: [
-        "Donatello was CRC's first robot but was never finished.", 
-        "Donatello's hammer is now used as a regular hammer by CRC members.",
-        "Donatello's shell is used as a storage container for parts.",
-        "Donatello was named after Donatello from the teenage mutant ninja turtles.",
-        "Donatello's original name was intended to be Big Red Bonk."
-      ],
+    trivia: [
+      "Donatello was CRC's first robot but was never finished.",
+      "Donatello's hammer is now used as a regular hammer by CRC members.",
+      "Donatello's shell is used as a storage container for parts.",
+      "Donatello was named after Donatello from the teenage mutant ninja turtles.",
+      "Donatello's original name was intended to be Big Red Bonk."
+    ],
     fights: [
     ],
     gallery: [
@@ -364,27 +366,31 @@ export const robotData: { [key: string]: RobotData } = {
   hestr: {
     is3lb: true,
     name: "Dauður Hestr",
-    makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
+    makers: ["Xia Yan Zhao", "Tyler Lovejoy", "Ethan Decamp", "Kaila Danielson"],
     description:
-      "FLAMETHROWERS!! Who doesn't love flamethrowers?",
+      "Dauður Hestr is themed around Nordic culture, specifically their strongest warrior’s hammer: mjolnir. The gray color and lightning follow’s Thor’s specialities and strikes fear into the hearts of those around it. ",
     image: "/src/assets/3lb/hestr_profile.png",
     stats: {
       vintage: "2024",
-      height: "0 ft",
-      weight: "0 lbs",
-      fights: "None, yet...",
-      wins: "∞",
-      top_speed: "So much faster than a slug",
-      weapon_speed: "5 rpm",
-      most_damaged_part: "Lifter",
-      favorite_movie: "Pokemon: Destiny Deoxys"
+      height: "4.1 inches",
+      weight: "2.99 lbs, yet unliftable",
+      fights: "at least 3.2",
+      wins: "100%, You can’t beat a dead horse",
+      top_speed: "Lightning fast",
+      weapon_speed: "419 oz-in (30.20 kgf-cm)",
+      most_damaged_part: "Our big Hammer 🔨",
+      favorite_movie: "Thor: Ragnarok 🎬"
     },
     featured_fight:
       "",
     design:
-      "Slugma is an all-rounder battle-bot with both a vertical lifter and a flamethrower, designed to paralyze and incinerate opponents.",
+      "Dauður Hestr is a sportsman-type robot, with a large hammer that takes most of its weight. The hammer is hollow aluminum, and is actuated by a series of gears. With a strong weapon motor, the drive motors tried to balance speed and pushing force with an emphasis on pushing force.",
     trivia: [
-      "Originally named Venus Fly Trap, but later changed due to design constraints."
+      "Yeah, I'm gonna take my horse to the old town road……",
+      "I'm gonna ride 'til I can't no more",
+      "Dead Horse",
+      "Dauður Hestr is a mix of old norse and icelandic so it sounds better.",
+      "Dauður Hestr is a poker shark."
     ],
     fights: [
       {
@@ -486,27 +492,27 @@ export const robotData: { [key: string]: RobotData } = {
   swiss: {
     is3lb: true,
     name: "The Swiss Slinger",
-    makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
+    makers: ["Sarah Bulkey", "Spencer Humes", "Riddhi Lamba"],
     description:
-      "FLAMETHROWERS!! Who doesn't love flamethrowers?",
+      "The Swiss Slinger sports a novel weapon system conforming to its wedge shaped body. The Slinger throws its prey across the arena: crushing them under the impact of their own weight.",
     image: "/src/assets/3lb/swiss_slinger_profile.png",
     stats: {
       vintage: "2024",
-      height: "0 ft",
-      weight: "0 lbs",
-      fights: "None, yet...",
-      wins: "∞",
-      top_speed: "So much faster than a slug",
-      weapon_speed: "5 rpm",
-      most_damaged_part: "Lifter",
-      favorite_movie: "Pokemon: Destiny Deoxys"
+      height: "4.811 inches",
+      weight: "2.765 lbs",
+      fights: "100",
+      wins: "100",
+      top_speed: "15 mph",
+      weapon_speed: "20 lb-ft",
+      most_damaged_part: "Belt",
+      favorite_movie: "Cheesy Rom-coms and Ratatouille"
     },
     featured_fight:
       "",
     design:
-      "The Swiss Slinger uses a spinning mechanism similar to Slugma's to deliver rapid-fire attacks.",
+      "Shaped like a wedge with a rapidly spinning belt over its top plate, the Swiss Slinger is designed to easily snatch its enemies and fling them away. It has two floors to organize circuitry by keeping motors and the battery on the bottom with the wheels and placing ESCs on the top. The internal structure also consists of walls for separational and organizational purposes. There is also a top and bottom plate and the wedge is designed to allow the belt to wrap slightly around both ends before returning inside the chassis.",
     trivia: [
-      "Originally named Venus Fly Trap; later changed due to design hazards."
+      "The Swiss Slinger went through many name ideas, including “Cheddar Chucker” and “Parmageddon”!"
     ],
     fights: [
       {
@@ -1524,8 +1530,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/logobot/logobot.png",
-      "/src/assets/3lb/logobot/logobot-video.mp4"
+      "/src/assets/3lb/logobot/logobot.png"
     ]
   },
 
