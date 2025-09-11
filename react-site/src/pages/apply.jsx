@@ -7,7 +7,6 @@ import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
-import slugma from "../assets/3lb/slugma_profile.jpg";
 import photo1 from "../assets/apply-timeline/photo-1.jpg";
 import photo2 from "../assets/apply-timeline/photo-2.jpg";
 import photo3 from "../assets/apply-timeline/photo-3.png";

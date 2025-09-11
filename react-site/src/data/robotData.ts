@@ -138,6 +138,187 @@ import bobbybobbo_3 from "../assets/3lb/bobby-bobbo/bobby-bobbo-3.jpg";
 import brunobotLukebot from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
 import brunobotLukebot_1 from "../assets/3lb/brunobot-lukebot/brunobot-lukebot.png";
 
+import crcchan from "../assets/3lb/crc-chan/crc-chan.png";
+import crcchan_1 from "../assets/3lb/crc-chan/crc-chan-1.png";
+import crcchan_2 from "../assets/3lb/crc-chan/crc-chan-2.png";
+import crcchan_3 from "../assets/3lb/crc-chan/crc-chan-3.png";
+import crcchan_4 from "../assets/3lb/crc-chan/crc-chan-4.png";
+import crcchan_5 from "../assets/3lb/crc-chan/crc-chan-5.png";
+import crcchan_6 from "../assets/3lb/crc-chan/crc-chan-6.png";
+
+import crcuit from "../assets/3lb/crcuit/crcuit.png";
+import crcuit_1 from "../assets/3lb/crcuit/crcuit-1.jpg";
+import crcuit_2 from "../assets/3lb/crcuit/crcuit-2.jpg";
+import crcuit_3 from "../assets/3lb/crcuit/crcuit-3.jpg";
+
+import hestr from "../assets/3lb/hestr/hestr.png";
+import hestr_1 from "../assets/3lb/hestr/hestr-1.png";
+
+import dumbanddumber from "../assets/3lb/dumb-and-dumber/dumb-and-dumber.png";
+import dumbanddumber_1 from "../assets/3lb/dumb-and-dumber/dumb-and-dumber-1.jpg";
+import dumbanddumber_2 from "../assets/3lb/dumb-and-dumber/dumb-and-dumber-2.jpg";
+import dumbanddumber_3 from "../assets/3lb/dumb-and-dumber/dumb-and-dumber-3.jpg";
+import dumbanddumber_4 from "../assets/3lb/dumb-and-dumber/dumb-and-dumber-pixel.png";
+
+import fortunateson from "../assets/3lb/fortunate-son/fortunate-son.png";
+import fortunateson_1 from "../assets/3lb/fortunate-son/fortunate-son-1.jpg";
+import fortunateson_2 from "../assets/3lb/fortunate-son/fortunate-son-2.png";
+import fortunateson_3 from "../assets/3lb/fortunate-son/fortunate-son-3.png";
+import fortunateson_4 from "../assets/3lb/fortunate-son/fortunate-son-4.png";
+import fortunateson_5 from "../assets/3lb/fortunate-son/fortunate-son-5.png";
+import fortunateson_6 from "../assets/3lb/fortunate-son/fortunate-son-6.png";
+import fortunateson_7 from "../assets/3lb/fortunate-son/fortunate-son-pixel.png";
+
+import batbot from "../assets/3lb/batbot/batbot.png";
+import batbot_1 from "../assets/3lb/batbot/batbot-1.png";
+import batbot_2 from "../assets/3lb/batbot/batbot-2.png";
+
+import hanako from "../assets/3lb/hanako/hanako.png";
+import hanako_1 from "../assets/3lb/hanako/hanako-1.png";
+import hanako_2 from "../assets/3lb/hanako/hanako-2.png";
+import hanako_3 from "../assets/3lb/hanako/hanako-3.png";
+import hanako_4 from "../assets/3lb/hanako/hanako-4.png";
+import hanako_5 from "../assets/3lb/hanako/hanako-5.png";
+import hanako_6 from "../assets/3lb/hanako/hanako-6.png";
+import hanako_7 from "../assets/3lb/hanako/hanako-7.png";
+import hanako_8 from "../assets/3lb/hanako/hanako-8.png";
+import hanako_9 from "../assets/3lb/hanako/hanako-9.png";
+
+import heaveho from "../assets/3lb/heave-ho/heave-ho.png";
+import heaveho_1 from "../assets/3lb/heave-ho/heave-ho-1.jpg";
+import heaveho_2 from "../assets/3lb/heave-ho/heave-ho-2.jpg";
+import heaveho_3 from "../assets/3lb/heave-ho/heave-ho-3.png";
+import heaveho_4 from "../assets/3lb/heave-ho/heave-ho-4.png";
+import heaveho_5 from "../assets/3lb/heave-ho/heave-ho-5.png";
+import heaveho_6 from "../assets/3lb/heave-ho/heave-ho-6.png";
+import heaveho_7 from "../assets/3lb/heave-ho/heave-ho-7.png";
+import heaveho_8 from "../assets/3lb/heave-ho/heave-ho-8.jpg";
+import heaveho_9 from "../assets/3lb/heave-ho/heave-ho-9.png";
+import heaveho_10 from "../assets/3lb/heave-ho/heave-ho-10.png";
+
+import idiotsandwich from "../assets/3lb/idiot-sandwich/idiot-sandwich.png";
+import idiotsandwich_1 from "../assets/3lb/idiot-sandwich/idiot-sandwich-1.png";
+import idiotsandwich_2 from "../assets/3lb/idiot-sandwich/idiot-sandwich-2.png";
+import idiotsandwich_3 from "../assets/3lb/idiot-sandwich/idiot-sandwich-3.png";
+import idiotsandwich_4 from "../assets/3lb/idiot-sandwich/idiot-sandwich-pixel.png";
+
+import knuckles from "../assets/3lb/knuckles/knuckles.png";
+import knuckles_1 from "../assets/3lb/knuckles/knuckles-1.jpg";
+import knuckles_2 from "../assets/3lb/knuckles/knuckles-2.jpg";
+import knuckles_3 from "../assets/3lb/knuckles/knuckles-3.png";
+import knuckles_4 from "../assets/3lb/knuckles/knuckles-4.jpg";
+import knuckles_5 from "../assets/3lb/knuckles/knuckles-pixel.png";
+
+import logobot from "../assets/3lb/logobot/logobot.png";
+import logobot_1 from "../assets/3lb/logobot/logobot-1.png";
+import logobot_2 from "../assets/3lb/logobot/logobot-2.png";
+import logobot_3 from "../assets/3lb/logobot/logobot-3.png";
+import logobot_4 from "../assets/3lb/logobot/logobot-4.png";
+import logobot_5 from "../assets/3lb/logobot/logobot-5.png";
+import logobot_6 from "../assets/3lb/logobot/logobot-pixel.png";
+
+import milo from "../assets/3lb/milo/milo.png";
+
+import mommyissues from "../assets/3lb/mommy-issues/mommy-issues.png";
+import mommyissues_1 from "../assets/3lb/mommy-issues/mommy-issues-1.jpg";
+import mommyissues_2 from "../assets/3lb/mommy-issues/mommy-issues-2.jpg";
+import mommyissues_3 from "../assets/3lb/mommy-issues/mommy-issues-3.jpg";
+import mommyissues_4 from "../assets/3lb/mommy-issues/mommy-issues-4.png";
+import mommyissues_5 from "../assets/3lb/mommy-issues/mommy-issues-5.png";
+import mommyissues_6 from "../assets/3lb/mommy-issues/mommy-issues-6.jpg";
+import mommyissues_7 from "../assets/3lb/mommy-issues/mommy-issues-pixel.png";
+
+import perrybot from "../assets/3lb/perry-bot/perry-bot.png";
+import perrybot_1 from "../assets/3lb/perry-bot/perry-bot-1.png";
+import perrybot_2 from "../assets/3lb/perry-bot/perry-bot-2.png";
+import perrybot_3 from "../assets/3lb/perry-bot/perry-bot-3.png";
+import perrybot_4 from "../assets/3lb/perry-bot/perry-bot-4.png";
+import perrybot_5 from "../assets/3lb/perry-bot/perry-bot-5.jpg";
+import perrybot_6 from "../assets/3lb/perry-bot/perry-bot-6.jpg";
+import perrybot_7 from "../assets/3lb/perry-bot/perry-bot-7.jpg";
+import perrybot_8 from "../assets/3lb/perry-bot/perry-bot-8.png";
+import perrybot_9 from "../assets/3lb/perry-bot/perry-bot-9.jpg";
+
+import rocky from "../assets/3lb/rocky/rocky.png";
+import rocky_1 from "../assets/3lb/rocky/rocky-1.png";
+import rocky_2 from "../assets/3lb/rocky/rocky-2.jpg";
+import rocky_3 from "../assets/3lb/rocky/rocky-3.jpg";
+
+import rolypoly from "../assets/3lb/rolypoly/rolypoly.png";
+import rolypoly_1 from "../assets/3lb/rolypoly/rolypoly-1.jpg";
+import rolypoly_2 from "../assets/3lb/rolypoly/rolypoly-2.jpg";
+
+import samurai from "../assets/3lb/samurai/samurai.png";
+import samurai_1 from "../assets/3lb/samurai/samurai-1.png";
+import samurai_2 from "../assets/3lb/samurai/samurai-2.png";
+import samurai_3 from "../assets/3lb/samurai/samurai-3.png";
+import samurai_4 from "../assets/3lb/samurai/samurai-4.png";
+import samurai_5 from "../assets/3lb/samurai/samurai-5.png";
+import samurai_6 from "../assets/3lb/samurai/samurai-6.png";
+import samurai_7 from "../assets/3lb/samurai/samurai-7.png";
+import samurai_8 from "../assets/3lb/samurai/samurai-8.png";
+import samurai_9 from "../assets/3lb/samurai/samurai-9.png";
+import samurai_10 from "../assets/3lb/samurai/samurai-10.png";
+import samurai_11 from "../assets/3lb/samurai/samurai-11.png";
+import samurai_12 from "../assets/3lb/samurai/samurai-12.png";
+import samurai_13 from "../assets/3lb/samurai/samurai-13.png";
+import samurai_14 from "../assets/3lb/samurai/samurai-14.png";
+import samurai_15 from "../assets/3lb/samurai/samurai-15.png";
+import samurai_16 from "../assets/3lb/samurai/samurai-pixel.png";
+
+import scorpion from "../assets/3lb/scorpion/scorpion.png";
+import scorpion_1 from "../assets/3lb/scorpion/scorpion-1.png";
+import scorpion_2 from "../assets/3lb/scorpion/scorpion-2.jpg";
+import scorpion_3 from "../assets/3lb/scorpion/scorpion-3.png";
+import scorpion_4 from "../assets/3lb/scorpion/scorpion-pixel.png";
+
+import shadowrichard from "../assets/3lb/shadow-richard/shadow-richard.png";
+import shadowrichard_1 from "../assets/3lb/shadow-richard/shadow-richard-1.png";
+import shadowrichard_2 from "../assets/3lb/shadow-richard/shadow-richard-pixel.png";
+
+import slugma from "../assets/3lb/slugma/slugma.png";
+import slugma_1 from "../assets/3lb/slugma/slugma-1.jpg";
+import slugma_2 from "../assets/3lb/slugma/slugma-2.png";
+
+import steve from "../assets/3lb/steve/steve.png";
+import steve_1 from "../assets/3lb/steve/steve-1.PNG";
+import steve_2 from "../assets/3lb/steve/steve-2.PNG";
+import steve_3 from "../assets/3lb/steve/steve-3.jpg";
+import steve_4 from "../assets/3lb/steve/steve-4.jpg";
+import steve_5 from "../assets/3lb/steve/steve-5.JPG";
+import steve_6 from "../assets/3lb/steve/steve-6.jpg";
+import steve_7 from "../assets/3lb/steve/steve-7.jpg";
+import steve_8 from "../assets/3lb/steve/steve-8.PNG";
+import steve_9 from "../assets/3lb/steve/steve-9.png";
+
+import stuffedmanny from "../assets/3lb/stuffed-manny/stuffed-manny.png";
+
+import swisscheese from "../assets/3lb/swiss-cheese/swiss-cheese.png";
+import swisscheese_1 from "../assets/3lb/swiss-cheese/swiss-cheese-1.jpg";
+
+import swissslinger from "../assets/3lb/swiss-slinger/swiss-slinger.png";
+import swissslinger_1 from "../assets/3lb/swiss-slinger/swiss-slinger-1.png";
+import swissslinger_2 from "../assets/3lb/swiss-slinger/swiss-slinger-2.png";
+import swissslinger_3 from "../assets/3lb/swiss-slinger/swiss-slinger-3.png";
+
+import testbox from "../assets/3lb/test-box/test-box.png";
+import testbox_1 from "../assets/3lb/test-box/test-box-1.jpg";
+import testbox_2 from "../assets/3lb/test-box/test-box-2.jpg";
+import testbox_3 from "../assets/3lb/test-box/test-box-3.jpg";
+
+import twoface from "../assets/3lb/two-face/two-face.png";
+import twoface_1 from "../assets/3lb/two-face/two-face-1.png";
+import twoface_2 from "../assets/3lb/two-face/two-face-2.png";
+import twoface_3 from "../assets/3lb/two-face/two-face-pixel.png";
+
+import wabbit from "../assets/3lb/wabbit/wabbit.png";
+import wabbit_1 from "../assets/3lb/wabbit/wabbit-1.png";
+import wabbit_2 from "../assets/3lb/wabbit/wabbit-2.jpg";
+import wabbit_3 from "../assets/3lb/wabbit/wabbit-3.jpg";
+import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
+import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
+import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
+
 
 
 export interface RobotData {
@@ -220,7 +401,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Ruslan Black", "Gurjot Gill", "Sophie Cheng", "Ruihan Chu"],
     description:
       "Growing up in Gotham City's hardware store Fangular Momentum had a tough upbringing. He decided to turn his dark past into a force for good and take on his alter ego, BatBot. Every day he protects the aisles of Gotham City's Home Depot from fierce foes like JokerBot and BaneBot.",
-    image: "/src/assets/3lb/batbot.png",
+    image: batbot,
     stats: {
       vintage: "2024",
       height: "10 inches",
@@ -264,10 +445,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/batbot.png",
-      "/src/assets/3lb/the_batbot.png",
-      // "https://www.instagram.com/p/DCX2RjuOpGA/",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      batbot, batbot_1, batbot_2
     ]
   },
 
@@ -369,7 +547,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Xia Yan Zhao", "Tyler Lovejoy", "Ethan Decamp", "Kaila Danielson"],
     description:
       "Dauður Hestr is themed around Nordic culture, specifically their strongest warrior’s hammer: mjolnir. The gray color and lightning follow’s Thor’s specialities and strikes fear into the hearts of those around it. ",
-    image: "/src/assets/3lb/hestr_profile.png",
+    image: hestr,
     stats: {
       vintage: "2024",
       height: "4.1 inches",
@@ -419,11 +597,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      // "/src/assets/3lb/nardo-whole.png",
-      // "/src/assets/3lb/team-photo-hearts.png",
-      // "/src/assets/3lb/team-photo-formal.png",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      hestr, hestr_1
     ]
   },
 
@@ -433,7 +607,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Castiel Li", "Caedy Lee", "Jason Choi", "Rohin Phukan"],
     description:
       "FLAMETHROWERS!! Who doesn't love flamethrowers?",
-    image: "/src/assets/3lb/slugma_profile.jpg",
+    image: slugma,
     stats: {
       vintage: "2024",
       height: "0 ft",
@@ -479,13 +653,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      // "/src/assets/3lb/nardo-whole.png",
-      // "/src/assets/3lb/team-photo-hearts.png",
-      // "/src/assets/3lb/team-photo-formal.png",
-      "/src/assets/3lb/slugma_cad.png",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
+      slugma, slugma_1, slugma_2
     ]
   },
 
@@ -495,7 +663,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Sarah Bulkey", "Spencer Humes", "Riddhi Lamba"],
     description:
       "The Swiss Slinger sports a novel weapon system conforming to its wedge shaped body. The Slinger throws its prey across the arena: crushing them under the impact of their own weight.",
-    image: "/src/assets/3lb/swiss_slinger_profile.png",
+    image: swissslinger,
     stats: {
       vintage: "2024",
       height: "4.811 inches",
@@ -541,11 +709,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      // "/src/assets/3lb/nardo-whole.png",
-      // "/src/assets/3lb/team-photo-hearts.png",
-      // "/src/assets/3lb/team-photo-formal.png",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      swissslinger, swissslinger_1, swissslinger_2, swissslinger_3
     ]
   },
 
@@ -555,7 +719,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Rachel Pineda", "Tyler Sprague", "Chris Adonizio"],
     description:
       "Two-Face is the most streamlined robot the modern battlebots scene has ever seen—too powerful to set foot on the battlefield.",
-    image: "/src/assets/3lb/two-face/two-face-1.png",
+    image: twoface,
     stats: {
       vintage: "2024",
       height: "3 inches",
@@ -577,10 +741,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/two-face/two-face-1.png",
-      "/src/assets/3lb/two-face/two-face-2.png",
-      "/src/assets/3lb/two-face/two-face-3.png",
-      "/src/assets/3lb/two-face/two-face-pixel.png"
+      twoface, twoface_1, twoface_2, twoface_3
     ]
   },
 
@@ -786,12 +947,6 @@ export const robotData: { [key: string]: RobotData } = {
       biggiecheese_4,
       biggiecheese_5,
       biggiecheese_6
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-7.jpg",
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-8.gif",
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-9.jpg",
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-10.jpg",
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-11.jpg",
-      // "/src/assets/3lb/biggie-cheese/biggie-cheese-12.jpg"
     ]
   },
 
@@ -866,15 +1021,6 @@ export const robotData: { [key: string]: RobotData } = {
       bobbybobbo_1,
       bobbybobbo_2,
       bobbybobbo_3
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-4.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-5.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-6.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-7.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-8.gif",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-9.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-10.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-11.jpg",
-      // "/src/assets/3lb/bobby-bobbo/bobby-bobbo-12.jpg"
     ]
   },
 
@@ -915,7 +1061,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Caleb Schlissel", "Grace Lim", "James LaSalle", "Linda Hu", "Luke Murphy"],
     description:
       "CRC Chan is the team's magical arcade machine that roams the ELL by night, ready to grant a wish with a twist.",
-    image: "/src/assets/3lb/crc-chan/crcchan.png",
+    image: crcchan,
     stats: {
       vintage: "Spring 2023",
       height: "Taller than you",
@@ -937,12 +1083,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/crc-chan/crcchan6.png",
-      "/src/assets/3lb/crc-chan/crcchan2.png",
-      "/src/assets/3lb/crc-chan/crcchan3.png",
-      "/src/assets/3lb/crc-chan/crcchan4.png",
-      "/src/assets/3lb/crc-chan/crcchan5.png",
-      "/src/assets/3lb/crc-chan/crcchan1.png"
+      crcchan, crcchan_1, crcchan_2, crcchan_3, crcchan_4, crcchan_5, crcchan_6
     ]
   },
 
@@ -952,7 +1093,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Ruby Wang"],
     description:
       "CRC's official mascot—crafted from HD foam with a bold red and white design.",
-    image: "/src/assets/3lb/crcuit/crcuit.png",
+    image: crcuit,
     stats: {
       vintage: "Spring 2023",
       height: "14 inches",
@@ -975,9 +1116,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/crcuit/crcuit1.jpg",
-      "/src/assets/3lb/crcuit/crcuit2.jpg",
-      "/src/assets/3lb/crcuit/crcuit3.jpg"
+      crcuit, crcuit_1, crcuit_2, crcuit_3
     ]
   },
 
@@ -987,7 +1126,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Blaze Ezlakowski", "Charles Liu", "Molly Drumm", "Sebastian Rivera"],
     description:
       "These two idiots are chained together in a twist of fate that makes them unstoppable—if only in theory.",
-    image: "/src/assets/3lb/dumb-and-dumber/dumb-and-dumber.png",
+    image: dumbanddumber,
     stats: {
       vintage: "2022",
       height: "Size doesn't matter",
@@ -1010,9 +1149,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/dumb-and-dumber/dumb-and-dumber-3.jpg",
-      "/src/assets/3lb/dumb-and-dumber/dumb-and-dumber-2.jpg",
-      "/src/assets/3lb/dumb-and-dumber/dumb-and-dumber-1.jpg",
+      dumbanddumber, dumbanddumber_1, dumbanddumber_2, dumbanddumber_3, dumbanddumber_4
     ]
   },
 
@@ -1087,7 +1224,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["James Courtenay", "Ruby Wang", "Spencer Hurst"],
     description:
       "Make sure you look up to the sky when fighting Fortunate Son! His design is built around aerial evasion and ranged attack.",
-    image: "/src/assets/3lb/fortunate-son/fortunate-son.png",
+    image: fortunateson,
     stats: {
       vintage: "2022",
       height: "Drone",
@@ -1109,18 +1246,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/fortunate-son/fortunate-son-1.jpg",
-      "/src/assets/3lb/fortunate-son/fortunate-son-2.png",
-      "/src/assets/3lb/fortunate-son/fortunate-son-3.png",
-      "/src/assets/3lb/fortunate-son/fortunate-son-4.png",
-      "/src/assets/3lb/fortunate-son/fortunate-son-5.png",
-      "/src/assets/3lb/fortunate-son/fortunate-son-6.png",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-7.jpg",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-8.gif",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-9.jpg",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-10.jpg",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-11.jpg",
-      // "/src/assets/3lb/fortunate-son/fortunate-son-12.jpg"
+      fortunateson, fortunateson_1, fortunateson_2, fortunateson_3, fortunateson_4, fortunateson_5, fortunateson_6, fortunateson_7
     ]
   },
 
@@ -1183,15 +1309,6 @@ export const robotData: { [key: string]: RobotData } = {
       gorge_rusel_1,
       gorge_rusel_2,
       gorge_rusel_3
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-4.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-5.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-6.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-7.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-8.gif",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-9.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-10.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-11.jpg",
-      // "/src/assets/mini/gorge-rusel/gorge-rusel-12.jpg"
     ]
   },
 
@@ -1201,7 +1318,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Linda Hu", "Narayan Rueppel", "Stella Taglich"],
     description:
       "Based on a mischievous manga ghost, Hanako is a vertical spinner with rapidly spinning saws that both defend and attack.",
-    image: "/src/assets/3lb/hanako/hanako.png",
+    image: hanako,
     stats: {
       vintage: "2022",
       height: "4 inches",
@@ -1224,12 +1341,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/hanako/hanako-1.png",
-      "/src/assets/3lb/hanako/hanako-2.mp4",
-      "/src/assets/3lb/hanako/hanako-3.png",
-      "/src/assets/3lb/hanako/hanako-4.png",
-      "/src/assets/3lb/hanako/hanako-5.png",
-      "/src/assets/3lb/hanako/hanako-6.png"
+      hanako, hanako_1, hanako_2, hanako_3, hanako_4, hanako_5, hanako_6, hanako_7, hanako_8
     ]
   },
 
@@ -1239,7 +1351,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Bruno Tassari", "Erhunmwunse Eghafona"],
     description:
       "Heave Ho is a lifter robot that uses a vertical pulley system and stability ball mechanism to flip opponents.",
-    image: "/src/assets/3lb/heave-ho/heave-ho.png",
+    image: heaveho,
     stats: {
       vintage: "2021",
       height: "Around a forklift",
@@ -1262,13 +1374,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/heave-ho/heave-ho-1.gif",
-      "/src/assets/3lb/heave-ho/heave-ho-2.gif",
-      "/src/assets/3lb/heave-ho/heave-ho-3.png",
-      "/src/assets/3lb/heave-ho/heave-ho-4.png",
-      "/src/assets/3lb/heave-ho/heave-ho-5.png",
-      "/src/assets/3lb/heave-ho/heave-ho-6.png",
-      "/src/assets/3lb/heave-ho/heave-ho-7.png"
+      heaveho, heaveho_1, heaveho_2, heaveho_3, heaveho_4, heaveho_5, heaveho_6, heaveho_7, heaveho_8, heaveho_9, heaveho_10
     ]
   },
 
@@ -1278,7 +1384,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Anna Boese", "Lucien Eckert"],
     description:
       "A mean rolling machine built for aggressive offense with flamethrower lighters and oversized wheels.",
-    image: "/src/assets/3lb/idiot-sandwich/idiot-sandwich.png",
+    image: idiotsandwich,
     stats: {
       vintage: "2022",
       height: "18 inches",
@@ -1301,9 +1407,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/idiot-sandwich/card.png",
-      "/src/assets/3lb/idiot-sandwich/pad.png",
-      "/src/assets/3lb/idiot-sandwich/concept.png"
+      idiotsandwich, idiotsandwich_1, idiotsandwich_2, idiotsandwich_3, idiotsandwich_4
     ]
   },
 
@@ -1313,7 +1417,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Katie Huntley", "Sana Gaya", "Shawn Chen"],
     description:
       "A dangerous combat robot armed with wedges, spikes, a flipper, and a flamethrower.",
-    image: "/src/assets/3lb/knuckles/knuckles.png",
+    image: knuckles,
     stats: {
       vintage: "2022",
       height: "Ethereal",
@@ -1335,12 +1439,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/knuckles/knuckles-1.jpg",
-      "/src/assets/3lb/knuckles/knuckles-2.jpg",
-      "/src/assets/3lb/knuckles/knuckles-3.png",
-      "/src/assets/3lb/knuckles/knuckles-4.jpg",
-      // "/src/assets/3lb/knuckles/knuckles-5.jpg",
-      // "/src/assets/3lb/knuckles/knuckles-6.jpg"
+     knuckles, knuckles_1, knuckles_2, knuckles_3, knuckles_4, knuckles_5
     ]
   },
 
@@ -1466,7 +1565,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Edith Chen", "Luke Murphy", "Maya Zamor"],
     description:
       "Logobot is CRC's most recognizable robot—embodying the team logo with a high-pressure pincer capable of crushing enemy armor.",
-    image: "/src/assets/3lb/logobot/logobot.png",
+    image: logobot,
     stats: {
       vintage: "2022",
       height: "8 meters",
@@ -1530,7 +1629,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/logobot/logobot.png"
+      logobot, logobot_1, logobot_2, logobot_3, logobot_4, logobot_5, logobot_6
     ]
   },
 
@@ -1582,7 +1681,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Luke Murphy"],
     description:
       "Milo is a Tamiya RC car assembled by Luke Murphy when he was 11. Originally used as a sparring bot against Lance, his worn gears tell a story of countless battles.",
-    image: "/src/assets/3lb/milo/milo.png",
+    image: milo,
     stats: {
       vintage: "Spring 2022",
       height: "5 inches",
@@ -1637,9 +1736,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      // "/src/assets/3lb/milo/milo-pixel.png",
-      "/src/assets/3lb/milo/milo.png",
-      "/src/assets/3lb/milo/milovsrichard.mp4"
+      milo
     ]
   },
 
@@ -1649,7 +1746,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Aaron Harnish", "Angela Zhu", "Ethan Hernandez"],
     description:
       "Mommy Issues is a 3lb bot designed to crush opponents before the fight even begins, with a face so handsome it stops enemies in their tracks.",
-    image: "/src/assets/3lb/mommy-issues/mommy-issues.png",
+    image: mommyissues,
     stats: {
       vintage: "2023",
       height: "2.1 in (taller than you)",
@@ -1672,11 +1769,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/mommy-issues/mommy-issues-pixel.png",
-      "/src/assets/3lb/mommy-issues/mommy-issues.png",
-      "/src/assets/3lb/mommy-issues/mommy-issues-1.jpg",
-      "/src/assets/3lb/mommy-issues/mommy-issues-2.jpg",
-      "/src/assets/3lb/mommy-issues/mommy-issues-3.jpg"
+      mommyissues, mommyissues_1, mommyissues_2, mommyissues_3, mommyissues_4, mommyissues_5, mommyissues_6, mommyissues_7
     ]
   },
 
@@ -1686,7 +1779,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: [],
     description:
       "Perrybot is a state-of-the-art horizontal spinner that transforms from a docile platypus to an aggressive combat machine in a blink.",
-    image: "/src/assets/3lb/perrybot/perrybot.png",
+    image: perrybot,
     stats: {
       vintage: "2022",
       height: "2.5 inches",
@@ -1708,11 +1801,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      // "/src/assets/3lb/perrybot/perrybot-pixel.png",
-      "/src/assets/3lb/perrybot/perrybot.png",
-      "/src/assets/3lb/perrybot/perrybot-1.png",
-      "/src/assets/3lb/perrybot/perrybot-2.png",
-      "/src/assets/3lb/perrybot/perrybot-3.png"
+      perrybot, perrybot_1, perrybot_2, perrybot_3, perrybot_4, perrybot_5, perrybot_6, perrybot_7, perrybot_8, perrybot_9
     ]
   },
 
@@ -1722,7 +1811,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Marcus Esposito", "Mohammad Ali Moghaddasi"],
     description:
       "Rocky is a born fighter with a compact, two-wheeled design and a pneumatic punch that knocks opponents out.",
-    image: "/src/assets/3lb/rocky/rocky.png",
+    image: rocky,
     stats: {
       vintage: "2021",
       height: "3 inches",
@@ -1745,11 +1834,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      // "/src/assets/3lb/rocky/rocky-pixel.png",
-      "/src/assets/3lb/rocky/rocky.png",
-      "/src/assets/3lb/rocky/rocky-1.png",
-      "/src/assets/3lb/rocky/rocky-2.jpg",
-      "/src/assets/3lb/rocky/rocky-3.jpg"
+      rocky, rocky_1, rocky_2, rocky_3
     ]
   },
 
@@ -1759,7 +1844,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: [],
     description:
       "Once just a wheel for Kinetic, Rolypoly became sentient after eating a radioactive fly and now dispenses wisdom.",
-    image: "/src/assets/3lb/rolypoly/rolypoly.png",
+    image: rolypoly,
     stats: {
       vintage: "Spring 2022",
       height: "0.825 in",
@@ -1780,10 +1865,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      // "/src/assets/3lb/rolypoly/rolypoly-pixel.png",
-      "/src/assets/3lb/rolypoly/rolypoly.png",
-      "/src/assets/3lb/rolypoly/rolypoly-1.jpg",
-      "/src/assets/3lb/rolypoly/rolypoly-2.jpg"
+      rolypoly, rolypoly_1, rolypoly_2
     ]
   },
 
@@ -1916,7 +1998,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Vishnu Nair", "Javohir Abdurazzakov", "Jenny Wu", "Manuely Feliz Portes"],
     description:
       "The Samurai channels the spirit of a warrior with ramps for defense and a rapidly spinning blade for offense.",
-    image: "/src/assets/3lb/samurai/robot_cad_final.png",
+    image: samurai,
     stats: {
       vintage: "2023",
       height: "4.5 in",
@@ -1940,9 +2022,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/samurai/Pixil Frame 0.png",
-      "/src/assets/3lb/samurai/robot_cad_final.png",
-      "/src/assets/3lb/samurai/robot-cad-final2.png"
+      samurai, samurai_1, samurai_2, samurai_3, samurai_4, samurai_5, samurai_6, samurai_7, samurai_8, samurai_9, samurai_10, samurai_11, samurai_12, samurai_13, samurai_14, samurai_15, samurai_16
     ]
   },
 
@@ -1952,7 +2032,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Evan Zhu", "Mei Ling Wood", "Alyssa Hsu", "Kai Rodger"],
     description:
       "Scorpion is the epitome of precision and power in 3lb battlebots, boasting an undefeated record.",
-    image: "/src/assets/3lb/scorpion/scorpion-3.png",
+    image: scorpion,
     stats: {
       vintage: "2023",
       height: "6 foot",
@@ -2016,9 +2096,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/scorpion/scorpion-pixel.png",
-      "/src/assets/3lb/scorpion/scorpion-1.png",
-      "/src/assets/3lb/scorpion/scorpion-4.png"
+      scorpion, scorpion_1, scorpion_2, scorpion_3, scorpion_4
     ]
   },
 
@@ -2028,7 +2106,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Lucien Eckert", "Luke Murphy"],
     description:
       "Richard's darker, mysterious shadow – a secret best left unspoken.",
-    image: "/src/assets/3lb/shadow-richard/shadow-richard.png",
+    image: shadowrichard,
     stats: {
       vintage: "Spring 2023",
       height: "16 pixels",
@@ -2045,8 +2123,7 @@ export const robotData: { [key: string]: RobotData } = {
     trivia: ["Shadow Richard is simply Richard's shadow."],
     fights: [],
     gallery: [
-      "/src/assets/3lb/shadow-richard/shadow-richard-pixel.png",
-      "/src/assets/3lb/shadow-richard/shadow-richard.png"
+      shadowrichard, shadowrichard_1, shadowrichard_2
     ]
   },
 
@@ -2056,7 +2133,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Ethan Zhang", "James LaSalle", "Sardor Rahmatulloev", "Zarif Pathan"],
     description:
       "Steve, CRC's grim reaper, built a spruce house, mines diamonds, and wields a sharp diamond sword.",
-    image: "/src/assets/3lb/steve/steve.PNG",
+    image: steve,
     stats: {
       vintage: "2022",
       height: "2 blocks",
@@ -2105,16 +2182,7 @@ export const robotData: { [key: string]: RobotData } = {
       }
     ],
     gallery: [
-      "/src/assets/3lb/steve/steve-1.PNG",
-      "/src/assets/3lb/steve/steve-2.PNG",
-      "/src/assets/3lb/steve/steve-3.jpg",
-      "/src/assets/3lb/steve/steve-4.jpg",
-      "/src/assets/3lb/steve/steve-5.jpg",
-      "/src/assets/3lb/steve/steve-6.jpg",
-      "/src/assets/3lb/steve/steve-7.jpg",
-      "/src/assets/3lb/steve/steve-8.png",
-      "/src/assets/3lb/steve/steve-9.png",
-      "/src/assets/3lb/steve/steve.png"
+      steve, steve_1, steve_2, steve_3, steve_4, steve_5, steve_6, steve_7, steve_8, steve_9
     ]
   },
 
@@ -2124,7 +2192,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Sofie Halpern's Friend"],
     description:
       "Stuffed Manny is the plush incarnation of Manny - CRC's beloved mascot turned merchandise icon.",
-    image: "/src/assets/3lb/stuffed-manny/stuffed-manny.png",
+    image: stuffedmanny,
     stats: {
       vintage: "Spring 2022",
       height: "6 in",
@@ -2145,7 +2213,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/stuffed-manny/stuffed-manny.png",
+      stuffedmanny
     ]
   },
 
@@ -2155,7 +2223,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Kevin Liu", "Ricky Wang", "Shubham Mathur"],
     description:
       "Meet Swiss Cheese, the cheese-loving bot whose spinning saw blades slice through opponents with cheesy finesse.",
-    image: "/src/assets/3lb/swiss-cheese/swiss-cheese.png",
+    image: swisscheese,
     stats: {
       vintage: "2020",
       height: "1 cheese block",
@@ -2177,8 +2245,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/swiss-cheese/swiss-cheese.png",
-      "/src/assets/3lb/swiss-cheese/swiss-cheese-1.jpg"
+      swisscheese, swisscheese_1
     ]
   },
 
@@ -2192,7 +2259,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     description:
       "The mythical perfect test box—the Holy Grail of CRC—crafted under impossible constraints.",
-    image: "/src/assets/3lb/test-box/test-box.png",
+    image: testbox,
     stats: {
       vintage: "V1: Spring 2022 & V2: Estimated Spring 2024",
       height: "2.5 feet",
@@ -2214,10 +2281,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/test-box/test-box.png",
-      "/src/assets/3lb/test-box/test-box-1.jpg",
-      "/src/assets/3lb/test-box/test-box-2.jpg",
-      "/src/assets/3lb/test-box/test-box-3.jpg"
+      testbox, testbox_1, testbox_2, testbox_3
     ]
   },
   wabbit: {
@@ -2226,7 +2290,7 @@ export const robotData: { [key: string]: RobotData } = {
     makers: ["Isaac Newcomb", "Michelle Zhou", "Sofie Halpern"],
     description:
       "Wabbit, the Rabbit Rapper, is a two-wheel-drive vertical spinner with an HDPE chassis and expressive, ear-like uprights.",
-    image: "/src/assets/3lb/wabbit/wabbit.png",
+    image: wabbit,
     stats: {
       vintage: "2020",
       height: "4 inches",
@@ -2249,13 +2313,7 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     fights: [],
     gallery: [
-      "/src/assets/3lb/wabbit/wabbit.png",
-      "/src/assets/3lb/wabbit/wabbit-1.png",
-      "/src/assets/3lb/wabbit/wabbit-2.jpg",
-      "/src/assets/3lb/wabbit/wabbit-3.jpg",
-      "/src/assets/3lb/wabbit/wabbit-4.jpg",
-      "/src/assets/3lb/wabbit/wabbit-5.jpg",
-      "/src/assets/3lb/wabbit/wabbit-6.jpg",
+      wabbit, wabbit_1, wabbit_2, wabbit_3, wabbit_4, wabbit_5, wabbit_6
     ]
   },
 
