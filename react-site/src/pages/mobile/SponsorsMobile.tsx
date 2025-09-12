@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import team from "../../assets/background-pictures/team-photo-hearts.png";
-import pdfFile from '../../assets/2024-2025_Sponsorship_Packet.pdf';
+import pdfFile from '../../assets/2025-2026_Sponsorship_Packet.pdf';
 import FAQ from "../../components/FAQ.tsx";
 import { LinkToPage } from "../../components/FAQ.tsx";
 import { useTheme } from '@mui/material/styles';

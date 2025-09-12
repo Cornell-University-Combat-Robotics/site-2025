@@ -92,6 +92,11 @@ const theme = createTheme({
       fontFamily: 'Josefin Sans, sans-serif',
       fontSize: '1.25vw',
       fontWeight: 'normal',
+    },
+    desktopBody4: {
+      fontFamily: 'Josefin Sans, sans-serif',
+      fontSize: '0.85vw',
+      fontWeight: 'normal',
     }
   },
   palette: {

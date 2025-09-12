@@ -7,7 +7,6 @@ import join01 from "../assets/background-pictures/join-01-background.png";
 import join02 from "../assets/background-pictures/join-02-background.png";
 import join03 from "../assets/background-pictures/join-03-background.png";
 import join04 from "../assets/background-pictures/join-04-background.png";
-import slugma from "../assets/3lb/slugma_profile.jpg";
 import photo1 from "../assets/apply-timeline/photo-1.jpg";
 import photo2 from "../assets/apply-timeline/photo-2.jpg";
 import photo3 from "../assets/apply-timeline/photo-3.png";
@@ -32,12 +31,13 @@ export default function Apply() {
 
   /** list of all events in the recruitment timeline */
   const event = [
-    { name: 'Project Team Fest', date: '9/4/25' },
-    { name: 'Clubfest', date: '9/13/25' },
-    { name: 'Info Session 1', date: 'TBD' },
-    { name: 'Info Session 2', date: 'TBD' },
-    { name: 'Info Session 3', date: 'TBD' },
-    { name: 'Applications Due', date: '10/16/25' }
+    { name: 'Project Team Fest', date: '9/4, 4-6pm', location: 'Duffield Atrium' },
+    { name: 'Info Session 1', date: '9/9, 5-6pm', location: 'Tang 205' },
+    { name: 'Clubfest', date: '9/13, 12-1:30pm', location: 'Arts Quad' },
+    { name: 'Info Session 2', date: '9/18, 5-6pm', location: 'Tang 205' },
+    { name: 'Info Session 3', date: '9/24, 5-6pm', location: 'Tang 205' },
+    { name: 'Info Session 4', date: '10/4, 2-3pm', location: 'Tang 205' },
+    { name: 'Applications Due', date: '10/16', location: '' }
   ];
 
   /** boolean value for when user's viewport successfully intersects with arrow */
@@ -248,70 +248,126 @@ export default function Apply() {
         </Typography>
 
 
-        {/*Contains geometric timeline*/}
-        <Box
-          sx={{
-            position: 'relative',
-            //justifyContent: 'center',
-            //alignItems: 'center',
-            width: '100%',
-            height: {
-              xs: '5vh',
-              lg: '50%'
-            }
-          }}
-        >
-          {/*Must wrap line component in SVG (Scalable Vector Graphics): good for geometric elements like lines and shapes*/}
-          <svg width="100%" height="100%">
-            <line
-              x1="10%" //coordinates of the line: 10% from the left
-              x2="90%" //TODO: change, last element is slightly off
-              y1="20%" //set 10% from top of svg component
-              y2="20%"
-              stroke={"#820002"}
-              strokeWidth="5"
-            >
-            </line>
-
-            {event.map(({ name, date }, index) => {
-              const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`]; //increments x position to the right according to index
-
-              return (
-                <g key={index}> {/*groups shapes tgt, since all returned elements within a map must be wrapped in a single element*/}
-                  <circle
-                    cx={xPos}
-                    cy="20%" //same as line -> falls on line
-                    r={isMobile ? 6 : 15} //radius
-                    fill="#820002" //color
-                  >
-                  </circle>
-
-                  {/*Note: svg components don't support attributes that Material-UI components usually use (e.g. variant, color)*/}
-                  <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
-                    fontSize={
-                      isMobile ? theme.typography.mobileBody3.fontSize : theme.typography.desktopBody2.fontSize
-                    }
-                    y={isMobile ? "70%" : "70%"}
-                    textAnchor="middle" //horizontally centered
-                  >
-                    {/*use tspan to separate texts, since svg does not support new-line*/}
-                    <tspan x={xPos} >
-                      {name}
-                    </tspan>
-                    <tspan x={xPos}
-                      dy="2vw" //changes y position of this tspan relative to tspan above
+        {/*Geometric timeline*/}
+        {!isMobile ? (
+          <Box
+            sx={{
+              position: 'relative',
+              width: '140%',
+              height: {
+                xs: '5vh',
+                lg: '50%'
+              },
+              mx:'-20%',
+            }}
+          >
+            {/* Desktop SVG timeline (unchanged) */}
+            <svg width="100%" height="100%">
+              <line
+                x1="10%"
+                x2="90%"
+                y1="20%"
+                y2="20%"
+                stroke={"#820002"}
+                strokeWidth="5"
+              />
+              {event.map(({ name, date, location }, index) => {
+                const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`];
+                return (
+                  <g key={index}>
+                    <circle cx={xPos} cy="20%" r={15} fill="#820002" />
+                    <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
+                      fontSize={theme.typography.desktopBody3.fontSize}
+                      y={"70%"}
+                      textAnchor="middle"
                     >
-                      {date}
-                    </tspan>
-                  </text>
-                </g>
-              );
-            })}
+                      <tspan x={xPos} y={80} fontSize={theme.typography.desktopBody2.fontSize}>{name}</tspan>
+                      <tspan x={xPos} y={105}>{date}</tspan>
+                      <tspan x={xPos} y={130}>{location}</tspan>
+                    </text>
+                  </g>
+                );
+              })}
+            </svg>
+          </Box>
+        ) : (
+          // Mobile: larger, horizontally-scrollable timeline
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              overflowX: 'auto',
+              px: 0,
+              py: 2
+            }}
+          >
+            <svg
+              //width={`${event.length * 220 + 640}px`}
+              height={180}
+              style={{ display: 'block' }}
+                viewBox={`0 0 ${(() => {
+                  const leftPad = 60;
+                  const rightPad = 60;
+                  const base = 160; // base width per event
+                  return event.length * base + leftPad + rightPad;
+                })()} 180`}
+                width={`${(() => {
+                  const leftPad = 60;
+                  const rightPad = 60;
+                  const base = 200;
+                  return event.length * base + leftPad + rightPad;
+                })()}px`}
+              preserveAspectRatio="xMinYMid"
+            >
+              {(() => {
+                const leftPad = 150;
+                const rightPad = 320;
+                const base = 180; // base width per event
+                const totalWidth = event.length * base + leftPad + rightPad;
+                const lineY = 70;
+                return (
+                  <>
+                    <line
+                      x1={leftPad}
+                      x2={totalWidth - rightPad}
+                      y1={lineY}
+                      y2={lineY}
+                      stroke={"#820002"}
+                      strokeWidth={6}
+                    />
 
-          </svg>
-
-
-        </Box>
+                    {event.map(({ name, date, location }, index) => {
+                      const spacing = event.length > 1 ? (totalWidth - leftPad - rightPad) / (event.length - 1) : 0;
+                      const x = leftPad + index * spacing;
+                      return (
+                        <g key={index}>
+                          <circle cx={x} cy={lineY} r={12} fill="#820002" />
+                          <text
+                            key={index}
+                            fill="white"
+                            fontFamily={theme.typography.mobileH1.fontFamily}
+                            fontSize={theme.typography.mobileBody.fontSize}
+                            textAnchor="middle"
+                          >
+                            <tspan x={x} y={lineY + 40} fontSize={theme.typography.mobileH3.fontSize}>
+                              {name}
+                            </tspan>
+                            <tspan x={x} y={lineY + 60}>
+                              {date}
+                            </tspan>
+                            <tspan x={x} y={lineY + 80}>
+                              {location}
+                            </tspan>
+                          </text>
+                        </g>
+                      );
+                    })}
+                  </>
+                );
+              })()}
+            </svg>
+          </Box>
+        )}
 
 
         <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '10%'}
@@ -324,10 +380,10 @@ export default function Apply() {
             gap: '4% 4%',
             height: '100%',
           }}>
-            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} />
-            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} />
-            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} />
-            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} />
+            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} isMobile={isMobile} />
+            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} isMobile={isMobile} />
+            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} isMobile={isMobile} />
+            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} isMobile={isMobile} />
           </Box>
         </Box>
 
@@ -565,7 +621,7 @@ function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc 
 }
 
 {/*For the big red numbers*/ }
-function ApplicationSteplist({ name, desc, img }) {
+function ApplicationSteplist({ name, desc, img, isMobile }) {
   return (
     <Box
       sx={{
@@ -582,7 +638,7 @@ function ApplicationSteplist({ name, desc, img }) {
         sx={{
           textAlign: "right",
           mt: 10,
-          mb: 5,
+          mb: 2,
           marginRight: 3,
           textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
           display: "block"
@@ -591,12 +647,12 @@ function ApplicationSteplist({ name, desc, img }) {
         {name}
       </Typography>
 
-      <Typography variant="desktopBody"
+      <Typography variant={isMobile ? "mobileBody" : "desktopBody"}
         sx={{
           textAlign: "left",
           mb: "10px",
           mx: '2%',
-          mt: 5,
+          mt: 2,
           lineHeight: 1.5,
           display: "block", // necessary to align text to the left
         }}

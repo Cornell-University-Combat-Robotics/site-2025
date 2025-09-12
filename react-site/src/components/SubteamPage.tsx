@@ -99,18 +99,18 @@ export default function SubteamPage(props: SubteamProps) {
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
                 <Box sx={{ height: '100%', position: 'relative' }} />
-
                 {/*
             Backdrop filter applies to the PARENT of the box (the "backdrop"). 
             This makes the background image blurry & darker w/o changing the text components.
             */}
+
                 <Box sx={{
                     position: 'relative',
                     zIndex: 1,
                     padding: '12%',
                     paddingBottom: '0',
-                    backdropFilter: 'blur(5px) brightness(0.5)',
-                    // height: '100vh',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
+                    backdropFilter: 'blur(5px) brightness(0.3)',
+                    // background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
                     <Stack direction="row" alignItems={"center"} justifyContent={"center"}
@@ -233,6 +233,7 @@ export default function SubteamPage(props: SubteamProps) {
                     {/*List of bullet points for other interests
                     
                     marginInLine applies to both right/left and top/bottom margins*/}
+
                     <Box textAlign={"left"} marginInline={"2vw"} >
                         {props.otherInterest.map((bulletPoint, index) => (
                             <Typography key={index} sx={{ ...bodyTextStyle }}>
@@ -258,9 +259,12 @@ export default function SubteamPage(props: SubteamProps) {
                         width: '130%',
                         paddingLeft: '0'
                     }} />
+
                 </Box>
+
             </Box>
-        </Box>
+
+        </Box >
     );
 }
 

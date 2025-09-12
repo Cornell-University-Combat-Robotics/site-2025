@@ -70,12 +70,8 @@ export default function NavBarContents({ open, onClose }) {
 
             <Box flexDirection='column' display="flex" paddingTop="10%" marginLeft="10%" width="85%" >
                 <Typography variant="mobileBody" textAlign="left"> This organization is a registered student organization of Cornell University.</Typography>
-                <Link to="/accessibility" style={{ display: 'flex', alignItems: 'left' }}>
-                    <Typography variant="mobileBody" textAlign="left">
-                        Accessibility Assistance
-                    </Typography>
-                </Link>
-
+                <NavBarButton bg="none" variant="secondary" text="Equal Education and Employment" isEEE={true} close={onClose} />
+                <NavBarButton bg="none" variant="secondary" text="Accessibility Assistance" isAccess={true}  close={onClose} />
             </Box>
         </Box>
     );
