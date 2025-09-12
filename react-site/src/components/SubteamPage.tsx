@@ -75,7 +75,7 @@ export default function SubteamPage(props: SubteamProps) {
     const isMobile = useContext(MobileContext);
 
     return (
-        <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: 'relative', overflow: 'hidden' }}>
 
             {/*Blurred background image is static (not in parallax section)*/}
 
@@ -84,189 +84,185 @@ export default function SubteamPage(props: SubteamProps) {
             Note: background image will only be displayed if there are components in the box (e.g if box has no components, no background image will be rendered) 
             */}
             <Box sx={{
-                width: '100%',
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundImage: GetSubteamPhoto(props.name),  // Use the image as a background.
-                backgroundSize: 'cover',      // Ensure the image covers the area
-                backgroundPosition: 'top',
-                backgroundRepeat: 'no-repeat',
                 position: 'relative',
-                backgroundAttachment: 'fixed'
+                height: '100vh',
+                width: '100vw',
+                overflow: 'auto',
+                backgroundImage: GetSubteamPhoto(props.name), // Use the image as a background.
+                backgroundSize: 'cover', // Ensure the image retains its original size in repeats
+                backgroundAttachment: 'fixed', // Keeps the background image fixed during scroll
+                backgroundPosition: 'center' // Ensures image is always at centre of screen no matter if resizing occurs
             }}>
 
-            {/*
+                {/*
                 Box is empty except for button. 
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
-            <Box sx={{ height: '100vh', position: 'relative' }} />
-
-            {/*
+                <Box sx={{ height: '100%', position: 'relative' }} />
+                {/*
             Backdrop filter applies to the PARENT of the box (the "backdrop"). 
             This makes the background image blurry & darker w/o changing the text components.
             */}
-            <Box sx={{
-                position: 'relative',
-                zIndex: 1,
-                padding: '12%',
-                paddingBottom: '0',
-                backdropFilter: 'blur(5px) brightness(0.3)',
-                height: '100%',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
-            }}>
-                {/*Stack contains both the Marketing title & its brief blurb*/}
-                <Stack direction="row" alignItems={"center"} justifyContent={"center"}
-                    columnGap={12} //for desktop
-                    rowGap={"2vh"} //for mobile
-                    // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
-                    sx={{
-                        flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },  // Children wrap only on small & extra small screens 
-                    }}
-                >
-                    {/*Text components to be placed above blurred image*/}
-                    <Typography
 
+                <Box sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    padding: '12%',
+                    paddingBottom: '0',
+                    backdropFilter: 'blur(5px) brightness(0.3)',
+                    // background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
+                }}>
+                    {/*Stack contains both the Marketing title & its brief blurb*/}
+                    <Stack direction="row" alignItems={"center"} justifyContent={"center"}
+                        columnGap={12} //for desktop
+                        rowGap={"2vh"} //for mobile
+                        // text will be cut off to allow the padding to hold true, and user will be allowed to scroll horizontally to see hidden text.
                         sx={{
-                            textAlign: "center",
-                            textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
-                            //note: cannot use variant here, cuz it's not responsive
-                            fontSize: {
-                                xs: theme.typography.mobileH2.fontSize,
-                                lg: theme.typography.desktopH2.fontSize, //todo slightly small
-                            },
-                            fontFamily: theme.typography.mobileBody.fontFamily
+                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },  // Children wrap only on small & extra small screens 
                         }}
                     >
-                        {props.name.toUpperCase()}
+                        {/*Text components to be placed above blurred image*/}
+                        <Typography
+
+                            sx={{
+                                textAlign: "center",
+                                textShadow: '5px 5px 10px rgba(0, 0, 0, 0.7)',
+                                //note: cannot use variant here, cuz it's not responsive
+                                fontSize: {
+                                    xs: theme.typography.mobileH2.fontSize,
+                                    lg: theme.typography.desktopH2.fontSize, //todo slightly small
+                                },
+                                fontFamily: theme.typography.mobileBody.fontFamily
+                            }}
+                        >
+                            {props.name.toUpperCase()}
+                        </Typography>
+
+                        <Typography sx={{
+                            textAlign: 'left', minWidth: 320, wordWrap: 'break-word',
+                            ...bodyTextStyle //spread operator (...) to inject the properties of one object into another
+                        }}>
+                            {props.desc}
+                        </Typography>
+
+                    </Stack>
+
+                    <Typography sx={{
+                        textAlign: "left", mt: "6vw", //kinda counterintuitive, but vw works better than vh here cuz mobile's vh is way too large
+                        display: 'block', //ensure typographies arent combined tgt (not sure why this isnt automatic...)
+                        ...bodyTextStyle
+                    }}>
+                        {props.optionalDesc}
                     </Typography>
 
                     <Typography sx={{
-                        textAlign: 'left', minWidth: 320, wordWrap: 'break-word',
-                        ...bodyTextStyle //spread operator (...) to inject the properties of one object into another
+                        textAlign: "left", mt: "6vw", mb: "8vw", display: 'block',
+                        ...bodyTextStyle
                     }}>
-                        {props.desc}
+                        {props.subsystemIntro}
                     </Typography>
 
-                </Stack>
+                    {/* Stack contains a row of buttons for the different subsystems of the subteam.*/}
+                    {props.name != "Leads" && props.name != "Alumni" &&
+                        <Stack direction="row" justifyContent={"center"} alignItems={"center"}
+                            sx={{
+                                flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
+                                gap: 3, //maintains both vertical and horizontal gap between buttons
 
-                <Typography sx={{
-                    textAlign: "left", mt: "6vw", //kinda counterintuitive, but vw works better than vh here cuz mobile's vh is way too large
-                    display: 'block', //ensure typographies arent combined tgt (not sure why this isnt automatic...)
-                    ...bodyTextStyle
-                }}>
-                    {props.optionalDesc}
-                </Typography>
-
-                <Typography sx={{
-                    textAlign: "left", mt: "6vw", mb: "8vw", display: 'block',
-                    ...bodyTextStyle
-                }}>
-                    {props.subsystemIntro}
-                </Typography>
-
-                {/* Stack contains a row of buttons for the different subsystems of the subteam.*/}
-                {props.name != "Leads" && props.name != "Alumni" &&
-                    <Stack direction="row" justifyContent={"center"} alignItems={"center"}
-                        sx={{
-                            flexWrap: { xs: 'wrap', sm: 'wrap', md: 'wrap', lg: 'nowrap' },
-                            gap: 3, //maintains both vertical and horizontal gap between buttons
-
-                        }}
-                    >
-                        {props.subsystems.map((subsystem, index) => (
-
-                            <Button key={index} sx={{
-                                //the 3 following properties resizes width but with constraints -> pertains only to width, not height, cuz flex direction of stack is row
-                                width: {
-                                    xs: "20vw",
-                                    sm: "25vw",
-                                    lg: "30vw"
-                                },
-                                minWidth: 130, // ensures that buttons dont get too small or big when wrapping 
-                                maxWidth: 400,
-                                height: {
-                                    xs: "15vh",
-                                    //would be beneficial to have another mobile body size here -> between sm & md, font size gets kinda big
-                                    sm: "18vh",
-                                    md: "15vh",
-                                    lg: "18vh",
-                                    xl: "25vh"
-                                },
-                                minHeight: 120,
-                                maxHeight: 250,
-                                backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
-                                border: '3px solid white',
-                                '&:hover': { //on mouse hover
-                                    backgroundColor: 'rgba(148, 49, 49, 0.7)', // Customize hover background color if needed
-                                    border: '3px solid white', // Make sure border stays white on hover
-                                },
                             }}
-                                //hover functionality
-                                onMouseEnter={() => {
-                                    handleSubsystemClick[index]();
+                        >
+                            {props.subsystems.map((subsystem, index) => (
+
+                                <Button key={index} sx={{
+                                    //the 3 following properties resizes width but with constraints -> pertains only to width, not height, cuz flex direction of stack is row
+                                    width: {
+                                        xs: "20vw",
+                                        sm: "25vw",
+                                        lg: "30vw"
+                                    },
+                                    minWidth: 130, // ensures that buttons dont get too small or big when wrapping 
+                                    maxWidth: 400,
+                                    height: {
+                                        xs: "15vh",
+                                        //would be beneficial to have another mobile body size here -> between sm & md, font size gets kinda big
+                                        sm: "18vh",
+                                        md: "15vh",
+                                        lg: "18vh",
+                                        xl: "25vh"
+                                    },
+                                    minHeight: 120,
+                                    maxHeight: 250,
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', borderRadius: 5,
+                                    border: '3px solid white',
+                                    '&:hover': { //on mouse hover
+                                        backgroundColor: 'rgba(148, 49, 49, 0.7)', // Customize hover background color if needed
+                                        border: '3px solid white', // Make sure border stays white on hover
+                                    },
                                 }}
-                                onMouseLeave={() => {
-                                    setShowSubsystem([false, false, false, false])
-                                }}
-                            >
-                                {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
-                                {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
+                                    //hover functionality
+                                    onMouseEnter={() => {
+                                        handleSubsystemClick[index]();
+                                    }}
+                                    onMouseLeave={() => {
+                                        setShowSubsystem([false, false, false, false])
+                                    }}
+                                >
+                                    {/*Conditionally render SubsystemButtonDisplay based on showSubsystem state*/}
+                                    {showSubsystem[index] && <SubsystemButtonDisplay name={subsystem.name} desc={subsystem.desc} />}
 
-                                {/*Always display subsystem name on button*/}
-                                <Typography sx={{
-                                    color: 'white', textTransform: 'none',
-                                    ...bodyTextStyle
-                                }}>
-                                    {subsystem.name}
-                                </Typography>
-                            </Button>
-                        ))}
-                    </Stack>}
+                                    {/*Always display subsystem name on button*/}
+                                    <Typography sx={{
+                                        color: 'white', textTransform: 'none',
+                                        ...bodyTextStyle
+                                    }}>
+                                        {subsystem.name}
+                                    </Typography>
+                                </Button>
+                            ))}
+                        </Stack>}
 
-                {/*TODO: change all to body 1*/}
-                {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >
-                    {"While the subsystems are distinct, members are able to work interchangeably among them."}
-                </Typography>}
+                    {/*TODO: change all to body 1*/}
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >
+                        {"While the subsystems are distinct, members are able to work interchangeably among them."}
+                    </Typography>}
 
-                {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ mt: "8vw", ...bodyTextStyle }}>
-                    {"If you are more interested in..."}
-                </Typography>}
+                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ mt: "8vw", ...bodyTextStyle }}>
+                        {"If you are more interested in..."}
+                    </Typography>}
 
-                {/*List of bullet points for other interests
+                    {/*List of bullet points for other interests
                     
                     marginInLine applies to both right/left and top/bottom margins*/}
-                <Box textAlign={"left"} marginInline={"2vw"} >
-                    {props.otherInterest.map((bulletPoint, index) => (
-                        <Typography key={index} sx={{ ...bodyTextStyle }}>
-                            {bulletPoint}
-                        </Typography>
-                    ))}
+
+                    <Box textAlign={"left"} marginInline={"2vw"} >
+                        {props.otherInterest.map((bulletPoint, index) => (
+                            <Typography key={index} sx={{ ...bodyTextStyle }}>
+                                {bulletPoint}
+                            </Typography>
+                        ))}
+                    </Box>
+
+                    <Typography sx={{
+                        textAlign: "left", mt: "10vw", mb: "6vw",
+
+                        fontSize: {
+                            xs: theme.typography.mobileH2.fontSize,
+                            lg: theme.typography.desktopH2.fontSize,
+                        },
+                        fontFamily: theme.typography.mobileBody.fontFamily
+                    }}>
+                        {"Meet the team"}
+                    </Typography>
+
+                    <TeamMemberList teamName={props.name} sx={{
+                        marginLeft: '-15%',
+                        width: '130%',
+                        paddingLeft: '0'
+                    }} />
+
                 </Box>
 
-                <Typography sx={{
-                    textAlign: "left", mt: "10vw", mb: "6vw",
-
-                    fontSize: {
-                        xs: theme.typography.mobileH2.fontSize,
-                        lg: theme.typography.desktopH2.fontSize,
-                    },
-                    fontFamily: theme.typography.mobileBody.fontFamily
-                }}>
-                    {"Meet the team"}
-                </Typography>
-
-                <TeamMemberList teamName={props.name} sx={{
-                    marginLeft: '-15%',
-                    width: '130%',
-                    paddingLeft: '0'
-                }} />
-
             </Box>
-
-
-        </Box>
-
-
 
         </Box >
     );
