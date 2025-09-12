@@ -16,13 +16,13 @@ export default function Sportsman() {
     return (
         <SubteamPage
             name="Sportsman"
-            desc="Within the Sportsman Subteam, we specialize in the construction of 12lb low kinetic energy combat robots, including flippers, hammers, and other non-spinning innovations. Our mission is to design and build highly efficient robots with the capacity to dominate competitions."
-            optionalDesc="Our designs emphasize strategic control, structural durability, and innovative adaptations to our opponents' tactical advancements. Sportsman is devoted to maintaining a collaboratively inclusive environment where applied engineering can flourish."
+            desc="Within the Sportsman Subteam, we specialize in the construction of 12lb combat robots, including vertical spinners, horizontal spinners, full-body spinners, and drums. Our mission is to design and build highly efficient robots that excel in competitions."
+            optionalDesc="We prioritize three key elements: damage-dealing capability, durability, and adaptability. Sportsman is dedicated to maintaining a competitive edge in the world of robotic warfare."
             subsystemIntro="Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
             subsystems={subsystems}
             otherInterest={[
                 <p>
-                    • Efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam may be a better fit
+                    • Other efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam may be a better fit
                 </p>,
                 <p>
                     • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit

@@ -78,7 +78,7 @@ export default function Game() {
                         // new src thing
                         width="1020px"
                         height="560px"
-                        style={{ marginLeft: "20px", marginBottom: "16px", border: "none" }}
+                        style={{ marginLeft: "20px", marginBottom: "5px", border: "none" }}
                         title="Combat Robotics Game"
                         allowFullScreen
                         cursor="crosshair"
