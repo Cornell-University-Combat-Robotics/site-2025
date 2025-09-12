@@ -75,7 +75,7 @@ export default function SubteamPage(props: SubteamProps) {
     const isMobile = useContext(MobileContext);
 
     return (
-        <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: 'relative', overflow: 'hidden' }}>
 
             {/*Blurred background image is static (not in parallax section)*/}
 
@@ -85,8 +85,9 @@ export default function SubteamPage(props: SubteamProps) {
             */}
             <Box sx={{
                 position: 'relative',
-                width: '100%',
-                height: '100%',
+                height: '100vh',
+                width: '100vw',
+                overflow: 'auto',
                 backgroundImage: GetSubteamPhoto(props.name), // Use the image as a background.
                 backgroundSize: 'cover', // Ensure the image retains its original size in repeats
                 backgroundAttachment: 'fixed', // Keeps the background image fixed during scroll
@@ -97,7 +98,7 @@ export default function SubteamPage(props: SubteamProps) {
                 Box is empty except for button. 
                 Box has a height taking up the full viewport, allowing for the full size of the image.
                 */}
-                <Box sx={{ height: '100vh', position: 'relative' }} />
+                <Box sx={{ height: '100%', position: 'relative' }} />
 
                 {/*
             Backdrop filter applies to the PARENT of the box (the "backdrop"). 
@@ -109,7 +110,7 @@ export default function SubteamPage(props: SubteamProps) {
                     padding: '12%',
                     paddingBottom: '0',
                     backdropFilter: 'blur(5px) brightness(0.5)',
-                    height: '100%',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
+                    // height: '100vh',        //not mvp: background: 'linear-gradient(to top,  transparent, blur(5px), brightness(0.5))',
                 }}>
                     {/*Stack contains both the Marketing title & its brief blurb*/}
                     <Stack direction="row" alignItems={"center"} justifyContent={"center"}
@@ -257,14 +258,8 @@ export default function SubteamPage(props: SubteamProps) {
                         width: '130%',
                         paddingLeft: '0'
                     }} />
-
                 </Box>
-
-
             </Box>
-
-
-
         </Box>
     );
 }
