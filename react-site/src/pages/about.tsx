@@ -5,6 +5,7 @@ import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
 import Carousel from "../components/Carousel.js";
+import CRLogo from '../components/CRLogo.js';
 
 // Creates the About page for the website.
 function About() {
@@ -22,32 +23,37 @@ function About() {
         position: 'relative',
         //backgroundColor: 'yellow'
       }}>
-        <Box> {/* Header contents */}
-          {/* crc logo*/}
-          <img src={logo} style={{
-            maxWidth: isMobile ? '70%' : '35%', // Keep logo relatively large on mobile
-            height: 'auto',
-            top: '50%',
-            left: '50%',
-            marginTop: isMobile ? '40%' : '18%',
-          }}
-          />
-
-          {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
-          <Typography
-            variant={isMobile ? "mobileH2" : "desktopH2"}
-            display="block"
-            mb={isMobile ? '20%' : '0%'}
+        <Box > {/* Header contents */}
+          {/* crc animated logo*/}
+          <Box
             sx={{
-              top: '50%',
-              left: '50%',
-              textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
-              transform: 'translate(0, 50%)'
-            }}>
-            We. Build. Robots.
-          </Typography>
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center', // horizontal center
+              alignItems: 'center',     // vertical center
+              width: '100%',
+              height: isMobile ? '60vh' : '90vh'
+            }}
+          >
+            <CRLogo />
+
+              {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
+            <Typography
+              variant={isMobile ? "mobileH2" : "desktopH2"}
+              mt={isMobile ? '-25%' : '-15%'} //negative margin to overlap with logo
+              sx={{
+                top: '50%',
+                left: '50%',
+                textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
+                transform: 'translate(0, 50%)'
+              }}>
+              We. Build. Robots.
+            </Typography>
+          </Box>
+          
+        
         </Box>
-        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: '20%', mb: '10%' }}>
+        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: {xs: '50px', m:'150px'}, mb: '10%' }}>
           <Typography variant={isMobile ? "mobileH2" : "desktopH2"} display="block" align="left">
             Who are we?
           </Typography>

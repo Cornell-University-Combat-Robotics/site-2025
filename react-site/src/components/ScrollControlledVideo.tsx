@@ -185,10 +185,25 @@ import nardo_0183 from "../assets/nardo-explode-frames/0183.png";
 import nardo_0184 from "../assets/nardo-explode-frames/0184.png";
 import nardo_0185 from "../assets/nardo-explode-frames/0185.png";
 
-
+/**
+ * React.FC means functional component: the function takes props and returns a React component
+ * @returns 
+ */
 const HeroAnimation: React.FC = () => {
   const html = document.documentElement;
+  /**
+   * useRef is a React hook that provides a container whose .current persists across renders.
+   * canvasRef holds the DOM <canvas> element once React mounts it.
+   * 
+   * use canvasRef.current whenever you want to:
+   * read canvas properties (width, height, style, position, etc.)
+   * pass the canvas to a drawing context
+   */
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  /**
+   * holds the 2D drawing context of the canvas: the object that actually lets you draw
+   */
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
 
   // Set this to the number of frames there are in the video
@@ -387,24 +402,37 @@ const HeroAnimation: React.FC = () => {
 
   // Set this to the path where the folder of the frames are
   const currentFrame = (index: number): string => nardoFrames[index];
+  //note: in tsx & jsx, array sizes are dynamic! null is the type annotation of the 0th index
+  const preloadedImages: (HTMLImageElement | null)[] = []
 
   const preloadImages = (): void => {
     for (let i = 1; i < frameCount; i++) {
       const img = new Image();
       img.src = currentFrame(i);
+      preloadedImages[i] = img;
     }
   };
+
+
 
   const img = new Image();
   img.src = currentFrame(1);
 
+   /**
+   * only attaches the scroll listener when the component first appears, and removes it when the component disappears.
+   */
   useEffect(() => {
+    preloadImages(); //putting it here rather than outside useEffect ensures that you don't waste time re-preloading
+
+    /** get the canvas DOM element from canvasRef */
     const canvas = canvasRef.current;
     if (!canvas) return;
+    /** request its 2D context and store it in contextRef */
     const context = canvas.getContext("2d");
     if (!context) return;
     contextRef.current = context;
 
+    /** When the img finishes loading, we set the canvas size to the image pixel size and draw the image at (0,0). */
     img.onload = function () {
       canvas.width = img.width;
       canvas.height = img.height;
@@ -412,14 +440,15 @@ const HeroAnimation: React.FC = () => {
     };
 
     const updateImage = (index: number): void => {
-      img.src = currentFrame(index);
-      img.onload = () => {
-        if (contextRef.current && canvas) {
-          canvas.width = img.width;
-          canvas.height = img.height;
-          contextRef.current.drawImage(img, 0, 0);
-        }
-      };
+      const img = preloadedImages[index];
+      if (!img) return;
+
+      // image is fully loaded from preloadedImages, can draw immediately
+      if (contextRef.current && canvas) {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        contextRef.current.drawImage(img, 0, 0);
+      }
     };
 
     // this function controls how far the video has played/which frame you are on
@@ -428,26 +457,33 @@ const HeroAnimation: React.FC = () => {
     // maxScrollTop is how much of the screen you want to have scrolled past before 
     // the video starts scrolling
     const handleScroll = (): void => {
-      const scrollTop = html.scrollTop;
+      const scrollTop = html.scrollTop; //# of pixels user has scrolled from top of screen
       const maxScrollTop = window.innerHeight * 0.8;
       const scrollFraction = scrollTop / maxScrollTop;
       const frameIndex = Math.min(
-        frameCount - 1,
+        frameCount - 1, //prevents index from going past frame count
         Math.ceil(scrollFraction * frameCount)
       );
 
+      /**
+       * “Run this function right before the next repaint.”
+       * Ensures that updates happen synchronously with the browser’s refresh cycle (usually 60fps).
+       * Without it, updateImage(frameIndex + 1) would run immediately on every scroll event.
+       * Example: If the user scrolls 50px, the browser may fire multiple scroll events in one frame → but only the last one will get executed at paint time.
+       */
       requestAnimationFrame(() => updateImage(frameIndex + 1));
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    preloadImages();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  /**
+   * HeroAnimation component renders a <canvas> element and attaches canvasRef to it so the code can access the DOM node.
+   */
   return <canvas ref={canvasRef} id="robot-animation" />;
 };
 
