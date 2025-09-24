@@ -20,10 +20,9 @@ function About() {
       console.log("ergrege", width);
       if (width < 800) setMtWAW("0vh")
       else if (width < 900) setMtWAW("10vh")
-      else if (width < 1000) setMtWAW("0vh")
       else if (width < 1200) setMtWAW("0vh")
-      else if (width < 1500) setMtWAW("5vh")
-      else setMtWAW("10vh")
+      else if (width < 1300) setMtWAW("7%")
+      else setMtWAW("10%")
     };
 
     handleMargin();
