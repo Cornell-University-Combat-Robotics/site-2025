@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { MobileContext } from '../App.jsx';
 import { Box, Stack, Typography } from "@mui/material";
 import logo from "../assets/crc-logo-cropped.png";
@@ -6,10 +6,32 @@ import background from "../assets/background-pictures/crcbackground.png";
 import team_photo from "../assets/background-pictures/team-photo-hearts.png";
 import Carousel from "../components/Carousel.js";
 import CRLogo from '../components/CRLogo.js';
+import LogoAnimation from '../components/CRLogo.js';
 
 // Creates the About page for the website.
 function About() {
   const isMobile = useContext(MobileContext);
+  //margin top for "Who are we?"
+  const [mtWAW, setMtWAW] = useState("0%");
+
+  useEffect(() => {
+    const handleMargin = () => {
+      const width = window.innerWidth;
+      console.log("ergrege", width);
+      if (width < 800) setMtWAW("0vh")
+      else if (width < 900) setMtWAW("10vh")
+      else if (width < 1000) setMtWAW("0vh")
+      else if (width < 1200) setMtWAW("0vh")
+      else if (width < 1500) setMtWAW("5vh")
+      else setMtWAW("10vh")
+    };
+
+    handleMargin();
+
+    window.addEventListener('resize', handleMargin);
+
+    return () => window.removeEventListener('resize', handleMargin);
+  }, [])
 
   return (
     <Box>
@@ -32,15 +54,15 @@ function About() {
               justifyContent: 'center', // horizontal center
               alignItems: 'center',     // vertical center
               width: '100%',
-              height: isMobile ? '60vh' : '90vh'
+              height: isMobile ? '50vh' : '90vh'
             }}
           >
-            <CRLogo />
+            <LogoAnimation />
 
               {/* we build robots font, shifted up to be below the logo. the percentages are hard coded */}
             <Typography
               variant={isMobile ? "mobileH2" : "desktopH2"}
-              mt={isMobile ? '-25%' : '-15%'} //negative margin to overlap with logo
+              mt={isMobile ? '-20%' : '-15%'} //negative margin to overlap with logo
               sx={{
                 top: '50%',
                 left: '50%',
@@ -53,7 +75,8 @@ function About() {
           
         
         </Box>
-        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: {xs: '50px', m:'150px'}, mb: '10%' }}>
+
+        <Box sx={{ mx: isMobile ? '8%' : '15%', mt: mtWAW, mb: '10%' }}>
           <Typography variant={isMobile ? "mobileH2" : "desktopH2"} display="block" align="left">
             Who are we?
           </Typography>

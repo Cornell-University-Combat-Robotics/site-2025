@@ -70,6 +70,7 @@ Implementation process:
     - html element, canvas, 2D rendering context for canvas
 */
 
+
 //note: read ScrollControlledVideo.tsx for documentation
 const LogoAnimation: React.FC = () => {
     const isMobile = useContext(MobileContext);
@@ -212,7 +213,7 @@ const LogoAnimation: React.FC = () => {
 
     }, []) //no dependencies, only renders once
 
-    return <canvas ref={canvasRef} id="logo-animation" style={{ width: isMobile ? "150vw": "80vw" }}/>;
+    return <canvas ref={canvasRef} id="logo-animation" style={{width: "100vw"}}/>;
 };
 
 export default LogoAnimation;
