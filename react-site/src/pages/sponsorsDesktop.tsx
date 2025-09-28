@@ -258,6 +258,22 @@ export default function Sponsors() {
                     sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
                   />
                 </Box>
+                <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+                  <Box
+                    component="img"
+                    src={"/sponsors/polaris_3.png"}
+                    alt="Polaris Logo"
+                    sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
+                  />
+                </Box>
+                <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+                  <Box
+                    component="img"
+                    src={"/sponsors/arthur-funk.png"}
+                    alt="Arthur & Funk Logo"
+                    sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
+                  />
+                </Box>
               </Box>
             </Box>
 
@@ -296,6 +312,24 @@ export default function Sponsors() {
                     component="img"
                     src={"/sponsors/poppi.png"}
                     alt="Poppi Logo"
+                    sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
+                  />
+                  {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+                </Box>
+                <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+                  <Box
+                    component="img"
+                    src={"/sponsors/empire-plastics.png"}
+                    alt="Empire Plastics Logo"
+                    sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
+                  />
+                  {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+                </Box>
+                <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+                  <Box
+                    component="img"
+                    src={"/sponsors/paragon.png"}
+                    alt="Paragon Logo"
                     sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
                   />
                   {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
