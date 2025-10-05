@@ -370,8 +370,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/jenny-wu-5a7318266/",
     stats: [
-      ["Red", "Green", "Blue"],
-      [0, 0, 100]
+      ["Soup Enjoyer", "Solder Fumes", "Hair Roller"],
+      [90, 75, 100]
     ]
   },
   riddhiLamba: {
