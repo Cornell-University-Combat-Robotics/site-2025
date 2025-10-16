@@ -1,16 +1,18 @@
-# CRC Site v2
+# Possible Development Issues
 
-This is the new and improved website for Combat Robotics @ Cornell ヽ(・∀・)ﾉ
+### The local Vite dev server isn't starting
 
-## Setup
+You might not have read site-2025/README.md&nbsp;&nbsp;(；￣Д￣).
 
-First, clone the repository locally. Do this by clicking the green `Code` button and copying the URL to your clipboard. Open Visual Studio Code, and at the `Welcome` page, click `Clone Git Repository`. Paste the URL, and it will prompt you to choose a destination. Choose your CRC folder or wherever you wish to save your CRC projects. You've cloned the repo!
+### Cannot find module '...' or its corresponding type declarations.ts
 
-## Local development
+You may run into this VSCode issue when importing certain files. Don't worry, you can ignore it!
 
-Open the `site-2025` project and **navigate into the /react-site sub-directory** in the terminal with `cd react-site`.
+### My code isn't automatically formatting
 
-**MANY PEOPLE MISTAKENLY DO NOT CD INTO REACT-SITE BEFORE TRYING TO LOAD THE SITE. REMEMBER THIS FOR THE FUTURE.**
+One benefit that ESLint offers is automatic formatting of your code. This is available upon manually saving the file by default, but to enable it upon copy-paste, do the following:
+`Open the VS Code settings (CMD/CTRL + ,) and find the editor.formatOnPaste. Check it.`
 
-Run `npm install` to install the necessary node packages into the project. To run the Vite local development server, use `npm run dev`. The site will load 
-at the localhost address, updating with changes in real time. Just paste the link into your browser to run it! Run `Ctrl+C` to stop the server.
+### I'm running into problems with npm
+
+Missing (not installed) dependencies may be introduced from others' pushes, causing issues when starting the local development server or pushing/pulling. Try running `npm install`.
