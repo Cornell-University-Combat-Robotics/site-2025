@@ -35,67 +35,67 @@ const theme = createTheme({
   typography: {
     mobileH1: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '15vw',
+      fontSize: '3rem',
       fontWeight: 'normal',
     },
     mobileH2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '8vw',
+      fontSize: '2rem',
       fontWeight: 'normal',
     },
     mobileH3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '5.5vw',
+      fontSize: '1.25rem',
       fontWeight: 'normal',
     },
     desktopH1: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '8vw',
+      fontSize: '3rem',
       fontWeight: 'normal',
     },
     desktopH2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '4vw',
+      fontSize: '2rem',
       fontWeight: 'normal',
     },
     desktopH3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '2.6vw',
+      fontSize: '1.25rem',
       fontWeight: 'normal',
     },
     mobileBody: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '3.5vw',
+      fontSize: '1rem',
       fontWeight: 'normal',
     },
     mobileBody2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '3vw',
+      fontSize: '0.75rem',
       fontWeight: 'normal',
     },
     mobileBody3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '2.0vw',
+      fontSize: '0.5rem',
       fontWeight: 'normal',
     },
     desktopBody: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '2.0vw',
+      fontSize: '1rem',
       fontWeight: 'normal',
     },
     desktopBody2: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '1.5vw',
+      fontSize: '0.75rem',
       fontWeight: 'normal',
     },
     desktopBody3: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '1.25vw',
+      fontSize: '0.5rem',
       fontWeight: 'normal',
     },
     desktopBody4: {
       fontFamily: 'Josefin Sans, sans-serif',
-      fontSize: '0.85vw',
+      fontSize: '0.25rem',
       fontWeight: 'normal',
     }
   },

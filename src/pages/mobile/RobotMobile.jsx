@@ -40,7 +40,7 @@ export default function RobotMobile() {
                 </Typography>
 
                 <Typography variant="mobileH2" sx={{ marginBottom: '5%' }}>
-                    RECENT ROBOTS
+                    Recent Robots
                 </Typography>
                 {/* 
                 <Typography variant="mobileBody" textAlign='left' sx={{ marginBottom: '15%' }}>
@@ -90,7 +90,7 @@ export default function RobotMobile() {
 
                 {/* Retired robots section */}
                 <Typography variant="mobileH2" sx={{ marginTop: '20%', marginBottom: '5%' }}>
-                    RETIRED ROBOTS
+                    Retired Robots
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
                     <Typography variant="mobileBody" textAlign="left" width='100%'>
@@ -101,7 +101,7 @@ export default function RobotMobile() {
 
                 {/* Mini robots section */}
                 <Typography variant="mobileH2" sx={{ marginTop: '10%', marginBottom: '5%' }}>
-                    MINI ROBOTS
+                    Mini Robots
                 </Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
                     <Typography variant="mobileBody" textAlign="left" width='100%'>

@@ -244,7 +244,7 @@ export default function Apply() {
             mb: '5%'
             // add margins when text size smaller
           }}>
-          RECRUITMENT TIMELINE
+          Recruitment Timeline
         </Typography>
 
 
@@ -258,7 +258,7 @@ export default function Apply() {
                 xs: '5vh',
                 lg: '50%'
               },
-              mx:'-20%',
+              mx: '-20%',
             }}
           >
             {/* Desktop SVG timeline (unchanged) */}
@@ -277,11 +277,11 @@ export default function Apply() {
                   <g key={index}>
                     <circle cx={xPos} cy="20%" r={15} fill="#820002" />
                     <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
-                      fontSize={theme.typography.desktopBody3.fontSize}
+                      fontSize={theme.typography.desktopBody.fontSize}
                       y={"70%"}
                       textAnchor="middle"
                     >
-                      <tspan x={xPos} y={80} fontSize={theme.typography.desktopBody2.fontSize}>{name}</tspan>
+                      <tspan x={xPos} y={80} fontSize={theme.typography.desktopH3.fontSize}>{name}</tspan>
                       <tspan x={xPos} y={105}>{date}</tspan>
                       <tspan x={xPos} y={130}>{location}</tspan>
                     </text>
@@ -305,18 +305,18 @@ export default function Apply() {
               //width={`${event.length * 220 + 640}px`}
               height={180}
               style={{ display: 'block' }}
-                viewBox={`0 0 ${(() => {
-                  const leftPad = 60;
-                  const rightPad = 60;
-                  const base = 160; // base width per event
-                  return event.length * base + leftPad + rightPad;
-                })()} 180`}
-                width={`${(() => {
-                  const leftPad = 60;
-                  const rightPad = 60;
-                  const base = 200;
-                  return event.length * base + leftPad + rightPad;
-                })()}px`}
+              viewBox={`0 0 ${(() => {
+                const leftPad = 60;
+                const rightPad = 60;
+                const base = 160; // base width per event
+                return event.length * base + leftPad + rightPad;
+              })()} 180`}
+              width={`${(() => {
+                const leftPad = 60;
+                const rightPad = 60;
+                const base = 200;
+                return event.length * base + leftPad + rightPad;
+              })()}px`}
               preserveAspectRatio="xMinYMid"
             >
               {(() => {
@@ -380,16 +380,16 @@ export default function Apply() {
             gap: '4% 4%',
             height: '100%',
           }}>
-            <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} isMobile={isMobile} />
-            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} isMobile={isMobile} />
-            <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} isMobile={isMobile} />
-            <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} isMobile={isMobile} />
+            <ApplicationSteplist name="Info Sessions" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} isMobile={isMobile} />
+            <ApplicationSteplist name="Applications Due" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} isMobile={isMobile} />
+            <ApplicationSteplist name="Group Interviews" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} isMobile={isMobile} />
+            <ApplicationSteplist name="Individual Interviews" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} isMobile={isMobile} />
           </Box>
         </Box>
 
 
         <Typography variant={isMobile ? "mobileH2" : "desktopH2"} mb={10} id="newbie-ex">
-          NEW MEMBER EXPERIENCE
+          New Member Experience
         </Typography>
 
 
@@ -495,11 +495,11 @@ export default function Apply() {
 
           {!isMobile &&
             <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={7} mb={20} width="100%">
-              <MemberExperienceComponentDesktop bgcolor={"#242121"} img={photo1} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, new members into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams!"} />
-              <MemberExperienceComponentDesktop bgcolor={"#292626"} img={photo2} title={"FIRST GBODY MEETING"} subtitle={"Early November"} desc={"New members experience their first GBody meeting and meet the full team! They will catch up on all the new developments of each subteam in fun and lively weekly meetings."} />
-              <MemberExperienceComponentDesktop bgcolor={"#542D2D"} img={photo3} title={"NEWBIE DESIGN REVIEW"} subtitle={"Late November"} desc={"Newbies launch their 3lb projects, with CRC trainers guiding them through the ideation process and explaining all the steps to creating competitive combat robotcs and effective marketing."} />
-              <MemberExperienceComponentDesktop bgcolor={"#762627"} img={photo4} title={"FINAL DESIGN REVIEW"} subtitle={"Early December"} desc={"After finalizing 3lb projects, new members will create a presentation to showcase to the rest of the team and show off all their hard work creating a 3lb robot from scratch!"} />
-              <MemberExperienceComponentDesktop bgcolor={"#741112"} img={photo5} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"Newbies are officially welcomed as full-fledged members of their respective subteams."} />
+              <MemberExperienceComponentDesktop bgcolor={"#242121"} img={photo1} title={"Newbie Onboarding"} subtitle={"Early November"} desc={"During onboarding, new members into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams!"} />
+              <MemberExperienceComponentDesktop bgcolor={"#292626"} img={photo2} title={"First Gbody Meeting"} subtitle={"Early November"} desc={"New members experience their first GBody meeting and meet the full team! They will catch up on all the new developments of each subteam in fun and lively weekly meetings."} />
+              <MemberExperienceComponentDesktop bgcolor={"#542D2D"} img={photo3} title={"Newbie Design Review"} subtitle={"Late November"} desc={"Newbies launch their 3lb projects, with CRC trainers guiding them through the ideation process and explaining all the steps to creating competitive combat robotcs and effective marketing."} />
+              <MemberExperienceComponentDesktop bgcolor={"#762627"} img={photo4} title={"Final Design Review"} subtitle={"Early December"} desc={"After finalizing 3lb projects, new members will create a presentation to showcase to the rest of the team and show off all their hard work creating a 3lb robot from scratch!"} />
+              <MemberExperienceComponentDesktop bgcolor={"#741112"} img={photo5} title={"Newbie Graduation"} subtitle={"January"} desc={"Newbies are officially welcomed as full-fledged members of their respective subteams."} />
             </Stack>
           }
 
@@ -534,7 +534,7 @@ export default function Apply() {
             mb: 15
           }}
         >
-          <Typography variant="desktopBody" fontSize={20} color="white">
+          <Typography variant="desktopBody" fontSize={20} color="white" textTransform="none">
             {"Click to see more!"}
           </Typography>
         </Button>
@@ -600,18 +600,18 @@ function MemberExperienceComponentDesktop({ bgcolor, img, title, subtitle, desc 
         py='4%'
         px="4%"
       >
-        <Typography variant="desktopH3" display="block" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
+        <Typography variant="desktopH2" display="block" sx={{ textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)' }}>
           {title}
         </Typography>
 
-        <Typography variant="desktopBody" display="block" sx={{
+        <Typography variant="desktopH3" display="block" sx={{
           textShadow: '2px 6px 4px rgba(0, 0, 0, 0.5)', fontStyle: 'italic',
           mb: { xs: 2, lg: 5 }
         }}>
           {subtitle}
         </Typography>
 
-        <Typography variant="desktopBody2" >
+        <Typography variant="desktopBody" >
           {desc}
         </Typography>
       </Box>
@@ -626,10 +626,10 @@ function ApplicationSteplist({ name, desc, img, isMobile }) {
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        my: '20px',
+        backgroundSize: 'contain',
         backgroundImage: img,
-        backgroundSize: "100%",
-        // filter: 'blur(0.4px)', blur is here to make text more legible on top of red, but it also blurs the text rn
+        // backgroundSize: "100%",
         backgroundPosition: "center",
         backgroundRepeat: 'no-repeat'
       }}

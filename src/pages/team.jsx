@@ -49,12 +49,11 @@ const TeamButton = ({ children, hoverColor, whiteImg, sx, image, to }) => {
         textAlign: "center",
         fontFamily: "Josefin Sans",
 
-
         fontSize: {
           xs: theme.typography.mobileBody.fontSize,
           sm: theme.typography.mobileBody.fontSize,
-          md: theme.typography.desktopBody.fontSize,
-          lg: theme.typography.desktopBody.fontSize,
+          md: theme.typography.desktopH3.fontSize,
+          lg: theme.typography.desktopH3.fontSize,
         },
 
         height: {
@@ -139,8 +138,8 @@ export default function Team() {
             fontSize: {
               xs: theme.typography.mobileBody.fontSize,
               sm: theme.typography.mobileBody.fontSize,
-              md: theme.typography.desktopBody.fontSize,
-              lg: theme.typography.desktopBody.fontSize,
+              md: theme.typography.desktopH3.fontSize,
+              lg: theme.typography.desktopH3.fontSize,
             },
             fontFamily: theme.typography.mobileBody.fontFamily, //idk why need this, but set to mobileBody cuz all font families same anyways
           }}>

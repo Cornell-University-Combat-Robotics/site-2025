@@ -34,7 +34,7 @@ export default function RobotDesktop() {
                 ROBOTS
             </Typography>
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
-                RECENT ROBOTS
+                Recent Robots
             </Typography>
             {/* <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
                 <Typography variant="desktopBody">
@@ -82,7 +82,7 @@ export default function RobotDesktop() {
                 </Stack>
             </Stack>
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
-                RETIRED ROBOTS
+                Retired Robots
             </Typography>
             <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
                 <Typography variant='desktopBody'>
@@ -93,7 +93,7 @@ export default function RobotDesktop() {
 
             {/* minibots */}
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
-                MINI ROBOTS
+                Mini Robots
             </Typography>
             <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
                 <Typography variant="desktopBody">
@@ -107,7 +107,7 @@ export default function RobotDesktop() {
 
             {/* 3lb */}
             <Typography variant="desktopH2" sx={{ mt: 15 }}>
-                3 LB ROBOTS
+                3lb Robots
             </Typography>
             <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }} >
                 <Typography variant='desktopBody'>

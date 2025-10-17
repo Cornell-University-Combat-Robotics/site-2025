@@ -10,7 +10,7 @@ export interface FAQSection {
 
 function FAQ(props: FAQSection) {
   const isMobile = useContext(MobileContext);
-  
+
   return (
     <Box
       justifyContent="center"
@@ -36,7 +36,7 @@ function FAQ(props: FAQSection) {
           {/* Accordion Items */}
           <>
             {props.qn.map((question, index) => (
-              <QnAndDescription key={index} qn={question} ans={props.ans[index]}/>
+              <QnAndDescription key={index} qn={question} ans={props.ans[index]} />
             ))}
           </>
         </Box>
@@ -44,12 +44,12 @@ function FAQ(props: FAQSection) {
         {/* Footer */}
         <Typography
           align="center"
-          variant={isMobile ? 'mobileBody' : 'desktopBody2'}
+          variant={isMobile ? 'mobileBody' : 'desktopBody'}
           display={'block'}
           sx={{ mt: 4 }}
         >
           If you have any further questions, please email us at{' '}
-          <a 
+          <a
             href="mailto:combatrobotics@cornell.edu"
             style={{ color: 'white', textDecoration: 'underline' }}
           >
@@ -62,7 +62,7 @@ function FAQ(props: FAQSection) {
 }
 
 
-function QnAndDescription({qn, ans}) {
+function QnAndDescription({ qn, ans }) {
   const isMobile = useContext(MobileContext);
 
   return (
@@ -76,12 +76,12 @@ function QnAndDescription({qn, ans}) {
         }}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
-          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody2'}>
+          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody'}>
             {qn}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody2'}>
+          <Typography variant={isMobile ? 'mobileBody' : 'desktopBody'}>
             {ans}
           </Typography>
         </AccordionDetails>
@@ -91,7 +91,7 @@ function QnAndDescription({qn, ans}) {
   );
 }
 
-export function LinkToPage ({ id, text }) {
+export function LinkToPage({ id, text }) {
 
   const [isHover, setHover] = useState(false);
 
@@ -100,9 +100,9 @@ export function LinkToPage ({ id, text }) {
     <a href={id}
       target="_blank" // Opens in a new tab
       rel="noopener noreferrer" // Security best practice
-      style={{ 
-        color: isHover ? "red" : "white", 
-        textDecoration: "underline" 
+      style={{
+        color: isHover ? "red" : "white",
+        textDecoration: "underline"
       }}
 
       onMouseEnter={() => setHover(true)}

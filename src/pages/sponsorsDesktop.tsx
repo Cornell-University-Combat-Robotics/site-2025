@@ -65,8 +65,7 @@ export default function Sponsors() {
           sx={{
             textAlign: 'center',
             transform: 'translate(0,15%)',
-            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // Add drop shadow
-            fontSize: 'clamp(2rem, 10vw, 6rem)',
+            textShadow: '4px 4px 8px rgba(0, 0, 0, 0.7)', // Add drop shadow
             maxWidth: '90%'
           }}>
           SUPPORT THE <br></br> TEAM

@@ -37,7 +37,7 @@ export default function NavBarButton(props: NavBarButtonProps) {
           target="_blank" //Opens in a new tab
           rel="noopener noreferrer" //Prevents security vulnerabilities when opening external links, apparently lol
           style={{ color: "white" }}>
-          <Typography variant="desktopBody2" sx={{ margin: 0 }}>{props.text}</Typography>
+          <Typography variant="desktopBody" sx={{ margin: 0 }}>{props.text}</Typography>
         </Link>
       ) : (
         <Link
@@ -45,7 +45,7 @@ export default function NavBarButton(props: NavBarButtonProps) {
           to={"/" + (props.text.toLowerCase() == "about" ? "" : props.text.toLowerCase())}
           style={{ color: "inherit" }}
         >
-          <Typography variant="desktopBody2" sx={{ margin: 0 }}>{props.text}</Typography>
+          <Typography variant="desktopBody" sx={{ margin: 0 }}>{props.text}</Typography>
         </Link>
       )}
     </Button>

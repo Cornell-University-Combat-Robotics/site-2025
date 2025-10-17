@@ -16,7 +16,7 @@ const Footer = () => {
         alignItems: 'center',
         width: "100%",
         bottom: "0px",
-        height: "2.5%",
+        height: "100px",
         minHeight: "50px",
         gap: '4%',
         backgroundColor: "#b11c1c",

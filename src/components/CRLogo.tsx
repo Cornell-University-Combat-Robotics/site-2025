@@ -135,11 +135,11 @@ const LogoAnimation: React.FC = () => {
     ];
 
 
-    const currentFrame = (index : number) : string => logoFrames[index];
+    const currentFrame = (index: number): string => logoFrames[index];
     const preloadedImages: (HTMLImageElement | null)[] = [];
 
-    const preloadImages = () : void => {
-        for(let i=0; i<frameCount; i++){
+    const preloadImages = (): void => {
+        for (let i = 0; i < frameCount; i++) {
             const img = new Image();
             img.src = currentFrame(i);
             preloadedImages[i] = img;
@@ -150,12 +150,12 @@ const LogoAnimation: React.FC = () => {
     const tempImg = new Image();
     tempImg.src = currentFrame(0); //arbitrary frame
 
-         /**
-         * Initial time when animation starts
-         * 
-         * useRef: Persists for the lifetime of the react component, allows us to store mutable data without causing re-renders.
-         * why not useState: updating state triggers a re-render
-         */
+    /**
+    * Initial time when animation starts
+    * 
+    * useRef: Persists for the lifetime of the react component, allows us to store mutable data without causing re-renders.
+    * why not useState: updating state triggers a re-render
+    */
     const startTime = useRef<number | null>(null);
 
     /**
@@ -166,26 +166,26 @@ const LogoAnimation: React.FC = () => {
         preloadImages();
 
         const canvas = canvasRef.current;
-        if(!canvas) return;
+        if (!canvas) return;
 
         const context = canvas.getContext("2d");
-        if(!context) return;
+        if (!context) return;
         contextRef.current = context;
 
         //setting canvas size using temporary image
         //draws the very first frame before the user scrolls
-        tempImg.onload = function(){
+        tempImg.onload = function () {
             canvas.width = tempImg.width;
             canvas.height = tempImg.height;
             context.drawImage(tempImg, 0, 0);
         }
 
         /** updates current image we want to render based on fixed time duration */
-        const updateImage = (index : number) : void => {
+        const updateImage = (index: number): void => {
             const curImg = preloadedImages[index];
-            if(!curImg) return;
+            if (!curImg) return;
 
-            if(contextRef.current && canvas){
+            if (contextRef.current && canvas) {
                 canvas.width = curImg.width;
                 canvas.height = curImg.height;
                 contextRef.current.drawImage(curImg, 0, 0);
@@ -196,7 +196,7 @@ const LogoAnimation: React.FC = () => {
          * updates image based on time duration
          * @param timeframe the current time provided automatically by requestAnimationFrame
          */
-        const animateLogo = (timeframe : number) : void => {
+        const animateLogo = (timeframe: number): void => {
             if (!startTime.current) startTime.current = timeframe;
             const elapsed = (timeframe - startTime.current) / 1000; //convert ms to seconds
             const maxDuration = 2; //2 seconds to fully animate
@@ -204,16 +204,16 @@ const LogoAnimation: React.FC = () => {
 
             updateImage(curFrameIndex);
 
-            if(elapsed < maxDuration) requestAnimationFrame(animateLogo);
+            if (elapsed < maxDuration) requestAnimationFrame(animateLogo);
         }
         requestAnimationFrame(animateLogo);
-            console.log(canvas.width)
-            console.log(canvas.height)
+        console.log(canvas.width)
+        console.log(canvas.height)
 
 
     }, []) //no dependencies, only renders once
 
-    return <canvas ref={canvasRef} id="logo-animation" style={{width: "100vw"}}/>;
+    return <canvas ref={canvasRef} id="logo-animation" style={{ height: "90%" }} />;
 };
 
 export default LogoAnimation;
