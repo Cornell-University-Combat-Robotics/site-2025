@@ -115,7 +115,7 @@ export default function Member(props: MemberProps) {
                   {stats[0].map((desc, index) => ( //gets first row (descriptions)
                     <Box key={index} marginBottom={1} > {/*each individual stat*/}
                       <Typography
-                        variant={isMobile ? "mobileBody2" : "desktopBody4"}
+                        variant={isMobile ? "mobileBody" : "desktopBody2"}
                         sx={{
                           color: 'black',
                           wordWrap: 'break-word',

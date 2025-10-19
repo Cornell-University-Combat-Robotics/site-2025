@@ -484,16 +484,6 @@ const allMembers: Record<string, MemberProps> = {
       [100, 75, 90]
     ]
   },
-  lindaHu: {
-    imgSrc: lindaH,
-    name: "Linda Hu",
-    position: ["Marketing Member", "Former Marketing Lead"],
-    linkedin: "https://www.linkedin.com/in/linda-ly-hu/",
-    stats: [
-      ["Drawing", "Earrings", "Not Playing Genshin"],
-      [60, 80, 100]
-    ]
-  },
   meiLingWood: {
     imgSrc: meilingW,
     name: "Mei Ling Wood",
@@ -510,8 +500,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Marketing Member"],
     linkedin: "https://www.linkedin.com/in/nicholas-underwood-0b7733290/",
     stats: [
-      ["Sleep", "Workaholic", "Dairy Consumption"],
-      [30, 90, 0]
+      ["Excel Enjoyment", "Workaholic", "Music Taste"],
+      [100, 90, 31]
     ]
   },
   ruslanBlack: {
@@ -525,6 +515,16 @@ const allMembers: Record<string, MemberProps> = {
     ]
   },
   // ALUMNI
+  lindaHu: {
+    imgSrc: lindaH,
+    name: "Linda Hu",
+    position: ["Alum 2026", "Marketing Member", "Former Marketing Lead"],
+    linkedin: "https://www.linkedin.com/in/linda-ly-hu/",
+    stats: [
+      ["Drawing", "Earrings", "Not Playing Genshin"],
+      [60, 80, 100]
+    ]
+  },
   sardorRahmatulloev: {
     imgSrc: sardorR,
     name: "Sardor Rahmatulloev",
@@ -540,7 +540,7 @@ const allMembers: Record<string, MemberProps> = {
     name: "Sebastian Rivera",
     position: ["Alum 2025", "Autonomous Member", "Former Team Co-Lead"],
     linkedin: "https://www.linkedin.com/in/srivera2603/",
-    stats:[
+    stats: [
       ["Wiffleball", "Updating GCal", "Thinking about Ryan Gosling"],
       [80, 20, 100]
     ]
@@ -906,10 +906,10 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.crystalLi,
     allMembers.rachelPineda,
     allMembers.javohirAbdurazzakov,
-    allMembers.lindaHu,
     allMembers.meiLingWood,
   ],
   Alumni: [
+    allMembers.lindaHu,
     allMembers.sardorRahmatulloev,
     allMembers.sebastianRivera,
     allMembers.annaBoese,
