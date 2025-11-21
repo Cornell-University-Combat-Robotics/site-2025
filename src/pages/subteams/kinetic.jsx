@@ -21,7 +21,7 @@ export default function Kinetic() {
             subsystems={subsystems}
             otherInterest={[
                 <p>
-                    • Other efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
+                    • See our {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam for other efficient and destructive robots!
                 </p>,
                 <p>
                     • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit

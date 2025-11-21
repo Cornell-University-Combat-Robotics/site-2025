@@ -13,6 +13,7 @@ import { MobileContext } from '../App.jsx';
   completely, using the specific input passed in. This way, all the actual individual robot pages need to do is pass in the correct data to this reusable component.
 */
 export default function Indiv3lb({ FullImageRender }) {
+  // If URL is /robots/atlas, then robotId = "atlas"
   const { robotId } = useParams();
   const robotInfo = robotData[robotId || ""];
   const isMobile = useContext(MobileContext);
@@ -21,6 +22,8 @@ export default function Indiv3lb({ FullImageRender }) {
     return <div>Robot not found</div>;
   }
 
+  // useState is a React Hook that lets you add state (data that can change) to a component.
+  // When state updates, the component re-renders with the new value.
   const [currentIndex, setCurrentIndex] = useState(0);
 
   //controls when image is blown to full size of the screen (when gallery button clicked)
@@ -34,6 +37,7 @@ export default function Indiv3lb({ FullImageRender }) {
     () => setFullImage([false, false, true]),
   ];
 
+  // useEffect is a React Hook that runs side effects (code that interacts with things outside React) after render.
   useEffect(() => {
     //checks if fullImage state != [false, false, false]
     if (!fullImage.every(image => !image)) {

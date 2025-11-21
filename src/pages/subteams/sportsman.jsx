@@ -22,7 +22,7 @@ export default function Sportsman() {
             subsystems={subsystems}
             otherInterest={[
                 <p>
-                    • Other efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam may be a better fit
+                    • See our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam for other efficient and destructive robots!
                 </p>,
                 <p>
                     • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
