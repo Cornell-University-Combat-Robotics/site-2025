@@ -319,6 +319,12 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
+import florence_crochet from "../assets/3lb/florence-crochet/florence-crochet.jpg";
+import florence_crochet_1 from "../assets/3lb/florence-crochet/florence-crochet-1.jpg";
+import florence_crochet_2 from "../assets/3lb/florence-crochet/florence-crochet-2.jpg";
+import florence_crochet_3 from "../assets/3lb/florence-crochet/florence-crochet-3.jpg";
+import florence_crochet_4 from "../assets/3lb/florence-crochet/florence-crochet-4.jpg";
+
 
 
 export interface RobotData {
@@ -353,6 +359,41 @@ export interface RobotData {
 }
 
 export const robotData: { [key: string]: RobotData } = {
+
+  florence_crochet: {
+    is3lb: true,
+    name: "Crochet Florence",
+    makers: ["Crystal Li"],
+    description:
+      "--",
+    image: florence_crochet,
+    stats: {
+      vintage: "2023",
+      height: "3 inches",
+      weight: "0.25 lbs",
+      fights: "3",
+      wins: "3",
+      top_speed: "depends on how well you throw",
+      weapon_speed: "NA",
+      most_damaged_part: "everyone's trust after I broke all my promises",
+      favorite_movie: "-"
+    },
+    featured_fight:
+      "",
+    design:
+      "---",
+    trivia: [
+      "Allegedly, promises were made that it would be finished in two days… it took a week"
+    ],
+    fights: [
+    ],
+    gallery: [
+      florence_crochet_1,
+      florence_crochet_2,
+      florence_crochet_3,
+      florence_crochet_4,
+    ]
+  },
 
   donatello: {
     is3lb: false,
