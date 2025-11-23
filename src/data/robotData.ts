@@ -319,6 +319,9 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
+import drpuff from "../assets/3lb/drpuff/drpuff.png";
+import drpuff_1 from "../assets/3lb/drpuff/drpuff-1.png";
+import drpuff_2 from "../assets/3lb/drpuff/drpuff-2.png";
 
 
 export interface RobotData {
@@ -353,6 +356,38 @@ export interface RobotData {
 }
 
 export const robotData: { [key: string]: RobotData } = {
+  drpuff: {
+    is3lb: true,
+    name: "Dr. Puff",
+    makers: ["Ferris", "Gavin", "Lillian", "Teju"],
+    description:
+      "Meet Dr. Puff – the battlebot that EXPAND beyond limits. Dr. Puff is an omni-directional " + 
+      "full body spinner with a weapon that can extend outwards from the center during the game.",
+    image: drpuff,
+      stats: {
+        vintage: "2025",
+        height: "2.5 inches",
+        weight: "3 lbs",
+        fights: "101",
+        wins: "Every single time!",
+        top_speed: "Insanely fast",
+        weapon_speed: "Crazy fast",
+        most_damaged_part: "N/A",
+        favorite_movie: "The SpongeBob SquarePants Movie"
+      },
+      featured_fight: "",
+      design:
+        "Uses a rack and pinion gear system to expand the robot's shell and weapon mechanism outward. " + 
+        "By expanding, Dr. Puff maximizes rotational kinetic energy for maximum damage.",
+      trivia: [
+          "Dr. Puff has a PhD.",
+          "Dr. Puff is crazy fast!"
+        ],
+        fights: [],
+        gallery: [
+          drpuff, drpuff_1, drpuff_2
+        ]
+    },
 
   donatello: {
     is3lb: false,
@@ -2446,7 +2481,7 @@ export const robotData: { [key: string]: RobotData } = {
         by: "KO",
         video: "https://www.youtube.com/live/xQTbCkwBmD4?feature=share&t=27874",
         length: "98"
-      }
+      },
     ],
     gallery: [
       richard1, richard2, richard3, richard4, richard5, richard6, richard7,
