@@ -319,6 +319,8 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
+import rinny from "../assets/3lb/rinny/rinny.jpeg";
+
 
 
 export interface RobotData {
@@ -2454,6 +2456,53 @@ export const robotData: { [key: string]: RobotData } = {
       richard14, richard15, richard16, richard17, richard18, richard19,
       richard20, richard21, richard22, richard23, richard24, richard25,
       richard26
+    ]
+  },
+
+  rinny: {
+    is3lb: true,
+    name: "Rinny",
+    makers: [
+      "Suzy Zeng", "Anika Kumar", "Cynitha Wu", "Hardy ZHu"
+    ],
+    description:
+      "Rinny is a full spin robot",
+    image: rinny,
+    stats: {
+      vintage: "2025",
+      height: "3.25\" (13\" extended)",
+      weight: "3 lbs",
+      fights: "3",
+      wins: "1",
+      top_speed: "4 mph",
+      weapon_speed: "20 Nm",
+      most_damaged_part: "Flippers",
+      favorite_movie: "Free Willy"
+    },
+    featured_fight:
+      "https://www.youtube.com/embed/xQTbCkwBmD4?start=11531",
+    design:
+      "Rinny is pretty!",
+    trivia: [
+      "Rinny is a nick name for Ballerina Bombardira.",
+      "Her body is entirely aluminum.",
+      "Her favorate color is red.",
+      "There is a song created for her",
+      "Her concept is based on a venus flytrap.",
+      "Simply put, Rinny is pretty."
+    ],
+    fights: [
+      {
+        event: "Nov 23 2025",
+        opponent: "Flash-BANG",
+        result: "Win",
+        by: "KO",
+        video: "https://youtu.be/xQTbCkwBmD4?t=2612",
+        length: "170"
+      },
+    ],
+    gallery: [
+      rinny
     ]
   },
 };
