@@ -319,7 +319,7 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
-
+import good_boy from "../assets/3lb/good-boy/good-boy.jpg"
 
 export interface RobotData {
   is3lb: boolean;
@@ -2454,6 +2454,38 @@ export const robotData: { [key: string]: RobotData } = {
       richard14, richard15, richard16, richard17, richard18, richard19,
       richard20, richard21, richard22, richard23, richard24, richard25,
       richard26
+    ]
+  },
+  good_boy: {
+    is3lb: true,
+    name: "Good Boy",
+    makers: ["Chris", "Tae", "Amanda"],
+    description:
+      "A very good robot.",
+    image: good_boy,
+    stats: {
+      vintage: "2025",
+      height: "short",
+      weight: "3 lbs",
+      fights: "0",
+      wins: "0",
+      top_speed: "very fast",
+      weapon_speed: "non-existent",
+      most_damaged_part: "feelings",
+      favorite_movie: "that one about a dog"
+    },
+    featured_fight:
+      "",
+    design:
+      "A vertical full body spinner!",
+    trivia: [
+      ":D",
+      
+    ],
+    fights: [
+    ],
+    gallery: [
+      good_boy
     ]
   },
 };
