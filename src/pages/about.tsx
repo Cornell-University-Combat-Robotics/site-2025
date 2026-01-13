@@ -142,7 +142,23 @@ function About() {
 
       {/* Rest of page, separate from rest because background image is too small */}
       <Box sx={{ mx: isMobile ? '8%' : '15%', mt: isMobile ? '20%' : '0%', mb: isMobile ? '20%' : '10%' }}>
-        <img src={team_photo} style={{ maxWidth: isMobile ? '95%' : '70%', height: 'auto', margin: '0 auto' }} />
+        {/* "About Us." YouTube video embed */}
+        <div style={{ 
+          width: '100%', 
+          margin: '0 auto', 
+          aspectRatio: '16 / 9' 
+        }}>
+        <iframe
+          style={{ border: 'none' }} 
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/5D4foI4BLac" // Link to About Us YouTube video
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
+
         {/* What do we value title and paragraph */}
         <Typography variant={isMobile ? 'mobileH2' : "desktopH2"} display="block" align="left" mt={isMobile ? '20%' : '10%'}>
           What do we value?
