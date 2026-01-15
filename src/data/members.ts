@@ -860,7 +860,7 @@ const allMembers: Record<string, MemberProps> = {
   },
   suzyZheng: {
     imgSrc: suzyZ,
-    name: "Suzy Zheng",
+    name: "Suzy Zeng",
     position: ["Marketing Member"],
     linkedin: "https://www.linkedin.com/in/suzy-zeng-a7138a322/",
     stats: [
