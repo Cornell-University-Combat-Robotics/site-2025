@@ -386,8 +386,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Co-Lead"],
     linkedin: "https://www.linkedin.com/in/riddhi-lamba/",
     stats: [
-      ["Ducktails", "Time Management", "Working Computer"],
-      [90, 100, 0]
+      ["Ducktails", "Singing", "Working Computer"],
+      [100, 100, 0]
     ]
   },
   rohinPhukan: {
@@ -864,8 +864,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Marketing Member"],
     linkedin: "https://www.linkedin.com/in/suzy-zeng-a7138a322/",
     stats: [
-      ["1", "2", "3"],
-      [90, 30, 100]
+      ["sunlight exposure", "???", "^.^"],
+      [60, 30, 100]
     ]
   },
   amandaZhu: {
@@ -884,8 +884,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/anika-kumar295/",
     stats: [
-      ["1", "2", "3"],
-      [90, 30, 100]
+      ["airport rizz", "heated", "rivalry"],
+      [100, 100, 100]
     ]
   },
   ryanSiglag: {
@@ -907,7 +907,29 @@ const allMembers: Record<string, MemberProps> = {
       ["1", "2", "3"],
       [90, 30, 100]
     ]
-  }
+  },
+  hardyZhu: {
+    imgSrc: hardyZ,
+    name: "Hardy Zhu",
+    position: ["Infinity Member"],
+    linkedin:"https://www.linkedin.com/in/hardyzhu/",
+    stats: [
+      ["Food", "Long term memory", "Webtoon doomscrolling"],
+      [100,10,100]
+    ]
+  },
+  taeheeKim: {
+    imgSrc: taeheeK,
+    name: "Taehee Kim",
+    position: ["Infinity Member"],
+    linkedin: "https://www.linkedin.com/in/taehee-tae-kim-814849325/",
+    stats: [
+      ["Sleepiness", "Originality", "ADHD"],
+      [100, 0, 51]
+    ]
+  },
+
+
 }
 
 const teamMembers: Record<string, MemberProps[]> = {
