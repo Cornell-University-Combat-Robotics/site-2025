@@ -13,6 +13,7 @@ import Marketing from './pages/subteams/marketing';
 import Kinetic from './pages/subteams/kinetic';
 import Autonomous from './pages/subteams/autonomous';
 import Sportsman from './pages/subteams/sportsman';
+import Infinity from './pages/subteams/infinity';
 import Robots from './pages/robots';
 import Sponsors from './pages/sponsors';
 import Game from './pages/game';
@@ -126,6 +127,7 @@ function App() {
               <Route path="/team/autonomous" element={<><Autonomous /></>} />
               <Route path="/team/kinetic" element={<><Kinetic /></>} />
               <Route path="/team/sportsman" element={<><Sportsman /></>} />
+              <Route path="/team/infinity" element={<><Infinity /></>} />
               <Route path="/team/leads" element={<><Leads /></>} />
               <Route path="/team/alumni" element={<><Alumni /></>} />
               <Route path="/robots" element={<><Robots /></>} />
