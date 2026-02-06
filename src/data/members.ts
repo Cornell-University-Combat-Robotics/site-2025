@@ -166,8 +166,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Test Box Lead", "MechE Trainer", "Kinetic Member"],
     linkedin: "https://www.linkedin.com/in/castiel-li-527964330/",
     stats: [
-      ["Solder Inhaled", "Glass Microspheres Inhaled", "Sleep Deprivation"],
-      [90, 80, 100]
+      ["rock", "paper", "scissors"],
+      [60, 30, 10]
     ]
   },
   gurjotGill: {
@@ -466,8 +466,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Marketing Member"],
     linkedin: "https://www.linkedin.com/in/caedy-lee-4022792b7/",
     stats: [
-      ["Hot Water Addiction", "Pizza Crust", "Arcane"],
-      [80, 5, 100]
+      ["ARCANE", "Hot Water Addiction", "Eating Bananas w/a Knife "],
+      [100, 60, 80]
     ]
   },
   crystalLi: {
@@ -884,8 +884,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/anika-kumar295/",
     stats: [
-      ["airport rizz", "heated", "rivalry"],
-      [100, 100, 100]
+      ["crc dreams", "heated", "rivalry"],
+      [50, 100, 100]
     ]
   },
   ryanSiglag: {
@@ -894,8 +894,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/ryan-siglag/",
     stats: [
-      ["1", "2", "3"],
-      [90, 30, 100]
+      ["Love of Yogurt", "Immune System", "Ball Knowledge"],
+      [94, 12, 88]
     ]
   },
   vinsonChen: {
@@ -904,8 +904,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/vinson-chen-aaba9324a/",
     stats: [
-      ["1", "2", "3"],
-      [90, 30, 100]
+      ["Snacking", "Scooter Riding", "Kid’s Animated Movies Enjoyment"],
+      [95, 10, 85]
     ]
   },
   hardyZhu: {
@@ -928,6 +928,58 @@ const allMembers: Record<string, MemberProps> = {
       [100, 0, 51]
     ]
   },
+  seanDjojonegoro: {
+    imgSrc: seanD,
+    name: "Sean Djojonegoro",
+    position: ["Infinity Member"],
+    linkedin: "https://www.linkedin.com/in/sean-djojonegoro-59596b23a/?originalSubdomain=id",
+    stats: [
+      ["Running", "Marvel Snap", "Last name pronunciation"],
+      [100, 75, 0]
+    ]
+  }, 
+  cynthiaWu: {
+    imgSrc: cynthiaW,
+    name: "Cynthia Wu",
+    position: ["Infinity Member"],
+    linkedin: "https://www.linkedin.com/in/cynnthiawu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    stats: [
+      ["Iron", "$", "Midnight Snack"],
+      [0,0,100]
+    ]
+  },
+  gavinLim: {
+    imgSrc: gavinL,
+    name: "Gavin Lim",
+    position: ["Infinity Member"],
+    linkedin: "https://www.linkedin.com/in/gavinnlimm/",
+    stats: [
+      ["Nonchalance", "Jeeps", "Hungry"],
+      [95, 67, 80]
+    ]
+  },
+  lilianYe: {
+    imgSrc:lilianY,
+    name: "Lilian Ye",
+    position: ["Infinity Member"],
+    linkedin: "https://www.linkedin.com/in/lillian-ye-6a027033b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    stats:[
+      ["Sleepiness", "Food", "Decisiveness"],
+      [100, 80, 20]
+    ]
+  },
+  georgiaGreen:{
+    imgSrc:GeorgiaG,
+    name: "Georgia Green",
+    position: ["Infinity Member"],
+    linkedin: "www.linkedin.com/in/georgia-green-309a87345",
+    stats: [
+      ["Odds of having", "Woodworking", "Pink Hair"],
+      [15, 90, 50]
+    ]
+  },
+
+  
 
 
 }
