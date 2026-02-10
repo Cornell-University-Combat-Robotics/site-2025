@@ -164,12 +164,12 @@ export default function Apply() {
         Members are expected to spend 9 hours per week on CRC-related projects, in line with the team being a 3-credit course. This time is broken down into a 1-hour General Body meeting, three 2-hour subteam meetings, and 2 hours of involvement in projects or extra work sessions. We schedule our meetings around the availability of our members so that everyone can attend every meeting!
       </p>,
       <p>
-        No! Upon joining the team, new members will have the opportunity to experience our {LinkToID({ id: "newbie-ex", text: "customized training program" })} to prepare them to join their respective subteams. We will teach you everything you need to know, no experience necessary!
+        No! Upon joining the team, new members will have the opportunity to experience our customized training program to prepare them to join their respective subteams. We will teach you everything you need to know, no experience necessary!
       </p>
       ,
       <p>
         Applicants are encouraged to apply to as many {LinkToPage
-          ({ id: "/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
+          ({ id: "/#/team", text: "subteams" })} as they are interested in joining. However, new members will only join one subteam upon being accepted to the team.
       </p>
     ]
 
@@ -205,26 +205,8 @@ export default function Apply() {
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
       <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
 
-
-        <RedBox
-          title="Our applications for Fall 2025 open August 25th!"
-          text="All applications are due October 16th, 11:59pm."
-          word="Apply"
-          link="https://forms.gle/EGwrHn7QumkidiXVA"
-          mT="64px"
-        />
-
-        {/* Alternative text for when applications are closed */}
-        {/* <Stack py={"64px"}>
-          <Typography
-            // Our applications...h3 writing
-            variant="desktopBody"
-            sx={{
-              mb: '2%'
-            }}>
-            Our applications for Fall 2025 are not yet open.
-          </Typography>
-
+        { /* Alternative text for when applications are closed */}
+        <Stack py={"64px"}>
           <Typography
             // Our applications...h3 writing
             variant="desktopBody"
@@ -233,8 +215,11 @@ export default function Apply() {
             }}>
             Check back in the fall for more application info!
           </Typography>
-        </Stack> */}
+        </Stack>
 
+
+        {/* Commented Out for Spring 2026 -- Recruitment Timeline w/ Events and Specific Dates */}
+        {/*
         <Typography
           // Recruitment Timeline
           variant={isMobile ? "mobileH2" : "desktopH2"}
@@ -248,7 +233,6 @@ export default function Apply() {
         </Typography>
 
 
-        {/*Geometric timeline*/}
         {!isMobile ? (
           <Box
             sx={{
@@ -261,34 +245,33 @@ export default function Apply() {
               mx:'-20%',
             }}
           >
-            {/* Desktop SVG timeline (unchanged) */}
-            <svg width="100%" height="100%">
-              <line
-                x1="10%"
-                x2="90%"
-                y1="20%"
-                y2="20%"
-                stroke={"#820002"}
-                strokeWidth="5"
-              />
-              {event.map(({ name, date, location }, index) => {
-                const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`];
-                return (
-                  <g key={index}>
-                    <circle cx={xPos} cy="20%" r={15} fill="#820002" />
-                    <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
-                      fontSize={theme.typography.desktopBody3.fontSize}
-                      y={"70%"}
-                      textAnchor="middle"
-                    >
-                      <tspan x={xPos} y={80} fontSize={theme.typography.desktopBody2.fontSize}>{name}</tspan>
-                      <tspan x={xPos} y={105}>{date}</tspan>
-                      <tspan x={xPos} y={130}>{location}</tspan>
-                    </text>
-                  </g>
-                );
-              })}
-            </svg>
+          <svg width="100%" height="100%">
+            <line
+              x1="10%"
+              x2="90%"
+              y1="20%"
+              y2="20%"
+              stroke={"#820002"}
+              strokeWidth="5"
+            />
+            {event.map(({ name, date, location }, index) => {
+              const xPos = [`${10 + (index * (80 / (event.length - 1)))}%`];
+              return (
+                <g key={index}>
+                  <circle cx={xPos} cy="20%" r={15} fill="#820002" />
+                  <text key={index} fill="white" fontFamily={theme.typography.mobileH1.fontFamily}
+                    fontSize={theme.typography.desktopBody3.fontSize}
+                    y={"70%"}
+                    textAnchor="middle"
+                  >
+                    <tspan x={xPos} y={80} fontSize={theme.typography.desktopBody2.fontSize}>{name}</tspan>
+                    <tspan x={xPos} y={105}>{date}</tspan>
+                    <tspan x={xPos} y={130}>{location}</tspan>
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
           </Box>
         ) : (
           // Mobile: larger, horizontally-scrollable timeline
@@ -368,9 +351,10 @@ export default function Apply() {
             </svg>
           </Box>
         )}
+        
+        */}
 
-
-        <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '10%'}
+        <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '0%'}
           sx={{
             display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
           }}>
@@ -381,7 +365,7 @@ export default function Apply() {
             height: '100%',
           }}>
             <ApplicationSteplist name="INFO SESSIONS" desc="We highly encourage you to meet our team at an info session! Learn more about us and ask your burning questions." img={`url(${join01})`} isMobile={isMobile} />
-            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due October 16th, 11:59pm" img={`url(${join02})`} isMobile={isMobile} />
+            <ApplicationSteplist name="APPLICATIONS DUE" desc="All applications (Freshman, Upperclassmen, and Transfer) are due in the fall." img={`url(${join02})`} isMobile={isMobile} />
             <ApplicationSteplist name="GROUP INTERVIEW" desc="Work with other applicants (and more importantly, have fun!) in our group interview" img={`url(${join03})`} isMobile={isMobile} />
             <ApplicationSteplist name="INDIVIDUAL INTERVIEW" desc="We want to see your interest and fit for your chosen subteam, but no prior experience is necessary." img={`url(${join04})`} isMobile={isMobile} />
           </Box>
@@ -668,12 +652,11 @@ function LinkToID({ id, text }) {
   const [isHover, setHover] = useState(false);
 
   return (
-    <a href={`#${id}`}
+    <a href={`#{id}`}
       style={{
         color: isHover ? "red" : "white",
         textDecoration: "underline"
       }}
-
 
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

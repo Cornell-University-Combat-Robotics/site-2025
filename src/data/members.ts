@@ -80,6 +80,12 @@ import shubhamM from "../assets/members/shubham-mathur.jpg"
 import robM from "../assets/members/rob-measner.jpg"
 import stefanB from "../assets/members/stefan-bell.jpg"
 import sebRiv from "../assets/members/sebastian-rivera.jpg"
+import tejuV from "../assets/members/teju-vijay.JPG"
+import suzyZ from "../assets/members/suzy-zheng.JPG"
+import amandaZ from "../assets/members/amanda-zhu.JPG"
+import anikaK from "../assets/members/anika-kumar.JPG"
+import ryanS from "../assets/members/ryan-siglag.JPG"
+import vinsonC from "../assets/members/vinson-chen.JPG";
 
 // All member structs are defined in allMembers and then called in their respective teams in teamMembers.
 // Individual member structs are defined by image source, name, position, LinkedIn, and stats.
@@ -842,6 +848,66 @@ const allMembers: Record<string, MemberProps> = {
     linkedin: "https://www.linkedin.com/in/stefan-bell-sb855/",
     stats: []
   },
+  tejuVijay: {
+    imgSrc: tejuV,
+    name: "Teju Vijay",
+    position: ["Marketing Member"],
+    linkedin: "www.linkedin.com/in/tejusvi-vijay-9960743a5",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  },
+  suzyZheng: {
+    imgSrc: suzyZ,
+    name: "Suzy Zeng",
+    position: ["Marketing Member"],
+    linkedin: "https://www.linkedin.com/in/suzy-zeng-a7138a322/",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  },
+  amandaZhu: {
+    imgSrc: amandaZ,
+    name: "Amanda Zhu",
+    position: ["Marketing Member"],
+    linkedin: "https://www.linkedin.com/in/amanda-zhu-3a0680279/",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  },
+  anikaKumar: {
+    imgSrc: anikaK,
+    name: "Anika Kumar",
+    position: ["Autonomous Member"],
+    linkedin: "https://www.linkedin.com/in/anika-kumar295/",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  },
+  ryanSiglag: {
+    imgSrc: ryanS,
+    name: "Ryan Siglag",
+    position: ["Autonomous Member"],
+    linkedin: "https://www.linkedin.com/in/ryan-siglag/",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  },
+  vinsonChen: {
+    imgSrc: vinsonC,
+    name: "Vinson Chen",
+    position: ["Autonomous Member"],
+    linkedin: "https://www.linkedin.com/in/vinson-chen-aaba9324a/",
+    stats: [
+      ["1", "2", "3"],
+      [90, 30, 100]
+    ]
+  }
 }
 
 const teamMembers: Record<string, MemberProps[]> = {
@@ -878,7 +944,6 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.kaiRodger,
     allMembers.tylerSprague,
     allMembers.ruiHanChu,
-    allMembers.calebSchlissel,
     allMembers.stellaTaglich,
     allMembers.jasonChoi,
   ],
@@ -896,6 +961,9 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.alyssaHsu,
     allMembers.camilleYap,
     allMembers.shaoStassen,
+    allMembers.anikaKumar,
+    allMembers.ryanSiglag,
+    allMembers.vinsonChen,
   ],
   Marketing: [
     allMembers.angelaZhu,
@@ -908,8 +976,12 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.javohirAbdurazzakov,
     allMembers.lindaHu,
     allMembers.meiLingWood,
+    allMembers.tejuVijay,
+    allMembers.suzyZheng,
+    allMembers.amandaZhu,
   ],
   Alumni: [
+    allMembers.calebSchlissel,
     allMembers.sardorRahmatulloev,
     allMembers.sebastianRivera,
     allMembers.annaBoese,
