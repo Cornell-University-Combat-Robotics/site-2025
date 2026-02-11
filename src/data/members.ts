@@ -86,7 +86,7 @@ import amandaZ from "../assets/members/amanda-zhu.JPG"
 import anikaK from "../assets/members/anika-kumar.JPG"
 import ryanS from "../assets/members/ryan-siglag.JPG"
 import vinsonC from "../assets/members/vinson-chen.JPG";
-import angelaC from "../assets/members/angela-chen.jpg";
+import angelaC from "../assets/members/angela-chen.png";
 import chrisG from "../assets/members/chris-gargan.jpg";
 import cynthiaW from "../assets/members/cynthia-wu.jpg";
 import ferrisK from "../assets/members/ferris-kassem-scott.jpg";
@@ -104,7 +104,7 @@ const allMembers: Record<string, MemberProps> = {
   calebSchlissel: {
     imgSrc: calebS,
     name: "Caleb Schlissel",
-    position: ["Sportsman Member", "Former Team Co-Lead (2024-25)", "Former Sportsman Co-Lead (2023-24)"],
+    position: ["Alum 2025", "Sportsman Member", "Former Team Co-Lead (2024-25)", "Former Sportsman Co-Lead (2023-24)"],
     linkedin: "https://www.linkedin.com/in/caleb-schlissel-0129/",
     stats: [
       ["Big Brain", "Social Life", "Pancreas"],
@@ -301,6 +301,16 @@ const allMembers: Record<string, MemberProps> = {
       [80, 70, 10]
     ]
   },
+  crystalLi: {
+    imgSrc: crystalL,
+    name: "Crystal Li",
+    position: ["Sportsman Member"],
+    linkedin: "https://www.linkedin.com/in/crystal-li-698431255/",
+    stats: [
+      ["Decisiveness", "Crocheting", "Injurability"],
+      [0, 60, 90]
+    ]
+  },
   aaronHarnish: {
     imgSrc: aaronH,
     name: "Aaron Harnish",
@@ -444,7 +454,7 @@ const allMembers: Record<string, MemberProps> = {
   rachelPineda: {
     imgSrc: rachelP,
     name: "Rachel Pineda",
-    position: ["Former Marketing Co-Lead (2024-25)"],
+    position: ["Alum 2027", "Former Marketing Co-Lead (2024-25)"],
     linkedin: "https://www.linkedin.com/in/rrachelpineda/",
     stats: [
       ["Crossword Enthusiasm", "LinkedIn", "Hiding the Stats Doc"],
@@ -454,7 +464,7 @@ const allMembers: Record<string, MemberProps> = {
   javohirAbdurazzakov: {
     imgSrc: javaA,
     name: "Javohir Abdurazzakov",
-    position: ["Former Marketing Co-Lead (2024-25)"],
+    position: ["Alum 2026", "Former Marketing Co-Lead (2024-25)"],
     linkedin: "https://www.linkedin.com/in/javohir1/",
     stats: [
       ["Soccer", "Germaphobe", "Weight Fluctuation"],
@@ -481,16 +491,6 @@ const allMembers: Record<string, MemberProps> = {
       [100, 60, 80]
     ]
   },
-  crystalLi: {
-    imgSrc: crystalL,
-    name: "Crystal Li",
-    position: ["Marketing Member"],
-    linkedin: "https://www.linkedin.com/in/crystal-li-698431255/",
-    stats: [
-      ["Decisiveness", "Crocheting", "Injurability"],
-      [0, 60, 90]
-    ]
-  },
   evanZhu: {
     imgSrc: evanZ,
     name: "Evan Zhu",
@@ -504,7 +504,7 @@ const allMembers: Record<string, MemberProps> = {
   lindaHu: {
     imgSrc: lindaH,
     name: "Linda Hu",
-    position: ["Marketing Member", "Former Marketing Lead"],
+    position: ["Alum 2026", "Marketing Member", "Former Marketing Lead"],
     linkedin: "https://www.linkedin.com/in/linda-ly-hu/",
     stats: [
       ["Drawing", "Earrings", "Not Playing Genshin"],
@@ -514,7 +514,7 @@ const allMembers: Record<string, MemberProps> = {
   meiLingWood: {
     imgSrc: meilingW,
     name: "Mei Ling Wood",
-    position: ["Marketing Member"],
+    position: ["Alum 2026", "Marketing Member"],
     linkedin: "https://www.linkedin.com/in/mei-ling-wood-bb669523b/",
     stats: [
       ["Food begging skills", "Decisiveness", "Water Drinking"],
@@ -863,10 +863,10 @@ const allMembers: Record<string, MemberProps> = {
     imgSrc: tejuV,
     name: "Teju Vijay",
     position: ["Marketing Member"],
-    linkedin: "www.linkedin.com/in/tejusvi-vijay-9960743a5",
+    linkedin: "https://www.linkedin.com/in/tejusvi-vijay-9960743a5",
     stats: [
       ["Disney movie trivia", "Board game enjoyment", "Pun appreciation"],
-      [100, 90, 75]
+      [100, 85, 75]
     ]
   },
   suzyZheng: {
@@ -883,10 +883,10 @@ const allMembers: Record<string, MemberProps> = {
     imgSrc: amandaZ,
     name: "Amanda Zhu",
     position: ["Marketing Member"],
-    linkedin: "https://www.linkedin.com/in/amanda-zhu-3a0680279/",
+    linkedin: "https://www.linkedin.com/in/amanda-zhu-cc",
     stats: [
-      ["1", "2", "3"],
-      [90, 30, 100]
+      ["sleeping", "snacking", "sidequesting"],
+      [10, 60, 100]
     ]
   },
   anikaKumar: {
@@ -985,7 +985,7 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Infinity Member"],
     linkedin: "https://www.linkedin.com/in/georgia-green-309a87345",
     stats: [
-      ["Odds of having", "Woodworking", "Pink Hair"],
+      ["Odds of having ID", "Woodworking", "Pink Hair"],
       [15, 90, 50]
     ]
   },
@@ -995,8 +995,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Infinity Member", "Social Co-Lead"],
     linkedin: "https://www.linkedin.com/in/angela-chen-0864aa283/",
     stats: [
-      ["1", "2", "3"],
-      [0,50,100]
+      ["CRFilm Dictator", "Owning a katana", "Fingering an electric guitar"],
+      [79,100,42]
     ]
   },
     chrisGargan: {
@@ -1005,8 +1005,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Infinity Member"],
     linkedin: "https://www.linkedin.com/in/christopher-gargan-a98a07384/",
     stats: [
-      ["1", "2", "3"],
-      [0,50,100]
+      ["Wheels", "Fire (fighting)", "Simulations"],
+      [100,50,0]
     ]
   },
     ferrisKassemScott: {
@@ -1043,7 +1043,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.graceLim,
     allMembers.riddhiLamba,
     allMembers.angelaZhu,
-    allMembers.ruslanBlack,
+    allMembers.ruslanBlack
   ],
   Kinetic: [
     allMembers.kevinSturm,
@@ -1053,8 +1053,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.gurjotGill,
     allMembers.kailaDanielson,
     allMembers.spencerHumes,
-    allMembers.zanderKnight,
-
+    allMembers.zanderKnight
   ],
   Sportsman: [
     allMembers.sarahBulkley,
@@ -1066,7 +1065,8 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.tylerSprague,
     allMembers.ruiHanChu,
     allMembers.stellaTaglich,
-    allMembers.jasonChoi,
+    allMembers.crystalLi,
+    allMembers.jasonChoi
   ],
   Autonomous: [
     allMembers.aaronHarnish,
@@ -1084,7 +1084,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.shaoStassen,
     allMembers.anikaKumar,
     allMembers.ryanSiglag,
-    allMembers.vinsonChen,
+    allMembers.vinsonChen
   ],
   Marketing: [
     allMembers.angelaZhu,
@@ -1092,14 +1092,9 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.caedyLee,
     allMembers.evanZhu,
     allMembers.nicholasUnderwood,
-    allMembers.crystalLi,
-    allMembers.rachelPineda,
-    allMembers.javohirAbdurazzakov,
-    allMembers.lindaHu,
-    allMembers.meiLingWood,
     allMembers.tejuVijay,
     allMembers.suzyZheng,
-    allMembers.amandaZhu,
+    allMembers.amandaZhu
   ],
   Infinity: [
     allMembers.angelaChen,
@@ -1115,6 +1110,10 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.taeheeKim
   ],
   Alumni: [
+    allMembers.javohirAbdurazzakov,
+    allMembers.lindaHu,
+    allMembers.meiLingWood,
+    allMembers.rachelPineda,
     allMembers.calebSchlissel,
     allMembers.sardorRahmatulloev,
     allMembers.sebastianRivera,
@@ -1152,7 +1151,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.rochelleBarsz,
     allMembers.shubhamMathur,
     allMembers.robMeasner,
-    allMembers.stefanBell,
+    allMembers.stefanBell
   ]
 };
 

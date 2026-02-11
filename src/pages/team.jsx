@@ -187,7 +187,6 @@ export default function Team() {
             <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }}>Sportsman</TeamButton>
             <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous" sx={{ width: "30vw" }}>Autonomous</TeamButton>
             <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing" sx={{ width: "30vw" }}>Marketing</TeamButton>
-            <TeamButton hoverColor="#8d2c8a" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "30vw" }}>Infinity</TeamButton>
           </Box>
         </Box>
         <Box display='flex' justifyContent="center" alignItems="center" mt="20px" mb="60px" >
@@ -199,9 +198,8 @@ export default function Team() {
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}>
-            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>
-              Team Leads
-            </TeamButton>
+            <TeamButton hoverColor="#820002" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton>
+            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "100%" }}>Alumni</TeamButton>
           </Box>
         </Box>
