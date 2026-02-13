@@ -43,6 +43,7 @@ import miloPhoto from "../assets/3lb/milo/milo.png";
 import shadowPhoto from "../assets/3lb/shadow-richard/shadow-richard.png";
 import stuffedMannyPhoto from "../assets/3lb/stuffed-manny/stuffed-manny.png";
 import swissCheesePhoto from "../assets/3lb/swiss-cheese/swiss-cheese.png";
+import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
 
 
 /* 
@@ -450,6 +451,15 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       image: wabbitPhoto,
       link: "/robots/wabbit",
       color: 1,
+      hasDescription: false,
+    },
+    {
+      name: "Rinny",
+      subteam: ["FA '25"],
+      desc:"",
+      image: rinnyPhoto,
+      link: "/robots/rinny",
+      color:0,
       hasDescription: false,
     }
   ],
