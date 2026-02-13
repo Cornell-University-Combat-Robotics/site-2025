@@ -319,6 +319,11 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
+import good_boy from "../assets/3lb/good-boy/good-boy.jpg";
+import goodboy_1 from "../assets/3lb/good-boy/goodboy1.PNG";
+import goodboy_2 from "../assets/3lb/good-boy/goodboy2.PNG";
+import goodboy_3 from "../assets/3lb/good-boy/goodboy3.GIF";
+import goodboy_4 from "../assets/3lb/good-boy/goodboy4.PNG";
 import rinny from "../assets/3lb/rinny/rinny.jpeg";
 import rinny_1 from "../assets/3lb/rinny/rinny-1.png";
 
@@ -2459,6 +2464,36 @@ export const robotData: { [key: string]: RobotData } = {
       richard26
     ]
   },
+  good_boy: {
+    is3lb: true,
+    name: "Good Boy",
+    makers: ["Chris", "Tae", "Amanda"],
+    description:
+      "A very good robot.",
+    image: good_boy,
+    stats: {
+      vintage: "2025",
+      height: "short",
+      weight: "3 lbs",
+      fights: "0",
+      wins: "0",
+      top_speed: "very fast",
+      weapon_speed: "non-existent",
+      most_damaged_part: "feelings",
+      favorite_movie: "that one about a dog"
+    },
+    featured_fight:
+      "",
+    design:
+      "A vertical full body spinner!",
+    trivia: [
+      ":D", ":3", ":P"
+      
+    ],
+    fights: [
+    ],
+    gallery: [
+      good_boy, goodboy_1, goodboy_2, goodboy_3, goodboy_4
 
   rinny: {
     is3lb: true,
