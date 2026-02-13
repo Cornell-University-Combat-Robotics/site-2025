@@ -2494,7 +2494,8 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     gallery: [
       good_boy, goodboy_1, goodboy_2, goodboy_3, goodboy_4
-
+    ]
+  },
   rinny: {
     is3lb: true,
     name: "Rinny",
