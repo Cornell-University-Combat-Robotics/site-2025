@@ -7,6 +7,8 @@ import AlumColor from "../assets/subteam-icons/AlumColor.png";
 import AlumWhite from "../assets/subteam-icons/AlumWhite.png";
 import AutonColor from "../assets/subteam-icons/AutonColor.png";
 import AutonWhite from "../assets/subteam-icons/AutonWhite.png";
+import InfinityColor from "../assets/subteam-icons/AutonColor.png"; // TEJU ADD TODO
+import InfinityWhite from "../assets/subteam-icons/AutonWhite.png"; // TEJU ADD TODO
 import KineticColor from "../assets/subteam-icons/KineticColor.png";
 import KineticWhite from "../assets/subteam-icons/KineticWhite.png";
 import MarketingColor from "../assets/subteam-icons/MarketingColor.png";
@@ -127,7 +129,7 @@ export default function Team() {
           >
             <Typography variant="desktopH2" >
               {/*Duplicate text to ensure no empty space*/}
-              {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • "}
+              {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • INFINITY • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • INFINITY •"}
             </Typography>
           </motion.div>
         </div>
@@ -144,9 +146,9 @@ export default function Team() {
             },
             fontFamily: theme.typography.mobileBody.fontFamily, //idk why need this, but set to mobileBody cuz all font families same anyways
           }}>
-          {"Our entire team consists of four subteams:"}
+          {"Our entire team consists of five subteams:"}
           <br />
-          {"Kinetic, Sportsman, Autonomous, and Marketing."}
+          {"Kinetic, Sportsman, Autonomous, Marketing, and Infinity."}
         </Typography>
         <Typography
 
@@ -196,9 +198,8 @@ export default function Team() {
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}>
-            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>
-              Team Leads
-            </TeamButton>
+            <TeamButton hoverColor="#820002" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton>
+            <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "100%" }}>Alumni</TeamButton>
           </Box>
         </Box>

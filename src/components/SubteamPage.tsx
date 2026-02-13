@@ -7,14 +7,13 @@ import marketing_photo from "../assets/marketing-photo.jpg"; //ignore these erro
 import sportsman_photo from "../assets/sportsman-photo.jpg";
 import kinetic_photo from "../assets/kinetic-photo.jpg";
 import autono_photo from "../assets/auto-photo.JPG";
+import infinity_photo from "../assets/infinity-photo.jpg";
 import leads_photo from "../assets/leads-photo.jpg";
 import alumni_photo from "../assets/alumni-photo.jpg";
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import { useContext } from 'react';
 import { MobileContext } from '../App.jsx';
-
-
 
 /**
 For each individual subteam page, you will need to add it to 'App.jsx'. This is so our app recognizes the path to the page and can render 
@@ -163,6 +162,8 @@ export default function SubteamPage(props: SubteamProps) {
                         {props.subsystemIntro}
                     </Typography>
 
+                    {props.subsystems != null && (
+                        <>
                     {/* Stack contains a row of buttons for the different subsystems of the subteam.*/}
                     {props.name != "Leads" && props.name != "Alumni" &&
                         <Stack direction="row" justifyContent={"center"} alignItems={"center"}
@@ -173,7 +174,7 @@ export default function SubteamPage(props: SubteamProps) {
                             }}
                         >
                             {props.subsystems.map((subsystem, index) => (
-
+                                
                                 <Button key={index} sx={{
                                     //the 3 following properties resizes width but with constraints -> pertains only to width, not height, cuz flex direction of stack is row
                                     width: {
@@ -220,7 +221,10 @@ export default function SubteamPage(props: SubteamProps) {
                                     </Typography>
                                 </Button>
                             ))}
-                        </Stack>}
+                        </Stack>
+                    }
+                    </>
+                    )};
 
                     {/*TODO: change all to body 1*/}
                     {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >
@@ -280,6 +284,8 @@ function GetSubteamPhoto(subteamName) {
             return `url(${kinetic_photo})`;
         case "sportsman":
             return `url(${sportsman_photo})`;
+        case "infinity":
+            return `url(${infinity_photo})`;
         case "leads":
             return `url(${leads_photo})`;
         case "alumni":
