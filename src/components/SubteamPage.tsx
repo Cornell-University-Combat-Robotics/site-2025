@@ -6,13 +6,14 @@ import TeamMemberList from "./MemberList";
 import marketing_photo from "../assets/marketing-photo.jpg"; //ignore these errors, vscode is wrong
 import sportsman_photo from "../assets/sportsman-photo.jpg";
 import kinetic_photo from "../assets/kinetic-photo.jpg";
-import autonomous_photo from "../assets/autonomous-photo.jpg";
+import autono_photo from "../assets/auto-photo.JPG";
 import leads_photo from "../assets/leads-photo.jpg";
 import alumni_photo from "../assets/alumni-photo.jpg";
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import { useContext } from 'react';
 import { MobileContext } from '../App.jsx';
+
 
 
 /**
@@ -274,7 +275,7 @@ function GetSubteamPhoto(subteamName) {
         case "marketing":
             return `url(${marketing_photo})`;
         case "autonomous":
-            return `url(${autonomous_photo})`;
+            return `url(${autono_photo})`;
         case "kinetic":
             return `url(${kinetic_photo})`;
         case "sportsman":

@@ -324,6 +324,9 @@ import goodboy_1 from "../assets/3lb/good-boy/goodboy1.PNG";
 import goodboy_2 from "../assets/3lb/good-boy/goodboy2.PNG";
 import goodboy_3 from "../assets/3lb/good-boy/goodboy3.GIF";
 import goodboy_4 from "../assets/3lb/good-boy/goodboy4.PNG";
+import rinny from "../assets/3lb/rinny/rinny.jpeg";
+import rinny_1 from "../assets/3lb/rinny/rinny-1.png";
+
 
 
 export interface RobotData {
@@ -2491,6 +2494,51 @@ export const robotData: { [key: string]: RobotData } = {
     ],
     gallery: [
       good_boy, goodboy_1, goodboy_2, goodboy_3, goodboy_4
+
+  rinny: {
+    is3lb: true,
+    name: "Rinny",
+    makers: [
+      "Suzy Zeng", "Anika Kumar", "Cynitha Wu", "Hardy Zhu"
+    ],
+    description:
+      "Rinny is a full spin robot",
+    image: rinny,
+    stats: {
+      vintage: "2025",
+      height: "3.25\" (13\" extended)",
+      weight: "3 lbs",
+      fights: "3",
+      wins: "3",
+      top_speed: "4 mph",
+      weapon_speed: "20 Nm",
+      most_damaged_part: "Flippers",
+      favorite_movie: "Super Rinny"
+    },
+    featured_fight:
+      "https://www.youtube.com/embed/xQTbCkwBmD4?start=11531",
+    design:
+      "Rinny is pretty!",
+    trivia: [
+      "Rinny is a nick name for Ballerina Bombardira.",
+      "Her body is entirely aluminum.",
+      "Her favorate color is red.",
+      "There is a song created for her",
+      "Her concept is based on a venus flytrap.",
+      "Simply put, Rinny is pretty."
+    ],
+    fights: [
+      {
+        event: "Nov 23 2025",
+        opponent: "Flash-BANG",
+        result: "Win",
+        by: "KO",
+        video: "https://youtu.be/xQTbCkwBmD4?t=2612",
+        length: "170"
+      },
+    ],
+    gallery: [
+      rinny,rinny_1
     ]
   },
 };

@@ -44,6 +44,7 @@ import shadowPhoto from "../assets/3lb/shadow-richard/shadow-richard.png";
 import stuffedMannyPhoto from "../assets/3lb/stuffed-manny/stuffed-manny.png";
 import swissCheesePhoto from "../assets/3lb/swiss-cheese/swiss-cheese.png";
 import goodboyPhoto from "../assets/3lb/good-boy/good-boy.jpg";
+import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
 
 
 /* 
@@ -461,7 +462,16 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       link: "/robots/good_boy",
       color: 1,
       hasDescription:false,
-    }
+    },
+    { 
+      name: "Rinny",
+      subteam: ["FA '25"],
+      desc:"",
+      image: rinnyPhoto,
+      link: "/robots/rinny",
+      color:0,
+      hasDescription: false,
+    },
   ],
   /*for apply page 3lb, only need 3 robots*/
   Shortened_Three_lb: [
