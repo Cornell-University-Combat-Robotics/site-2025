@@ -13,10 +13,14 @@ export interface MemberProps {
   linkedin: string; //linkedin url
   // should make stats optional
   stats: [[string, string, string], [number, number, number]]; //stats: all [0] rows refer to the stat description (e.g. battlebots knowledge), all [1] rows refer to the stat percentage (e.g. 10%)
+  
+  // image parameters (optional)
+  zoom?: number;      // optional zoom level
+  yShift?: number;    // optional vertical shift percentage
 }
 
 export default function Member(props: MemberProps) {
-  const { imgSrc, name, position, linkedin, stats } = props;
+  const { imgSrc, name, position, linkedin, stats, zoom = 1, yShift = 0} = props;
   // const size = props.size ?? "inherit";
 
   const theme = useTheme();
@@ -57,7 +61,9 @@ export default function Member(props: MemberProps) {
         <img src={imgSrc} style={{
           width: "100%", height: "100%",
           objectFit: "cover", // Ensures the image covers the Box without distortion
-          objectPosition: "center" // Centers the image within the Box
+          objectPosition: "center", // Centers the image within the Box
+          transform: `scale(${zoom}) translateY(${yShift}%)`,
+          transformOrigin: "center" 
         }} />
 
         {/* Toggle for funny image (?):

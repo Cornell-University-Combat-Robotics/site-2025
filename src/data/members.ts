@@ -86,7 +86,9 @@ import amandaZ from "../assets/members/amanda-zhu.JPG"
 import anikaK from "../assets/members/anika-kumar.JPG"
 import ryanS from "../assets/members/ryan-siglag.JPG"
 import vinsonC from "../assets/members/vinson-chen.JPG";
-import angelaC from "../assets/members/angela-chen.png";
+
+// TODO TEJU EDITS
+import angelaC from "../assets/members/angela-chen.jpg";
 import chrisG from "../assets/members/chris-gargan.jpg";
 import cynthiaW from "../assets/members/cynthia-wu.jpg";
 import ferrisK from "../assets/members/ferris-kassem-scott.jpg";
@@ -927,7 +929,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Food", "Long term memory", "Webtoon doomscrolling"],
       [100,10,100]
-    ]
+    ],
+    zoom: 1.75,
+    yShift: 6
   },
   taeheeKim: {
     imgSrc: taeK,
@@ -937,7 +941,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Sleepiness", "Originality", "ADHD"],
       [100, 0, 51]
-    ]
+    ],
+    zoom: 1.9,
+    yShift: 12
   },
   seanDjojonegoro: {
     imgSrc: seanD,
@@ -947,7 +953,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Running", "Marvel Snap", "Last name pronunciation"],
       [100, 75, 0]
-    ]
+    ],
+    zoom: 1.5,
+    yShift: 8
   }, 
   cynthiaWu: {
     imgSrc: cynthiaW,
@@ -957,7 +965,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Iron", "$", "Midnight Snack"],
       [0,0,100]
-    ]
+    ],
+    zoom: 2.3,
+    yShift: 9
   },
   gavinLim: {
     imgSrc: gavinL,
@@ -967,7 +977,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Nonchalance", "Jeeps", "Hungry"],
       [95, 67, 80]
-    ]
+    ],
+    zoom: 2.1,
+    yShift: 8
   },
   lillianYe: {
     imgSrc: lillianY,
@@ -977,7 +989,9 @@ const allMembers: Record<string, MemberProps> = {
     stats:[
       ["Sleepiness", "Food", "Decisiveness"],
       [100, 80, 20]
-    ]
+    ],
+    zoom: 2.0,
+    yShift: 6
   },
   georgiaGreen:{
     imgSrc: georgiaG,
@@ -987,7 +1001,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Odds of having ID", "Woodworking", "Pink Hair"],
       [15, 90, 50]
-    ]
+    ],
+    zoom: 2.0,
+    yShift: 6
   },
     angelaChen: {
     imgSrc: angelaC,
@@ -997,7 +1013,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["CRFilm Dictator", "Owning a katana", "Fingering an electric guitar"],
       [79,100,42]
-    ]
+    ],
+    zoom: 2.05,
+    yShift: 7
   },
     chrisGargan: {
     imgSrc: chrisG,
@@ -1007,7 +1025,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["Wheels", "Fire (fighting)", "Simulations"],
       [100,50,0]
-    ]
+    ],
+    zoom: 1.8,
+    yShift: 8
   },
     ferrisKassemScott: {
     imgSrc: ferrisK,
@@ -1017,7 +1037,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["1", "2", "3"],
       [0,50,100]
-    ]
+    ],
+    zoom: 2.1,
+    yShift: 9
   },
   misaelHoyos: {
     imgSrc: misaelH,
@@ -1027,7 +1049,9 @@ const allMembers: Record<string, MemberProps> = {
     stats: [
       ["1", "2", "3"],
       [0,50,100]
-    ]
+    ],
+    zoom: 2.0,
+    yShift: 12
   },
 }
 
