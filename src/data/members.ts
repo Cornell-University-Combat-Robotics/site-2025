@@ -86,8 +86,6 @@ import amandaZ from "../assets/members/amanda-zhu.JPG"
 import anikaK from "../assets/members/anika-kumar.JPG"
 import ryanS from "../assets/members/ryan-siglag.JPG"
 import vinsonC from "../assets/members/vinson-chen.JPG";
-
-// TODO TEJU EDITS
 import angelaC from "../assets/members/angela-chen.jpg";
 import chrisG from "../assets/members/chris-gargan.jpg";
 import cynthiaW from "../assets/members/cynthia-wu.jpg";
