@@ -319,7 +319,12 @@ import wabbit_4 from "../assets/3lb/wabbit/wabbit-4.jpg";
 import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
-import good_boy from "../assets/3lb/good-boy/good-boy.jpg"
+import good_boy from "../assets/3lb/good-boy/good-boy.jpg";
+import goodboy_1 from "../assets/3lb/good-boy/goodboy1.PNG";
+import goodboy_2 from "../assets/3lb/good-boy/goodboy2.PNG";
+import goodboy_3 from "../assets/3lb/good-boy/goodboy3.GIF";
+import goodboy_4 from "../assets/3lb/good-boy/goodboy4.PNG";
+
 
 export interface RobotData {
   is3lb: boolean;
@@ -2479,13 +2484,13 @@ export const robotData: { [key: string]: RobotData } = {
     design:
       "A vertical full body spinner!",
     trivia: [
-      ":D",
+      ":D", ":3", ":P"
       
     ],
     fights: [
     ],
     gallery: [
-      good_boy
+      good_boy, goodboy_1, goodboy_2, goodboy_3, goodboy_4
     ]
   },
 };

@@ -43,6 +43,7 @@ import miloPhoto from "../assets/3lb/milo/milo.png";
 import shadowPhoto from "../assets/3lb/shadow-richard/shadow-richard.png";
 import stuffedMannyPhoto from "../assets/3lb/stuffed-manny/stuffed-manny.png";
 import swissCheesePhoto from "../assets/3lb/swiss-cheese/swiss-cheese.png";
+import goodboyPhoto from "../assets/3lb/good-boy/good-boy.jpg";
 
 
 /* 
@@ -451,6 +452,15 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       link: "/robots/wabbit",
       color: 1,
       hasDescription: false,
+    },
+    {
+      name: "Good Boy",
+      subteam: ["FA '25"],
+      desc:"",
+      image: goodboyPhoto,
+      link: "/robots/good_boy",
+      color: 1,
+      hasDescription:false,
     }
   ],
   /*for apply page 3lb, only need 3 robots*/
