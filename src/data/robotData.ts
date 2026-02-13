@@ -320,6 +320,7 @@ import wabbit_5 from "../assets/3lb/wabbit/wabbit-5.jpg";
 import wabbit_6 from "../assets/3lb/wabbit/wabbit-6.jpg";
 
 import rinny from "../assets/3lb/rinny/rinny.jpeg";
+import rinny_1 from "../assets/3lb/rinny/rinny-1.png";
 
 
 
@@ -2463,7 +2464,7 @@ export const robotData: { [key: string]: RobotData } = {
     is3lb: true,
     name: "Rinny",
     makers: [
-      "Suzy Zeng", "Anika Kumar", "Cynitha Wu", "Hardy ZHu"
+      "Suzy Zeng", "Anika Kumar", "Cynitha Wu", "Hardy Zhu"
     ],
     description:
       "Rinny is a full spin robot",
@@ -2473,11 +2474,11 @@ export const robotData: { [key: string]: RobotData } = {
       height: "3.25\" (13\" extended)",
       weight: "3 lbs",
       fights: "3",
-      wins: "1",
+      wins: "3",
       top_speed: "4 mph",
       weapon_speed: "20 Nm",
       most_damaged_part: "Flippers",
-      favorite_movie: "Free Willy"
+      favorite_movie: "Super Rinny"
     },
     featured_fight:
       "https://www.youtube.com/embed/xQTbCkwBmD4?start=11531",
@@ -2502,7 +2503,7 @@ export const robotData: { [key: string]: RobotData } = {
       },
     ],
     gallery: [
-      rinny
+      rinny,rinny_1
     ]
   },
 };
