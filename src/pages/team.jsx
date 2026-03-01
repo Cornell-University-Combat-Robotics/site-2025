@@ -184,8 +184,8 @@ export default function Team() {
             }}
           >
             <TeamButton hoverColor="#0E7C2B" image={KineticColor} whiteImg={KineticWhite} to="/team/kinetic" sx={{ width: "30vw" }} >Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }}>Sportsman</TeamButton>
-            <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous" sx={{ width: "30vw" }}>Autonomous</TeamButton>
+            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }} >Sportsman</TeamButton>
+            <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous" sx={{ width: "30vw" }} >Autonomous</TeamButton>
             <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing" sx={{ width: "30vw" }}>Marketing</TeamButton>
           </Box>
         </Box>
