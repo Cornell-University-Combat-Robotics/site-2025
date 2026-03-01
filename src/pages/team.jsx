@@ -7,8 +7,8 @@ import AlumColor from "../assets/subteam-icons/AlumColor.png";
 import AlumWhite from "../assets/subteam-icons/AlumWhite.png";
 import AutonColor from "../assets/subteam-icons/AutonColor.png";
 import AutonWhite from "../assets/subteam-icons/AutonWhite.png";
-import InfinityColor from "../assets/subteam-icons/AutonColor.png"; // TEJU ADD TODO
-import InfinityWhite from "../assets/subteam-icons/AutonWhite.png"; // TEJU ADD TODO
+import InfinityColor from "../assets/subteam-icons/InfinityColor.png"; 
+import InfinityWhite from "../assets/subteam-icons/InfinityWhite.png"; 
 import KineticColor from "../assets/subteam-icons/KineticColor.png";
 import KineticWhite from "../assets/subteam-icons/KineticWhite.png";
 import MarketingColor from "../assets/subteam-icons/MarketingColor.png";
@@ -198,7 +198,7 @@ export default function Team() {
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}>
-            <TeamButton hoverColor="#820002" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton>
+            <TeamButton hoverColor="#098CA2" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton>
             <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "100%" }}>Alumni</TeamButton>
           </Box>
