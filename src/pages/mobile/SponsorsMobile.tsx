@@ -299,6 +299,15 @@ export default function Sponsors() {
                 />
                 {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
               </Box>
+              <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
+                <Box
+                  component="img"
+                  src={"/sponsors/repeat-robotics.png"}
+                  alt="Repeat Robotics Logo"
+                  sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
+                />
+                {/* <Typography variant="h2" marginTop="2px" sx={{ fontFamily: 'Times New Roman', fontWeight: 'bold', textAlign: "center", fontSize:{xs:"1.5rem", sm:"2rem", md:"2.5rem"} }}>BOVAY LABORATORY COMPLEX</Typography> */}
+              </Box>
             </Box>
           </Box>
 
