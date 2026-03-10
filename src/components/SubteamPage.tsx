@@ -224,7 +224,7 @@ export default function SubteamPage(props: SubteamProps) {
                         </Stack>
                     }
                     </>
-                    )};
+                    )}
 
                     {/*TODO: change all to body 1*/}
                     {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >

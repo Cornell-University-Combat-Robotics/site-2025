@@ -174,8 +174,8 @@ export default function Sponsors() {
               <Box width={{ xs: "100%", sm: "50%" }} padding="10px" boxSizing="border-box" display="flex" justfyContent="center" alignItems="center">
                 <Box
                   component="img"
-                  src={"/sponsors/cornell_engineering_logo.png"}
-                  alt="Cornell Engineering Logo"
+                  src={"/sponsors/cornell_duffield_engineering.png"}
+                  alt="Cornell Duffield Engineering Logo"
                   sx={{ width: '100%', height: 'auto', maxHeight: "200px", objectFit: "contain" }}
                 />
               </Box>
