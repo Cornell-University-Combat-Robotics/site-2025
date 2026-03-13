@@ -327,7 +327,25 @@ import goodboy_4 from "../assets/3lb/good-boy/goodboy4.PNG";
 import rinny from "../assets/3lb/rinny/rinny.jpeg";
 import rinny_1 from "../assets/3lb/rinny/rinny-1.png";
 
+import benny_main from "../assets/retired/benny/benny_main.png";
+import benny_cad from "../assets/retired/benny/BennyRJohm.png";
+import benny1 from "../assets/retired/benny/benny1.jpg";
+import benny2 from "../assets/retired/benny/benny2.jpg";
+import benny3 from "../assets/retired/benny/benny3.jpg";
+import benny4 from "../assets/retired/benny/benny4.jpg";
+import benny5 from "../assets/retired/benny/benny5.jpg";
+import benny6 from "../assets/retired/benny/benny6.png";
 
+import huey_main from "../assets/retired/huey/huey_main.png";
+import huey2 from "../assets/retired/huey/huey2.png";
+import huey3 from "../assets/retired/huey/huey3.png";
+import huey4 from "../assets/retired/huey/huey4.png";
+import huey5 from "../assets/retired/huey/huey5.jpg";
+import huey6 from "../assets/retired/huey/huey6.png";
+import huey7 from "../assets/retired/huey/huey7.jpg";
+import huey8 from "../assets/retired/huey/huey8.jpg";
+import huey9 from "../assets/retired/huey/huey9.jpg";
+import huey10 from "../assets/retired/huey/huey10.jpg";
 
 export interface RobotData {
   is3lb: boolean;
@@ -361,7 +379,282 @@ export interface RobotData {
 }
 
 export const robotData: { [key: string]: RobotData } = {
-
+    capsize: {
+      is3lb: false,
+      name: "Capsize",
+      makers: [
+        "Narayan Rueppel", "Manuely Feliz Portes", "Alex Jenkins", "Tyler Sprague", "Kai Rodger", "Xiayan Zhao",
+        "Jason Choi", "Sarah Bulkley", "Ruihan Chu"
+      ],
+      description: "Capsize sports a powerful 4 wheel indirect drive which, combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.",
+      image: huey_main, // todo
+      stats: {
+        vintage: "2024, 2025, 2026",
+        height: "2.9 inches",
+        weight: "11.247 lbs.",
+        fights: "5",
+        wins: "1",
+        top_speed: "15 mph",
+        weapon_speed: "NA",
+        most_damaged_part: "Battery",
+        favorite_movie: "Titanic"
+      },
+      featured_fight: "https://www.youtube.com/watch?v=mVz11OTLq3g&list=PLmu9s_Bhalv4sU_Z-qcWRp5bbgme_ycuS&index=2", // TODO - Add timestamp and embed
+      design:
+        "A simple horizontal spinner. We used a Jolt Kit base with data collecting sensors, redesigned wheels, weapon system, and new colors on Huey’s top plate!",
+      trivia: [
+        "The first triplet of the Duck Tales brothers (Huey, Dewey, Louie)"
+      ],
+      fights: [
+        {
+          event: "May 3 2025",
+          opponent: "Bagheera",
+          result: "Loss",
+          by: "TO",
+          video:
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lbhttps://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lb",
+          length: "16"
+        },
+        {
+          event: "May 3 2025",
+          opponent: "Redshift",
+          result: "Loss",
+          by: "KO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-6d774912b7994954&tournamentID=nhrl_may25_3lb",
+          length: "140"
+        },
+        {
+          event: "May 3 2025",
+          opponent: "OpenHell",
+          result: "Win",
+          by: "JD",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-87e97835f75c43ba&tournamentID=nhrl_may25_fs",
+          length: "180"
+        },  
+        {
+          event: "Feb 7 2026",
+          opponent: "Prince",
+          result: "Loss",
+          by: "TO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-104702a542064f30&tournamentID=nhrl_feb26_3lb",
+          length: "124"
+        },
+        {
+          event: "Feb 7 2026",
+          opponent: "Purple Rain",
+          result: "Loss",
+          by: "TO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-17668fccae0b4452&tournamentID=nhrl_feb26_3lb",
+          length: "124"
+        },
+        {
+          event: "Feb 7 2026",
+          opponent: "Orbital Velocity",
+          result: "Loss",
+          by: "KO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=W-0&tournamentID=nhrl_feb26_xprd",
+          length: "138"
+        }
+      ],
+      gallery: [
+        huey_main,
+        huey2,
+        huey10,
+        huey6,
+        huey9,
+        huey3,
+        huey8,
+        huey5,
+        huey4,
+        huey7
+      ]
+    },
+    huey: {
+      is3lb: false,
+      name: "Huey",
+      makers: [
+        "Aaron Harnish", "Grace Lim", "Riddhi Lamba", "Ananya Jajodia", "Ethan DeCamp", "Jenny Wu", 
+        "Rohin Phukan", "Sophie Cheng", "Tyler Lovejoy", "Shao Stassen", "Katie Huntley", "Vinson Chen", "Ryan Siglag", 
+        "Anika Kumar"
+      ],
+      description: "Huey is a fully autonomous 3lb robot that uses the bright colors on its top plate and a camera outside of the cage for object detection and decision-making algorithms.",
+      image: huey_main,
+      stats: {
+        vintage: "2025, 2026",
+        height: "3.132 inches",
+        weight: "3.0 lbs",
+        fights: "6",
+        wins: "1",
+        top_speed: "Unknown",
+        weapon_speed: "Unknown",
+        most_damaged_part: "Top plate got chewed off",
+        favorite_movie: "Ducktales the Movie: Treasure of the Lost Lamp"
+      },
+      featured_fight: "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-104702a542064f30&tournamentID=nhrl_feb26_3lb",
+      design:
+        "A simple horizontal spinner. We used a Jolt Kit base with data collecting sensors, redesigned wheels, weapon system, and new colors on Huey’s top plate!",
+      trivia: [
+        "The first triplet of the Duck Tales brothers (Huey, Dewey, Louie)"
+      ],
+      fights: [
+        {
+          event: "May 3 2025",
+          opponent: "Bagheera",
+          result: "Loss",
+          by: "TO",
+          video:
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lbhttps://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lb",
+          length: "16"
+        },
+        {
+          event: "May 3 2025",
+          opponent: "Redshift",
+          result: "Loss",
+          by: "KO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-6d774912b7994954&tournamentID=nhrl_may25_3lb",
+          length: "140"
+        },
+        {
+          event: "May 3 2025",
+          opponent: "OpenHell",
+          result: "Win",
+          by: "JD",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-87e97835f75c43ba&tournamentID=nhrl_may25_fs",
+          length: "180"
+        },  
+        {
+          event: "Feb 7 2026",
+          opponent: "Prince",
+          result: "Loss",
+          by: "TO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-104702a542064f30&tournamentID=nhrl_feb26_3lb",
+          length: "124"
+        },
+        {
+          event: "Feb 7 2026",
+          opponent: "Purple Rain",
+          result: "Loss",
+          by: "TO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-17668fccae0b4452&tournamentID=nhrl_feb26_3lb",
+          length: "124"
+        },
+        {
+          event: "Feb 7 2026",
+          opponent: "Orbital Velocity",
+          result: "Loss",
+          by: "KO",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=W-0&tournamentID=nhrl_feb26_xprd",
+          length: "138"
+        }
+      ],
+      gallery: [
+        huey_main,
+        huey2,
+        huey10,
+        huey6,
+        huey9,
+        huey3,
+        huey8,
+        huey5,
+        huey4,
+        huey7
+      ]
+  },
+    benny: {
+      is3lb: false,
+      name: "Benjamin Rimshot Johm Esq.",
+      makers: [
+        "Zander Knight", "James LaSalle", "Anna Boese", "Ethan Hernandez", "Kevin Sturm", 
+        "Mattew Anazco", "Castiel Li", "Gurjot Gill", "Kaila Danielson", "Spencer Humes"
+      ],
+      description:
+        "As CRC’s first law degree holding robot, Benny R. Johm knows exactly how to bring justice to his opponents. The first CRC 12lb bot to go to three competitions, and has witnessed trials and tribulations like no other. Having two top plates ripped off, and two weapons split apart, and a flaming battery launched across the arena in NHRL’s most popular Instagram reel, he's come back again and again in the endless pursuit of righteousness.",
+      image: benny_main,
+      stats: {
+        vintage: "2025, 2026",
+        height: "4.05 inches",
+        weight: "11.772 lbs",
+        fights: "3",
+        wins: "1",
+        top_speed: "14.1 mph",
+        weapon_speed: "137 mph",
+        most_damaged_part: "At his first competition, two of Benny’s weapons fractured in half",
+        favorite_movie: "12 Angry Men"
+      },
+      featured_fight: "https://www.youtube.com/embed/o9yEINJzn_A?si=reIKuuP9WOFPG6Ob&amp;start=1677",
+      design:
+        "Within Benny’s weapon assembly resides a hub motor, directly driving the 7 inch wide golden drum spinner. Without pulleys, there’s one less key area of failure. After his first appearance at competition, his weapon was redesigned to improve resistance against loads from weapon on weapon contact.",
+      trivia: [
+        "He got his law degree from the University of American Samoa Law School, he graduated with a 4.0 with Honors.",
+        "Benny R. Johm is derived from a Crazy 8 name, Judgement Bringer Johm! And the R stands for Rimshot!",
+        "Benny is the first robot revamp to be worked on concurrently with a new robot by a subteam, rather than being an optional project."
+      ],
+    fights: [
+      {
+        event: "May 3 2025",
+        opponent: "Tartarus",
+        result: "Win",
+        by: "KO",
+        video:
+          "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-5cc8631c01884977&tournamentID=nhrl_may25_12lb",
+        length: "68"
+      },
+      {
+        event: "May 3 2025",
+        opponent: "Caldera 12",
+        result: "Loss",
+        by: "KO",
+        video:
+          "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-eff42a8c553d4739&tournamentID=nhrl_may25_12lb",
+        length: "55"
+      },
+      {
+        event: "May 3 2025",
+        opponent: "Carmen",
+        result: "Loss",
+        by: "Judges",
+        video:
+          "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-4aab7e6bf5da4c4c&tournamentID=nhrl_may25_12lb",
+        length: "180"
+      },
+      {
+        event: "Feb 7 2025",
+        opponent: "Carmen",
+        result: "Loss",
+        by: "KO",
+        video:
+          "https://www.youtube.com/live/bedy5i5XyLY?si=fdnboIkX5pEAF7Hg&t=6842",
+        length: "40"
+      },
+      {
+        event: "Feb 7 2025",
+        opponent: "Xenomorph",
+        result: "Loss",
+        by: "KO",
+        video:
+          "https://www.youtube.com/live/o9yEINJzn_A?si=0TTYFm0-CHhP26Ic&t=1689",
+        length: "24"
+      }      
+    ],
+    gallery: [
+      benny2,
+      benny3,
+      benny4,
+      benny5,
+      benny6,
+      benny1
+    ]
+  },
   donatello: {
     is3lb: false,
     name: "Donatello",
@@ -2541,6 +2834,6 @@ export const robotData: { [key: string]: RobotData } = {
     gallery: [
       rinny,rinny_1
     ]
-  },
+  }
 };
 

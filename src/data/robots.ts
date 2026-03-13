@@ -45,7 +45,8 @@ import stuffedMannyPhoto from "../assets/3lb/stuffed-manny/stuffed-manny.png";
 import swissCheesePhoto from "../assets/3lb/swiss-cheese/swiss-cheese.png";
 import goodboyPhoto from "../assets/3lb/good-boy/good-boy.jpg";
 import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
-
+import bennyPhoto from "../assets/retired/benny/benny_main.png";
+import hueyPhoto from "../assets/retired/huey/huey_main.png";
 
 /* 
   This file holds the necessary data for the robots. The data is stored in a dictionary (record), where the key is the category of the robot (Retired, Three_lb, etc).
@@ -54,6 +55,24 @@ import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
 */
 const RobotsData: Record<string, RobotCardProps[]> = {
   Retired: [
+        {
+      name: "Huey",
+      subteam: ["Autonomous", "2025-2026"],
+      desc: "Huey enters the arena with full decision-making capabilities.",
+      image: hueyPhoto,
+      link: "/robots/huey",
+      color: 0,
+      hasDescription: true,
+    },
+    {
+      name: "Benny R. Johm",
+      subteam: ["Kinetic", "2025-2026"],
+      desc: "Benny is the star behind the most-watched Instagram reel in NHRL history.",
+      image: bennyPhoto,
+      link: "/robots/benny",
+      color: 0,
+      hasDescription: true,
+    },
     {
       name: "Beater B. Barker",
       subteam: ["Kinetic", "2023-2024"],
