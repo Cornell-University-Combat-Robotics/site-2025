@@ -19,14 +19,7 @@ export default function Infinity() {
             optionalDesc=""
             subsystemIntro="Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
             subsystems={subsystems}
-            otherInterest={[
-                <p>
-                    • Other efficient and destructive robots, our {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam may be a better fit
-                </p>,
-                <p>
-                    • Circuitry/autonomous robots, our {LinkToOtherSubteams({ url: "/team/autonomous", text: "Autonomous" })} Subteam may be a better fit
-                </p>
-            ]}
+            otherInterest={[]}
         />
     );
 }

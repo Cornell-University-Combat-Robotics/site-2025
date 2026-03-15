@@ -227,11 +227,11 @@ export default function SubteamPage(props: SubteamProps) {
                     )}
 
                     {/*TODO: change all to body 1*/}
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >
+                    {props.name != "Leads" && props.name != "Alumni" && props.name != "Infinity" && <Typography sx={{ textAlign: "left", display: "block", mt: "8vw", ...bodyTextStyle }} >
                         {"While the subsystems are distinct, members are able to work interchangeably among them."}
                     </Typography>}
 
-                    {props.name != "Leads" && props.name != "Alumni" && <Typography sx={{ mt: "8vw", ...bodyTextStyle }}>
+                    {props.name != "Leads" && props.name != "Alumni" && props.name != "Infinity" && <Typography sx={{ mt: "8vw", ...bodyTextStyle }}>
                         {"If you are more interested in..."}
                     </Typography>}
 
