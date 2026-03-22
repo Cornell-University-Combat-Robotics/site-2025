@@ -347,6 +347,14 @@ import huey8 from "../assets/retired/huey/huey8.jpg";
 import huey9 from "../assets/retired/huey/huey9.jpg";
 import huey10 from "../assets/retired/huey/huey10.jpg";
 
+import capsize_main from "../assets/retired/capsize/capsize_main.png";
+import capsize1 from "../assets/retired/capsize/capsize1.jpg";
+import capsize2 from "../assets/retired/capsize/capsize2.png";
+import capsize3 from "../assets/retired/capsize/capsize3.jpg";
+import capsize4 from "../assets/retired/capsize/capsize4.jpg";
+import capsize5 from "../assets/retired/capsize/capsize5.jpeg";
+import capsize6 from "../assets/retired/capsize/capsize6.jpg";
+
 export interface RobotData {
   is3lb: boolean;
   name: string;
@@ -387,7 +395,7 @@ export const robotData: { [key: string]: RobotData } = {
         "Jason Choi", "Sarah Bulkley", "Ruihan Chu"
       ],
       description: "Capsize sports a powerful 4 wheel indirect drive which, combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.",
-      image: huey_main, // todo
+      image: capsize_main,
       stats: {
         vintage: "2024, 2025, 2026",
         height: "2.9 inches",
@@ -399,79 +407,69 @@ export const robotData: { [key: string]: RobotData } = {
         most_damaged_part: "Battery",
         favorite_movie: "Titanic"
       },
-      featured_fight: "https://www.youtube.com/watch?v=mVz11OTLq3g&list=PLmu9s_Bhalv4sU_Z-qcWRp5bbgme_ycuS&index=2", // TODO - Add timestamp and embed
+      featured_fight: "https://www.youtube.com/embed/mVz11OTLq3g?si=V86RFy2EAeqLu-bP&amp;start=6524",
       design:
-        "A simple horizontal spinner. We used a Jolt Kit base with data collecting sensors, redesigned wheels, weapon system, and new colors on Huey’s top plate!",
+        "Capsize is an indirectly driven center lifter, using CNC'd sprockets and a unique TPU clutch mechanism to deliver massive amounts of torque while protecting her weapon. The wide range of motion on Capsize’s weapon allows her to self invert when upside down or even when stuck at weird angles. Capsize’s wide treaded wheels and cleats allow her to get a huge amount of traction and pushing force which is needed for control bots.",
       trivia: [
-        "The first triplet of the Duck Tales brothers (Huey, Dewey, Louie)"
+        "Capsize’s TPU clutch begins to slip when the weapon experiences 30 ft-lbs of torque.",
+        "Capsize features the widest wheels on CRC, sitting at 0.75 inches.",
+        "Capsize brought 8 wedges to his first competition and didn’t end up using any of them!",
+        "Capsize was captained by none other than Sarah “Kill em all dead” Bulkley"
       ],
       fights: [
         {
           event: "May 3 2025",
-          opponent: "Bagheera",
+          opponent: "Junkernaut",
           result: "Loss",
           by: "TO",
           video:
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lbhttps://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-c4689fa96dc54d95&tournamentID=nhrl_may25_3lb",
-          length: "16"
+            "https://www.youtube.com/live/mVz11OTLq3g?si=5Kstvi60RX6I2WdO&t=259",
+          length: "24"
         },
         {
           event: "May 3 2025",
-          opponent: "Redshift",
+          opponent: "Battletots",
           result: "Loss",
           by: "KO",
-          video: 
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-6d774912b7994954&tournamentID=nhrl_may25_3lb",
-          length: "140"
+          video:
+            "https://www.youtube.com/live/mVz11OTLq3g?si=5Kstvi60RX6I2WdO&t=259",
+          length: "24"
         },
         {
-          event: "May 3 2025",
-          opponent: "OpenHell",
+          event: "Feb 7 2026",
+          opponent: "Grim Ripper",
+          result: "Loss",
+          by: "TO",
+          video:
+            "https://www.youtube.com/live/bedy5i5XyLY?si=B9ydIqtDd7v7_95O&t=6389",
+          length: "99"
+        },
+        {
+          event: "Feb 7 2026",
+          opponent: "Bananarchy",
           result: "Win",
           by: "JD",
-          video: 
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-87e97835f75c43ba&tournamentID=nhrl_may25_fs",
+          video:
+            "https://www.youtube.com/live/bedy5i5XyLY?si=EDnOvpKaeXEugv7r&t=13470",
           length: "180"
-        },  
-        {
-          event: "Feb 7 2026",
-          opponent: "Prince",
-          result: "Loss",
-          by: "TO",
-          video: 
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-104702a542064f30&tournamentID=nhrl_feb26_3lb",
-          length: "124"
         },
         {
           event: "Feb 7 2026",
-          opponent: "Purple Rain",
+          opponent: "Caldera 12",
           result: "Loss",
           by: "TO",
-          video: 
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=EX-17668fccae0b4452&tournamentID=nhrl_feb26_3lb",
-          length: "124"
-        },
-        {
-          event: "Feb 7 2026",
-          opponent: "Orbital Velocity",
-          result: "Loss",
-          by: "KO",
-          video: 
-            "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=W-0&tournamentID=nhrl_feb26_xprd",
-          length: "138"
+          video:
+            "https://www.youtube.com/live/o9yEINJzn_A?si=4aB5qjLhEiKVbcfp&t=3409",
+          length: "11"
         }
       ],
       gallery: [
-        huey_main,
-        huey2,
-        huey10,
-        huey6,
-        huey9,
-        huey3,
-        huey8,
-        huey5,
-        huey4,
-        huey7
+        capsize1,
+        capsize2,
+        capsize6,
+        capsize3,
+        capsize4,
+        capsize5
       ]
     },
     huey: {

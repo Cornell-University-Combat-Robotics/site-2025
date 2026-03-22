@@ -47,6 +47,7 @@ import goodboyPhoto from "../assets/3lb/good-boy/good-boy.jpg";
 import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
 import bennyPhoto from "../assets/retired/benny/benny_main.png";
 import hueyPhoto from "../assets/retired/huey/huey_main.png";
+import capsizePhoto from "../assets/retired/capsize/capsize_main.png";
 
 /* 
   This file holds the necessary data for the robots. The data is stored in a dictionary (record), where the key is the category of the robot (Retired, Three_lb, etc).
@@ -55,22 +56,31 @@ import hueyPhoto from "../assets/retired/huey/huey_main.png";
 */
 const RobotsData: Record<string, RobotCardProps[]> = {
   Retired: [
-        {
+    {
+      name: "Benny R. Johm",
+      subteam: ["Kinetic", "2025-2026"],
+      desc: "Benny stars in one of the most-watched Instagram reels in NHRL history.",
+      image: bennyPhoto,
+      link: "/robots/benny",
+      color: 1,
+      hasDescription: true,
+    },
+    {
       name: "Huey",
       subteam: ["Autonomous", "2025-2026"],
-      desc: "Huey enters the arena with full decision-making capabilities.",
+      desc: "Huey enters the arena with decision-making capabilities.",
       image: hueyPhoto,
       link: "/robots/huey",
       color: 0,
       hasDescription: true,
     },
     {
-      name: "Benny R. Johm",
-      subteam: ["Kinetic", "2025-2026"],
-      desc: "Benny is the star behind the most-watched Instagram reel in NHRL history.",
-      image: bennyPhoto,
-      link: "/robots/benny",
-      color: 0,
+      name: "Capsize",
+      subteam: ["Sportsman", "2024-2026"],
+      desc: "Capsize emits an eerie sea shanty.",
+      image: capsizePhoto,
+      link: "/robots/capsize",
+      color: 1,
       hasDescription: true,
     },
     {
@@ -88,7 +98,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "Named as a tribute to Leonardo, his legacy carries on.",
       image: nardoPhoto,
       link: "/robots/nardo",
-      color: 1,
+      color: 0,
       hasDescription: true,
     },
     {
@@ -97,7 +107,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "On detecting an enemy, Louis charges with his mighty sword.",
       image: louisPhoto,
       link: "/robots/louis",
-      color: 0,
+      color: 1,
       hasDescription: true,
     },
     {
@@ -106,7 +116,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "In a love triangle with Richard and Florence.",
       image: rosiePhoto,
       link: "/robots/rosie",
-      color: 1,
+      color: 0,
       hasDescription: true,
     },
     {
@@ -115,7 +125,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
       desc: "Florence is an Italian Magikarp.",
       image: florencePhoto,
       link: "/robots/florence",
-      color: 0,
+      color: 1,
       hasDescription: true,
     },
     {
