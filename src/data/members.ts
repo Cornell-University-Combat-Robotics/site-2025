@@ -1074,7 +1074,6 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.ethanHernandez,
     allMembers.gurjotGill,
     allMembers.kailaDanielson,
-    allMembers.spencerHumes,
     allMembers.zanderKnight
   ],
   Sportsman: [
@@ -1084,11 +1083,9 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.manuelyFelizPortes,
     allMembers.alexJenkins,
     allMembers.kaiRodger,
-    allMembers.tylerSprague,
     allMembers.ruiHanChu,
     allMembers.stellaTaglich,
     allMembers.crystalLi,
-    allMembers.jasonChoi
   ],
   Autonomous: [
     allMembers.aaronHarnish,
@@ -1100,9 +1097,6 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.rohinPhukan,
     allMembers.sophieCheng,
     allMembers.tylerLovejoy,
-    allMembers.christoperAdonizio,
-    allMembers.alyssaHsu,
-    allMembers.camilleYap,
     allMembers.shaoStassen,
     allMembers.anikaKumar,
     allMembers.ryanSiglag,

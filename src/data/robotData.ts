@@ -397,7 +397,7 @@ export const robotData: { [key: string]: RobotData } = {
       description: "Capsize sports a powerful 4 wheel indirect drive which, combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.",
       image: capsize_main,
       stats: {
-        vintage: "2024, 2025, 2026",
+        vintage: "2025, 2026",
         height: "2.9 inches",
         weight: "11.247 lbs.",
         fights: "5",
@@ -626,7 +626,7 @@ export const robotData: { [key: string]: RobotData } = {
         length: "180"
       },
       {
-        event: "Feb 7 2025",
+        event: "Feb 7 2026",
         opponent: "Carmen",
         result: "Loss",
         by: "KO",
@@ -635,7 +635,7 @@ export const robotData: { [key: string]: RobotData } = {
         length: "40"
       },
       {
-        event: "Feb 7 2025",
+        event: "Feb 7 2026",
         opponent: "Xenomorph",
         result: "Loss",
         by: "KO",

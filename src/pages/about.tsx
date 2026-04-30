@@ -94,7 +94,7 @@ function About() {
                 {/* First row: members and majors */}
                 <Stack direction="row" spacing={5} sx={{ width: '100%', justifyContent: 'center' }}>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant={"mobileH2"}>40+</Typography>
+                    <Typography variant={"mobileH2"}>50+</Typography>
                     <Typography variant={"mobileH3"}>members</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
@@ -110,7 +110,7 @@ function About() {
                     <Typography variant={"mobileH3"}>colleges</Typography>
                   </Stack>
                   <Stack sx={{ alignItems: 'center' }}>
-                    <Typography variant={"mobileH2"}>6+</Typography>
+                    <Typography variant={"mobileH2"}>6</Typography>
                     <Typography variant={"mobileH3"}>years</Typography>
                   </Stack>
                 </Stack>
@@ -119,7 +119,7 @@ function About() {
               // Desktop layout: single row
               <Stack direction="row" spacing="17%">
                 <Stack>
-                  <Typography variant="desktopH3">40+</Typography>
+                  <Typography variant="desktopH3">50+</Typography>
                   <Typography variant="desktopH3">members</Typography>
                 </Stack>
                 <Stack>
@@ -131,7 +131,7 @@ function About() {
                   <Typography variant="desktopH3">colleges</Typography>
                 </Stack>
                 <Stack>
-                  <Typography variant="desktopH3">6+</Typography>
+                  <Typography variant="desktopH3">6</Typography>
                   <Typography variant="desktopH3">years</Typography>
                 </Stack>
               </Stack>

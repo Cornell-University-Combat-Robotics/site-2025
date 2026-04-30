@@ -76,7 +76,7 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     },
     {
       name: "Capsize",
-      subteam: ["Sportsman", "2024-2026"],
+      subteam: ["Sportsman", "2025-2026"],
       desc: "Capsize emits an eerie sea shanty.",
       image: capsizePhoto,
       link: "/robots/capsize",

@@ -6,9 +6,11 @@ import RobotCard from '../../components/RobotCard';
 import RobotCardList from '../../components/RobotCardList';
 import StickyBoxMobile from '../../components/StickyBoxMobile.tsx';
 
-import Benny from '../../assets/new-robots/BennyRJohm.png';
-import Capsize from '../../assets/new-robots/Capsize.png';
-import Huey from '../../assets/new-robots/Huey.png';
+import Apollo from '../../assets/new-robots/ApolloMain.png';
+import Jorm from '../../assets/new-robots/JormMain.png';
+import Huey from '../../assets/new-robots/HueyMain.png';
+import FourHorsemen from '../../assets/new-robots/FourHorsemenMain.png';
+import Benny from '../../assets/new-robots/BennyMain.png';
 
 export default function RobotMobile() {
     const location = useLocation();
@@ -40,7 +42,7 @@ export default function RobotMobile() {
                 </Typography>
 
                 <Typography variant="mobileH2" sx={{ marginBottom: '5%' }}>
-                    RECENT ROBOTS
+                    May 2026 Comp
                 </Typography>
                 {/* 
                 <Typography variant="mobileBody" textAlign='left' sx={{ marginBottom: '15%' }}>
@@ -48,30 +50,23 @@ export default function RobotMobile() {
                 </Typography> */}
 
                 {/* First robot section */}
-                <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
+                <img src={Apollo} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ marginTop: '10%' }}>
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left'>Benny R. Johm</Typography>
-                        <Typography variant='mobileH3' align='left'>Kinetic </Typography>
-                        <Typography variant='mobileBody2' align='left' width='100%'>
-                            Benny R. Johm is interesting not only because of his name, but because
-                            he is CRC's first hubmotor robot, its first drum design, and is CRC's
-                            largest weapon to date. He is a continued innovation from the Kinetic
-                            Subteam's most recent and most successful robot, Beater B. Barker, by
-                            refining the drivetrain and electronics while bringing the hubmotor
-                            concept to CRC to make our robots more compact.
+                        <Typography variant='mobileH3'>Apollo</Typography>
+                        <Typography variant='mobileBody2' width='100%'>
+                            Kinetic
                         </Typography>
                     </Stack>
                 </Stack>
 
                 {/* Second robot section */}
-                <img src={Capsize} style={{ width: '40%', height: '40%', marginLeft: '-5%', paddingTop: '10%' }} />
+                <img src={Jorm} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ my: '10%' }}>
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left'>Capsize</Typography>
-                        <Typography variant='mobileH3' align='left'>Sportsman </Typography>
-                        <Typography variant='mobileBody2' align='left' width='100%'>
-                            Capsize sports a powerful 4 wheel indirect drive, which combined with wide treaded wheels and spiky cleats, makes her incredibly fast. Capsize's lifter is chain driven, and emits an eerie shanty, heard only by those with ill family members.
+                        <Typography variant='mobileH3'>Jörmungandr</Typography>
+                        <Typography variant='mobileBody2' width='100%'>
+                            Sportsman
                         </Typography>
                     </Stack>
                 </Stack>
@@ -80,10 +75,31 @@ export default function RobotMobile() {
                 <img src={Huey} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
                 <Stack direction='row' spacing={'5%'} sx={{ my: '5%' }}>
                     <Stack spacing={'2.5%'} mt='10'>
-                        <Typography variant='mobileH3' align='left'>Huey </Typography>
-                        <Typography variant='mobileH3' align='left'>Autonomous </Typography>
-                        <Typography variant='mobileBody2' align='left' width='100%'>
-                            Huey is Autonomous' second iteration on a fully autonomous robot for NHRL, reimagining the previous year's design to be more accurate. Huey is a 3-lb kinetic robot that uses a camera outside the arena and a pathing algorithm to locate the bots and hunt the enemy robot. We are excited by the interchangeability of our autonomous design this year, since any robot can be used with our camera setup.
+                        <Typography variant='mobileH3'>Huey </Typography>
+                        <Typography variant='mobileBody2' width='100%'>
+                            Autonomous
+                        </Typography>
+                    </Stack>
+                </Stack>
+
+                {/* Fourth robot section */}
+                <img src={FourHorsemen} style={{ width: '60%', height: '60%', marginLeft: '-5%', paddingTop: '10%' }} />
+                <Stack direction='row' spacing={'5%'} sx={{ my: '5%' }}>
+                    <Stack spacing={'2.5%'} mt='10'>
+                        <Typography variant='mobileH3'>Four Horsemen</Typography>
+                        <Typography variant='mobileBody2' width='100%'>
+                            Infinity
+                        </Typography>
+                    </Stack>
+                </Stack>
+
+                {/* Fifth robot section */}
+                <img src={Benny} style={{ width: '50%', height: '50%', marginLeft: '-5%', paddingTop: '10%' }} />
+                <Stack direction='row' spacing={'5%'} sx={{ my: '5%' }}>
+                    <Stack spacing={'2.5%'} mt='10'>
+                        <Typography variant='mobileH3'>Benny</Typography>
+                        <Typography variant='mobileBody2' width='100%'>
+                            Kinetic
                         </Typography>
                     </Stack>
                 </Stack>
