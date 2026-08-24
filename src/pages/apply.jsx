@@ -205,8 +205,16 @@ export default function Apply() {
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
       <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
 
-        { /* Alternative text for when applications are closed */}
-        <Stack py={"64px"}>
+        <RedBox
+          title="Our applications for Fall 2026 open soon!"
+          text="All applications are due October 15th, 11:59pm."
+          word="Apply"
+          link="https://docs.google.com/forms/d/e/1FAIpQLScZBLKjmLSe-p8NeSmnDYiUUnp8EV5c1PkWblia35yRIp9fiw/viewform?usp=sharing&ouid=101487623742545160539"
+          mT="64px"
+        />
+
+        {/* Alternative text for when applications are closed */}
+        {/* <Stack py={"64px"}>
           <Typography
             // Our applications...h3 writing
             variant="desktopBody"
@@ -215,7 +223,7 @@ export default function Apply() {
             }}>
             Check back in the fall for more application info!
           </Typography>
-        </Stack>
+        </Stack> */}
 
 
         {/* Commented Out for Spring 2026 -- Recruitment Timeline w/ Events and Specific Dates */}
