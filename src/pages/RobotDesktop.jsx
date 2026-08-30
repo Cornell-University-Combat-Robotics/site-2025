@@ -40,7 +40,7 @@ export default function RobotDesktop() {
             </Typography>
             {/* <Box display='flex' justifyContent='center' alignItems='center' sx={{ mt: 5 }}>
                 <Typography variant="desktopBody">
-                    Check out the robots that we are working on this year in our Kinetic, Sportsman, and Autonomous subteams.
+                    Check out the robots that we are working on this year in our Mechanical, Sportsman, and Autonomous subteams.
                 </Typography>
             </Box> */}
             {/* first robot */}

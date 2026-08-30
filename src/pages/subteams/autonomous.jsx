@@ -22,7 +22,7 @@ export default function Autonomous() {
             //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
             otherInterest={[
                 <p>
-                    • More intensive robot building and simpler circuits (with no coding), check out the {LinkToOtherSubteams({ url: "/team/kinetic", text: "Kinetic" })} Subteam or the {LinkToOtherSubteams({ url: "/team/sportsman", text: "Sportsman" })} Subteam
+                    • More intensive robot building and simpler circuits (with no coding), check out the {LinkToOtherSubteams({ url: "/team/mechanical", text: "Mechanical" })} Subteam
                 </p>,
                 <p>
                     • Coding for websites and video games, check out the {LinkToOtherSubteams({ url: "/team/marketing", text: "Marketing" })} Subteam

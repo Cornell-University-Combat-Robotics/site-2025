@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { Fade } from '@mui/material';
 import TeamMemberList from "./MemberList";
 import marketing_photo from "../assets/marketing-photo.jpg"; //ignore these errors, vscode is wrong
-import sportsman_photo from "../assets/sportsman-photo.jpg";
-import kinetic_photo from "../assets/kinetic-photo.jpg";
+//import sportsman_photo from "../assets/sportsman-photo.jpg";
+//import kinetic_photo from "../assets/kinetic-photo.jpg";
 import autono_photo from "../assets/auto-photo.JPG";
-import infinity_photo from "../assets/infinity-photo.jpg";
+import mechanical_photo from "../assets/mechanical-photo.jpg";
+// import infinity_photo from "../assets/infinity-photo.jpg";
 import leads_photo from "../assets/leads-photo.jpg";
 import alumni_photo from "../assets/alumni-photo.jpg";
 import { Link } from "react-router-dom";
@@ -280,12 +281,8 @@ function GetSubteamPhoto(subteamName) {
             return `url(${marketing_photo})`;
         case "autonomous":
             return `url(${autono_photo})`;
-        case "kinetic":
-            return `url(${kinetic_photo})`;
-        case "sportsman":
-            return `url(${sportsman_photo})`;
-        case "infinity":
-            return `url(${infinity_photo})`;
+        case "mechanical":
+            return `url(${mechanical_photo})`;
         case "leads":
             return `url(${leads_photo})`;
         case "alumni":
