@@ -81,7 +81,7 @@ function About() {
           </Typography>
           <Typography variant={isMobile ? "mobileBody" : "desktopBody"} display="block" align="left">
             We&apos;re Combat Robotics @ Cornell (CRC), and we build small-scale combat robots, much like those
-            featured on the TV show Battlebots. Each year, our Sportsman and Mechanical subteams build two 12lb mechanical robots,
+            featured on the TV show Battlebots. Each year, our Mechanical subteams build two 12lb mechanical robots,
             while our Autonomous team builds a 3lb bot with AI based functionality. Our Marketing subteam keeps the team funded,
             maintains our website and social media, along with merch, trading cards, and more.
           </Typography>
