@@ -101,6 +101,7 @@ import taeK from "../assets/members/tae-kim.jpg";
 // All member structs are defined in allMembers and then called in their respective teams in teamMembers.
 // Individual member structs are defined by image source, name, position, LinkedIn, and stats.
 const allMembers: Record<string, MemberProps> = {
+    // --------------------- CURRENT MEMBERS ----------------------------
   jamesLaSalle: {
     imgSrc: jamesL,
     name: "James LaSalle",
@@ -800,7 +801,7 @@ const allMembers: Record<string, MemberProps> = {
   brunoTassari: {
     imgSrc: brunoT,
     name: "Bruno Tassari",
-    position: ["Alum 2023", "Team Lead (2022-2023)", "VTL (2021-2022)", "Sportsman (2021-2023)", "Marketing (2023)"],
+    position: ["Alum 2023", "Team Lead (2022-2023)", "Vice Team Lead (2021-2022)", "Sportsman (2021-2023)", "Marketing (2023)"],
     linkedin: "https://www.linkedin.com/in/bruno-tassari/",
     stats: [
       ["Anime Trivia", "A Freak in the Google Sheets", "Epic Jokes"],
