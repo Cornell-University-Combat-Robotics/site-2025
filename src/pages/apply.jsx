@@ -31,13 +31,14 @@ export default function Apply() {
 
   /** list of all events in the recruitment timeline */
   const event = [
-    { name: 'Project Team Fest', date: '9/4, 4-6pm', location: 'Duffield Atrium' },
-    { name: 'Info Session 1', date: '9/9, 5-6pm', location: 'Tang 205' },
-    { name: 'Clubfest', date: '9/13, 12-1:30pm', location: 'Arts Quad' },
-    { name: 'Info Session 2', date: '9/18, 5-6pm', location: 'Tang 205' },
-    { name: 'Info Session 3', date: '9/24, 5-6pm', location: 'Tang 205' },
-    { name: 'Info Session 4', date: '10/4, 2-3pm', location: 'Tang 205' },
-    { name: 'Applications Due', date: '10/16', location: '' }
+    { name: 'Project Team Fest', date: '9/1, 4-6pm', location: 'Duffield Atrium' },
+    { name: 'Info Session', date: '9/2, 5-6pm', location: 'TBD' },
+    { name: 'ClubFest', date: '9/5, 12-1:30pm', location: 'Arts Quad' },
+    { name: 'Info Session', date: '9/10, 5-6pm', location: 'TBD' },
+    { name: 'Info Session', date: '9/18, 4-5pm', location: 'TBD' },
+    { name: 'Info Session', date: '9/26, 12-1pm', location: 'TBD' },
+    { name: 'Info Session', date: '10/8, 5-6pm', location: 'TBD' },
+    { name: 'Applications Due', date: '10/15', location: '' }
   ];
 
   /** boolean value for when user's viewport successfully intersects with arrow */
@@ -227,7 +228,7 @@ export default function Apply() {
 
 
         {/* Commented Out for Spring 2026 -- Recruitment Timeline w/ Events and Specific Dates */}
-        {/*
+        
         <Typography
           // Recruitment Timeline
           variant={isMobile ? "mobileH2" : "desktopH2"}
@@ -360,7 +361,6 @@ export default function Apply() {
           </Box>
         )}
         
-        */}
 
         <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '0%'}
           sx={{
