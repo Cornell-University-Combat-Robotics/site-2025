@@ -619,7 +619,7 @@ const allMembers: Record<string, MemberProps> = {
   shaoStassen: {
     imgSrc: shaoS,
     name: "Shao Stassen",
-    position: ["Alum 2026", "Former Autonomous Co-Lead", "Former Autonomous Member"],
+    position: ["Alum 2026", "Autonomous Co-Lead", "Autonomous Member"],
     linkedin: "https://www.linkedin.com/in/shaostassen/",
     stats: [
       ["Github", "Debugging", "Public Speaking"],
@@ -629,7 +629,7 @@ const allMembers: Record<string, MemberProps> = {
   calebSchlissel: {
     imgSrc: calebS,
     name: "Caleb Schlissel",
-    position: ["Alum 2025", "Sportsman Member", "Former Team Co-Lead (2024-25)", "Former Sportsman Co-Lead (2023-24)"],
+    position: ["Alum 2025", "Sportsman Member", "Team Co-Lead (2024-25)", "Sportsman Co-Lead (2023-24)"],
     linkedin: "https://www.linkedin.com/in/caleb-schlissel-0129/",
     stats: [
       ["Big Brain", "Social Life", "Pancreas"],
@@ -639,7 +639,7 @@ const allMembers: Record<string, MemberProps> = {
   stellaTaglich: {
     imgSrc: stellaT,
     name: "Stella Taglich",
-    position: ["Alum 2026","Sportsman Member", "Former Team Co-Lead (2024-25)", "Former Kinetic Co-Lead (2023-24)"],
+    position: ["Alum 2026","Sportsman Member", "Team Co-Lead (2024-25)", "Kinetic Co-Lead (2023-24)"],
     linkedin: "https://www.linkedin.com/in/stellataglich/",
     stats: [
       ["Finding Car Keys", "Quality of AUX", "Average Volume Level"],
