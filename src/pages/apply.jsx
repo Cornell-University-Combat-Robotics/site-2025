@@ -206,7 +206,7 @@ export default function Apply() {
       <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
 
         <RedBox
-          title="Our applications for Fall 2026 open soon!"
+          title="Our applications for Fall 2026 are now open!"
           text="All applications are due October 15th, 11:59pm."
           word="Apply"
           link="https://docs.google.com/forms/d/e/1FAIpQLScZBLKjmLSe-p8NeSmnDYiUUnp8EV5c1PkWblia35yRIp9fiw/viewform?usp=sharing&ouid=101487623742545160539"

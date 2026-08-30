@@ -9,8 +9,8 @@ import AutonColor from "../assets/subteam-icons/AutonColor.png";
 import AutonWhite from "../assets/subteam-icons/AutonWhite.png";
 import InfinityColor from "../assets/subteam-icons/InfinityColor.png"; 
 import InfinityWhite from "../assets/subteam-icons/InfinityWhite.png"; 
-import KineticColor from "../assets/subteam-icons/KineticColor.png";
-import KineticWhite from "../assets/subteam-icons/KineticWhite.png";
+import MechanicalColor from "../assets/subteam-icons/KineticColor.png";
+import MechanicalWhite from "../assets/subteam-icons/KineticWhite.png";
 import MarketingColor from "../assets/subteam-icons/MarketingColor.png";
 import MarketingWhite from "../assets/subteam-icons/MarketingWhite.png";
 import SportsmanColor from "../assets/subteam-icons/SportsmanColor.png";
@@ -129,7 +129,7 @@ export default function Team() {
           >
             <Typography variant="desktopH2" >
               {/*Duplicate text to ensure no empty space*/}
-              {"KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • INFINITY • KINETIC • SPORTSMAN • AUTONOMOUS • MARKETING • INFINITY •"}
+              {"MECHANICAL • AUTONOMOUS • MARKETING • MECHANICAL • AUTONOMOUS • MARKETING •"}
             </Typography>
           </motion.div>
         </div>
@@ -146,9 +146,9 @@ export default function Team() {
             },
             fontFamily: theme.typography.mobileBody.fontFamily, //idk why need this, but set to mobileBody cuz all font families same anyways
           }}>
-          {"Our entire team consists of five subteams:"}
+          {"Our entire team consists of 3 subteams:"}
           <br />
-          {"Kinetic, Sportsman, Autonomous, Marketing, and Infinity."}
+          {"Mechanical, Autonomous, and Marketing"}
         </Typography>
         <Typography
 
@@ -183,8 +183,8 @@ export default function Team() {
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}
           >
-            <TeamButton hoverColor="#0E7C2B" image={KineticColor} whiteImg={KineticWhite} to="/team/kinetic" sx={{ width: "30vw" }} >Kinetic</TeamButton>
-            <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }} >Sportsman</TeamButton>
+            <TeamButton hoverColor="#0E7C2B" image={MechanicalColor} whiteImg={MechanicalWhite} to="/team/mechanical" sx={{ width: "30vw" }} >Mechanical</TeamButton>
+            {/* <TeamButton hoverColor="#1F398D" image={SportsmanColor} whiteImg={SportsmanWhite} to="/team/sportsman" sx={{ width: "30vw" }} >Sportsman</TeamButton> */}
             <TeamButton hoverColor="#8D8D2C" image={AutonColor} whiteImg={AutonWhite} to="/team/autonomous" sx={{ width: "30vw" }} >Autonomous</TeamButton>
             <TeamButton hoverColor="#501584" image={MarketingColor} whiteImg={MarketingWhite} to="/team/marketing" sx={{ width: "30vw" }}>Marketing</TeamButton>
           </Box>
@@ -198,7 +198,7 @@ export default function Team() {
               columnGap: "3vw",
               rowGap: "1.5vh"  //maintains both vertical and horizontal gap between buttons
             }}>
-            <TeamButton hoverColor="#098CA2" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton>
+            {/* <TeamButton hoverColor="#098CA2" image={InfinityColor} whiteImg={InfinityWhite} to="/team/infinity" sx={{ width: "100%" }}>Infinity</TeamButton> */}
             <TeamButton hoverColor="#820002" image={TLColor} whiteImg={TLWhite} to="/team/leads" sx={{ width: "100%" }}>Team Leads</TeamButton>
             <TeamButton hoverColor="#820002" image={AlumColor} whiteImg={AlumWhite} to="/team/alumni" sx={{ width: "100%" }}>Alumni</TeamButton>
           </Box>

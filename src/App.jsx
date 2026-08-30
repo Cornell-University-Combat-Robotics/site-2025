@@ -10,7 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import About from "./pages/about";
 import Team from './pages/team';
 import Marketing from './pages/subteams/marketing';
-import Kinetic from './pages/subteams/kinetic';
+import Mechanical from './pages/subteams/mechanical.jsx';
 import Autonomous from './pages/subteams/autonomous';
 import Sportsman from './pages/subteams/sportsman';
 import Infinity from './pages/subteams/infinity';
@@ -125,7 +125,7 @@ function App() {
               <Route path="/team" element={<><Team /></>} />
               <Route path="/team/marketing" element={<><Marketing /></>} />
               <Route path="/team/autonomous" element={<><Autonomous /></>} />
-              <Route path="/team/kinetic" element={<><Kinetic /></>} />
+              <Route path="/team/mechanical" element={<><Mechanical /></>} />
               <Route path="/team/sportsman" element={<><Sportsman /></>} />
               <Route path="/team/infinity" element={<><Infinity /></>} />
               <Route path="/team/leads" element={<><Leads /></>} />
