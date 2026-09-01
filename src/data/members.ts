@@ -561,7 +561,7 @@ const allMembers: Record<string, MemberProps> = {
     position: ["MechE Trainer","Mechanical Member", "Social Lead", "Former Infinity Member"],
     linkedin: "https://www.linkedin.com/in/georgia-green-309a87345",
     stats: [
-      ["Odds of having ID", "Woodworking", "Pink Hair"],
+      ["Odds of having ID", "Woodworking", "Blue Hair"],
       [15, 90, 50]
     ],
     zoom: 2.0,
