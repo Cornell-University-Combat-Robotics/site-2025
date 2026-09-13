@@ -36,7 +36,7 @@ export default function Apply() {
     { name: 'ClubFest', date: '9/5, 12-1:30pm', location: 'Arts Quad' },
     { name: 'Info Session', date: '9/10, 5-6pm', location: 'Snee 1150' },
     { name: 'Info Session', date: '9/18, 4-5pm', location: 'Tang 203' },
-    { name: 'Info Session', date: '9/26, 12-1pm', location: 'TBD (North Campus)' },
+    { name: 'Info Session', date: '9/26, 12-1pm', location: 'RPCC 205' },
     { name: 'Info Session', date: '10/8, 5-6pm', location: 'Tang 205' },
     { name: 'Applications Due', date: '10/15', location: '' }
   ];
