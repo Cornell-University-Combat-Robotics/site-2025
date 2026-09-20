@@ -37,8 +37,20 @@ export default function TimelineCell(props: Timeline1Cell) {
                     px: "10%",
                     py: "15%"
                 }}>
-                    <Typography variant={isMobile ? "mobileH2" : "desktopH3"} display="block"> {props.date} </Typography>
-                    <Typography variant={isMobile ? "mobileBody" : "desktopBody"}> {props.description} </Typography>
+
+                    <Typography
+                        variant={isMobile ? "mobileH2" : "desktopH3"}
+                        display="block"
+                    >
+                        {props.date}
+                    </Typography>
+
+                    <Typography
+                        variant={isMobile ? "mobileBody" : "desktopBody"}
+                    >
+                        {props.description}
+                    </Typography>
+                
                 </Box>
             </Box >
         </Box>
