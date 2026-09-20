@@ -57,7 +57,7 @@ const TimelineData: Timeline1Cell[] = [
     },
     {
         date: 'April 2024',
-        description: 'We debuted our first autonomous robot (Louis XVII), becoming one of the first teams in NHRL history to compete with a fully autonomous robot.',
+        description: 'We debuted Louis XVII, our first autonomous robot, becoming one of the first teams in NHRL history to compete with a fully autonomous robot.',
         image: panel9
     },
     {

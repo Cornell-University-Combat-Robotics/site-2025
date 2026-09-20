@@ -15,9 +15,9 @@ export default function Mechanical() {
     return (
         <SubteamPage
             name="Mechanical"
-            desc="Within the Mechanical Subteam, we specialize in the construction of 12lb high kinetic energy combat robots, including vertical spinners, horizontal spinners, full-body spinners, and drums. Our mission is to design and build highly efficient robots that excel in competitions. Previously split into Sportsman and Kinetic, they have now been integrated into one Mechanical Subteam!"
-            optionalDesc="We prioritize three key elements: damage-dealing capability, durability, and adaptability. We are dedicated to maintaining a competitive edge in the world of robotic warfare."
-            subsystemIntro="Our approach to robot design revolves around four critical subsystems:" //TODO: make bold
+            desc="Within the Mechanical Subteam, we design and build 12lb high kinetic energy combat robots, including vertical spinners, horizontal spinners, full-body spinners, and drums. As our team has grown, we expanded from two to three Mechanical subteams, allowing each subteam to take ownership of a new robot design."
+            optionalDesc="Each of our three subteams develops its own 12lb robot, focusing on three key elements: damage-dealing capability, durability, and adaptability. This structure allows us to bring three new designs to competition each year while continuing to revamp and improve previous robots."
+            subsystemIntro="Our approach to robot design revolves around four critical subsystems:"
             subsystems={subsystems}
             otherInterest={[
                 
