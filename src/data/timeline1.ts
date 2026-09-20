@@ -42,12 +42,12 @@ const TimelineData: Timeline1Cell[] = [
     },
     {
         date: 'December 2022',
-        description: 'We qualified for our first-ever NHRL World Championship event, traveling to the 2022 World Championships with our 12lb vertical spinner robot, Richard.',
+        description: 'We qualified for our first-ever NHRL World Championship event, and competed at the 2022 World Championships with our 12lb vertical spinner robot, Richard.',
         image: champs22_panel
     },
     {
         date: 'April 2023',
-        description: 'We participated in the Bits of Our Mind (BOOM) event and showcased our Arcade Video Game, CRC VS.',
+        description: 'We participated in the Bits of Our Mind (BOOM) event and showcased our projects to the Cornell community.',
         image: panel6
     },
     {
@@ -57,7 +57,7 @@ const TimelineData: Timeline1Cell[] = [
     },
     {
         date: 'April 2024',
-        description: 'We debuted our first autonomous robot (Louis XVII), becoming one of the first teams in NHRL history to compete with fully autonomous combat robots.',
+        description: 'We debuted our first autonomous robot (Louis XVII), becoming one of the first teams in NHRL history to compete with a fully autonomous robot.',
         image: panel9
     },
     {
@@ -67,12 +67,12 @@ const TimelineData: Timeline1Cell[] = [
     },    
     {
         date: 'February 2026',
-        description: 'We competed at our first-ever February NHRL event, making this our first season with two NHRL competitions.',
+        description: 'We began competing at an additional NHRL event each year, creating more opportunities for our team to test designs, learn from competition, and iterate.',
         image: febcomp_panel
     },
     {
         date: 'August 2026',
-        description: 'Our Sportsman and Kinetic teams merged into one Mechanical Subteam.',
+        description: 'We expanded our lineup to three new robot designs each year while continuing to improve and compete with older robots.',
         image: maycomp_panel
     },
 ];
