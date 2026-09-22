@@ -10,7 +10,7 @@ import autono_photo from "../assets/auto-photo.JPG";
 import mechanical_photo from "../assets/mechanical-photo.jpg";
 // import infinity_photo from "../assets/infinity-photo.jpg";
 import leads_photo from "../assets/leads-photo.jpg";
-import alumni_photo from "../assets/alumni-photo.jpg";
+import alumni_photo from "../assets/2026-alumni-photo.jpeg";
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import { useContext } from 'react';
