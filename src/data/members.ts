@@ -105,7 +105,7 @@ const allMembers: Record<string, MemberProps> = {
   jamesLaSalle: {
     imgSrc: jamesL,
     name: "James LaSalle",
-    position: ["Mechanical Member, Former Team Co-Lead", "Former Kinetic Co-Lead (2024-25)"],
+    position: ["Mechanical Member", "Former Team Co-Lead (2025-26)", "Former Kinetic Co-Lead (2024-25)"],
     linkedin: "https://www.linkedin.com/in/james-lasalle-589860256/",
     stats: [
       ["In Your Walls", "Making the Arcade CAD", "👍"],
@@ -125,7 +125,7 @@ const allMembers: Record<string, MemberProps> = {
   kevinSturm: {
     imgSrc: kevinS,
     name: "Kevin Sturm",
-    position: ["Team Lead", "Former Kinetic Co-Lead (2025-26)", "Former Kinetic Member"],
+    position: ["Team Lead", "Former Kinetic Co-Lead (2025-26)", "Former Test Box Lead", "Former Kinetic Member"],
     linkedin: "https://www.linkedin.com/in/kevin-sturm-97a046277/",
     stats: [
       ["Being 6 foot", "Ability to eat nuts", "Ability to see colors"],
@@ -145,7 +145,7 @@ const allMembers: Record<string, MemberProps> = {
   castielLi: {
     imgSrc: castielL,
     name: "Castiel Li",
-    position: ["Mechanical Co-Lead", "Test Box Lead", "Former MechE Trainer (2025-26)", "Former Kinetic Member"],
+    position: ["Mechanical Co-Lead", "Former Test Box Lead", "Former MechE Trainer (2025-26)", "Former Kinetic Member"],
     linkedin: "https://www.linkedin.com/in/castiel-li-527964330/",
     stats: [
       ["rock", "paper", "scissors"],
@@ -195,7 +195,7 @@ const allMembers: Record<string, MemberProps> = {
   kaiRodger: {
     imgSrc: kaiR,
     name: "Kai Rodger",
-    position: ["Mechanical Member", "Former Sportsman Member"],
+    position: ["Mechanical Member", "CRClaw Lead","Former Sportsman Member"],
     linkedin: "https://www.linkedin.com/in/kai-rodger-70998029a/",
     stats: [
       ["Snowboarding", "Cooking", "Focus"],
@@ -255,7 +255,7 @@ const allMembers: Record<string, MemberProps> = {
   crystalLi: {
     imgSrc: crystalL,
     name: "Crystal Li",
-    position: ["Mechanical Co-Lead", "Former Sportsman Member", "Former Marketing Member"],
+    position: ["Mechanical Co-Lead", "Former Sportsman Member", "Former Marketing Member", "Former CRCrochet Lead"],
     linkedin: "https://www.linkedin.com/in/crystal-li-698431255/",
     stats: [
       ["Decisiveness", "Crocheting", "Injurability"],
@@ -295,7 +295,7 @@ const allMembers: Record<string, MemberProps> = {
   ananyaJajodia: {
     imgSrc: ananyaJ,
     name: "Ananya Jajodia",
-    position: ["Autonomous Member", "Former Autonomous Trainer (2024-25)"],
+    position: ["Autonomous Member", "CRClaw Lead", "Former Autonomous Trainer (2024-25)"],
     linkedin: "https://www.linkedin.com/in/ananya-jajodia-11b4a2249/",
     stats: [
       ["Tetris", "Hydration", "Lowering Average Height"],
@@ -522,7 +522,7 @@ const allMembers: Record<string, MemberProps> = {
   cynthiaWu: {
     imgSrc: cynthiaW,
     name: "Cynthia Wu",
-    position: ["MechE Trainer","Mechanical Member", "Former Infinity Member"],
+    position: ["MechE Trainer", "Mechanical Member", "Former Infinity Member"],
     linkedin: "https://www.linkedin.com/in/cynnthiawu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     stats: [
       ["Iron", "$", "Midnight Snack"],
@@ -594,7 +594,7 @@ const allMembers: Record<string, MemberProps> = {
     ferrisKassemScott: {
     imgSrc: ferrisK,
     name: "Ferris Kassem-Scott",
-    position: ["Mechanical Member", "Autobot Lead", "Former Infinity Member"],
+    position: ["Mechanical Member", "Electronics Lead", "Autobot Lead", "Former Infinity Member"],
     linkedin: "https://www.linkedin.com/in/ferris-kassem-scott-625478224/",
     stats: [
       ["1", "2", "3"],
@@ -1079,6 +1079,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.seanDjojonegoro,
     allMembers.gurjotGill,
     allMembers.crystalLi,
+    allMembers.jamesLaSalle,
     allMembers.kailaDanielson,
     allMembers.xiaYanZhao,
     allMembers.manuelyFelizPortes,
