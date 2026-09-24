@@ -214,6 +214,29 @@ export default function Apply() {
           mT="64px"
         />
 
+      <Typography
+        variant="desktopBody"
+        component="p"
+        sx={{
+          display: "block",
+          textAlign: "center",
+          fontSize: "21px",
+          lineHeight: 1.6,
+          fontWeight: 400,
+          maxWidth: "1100px",
+          mx: "auto",
+          mt: "55px",
+          mb: "45px"
+        }}
+      >
+        See our recruitment timeline below for application details and upcoming info
+        sessions.
+        <br />
+        While we don't offer 1-on-1 coffee chats, info sessions are a great way to
+        meet the team and ask questions!
+      </Typography>
+
+
         {/* Alternative text for when applications are closed */}
         {/* <Stack py={"64px"}>
           <Typography
@@ -226,16 +249,20 @@ export default function Apply() {
           </Typography>
         </Stack> */}
 
-
         {/* Commented Out for Spring 2026 -- Recruitment Timeline w/ Events and Specific Dates */}
         
         <Typography
           // Recruitment Timeline
           variant={isMobile ? "mobileH2" : "desktopH2"}
+          component="h2"
           sx={{
+            display: 'block',
             textAlign: 'center',
-            mt: "8vw",
-            mb: '5%'
+            fontSize: isMobile ? "36px" : "52px",
+            fontWeight: 400,
+            letterSpacing: "1px",
+            mt: 0,
+            mb: '60px'
             // add margins when text size smaller
           }}>
           RECRUITMENT TIMELINE

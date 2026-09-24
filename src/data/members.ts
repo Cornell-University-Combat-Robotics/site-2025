@@ -382,16 +382,6 @@ const allMembers: Record<string, MemberProps> = {
       [90, 50, 10]
     ]
   },
-  angelaZhu: {
-    imgSrc: angelaZ,
-    name: "Angela Zhu",
-    position: ["Marketing Member","Former Marketing Co-Lead (2025-26)", "Former Marketing Trainer (2024-25)"],
-    linkedin: "https://www.linkedin.com/in/angela-zhu-26b22229a/",
-    stats: [
-      ["Gacha addiction", "Pyramid scheme recruitment", "Studying during social"],
-      [69, 80, 100]
-    ]
-  },
   caedyLee: {
     imgSrc: caedyL,
     name: "Caedy Lee",
@@ -617,6 +607,16 @@ const allMembers: Record<string, MemberProps> = {
   },
 
   // --------------------- ALUMNI ----------------------------
+  angelaZhu: {
+    imgSrc: angelaZ,
+    name: "Angela Zhu",
+    position: ["Alum 2026", "Marketing Co-Lead (2025-26)", "Marketing Trainer (2024-25)", "Marketing Member"],
+    linkedin: "https://www.linkedin.com/in/angela-zhu-26b22229a/",
+    stats: [
+      ["Gacha addiction", "Pyramid scheme recruitment", "Studying during social"],
+      [69, 80, 100]
+    ]
+  },
   shaoStassen: {
     imgSrc: shaoS,
     name: "Shao Stassen",
@@ -1112,7 +1112,6 @@ const teamMembers: Record<string, MemberProps[]> = {
   Marketing: [
     allMembers.nicholasUnderwood,
     allMembers.amandaZhu,
-    allMembers.angelaZhu,
     allMembers.ruslanBlack,
     allMembers.rachelPineda,
     allMembers.caedyLee,
@@ -1129,6 +1128,7 @@ const teamMembers: Record<string, MemberProps[]> = {
     allMembers.stellaTaglich,
     allMembers.ethanZhang,
     allMembers.javohirAbdurazzakov,
+    allMembers.angelaZhu,
     allMembers.lindaHu,
     allMembers.meiLingWood,
     allMembers.calebSchlissel,
