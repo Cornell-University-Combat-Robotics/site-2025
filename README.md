@@ -1,6 +1,7 @@
-## Cornell Combat Robotics Website (`site-2025`)
+## Combat Robotics @ Cornell Website (`site-2025`)
 
-This repository contains the 2025 marketing and information site for **Cornell Combat Robotics (CRC)**.
+This repository contains the official team website for **Combat Robotics @ Cornell (CRC)**.
+
 It is a single-page React application that highlights the team, its robots, subteams, sponsors, and how new members can get involved.
 
 The site is built with **React**, **Vite**, **React Router**, and **MUI**, and is designed to be fully responsive across desktop and mobile.
@@ -15,15 +16,17 @@ The site is built with **React**, **Vite**, **React Router**, and **MUI**, and i
 
 - **Introduces the team and subteams**
   - `About` and `Team` pages describe overall structure and culture.
-  - Dedicated pages for subteams like **Kinetic**, **Autonomous**, **Sportsman**, **Marketing**, and **Leads** explain what each group works on and how they collaborate.
+  - Dedicated pages for subteams like **Mechanical**, **Autonomous**,  **Marketing**, and **Team Leads** explain what each subteam works on and how they collaborate.
   - An **Alumni** section recognizes past members and their contributions.
 
 - **Highlights robots and competitions**
   - `Robots` lists current and past robots with an `IndividualRobot` detail view for each bot.
-  - A `Game` page explains the combat robotics game format and rules for the current season.
+
+- **Organize our CRC-themed games**
+  - `Games` showcases our CRC-themed Suika games.
 
 - **Showcases sponsors**
-  - `Sponsors` page displays partner logos and blurbs, and explains how sponsors support CRC (manufacturing, materials, funding, etc.).
+  - `Sponsors` page displays partner logos and blurbs, and explains how sponsors support CRC.
 
 - **Recruiting and involvement**
   - `Apply` page walks prospective members through recruitment timelines, expectations, and application links.
@@ -96,7 +99,6 @@ The layout also includes:
    ```bash
    npm run preview
    ```
-
 ---
 
 ## Project structure (high level)
