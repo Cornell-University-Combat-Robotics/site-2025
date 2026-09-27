@@ -3,7 +3,6 @@ import React from "react";
 import { LinkToOtherSubteams } from "../../components/SubteamPage";
 
 export default function Infinity() {
-
     //array for subsystem with key-value pairs
     const subsystems = [
         { name: "Drivetrain", desc: "The locomotion system of the robot. Infinity meticulously selects the drive systems to ensure our robots are agile, responsive, and formidable on the battlefield." },

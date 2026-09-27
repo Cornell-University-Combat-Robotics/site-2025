@@ -1,11 +1,8 @@
 import { useContext, useState, useEffect } from 'react';
 import { MobileContext } from '../App.jsx';
 import { Box, Stack, Typography } from "@mui/material";
-import logo from "../assets/crc-logo-cropped.png";
 import background from "../assets/background-pictures/crcbackground.png";
-import team_photo from "../assets/background-pictures/team-photo-hearts.png";
 import Carousel from "../components/Carousel.js";
-import CRLogo from '../components/CRLogo.js';
 import LogoAnimation from '../components/CRLogo.js';
 
 // Creates the About page for the website.

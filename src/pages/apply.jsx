@@ -88,9 +88,7 @@ export default function Apply() {
 
   }, []);
 
-
   useEffect(() => {
-
     /* [entry]: an IntersectionObserverEntry object -> contains details about observed element (arrowBar.current) 
     and how it intersects with the viewport or another container.
 
@@ -154,7 +152,6 @@ export default function Apply() {
     "Can I join multiple subteams?"
   ];
 
-
   //To add hyperlink in middle of text by using <Link> component, must wrap in <p>
   const answers =
     [
@@ -175,7 +172,6 @@ export default function Apply() {
     ]
 
   return (
-
     <Box>
       {/* header */}
       <Box sx={{
@@ -388,7 +384,6 @@ export default function Apply() {
           </Box>
         )}
         
-
         <Box width="100%" height="100%" mb={'15%'} mt={isMobile ? '0%' : '0%'}
           sx={{
             display: 'grid', placeItems: "center" //alignment parameter when using grids (not justifycontent)
@@ -406,11 +401,9 @@ export default function Apply() {
           </Box>
         </Box>
 
-
         <Typography variant={isMobile ? "mobileH2" : "desktopH2"} mb={10} id="newbie-ex">
           NEW MEMBER EXPERIENCE
         </Typography>
-
 
         <Stack direction="row" gap={10} ref={arrowBar} position="relative" width="100%" >
 
@@ -427,7 +420,6 @@ export default function Apply() {
                 strokeWidth="25"
               >
               </line>
-
 
               {/*Must have foreign object tag to nest MUI component within svg*/}
               <foreignObject x="0%" y="90%" width="100%" height="3%" >
@@ -496,7 +488,6 @@ export default function Apply() {
 
           {/*
 
-
         Scenarios:
         1) above arrow: isVisible = false && isBottomCrossed = false -> DON'T render
         3) within arrow: isVisible = true && isBottomCrossed = false -> RENDER
@@ -511,7 +502,6 @@ export default function Apply() {
           }
              */}
 
-
           {!isMobile &&
             <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={7} mb={20} width="100%">
               <MemberExperienceComponentDesktop bgcolor={"#242121"} img={photo1} title={"NEWBIE ONBOARDING"} subtitle={"Early November"} desc={"During onboarding, new members into the team and work on the 3lb project, a robotics project that incorporates elements of all 4 subteams!"} />
@@ -521,7 +511,6 @@ export default function Apply() {
               <MemberExperienceComponentDesktop bgcolor={"#741112"} img={photo5} title={"NEWBIE GRADUATION"} subtitle={"January"} desc={"Newbies are officially welcomed as full-fledged members of their respective subteams."} />
             </Stack>
           }
-
 
           {isMobile &&
             <Stack direction="column" alignItems="center" rowGap={10} height="100%" mt={5} mb={20} width="100%">
@@ -570,7 +559,6 @@ export default function Apply() {
   unless wrapped with React.forwardRef
   */ }
 const RobotImage = forwardRef(({ pos, top, bottom, lft }, ref) => {
-
   return (
     <img
       src={robot_scroll}
