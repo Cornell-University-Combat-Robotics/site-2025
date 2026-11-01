@@ -201,7 +201,7 @@ export default function Apply() {
       {/* Page contents */}
       {/* apparently, width is not controlled based on padding/margin within a single component, meaning if padding is set to */}
       <Box mx={isMobile ? "7%" : "15%"} alignItems={"center"}>
-
+        {/*
         <RedBox
           title="Our applications for Fall 2026 are now open!"
           text="All applications are due October 15th, 11:59pm."
@@ -231,10 +231,11 @@ export default function Apply() {
         While we don't offer 1-on-1 coffee chats, info sessions are a great way to
         meet the team and ask questions!
       </Typography>
+        */}
 
 
         {/* Alternative text for when applications are closed */}
-        {/* <Stack py={"64px"}>
+        { <Stack py={"64px"}>
           <Typography
             // Our applications...h3 writing
             variant="desktopBody"
@@ -243,7 +244,7 @@ export default function Apply() {
             }}>
             Check back in the fall for more application info!
           </Typography>
-        </Stack> */}
+        </Stack> }
 
         {/* Commented Out for Spring 2026 -- Recruitment Timeline w/ Events and Specific Dates */}
         
