@@ -642,7 +642,16 @@ export const robotData: { [key: string]: RobotData } = {
         video:
           "https://www.youtube.com/live/o9yEINJzn_A?si=0TTYFm0-CHhP26Ic&t=1689",
         length: "24"
-      }      
+      },
+      {
+        event: "May 2 2026",
+        opponent: "Night Crawler",
+        result: "Loss",
+        by: "JD",
+        video:
+          "",
+        length: "24"
+      }     
     ],
     gallery: [
       benny2,
