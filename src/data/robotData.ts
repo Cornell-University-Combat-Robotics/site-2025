@@ -582,7 +582,7 @@ export const robotData: { [key: string]: RobotData } = {
         vintage: "2025, 2026",
         height: "4.05 inches",
         weight: "11.772 lbs",
-        fights: "3",
+        fights: "4",
         wins: "1",
         top_speed: "14.1 mph",
         weapon_speed: "137 mph",
@@ -649,8 +649,8 @@ export const robotData: { [key: string]: RobotData } = {
         result: "Loss",
         by: "JD",
         video:
-          "",
-        length: "24"
+          "https://brettzone.nhrl.io/brettZone/v2/f/W-1?tournamentID=nhrl_may26_12lb",
+        length: "100"
       }     
     ],
     gallery: [
