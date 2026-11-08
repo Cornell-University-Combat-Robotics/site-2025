@@ -582,7 +582,7 @@ export const robotData: { [key: string]: RobotData } = {
         vintage: "2025, 2026",
         height: "4.05 inches",
         weight: "11.772 lbs",
-        fights: "3",
+        fights: "4",
         wins: "1",
         top_speed: "14.1 mph",
         weapon_speed: "137 mph",
@@ -642,7 +642,16 @@ export const robotData: { [key: string]: RobotData } = {
         video:
           "https://www.youtube.com/live/o9yEINJzn_A?si=0TTYFm0-CHhP26Ic&t=1689",
         length: "24"
-      }      
+      },
+      {
+        event: "May 2 2026",
+        opponent: "Night Crawler",
+        result: "Loss",
+        by: "JD",
+        video:
+          "https://brettzone.nhrl.io/brettZone/v2/f/W-1?tournamentID=nhrl_may26_12lb",
+        length: "100"
+      }     
     ],
     gallery: [
       benny2,
