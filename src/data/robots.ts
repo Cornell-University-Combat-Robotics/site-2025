@@ -48,6 +48,9 @@ import rinnyPhoto from "../assets/3lb/rinny/rinny.jpeg";
 import bennyPhoto from "../assets/retired/benny/benny_main.png";
 import hueyPhoto from "../assets/retired/huey/huey_main.png";
 import capsizePhoto from "../assets/retired/capsize/capsize_main.png";
+import apoloPhoto from "../assets/new-robots/ApolloMain.png";
+import jormungandrPhoto from "../assets/new-robots/JormMain.png";
+import fourhorsemenPhoto from "../assets/new-robots/FourHorsemenMain.png";
 
 /* 
   This file holds the necessary data for the robots. The data is stored in a dictionary (record), where the key is the category of the robot (Retired, Three_lb, etc).
@@ -56,6 +59,24 @@ import capsizePhoto from "../assets/retired/capsize/capsize_main.png";
 */
 const RobotsData: Record<string, RobotCardProps[]> = {
   Retired: [
+    {
+      name: "Apollo",
+      subteam: ["Kinetic", "2025-2026"],
+      desc: "Apollo is the newest addition to the team.",
+      image: apoloPhoto,
+      link: "/robots/apollo",
+      color: 1,
+      hasDescription: true,
+    },
+    {
+      name: "Jörmungandr",
+      subteam: ["Sportsman", "2025-2026"],
+      desc: "Jörmungandr is the newest addition to the team.",
+      image: jormungandrPhoto,
+      link: "/robots/jormungandr",
+      color: 0,
+      hasDescription: true,
+    },
     {
       name: "Benny R. Johm",
       subteam: ["Kinetic", "2025-2026"],
@@ -204,6 +225,15 @@ const RobotsData: Record<string, RobotCardProps[]> = {
     },
   ],
   Three_lb: [
+    {
+      name: "Four Horsemen",
+      subteam: ["SP '25"],
+      desc: "",
+      image: jormungandrPhoto,
+      link: "/robots/jormungandr",
+      color: 1,
+      hasDescription: false,
+    },
     {
       name: "Biggie Cheese",
       subteam: ["SP '24"],
