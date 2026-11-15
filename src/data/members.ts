@@ -378,8 +378,8 @@ const allMembers: Record<string, MemberProps> = {
     position: ["Marketing Member", "Former Marketing Co-Lead (2024-25)"],
     linkedin: "https://www.linkedin.com/in/rrachelpineda/",
     stats: [
-      ["Crossword Enthusiasm", "LinkedIn", "Hiding the Stats Doc"],
-      [90, 50, 10]
+      ["Sudoku Enthusiasm", "LinkedIn", "Perfectionism"],
+      [90, 50, 100]
     ]
   },
   caedyLee: {

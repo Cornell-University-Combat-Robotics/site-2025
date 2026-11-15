@@ -553,6 +553,24 @@ export const robotData: { [key: string]: RobotData } = {
           video: 
             "https://brettzone.nhrl.io/brettZone/fightReviewSync.php?gameID=W-0&tournamentID=nhrl_feb26_xprd",
           length: "138"
+        },
+        {
+          event: "May 2 2026",
+          opponent: "DUG",
+          result: "Loss",
+          by: "JD",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/v2/f/EX-57cfaeae92ed4174?tournamentID=nhrl_may26_3lb&bot=huey",
+          length: "100"
+        },
+        {
+          event: "May 2 2026",
+          opponent: "Shack O Metor",
+          result: "Loss",
+          by: "JD",
+          video: 
+            "https://brettzone.nhrl.io/brettZone/v2/f/EX-5bd7512408c14d70?tournamentID=nhrl_may26_3lb",
+          length: "190"
         }
       ],
       gallery: [
